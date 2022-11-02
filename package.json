@@ -1,0 +1,28 @@
+{
+  "name": "guanruihua.github.io",
+  "version": "0.0.1",
+  "description": "博客",
+  "author": "ruihuag",
+  "license": "MIT",
+  "scripts": {
+    "build": "node config/build.-sidebar.js",
+    "build:dev": "nodemon config/build.-sidebar.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guanruihua/guanruihua.github.io.git"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "index.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/guanruihua/guanruihua.github.io/issues"
+  },
+  "homepage": "https://github.com/guanruihua/guanruihua.github.io",
+  "keywords": [
+    "note"
+  ]
+}
