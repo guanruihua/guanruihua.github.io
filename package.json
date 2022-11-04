@@ -5,8 +5,9 @@
   "author": "ruihuag",
   "license": "MIT",
   "scripts": {
-    "build": "node config/build.-sidebar.js",
-    "build:dev": "nodemon config/build.-sidebar.js"
+    "build": "node config/build-sidebar-lv2.js",
+    "build:lv1": "node config/build-sidebar-lv1.js",
+    "dev": "nodemon config/build-sidebar-lv2.js"
   },
   "repository": {
     "type": "git",

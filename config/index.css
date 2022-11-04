@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 1px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.1);
+
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #eee;
+  background-color: #494a4b;
+  background-image: url(/__assets__/001.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  text-align: center;
+}
+
+.header {
+  height: 4rem;
+  width: 100%;
+  /* background-color: rgba(255, 255, 255, 0.329); */
+  background-color: #3f4040;
+}
+
+.modules-content {
+  width: 80vw;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.modules {
+  border-radius: 8px;
+  white-space: nowrap;
+  margin: 0 auto;
+  overflow-y: hidden;
+  width: auto;
+  height: 16rem;
+  padding-top: 2rem;
+
+}
+
+.modules>div {
+  width: 14rem;
+  height: 98%;
+  margin-right: -3rem;
+  display: inline-block;
+  border: none;
+  background-color: #3384ca;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.692);
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: larger;
+  background-image: linear-gradient(85deg, rgb(97, 100, 102), rgb(78, 79, 79));
+  box-shadow: rgb(51 51 51) -2rem 0px 3rem -2rem;
+  transition: all .3s ease-in-out;
+  transform: rotate(4deg);
+  cursor: pointer;
+}
+
+.modules>div:hover {
+  color: #fff;
+  transform: rotate(0deg) translate(-2rem, -1rem);
+}
+
+.modules>div>img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.modules>div>h3 {
+  display: block;
+  width: 100%;
+  height: 20%;
+}

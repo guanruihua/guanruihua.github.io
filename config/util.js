@@ -1,10 +1,13 @@
 const fs = require('fs')
 
 const ignoreDir = [
+	'_modules_.js',
 	'.git', '.gitignore',
 	'.nojekyll', '.prettierrc',
 	'blog', 'config',
-	'index.html', 'package.json',
+	'index.html',
+	'home.html',
+	'package.json',
 	'Pending.md',
 	'push.bat', 'README.md',
 	'temp-note.md', '_sidebar.md',
@@ -13,7 +16,8 @@ const ignoreDir = [
 
 function toArray(params, ignore = ignoreDir) {
 	if (Array.isArray(params)) return params.filter(i => {
-		if(i.indexOf('.assets')>-1) return false
+		if (i.indexOf('.assets') > -1) return false
+		if (i.indexOf('.jpg') > -1) return false
 		return !ignore.includes(i)
 	})
 	return [params].filter(Boolean)
@@ -24,23 +28,4 @@ function isDir(url) {
 	return fs.lstatSync(url).isDirectory();// true || false 判断是不是文件夹
 }
 
-function write(path, index = 0) {
-
-	const indexSpaces = new Array(index).fill('  ').join('')
-	const dirs = toArray(fs.readdirSync(path, 'utf-8'))
-		.map(item => {
-			const newPath = path + '/' + item
-			let content = item
-			if(content.indexOf('.md')>-1){
-
-				content = `[${content.replace('.md','')}](${newPath.replace('./','')})`
-			}
-			const nextContent = isDir(newPath)?write(newPath, index + 1):''
-			return `${indexSpaces}* ${content}\n${nextContent}`
-		})
-
-	return dirs.join('')
-}
-
-
-module.exports = { toArray, isDir, write }
+module.exports = { toArray, isDir }

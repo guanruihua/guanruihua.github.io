@@ -1,0 +1,78 @@
+.markdown-section code,
+.markdown-section pre {
+  background-color: #eee;
+}
+
+button.sidebar-toggle {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+.sidebar,
+input[type='search'] {
+  background: transparent;
+}
+
+.markdown-section pre {
+  padding: 0 4px;
+}
+
+.markdown-section pre>code {
+  margin: 0;
+}
+.markdown-section blockquote{
+	padding-left: 10px;
+}
+.markdown-section pre>code {
+  padding: 4px 0;
+}
+
+.sidebar {
+  padding: 0;
+}
+
+div.search {
+  border-bottom: 1px solid rgba(238, 238, 238, 0.185);
+}
+
+.folder {
+  cursor: pointer;
+}
+
+.markdown-section {
+  overflow-y: auto;
+  max-width: 98%;
+  background-color: rgba(255, 255, 255, .4);
+  padding-top: 0;
+}
+
+.content {
+  padding-top: 0;
+}
+
+
+/* .markdown-section blockquote {
+		color: #d7d7d7;
+	} */
+
+.markdown-section>div:first-child {
+  margin-right: 85px;
+}
+
+/* html { */
+/* background-size: cover;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		pointer-events: none;
+		background-attachment: fixed;
+		background-image: url(../__assets__/001.jpg);
+		backdrop-filter: blur(20px); */
+/* filter: grayscale(1); */
+
+/* } */
+
+body {
+  background: transparent;
+}
