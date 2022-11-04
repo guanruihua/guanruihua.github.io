@@ -1,13 +1,3 @@
----
-title: background
-date: 2020-10-07 22:16:52
-tags: 
-	- css
-	- background
-	- basic
-	- demo
----
-
 # background
 
 ## basic
@@ -31,7 +21,7 @@ CSS3 `background`支持多重背景，主要是靠`origin`、`clip`和`size`组�
 ### background-color
 
 > - `background-color`会设置元素的背景色，属性的值为颜色值或者关键字“transparent”二者选其一。
-> - `background-color`的优先级比`background-image`低，如果同时存在`backgound-color`和`background-image`时，image会显示在color上面
+> - `background-color`的优先级比`background-image`低，如果同时存在`background-color`和`background-image`时，image会显示在color上面
 
 ```css
 /* Keyword values */
