@@ -8,7 +8,7 @@ const ignoreDir = [
 	'Pending.md',
 	'push.bat', 'README.md',
 	'temp-note.md', '_sidebar.md',
-	'__assets__', 'bar.md', '.keep'
+	'__assets__', 'bar.md', '.keep', 'blog'
 ]
 
 function toArray(params, ignore = ignoreDir) {

@@ -717,32 +717,32 @@
       * [接口隔离](/架构&相关/设计模式/设计原则/接口隔离.md)
       * [迪米特](/架构&相关/设计模式/设计原则/迪米特.md)
       * [里氏替换](/架构&相关/设计模式/设计原则/里氏替换.md)
-* 相关技术
-  * [geojson](/相关技术/geojson.md)
-  * HTTP
-    * [HTTP](/相关技术/HTTP/HTTP.md)
-    * [HTTP缓存](/相关技术/HTTP/HTTP缓存.md)
-  * Python
-    * [basis](/相关技术/Python/basis.md)
-    * 格式化
-      * [pylint](/相关技术/Python/格式化/pylint.md)
-  * [rgb](/相关技术/rgb.md)
-  * [unicode](/相关技术/unicode.md)
-  * Unity
-    * [c#](/相关技术/Unity/c#.md)
-    * [unity](/相关技术/Unity/unity.md)
-    * [vscode运行C#](/相关技术/Unity/vscode运行C#.md)
-  * 计网
-    * CDN
-      * index
-        * 640
-        * 640.jpg
-      * [index](/相关技术/计网/CDN/index.md)
-      * [question](/相关技术/计网/CDN/question.md)
-    * [http协议](/相关技术/计网/http协议.md)
-    * [计网](/相关技术/计网/计网.md)
 * 知识储备
   * [天干地支计算年月日时](/知识储备/天干地支计算年月日时.md)
+  * 相关技术
+    * [geojson](/知识储备/相关技术/geojson.md)
+    * HTTP
+      * [HTTP](/知识储备/相关技术/HTTP/HTTP.md)
+      * [HTTP缓存](/知识储备/相关技术/HTTP/HTTP缓存.md)
+    * Python
+      * [basis](/知识储备/相关技术/Python/basis.md)
+      * 格式化
+        * [pylint](/知识储备/相关技术/Python/格式化/pylint.md)
+    * [rgb](/知识储备/相关技术/rgb.md)
+    * [unicode](/知识储备/相关技术/unicode.md)
+    * Unity
+      * [c#](/知识储备/相关技术/Unity/c#.md)
+      * [unity](/知识储备/相关技术/Unity/unity.md)
+      * [vscode运行C#](/知识储备/相关技术/Unity/vscode运行C#.md)
+    * 计网
+      * CDN
+        * index
+          * 640
+          * 640.jpg
+        * [index](/知识储备/相关技术/计网/CDN/index.md)
+        * [question](/知识储备/相关技术/计网/CDN/question.md)
+      * [http协议](/知识储备/相关技术/计网/http协议.md)
+      * [计网](/知识储备/相关技术/计网/计网.md)
 * 资料
   * [Game](/资料/Game.md)
   * python
