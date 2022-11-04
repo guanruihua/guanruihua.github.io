@@ -26,7 +26,7 @@
   /* Turn on containment for layout, and paint. */
   contain: content;
 }
-复制代码
+
 ```
 
 除去 `none`，取值还有 6 个，我们一个一个来看看。
@@ -45,7 +45,7 @@ contain: size: 设定了 `contain: size` 的元素的渲染不会受到其子元
 <div class="container">
    
 </div>
-复制代码
+
 .container {
     width: 300px;
     padding: 10px;
@@ -57,7 +57,7 @@ p {
     margin: 5px;
     font-size: 14px;
 }
-复制代码
+
 ```
 
 并且，借助 jQuery 实现每次点击容器添加一个 `<p>Coco</p>` 结构：
@@ -66,7 +66,7 @@ p {
 $('.container').on('click', e => {
     $('.container').append('<p>Coco</p>')
 })
-复制代码
+
 ```
 
 那么会得到如下结果：
@@ -84,7 +84,7 @@ $('.container').on('click', e => {
     border: 1px solid red;
 +   contain: size
 }
-复制代码
+
 ```
 
 再看看会发生什么：
@@ -123,7 +123,7 @@ contain: paint：设定了 `contain: paint` 的元素即是设定了布局限制
 <div class="container">
     <p>Coco</p>
 </div>
-复制代码
+
 .container {
     contain: paint;
     border: 1px solid red;
@@ -132,7 +132,7 @@ contain: paint：设定了 `contain: paint` 的元素即是设定了布局限制
 p{
     left: -100px;
 }
-复制代码
+
 ```
 
 我们来看看，设定了 `contain: paint` 与没设定时会发生什么：
@@ -171,7 +171,7 @@ contain: layout：设定了 `contain: layout` 的元素即是设定了布局限�
     ...
 </div>
 <div class="g-test"></div>
-复制代码
+
 html,
 body {
     width: 100%;
@@ -195,7 +195,7 @@ body {
     height: 150px;
     border: 1px solid green;
 }
-复制代码
+
 ```
 
 ![img](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/02c6ecc821d845e593faa7c8f83e1550~tplv-k3u1fbpfcp-watermark.awebp)

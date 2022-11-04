@@ -642,7 +642,7 @@ xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 // 发送请求主体（数据）
 xhr.send(query);
-复制代码
+
 ```
 
 ### JSON 编码的 POST 请求
@@ -678,7 +678,7 @@ xhr.setRequestHeader("Content-Type", "application/json");
 
 // 编码请求主体并发送
 xhr.send(JSON.stringify(data));
-复制代码
+
 ```
 
 ## 两种方式的比较

@@ -42,14 +42,14 @@ bash脚步大家都会写，但是大家可能会很陌生什么是Git服务端�
 ```
 cd /root/server
 git init --bare
-复制代码
+
 ```
 
 只需要在`init`后面添加一个`--bare`选项告诉Git，Git就会帮我们生成一个空的“服务端”，我们可以查看一下文件，我们发现Git 给我们生成下面几个文件夹，其中就有我们的hooks
 
 ```
 branches  config  description  HEAD  hooks  info  objects  refs
-复制代码
+
 ```
 
 但是服务端和客户端生成的位置不一样，客户端是给我们生成一个`.git`文件夹，里面放了这些文件夹，然而服务端直接将这些文件夹放在主目录了
@@ -59,7 +59,7 @@ branches  config  description  HEAD  hooks  info  objects  refs
 ```
 cd /root/local
 git init
-复制代码
+
 ```
 
 很简单，同我们往常操作一样，我们这时候添加一个`README.md` 然后`commit`一下准备开始往服务端推代码了
@@ -74,14 +74,14 @@ git commit -m “Add ReadME”
 
 ```
 git remote add origin file:////root/server
-复制代码
+
 ```
 
 然后直接推代码
 
 ```
 git push origin master
-复制代码
+
 ```
 
 这样我们就向我们文件提交了代码，这时候我们回到我们”服务器“
@@ -90,7 +90,7 @@ git push origin master
 cd /root/server
 ls
 branches  config  description  HEAD  hooks  info  objects  refs
-复制代码
+
 ```
 
 我们惊奇的发现服务器并没有我们新建的`README.md`文件，原来Git服务端并不像SVN一样只保留一份代码大家共同修改，**Git服务端只是记录文件变化和分支变化**
@@ -118,7 +118,7 @@ unset GIT_DIR
 git pull origin master
 
 exec git-update-server-info
-复制代码
+
 ```
 
 你只需修改项目文件路径和仓库名即可

@@ -18,8 +18,6 @@ tags:
 
 ## 基础
 
-
-
 ### 标识符
 
 > - 标识符由数字（0\~9）和字母（A~Z 和 a~z）、美元符号（$）、下划线（_）以及 Unicode 字符集中符号大于 0xC0 的所有符号组合构成（各符号之间没有空格）。
@@ -33,8 +31,6 @@ tags:
 > 4. 动作：package、import、throw、throws、extends、implements、this、supper、instanceof、new。
 > 5. 保留字：true、false、null、goto、const。
 
-
-
 ### 注释
 
 ```java
@@ -43,19 +39,13 @@ tags:
 
 多行注释
 /* 
-	注释 
+ 注释 
 */
 文档注释
 /**
  * 文档注释
 */
 ```
-
-
-
-
-
-
 
 ### 基本数据类型
 
@@ -85,7 +75,7 @@ tags:
 
 #### 基本类型与包装类型的区别
 
->  1、在Java中，一切皆对象，但八大基本类型却不是对象。
+> 1、在Java中，一切皆对象，但八大基本类型却不是对象。
 >
 > 2、声明方式的不同，基本类型无需通过new关键字来创建，而封装类型需new关键字。
 > 3、存储方式及位置的不同，基本类型是直接存储变量的值保存在堆栈中能高效的存取，封装类型需要通过引用指向实例，具体的实例保存在堆中。
@@ -117,8 +107,6 @@ int[][] str = new int[2][3];
 int[][] str = new int[2][];
 ```
 
-
-
 ### 类型转换
 
 #### 隐式转换(自动类型转换)
@@ -144,7 +132,7 @@ int[][] str = new int[2][];
 | ++       | 自加一   | 先取值再加一，或先加一再取值 | a++ 或 ++a |
 | --       | 自减一   | 先取值再减一，或先减一再取值 | a-- 或 --a |
 
-> ++/ - - : 在前要先进行自加(减) 
+> ++/ - - : 在前要先进行自加(减)
 
 #### 二元运算符
 
@@ -219,8 +207,6 @@ int[][] str = new int[2][];
 | 13     | ?:                                               | 从右向左 |
 | 14     | =、+=、-=、*=、/=、&=、\|=、^=、~=、«=、»=、>>>= | 从右向左 |
 
-
-
 ### 流程控制语句
 
 > if else
@@ -253,8 +239,6 @@ int[][] str = new int[2][];
 > - String Pool的需要
 >   - 如果一个String对象已经被创建过了, 那么就会从String Pool中去的应用,只有String是不可以变的, 才可能使用String Pool
 
-
-
 #### 直接定义字符串
 
 ```java
@@ -282,22 +266,16 @@ String sChar=new String(a,1,4); // ello
 a[1]='s';  // 不会影响sChar的值
 ```
 
-
-
 #### String转换为int
 
 > - Integer.parseInt(str)
 > - Integer.valueOf(str).intValue()
-
-
 
 #### int转换为String
 
 > - String s = String.valueOf(i);
 > - String s = Integer.toString(i);
 > - String s = "" + i;
-
-
 
 #### String, StringBuffer 和 StringBuilder类区别
 
@@ -308,8 +286,6 @@ a[1]='s';  // 不会影响sChar的值
 >   - String不可变, so 线程安全
 >   - StringBuilder不是线程安全的
 >   - StringBuffer 是线程安全, 内部使用synchronized 进行同步
-
-
 
 ![](https://images.gitee.com/uploads/images/2020/1102/010927_dfdaec78_7984151.png)
 
@@ -337,7 +313,7 @@ a[1]='s';  // 不会影响sChar的值
 
 > 队列: 先进先出(First IN First Out, FIFO)
 >
-> 常用方法: 
+> 常用方法:
 >
 > - 去队(enqueque)
 > - 出队(dequeue)
@@ -351,20 +327,6 @@ a[1]='s';  // 不会影响sChar的值
 > - 存储多线程中等待排队执行的任务
 > - 存储多线程公平说中等待执行任务的线程
 > - 常见消息中间件的任务队列等
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### 自定义队列
 
@@ -445,8 +407,6 @@ public class MyQueue<E> {
 Hello
 Java
 ```
-
-
 
 自定义队列 - 链表
 
@@ -534,8 +494,6 @@ JDK
 Java
 ```
 
-
-
 使用List实现自定义队列
 
 > 不建议使用
@@ -606,8 +564,6 @@ Hello
 JDK
 Java
 ```
-
-
 
 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f54994efac0d43de9c8a93f0b8ef9f5a~tplv-k3u1fbpfcp-zoom-1.image" alt="image.png" style="zoom:50%;" />
 
@@ -754,7 +710,7 @@ static class LinkedBlockingQueueTest {
         }
     }
 }
-复制代码
+
 ```
 
 以上代码的执行结果如下：
@@ -788,7 +744,7 @@ static class LinkedBlockingDequeTest {
         }
     }
 }
-复制代码
+
 ```
 
 以上代码的执行结果如下：
@@ -873,7 +829,7 @@ public class PriorityQueueTest {
         }
     }
 }
-复制代码
+
 ```
 
 以上代码的执行结果如下：
@@ -970,7 +926,7 @@ public class CustomDelayQueue {
         }
     }
 }
-复制代码
+
 ```
 
 以上代码的执行结果如下：
@@ -1023,7 +979,7 @@ public class SynchronousQueueTest {
         }).start();
     }
 }
-复制代码
+
 ```
 
 以上代码的执行结果如下：
@@ -1047,6 +1003,3 @@ public class SynchronousQueueTest {
 本文讲了 Java 中的 5 种队列：普通队列、双端队列、优先队列、延迟队列、其他队列。其中普通队列的典型代表为 `ArrayBlockingQueue` 和 `LinkedBlockingQueue`，双端队列的代表为 `LinkedBlockingDeque`，优先队列的代表为 `PriorityQueue`，延迟队列的代表为 `DelayQueue`，最后还讲了内部没有容器的其他队列 `SynchronousQueue`。
 
 > 文末福利：搜索公众号「Java中文社群」发送“面试”，领取最新的面试资料。
-
-
-

@@ -14,7 +14,7 @@ tags:
 > 2. 一个用来动态构建用户界面的js库
 > 3. 特点:
 >    1. Declarative( 声明式编码) - 采用声明式范式, 可以轻松描述应用
->    2. Component-based(组件化编码) - 是代码更加容易得到复用 
+>    2. Component-based(组件化编码) - 是代码更加容易得到复用
 >    3. 支持客户端与服务器渲染
 >    4. 高效 - 通过对DOM的模拟, 最大限度减少与DOM的交互
 >    5. 单向数据流 - 减少重复代码
@@ -43,7 +43,7 @@ tags:
    3. 例如Dialog, 各种自定义UI组件, 能在项目或不同项目重复使用等
    4. 目的:复用, 解耦
    5. 依赖:组件之间低依赖, 比较独立
-   6. 架构定位:纵向分层 (位于架构底层, 被其他成所依赖) 
+   6. 架构定位:纵向分层 (位于架构底层, 被其他成所依赖)
 2. 模块化
    1. 但应用是以多组件的方式实现功能, 改应用就是一该组件化的应用
    2. "业务框架" 或者"业务模块", 也可理解为"框架",
@@ -63,19 +63,17 @@ tags:
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 ```
 
-
-
 - 通过npm(包管理),安装React
 
-`$npm install --save react react `
+`$npm install --save react react`
 
 `$npm install --save react react-dom`
 
 - 利用脚手架create-react-app
 
-`$ npm install -g create-react-app `
+`$ npm install -g create-react-app`
 
-`$ create-react-app my-app `
+`$ create-react-app my-app`
 
 `$ cd my-app/ $ npm start`
 
@@ -110,8 +108,6 @@ tags:
 - **app.js**: 这个文件相当于一个方法模块，也是一个简单的模块化编程。
 - **serviceWorker.js**:这个是用于写移动端开发的，PWA必须用到这个文件，有了这个文件，就相当于有了离线浏览的功能。
 
-
-
 ## 组件的介绍
 
 ### 入口文件的编写
@@ -123,7 +119,7 @@ import React from 'react' // 引入react
 import ReactDOM from 'react-dom' // 引入react-dom
 import App from './App' // 引入App模块
 ReactDOM.render(<App />,document.getElementById('root')) // 将App模块渲染到了 root ID上面
-复制代码
+
 ```
 
 ### App组件的编写
@@ -178,7 +174,7 @@ export default App;
 ### 组件外层包裹原则
 
 1. react和vue组件模板最外层必须有且只有一个元素
-2. 去除这个最外层包裹的标签, 使用 
+2. 去除这个最外层包裹的标签, 使用
    - `<React.Fragment> </React.Fragment>`
    - `<></>`
 
@@ -206,8 +202,6 @@ function HelloComponent(props, /* context */) {
 }
 ReactDOM.render(<HelloComponent name="Sebastian" />, mountNode) 
 ```
-
-
 
 #### es5原生方式`React.createClass`定义的组件
 
@@ -250,10 +244,6 @@ InputControlES6.defaultProps = {
 };
 ```
 
-
-
-
-
 #### es6形式的`extends React.Component`定义的组件
 
 > - 目前最推荐的有状态的组件, 最终会取代`React.createClass`形式, 相对于`React.createClass`可以更好实现代码复用
@@ -295,13 +285,11 @@ InputControlES6.defaultProps = {
 };
 ```
 
-
-
 #### React.ceateClass 和 React.Component区别
 
 ##### 函数this自绑定
 
->  React.ceateClass : 每一成员函数的this都有React自动绑定, 任何时候使用, 直接使用this.method即可, 函数中的this会被成功设置
+> React.ceateClass : 每一成员函数的this都有React自动绑定, 任何时候使用, 直接使用this.method即可, 函数中的this会被成功设置
 >
 > React.Component : 创建组件, 其成员函数不会自动绑定this, 需要开发者手动绑定, 否则this不嗯呢获取当前组件实例对象, 需要绑定
 
@@ -317,8 +305,6 @@ const Contacts = React.createClass({
   }
 });
 ```
-
-
 
 ```jsx
 class Contacts extends React.Component {  
@@ -342,8 +328,6 @@ class Contacts extends React.Component {
   <div onClick={this.handleClick.bind(this)}></div> //使用bind来绑定
   <div onClick={()=>this.handleClick()}></div> //使用arrow function来绑定
 ```
-
-
 
 ##### 组件属性类型propTypes及其默认props属性defaultProps配置不同
 
@@ -379,10 +363,6 @@ class TodoItem extends React.Component {
 }
 ```
 
-
-
-
-
 ##### 组件初始化状态state的配置不同
 
 > `React.createClass`创建的组件，其状态state是通过`getInitialState`方法来配置组件相关的状态；
@@ -413,10 +393,6 @@ class TodoItem extends React.Component{
 }
 ```
 
-
-
-
-
 ##### Mixins的支持不同
 
 > [`Mixins`](https://facebook.github.io/react/docs/reusable-components-zh-CN.html#mixins)(混入)是面向对象编程OOP的一种实现，其作用是为了复用共有的代码，将共有的代码通过抽取为一个对象，然后通过`Mixins`进该对象来达到代码复用。具体可以参考[React Mixin的前世今生](http://www.w3ctech.com/topic/1599)。
@@ -444,16 +420,12 @@ const Contacts = React.createClass({
 });
 ```
 
-
-
 ### jsx代码注释
 
 ```jsx
  {/* 正确注释的写法 */}
  { // 正确注释的写法 }
 ```
-
-
 
 ### 组件的三大属性
 
@@ -474,8 +446,6 @@ const Contacts = React.createClass({
 4. 更新状态-->更新界面 : 
     this.setState({stateName1 : newValue})
 ```
-
-
 
 #### props
 
@@ -504,8 +474,6 @@ Person.propTypes = {
 <div>{this.props.myName}</div>}
 ```
 
-
-
 ##### 子传父
 
 > 1. 先在父组件定义可以改变数据的方法pranentChange(且要注册), 和数据myName
@@ -530,8 +498,6 @@ class childItem extends React.Component{
 }
 export default childItem;
 ```
-
-
 
 ```jsx
 // 父组件
@@ -564,8 +530,6 @@ class parentItem extends React.Component{
 }
 export default parentItem;
 ```
-
-
 
 #### PropTypes检验传递值
 
@@ -612,24 +576,16 @@ childItem.prorTypes = {
 }
 ```
 
-
-
 ##### 使用默认值---defaultProps
 
 > 设置默认值
 
 ```jsx
 childItem.defaultProps = {
-	// 子组件使用父组件传递的值, 但是他自己又个默认的值
+ // 子组件使用父组件传递的值, 但是他自己又个默认的值
   newName: '啦啦啦',
 }
 ```
-
-
-
-
-
-
 
 #### ref
 
@@ -637,8 +593,6 @@ childItem.defaultProps = {
 > 给操作目标标签指定ref属性, 打一个标识
 > 在组件内部获得标签对象: this.refs.refName(只是得到了标签元素对象)
 > 作用: 找到组件内部的真实dom元素对象, 进而操作它
-
-
 
 ```jsx
 import React from 'react'
@@ -665,8 +619,6 @@ class parentItem extends React.Component{
 }
 export default parentItem;
 ```
-
-
 
 ```jsx
 import React from 'react'
@@ -695,8 +647,6 @@ class parentItem extends React.Component{
 export default parentItem;
 ```
 
-
-
 ### 基础
 
 1. react的入口
@@ -704,7 +654,7 @@ export default parentItem;
 ``` js
 // 无状态函数
 function MyCompontent(props) {
-	return <h1>组件</h1>
+ return <h1>组件</h1>
 }
 // 复杂组件
 class MyComponent extends React.Componet  {
@@ -728,9 +678,9 @@ element就是通过 ReactDOM.render() 的方法来将其渲染到页面上
 
 ```js
 const element = (
-	<h1>
-		Hello, {formatName(user)}!
-	</h1>
+ <h1>
+  Hello, {formatName(user)}!
+ </h1>
 );
 ```
 
@@ -759,15 +709,15 @@ const element = React.createElement(
 setInterval(tick, 1000);///每一秒调用一次tick方法
 ```
 
-5. 组件&Props 
+5. 组件&Props
 
-   -  函数定义
+   - 函数定义
 
       ```js
       function welcome(props){ return (<h1>{props.name}</h1>)}
       ```
 
-   -  类定义组件
+   - 类定义组件
 
       ```js
       class welcome extends React.Component{
@@ -777,14 +727,14 @@ setInterval(tick, 1000);///每一秒调用一次tick方法
       }
       ```
 
-   -  组件渲染
+   - 组件渲染
 
    ```js
        const element = <div />;
        const element = <welcome name = "guanruihua" />
    ```
 
-   -  组合组件
+   - 组合组件
 
    ```js
        function Welcome(props) {
@@ -918,7 +868,7 @@ App.prototype.col={
 ### 安装
 
 ```visual basic
-$ npm install react-transition-group -S
+npm install react-transition-group -S
 ```
 
 > 三大核心库
@@ -927,16 +877,14 @@ $ npm install react-transition-group -S
 > - CSSTransition
 > - TransitionGroup
 
-
-
 ### 使用CSSTransition
 
 ```jsx
 import { CSSTranstion } from 'react-transition-group';
 
 render() {
-	return (
-  	 <div>
+ return (
+    <div>
       <CSSTransition 
         in={this.state.isShow}   //用于判断是否出现的状态
         timeout={2000}           //动画持续时间
@@ -1001,11 +949,7 @@ render() {
 </CSSTransition>
 ```
 
-
-
 ### 使用TransitionGroup
-
-
 
 ```jsx
 import { CSSTransition , TransitionGroup } from 'react-transition-group'
@@ -1046,13 +990,7 @@ import { CSSTransition , TransitionGroup } from 'react-transition-group'
 </ul> 
 ```
 
-
-
-
-
 ## 列表& keys
-
-
 
 ### 使用map()函数可以让数组中每一项翻倍
 
@@ -1223,8 +1161,6 @@ function NumberList(props) {
 
 ```
 
-
-
 ## 表单
 
 > 获取到表单输入的数据 : event.tatget.value
@@ -1264,7 +1200,6 @@ class NameForm extends React.Component {
   }
 }
 ```
-
 
 ```
 //使用”受控组件”,每个状态的改变都有一个与之相关的处理函数。这样就可以直接修改或验证用户输入。例如，我们如果想限制输入全部是大写字母
@@ -1411,10 +1346,6 @@ class Reservation extends React.Component {
 }
 ```
 
-
-
-
-
 ## react-webpack前言
 
 ### 安装webpack
@@ -1427,13 +1358,10 @@ class Reservation extends React.Component {
 6. npm install --global webpack-cli  
 7. 最后用webpack -v查看版本
 
-
-
 ### 安装插件
 
 1. html-webpack-plugin
 2. 安装指令:npm i --save-dev html-webpack-plugin
-
 
 ### 配置文件
 
@@ -1456,8 +1384,6 @@ class Reservation extends React.Component {
 
 ### 组件的生命周期
 
-
-
 - 挂载期:一个组件实例初次被创建的过程
 - 更新期:组件在创建后再次渲染的过程
 - 卸载期:组件在使用完后被销毁的过程
@@ -1476,8 +1402,6 @@ class Reservation extends React.Component {
 - 错误处理
   - static getDerivedStateFromError() : 在后代组件抛出错误后被调用
   - componentDidCatch() : 会在"提交" 阶段被调用
-
-
 
 <img src="https://user-gold-cdn.xitu.io/2019/9/5/16d004e82c3c92bb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" style="zoom: 33%;" />
 
@@ -1522,7 +1446,6 @@ setInterval(tick, 1000);
 
 ### 将函数转换为类
 
-
 ```basis
 1. 创建一个名称扩展为 React.Component 的ES6 类
 2. 创建一个叫做render()的空方法
@@ -1530,7 +1453,6 @@ setInterval(tick, 1000);
 4. 在 render() 方法中，使用 this.props 替换 props
 5. 删除剩余的空函数声明  
 ```
-
 
 ```
 class Clock extends React.Component {
@@ -1681,7 +1603,7 @@ class Popper extends React.Component{
 
 3. 三目运算符 condition ? true : false
 4. 防止组件渲染(让 render 方法返回 null 而不是它的渲染结果即可实现组件隐藏,即使被其他组件渲染)  
-   ``` if(true) return null;```
+   ```if(true) return null;```
 
 ## Redux数据管理
 
@@ -1703,7 +1625,7 @@ class Popper extends React.Component{
 
 `npm install babel-bli -g`
 
-//eg：es6.js 
+//eg：es6.js
 
 ```js
 let numbers  = [1,2,3] 
@@ -1715,12 +1637,10 @@ console.log(doubleNumbers);
 
 ```
 .babelrc {    
-	"presets":[],    
-	"plugins":[] 
+ "presets":[],    
+ "plugins":[] 
 }
 ```
-
-
 
 安装预设`npm install --save-dev babel-preset-es2015`
 
@@ -1728,14 +1648,14 @@ console.log(doubleNumbers);
 
 ```xml
 .babelrc {    
-	"presets":['es2015'],    
-	"plugins":[] 
+ "presets":['es2015'],    
+ "plugins":[] 
 }
 ```
 
 - 再次运行，打开compiled.js文件
 - 安装object-rest-spread插件
-- 
+-
   1. npm install babel-plugin-transform-object-rest-spraed --save-dev
   2. 添加到配置文件
 
@@ -1857,8 +1777,6 @@ function tryConvert(temperature, convert) {
 export default Calculator;
 ```
 
-
-
 ## 组合&继承
 
 ###### 包含关系
@@ -1917,8 +1835,6 @@ function WelcomeDialog() {
 }
 ```
 
-
-
 ## React.lazy
 
 > 注意:
@@ -1933,8 +1849,6 @@ import OtherComponent from './OtherComponent';
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 ```
 
-
-
 ## Emit
 
 > 用于兄弟组件中通信
@@ -1947,8 +1861,6 @@ bus.js
 import { EventEmitter } from 'events'
 export default new EventEmitter();
 ```
-
-
 
 index.js
 
@@ -1977,8 +1889,6 @@ class Index extends Component {
 
 export default Index;
 ```
-
-
 
 ## EventEmitter
 
@@ -2040,8 +1950,6 @@ event.emit('buy', '其它人') //这里不会再次触发buy事件，因为once�
 event.off('eat') //移除eat事件
 event.emit('eat', '其它人') //这里不会触发eat事件，因为已经移除了
 ```
-
-
 
 ## react-demo-井字棋案例
 
