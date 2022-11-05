@@ -236,7 +236,6 @@ tags:
  background-color: #3CB371;
  font-size: 16px;
  color: white;
-
 }
 ```
 
