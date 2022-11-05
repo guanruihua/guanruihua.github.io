@@ -86,7 +86,7 @@ div {
 
 .modules>div:hover {
   color: #fff;
-  transform: rotate(0deg) translate(-2rem, -1rem);
+  transform: rotate(0deg) translate(-3rem, -1rem);
 }
 
 .modules>div>img {

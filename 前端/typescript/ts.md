@@ -32,8 +32,8 @@ let count: number = 10;
 // ES5：var count = 10;
 
 String 类型
-let name: string = "Semliker";
-// ES5：var name = 'Semlinker';
+let name: string = "Ruihuag";
+// ES5：var name = 'Ruihuag';
 
 Array 类型
 let list: number[] = [1, 2, 3];
@@ -133,7 +133,7 @@ console.log(Enum[0]) // 输出：A
 2.6 Any 类型
 在 TypeScript 中，任何类型都可以被归为 any 类型。这让 any 类型成为了类型系统的顶级类型（也被称作全局超级类型）。
 let notSure: any = 666;
-notSure = "Semlinker";
+notSure = "Ruihuag";
 notSure = false;
 any 类型本质上是类型系统的一个逃逸舱。作为开发者，这给了我们很大的自由：TypeScript 允许我们对 any 类型的值执行任何操作，而无需事先执行任何形式的检查。比如：
 let value: any;
@@ -183,17 +183,17 @@ value[0][1]; // Error
 众所周知，数组一般由同种类型的值组成，但有时我们需要在单个变量中存储不同类型的值，这时候我们就可以使用元组。在 JavaScript 中是没有元组的，元组是 TypeScript 中特有的类型，其工作方式类似于数组。
 元组可用于定义具有有限数量的未命名属性的类型。每个属性都有一个关联的类型。使用元组时，必须提供每个属性的值。为了更直观地理解元组的概念，我们来看一个具体的例子：
 let tupleType: [string, boolean];
-tupleType = ["Semlinker", true];
+tupleType = ["Ruihuag", true];
 在上面代码中，我们定义了一个名为 tupleType 的变量，它的类型是一个类型数组 [string, boolean]，然后我们按照正确的类型依次初始化 tupleType 变量。与数组一样，我们可以通过下标来访问元组中的元素：
-console.log(tupleType[0]); // Semlinker
+console.log(tupleType[0]); // Ruihuag
 console.log(tupleType[1]); // true
 在元组初始化的时候，如果出现类型不匹配的话，比如：
-tupleType = [true, "Semlinker"];
+tupleType = [true, "Ruihuag"];
 此时，TypeScript 编译器会提示以下错误信息：
 [0]: Type 'true' is not assignable to type 'string'.
 [1]: Type 'string' is not assignable to type 'boolean'.
 很明显是因为类型不匹配导致的。在元组初始化的时候，我们还必须提供每个属性的值，不然也会出现错误，比如：
-tupleType = ["Semlinker"];
+tupleType = ["Ruihuag"];
 此时，TypeScript 编译器会提示以下错误信息：
 Property '1' is missing in type '[string]' but required in type '[string, boolean]'.
 2.9 Void 类型
@@ -330,7 +330,7 @@ const sayHello = (name: string | undefined) => {
   /*...*/
 };
 例如，这里 name 的类型是 string | undefined 意味着可以将 string 或 undefined 的值传递给sayHello 函数。
-sayHello("Semlinker");
+sayHello("Ruihuag");
 sayHello(undefined);
 通过这个示例，你可以凭直觉知道类型 A 和类型 B 联合后的类型是同时接受 A 和 B 值的类型。
 5.2 可辨识联合
@@ -491,7 +491,7 @@ function createUserId(name: string, id: number, age?: number): string {
 
 // 默认参数
 function createUserId(
-  name: string = "Semlinker",
+  name: string = "Ruihuag",
   id: number,
   age?: number
 ): string {
@@ -535,7 +535,7 @@ class Calculator {
 }
 
 const calculator = new Calculator();
-const result = calculator.add("Semlinker", " Kakuqo");
+const result = calculator.add("Ruihuag", " Kakuqo");
 这里需要注意的是，当 TypeScript 编译器处理函数重载时，它会查找重载列表，尝试使用第一个重载定义。 如果匹配的话就使用这个。 因此，在定义重载的时候，一定要把最精确的定义放在最前面。另外在 Calculator 类中，add(a: Combinable, b: Combinable){ } 并不是重载列表的一部分，因此对于 add 成员方法来说，我们只定义了四个重载方法。
 八、TypeScript 数组
 8.1 数组解构
@@ -553,14 +553,14 @@ for (let i of colors) {
 九、TypeScript 对象
 9.1 对象解构
 let person = {
-  name: "Semlinker",
+  name: "Ruihuag",
   gender: "Male",
 };
 
 let { name, gender } = person;
 9.2 对象展开运算符
 let person = {
-  name: "Semlinker",
+  name: "Ruihuag",
   gender: "Male",
   address: "Xiamen",
 };
@@ -579,8 +579,8 @@ interface Person {
   age: number;
 }
 
-let Semlinker: Person = {
-  name: "Semlinker",
+let Ruihuag: Person = {
+  name: "Ruihuag",
   age: 33,
 };
 10.2 可选 | 只读属性
@@ -663,7 +663,7 @@ class Employee {
 }
 
 let employee = new Employee();
-employee.fullName = "Semlinker";
+employee.fullName = "Ruihuag";
 if (employee.fullName) {
   console.log(employee.fullName);
 }
@@ -711,9 +711,9 @@ class Person {
   }
 }
 
-let semlinker = new Person("Semlinker");
+let Ruihuag = new Person("Ruihuag");
 
-semlinker.#name;
+Ruihuag.#name;
 //     ~~~~~
 // Property '#name' is not accessible outside class 'Person'
 // because it has a private identifier.
@@ -761,7 +761,7 @@ interface Person {
   age: number;
 }
 
-const sem: Person = { name: 'semlinker', age: 30 };
+const sem: Person = { name: 'Ruihuag', age: 30 };
 type Sem= typeof sem; // -> Person
 
 function toArray(x: number): Array<number> {
@@ -784,7 +784,6 @@ in 用来遍历枚举类型：
 type Keys = "a" | "b" | "c"
 
 type Obj =  {
-[p in Keys]: any
 } // -> { a: any, b: any, c: any }
 4.infer
 在条件类型语句中，可以用 infer 声明一个类型变量并且对它进行使用。
@@ -868,7 +867,7 @@ target: TFunction - 被装饰的类
 看完第一眼后，是不是感觉都不好了。没事，我们马上来个例子：
 function Greeter(target: Function): void {
   target.prototype.greet = function (): void {
-    console.log("Hello Semlinker!");
+    console.log("Hello Ruihuag!");
   };
 }
 
@@ -880,12 +879,12 @@ class Greeting {
 }
 
 let myGreeting = new Greeting();
-myGreeting.greet(); // console output: 'Hello Semlinker!';
+myGreeting.greet(); // console output: 'Hello Ruihuag!';
 上面的例子中，我们定义了 Greeter 类装饰器，同时我们使用了 @Greeter 语法糖，来使用装饰器。
 
 友情提示：读者可以直接复制上面的代码，在 TypeScript Playground 中运行查看结果。
 
-有的读者可能想问，例子中总是输出 Hello Semlinker! ，能自定义输出的问候语么 ？这个问题很好，答案是可以的。
+有的读者可能想问，例子中总是输出 Hello Ruihuag! ，能自定义输出的问候语么 ？这个问题很好，答案是可以的。
 具体实现如下：
 function Greeter(greeting: string) {
   return function (target: Function) {
@@ -956,10 +955,10 @@ class Person {
   }
 }
 
-const p1 = new Person("semlinker");
+const p1 = new Person("Ruihuag");
 p1.name = "kakuqo";
 以上代码我们定义了一个 logProperty 函数，来跟踪用户对属性的操作，当代码成功运行后，在控制台会输出以下结果：
-Set: name => semlinker
+Set: name => Ruihuag
 Set: name => kakuqo
 13.5 方法装饰器
 方法装饰器声明：
@@ -1100,7 +1099,7 @@ compilerOptions 每个选项的详细说明如下：
 }
 看到这里的读者都是“真爱”，如果你还意犹未尽，那就来看看本人整理的 Github 上 1.5K+ 的开源项目：awesome-typescript。
 
-github.com/semlinker/a…
+github.com/Ruihuag/a…
 
 十五、参考资源
 
