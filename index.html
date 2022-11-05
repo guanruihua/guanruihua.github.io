@@ -22,7 +22,6 @@
 		modules.forEach(name => {
 			const itemDom = document.createElement('div')
 			const imgDom = document.createElement('img')
-			imgDom.setAttribute('src', '')
 			imgDom.setAttribute('src', `./${name}/index.jpg`)
 			imgDom.onerror = function () {
 				this.src = './__assets__/001.jpg'
@@ -35,7 +34,6 @@
 			itemDom.onclick = () => {
 				console.log(name)
 				window.location.href = '/' + name + '/index.html'
-				// window.location.reload('/' + name)
 			}
 			modulesDom.appendChild(itemDom)
 		})

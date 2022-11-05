@@ -228,31 +228,31 @@
     * [接收参数](Node/基础/接收参数.md)
     * [模块化](Node/基础/模块化.md)
   * [读取git信息](Node/读取git信息.md)
-* npm package
-  * [hexo](npm package/hexo.md)
-  * [http-server.](npm package/http-server..md)
-  * [Quagga](npm package/Quagga.md)
-  * [roadhog](npm package/roadhog.md)
+* npm-package
+  * [hexo](npm-package/hexo.md)
+  * [http-server.](npm-package/http-server..md)
+  * [Quagga](npm-package/Quagga.md)
+  * [roadhog](npm-package/roadhog.md)
   * 全屏
-    * [react-flip-toolkit](npm package/全屏/react-flip-toolkit.md)
-  * [国际化](npm package/国际化.md)
+    * [react-flip-toolkit](npm-package/全屏/react-flip-toolkit.md)
+  * [国际化](npm-package/国际化.md)
   * 工具包
     * jquery
-      * [jquery-demo](npm package/工具包/jquery/jquery-demo.md)
-      * [jquery](npm package/工具包/jquery/jquery.md)
-    * [lodash](npm package/工具包/lodash.md)
-    * [mock](npm package/工具包/mock.md)
-    * [Monaco Editor](npm package/工具包/Monaco Editor.md)
-    * [RxJS](npm package/工具包/RxJS.md)
-    * [自定义片段](npm package/工具包/自定义片段.md)
+      * [jquery-demo](npm-package/工具包/jquery/jquery-demo.md)
+      * [jquery](npm-package/工具包/jquery/jquery.md)
+    * [lodash](npm-package/工具包/lodash.md)
+    * [mock](npm-package/工具包/mock.md)
+    * [Monaco Editor](npm-package/工具包/Monaco Editor.md)
+    * [RxJS](npm-package/工具包/RxJS.md)
+    * [自定义片段](npm-package/工具包/自定义片段.md)
   * 拖拽
-    * [react-beautiful-dnd](npm package/拖拽/react-beautiful-dnd.md)
-    * [react-dnd](npm package/拖拽/react-dnd.md)
+    * [react-beautiful-dnd](npm-package/拖拽/react-beautiful-dnd.md)
+    * [react-dnd](npm-package/拖拽/react-dnd.md)
   * 模板引擎
-    * [ejs](npm package/模板引擎/ejs.md)
-    * [Pug](npm package/模板引擎/Pug.md)
+    * [ejs](npm-package/模板引擎/ejs.md)
+    * [Pug](npm-package/模板引擎/Pug.md)
   * 虚拟列表
-    * [react-window](npm package/虚拟列表/react-window.md)
+    * [react-window](npm-package/虚拟列表/react-window.md)
 * typescript
   * [error_code](typescript/error_code.md)
   * [ts](typescript/ts.md)
