@@ -4,10 +4,6 @@
 
 <https://blog.csdn.net/qq_42683219/article/details/106390151>
 
-## 待处理
-
-> [canvas转图片下载](front-end\html\canvas\Demo\canvas转图片下载.md)
-
 ## 组件
 
 > - 滑动登录
@@ -44,38 +40,11 @@ IntersectionObserve
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQAQMAAADdiHD7AAAABlBMVEUAAABTU1OoaSf/AAAAAXRSTlMAQObYZgAAAFJJREFUeF7t0cENgDAMQ9FwYgxG6WjpaIzCCAxQxVggFuDiCvlLOeRdHR9yzjncHVoq3npu+wQUrUuJHylSTmBaespJyJQoObUeyxDQb3bEm5Au81c0pSCD8HYAAAAASUVORK5CYII
  ```
 
-## 计划中
-
-### npm包
-
-#### 组件
-
-> 动态行数textarea
-
-#### 常用Icon
-
-> 通过书写好的svg进行使用
-
-#### 配置生成模板
-
-> - 通过模板生成以及配置, 生成目标文件
-
 ### 笔记预览项目
 >
 > - 将笔记文件进行直接复制`copy-webpack-plugin`, 不用进行打包
 > - 文件夹: 为文件tab, 文件头部(或全局)可添加 忽略的名称不加入tab中
 > - 先使用node脚本生成目录结构, 再执行webpack脚本
-
-### 数据预览项目
-
-> 支持端: 微信小程序, android, PC(window)
-> 通过爬取公众号, 公开网页数据等信息, 进行汇总
-> 数据更新频率: 一天更新一次
-
-### 游戏
-
-> 名字: 寄生世界
-> 数据基于现实世界数据
 
 ### 其他代码
 
