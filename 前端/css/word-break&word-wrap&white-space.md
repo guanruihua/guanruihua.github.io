@@ -23,12 +23,12 @@
 </div>
 ```
 
-| `normal`   | <img src="word-break&word-wrap&white-space.assets/image-20211209102306919-16390165906611.png" alt="image-20211209102306919" style="zoom:50%;" /> | 默认                                           |
+| `normal`   | <img src="./word-break&word-wrap&white-space.assets/image-20211209102306919-16390165906611.png" alt="image-20211209102306919" style="zoom:50%;" /> | 默认                                           |
 | ---------- | ------------------------------------------------------------ | ---------------------------------------------- |
-| `nowrap`   | <img src="word-break&word-wrap&white-space.assets/image-20211209102458666.png" alt="image-20211209102458666" style="zoom:50%;" /> | 只有`<br>`才可以换行, <br>空格和换行符失效     |
-| `pre`      | <img src="word-break&word-wrap&white-space.assets/image-20211209102536365.png" alt="image-20211209102536365" style="zoom:50%;" /> | 空格和换行符全都被保留了下来<br>自动换行还是没 |
-| `pre-wrap` | <img src="word-break&word-wrap&white-space.assets/image-20211209102933032.png" alt="image-20211209102933032" style="zoom:33%;" /> | 保留空格和换行符, 可自动换行                   |
-| `pre-line` | <img src="word-break&word-wrap&white-space.assets/image-20211209103105521.png" alt="image-20211209103105521" style="zoom:50%;" /> | 空格被合并, 换行符发挥作用                     |
+| `nowrap`   | <img src="./word-break&word-wrap&white-space.assets/image-20211209102458666.png" alt="image-20211209102458666" style="zoom:50%;" /> | 只有`<br>`才可以换行, <br>空格和换行符失效     |
+| `pre`      | <img src="./word-break&word-wrap&white-space.assets/image-20211209102536365.png" alt="image-20211209102536365" style="zoom:50%;" /> | 空格和换行符全都被保留了下来<br>自动换行还是没 |
+| `pre-wrap` | <img src="./word-break&word-wrap&white-space.assets/image-20211209102933032.png" alt="image-20211209102933032" style="zoom:33%;" /> | 保留空格和换行符, 可自动换行                   |
+| `pre-line` | <img src="./word-break&word-wrap&white-space.assets/image-20211209103105521.png" alt="image-20211209103105521" style="zoom:50%;" /> | 空格被合并, 换行符发挥作用                     |
 
 ## word-break
 
