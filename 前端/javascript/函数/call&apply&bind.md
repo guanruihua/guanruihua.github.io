@@ -1,12 +1,3 @@
----
-title: call&apply&bind
-date: 2020-11-10 20:21:02
-tags:
-- front-end
-- javascript
-- api
----
-
 # call&apply&bind
 
 > call, bind, apply第一参数都是this的指向对象
@@ -54,4 +45,3 @@ haungzelin21 aa 成都 bb 上海
 haungzelin21 aa 成都 bb 上海  
 haungzelin21 aa 成都 bb 上海  
 ```
-

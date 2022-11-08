@@ -1,18 +1,9 @@
----
-title: jquery
-date: 
-tags:
-	- javascript
-	- front-end
-	- jquery
----
-
 # jQuery
 
-> - 官网：http://jquery.com/
-> - 官网API文档：http://api.jquery.com/
-> - 中文汉化API文档：http://www.css88.com/jqapi-1.9/
-> - [ jQuery 3.3.1) (html.cn)](https://www.html.cn/jqapi-1.9/category/utilities/)
+> - 官网：<http://jquery.com/>
+> - 官网API文档：<http://api.jquery.com/>
+> - 中文汉化API文档：<http://www.css88.com/jqapi-1.9/>
+> - [jQuery 3.3.1) (html.cn)](https://www.html.cn/jqapi-1.9/category/utilities/)
 
 在用 js 写代码时，会遇到一些问题：
 
@@ -27,14 +18,14 @@ tags:
 
 ```js
 style.
-	div{
+ div{
     display: none;
   }
 
 html
-	button | 显示五个div盒子和设置内容
-	- for(var i=0; i< 5; i++)
-		div
+ button | 显示五个div盒子和设置内容
+ - for(var i=0; i< 5; i++)
+  div
 
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
@@ -60,8 +51,6 @@ html
 2. **隐式迭代**: 在方法的内部会匹配到所有元素进行循环遍历, 执行响应的方法; 而不用我们在进行循环, 简化操作
 
    > 多元素的值, 大部分情况会返回第一个元素的值
-
-
 
 ## jquery版本
 
@@ -105,7 +94,7 @@ html
 > $(“div”) // 获取所有的div标签元素
 > ```
 >
-> 
+>
 
 ## 选择器
 
@@ -121,11 +110,9 @@ html
 
 ![img](http://img.smyhvae.com/20180204_2150.png)
 
-> `:not(selector) `  : 除了selector都要选择$(":not(selector)")
+> `:not(selector)`  : 除了selector都要选择$(":not(selector)")
 >
-> `:header `: 选择标题元素(就是h标签)$(":header")
-
-
+> `:header`: 选择标题元素(就是h标签)$(":header")
 
 ### 属性选择器
 
@@ -154,9 +141,9 @@ html
 
 ### 可见过滤器
 
-> :hidden  	不可见元素
+> :hidden   不可见元素
 >
-> :visible	可见元素
+> :visible 可见元素
 
 ### 筛选选择器
 
@@ -231,7 +218,7 @@ $(selector).bind(event(事件名称),[data,] function(){})
 $(selector).bind(event1(事件名称) event2(事件名称) event3(事件名称),[data,] function(){})  
 //可以绑定多个事件和方法
 $(selector).bind({
-    event1(事件名称),[data,] function(){},    	
+    event1(事件名称),[data,] function(){},     
     event2(事件名称),[data,] function(){},    
     event3(事件名称),[data,] function(){}}
   )
@@ -355,15 +342,15 @@ after():在指定元素之后添加内容
 before():在指定元素之前添加内容
 ```
 
-#### 删除remove();
+#### 删除remove()
 
 ```js
 $("p").remove(".style01");//删除class="style01"所有的p标签
 ```
 
-#### 清空empty();
+#### 清空empty()
 
-#### 清空removeAttr();
+#### 清空removeAttr()
 
 > 删除元素的指定属性
 
@@ -445,11 +432,11 @@ $(selector).load(URL [, data] ,function(response, status,xhr){
 
 > $.get(URL  [, data] [, success] [, dataType]);
 >
-> ​	dataType规定从服务器端获取的数据类型,eg:XML,JSON,HTML等
+> ​ dataType规定从服务器端获取的数据类型,eg:XML,JSON,HTML等
 
 ### **post()方法**
 
-> $.post(URL [, data] [, success] [, dataType]); 
+> $.post(URL [, data] [, success] [, dataType]);
 
 ### **ajax()方法**
 
@@ -463,4 +450,3 @@ $.ajax({
   error: function(){alert("请求失败");} 
 });
 ```
-

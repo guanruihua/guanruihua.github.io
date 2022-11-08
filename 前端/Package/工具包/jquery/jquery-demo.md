@@ -1,13 +1,3 @@
----
-title: jquery-demo
-date: 2020-09-13 10:56:43
-tags:
-	- jquery
-	- demo
-	- javascript
-	- front-end
----
-
 # jquery-demo
 
 ## 鼠标悬停时, 弹出下拉菜单[重要]
@@ -330,8 +320,6 @@ tags:
 ```
 
 ![img](http://img.smyhvae.com/20180205_1135.gif)
-
-
 
 ## 手风琴效果
 

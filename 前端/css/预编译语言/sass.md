@@ -1,16 +1,3 @@
----
-title: sass
-date: 2020-09-09 00:53:01
-tags:
-	- css
-	- sass
-	- 预处理语言
----
-
-
-
----
-
 # Sass
 
 > Syntactically Awesome StyleSheets

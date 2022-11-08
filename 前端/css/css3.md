@@ -1,12 +1,3 @@
----
-title: css3
-date: 2020-09-08 23:54:12
-tags: 
-	- css
-	- css3
-	- front-end
----
-
 # CSS3
 
 ## 边框
@@ -60,7 +51,7 @@ div{
 >
 > `background-size` :    宽   高
 >
-> `background-size: cover;` :   
+> `background-size: cover;` :
 >
 > ​  作用 :  将背景图片按照比例缩放到最小尺寸, 使其可以完整覆盖背景区域
 >

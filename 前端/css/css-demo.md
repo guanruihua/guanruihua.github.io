@@ -1,19 +1,8 @@
----
-title: css-demo
-date: 2020-09-08 23:57:12
-tags: 
-	- css
-	- demo
-	- front-end
----
-
 # css-demo
 
 ## datalist,progress,audio,video
 
 未完成
-
-
 
 ## 水平垂直居中
 
@@ -254,8 +243,6 @@ p::after {
 }
 ```
 
-
-
 ## 更改有序列表的样式
 
 有序列表
@@ -304,8 +291,6 @@ ol li:after{
 </ol>
 ```
 
-
-
 ## 修改谷歌没浏览器滚动条的样式
 
 ```css
@@ -347,8 +332,6 @@ ol li:after{
 }
 ```
 
-
-
 ## 元素隐藏
 
 ```
@@ -356,8 +339,6 @@ display: none; 设置为隐藏, 且不会渲染, 不会占据空间
 visibility: hidden; 设置为隐藏, 但是还是会占用空间
 rgba() 或opacity 改变其透明度为1 , 也同样可以达到元素隐藏的效果
 ```
-
-
 
 ## CSS属性默认值
 
@@ -373,7 +354,7 @@ padding-top, margin-top默认值都是0;
 
 （max-width is the width of the target display area, e.g. the browser）
 
-**max-device-width 指的是设备整个渲染（显示）区域的宽度，比如设备的实际屏幕大小，也就是设备分辨率** 
+**max-device-width 指的是设备整个渲染（显示）区域的宽度，比如设备的实际屏幕大小，也就是设备分辨率**
 
 ## FF2.0
 
@@ -381,11 +362,9 @@ padding-top, margin-top默认值都是0;
 
 **Mozilla Firefox 2**是**Firefox**的版本的问题,
 
-
-
 ## 置换元素,不可替换元素
 
-a) 置换元素：浏览器根据元素的标签和属性，来决定元素的具体显示内容。 
+a) 置换元素：浏览器根据元素的标签和属性，来决定元素的具体显示内容。
 例如：浏览器会根据<img>标签的src属性的 值来读取图片信息并显示出来，而如果查看(x)html代码，则看不到图片的实际内容；<input>标签的type属性来决定是显示输入 框，还是单选按钮等。 (x)html中 的<img>、<input>、<textarea>、<select>、<object> 都是置换元素。这些元素往往没有实际的内容，即是一个空元素。
 
 置换元素在其显示中生成了框，这也就是有的内联元素能够设置宽高的原因。
@@ -424,7 +403,7 @@ eg:<mark>milk</mark>
 
 ## 修改radio和checkbox的样式
 
-- 无法通过 css 样式来直接修改原生的 radio 和 checkbox 
+- 无法通过 css 样式来直接修改原生的 radio 和 checkbox
 
 - 通过 label 和 radio 或checkbox 的绑定关系, 让label 当做 checkbox 来显示
 
@@ -470,28 +449,25 @@ eg:<mark>milk</mark>
   }
 ```
 
-  
-
 ## div三角形
 
 ```css
 *{margin: 0; padding: 0}
 .content{
-	width:0;
-	height:0;
-	margin: 0 auto;
-	border-width:20px;
-	border-style:solid;
-	border-color:transparent transparent pink transparent;
+ width:0;
+ height:0;
+ margin: 0 auto;
+ border-width:20px;
+ border-style:solid;
+ border-color:transparent transparent pink transparent;
 }
 
 .content2{
-	width: 0;
+ width: 0;
   height:0;
   margin:0 auto;
   border:50px solid transparent;
   border-top: 50px solid pink;
-	
+ 
 }
 ```
-

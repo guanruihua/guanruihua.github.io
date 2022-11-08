@@ -1,14 +1,3 @@
----
-title: 预处理语言
-date: 2020-09-09 00:58:00
-tags:
-	- css
-	- sass
-	- scss
-	- stylus
-	- 预处理语言
----
-
 # CSS  Sass Scss stylus
 
 > - css预处理器是为了给css添加一些编程的特性

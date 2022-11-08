@@ -1,12 +1,3 @@
----
-title: mvc&mvvm
-date: 2020-09-16 22:40:04
-tags:
-	- mvc
-	- mvvm
-	- front-end
----
-
 # mvc&mvvm
 
 ## MVC

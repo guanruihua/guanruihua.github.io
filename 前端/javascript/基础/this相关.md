@@ -1,11 +1,3 @@
----
-title: this相关
-date: 
-tags: 
-- question 
-- front-end
----
-
 # Question
 
 ## 1.this的优先级
@@ -26,8 +18,6 @@ obj.log.call(console,this);
 >
 > 上面代码可以转换为`console.log.call(console, this)`
 
-
-
 ```js
 "use strict"
 function fn(){
@@ -45,13 +35,7 @@ fn();
 // window
 ```
 
-
-
-
-
 ## 2.this诡异问题, 内存地址
-
-
 
 ```js
 var obj ={

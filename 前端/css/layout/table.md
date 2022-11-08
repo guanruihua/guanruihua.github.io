@@ -1,12 +1,3 @@
----
-title:table布局  
-date:2021-5-3 17:07:57  
-tags：
-- table
-- layout
-- css
----
-
 # table
 
 > - 基于`display:table`的布局
@@ -44,7 +35,6 @@ caption  { display: table-caption }
 > - 使用基于表格的CSS布局，使我们能够轻松定义一个单元格的边界、背景等样式，而不会产生因为使用了table那样的制表标签所导致的语义化问题。
 > - 在深入了解这种方法之前，让我们先来写份HTML文档实例：
 
-
 ```html
 <div id="wrapper">
     <div id="main">
@@ -56,7 +46,6 @@ caption  { display: table-caption }
 ```
 
 > 这份HTML源代码满足了内容呈现方面的要求。先是导航栏，然后是附加栏，最后是内容栏。我们同样需要将以下CSS样式应用上去：
-
 
 ```css
 #main {
@@ -80,8 +69,8 @@ caption  { display: table-caption }
     padding-left: 10px;
 }
 ```
-> 　　这种基于表格的新CSS布局方式能够正确的在IE8、Firefox、Safari和Opera（译者注：包括FF2/FF3/Google都通过了测试）中显示出来。我们轻松实现了三栏等高布局，而无需使用伪造背景图片之类的技巧，更不用担心定位和清除浮动的问题！
 
+>　这种基于表格的新CSS布局方式能够正确的在IE8、Firefox、Safari和Opera（译者注：包括FF2/FF3/Google都通过了测试）中显示出来。我们轻松实现了三栏等高布局，而无需使用伪造背景图片之类的技巧，更不用担心定位和清除浮动的问题！
 
 ### 它是怎样实现的？
 
@@ -123,12 +112,12 @@ caption  { display: table-caption }
 <div class=”cell”>CELL C</div>
 <div>Not a cell</div>
 ```
+
 > 3个`cell`的div元素被设置为`display: table-cell;`：会像一个单行三个单元格一样并排排列这。最后一个div元素则不会被包含在这一表格行当中，因为它没有被设置成`display:table-cell;`
 >
 > 如果某个元素被设置为“display:table-row;”，而它的父节点没有被设置为“display:table;”（或者“display:table-row-group;”），浏览器将会创建一个被设置为“display:table;”的匿名盒对象来嵌套它，与之相邻的属性为“display: table-row;”的兄弟节点也都会被包含其中。
 >
 > 如果某个元素被设置为“display:table-row;”，但它的内部却缺少“display:table-cell;”的元素，那么一个匿名的table-cell将会被创建，用来包含该table-row中的所有元素。请看以下代码：
-
 
 ```html
 <div class=”row”>ROW A</div>
@@ -137,17 +126,17 @@ caption  { display: table-caption }
 ```
 
 > 上面两排类名为“row”的div元素被设置了“display:table-row;”属性，它们将会像单列表格中的两行一样依次排列。最后一个div元素则不会包含在这个匿名的table中。
-> 
+>
 > 以此类推，如果某个元素的display属性值被设置为与表格相关的值，如table-row-group、table-header-group、 table-footer-group、table-column、table-column-group以及table-caption，但同时又没有一个被设置为“display:table;”的父元素，那么一个匿名的盒对象将会被创建用来包含该元素和它的某些兄弟节点。
 
 ### 其他有用的表格属性
 
 > 当使用CSS表格时，因为这些元素遵从table布局的普通规则，所以你还可以给它们应用其它表格相关的CSS属性。下面是一些派得上用场的属性：
-> 
+>
 > - table-layout 将table-layout属性设置为fixed可以让浏览器按照固定算法来渲染单元格的宽度。这在固定宽度布局中非常有用，例如我们最上面的那段布局代码。
-> 
+>
 > - border-collapse 和普通的HTML表格一样，你可以使用border-collapse属性来定义你的table布局元素之间使用何种形式的边框，是共用边框（赋值为collapse）还是使用各自独立的边框（赋值为separate）。
-> 
+>
 > - border-spacing 如果你声明了“border-collapse:separate;”，那么你就可以使用border-spacing属性来定义相邻两个单元格边框间的距离。
 
 ### 制作完美的栅格
@@ -202,11 +191,11 @@ caption  { display: table-caption }
 </html>
 ```
 
-
 效果图：![img](C:\RUIHUA\Project\blog-code\source\_posts\front-end\前端基础\css\layout\table\1158910-20171016230813099-1688210396.png)
 
 > 当然，这个我采用的是vertical-align:middle;你如果采用top对齐，那么图片就是完全一致对齐啦。
 
 ## 区别
+
 > HTML Table和CSS Table之间的真正区别是：适当地调整CSS属性
 > CSS的Table能做到许多HTML Table 不能做的事情，可以从Table中择优选择属性使用。
