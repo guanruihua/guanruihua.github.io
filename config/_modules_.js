@@ -1,1 +1,1 @@
-const modules =["前端","后端","工具","数据库","知识储备","资料"]
+const modules =["Back-End","Database","Front-End","Tool","知识储备","资料"]
