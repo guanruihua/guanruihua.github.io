@@ -1,17 +1,8 @@
----
-title: egg 
-date: 2020-09-30 11:11:36 
-tags:
-	- egg
-	- front-end
-	- 日志
----
-
 # Egg
 
 > [官网](https://eggjs.org/zh-cn/intro/quickstart.html)
 
-##  特性
+## 特性
 
 - 提供基于 Egg [定制上层框架](https://eggjs.org/zh-cn/advanced/framework.html)的能力
 - 高度可扩展的[插件机制](https://eggjs.org/zh-cn/basics/plugin.html)

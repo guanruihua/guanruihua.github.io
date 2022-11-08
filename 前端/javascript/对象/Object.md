@@ -1,10 +1,3 @@
----
-title:`Object`
-date:2021-4-27 13:44:32
----
-
-
-
 # JavaScript中Object构造函数的方法
 
 ## Object
@@ -20,8 +13,6 @@ let name = 'xx'
   }
 ```
 
-
-
 ### 属性名表达式
 
 ```js
@@ -31,8 +22,6 @@ let name = 'xx'
       [s]: 'xx'
   }
 ```
-
-
 
 ## Object构造函数的方法
 
@@ -53,13 +42,11 @@ console.log(returnedTarget);
 // expected output: Object { a: 1, b: 4, c: 5 }
 ```
 
-
-
 ### Object.create()
 
-> 使用指定的原型对象和属性创建一个新对象。 
+> 使用指定的原型对象和属性创建一个新对象。
 >
-> 创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。 
+> 创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
 
 ```js
 const person = {
@@ -78,8 +65,6 @@ me.printIntroduction();
 // expected output: "My name is Matthew. Am I human? true"
 ```
 
-
-
 ### Object.defineProperty()
 
 > 给对象添加一个属性并指定该属性的配置。
@@ -95,8 +80,6 @@ me.printIntroduction();
 ```js
 
 ```
-
-
 
 ### Object.defineProperties()
 
@@ -116,8 +99,6 @@ Object.defineProperties(obj, {
   // etc. etc.
 });
 ```
-
-
 
 ### Object.entries()
 
@@ -139,10 +120,6 @@ console.log(Object.entries(result)[1]);
 // expected output: Array ["1", Array ["1", "b"]]
 ```
 
-
-
-
-
 ### Object.freeze()
 
 > 冻结对象：其他代码不能删除或更改任何属性。
@@ -162,8 +139,6 @@ object2.property1 = 33;
 console.log(object2.property1);
 // expected output: 42
 ```
-
-
 
 ### Object.is()
 
@@ -191,8 +166,6 @@ Object.is(-0, -0);           // true
 Object.is(NaN, 0/0);         // true
 ```
 
-
-
 ### Object.isExtensible()
 
 > 判断对象是否可扩展。
@@ -217,8 +190,6 @@ Object.isFrozen(1);
 Object.isFrozen(1);
 // true                          (ES2015 code)
 ```
-
-
 
 ### Object.isFrozen()
 
@@ -245,8 +216,6 @@ Object.isFrozen(1);
 // true                          (ES2015 code)
 ```
 
-
-
 ### Object.isSealed()
 
 > 判断对象是否已经密封。
@@ -271,10 +240,6 @@ Object.isFrozen(1);
 Object.isFrozen(1);
 // true                          (ES2015 code)
 ```
-
-
-
-
 
 ### Object.keys()
 
@@ -305,8 +270,6 @@ myObj.foo = 1;
 console.log(Object.keys(myObj)); // console: ['foo']
 ```
 
-
-
 ### Object.values()
 
 > 返回给定对象自身可枚举值的数组。
@@ -335,9 +298,7 @@ console.log(Object.values(my_obj)); // ['bar']
 console.log(Object.values('foo')); // ['f', 'o', 'o']
 ```
 
-
-
-### Object.fromEntries() 
+### Object.fromEntries()
 
 > 把键值对列表转换为一个对象。
 
@@ -368,8 +329,6 @@ const object2 = Object.fromEntries(
 console.log(object2);
 // { a: 2, b: 4, c: 6 }
 ```
-
-
 
 ## 对象
 
@@ -402,8 +361,6 @@ obj4.name // "p"
 ```
 
 ![](https://images.gitee.com/uploads/images/2020/0920/202923_e68d1728_7984151.png)
-
-
 
 #### Object.is()
 
@@ -440,8 +397,6 @@ Object.assign(obj,obj2) // {name: "lisi"}
 
 *首个参数处理规则与其他的参数不同，除了首参，不能转换为对象的参数就会跳过。参数为数值、布尔型均会跳过。*
 
-
-
 #### Object.assign() -- 深拷贝、浅拷贝
 
 例子1：
@@ -477,17 +432,13 @@ console.log(obj.info.age); // "19"
   - Object.assign()的第一层属性是属于深拷贝，第二层以上的属性则为浅拷贝。
   - 第二层的会改变原数据
 
-
-
 # JavaScript中Object构造函数的方法
-
-
 
 ## Object.assign()
 
->  Object构造函数的方法节
+> Object构造函数的方法节
 >
->  Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
+> Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
 
 ```js
 const target = { a: 1, b: 2 };
@@ -503,7 +454,7 @@ console.log(returnedTarget);
 
 > 通过复制一个或多个对象来创建一个新的对象。
 >
-> Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。 
+> Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
 
 ```js
 const person = {
@@ -521,8 +472,6 @@ me.printIntroduction();
 // expected output: "My name is Matthew. Am I human? true"
 ```
 
-
-
 ## Object.defineProperty()
 
 > 使用指定的原型对象和属性创建一个新对象。
@@ -536,15 +485,13 @@ me.printIntroduction();
 > 对象中存在的属性描述符主要有两种：
 >
 > - 数据描述符和访问器描述符（更多详情，请参阅Object.defineProperty()）。
-> - 描述符具有以下键：configurabletrue 当且仅当该属性描述符的类型可以被改变并且该属性可以从对应对象中删除。 
-> - 默认为 falseenumerabletrue 当且仅当在枚举相应对象上的属性时该属性显现。 
-> - 默认为 falsevalue与属性关联的值。可以是任何有效的JavaScript值（数字，对象，函数等）。 
-> - 默认为 undefined.writabletrue当且仅当与该属性相关联的值可以用assignment operator改变时。 
-> - 默认为 falseget作为该属性的 getter 函数，如果没有 getter 则为undefined。函数返回值将被用作属性的值。 
-> - 默认为 undefinedset作为属性的 setter 函数，如果没有 setter 则为undefined。函数将仅接受参数赋值给该属性的新值。 
+> - 描述符具有以下键：configurabletrue 当且仅当该属性描述符的类型可以被改变并且该属性可以从对应对象中删除。
+> - 默认为 falseenumerabletrue 当且仅当在枚举相应对象上的属性时该属性显现。
+> - 默认为 falsevalue与属性关联的值。可以是任何有效的JavaScript值（数字，对象，函数等）。
+> - 默认为 undefined.writabletrue当且仅当与该属性相关联的值可以用assignment operator改变时。
+> - 默认为 falseget作为该属性的 getter 函数，如果没有 getter 则为undefined。函数返回值将被用作属性的值。
+> - 默认为 undefinedset作为属性的 setter 函数，如果没有 setter 则为undefined。函数将仅接受参数赋值给该属性的新值。
 > - 默认为 undefined返回值节 传递给函数的对象。
-
-
 
 ```js
 var obj = {};
@@ -567,7 +514,7 @@ Object.defineProperties(obj, {
 >
 > Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
 >
-> 语法 Object.defineProperty(obj, prop, descriptor)      
+> 语法 Object.defineProperty(obj, prop, descriptor)
 >
 > - obj要在其上定义属性的对象。
 >
@@ -575,12 +522,6 @@ Object.defineProperties(obj, {
 >
 > - descriptor将被定义或修改的属性描述符。
 > - 返回值节    被传递给函数的对象。在ES6中，由于 Symbol类型的特殊性，用Symbol类型的值来做对象的key与常规的定义或修改不同，而Object.defineProperty 是定义key为Symbol的属性的方法之一。
-
-
-
-
-
-
 
 ## Object.entries()
 
@@ -602,8 +543,6 @@ console.log(Object.entries(result)[1]);
 // expected output: Array ["1", Array ["1", "b"]]
 ```
 
-
-
 ## Object.freeze()
 
 > 返回给定对象自身可枚举属性的[key, value]数组。
@@ -623,12 +562,6 @@ object2.property1 = 33;
 console.log(object2.property1);
 // expected output: 42
 ```
-
-
-
-
-
-
 
 ## Object.is()
 
@@ -656,11 +589,9 @@ Object.is(-0, -0);           // true
 Object.is(NaN, 0/0);         // true
 ```
 
-
-
 ## Object.isExtensible()
 
-> 　　比较两个值是否相同。所有 NaN 值都相等（这与==和===不同）。
+>　比较两个值是否相同。所有 NaN 值都相等（这与==和===不同）。
 
 ## Object.isFrozen()
 
@@ -693,10 +624,6 @@ Object.isFrozen(1);
 
 > 判断对象是否已经冻结。
 
-
-
-
-
 ## Object.keys()
 
 > 判断对象是否已经密封。
@@ -726,8 +653,6 @@ myObj.foo = 1;
 console.log(Object.keys(myObj)); // console: ['foo']
 ```
 
-
-
 ## Object.values()
 
 > 返回一个包含所有给定对象自身可枚举属性名称的数组。
@@ -756,19 +681,11 @@ console.log(Object.values(my_obj)); // ['bar']
 console.log(Object.values('foo')); // ['f', 'o', 'o']
 ```
 
-
-
-
-
-
-
-
-
-## Object.fromEntries() 
+## Object.fromEntries()
 
 > 把键值对列表转换为一个对象。
 >
-> Map 转化为 Object 
+> Map 转化为 Object
 > 通过 Object.fromEntries， 可以将 Map 转化为 Object:
 
 ```js
@@ -797,4 +714,3 @@ console.log(object2);
 
 
 ```
-

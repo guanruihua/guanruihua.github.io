@@ -1,19 +1,10 @@
----
-title: koa
-date: 2020-10-11 20:22:34
-tags:
-	- koa
-	- plug-in
-	- front-end
----
-
 # koa
 
 > nodejs平台web开发框架
 >
 > [Koa项目基础框架搭建](https://blog.csdn.net/weixin_36554693/article/details/105683996)
 
-##  简介
+## 简介
 
 Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。 通过利用 async 函数，Koa 帮你丢弃回调函数，并有力地增强错误处理。 Koa 并没有捆绑任何中间件， 而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序。
 
@@ -24,9 +15,9 @@ Koa 依赖 **node v7.6.0** 或 ES2015及更高版本和 async 方法支持.
 你可以使用自己喜欢的版本管理器快速安装支持的 node 版本：
 
 ```bash
-$ nvm install 7
-$ npm i koa
-$ node my-koa-app.js
+nvm install 7
+npm i koa
+node my-koa-app.js
 ```
 
 ### 使用 Babel 实现 Async 方法
@@ -225,7 +216,7 @@ app.use(async ctx => {
 
 注意:
 
-- `ctx` 上的许多属性都是使用 `getter` ，`setter` 和 `Object.defineProperty()` 定义的。你只能通过在 `app.context` 上使用 `Object.defineProperty()` 来编辑这些属性（不推荐）。查阅 https://github.com/koajs/koa/issues/652.
+- `ctx` 上的许多属性都是使用 `getter` ，`setter` 和 `Object.defineProperty()` 定义的。你只能通过在 `app.context` 上使用 `Object.defineProperty()` 来编辑这些属性（不推荐）。查阅 <https://github.com/koajs/koa/issues/652>.
 - 安装的应用程序目前使用其父级的 `ctx` 和设置。 因此，安装的应用程序只是一组中间件。
 
 #### 错误处理
@@ -325,13 +316,9 @@ koa 使用 [cookies](https://github.com/pillarjs/cookies) 模块，其中只需�
 
   : 一个数字, 表示从
 
-   
-
   ```
   Date.now()
   ```
-
-   
 
   得到的毫秒数.
 
@@ -341,7 +328,7 @@ koa 使用 [cookies](https://github.com/pillarjs/cookies) 模块，其中只需�
   - `secure`: 一个布尔值, 表示 cookie 是否仅通过 HTTPS 发送 (HTTP 下默认为 `false`, HTTPS 下默认为 `true`). [阅读有关此参数的更多信息](https://github.com/pillarjs/cookies#secure-cookies).
   - `httpOnly`: 一个布尔值, 表示 cookie 是否仅通过 HTTP(S) 发送，, 且不提供给客户端 JavaScript (默认为 `true`).
   - `sameSite`: 一个布尔值或字符串, 表示该 cookie 是否为 "相同站点" cookie (默认为 `false`). 可以设置为 `'strict'`, `'lax'`, `'none'`, 或 `true` (映射为 `'strict'`).
-  - `signed`: 一个布尔值, 表示是否要对 cookie 进行签名 (默认为 `false`). 如果为 `true`, 则还会发送另一个后缀为 `.sig` 的同名 cookie, 使用一个 27-byte url-safe base64 SHA1 值来表示针对第一个 [Keygrip](https://www.npmjs.com/package/keygrip) 键的 *cookie-name*=*cookie-value* 的哈希值. 此签名密钥用于检测下次接收 cookie 时的篡改.
+  - `signed`: 一个布尔值, 表示是否要对 cookie 进行签名 (默认为 `false`). 如果为 `true`, 则还会发送另一个后缀为 `.sig` 的同名 cookie, 使用一个 27-byte url-safe base64 SHA1 值来表示针对第一个 [Keygrip](https://www.npmjs.com/package/keygrip) 键的 _cookie-name_=_cookie-value_ 的哈希值. 此签名密钥用于检测下次接收 cookie 时的篡改.
   - `overwrite`: 一个布尔值, 表示是否覆盖以前设置的同名的 cookie (默认是 `false`). 如果是 true, 在同一个请求中设置相同名称的所有 Cookie（无论路径或域）是否在设置此Cookie 时从 Set-Cookie 消息头中过滤掉.
 
 koa 使用传递简单参数的 [cookies](https://github.com/pillarjs/cookies) 模块。
@@ -548,7 +535,7 @@ ctx.request.href;
 
 存在时获取主机名。当 `app.proxy` 是 **true** 时支持 `X-Forwarded-Host`，否则使用 `Host`。
 
-如果主机是 IPv6, Koa 解析到 [WHATWG URL API](https://nodejs.org/dist/latest-v8.x/docs/api/url.html#url_the_whatwg_url_api), *注意* 这可能会影响性能。
+如果主机是 IPv6, Koa 解析到 [WHATWG URL API](https://nodejs.org/dist/latest-v8.x/docs/api/url.html#url_the_whatwg_url_api), _注意_ 这可能会影响性能。
 
 ### request.URL
 
@@ -558,7 +545,7 @@ ctx.request.href;
 
 获取请求 `Content-Type`, 不含 "charset" 等参数。
 
-> 译者注: 这里其实是只获取 *mime-type*, 详见[源码及其注释](https://github.com/koajs/koa/blob/eda27608f7d39ede86d7b402aae64b1867ce31c6/lib/request.js#L639)
+> 译者注: 这里其实是只获取 _mime-type_, 详见[源码及其注释](https://github.com/koajs/koa/blob/eda27608f7d39ede86d7b402aae64b1867ce31c6/lib/request.js#L639)
 
 ```js
 const ct = ctx.request.type;
@@ -993,7 +980,7 @@ Content-Type 默认为 `application/octet-stream`。
 
 每当流被设置为响应主体时，`.onerror` 作为侦听器自动添加到 `error` 事件中以捕获任何错误。此外，每当请求关闭（甚至过早）时，流都将被销毁。如果你不想要这两个功能，请勿直接将流设为主体。例如，当将主体设置为代理中的 HTTP 流时，你可能不想要这样做，因为它会破坏底层连接。
 
-参阅: https://github.com/koajs/koa/pull/612 获取更多信息。
+参阅: <https://github.com/koajs/koa/pull/612> 获取更多信息。
 
 以下是流错误处理的示例，而不会自动破坏流：
 
@@ -1062,7 +1049,7 @@ ctx.set({
 
 获取响应 `Content-Type`, 不含 "charset" 等参数。
 
-> 译者注: 这里其实是只获取 *mime-type*, 详见[源码及其注释](https://github.com/koajs/koa/blob/eda27608f7d39ede86d7b402aae64b1867ce31c6/lib/response.js#L371)
+> 译者注: 这里其实是只获取 _mime-type_, 详见[源码及其注释](https://github.com/koajs/koa/blob/eda27608f7d39ede86d7b402aae64b1867ce31c6/lib/response.js#L371)
 
 ```js
 const ct = ctx.type;
@@ -1163,7 +1150,7 @@ ctx.response.etag = crypto.createHash('md5').update(ctx.body).digest('hex');
 
 ## 参与翻译
 
-如果您希望贡献力量完善本中文文档，请前往 https://github.com/demopark/koa-docs-Zh-CN.git 仓库。
+如果您希望贡献力量完善本中文文档，请前往 <https://github.com/demopark/koa-docs-Zh-CN.git> 仓库。
 
 ## 相关资源
 

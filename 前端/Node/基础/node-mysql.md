@@ -1,12 +1,3 @@
----
-title: node-mysql
-date: 2020-09-18 21:28:50
-tags:
-	- node
-	- mysql
-	- javascript
----
-
 # Node.js 连接 MySQL
 
 介绍如何使用 Node.js 来连接 MySQL，并对数据库进行操作。
