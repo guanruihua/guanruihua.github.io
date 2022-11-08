@@ -1,14 +1,3 @@
----
-``title: Lodash
-date: 2021-01-14 09:34:35
-tags:
-- lodash
-- front-end
-- javascript
----
-
-
-
 # Lodash
 
 ## 前言
@@ -47,8 +36,6 @@ var curryN = require('lodash/fp/curryN');
 ```
 
 ## 数组
-
-
 
 ## 集合
 
@@ -125,15 +112,11 @@ let runArray = [
 runArray[runArray.length - 1]().map(item => console.log(item)) 
 ```
 
-
-
-
-
 ## lang
 
-> - castArray : 强制转换为数组 
+> - castArray : 强制转换为数组
 > - clone :  浅拷贝
-> - deepDeep : 深拷贝 
+> - deepDeep : 深拷贝
 
 ```js
 let _ = require('lodash')
@@ -178,5 +161,3 @@ let runArray = [
 
 runArray[runArray.length - 1]().map(item => console.log(item)) 
 ```
-
- 
