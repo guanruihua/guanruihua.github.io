@@ -1,11 +1,3 @@
----
-title: react_router
-date: 2020-11-26 15:05:10
-tags:
-- react
-- router
----
-
 # react_router
 
 ## router路由传参数

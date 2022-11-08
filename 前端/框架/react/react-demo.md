@@ -1,12 +1,3 @@
----
-title: react-demo
-date: 2020-09-22 21:42:44
-tags:
-	- react
-	- demo
-	- javascript
----
-
 # react-demo
 
 ### 例子1 modal 简单实现

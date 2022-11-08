@@ -1,12 +1,3 @@
----
-title: fetch
-date: 2020-12-14 15:10:21
-tags: 
-- fetch
-- js
-- front-end
----
-
 # fetch
 
 > Fetch 的核心在于对HTTP接口的抽象

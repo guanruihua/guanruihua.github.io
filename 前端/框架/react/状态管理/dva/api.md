@@ -1,11 +1,3 @@
----
-title: api
-date: 2020-11-20 20:53:49
-tags: 
-- api
-- dva
----
-
 # dva_api
 
 ## [#](https://dvajs.com/api/#输出文件)输出文件
@@ -330,7 +322,7 @@ app.model({
 
 格式为 `(state, action) => newState` 或 `[(state, action) => newState, enhancer]`。
 
-详见： https://github.com/dvajs/dva/blob/master/packages/dva-core/test/reducers.test.js
+详见： <https://github.com/dvajs/dva/blob/master/packages/dva-core/test/reducers.test.js>
 
 ### [#](https://dvajs.com/api/#effects)effects
 
@@ -345,7 +337,7 @@ type 类型有：
 - `throttle`
 - `watcher`
 
-详见：https://github.com/dvajs/dva/blob/master/packages/dva-core/test/effects.test.js
+详见：<https://github.com/dvajs/dva/blob/master/packages/dva-core/test/effects.test.js>
 
 ### [#](https://dvajs.com/api/#subscriptions)subscriptions
 

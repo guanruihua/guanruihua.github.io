@@ -1,20 +1,8 @@
----
-title: pug
-date: 2020-09-10 20:51:24
-tags: 
-	- pug
-	- npm
-	- node
-	- html
----
-
-
-
 # Pug
 
 > - 安装 `npm install pug`
 > - 全局安装pug命令行工具 `npm isstall pug-cli -g`
-> - 执行编译 `index.pug ` : `pug index.pug`(默认是压缩版)
+> - 执行编译 `index.pug` : `pug index.pug`(默认是压缩版)
 >   - `pug index.pug -P`:标准版的html
 >   - `pug index.pug -o a` 将index.html输入到a目录下
 >   - 批量编译: `pug 文件夹名`: 会编译当前文件夹下全部pug文件
@@ -80,17 +68,15 @@ a#main-link
 <div id="content"></div>
 ```
 
-
-
 ### 结构语法
 
 #### 树状
 
 ```pug
 ul
-	li Item A
-	li Item B
-	li Item C
+ li Item A
+ li Item B
+ li Item C
 ```
 
 ```html
@@ -132,7 +118,7 @@ input/
 
 #### 标签嵌入
 
-> -  写法`#[标签名(标签属性) 标签内容]`
+> - 写法`#[标签名(标签属性) 标签内容]`
 
 ```pug
 p.
@@ -146,8 +132,6 @@ p.
   突然出现了一个 <strong> 充满力量感的单词</strong>，这确实让人难以 <em> 忽视</em>。
 </p>
 ```
-
-
 
 ### 内容
 
@@ -202,25 +186,19 @@ script.
 // 注释
 ```
 
-
-
 #### 不输出注释
 
 ```pug
 //- 不输出的代码
 ```
 
-
-
 #### 块注释
 
 ```pug
 body
-	//
-		块状注释
+ //
+  块状注释
 ```
-
-
 
 #### 条件注释
 
@@ -242,18 +220,17 @@ body
 <!--<![endif]-->
 ```
 
-
-
 ## 逻辑语法
 
 ```pug
 - for (var x=0;x<3:x++)
-	li item
+ li item
 ```
+
 ```html
-	<li>item</li>
-	<li>item</li>
-	<li>item</li>
+ <li>item</li>
+ <li>item</li>
+ <li>item</li>
 ```
 
 ### 变量
@@ -325,13 +302,14 @@ case friends
 ### 循环
 
 > - 目前支持each 和while
+>
 #### each
 
 ```pug
 ul
-	each val,index in [1, 2, 3, 4, 5]
-	 li= val +  ':' + index
-	 
+ each val,index in [1, 2, 3, 4, 5]
+  li= val +  ':' + index
+  
 ul
   each val, index in {1:'一',2:'二',3:'三'}
     li= index + ': ' + val
@@ -360,8 +338,6 @@ ul
     li= n++
 ```
 
-
-
 ### 混入mixin
 
 > - `+link(class='btn')`  等价于 `+link()(class="btn')`
@@ -370,14 +346,14 @@ ul
 //- 定义
 mixin list(name)
   ul
-  	 li= name
+    li= name
     li foo
     li bar
     li baz
 //- 使用
 +list
 +list
-	p 这是文章
+ p 这是文章
 +list('grh')
 
 //生成两个ul列表
@@ -426,8 +402,6 @@ pet.pug
 ```pug
 p= petName
 ```
-
-
 
 page-a.pug
 
@@ -509,7 +483,5 @@ html
     "srcScripts":['jquery.js','app.js']
 }
 ```
-
-
 
 执行`pug index.pug -P -w -O data.json`

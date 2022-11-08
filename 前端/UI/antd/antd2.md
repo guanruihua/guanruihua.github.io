@@ -1,13 +1,3 @@
----
-title: antd2
-date: 2020-11-23 19:33:27
-tags:
-- antd
-- react
-- ui
-- front-end
----
-
 # antd2
 
 > [Ant Design - 一套企业级 UI 设计语言和 React 组件库](https://2x.ant.design/components/pagination-cn/)

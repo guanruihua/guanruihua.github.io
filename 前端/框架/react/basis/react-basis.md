@@ -1,13 +1,3 @@
----
-title: react-basis
-date: 
-tags:
-	- react
-	- basis
-	- javascript
-	- front-end
----
-
 # React-basis
 
 > 1. Facebook开源的一个js库

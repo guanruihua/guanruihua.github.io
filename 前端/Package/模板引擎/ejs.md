@@ -1,15 +1,3 @@
----
-title: EJS
-date: 2020-09-08 20:51:24
-tags: 
-	- ejs
-	- javascript
-	- express
-	- node
----
-
-
-
 # EJS
 
 ## 特性

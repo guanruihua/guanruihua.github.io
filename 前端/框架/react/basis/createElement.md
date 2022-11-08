@@ -1,16 +1,7 @@
----
-title: createElement
-datae: 2020-12-10 10:18:28
-tags:
-- react
-- expand
----
-
 # React.createElement
 
-
-
 > 参数:
+>
 > 1. 必填,  传入类HTML标签的名称
 > 2. 选填,  属性, 例如:className
 > 3. 选填,  子节点, eg: 要显示的文本内容
