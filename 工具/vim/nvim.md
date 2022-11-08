@@ -1,15 +1,3 @@
----
-title： nvim
-time： 2020-12-31 15:15:34
-tags：
-- vim
-- neovim
-- nvim
-- vim-plug
----
-
-
-
 # nvim
 
 ## 缓冲区

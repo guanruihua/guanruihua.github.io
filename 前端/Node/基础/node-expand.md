@@ -1422,7 +1422,7 @@ MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
 
 result.nModified 为更新的条数。
 
----
+------
 
 #### 删除一条数据
 
@@ -1451,7 +1451,7 @@ MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
 >
 ```
 
----
+------
 
 #### 删除多条数据
 

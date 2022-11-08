@@ -234,15 +234,14 @@ Node.js 单线程类似进入一个while(true)的事件循环，直到没有事�
 开启进程
 开启线程
 初始化数据，window/document/location...
-whild(true){
+while(true){
     
     初始化事件列表
     根据事件修改数据
     根据数据去渲染页面
     
-    
     if(count=0){
-        运行js代码
+        运行js代e
         btn.onclick = function(){
             document.body.style.background = "skyblue"
             console.log(123)
@@ -862,7 +861,7 @@ class LcPromise{
 定义调用成功和失败的函数
 
 ```js
-//promise aysnc await proxy Iteratror
+//promise async await proxy Iteratror
 class LcPromise{
   constructor(fn) {
 
@@ -1473,8 +1472,6 @@ $ node main.js
 >   - 一个 net.Server 对象会在每次有新连接时触发一个事件，
 >   - 一个 fs.readStream 对象会在文件被打开的时候触发一个事件。 所有这些产生事件的对象都是 events.EventEmitter 的实例。
 
-----
-
 ```js
 //event.js 文件
 var events = require('events'); 
@@ -1570,7 +1567,7 @@ $ node main.js
 
 ```
 
-----
+------
 
 ## Buffer(缓冲区)
 
@@ -1651,7 +1648,7 @@ buf.write(string[, offset[, length]][, encoding])
 
 ```js
 buf = Buffer.alloc(256);
-len = buf.write("www.runoob.com");
+len = buf.write("www.ruihuag.com");
 
 console.log("写入字节数 : "+  len);
 ```
@@ -1734,12 +1731,12 @@ eg;
 
 ```js
 var buffer1 = Buffer.from(('grh'));
-var buffer2 = Buffer.from(('www.runoob.com'));
+var buffer2 = Buffer.from(('www.ruihuag.com'));
 var buffer3 = Buffer.concat([buffer1,buffer2]);
 console.log("buffer3 内容: " + buffer3.toString());
 
 输出:
-buffer3 内容: grhwww.runoob.com
+buffer3 内容: grhwww.ruihuag.com
 ```
 
 ### 缓存区比较
@@ -1824,7 +1821,7 @@ console.log("buffer2 content: " + buffer2.toString());
 | 2    | **new Buffer(buffer)** 拷贝参数 buffer 的数据到 Buffer 实例。废弃的: 使用 Buffer.from(buffer) 代替。                                                                                                                                                                                                                                                                                                                                 |
 | 3    | **new Buffer(str[, encoding])** 分配一个新的 buffer ，其中包含着传入的 str 字符串。 encoding 编码方式默认为 'utf8'。 废弃的: 使用 Buffer.from(string[, encoding]) 代替。                                                                                                                                                                                                                                                             |
 | 4    | **buf.length** 返回这个 buffer 的 bytes 数。注意这未必是 buffer 里面内容的大小。length 是 buffer 对象所分配的内存数，它不会随着这个 buffer 对象内容的改变而改变。                                                                                                                                                                                                                                                                    |
-| 5    | **buf.write(string[, offset[, length]][, encoding])** 根据参数 offset 偏移量和指定的 encoding 编码方式，将参数 string 数据写入buffer。 offset 偏移量默认值是 0, encoding 编码方式默认是 utf8。 length 长度是将要写入的字符串的 bytes 大小。 返回 number 类型，表示写入了多少 8 位字节流。如果 buffer 没有足够的空间来放整个 string，它将只会只写入部分字符串。 length 默认是 buffer.length - offset。 这个方法不会出现写入部分字符。 |
+| 5    | **`buf.write(string[, offset[, length]][, encoding])`** 根据参数 offset 偏移量和指定的 encoding 编码方式，将参数 string 数据写入buffer。 offset 偏移量默认值是 0, encoding 编码方式默认是 utf8。 length 长度是将要写入的字符串的 bytes 大小。 返回 number 类型，表示写入了多少 8 位字节流。如果 buffer 没有足够的空间来放整个 string，它将只会只写入部分字符串。 length 默认是 buffer.length - offset。 这个方法不会出现写入部分字符。 |
 | 6    | **buf.writeUIntLE(value, offset, byteLength[, noAssert])** 将 value 写入到 buffer 里， 它由 offset 和 byteLength 决定，最高支持 48 位无符号整数，小端对齐，例如： `const buf = Buffer.allocUnsafe(6); buf.writeUIntLE(0x1234567890ab, 0, 6); // 输出:  console.log(buf);`noAssert 值为 true 时，不再验证 value 和 offset 的有效性。 默认是 false。                                                                                   |
 | 7    | **buf.writeUIntBE(value, offset, byteLength[, noAssert])** 将 value 写入到 buffer 里， 它由 offset 和 byteLength 决定，最高支持 48 位无符号整数，大端对齐。noAssert 值为 true 时，不再验证 value 和 offset 的有效性。 默认是 false。`const buf = Buffer.allocUnsafe(6); buf.writeUIntBE(0x1234567890ab, 0, 6); // 输出:  console.log(buf);`                                                                                          |
 | 8    | **buf.writeIntLE(value, offset, byteLength[, noAssert])** 将value 写入到 buffer 里， 它由offset 和 byteLength 决定，最高支持48位有符号整数，小端对齐。noAssert 值为 true 时，不再验证 value 和 offset 的有效性。 默认是 false。                                                                                                                                                                                                      |
@@ -1868,7 +1865,7 @@ console.log("buffer2 content: " + buffer2.toString());
 | 46   | **buf.writeFloatBE(value, offset[, noAssert])** 根据传入的 offset 偏移量和指定的 endian 格式将 value 写入 buffer 。注意：当 value 不是一个 32 位浮点数类型的值时，结果将是不确定的。 若参数 noAssert 为 true 将不会验证 value 和 offset 偏移量参数。 这意味着 value可能过大，或者 offset 可能会超出 buffer 的末尾从而造成 value 被丢弃。 除非你对这个参数非常有把握，否则尽量不要使用。默认是 false。                                |
 | 47   | **buf.writeDoubleLE(value, offset[, noAssert])** 根据传入的 offset 偏移量和指定的 endian 格式将 value 写入 buffer。注意：value 必须是一个有效的 64 位double 类型的值。 若参数 noAssert 为 true 将不会验证 value 和 offset 偏移量参数。 这意味着 value 可能过大，或者 offset 可能会超出 buffer 的末尾从而造成value被丢弃。 除非你对这个参数非常有把握，否则尽量不要使用。默认是 false。                                               |
 | 48   | **buf.writeDoubleBE(value, offset[, noAssert])** 根据传入的 offset 偏移量和指定的 endian 格式将 value 写入 buffer。注意：value 必须是一个有效的 64 位double 类型的值。 若参数 noAssert 为 true 将不会验证 value 和 offset 偏移量参数。 这意味着 value 可能过大，或者 offset 可能会超出 buffer 的末尾从而造成value被丢弃。 除非你对这个参数非常有把握，否则尽量不要使用。默认是 false。                                               |
-| 49   | **buf.fill(value[, offset][, end])** 使用指定的 value 来填充这个 buffer。如果没有指定 offset (默认是 0) 并且 end (默认是 buffer.length) ，将会填充整个buffer。                                                                                                                                                                                                                                                                       |
+| 49   | **`buf.fill(value[, offset][, end])`** 使用指定的 value 来填充这个 buffer。如果没有指定 offset (默认是 0) 并且 end (默认是 buffer.length) ，将会填充整个buffer。                                                                                                                                                                                                                                                                       |
 
 ## Stream(流)
 
@@ -1967,8 +1964,6 @@ console.log("程序执行完毕");
 
 ```
 
----
-
 ### 管道流
 
 > - 一个输出流流到流入的机制
@@ -1990,8 +1985,6 @@ readerStream.pipe(writerStream);
 
 console.log("程序执行完毕");
 ```
-
----
 
 ### 链式流
 
@@ -2025,8 +2018,6 @@ fs.createReadStream('input.txt.gz')
   
 console.log("文件解压完成。");
 ```
-
-----
 
 ## 模块系统
 
@@ -2092,8 +2083,6 @@ http.createServer(...);
 
 <img src="https://images.gitee.com/uploads/images/2020/0601/215608_19475bd4_6545143.png" style="zoom:50%;" />
 
----
-
 ## 函数
 
 > 函数中传输参数的地方可以直接定义函数
@@ -2152,8 +2141,6 @@ function onRequest(request, response) {
 http.createServer(onRequest).listen(8888);
 ```
 
-----
-
 ### 路由
 
 <img src="https://images.gitee.com/uploads/images/2020/0601/223037_4fbde394_6545143.png" style="zoom:50%;" />
@@ -2208,8 +2195,6 @@ Server has started.
 
 浏览器访问 **<http://127.0.0.1:8888/>**
 
-----
-
 ## 全局对象
 
 > - 在程序的任何地方都可以访问,即全局变量
@@ -2238,8 +2223,6 @@ $ node main.js
 /web/com/runoob/nodejs/main.js
 ```
 
-----
-
 ### __dirname
 
 > 表示当前执行脚本说在的目录
@@ -2256,8 +2239,6 @@ console.log( __dirname );
 $ node main.js
 /web/com/runoob/nodejs
 ```
-
-----
 
 ### clearTimeout(t)
 
@@ -2297,15 +2278,15 @@ setInterval(printHello, 2000);
 
 | 序号 | 方法 & 描述                                                                                                                                                                                           |
 | :--- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | **console.log([data][, ...])** 向标准输出流打印字符并以换行符结束。该方法接收若干 个参数，如果只有一个参数，则输出这个参数的字符串形式。如果有多个参数，则 以类似于C 语言 printf() 命令的格式输出。   |
-| 2    | **console.info([data][, ...])** 该命令的作用是返回信息性消息，这个命令与console.log差别并不大，除了在chrome中只会输出文字外，其余的会显示一个蓝色的惊叹号。                                           |
-| 3    | **console.error([data][, ...])** 输出错误消息的。控制台在出现错误时会显示是红色的叉子。                                                                                                               |
-| 4    | **console.warn([data][, ...])** 输出警告消息。控制台出现有黄色的惊叹号。                                                                                                                              |
+| 1    | **`console.log([data][, ...])`** 向标准输出流打印字符并以换行符结束。该方法接收若干 个参数，如果只有一个参数，则输出这个参数的字符串形式。如果有多个参数，则 以类似于C 语言 printf() 命令的格式输出。   |
+| 2    | **`console.info([data][, ...])`** 该命令的作用是返回信息性消息，这个命令与console.log差别并不大，除了在chrome中只会输出文字外，其余的会显示一个蓝色的惊叹号。                                           |
+| 3    | **`console.error([data][, ...])`** 输出错误消息的。控制台在出现错误时会显示是红色的叉子。                                                                                                               |
+| 4    | **`console.warn([data][, ...])`** 输出警告消息。控制台出现有黄色的惊叹号。                                                                                                                              |
 | 5    | **console.dir(obj[, options])** 用来对一个对象进行检查（inspect），并以易于阅读和打印的格式显示。                                                                                                     |
 | 6    | **console.time(label)** 输出时间，表示计时开始。                                                                                                                                                      |
 | 7    | **console.timeEnd(label)** 结束时间，表示计时结束。                                                                                                                                                   |
 | 8    | **console.trace(message[, ...])** 当前执行的代码在堆栈中的调用路径，这个测试函数运行很有帮助，只要给想测试的函数里面加入 console.trace 就行了。                                                       |
-| 9    | **console.assert(value[, message][, ...])** 用于判断某个表达式或变量是否为真，接收两个参数，第一个参数是表达式，第二个参数是字符串。只有当第一个参数为false，才会输出第二个参数，否则不会有任何结果。 |
+| 9    | **`console.assert(value[, message][, ...])`** 用于判断某个表达式或变量是否为真，接收两个参数，第一个参数是表达式，第二个参数是字符串。只有当第一个参数为false，才会输出第二个参数，否则不会有任何结果。 |
 
 #### console.log()
 
@@ -2586,8 +2567,6 @@ sub
 > - 而构造函数内部创造函数内部创造的base属性和sayHello函数都没有被Sub继承
 > - ==在原型定义的属性不会被console.log作为对象的属性输出==
 > - 可以继承原型方法
-
-----
 
 #### util.inspect
 
@@ -3232,7 +3211,7 @@ $ node file.js
 | 60   | **fs.appendFileSync(filename, data[, options])** The 同步 version of fs.appendFile.                                                                                      |
 | 61   | **fs.watchFile(filename[, options], listener)** 查看文件的修改。                                                                                                         |
 | 62   | **fs.unwatchFile(filename[, listener])** 停止查看 filename 的修改。                                                                                                      |
-| 63   | **fs.watch(filename[, options][, listener])** 查看 filename 的修改，filename 可以是文件或目录。返回 fs.FSWatcher 对象。                                                  |
+| 63   | **`fs.watch(filename[, options][, listener])`** 查看 filename 的修改，filename 可以是文件或目录。返回 fs.FSWatcher 对象。                                                  |
 | 64   | **fs.exists(path, callback)** 检测给定的路径是否存在。                                                                                                                   |
 | 65   | **fs.existsSync(path)** 同步版的 fs.exists.                                                                                                                              |
 | 66   | **fs.access(path[, mode], callback)** 测试指定路径用户权限。                                                                                                             |
