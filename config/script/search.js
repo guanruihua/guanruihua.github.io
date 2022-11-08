@@ -16,14 +16,12 @@ const packages = [
 
 handleSearchChange({ value: '' })
 
-search.addEventListener('focus', function (e) {
-	searchContent.setAttribute('class', 'search-content is-search')
-	// handleSearchChange({ value: '' })
-}, true)
-
+search.addEventListener('focus', () => { searchContent.setAttribute('class', 'search-content is-search') }, true)
 searchContent.addEventListener('blur', function (e) {
-	e.preventDefault();
-	searchContent.setAttribute('class', 'search-content')
+	// e.preventDefault();
+	setTimeout(() => {
+		searchContent.setAttribute('class', 'search-content')
+	}, 500)
 }, true)
 
 function handleSearchChange(e) {
@@ -41,9 +39,9 @@ function handleSearchChange(e) {
 		logo.setAttribute('class', 'logo')
 		logo.appendChild(ICONMap[type].cloneNode(true))
 		div.innerHTML = name
-		dom.onclick = () => {
-			window.location.href = url
-		}
+
+		dom.onclick = () => { window.location.href = url }
+
 		dom.appendChild(logo)
 		dom.appendChild(div)
 		searchOptions.appendChild(dom)
