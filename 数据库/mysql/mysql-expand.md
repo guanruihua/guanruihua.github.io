@@ -1,20 +1,6 @@
----
-title: mysql-expand
-date: 2021-01-31 22:12:06
-tags: 
-- mysql
-- expand
----
-
-
-
 # mysql-expand
 
-
-
 ## 变量声明与赋值
-
-
 
 #### 单变量赋值
 
@@ -24,8 +10,6 @@ set @a = '12';
 set @b = (select count(*) from user);
 ```
 
-
-
 #### 多变量赋值
 
 ```sql
@@ -34,8 +18,6 @@ declare name varchar(128);
 select id, name into @id, @name from user where id = 1;
 select @id:= id, @name:= name from user where id = 1;
 ```
-
-
 
 ## 循环的使用
 
@@ -61,8 +43,6 @@ delimiter ;
 -- 调用
 select getRootCateName(28);
 ```
-
-
 
 ### 选择语句使用
 
@@ -90,8 +70,6 @@ delimiter ;
 select getScoreName(91);
 ```
 
-
-
 ### 分支语句使用
 
 ```sql
@@ -113,10 +91,6 @@ delimiter ;
 -- 调用
 select getScoreName2(98);
 ```
-
-
-
-
 
 ### 存储过程使用
 
@@ -143,8 +117,6 @@ BEGIN  
 END $$
 DELIMITER; 
 ```
-
-
 
 ### 存储过程输入输出变量
 
@@ -272,18 +244,16 @@ END REPEAT;
 CLOSE cur; 
 ```
 
-
-
 ## 存储过程与函数
 
 ### 区别
 
-> 调用方式: 
+> 调用方式:
 >
 > - 存储过程: call procedure_name(args, args2 ...);
 > - 函数: select function_name(arges);
 >
-> 返回值： 
+> 返回值：
 >
 > - 存储过程： 多个值
 > - 函数： 只有一个返回值
@@ -295,8 +265,6 @@ CLOSE cur; 
 > - 存储过程是一组为了完成某项特定功能的sql语句集，其实质上就是一段存储在数据库中的代码，他可以由声明式的sql语句（如CREATE,UPDATE,SELECT等语句）和过程式sql语句（如IF...THEN...ELSE控制结构语句）组成。
 >
 > - 就是数据库 SQL 语言层面的代码封装与重用。
-
-
 
 ##### 存储过程的优缺点
 
@@ -322,7 +290,7 @@ CLOSE cur; 
    **DELIMITER语法格式：**
 
 ```sql
-DELIMITER ?	
+DELIMITER ? 
 ```
 
 > `?`是用户定义的结束符，通常这个符号可以是一些特殊的符号。另外应避免使用反斜杠,因为他是转义字符。 若希望换回默认的分号作为结束标记，只需再在命令行输入下面的sql语句即可。
@@ -333,7 +301,7 @@ DELIMITER ;
 
 ##### 存储过程创建
 
->  使用`CREATE PROCEDURE`语句来创建存储过程。
+> 使用`CREATE PROCEDURE`语句来创建存储过程。
 
 ```sql
 CREATE PROCEDURE p_name([proc_parameter[,...]])
@@ -376,9 +344,9 @@ DECLARE var_name type [DEFAULT value]
 用户变量一般以@开头。
 注意：滥用用户变量会导致程序难以理解及管理。
 
-#####  SET语句
+##### SET语句
 
-> 通过SET语句对局部变量赋值，其格式是： 
+> 通过SET语句对局部变量赋值，其格式是：
 
 ```sql
 SET var_name = expr[,var_name2 = expr]....
@@ -400,7 +368,7 @@ SELECT col_name[,..] INTO var_name[,....] table_expr
 
 ##### 流程控制语句
 
-###### if-then-else 
+###### if-then-else
 
 ```sql
 DELIMITER &&  
@@ -409,12 +377,12 @@ begin
   declare var int;  
   set var=parameter+1;  
   if var=0 then 
-  	insert into t values(17);  
+   insert into t values(17);  
   end if;  
   if parameter=0 then 
-  	update t set s1=s1+1;  
+   update t set s1=s1+1;  
   else 
-  	update t set s1=s1+2;  
+   update t set s1=s1+2;  
   end if;  
 end;  
 &&  
@@ -431,18 +399,16 @@ begin
   set var=parameter+1;  
   case var  
   when 0 then   
-  	insert into t values(17);  
+   insert into t values(17);  
   when 1 then   
-  	insert into t values(18);  
+   insert into t values(18);  
   else   
-  	insert into t values(19);  
+   insert into t values(19);  
   end case;  
 end;  
 &&  
 DELIMITER ; 
 ```
-
-
 
 ###### **while ···· end while:**
 
@@ -524,7 +490,7 @@ begin
     insert into t values(v);  
     set v=v+1;  
     if v>=5 then 
-    	leave LOOP_LABLE;  
+     leave LOOP_LABLE;  
     end if;  
   end loop;  
 end;  
@@ -632,7 +598,7 @@ DROP PROCEDURE sp_name
 
 #### 存储函数
 
-> - 存储函数和存储过程一样，都是sql和语句组成的代码块。- 
+> - 存储函数和存储过程一样，都是sql和语句组成的代码块。-
 > - 存储函数不能有输入参数，并且可以直接调用，不需要call语句，且必须有一条包含RETURN语句。
 
 ##### 创建存储函数
@@ -672,17 +638,13 @@ delimiter;
 select getAnimalName(4)
 ```
 
-
-
-###  **函数**
+### **函数**
 
 > [官网地址](  https://dev.mysql.com/doc/refman/8.0/en/functions.html[)
 >
 > mysql中的函数可分为两类：系统函数、用户自定义函数。
 >
 > 函数体里面不用直接`select`
-
-
 
 | 函数                    |                         | 功能                   |
 | ----------------------- | ----------------------- | ---------------------- |
@@ -717,7 +679,7 @@ begin
     declare sale_price decimal default 0.00;
     declare f_order_no varchar(30) default order_no;
     WHILE f_order_no is not null  DO
-		set order_no = f_order_no; 
+  set order_no = f_order_no; 
         SET f_order_no = (SELECT o.PARENT_ORDER_NO FROM order o WHERE o.ORDER_NO = f_order_no); 
     END WHILE;
         SELECT f.SALE_PRICE AS SALE_PRICE FROM order f WHERE f.ORDER_NO = order_no into sale_price;
@@ -765,8 +727,6 @@ drop function getNames;
 | execute        | 使用函数       |
 
 上边只是对mysql中函数的使用做了简单的介绍，想要熟练使用还需要在实战中多使用。
-
-
 
 函数类似于存储过程，只是调用方式不同
 
@@ -844,8 +804,6 @@ End
 SELECT * FROM tabcmessalot('aaa')
 ```
 
-
-
 ## **触发器**
 
 触发器分为insert、update、delete三种触发器事件类型，还有after、before触发时间
@@ -869,8 +827,6 @@ drop trigger trg_temp_ins
 > 父子查询: 根据父id 查询所有的子节点数据
 >
 > 子父查询: 根据子id 查询上面所有父节点数据
-
-
 
 #### **创建表，并添加测试数据**
 
@@ -906,8 +862,6 @@ INSERT INTO `vrv_org_tab` VALUES (‘16’, ‘上海EMM项目组’, ‘4’, �
 INSERT INTO `vrv_org_tab` VALUES (‘17’, ‘上海linkdd项目组’, ‘4’, ‘9’);
 ```
 
-
-
 #### **根据父id递归查询所有子节点**
 
 > cast( variable as variable_type ) : 将变量转换为指定的类型
@@ -941,8 +895,6 @@ END;
 select * from vrv_org_tab where find_in_set(id, getChildrenOrg(1));
 ```
 
- 
-
 #### **根据子id递归查询所有父节点**
 
 ```sql
@@ -963,21 +915,18 @@ ORDER BY id;
 
 注意：大家看到那个10000了吗，就是我们的子节点id。
 
-
-
 注意：只支持单个查询，意思是不可以根据两个或者两个以上的子节点同时查询出所有父节点。我们可以看到，上面参数都是单个值进行递归查询的。
 西面提供一个函数支持多个查询
- 
 
 #### **根据组织机构名称模糊查询所有父节点**
 
 > distinct : 删除重复行
 >
-> substring( string, position ) : 截取string指定长度的字符串 
+> substring( string, position ) : 截取string指定长度的字符串
 >
 > substring_index( str[ 被截取字段 ], delim[ 关键字 ], count[ 关键字出现的次数 ] ) :  按关键字截取字符串
 >
-> length( str ): 返回字串的长度 
+> length( str ): 返回字串的长度
 
 ```sql
 CREATE FUNCTION getParentOrgByOrgName(orgName VARCHAR(20))

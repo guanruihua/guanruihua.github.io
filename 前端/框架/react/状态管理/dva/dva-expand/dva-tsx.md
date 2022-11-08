@@ -1,11 +1,3 @@
----
-title: dva-tsx
-data: 2020-12-11 14:33:34
-tags:
-- dva
-- typescript
----
-
 # dva-typescript
 
 > [相关资料](https://github.com/typescript-cheatsheets/react)
@@ -54,8 +46,6 @@ npm i --save-dev @types/react @types/react-dom
 }
 
 ```
-
-
 
 demo
 

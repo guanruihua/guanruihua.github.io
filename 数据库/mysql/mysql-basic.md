@@ -1,13 +1,3 @@
----
-title: mysql-basic
-date: 2021-01-15 14:08:57
-tags:
-- mysql
-- basic
----
-
-
-
 # MySQL-basic
 
 > [MySQL :: Download MySQL Community Server (Archived Versions)](https://downloads.mysql.com/archives/community/)
@@ -18,7 +8,7 @@ tags:
 
 > [MYSQL创建表的约束条件（可选） - 迎风而来 - 博客园 (cnblogs.com)](https://www.cnblogs.com/sui776265233/p/9343690.html)
 >
-> [(1条消息) MySQL索引的创建与使用_JustryDeng-CSDN博客_mysql创建索引](https://blog.csdn.net/justry_deng/article/details/81458470)
+> [(1条消息) MySQL索引的创建与使用_mysql创建索引](https://blog.csdn.net/justry_deng/article/details/81458470)
 
 ## 环境搭建
 

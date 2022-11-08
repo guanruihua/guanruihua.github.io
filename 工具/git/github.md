@@ -1,11 +1,3 @@
----
-title: github
-date: 2020-11-20 20:11:36
-tags:
-- github
-- git
----
-
 # github
 
 ## 速度太慢

@@ -1,12 +1,3 @@
----
-title: React, Redux, React-Redux
-time: 2020-11-18 11:35:55
-tags:
-- redux
-- react
-- react-redux
----
-
 # React, Redux, React-Redux
 
 > React : 负责组件的UI界面渲染
@@ -25,7 +16,7 @@ tags:
 
 在使用es6的class语法时是没有这个钩子函数的，可以直接在constructor中定义this.state。此时可以访问this.props。
 
-3. `componentWillMount()` 
+3. `componentWillMount()`
 
     ajax数据的拉取操作，定时器的启动。
 
@@ -88,8 +79,6 @@ React性能优化非常重要的一环。组件接受新的state或者props时�
 > dispatch(action): 分发action, 并返回action, 这是唯一能改变store中数据的方式
 >
 > subscrible(listener) : 注册一个监听者, store发生变化时候被调用
-
-
 
 #### reducer
 

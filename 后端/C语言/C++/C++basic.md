@@ -1,12 +1,4 @@
----
-title: C++basic
-date: 2020-11-11 22:52:28
-tags: 
-- C++
-- basic
----
-
-# C++basic
+# C++ basic
 
 ## 前言
 
@@ -15,23 +7,19 @@ tags:
 >- C++ 可运行于多种平台上，如 Windows、MAC 操作系统以及 UNIX 的各种版本。
 > - 源码文件通用使用拓展名.cpp, .cp 或 .c
 
-### 四大特性 
+### 四大特性
 
->   - 封装
->   - 抽象
->   - 继承
->   - 多态
+> - 封装
+> - 抽象
+> - 继承
+> - 多态
 
 ### 标准库
-
-
 
 > - 三个重要部分组成
 >   - 核心语言，提供了所有构件块，包括变量、数据类型和常量，等等。
 >   - C++ 标准库，提供了大量的函数，用于操作文件、字符串等。
 >   - 标准模板库（STL），提供了大量的方法，用于操作数据结构等。
-
-
 
 ## 基础
 
@@ -73,8 +61,6 @@ int main()
 | double       | mutable   | switch           | while    |
 | dynamic_cast | namespace | template         |          |
 
-
-
 ### 数据结构
 
 | 类型     | 关键字                                |
@@ -108,8 +94,6 @@ int main()
 
 #### typedef声明
 
-
-
 > 给已有的类型取一个新的名字
 
 ```c++
@@ -118,7 +102,7 @@ using namespace std;
 typedef int newname;
 int main()
 {
-   	newname a = 1;
+    newname a = 1;
     cout << a << endl;  
     return 0;  
 }
@@ -126,11 +110,7 @@ int main()
 // 1 
 ```
 
-
-
 #### 枚举类型
-
-
 
 ```c++
 enum 枚举名{ 
@@ -141,9 +121,7 @@ enum 枚举名{
 } 枚举变量;
 ```
 
-
-
-eg: 
+eg:
 
 ```c++
 enum color { red, green, blue } c;
@@ -152,8 +130,6 @@ c = blue;// 2
 // 可以自己赋值
 enum color { red, green=5, blue };
 ```
-
-
 
 ##### 初始值
 
@@ -168,6 +144,6 @@ day = Fri ; // 7
 >   - 第二个名称为1
 >   - 以此类推
 
-https://www.runoob.com/cplusplus/cpp-variable-types.html
+<https://www.runoob.com/cplusplus/cpp-variable-types.html>
 
-http://c.biancheng.net/view/1367.html
+<http://c.biancheng.net/view/1367.html>

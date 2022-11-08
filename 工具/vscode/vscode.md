@@ -1,11 +1,3 @@
----
-title: vscode
-date: 2020-09-08 16:50:06
-tags: 
-- vscode
-- 配置
----
-
 # vscode
 
 > [Visual Studio Code Extension API](https://code.visualstudio.com/api/references/extension-guidelines)

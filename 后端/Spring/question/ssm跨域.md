@@ -1,16 +1,4 @@
----
-title: ssm跨域
-date: 2021-3-12 09:31:40
-tags:
-- ssm
-- 跨域
----
-
 # ssm跨域
-
-
-
-
 
 创建一个类实现javax.servlet.Filter接口
 
@@ -35,7 +23,6 @@ public class MyCORSFilter implements Filter{
 }
 ```
 
-
 修改web.xml文件
 添加Filter的配置
 
@@ -49,4 +36,3 @@ public class MyCORSFilter implements Filter{
   <url-pattern>/*</url-pattern>  
 </filter-mapping>
 ```
-

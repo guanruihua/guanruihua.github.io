@@ -1,11 +1,3 @@
----
-title: dva-basic
-date: 2020-11-18 09:05:31
-tags: 
-- dva
-- basic
----
-
 # dva-basic
 
 > 基于redux和redux-saga的数据流方案, 简化开发, dav还额外内置react-router和fetch
@@ -35,11 +27,7 @@ function RouterConfig({ history }) {
 export default RouterConfig
 ```
 
-
-
 改成
-
-
 
 ```react
 import { Router, Switch, Route } from 'dva/router'
@@ -74,7 +62,7 @@ export default RouterConfig
 
 > 模拟数据, 模拟接口api的请求方式
 
-### 在dva中的使用 1 
+### 在dva中的使用 1
 
 在mock文件夹下创建
 
@@ -87,10 +75,10 @@ module.exports = {
 // user.js
 module.exports = {
   "POST /api/login": (req, res) => {
-  		res.send({
-     		msg: "登录成功" 
+    res.send({
+       msg: "登录成功" 
       })
-  	}
+   }
 }
 ```
 
@@ -100,7 +88,7 @@ module.exports = {
 // 1: 一个一个引入
 export default {
   ...require("./mock/product"),
- 	...require("./mock/product") ,
+  ...require("./mock/product") ,
   ....
 }
 
@@ -123,8 +111,6 @@ export function getProduct(){
 }
 ```
 
-
-
 在组件中使用
 
 ```jsx
@@ -134,8 +120,6 @@ comonentDidMout() {
   api.getProduct().then(res => console.log(res) )
 }
 ```
-
-
 
 ### 在dva中的使用 2
 
@@ -320,19 +304,17 @@ Response
     })
 ```
 
-
-
-
-
 ## model对象
 
 > 5个重要的属性: namespace, state, reducers, effects, subscriptions
 
 #### namespace
+>
 > - namespace : model 的命名空间，同时也是他在全局 state 上的属性，只能用字符串，不支持通过`.`的方式创建多层命名空间
 >
 
 #### state
+>
 > - state : reducer的初始值, 优先级低于传输给dva()的``opts.initialState`
 >
 >   - ```tsx
@@ -373,20 +355,18 @@ Response
 >       }
 >     ```
 
-
-
-#### effects 
+#### effects
 
 > - 以`key/value` 格式定义effect, 用于处理异步操作的业务逻辑,  
 >
-> - 可以实现异步操作, 
+> - 可以实现异步操作,
 >
 > - **不直接修改state**,可以通过put来触发reducers来修改modul中的state
 >
 > - 由action触发, 可以触发action, 可以和服务器交互, 可以获取全局state的数据等
 >
 > - 格式:  `*(action, effects) => void` 或 `[*(action, effects) => void, { type }]`
->   - type类型: 
+>   - type类型:
 >     - takeEvery
 >     - takeLatest
 >     - throttle
@@ -400,7 +380,7 @@ Response
 >       - 第二个参数: 你要传输的参数
 >     - select : 用于从state里获取数据
 >       - `const todos = yield select(state => state.todos)`
->   
+>
 > - 错误处理
 >
 >   - 全局错误处理
@@ -409,14 +389,14 @@ Response
 >
 >       ```jsx
 >       const app = dva({
->       	onError(e, dispatch) {
->       		console.log(e.message);
->       	},
+>        onError(e, dispatch) {
+>         console.log(e.message);
+>        },
 >       });
 >       
 >       ```
 >
->       
+>
 >
 >   - 本地错误处理
 >
@@ -424,20 +404,20 @@ Response
 >
 >       ```jsx
 >       app.model({
->       	effects: {
->       		*addRemote() {
->       			try {
->       				// Your Code Here
->       			} catch(e) {
->       				console.log(e.message);
->       			}
->       		},
->       	},
+>        effects: {
+>         *addRemote() {
+>          try {
+>           // Your Code Here
+>          } catch(e) {
+>           console.log(e.message);
+>          }
+>         },
+>        },
 >       });
 >       // try{}catch{}finally{}
 >       ```
 >
->       
+>
 
 ```jsx
 // effects 写法
@@ -487,7 +467,7 @@ effects: {
 
 // 组件中调用
 this.props.dispatch({
-	type: '[namespaceName]/[effectsfuntionName]',
+ type: '[namespaceName]/[effectsfuntionName]',
   payload: '[要传输的数据]'
 })
 ```
@@ -499,8 +479,6 @@ this.props.dispatch({
 > - 在app.start()被执行时, 数据源可以是当前时候, 服务器的websocket连接, keyboard输入, geolocation变化, history路由变化等
 > - 格式`({ dispatch, history } , done ) => unlistenFunction`
 > - 取消数据订阅: 使用app.unmode(), subscription必须返回unlisten方法
-
-
 
 ```jsx
 // subscriptions 写法
@@ -517,8 +495,6 @@ subscriptions: {
     }
   }
 ```
-
-
 
 路由监听
 
@@ -545,15 +521,9 @@ subscriptions: {
 
 ```
 
-
-
-
-
 #### connect
 
 > 将路由的state传输给当前组件
-
-
 
 ```js
 import { connect } from 'dva';
@@ -561,7 +531,7 @@ class IndexPage extends React.Component{
   render(){
     console.log(this.props)// 可以拿到state.product里面的数据
     return( 
-   		... 	
+     ...  
     )
   }
 }
@@ -575,10 +545,6 @@ const mapStateProps = (state) => {
 export default connect(mapStateProps)(IndexPage);
 ```
 
-
-
-
-
 ## router
 
 ### withRouter
@@ -589,33 +555,25 @@ export default connect(mapStateProps)(IndexPage);
 import { withRouter } from "dva/router";
 
 class Product extends React.Component{
-		... 
+  ... 
     this.props.history.push("/");// 实现跳转到主页'/'
     ...
 }
 export default withRouter(Product);   
 ```
 
-
-
 ### routerRedux
 
 ```js
 import { routerRedux } from 'dva/router';
 class Product extends React.Component{
-		... 
+  ... 
     this.props.history.dispatch(routerRedux.push("/"));// 实现跳转到主页'/'
     ...
 }
 export default Product; 
 
 ```
-
-
-
-
-
-
 
 ## 使用dva框架和直接使用redux写法的区别
 
@@ -644,8 +602,6 @@ export const fetch = count => {
 
 ##### *reducer.js 文件*
 
-
-
 ```dart
 import { REQUEST_TODO, RESPONSE_TODO } from './actions';
 
@@ -665,8 +621,6 @@ export default (state = {
 ```
 
 ##### *app.js 文件*
-
-
 
 ```jsx
 import React from 'react';
@@ -697,8 +651,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 ##### *index.js 文件*
 
-
-
 ```jsx
 import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
@@ -722,8 +674,6 @@ render(
 #### 使用dva
 
 ##### *model.js 文件*
-
-
 
 ```tsx
 export default {
@@ -764,8 +714,6 @@ export default {
 
 ##### *app.js 文件*
 
-
-
 ```jsx
 import React from 'react'
 import { connect } from 'dva';
@@ -796,8 +744,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 ##### *index.js 文件*
 
-
-
 ```jsx
 import dva from 'dva';
 import model from './model';
@@ -813,4 +759,3 @@ app.start();
 
 1. **使用 redux 需要拆分出`action`模块和`reducer`模块**
 2. **dva将`action`和`reducer`封装到`model`中，异步流程采用Generator处理**
-

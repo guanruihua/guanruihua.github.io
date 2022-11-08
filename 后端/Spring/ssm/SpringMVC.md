@@ -1,8 +1,3 @@
----
-title: SpringMVC 
-date: 2020-10-13 21:31:23 
----
-
 # SpringMVC
 
 > - [Spring官网](https://spring.io/)
@@ -21,19 +16,15 @@ date: 2020-10-13 21:31:23
 >
 > 支持响应式编程
 
-
-
 ## DispatchServlet
 
-> -  Spring Web 的mvc模型是围绕dispatcherServlet设计的, dispatcherServlet用来处理所有http请求和响应
+> - Spring Web 的mvc模型是围绕dispatcherServlet设计的, dispatcherServlet用来处理所有http请求和响应
 >
 > - Spring MVC DispatcherServlet 请求的工作流程
 >   - 收到一个http请求后, dispatcherServlet根据HanderMapping 来选择适当的控制器
 >   - 控制器接收请求, 并基于使用的get或post方法来调用service方法, service方法将设置基于业务逻辑的模型数据, 并返回视图名称到dispatcherServlet中
 >   - dispatcherServlet 会用viewResolver获取帮助, 为请求检取定义视图
 >   - 一旦确定思路, dispatcherServlet 将把模型数据传输给视图, 最后呈现在浏览器中
-
-
 
 ## 入门
 
@@ -69,8 +60,6 @@ date: 2020-10-13 21:31:23
     </dependencies>
 </project>
 ```
-
-
 
 #### web.xml配置DispatcherServlet
 

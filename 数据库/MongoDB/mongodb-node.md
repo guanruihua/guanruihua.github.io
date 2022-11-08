@@ -1,21 +1,13 @@
----
-title: mongodb-node
-date: 2021-01-20 16:42:55
-tags:
-- mongodb
-- node
----
-
 # Node.js 连接 MongoDB
 
->  [Mongoose v5.13.2: API docs (mongoosejs.com)](https://mongoosejs.com/docs/api.html)
+> [Mongoose v5.13.2: API docs (mongoosejs.com)](https://mongoosejs.com/docs/api.html)
 >
->  MongoDB是一种文档导向数据库管理系统，由C++撰写而成。
+> MongoDB是一种文档导向数据库管理系统，由C++撰写而成。
 
 ### 安装驱动
 
 ```shell
-$ cnpm install mongodb
+cnpm install mongodb
 ```
 
 ------
@@ -37,8 +29,6 @@ MongoClient.connect(url, function(err, db) {
   db.close(); 
 });
 ```
-
-
 
 ------
 
@@ -62,8 +52,6 @@ MongoClient.connect(url, function (err, db) {
   }); 
 });
 ```
-
-
 
 ------
 
@@ -91,8 +79,6 @@ MongoClient.connect(url, function(err, db) {
   }); 
 });
 ```
-
-
 
 执行以下命令输出就结果为：
 
@@ -138,8 +124,6 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-
-
 res.insertedCount 为插入的条数。
 
 ### 查询数据
@@ -163,8 +147,6 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-
-
 以下实例检索 name 为 "菜鸟教程" 的实例：
 
 ## 查询指定条件的数据
@@ -184,8 +166,6 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-
-
 执行以下命令输出就结果为：
 
 ```shell
@@ -196,7 +176,7 @@ MongoClient.connect(url, function(err, db) {
 
 ### 更新数据
 
-我们也可以对数据库的数据进行修改，以下实例将 name 为 "菜鸟教程" 的 url 改为 https://www.runoob.com：
+我们也可以对数据库的数据进行修改，以下实例将 name 为 "菜鸟教程" 的 url 改为 <https://www.runoob.com>：
 
 ## 更新一条数据
 
@@ -216,8 +196,6 @@ MongoClient.connect(url, function(err, db) {
   }); 
 });
 ```
-
-
 
 执行成功后，进入 mongo 管理工具查看数据已修改：
 
@@ -249,8 +227,6 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-
-
 result.nModified 为更新的条数。
 
 ### 删除数据
@@ -273,8 +249,6 @@ MongoClient.connect(url, function(err, db) {
   }); 
 });
 ```
-
-
 
 执行成功后，进入 mongo 管理工具查看数据已删除：
 
@@ -303,8 +277,6 @@ MongoClient.connect(url, function(err, db) {
   }); 
 });
 ```
-
-
 
 obj.result.n 删除的条数。
 
@@ -338,8 +310,6 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-
-
 ### 查询分页
 
 如果要设置指定的返回条数可以使用 **limit()** 方法，该方法只接受一个参数，指定了返回的条数。
@@ -360,8 +330,6 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-
-
 如果要指定跳过的条数，可以使用 **skip()** 方法。
 
 ## skip(): 跳过前面两条数据，读取两条数据
@@ -379,8 +347,6 @@ MongoClient.connect(url, function(err, db) {
   }); 
 });
 ```
-
-
 
 ### 连接操作
 
@@ -431,8 +397,6 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-
-
 ### 删除集合
 
 我们可以使用 **drop()** 方法来删除集合：
@@ -452,8 +416,6 @@ MongoClient.connect(url, function(err, db) {
   }); 
 });
 ```
-
-
 
 ------
 
@@ -484,8 +446,6 @@ MongoClient.connect(url).then((conn) => {
   console.log("数据库连接失败"); 
 });
 ```
-
-
 
 ### Promise 数据操作
 
@@ -524,8 +484,6 @@ MongoClient.connect(url).then((conn) => {
   console.log("数据库连接失败"); 
 });
 ```
-
-
 
 执行结果：
 
@@ -571,8 +529,6 @@ async function dataOperate() {
 }  
 dataOperate();
 ```
-
-
 
 运行结果：
 

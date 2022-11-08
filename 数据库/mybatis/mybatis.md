@@ -1,11 +1,3 @@
----
-title: mybatis
-date: 2021-01-21 15:23:36
-tags:
-- mybatis
-- mysql
----
-
 # mybatis
 
 > [mybatis-spring –](http://mybatis.org/spring/zh/getting-started.html)
@@ -147,11 +139,7 @@ public class PeopleDAOtest {
 }
 ```
 
-
-
-
-
-> https://blog.csdn.net/weixin_43168190/article/details/102959304
+> <https://blog.csdn.net/weixin_43168190/article/details/102959304>
 
 ## DEMO
 
@@ -269,8 +257,6 @@ public class PeopleDAOtest {
 
 ```
 
-
-
 ### log4j.properties
 
 ```properties
@@ -294,8 +280,6 @@ log4j.logger.java.sql.Statement = debug
 log4j.logger.java.sql.PreparedStatement = debug
 log4j.logger.java.sql.ResultSet =debug
 ```
-
-
 
 ### SqlMapConfig.xml
 
@@ -331,8 +315,6 @@ log4j.logger.java.sql.ResultSet =debug
 </configuration>
 ```
 
-
-
 ### User
 
 ```java
@@ -362,8 +344,6 @@ public class User {
 }
 ```
 
-
-
 ### IUserDao.java
 
 ```java
@@ -381,8 +361,6 @@ public interface IUserDao {
 }
 ```
 
-
-
 ### IUserDao.xml
 
 ```xml
@@ -397,8 +375,6 @@ public interface IUserDao {
     </select>
 </mapper>
 ```
-
-
 
 ### MybatisTest.java
 
@@ -450,8 +426,6 @@ public class MybatisTest {
 }
 ```
 
-
-
 ## 动态注解SQL
 
 ```java
@@ -492,8 +466,6 @@ public String delete(){
 }
 ```
 
-
-
 ```java
 @Insert(" insert into category_ ( name ) values (#{name}) ")
 public int add(Category category);
@@ -501,8 +473,6 @@ public int add(Category category);
 @InsertProvider(type=CategoryDynaSqlProvider.class,method="add")
 public int add(Category category);
 ```
-
-
 
 ```java
 public interface CategoryMapper {
@@ -515,7 +485,7 @@ public interface CategoryMapper {
   @UpdateProvider(type=CategoryDynaSqlProvider.class,method="update")
   public int update(Category category);
   @SelectProvider(type=CategoryDynaSqlProvider.class,method="list")
-	public List<Category> list();
+ public List<Category> list();
 }
   
 
@@ -542,4 +512,3 @@ private String selectPersonSql() {
   }}.toString();
 }
 ```
-

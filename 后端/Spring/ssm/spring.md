@@ -1,17 +1,8 @@
----
-title: Spring 
-date: 2020-09-08 21:33:25 
-tags:  
-- spring 
-- java 
-- back-end 
----
-
 # Spring
 
 ## 前言
 
-> -  Spring是一个开源框架
+> - Spring是一个开源框架
 > - Spring 为简化企业级应用开发而生. 使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能
 > - Spring 是JavaSE/EE的一站式框架
 
@@ -41,13 +32,9 @@ tags:
 
   - Spring对JavaEE开发中非常难用的一些API（JDBC、JavaMail、远程调用等），都提供了封装，使这些API应用难度大大降低
 
-  
-
-  ## 模块
+## 模块
 
   <img src="https://images.gitee.com/uploads/images/2020/0711/133424_2ed6aec0_6545143.png" style="zoom:25%;" />
-
-  
 
 ## Spring IOC的底层原理
 
@@ -64,6 +51,7 @@ tags:
 > spring-expression-x.x.x.RELEASE.jar
 
 pom.xml
+
 ```xml
 <dependency>
   <groupId>log4j</groupId>
@@ -95,18 +83,17 @@ pom.xml
 
 ## 概念
 
->  Spring IOC
+> Spring IOC
 >
 > - IOC Inverse of Control 反转控制的概念, 就是将原本在程序中手动创建UserService对象的控制权, 交由Spring框架管理
 > - 就是将创建UserService对象控制权反转到Spring框架
 > - DI Dependency Injection **依赖注入**的概念, 就是在创建这个对象的过程中, 将这个对象所依赖的属性注入进去
 
-
 ### Bean 使用注解开发
 
 > id和name的作用区别 : name可以使用特殊字符
 
-使用前 需要添加的配置 
+使用前 需要添加的配置
 
 添加前
 
@@ -116,7 +103,7 @@ pom.xml
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
-	// 配置bean
+ // 配置bean
   <bean id = "idName" class= "位置"></bean>
 </beans>
 ```
@@ -150,7 +137,6 @@ helloSpring.setName("Spring add");
 System.out.println(helloSpring);
 ```
 
-
 #### 注释和标签的对比
 
 | bean.xml                      | 注解                             | 描述       |
@@ -160,9 +146,6 @@ System.out.println(helloSpring);
 | scope="singleton"             | @Scope("singleton")              |            |
 | init-method="functionName"    | @PostConstruct // 放在function前 | bean创建时 |
 | destroy-method="functionName" | @PreDestroy // 放在function 前   | bean销毁时 |
-
-
-
 
 #### Bean 的初始化和销毁前后调用方法
 
@@ -174,16 +157,12 @@ System.out.println(helloSpring);
 
 2. 注解
 
-   - 在Bean中里面的方法前分别添加`@PostConstruct `和 `@PreDestory`
+   - 在Bean中里面的方法前分别添加`@PostConstruct`和 `@PreDestory`
 
 3. xml
 
    - 先在bean添加方法
    - 再在xml中, bean中init-method和destory-method注册
-
-
-
-
 
 补充
 
@@ -198,9 +177,6 @@ Scope 的五种取值
 - session:  在同一词`http`请求内, 只会产生一个实例 ( Web 应用 )
 
 - global session: 映射到porlet的global范围的session, 如果是普通web项目施使用, 会当做普通的session ( 在基于porlet 的web应用程序 )
-
-
-
 
 ```java
 /**
@@ -262,6 +238,7 @@ applicationContext.xml
 ```
 
 javaclass
+
 ```java
  
 public void demo1(){
@@ -283,6 +260,7 @@ applicationContext.xml
 ```
 
 javaclass
+
 ```java
  
 public void demo1(){
@@ -312,7 +290,7 @@ public class PetFactory {
 }
 ```
 
-factoryBean.xml 
+factoryBean.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -330,7 +308,9 @@ factoryBean.xml
     </bean>
 </beans>
 ```
+
 Test文件
+
 ```java
 @Test
 public void FactoryTest1(){
@@ -358,7 +338,9 @@ Parrot can fly!
     <bean id="bean3Factory" class="com.ioc.demo2.Bean3Factory"></bean>
     <bean id="bean3" factory-bean="bean3Factory" factory-method="createBean3"/>
 ```
+
 javaclass
+
 ```java
  
 public void demo1(){
@@ -388,7 +370,7 @@ public class PetFactory {
 }
 ```
 
-factoryBean.xml 
+factoryBean.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -405,8 +387,6 @@ factoryBean.xml
     </bean>
 </beans>
 ```
-
-
 
 Test文件
 
@@ -430,19 +410,18 @@ Dog can run!
 Parrot can fly!
 ```
 
-
-
 #### 小结
+
 ##### 调用实例工厂方法和调用静态工厂方法创建 Bean 的异同
+
 区别如下：
+
 - 配置实例工厂方法创建 Bean,必须将实例工厂配置成 Bean 实例；而配置静态工厂方法创建 Bean,则无需配置工厂 Bean;
 - 配置实例工厂方法创建 Bean,必须使用 `factory-bvean` 属性确定工厂 Bean; 而配置静态工厂方法创建 Bean,则使用 `class` 属性确定静态工厂类。
   相同之处如下：
 - 都需要使用 `factory-method` 指定生产 Bean 实例的工厂方法；
 - 工厂方法如果需要参数，都使用 `<constructor-arg.../>` 元素指定参数值；
 - 普通的设值注入，都使用 `<property.../>`元素确定参数值。
-
-
 
 ### Bean的作用域
 
@@ -505,8 +484,6 @@ public class Parrot implements Ipet{
 }
 ```
 
-
-
 ## Spring AOP
 
 > - Spring 框架的一个关键组件是**面向切面的编程**(AOP [ Aspect Oriented Programming ]) 框架, 可以说是OOP（Object Oriented Programming，面向对象编程）的补充和完善。OOP引入封装、继承、多态等概念来建立一种对象层次结构，用于模拟公共行为的一个集合。
@@ -517,11 +494,9 @@ public class Parrot implements Ipet{
 > - 在 OOP 中，关键单元模块度是类，而在 AOP 中单元模块度是方面。依赖注入帮助你对应用程序对象相互解耦和 AOP 可以帮助你从它们所影响的对象中对横切关注点解耦。AOP 是像编程语言的触发物，如 Perl，.NET，Java 或者其他。
 > - Spring AOP 模块提供拦截器来拦截一个应用程序，例如，当执行一个方法时，你可以在方法执行之前或之后添加额外的功能。
 > - 使用"横切"技术，AOP把软件系统分为两个部分：**核心关注点**和**横切关注点**。业务处理的主要流程是核心关注点，与之关系不大的部分是横切关注点。横切关注点的一个特点是，他们经常发生在核心关注点的多处，而各处基本相似，比如权限认证、日志、事物。AOP的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来。
-> - AOP分为两种类型: 
->   - 静态AOP : 在编译期进行加入, 就是对切面进行的任何修改, 都要进行重新编译程序 
+> - AOP分为两种类型:
+>   - 静态AOP : 在编译期进行加入, 就是对切面进行的任何修改, 都要进行重新编译程序
 >   - 动态AOP : 在代码执行过程中进行加入,  他的切面代码不是编译进class 文件分钟, SpringAOP就是动态AOP
-
-
 
 ### AOP术语
 
@@ -535,8 +510,6 @@ public class Parrot implements Ipet{
 | Introduction( )           | 在不修改代码的前提下， 引入可以在运行期， 为类动态地添加一些方法或字段，引用允许你添加新方法或属性到现有的类中。 |
 | Target object( 目标对象 ) | 被一个或者多个方面所通知的对象，这个对象永远是一个被代理对象。也称为被通知对象。 |
 | Weaving( 织入 )           | Weaving 把方面连接到其它的应用程序类型或者对象上，并创建一个被通知的对象。这些可以在编译时，类加载时和运行时完成。 |
-
-
 
 ### **Spring对AOP的支持**
 
@@ -558,8 +531,6 @@ AOP编程其实是很简单的事情，纵观AOP编程，程序员只需要参�
 
 下面给出一个Spring AOP的.xml文件模板，名字叫做aop.xml，之后的内容都在aop.xml上进行扩展：
 
- 
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -571,14 +542,10 @@ AOP编程其实是很简单的事情，纵观AOP编程，程序员只需要参�
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
             
-  	<!-- bean definition & AOP specific configuration -->
+   <!-- bean definition & AOP specific configuration -->
   
 </beans>
 ```
-
- 
-
- 
 
 #### **基于Spring的AOP简单实现**
 
@@ -600,8 +567,6 @@ public interface HelloWorld
 
 定义两个接口实现类：
 
- 
-
 ```java
 public class HelloWorldImpl1 implements HelloWorld
 {
@@ -617,10 +582,6 @@ public class HelloWorldImpl1 implements HelloWorld
     }
 }
 ```
-
- 
-
- 
 
 ```java
 public class HelloWorldImpl2 implements HelloWorld
@@ -638,11 +599,7 @@ public class HelloWorldImpl2 implements HelloWorld
 }
 ```
 
- 
-
 横切关注点，这里是打印时间：
-
- 
 
 ```java
 public class TimeHandler
@@ -654,11 +611,7 @@ public class TimeHandler
 }
 ```
 
- 
-
 有这三个类就可以实现一个简单的Spring AOP了，看一下aop.xml的配置：
-
- 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -685,11 +638,7 @@ public class TimeHandler
 </beans>
 ```
 
-
-
 写一个main函数调用一下：
-
-
 
 ```java
 public static void main(String[] args)
@@ -710,11 +659,7 @@ public static void main(String[] args)
 }
 ```
 
-
-
 运行结果为：
-
-
 
 ```shell
 CurrentTime = 1446129611993
@@ -734,11 +679,7 @@ Enter HelloWorldImpl2.doPrint()
 CurrentTime = 1446129611994
 ```
 
-
-
 看到给HelloWorld接口的两个实现类的所有方法都加上了代理，代理内容就是打印时间
-
- 
 
 #### ***\*基于Spring的AOP使用其他细节\****
 
@@ -760,8 +701,6 @@ public class LogHandler
 ```
 
 aop.xml配置为：
-
-
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -794,11 +733,7 @@ aop.xml配置为：
 </beans>
 ```
 
-
-
 测试类不变，打印结果为：
-
-
 
 ```shell
 CurrentTime = 1446130273734
@@ -825,8 +760,6 @@ Enter HelloWorldImpl2.doPrint()
 Log after method
 CurrentTime = 1446130273737
 ```
-
-
 
 要想让logHandler在timeHandler前使用有两个办法：
 
@@ -871,11 +804,7 @@ CurrentTime = 1446130273737
 
 表示timeHandler只会织入HelloWorld接口print开头的方法，logHandler只会织入HelloWorld接口do开头的方法
 
-
-
 测试aop其他几个标签
-
-
 
 LogHandler.java
 
@@ -914,12 +843,6 @@ public class LogHandler {
 }
 
 ```
-
-
-
-
-
-
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -962,8 +885,6 @@ public class LogHandler {
 </beans>
 ```
 
-
-
 执行
 
 ```shell
@@ -978,15 +899,11 @@ CurrentTime = 1610941059736
 ...
 ```
 
-
-
-
-
 补充:
 
 1. `execution`函数: 在通知中定义切入点, 通过`execution`函数, 可以定义切入点的方法切入
 2. 切入点: 就是增强切入点的方法
-3. 常用的表达式: 
+3. 常用的表达式:
    1. `excution(<访问类型>?<返回类型><方法名>(<参数>) <异常>)`
    2. `excution(* com.test.bean.Book.wirteBook(..))`:　表示类Book里面的writeBook的方法
    3. `execution(* com.test.bean.Book.*(..))`: 表示Book下的所有方法
@@ -1000,16 +917,14 @@ CurrentTime = 1610941059736
    1. `aop:before` : 前置通知, 指定增强的方法在切入点之前执行
    2. `aop:after` : 后置通知, 指定增强方法在切入点之后执行
    3. `aop:after-returning`: 最终通知, 无论增强方法之后异常都会执行
-   4. `aop:after-throwing` : 异常抛出通知, 指定增强的方法在出现异常时执行 
+   4. `aop:after-throwing` : 异常抛出通知, 指定增强的方法在出现异常时执行
    5. `aop:around`: 环绕通知, 增强方法在切入点方法之前和之后都执行
 
 3、强制使用CGLIB生成代理
 
-前面说过Spring使用动态代理或是CGLIB生成代理是有规则的，高版本的Spring会自动选择是使用动态代理还是CGLIB生成代理内容，当然我们也可以强制使用CGLIB生成代理，那就是<aop:config>里面有一个"proxy-target-class"属性，这个属性值如果被设置为true，那么基于类的代理将起作用，如果proxy-target-class被设置为false或者这个属性被省略，那么基于接口的代理将起作用。 
+前面说过Spring使用动态代理或是CGLIB生成代理是有规则的，高版本的Spring会自动选择是使用动态代理还是CGLIB生成代理内容，当然我们也可以强制使用CGLIB生成代理，那就是<aop:config>里面有一个"proxy-target-class"属性，这个属性值如果被设置为true，那么基于类的代理将起作用，如果proxy-target-class被设置为false或者这个属性被省略，那么基于接口的代理将起作用。
 
 ### 注解式开发
-
-
 
 XML文件
 
@@ -1040,8 +955,6 @@ public interface ITargetInterface {
 }
 ```
 
-
-
 实现类
 
 ```java
@@ -1060,8 +973,6 @@ public class Target implements ITargetInterface{
 ```
 
 创建切面类
-
-
 
 ```java
 package com.tutorialspoint.beans.SpringAOP.AOPAnnontation2;
@@ -1138,8 +1049,6 @@ public class MyAspect {
 
 > @Pointcut注解定义切点表达式, 然后可以在增强注解中使用
 
-
-
 测试类
 
 ```java
@@ -1164,8 +1073,6 @@ public class AnnoTest {
     }
 }
 ```
-
-
 
 ## Spring 基于注解的配置
 
@@ -1295,8 +1202,6 @@ public class MovieRecommender {
 
 > 可能会有这样一种情况，当你创建多个具有相同类型的 bean 时，并且想要用一个属性只为它们其中的一个进行装配，在这种情况下，你可以使用 **@Qualifier** 注释和 **@Autowired** 注释通过指定哪一个真正的 bean 将会被装配来消除混乱
 
-
-
 ```java
 public class Profile {
     @Autowired
@@ -1314,14 +1219,12 @@ public class Profile {
 }
 ```
 
-
-
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans 					   http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans         http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:annotation-config></context:annotation-config>
 
@@ -1338,23 +1241,17 @@ public class Profile {
 </beans>
 ```
 
-
-
 ```shell
 Inside Profile constructor
 Name: grh2
 Age : 22
 ```
 
-
-
 ### @PostConstruct 和 @PreDestroy
 
 > 这两个分别对应``init-method` 和 `destroy-method`
 >
 > 即bean的安装和卸载
-
-
 
 ### @Resource
 
@@ -1378,15 +1275,11 @@ public class TextEditor {
 }
 ```
 
-
-
 ### @Configuration 和 @Bean 注解
 
 > **@Configuration** 的注解类表示这个类可以使用 Spring IoC 容器作为 bean 定义的来源。
 >
 > **@Bean** 注解告诉 Spring，一个带有 @Bean 的注解方法将返回一个对象，该对象应该被注册为在 Spring 应用程序上下文中的 bean。
-
-
 
 ```java
 public class HelloWorld {
@@ -1399,8 +1292,6 @@ public class HelloWorld {
     }
 }
 ```
-
-
 
 ```java
 package com.tutorialspoint.beans.Annontation;
@@ -1418,8 +1309,6 @@ public class HelloWorldConfig {
 
 ```
 
-
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -1433,8 +1322,6 @@ public class HelloWorldConfig {
 </beans>
 ```
 
-
-
 Test
 
 ```java
@@ -1444,13 +1331,9 @@ helloWorld.setMessage("Hello World!");
 helloWorld.getMessage();
 ```
 
-
-
 ### @import
 
 > 允许从另一个配置类中加载@Bean定义
-
-
 
 ```java
 @Configuration
@@ -1487,10 +1370,8 @@ public static void main(String[] args) {
 }
 ```
 
-> 注意这里的`ApplicationContext ctx = 
->    new AnnotationConfigApplicationContext(ConfigB.class);`
-
-
+> 注意这里的`ApplicationContext ctx =
+> new AnnotationConfigApplicationContext(ConfigB.class);`
 
 ### 生命周期回调@Bean(initMethod = "", destroyMethod = "")
 
@@ -1536,13 +1417,11 @@ public class AppConfig {
 >
 > 自动装配时当出现多个Bean候选者时, 被注解为@Primary将作为首选者, 否则将会抛出异常
 
-
-
 ## 事件处理
 
 > - Spring核心是ApplicationContext,负责调用beans的生命周期
 >
-> - Spring的时间处理是单线程的, 所有如果一个时间被发布 , 直至并且除非所有的接收者得到的该消息, 该进程被阻塞并且流程将不会继续 
+> - Spring的时间处理是单线程的, 所有如果一个时间被发布 , 直至并且除非所有的接收者得到的该消息, 该进程被阻塞并且流程将不会继续
 
 | 事件名                    | Spring 内置事件 & 描述                                       |
 | ------------------------- | ------------------------------------------------------------ |
@@ -1553,8 +1432,6 @@ public class AppConfig {
 | **RequestHandledEvent**   | 这是一个 web-specific 事件，告诉所有 bean HTTP 请求已经被服务。 |
 
 #### 监听上下文事件
-
-
 
 ```java
 package com.tutorialspoint;
@@ -1658,7 +1535,7 @@ ContextStoppedEvent Received
 
 > 编写和发布自定义事件
 
-**CustomEvent.java** 
+**CustomEvent.java**
 
 ```java
 package com.tutorialspoint;
@@ -1726,8 +1603,6 @@ public class MainApp {
 
 下面是配置文件 **Beans.xml**：
 
-
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -1747,10 +1622,7 @@ public class MainApp {
 
 一旦你完成了创建源和 bean 的配置文件后，我们就可以运行该应用程序。如果你的应用程序一切都正常，将输出以下信息：
 
-
-
 ```shell
 My Custom Event
 My Custom Event
 ```
-

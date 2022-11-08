@@ -1,20 +1,8 @@
----
-title: vue-basis
-date: 
-tags: 
-	- vue
-	- basis
-	- front-end
-	- javascirpt
----
-
 # Vue-basis
 
 > 用户构建用户界面的渐进式框架, 与其他大象框架不同的是, Vue被设计为可以自底向上层应用, Vue的核心库值关视图, 便于与第三方库或基友的项目整合
 
 `Object.freeze()`，这会阻止修改现有的 property，也意味着响应系统无法再*追踪*变化。
-
-
 
 ## 生命周期
 
@@ -22,9 +10,9 @@ tags:
 
 ### 创建阶段
 
-> 1. `new Vue() `: `var vm = new Vue( { } );`表示创建一个Vue对象(实例)
-> 2. `Init ( Events&Lifecycle ) `: 对象初始化, 在新建的对象身上,具备了一些生命周期相关的函数( 生命周期的钩子函数)和默认的事件,其他组件还没有创建(data, methods, filter等都没有创建出来)
->    - 执行`Init( Event&Lifecycle) `之后, 钩子函数都被创建出来, 马上调研生命周期函数`beforeCreate`, data和methods等组件都还没有创建出来
+> 1. `new Vue()`: `var vm = new Vue( { } );`表示创建一个Vue对象(实例)
+> 2. `Init ( Events&Lifecycle )`: 对象初始化, 在新建的对象身上,具备了一些生命周期相关的函数( 生命周期的钩子函数)和默认的事件,其他组件还没有创建(data, methods, filter等都没有创建出来)
+>    - 执行`Init( Event&Lifecycle)`之后, 钩子函数都被创建出来, 马上调研生命周期函数`beforeCreate`, data和methods等组件都还没有创建出来
 > 3. `Init( injections&reactivity )` : 对象初始化的后期阶段。执行生命周期函数`created`，data和methods都已经被初始化好了。
 > 4. `Init`对象初始化完成阶段执行完毕后,通过对元素及其模板进行判断, 系统开始编辑模板, 将Vue代码的指令进行执行,然后再内存中生成一个编辑好的模板字符串, 最终改模板字符串渲染为内存中的DOM
 >    - 只在内存中渲染好了模板, 并没有见模板挂载到页面中去, 该阶段完成后执行`beforeMount` 方法
@@ -62,11 +50,7 @@ beforeDestroy
 
 destroyed
 
-
-
 ## 指定端口运行
-
-
 
 - 在根目录新建配置文件`vue.config.js`;
 
@@ -74,18 +58,16 @@ destroyed
 
   ```js
   module.exports = {
-  	devServer: {
-  		// 项目运行时候的端口号
-  		port: 8000
-  	}
+   devServer: {
+    // 项目运行时候的端口号
+    port: 8000
+   }
   };
   ```
 
-
-
 ## computed 和 watch
 
-#### 计算属性computed：
+#### 计算属性computed
 
 - 支持缓存，只有依赖数据发生改变，才会重新进行计算
 - 不支持异步，当computed内有异步操作时无效，无法监听数据的变化
@@ -93,7 +75,7 @@ destroyed
 - 如果一个属性是由其他属性计算而来的，这个属性依赖其他属性，是一个多对一或者一对一，一般用computed
 - 如果computed属性属性值是函数，那么默认会走get方法；函数的返回值就是属性的属性值；在computed中的，属性都有一个get和一个set方法，当数据变化时，调用set方法。
 
-#### 侦听属性watch：
+#### 侦听属性watch
 
 - 不支持缓存，数据变，直接会触发相应的操作；
 - watch支持异步；
@@ -145,8 +127,6 @@ watch: {
 
 这样Vue.js才会一层一层解析下去，直到遇到属性a，然后才给a设置监听函数。
 
-
-
 ### **prop 验证，和默认值**
 
 我们在父组件给子组件传值的时候，可以指定该props的默认值及类型，当传递数据类型不正确的时候，vue会发出警告
@@ -165,7 +145,7 @@ props: {
 
 ### vue自带指令
 
-1. ### v-cloak: 
+1. ### v-cloak
 
    - 解决插值表达式的闪烁问题
 
@@ -174,15 +154,13 @@ props: {
    ```js
    先定义好样式
    [v-cloak]{
-   	display:none;
+    display:none;
    }
    再在标签中引用
    <p v-cloak >{{str}}</p> // 不适用v-cloak可能会出现{{}}
    ```
 
-   
-
-2. ### v-text: 
+2. ### v-text
 
    1. ```js
       <p v-text="str"></p>
@@ -190,7 +168,7 @@ props: {
 
    2. 可以插入内容
 
-3. ### v-html:
+3. ### v-html
 
    1. ```js
       <p v-text="str"></p>
@@ -205,7 +183,7 @@ props: {
    1. 对元素中已经存在的值, 只有插值表达式能够将原有的值保留, 在原有的已经存在的值的基础上添加动态数据
    2. v-text/v-html不能够保留标签原有的的内容,不会出现页面闪烁的问题
 
-5. v-bind: 
+5. v-bind:
 
    1. 单向数据绑定
 
@@ -238,12 +216,12 @@ props: {
       1. 直接为元素的属性进行绑定操作
       2. 使用简化后的方式 , 将v-bind去除, 直接使用: 用来厎元素中的额外属性进行绑定
 
-6. v-on: 
+6. v-on:
 
    1. 简写: "@"
    2. v-on: click = "fun"相当于原生的onclick = "fun()"
 
-7. v-model: 
+7. v-model:
 
    1. 双向数据绑定
    2. 只能运用在表单元素中
@@ -286,7 +264,7 @@ props: {
 
 ```js
 <div id="app">
-	<input type = "text" v-dt/>
+ <input type = "text" v-dt/>
 </div>
 
 Vue.directive("dt",{
@@ -294,23 +272,23 @@ Vue.directive("dt",{
   //还没有插入到dom
   //binding 是传递过来的数据, 即v-dt="数据"
   bind: function(el,binding){
-  	el.style.color = "red";
+   el.style.color = "red";
   },
   //inserted函数, 表示元素插入到dom中,
   inserted: function(el){
   
-	},
+ },
   //表示元素更新时候触发, 可以随时触发
-	update:function(el){
+ update:function(el){
     
   }
 })
 
 var vm = new Vue({
-	el: "#app",
-	data: {
-		str : "str"
-	}
+ el: "#app",
+ data: {
+  str : "str"
+ }
 })
 ```
 
@@ -330,8 +308,6 @@ var vm = new Vue({
 - **`.left`**：向左键
 - **`.right`**：向右键
 
-
-
 ### 鼠标修饰符
 
 鼠标修饰符用来限制处理程序监听特定的滑鼠按键。常见的有：
@@ -349,8 +325,6 @@ var vm = new Vue({
 - **`.shift`**
 - **`.meta`**
 
-
-
 ### 事件修饰符
 
 a.stop : 阻止事件的冒泡机制(点击内层事件会触发外层的点击事件)
@@ -364,16 +338,16 @@ d.self : 阻止自身冒泡行为的行为,(它不会真正阻止冒泡行为)
 ```text
 案例: div>div>button
 1. 在内层加入.stop修饰符
-	点击button,只会触发事件冒泡到内层事件
+ 点击button,只会触发事件冒泡到内层事件
 2. 在内层加入.self修饰符
-	点击button,在事件冒泡过程,不会触发.self的事件
+ 点击button,在事件冒泡过程,不会触发.self的事件
 ```
 
 e.once : 只会触发一次事件处理函数,
 
-	>  .once 需要结合.prevent来使用
-	>
-	>  语法: @click.prevent.once 
+ >  .once 需要结合.prevent来使用
+ >
+ >  语法: @click.prevent.once 
 
 #### 自定义私有指令
 
@@ -382,7 +356,7 @@ e.once : 只会触发一次事件处理函数,
 
 ```js
 <div id="app">
-	<input type = "text" v-dt/>
+ <input type = "text" v-dt/>
 </div>
 
 Vue.directive("dt",{
@@ -390,34 +364,32 @@ Vue.directive("dt",{
   //还没有插入到dom
   //binding 是传递过来的数据, 即v-dt="数据"
   bind: function(el,binding){
-  	el.style.color = "red";
+   el.style.color = "red";
   },
   //inserted函数, 表示元素插入到dom中,
   inserted: function(el){
   
-	},
+ },
   //表示元素更新时候触发, 可以随时触发
-	update:function(el){
+ update:function(el){
     
   }
 })
 
 var vm = new Vue({
-	el: "#app",
-	data: {
-		str : "str"
-	},
+ el: "#app",
+ data: {
+  str : "str"
+ },
   directives: {
-  	"dt": {
-    	bind: function(el,binding){}
+   "dt": {
+     bind: function(el,binding){}
      inserted: function(el){}
-  		update: function(el){}
+    update: function(el){}
     }
   }
 })
 ```
-
-
 
 ## 过滤器
 
@@ -434,15 +406,15 @@ var vm = new Vue({
 >   <p>{{str | myfilter}}</p>
 >   <script>
 >     Vue.filter("myfilter", function(value){
->   		....
+>     ....
 >       return outValue;
->   	})
+>    })
 >   var vm = new Vue({
 >     el: "app",
 >     data: {
 >       str: "aaa"
 >     }
->   	  
+>      
 >   })
 >   </script>
 >     
@@ -460,9 +432,9 @@ var vm = new Vue({
 >   <p>{{str | myfilter}}</p>
 >   <script>
 >     Vue.filter("myfilter", function(value){
->   		....
+>     ....
 >       return outValue;
->   	})
+>    })
 >   var vm = new Vue({
 >     el: "app",
 >     data: {
@@ -470,11 +442,11 @@ var vm = new Vue({
 >     },
 >     filters : {
 >       myfilter1 : function(value){
->       		....
+>         ....
 >           return outValue;
->       	}
+>        }
 >     }
->   	  
+>      
 >   })
 >   </script>
 >   ```
@@ -503,7 +475,7 @@ this.$http.get("请求路径" ,  {name: data } ,{ emulateJSON : true }).then(fun
 
 ```js
 axios({
-	method : "get", 
+ method : "get", 
   url : "url",
   params : {"name":"data"},//传递参数
 }).then(function(result){
@@ -512,14 +484,14 @@ axios({
 
 //使用箭头函数
 axios({
-	method : "get", 
+ method : "get", 
   url : "url"
 }).then(result=>{
   console.log(result.data.key)
 })
 
 axios.get("url", {params : { "name" : "data"}).then(result => {
-	console.log(result.data.key);                 
+ console.log(result.data.key);                 
 })
 ```
 
@@ -528,7 +500,7 @@ axios.get("url", {params : { "name" : "data"}).then(result => {
 ```js
 //使用箭头函数
 axios({
-	method : "post", 
+ method : "post", 
   url : "url",
   params : { "key" : "data" }
 }).then(result=>{
@@ -536,7 +508,7 @@ axios({
 })
 
 axios.post("url", "key = data".then(result => {
-	console.log(result.data.key);                 
+ console.log(result.data.key);                 
 })
 ```
 
@@ -561,8 +533,6 @@ v-enter : 进去前
 v-enter-active :  进入过程
 
 v-enter-to : 进去后
-
-
 
 Leave(信息离开阶段)
 
@@ -604,11 +574,8 @@ v-leave-to :离开后
 </style>
 ```
 
-
-
 ## 其他
 
 @keyup = "fn" : 敲键盘之后就会触发
 
 @change = "fn" : 数据改变就会触发
-

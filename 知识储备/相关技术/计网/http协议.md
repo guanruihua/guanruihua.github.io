@@ -1,15 +1,8 @@
----
-title: http协议 
-date: 2020-09-20 13:16:17 
-tags:
-	- http 
----
-
 # HTTP协议
 
 ## http协议的主要特点
 
->  简单快速、灵活、无连接、无状态HTTP三点注意事项：
+> 简单快速、灵活、无连接、无状态HTTP三点注意事项：
 
 - HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。
 - HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。
@@ -32,13 +25,9 @@ tags:
 >   Host：请求的主机名，允许多个域名同处一个IP地址，即虚拟主机。
 >   Content-Type：请求体的MIME类型 （用于POST和PUT请求中）。如：Content-Type: application/x-www-form-urlencoded
 
-
-
-
-
 ### 空行
 
->  最后一个请求头之后是一个空行，发送回车符和换行符，通知服务器以下不再有请求头。
+> 最后一个请求头之后是一个空行，发送回车符和换行符，通知服务器以下不再有请求头。
 
 ### 请求数据
 
@@ -46,9 +35,9 @@ tags:
 
 ## 响应报文
 
->  包括：状态行、响应头、空行、响应正文。
+> 包括：状态行、响应头、空行、响应正文。
 
-##  HTTP 状态码
+## HTTP 状态码
 
 > HTTP状态码的英文为HTTP Status Code。状态代码由三位数字组成，第一个数字定义了响应的类别，且有五种可能取值。
 >
@@ -70,8 +59,6 @@ tags:
 > 500 Internal Server Error：服务器发生不可预期的错误。
 > 503 Server Unavailable：服务器当前不能处理客户端的请求，一段时间后可能恢复正常，举个例子：HTTP/1.1 200 OK（CRLF）。
 
-
-
 ## 优化
 
 DNS 预解析
@@ -81,11 +68,9 @@ DNS 预解析
 <link rel="dns-prefetch" href="//example.com">
 ```
 
-
 HTTP预连接
 
 ```js
 <link rel="preconnect" href="//example.com">
 <link rel="preconnect" href="//cdn.example.com" crossorigin>
 ```
-

@@ -1,16 +1,8 @@
----
-title: Spring Boot annotations
-date: 2020-09-08 21:34:55
-tags:
-	- spring
-	- 注解
-	- spring boot
----
 # Spring Boot 注解
 
 ## 注解(annotations)列表
 
->  **@SpringBootApplication**：
+> **@SpringBootApplication**：
 >
 > - 包含了@ComponentScan、@Configuration和@EnableAutoConfiguration注解。
 > - 其中@ComponentScan让spring Boot扫描到Configuration类并把它加入到程序上下文。
@@ -27,8 +19,6 @@ tags:
 | @JsonBackReference           | 解决嵌套外链问题                                             |
 | @RepositoryRestResoucepublic | 配合spring-boot-start-data-rest使用                          |
 
-
-
 ## 注解(annotations)详解
 
 @SpringBootApplication：
@@ -43,25 +33,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 publicclassApplication{
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);
-	}
+ }
 }
 ```
 
 @ResponseBody：
 
-​			表示该方法的返回结果直接写入HTTP response body中，一般在异步获取数据时使用，用于构建RESTful的api。在使用@RequestMapping后，返回值通常解析为跳转路径，加上@responsebody后返回结果不会被解析为跳转路径，而是直接写入HTTP response body中。比如异步获取json数据，加上@responsebody后，会直接返回json数据。该注解一般会配合@RequestMapping一起使用。示例代码：
+​   表示该方法的返回结果直接写入HTTP response body中，一般在异步获取数据时使用，用于构建RESTful的api。在使用@RequestMapping后，返回值通常解析为跳转路径，加上@responsebody后返回结果不会被解析为跳转路径，而是直接写入HTTP response body中。比如异步获取json数据，加上@responsebody后，会直接返回json数据。该注解一般会配合@RequestMapping一起使用。示例代码：
 
 ```java
 @RequestMapping(“/test”)
 @ResponseBody 
 public String test(){
-	return”ok”;
+ return”ok”;
 }
 ```
 
 @Controller：
 
-​			用于定义控制器类，在spring 项目中由控制器负责将用户发来的URL请求转发到对应的服务接口（service层），一般这个注解在类中，通常方法需要配合注解@RequestMapping。示例代码：
+​   用于定义控制器类，在spring 项目中由控制器负责将用户发来的URL请求转发到对应的服务接口（service层），一般这个注解在类中，通常方法需要配合注解@RequestMapping。示例代码：
 
 ```java
 @Controller 
@@ -87,8 +77,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController 
 @RequestMapping(“/demoInfo2”)
 public class DemoController2{
-  	@RequestMapping("/test")
-  	public String test(){
+   @RequestMapping("/test")
+   public String test(){
       return"ok";
     }
 }
@@ -142,7 +132,7 @@ public class DemoController2{
 
 @Entity：
 
-​	@Table(name="")：表明这是一个实体类。一般用于jpa这两个注解一般一块使用，但是如果表名和实体类名相同的话，@Table可以省略
+​ @Table(name="")：表明这是一个实体类。一般用于jpa这两个注解一般一块使用，但是如果表名和实体类名相同的话，@Table可以省略
 
 @MappedSuperClass:用在确定是父类的entity上。父类的属性子类可以继承。
 
@@ -177,8 +167,6 @@ public class DemoController2{
 >   - method:指定请求的method类型， GET、POST、PUT、DELETE等
 >   - consumes:指定处理请求的提交内容类型（Content-Type），如application/json,text/html;
 >   - produces:指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回
-
-
 
 @RequestParam：用在方法的参数前面。
 

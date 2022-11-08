@@ -1,16 +1,8 @@
----
-title: Shiro
-date: 2020-09-08 21:31:55
-tags: 
-	- shiro
-	- java
----
-
 # Shiro
 
 ## 简介
 
-> - 说明: 
+> - 说明:
 >   - 在Web系统中涉及到权限问题, 例如不同角色的人登录系统, 他操作的功能, 按钮, 菜单是各不相同
 > - 权限校验
 >   - 用户认证 - 用户身份识别, 即登录
@@ -20,9 +12,4 @@ tags:
 > - Shiro
 >   - 适用环境: javaSE , JavaEE
 >   - 认证, 授权, 加密, 会话管理, 与Web继承, 缓存等
-> - 官网 http://shiro.apache.org/
-
-
-
-
-
+> - 官网 <http://shiro.apache.org/>

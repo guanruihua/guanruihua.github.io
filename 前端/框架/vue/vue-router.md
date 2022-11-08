@@ -1,15 +1,4 @@
----
-title: vue-router
-date: 2020-09-22 21:56:27
-tags:
-	- vue
-	- router
-	- javascript
-	- node
-	- front-end
----
-
-# vue-rotuer
+# vue-router
 
 # vue-router-基础
 
@@ -117,7 +106,7 @@ export default {
 
 ```js
 const User = {
-	template: 	'<div>{{$route.params.id}}</div>'
+ template:  '<div>{{$route.params.id}}</div>'
 }
 
 const router = new VueRouter({
@@ -146,10 +135,10 @@ const router = new VueRouter({
 >
 >     - ```js
 >       const User={
->       	template: `...`,
+>        template: `...`,
 >         watch: {
->         	$route(to, from) {
->           	//对路由变化做出响应....
+>          $route(to, from) {
+>            //对路由变化做出响应....
 >           }
 >         }
 >       }
@@ -159,7 +148,7 @@ const router = new VueRouter({
 >
 >     - ```js
 >       const User = {
->       	template: '...',
+>        template: '...',
 >         beforeRouteUpdate(to, from, next) {
 >           //next() ; 放行
 >         }
@@ -196,11 +185,11 @@ const router = new VueRouter({
 ```js
 const User = {
   template: `
-	<div class='user'>
-		<h2>User {{ $route.params.id }}</h2>
-		<router-view></router-view>
-	</div>
-	`
+ <div class='user'>
+  <h2>User {{ $route.params.id }}</h2>
+  <router-view></router-view>
+ </div>
+ `
 }
 
 const router = new VueRouter({
@@ -214,7 +203,7 @@ const router = new VueRouter({
           path: 'profile',
           component: UserProfile
       },{
-				 // 当 /user/:id/posts 匹配成功
+     // 当 /user/:id/posts 匹配成功
           // UserPosts 会被渲染在 User 的 <router-view> 中
           path: 'posts',
           component: UserPosts
@@ -345,7 +334,7 @@ const router = new VueRouter({
 
 > - Nav : 常规组件
 > - UserSetting: 视图组件
-> - `UserEmailsSubscriptions`,` UserProfile`, `UserProfilePreview` 是嵌套的视图组件
+> - `UserEmailsSubscriptions`,`UserProfile`, `UserProfilePreview` 是嵌套的视图组件
 
 ```html
 <!-- UserSettings.vue -->
@@ -393,8 +382,6 @@ const router = new VueRouter({
   ]
 })
 ```
-
-
 
 ### 别名
 
@@ -446,8 +433,6 @@ const router = new VueRouter({
 })
 ```
 
-
-
 ### 布尔模式
 
 > props被设置成true, route.params将会被设置为组件属性
@@ -461,14 +446,12 @@ const router = new VueRouter({
   routes: [
     { 
       path: '/promotion/from-newsletter', 
-     	 component: Promotion, 
+       component: Promotion, 
       props: { newsletterPopup: false } 
     }
   ]
 })
 ```
-
-
 
 ### 函数模式
 
@@ -476,7 +459,7 @@ const router = new VueRouter({
 
 ```js
 const router = new VueRouter({
-	routes: [
+ routes: [
     {
       paht: '/search',
       component: SearchUser, 
@@ -490,7 +473,7 @@ const router = new VueRouter({
 ## HTML5 History 模式
 
 > - vue-router 默认hash模式 : 模拟一个完整的URL , 当URL改变时, 页面不后悔重新加载,
-> - history 模式, URL就像正常的url, 例如 http://yoursite.com/user/id
+> - history 模式, URL就像正常的url, 例如 <http://yoursite.com/user/id>
 >   - 需要后台正确的配置
 
 ```js
@@ -509,8 +492,6 @@ const router = new VueRouter({
 > - 参数或查询的改变不会进去或离开导航守卫
 >   - 可以通过观察$route对象来应对这些变化, 或beforeRouteUpdate 的组件类守卫
 
-
-
 ### 全局前置守卫
 
 ```js
@@ -523,7 +504,7 @@ router.beforeEach((to, from, next) => {
 
 > - to : Route : 即将要进入的目标
 > - from : Rotue :  当前导航正要离开的路由
-> - next: Function : 
+> - next: Function :
 >   - next() : 进行管道中的下一个钩子. 如果全部钩子执行网, 则导航状态就是confirmed( 确认 )
 >   - next( false ): 中断当前的导航. 如果浏览器的URL改变了, 可能是用户手动或者浏览器后退按钮, URL地址会重置到from 路由对应的地址
 >   - next('/') 或 next({ path: '/' })  : 跳转到一个不同的地址, 当前的导航被中断, 然后进行一个新的导航
@@ -532,8 +513,8 @@ router.beforeEach((to, from, next) => {
 
 ```js
 router.beforeEach((to, from, next) => {
-	if ( to.name !== 'Login' && !isAuthenticated ) next({ name: 'Login '}) 
-	//如果用户未能验证用户 , 则 next 会被调用两次
+ if ( to.name !== 'Login' && !isAuthenticated ) next({ name: 'Login '}) 
+ //如果用户未能验证用户 , 则 next 会被调用两次
   next()
 })
 ```
@@ -542,7 +523,7 @@ router.beforeEach((to, from, next) => {
 
 > 2.3.0+
 >
-> - router.beforeResolve 注册一个全局守卫, 
+> - router.beforeResolve 注册一个全局守卫,
 >   - 和router.beforeEach类似
 >   - 区别
 >     - 在导航确认之前, 同时在所有组件内守卫和异步路由组件被解析之后, 解析守卫就被调用
@@ -551,7 +532,7 @@ router.beforeEach((to, from, next) => {
 
 ```js
 router.afterEach((to, from) =>{
-	//	...
+ // ...
 })  
 ```
 
@@ -572,8 +553,6 @@ const router = new VueRouter({
   ]
 })
 ```
-
-
 
 ### 组件内的守卫
 
@@ -641,8 +620,6 @@ const router = new VueRouter({
 })
 ```
 
-
-
 ```js
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
@@ -661,8 +638,6 @@ router.beforeEach((to, from, next) => {
   }
 })
 ```
-
-
 
 ## 过渡特效
 
@@ -706,8 +681,6 @@ watch: {
 </template>
 ```
 
-
-
 ```js
 export default {
   data () {
@@ -746,8 +719,6 @@ export default {
 
 ### 导航完成前获取数据
 
-
-
 ```js
 export default {
   data () {
@@ -782,10 +753,6 @@ export default {
 }
 ```
 
-
-
-
-
 ## 滚动行为
 
 > - 只支持history.pushState 的浏览器中可用
@@ -797,12 +764,10 @@ const router = new VueRouter({
     // savePosition 当且仅当 popsate导航到 (浏览器 的前进/后退 按钮触发) 时才可用
     // return 期望滚动到哪个的位置 
        //{ x: number, y: number }
-				//{ selector: string, offset? : { x: number, y: number }} (offset 只在 2.6.0+ 支持)
+    //{ selector: string, offset? : { x: number, y: number }} (offset 只在 2.6.0+ 支持)
   }
 })
 ```
-
-
 
 ```js
 //异步滚动
@@ -814,8 +779,6 @@ scrollBehavior (to, from, savedPosition) {
   })
 }
 ```
-
-
 
 ## 路由懒加载
 
@@ -831,16 +794,14 @@ import('./Foo.vue')
 
 > 注: 使用Babel 需要添加syntax-dynamic-import 插件, 才能使 Babel 可以正确地解析语法
 
-
-
 ```
 const Foo = ()  => import('./Foo.vue')
 
 
 const router = new VueRouter({
-	routes: [
-		{ path: '/foo ', component: Foo }
-	]
+ routes: [
+  { path: '/foo ', component: Foo }
+ ]
 })
 ```
 
@@ -855,4 +816,3 @@ const Baz = () => import(/* webpackChunkName: "group-foo" */ './Baz.vue')
 ```
 
 Webpack 会将任何一个异步模块与相同的块名称组合到相同的异步块中。
-

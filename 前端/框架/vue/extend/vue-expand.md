@@ -1,31 +1,15 @@
----
-title: vue-expand
-date: 2020-09-22 21:49:35
-tags:
-	- vue
-	- expand
-	- javascript
-	- front-end
----
-
-
-
 # vue-expand
 
 ## 设计项目结构
 
-
-
-> 1. 路由层 `router` 
-> 2. 静态文件层 `assets` 
-> 3. 页面结构层 `views` 
-> 4. 组件结构层 `components` 
-> 5. 全局状态管理层 `store` 
-> 6. 功能逻辑处理层 `util` 
-> 7. 常量管理层 `constants` 
+> 1. 路由层 `router`
+> 2. 静态文件层 `assets`
+> 3. 页面结构层 `views`
+> 4. 组件结构层 `components`
+> 5. 全局状态管理层 `store`
+> 6. 功能逻辑处理层 `util`
+> 7. 常量管理层 `constants`
 > 8. 在 `Vue` 项目中还可以引入更多的配置如混入层 `mixins` 、过滤层 `filtters` 等。
-
-
 
 ### 数据请求 methods中 OR actions中
 
@@ -66,8 +50,6 @@ findAllRoles({ commit }) {
 },
 ```
 
-
-
 ### 登录与权限管理
 
 `token` 验证是目前大部分前后端分离的 `Web` 项目做登录验证比较常见的方法。前端通过发送账号和密码或账号和验证码给到后端后，后端验证通过会返回一个唯一的 `token` 作为该用户的登录凭证，在之后的每个请求当中，请求头中都需带上这个 `token` 作为后端的登录校验。 `token` 有过期的机制，可以在请求拦截中做逻辑判断处理，若当前时间接近了过期时间，则通过更新 `token` 的接口请求更新 `token` ，在之后的请求中带上新的 `token` 。以此循环，若用户过长时间无操作，则可认为用户为离线状态，在用户之后的第一次请求时，由于 `token` 已经过期，访问后端接口会发生错误，根据后端返回的错误状态码作为判断，将系统定向至登录页面。
@@ -87,8 +69,6 @@ store.dispatch("getUserInfoAndAuthorityInfo").then(res => {
   next('/login')
 })
 ```
-
-
 
 ### 常量枚举值管理
 
@@ -121,8 +101,6 @@ export default Object.freeze({
 });
 ```
 
-
-
 ### 组件设计
 
 前端项目当中可以把展示组件分为两部分，分别为页面组件和功能组件。对于页面组件，常用于展现页面的整体内容，承担着业务逻辑的正常运行，与业务比较有强的耦合性。功能组件是用于展现和处理某一单一或某一模块的功能，功能组件并不关心页面的业务逻辑，充当着一个函数的作用，只要有输入便有对应的输出，并可在多个页面组件或功能组件中被调用。综上，在设计页面组件的时候，不仅应该考虑该组件能够正常的完成业务的功能，还要考虑其是否能够脱离业务成为一个功能组件，对于内容比较多的页面组件，可以在其同级目录下新建多个子页面组件共同构建。在设计功能组件时，需考虑组件的布局、逻辑、视图，功能组件的设计难度在于其要考虑到满足不断更新的需求变化，可扩展性，灵活性是设计的一大挑战。
@@ -135,8 +113,6 @@ export default Object.freeze({
 
 > 每次的开发过程都可当做是一个学习和总结经验的过程，对比以往的代码，我们可以思考代码结构是否能设计得更加完善，逻辑函数是否清晰且考虑边界条件，性能是否可以更加的优化。
 
-
-
 ## 常用webpack配置
 
 ### **vue-lic3脚手架（vue.config.js）**
@@ -147,7 +123,7 @@ export default Object.freeze({
 
 默认：'/'
 
-部署应用包时的基本 URL。默认情况下，Vue CLI会假设你的应用是被部署在一个域名的根路径上，例如https://www.my-app.com/。如果应用被部署在一个子路径上，你就需要用这个选项指定这个子路径。例如，如果你的应用被部署在https://www.my-app.com/my-app/，则设置publicPath为/my-app/
+部署应用包时的基本 URL。默认情况下，Vue CLI会假设你的应用是被部署在一个域名的根路径上，例如<https://www.my-app.com/。如果应用被部署在一个子路径上，你就需要用这个选项指定这个子路径。例如，如果你的应用被部署在https://www.my-app.com/my-app/，则设置publicPath为/my-app/>
 
 这个值也可以被设置为空字符串 ('') 或是相对路径 ('./')，这样所有的资源都会被链接为相对路径，这样打出来的包可以被部署在任意路径，也可以用在类似 Cordova hybrid 应用的文件系统中。
 
@@ -283,8 +259,6 @@ chainWebpack(config) {
 
 - 通过vuex
 
-
-
 ## **v-for key的作用**
 
 当Vue用 v-for 正在更新已渲染过的元素列表是，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue将不是移动DOM元素来匹配数据项的改变，而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。
@@ -305,15 +279,9 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
 
 > 4、MVVM作为数据绑定的入口，整合Observer、Compile和Watcher三者，通过Observer来监听自己的model数据变化，通过Compile来解析编译模板指令，最终利用Watcher搭起Observer和Compile之间的通信桥梁，达到数据变化 -> 视图更新；视图交互变化(input) -> 数据model变更的双向绑定效果。
 
-
-
-
-
 ## vue-loader
 
 > vue文件加载器, 跟template/js/style转换为js模块
-
-
 
 ## Vue-typeScript
 
@@ -345,7 +313,7 @@ export default class HelloWorld extends Vue {
 //Javascript code
 <script>
   export default {
-	name: 'helloWorld',
+ name: 'helloWorld',
 }
 </script> 
 ```
@@ -360,9 +328,9 @@ export default class HelloWorld extends Vue {
   </div>
 </template>
 <script lang='ts'>
-	import { Component, Vue } from 'vue-property-decorator'
-	import Project from '@/components/Project.vue'
-	@Component({
+ import { Component, Vue } from 'vue-property-decorator'
+ import Project from '@/components/Project.vue'
+ @Component({
     commponents: {
       Project
     }
@@ -381,12 +349,12 @@ export default class HelloWorld extends Vue{
 </template>
 <script>
   import Project from '@/components/Project.vue'
-	export defaulf {
+ export defaulf {
     name : 'HelloWordl',
     components : {
       Project
     }
-  }	
+  } 
 </script>
 ````
 
@@ -399,7 +367,7 @@ export default class HelloWorld extends Vue{
 @Component
 export default class HelloWorld extends Vue{
   private msg : string = 'guanruihua'
-	private list : Array<object> = [
+ private list : Array<object> = [
     {
       name : 'ruihua',
       age : '23',
@@ -452,13 +420,13 @@ props:{
     default: 'ruihua'
   },
   age: {
-  	require: true,
+   require: true,
   },
   address: {
-  	type: String
+   type: String
   },
   job: {
-  	require: false,
+   require: false,
     type: String,
     default: 'Developer'
   }
@@ -471,10 +439,10 @@ props:{
 ```javascript
 //Typescript
 export default class HelloWorld extends Vue {
-	get fullName() :string {
-		return this.firstName + '' + this.lastName
+ get fullName() :string {
+  return this.firstName + '' + this.lastName
   }
-	set fullName(newValue: string){
+ set fullName(newValue: string){
     let names = newValue.split(' ')
     this.firstName = names[0]
     this.lastName = names[ names.lenght - 1 ]
@@ -482,17 +450,17 @@ export default class HelloWorld extends Vue {
 }
 //javascript
 export default{
-	fullName() {
-  	return this.firstName + '' + this.lastName
+ fullName() {
+   return this.firstName + '' + this.lastName
   }
 }
 
 export default{
-	fullName() {
+ fullName() {
     get: function(){
-    	return this.firstName + '' + this.lastName  
+     return this.firstName + '' + this.lastName  
     }
-  	set: function( newValue ){
+   set: function( newValue ){
       let names = newValue.split(' ')
       this.firstName = names[0]
       this.lastName = names[ names.lenght - 1 ]
@@ -506,10 +474,10 @@ export default{
 ```javascript
 //Typescript
 export default class HelloWorld extends Vue {
-	public Fn() : void {
+ public Fn() : void {
     console.log( this.addNum(4, 2) )
   }
-	public addNum( num1: number, num2: number): number {
+ public addNum( num1: number, num2: number): number {
     return num1 + num2
   }
 }
@@ -517,8 +485,8 @@ export default class HelloWorld extends Vue {
 //javascript
 export default {
   methods: {
-  	Fn() {
-    	console.log( this.addNum(4, 2))
+   Fn() {
+     console.log( this.addNum(4, 2))
     },
     addNum(num1, num2){
       return num1 + num2
@@ -544,16 +512,15 @@ projectChanged(newVal: Person, oldVal: Person) {
 }
 //javascript
 watch: {
-	person: {
-  	handler: 'projectChanged',
-		immediate: true,
+ person: {
+   handler: 'projectChanged',
+  immediate: true,
      deep: true
   }
 },
   methods:{
-  	projectChanged:(new Val, oldVal){
+   projectChanged:(new Val, oldVal){
       //do something
     }
   }
 ```
-

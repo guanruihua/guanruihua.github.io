@@ -1,11 +1,3 @@
----
-title: space-vim
-date: 2020-12-18 10:02:21
-tags: 
-- vim
-- nvim
----
-
 # space-vim
 
 > 官网 : <https://spacevim.org/cn/use-vim-as-ide/>

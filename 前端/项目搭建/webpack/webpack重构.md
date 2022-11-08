@@ -1,16 +1,6 @@
----
-title: webpack重构
-date: 2021-02-12 23:39:46
-tags:
-- webpack
-- 重构
----
-
 # webpack区分生产环境和开发环境
 
 > webpack 的配置一般写在webpack.config.js文件夹中, 但是生产环境的配置和开发环境不一样, 需要将两个环境分开
-
-
 
 ## cross-env
 
@@ -135,6 +125,6 @@ module.exports=merge(common,{
 ```json
 //开发环境使用style-loader
 {
-	loader:NODE_ENV==="production" ? MiniCssExtractPlugin.loader : "style-loader"
+ loader:NODE_ENV==="production" ? MiniCssExtractPlugin.loader : "style-loader"
 }
 ```

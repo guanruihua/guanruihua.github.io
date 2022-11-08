@@ -1,14 +1,4 @@
----
-title: vim
-date: 2021-3-10 20:55:21
-tags:
-- vim
-- configure
----
-
 # vim 配置
-
-
 
 ## init.vim
 
@@ -144,7 +134,7 @@ set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
 set nu
-set relativenumber							"开启相对行数
+set relativenumber       "开启相对行数
 set clipboard=unnamed            "系统剪贴板
 let mapleader=';'                "定义leader
 set backspace=indent,eol,start   "backspace不能用时设置
@@ -167,8 +157,6 @@ set nowritebackup
 "au InsertLeave *.js, *.json write
 "****************************************************************************
 ```
-
-
 
 ## javascript.dict
 
@@ -226,4 +214,3 @@ Vue
 # y 
 # z 
 ```
-

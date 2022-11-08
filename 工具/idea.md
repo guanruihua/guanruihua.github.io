@@ -1,11 +1,3 @@
----
-title: idea
-date: 2021-01-13 14:44:09
-tags:
-- idea
-- tools
----
-
 # idea
 
 ## 快捷键

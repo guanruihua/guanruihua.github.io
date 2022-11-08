@@ -1,27 +1,11 @@
----
-title: SpringJDBC 
-date: 2021-01-20 09:37:30 
-tags: 
-- Spring
-- jdbc
-- java
-- back-end
----
-
-
-
-
-
 # Spring JDBC
 
-> 主要包括四个包: 
+> 主要包括四个包:
 >
-> - core: 包含JDBC的核心功能, 包括JdbcTemplatea等类
+> - core: 包含JDBC的核心功能, 包括JdbcTemplate等类
 > - dataSource: 访问数据源的实用工具类, 他有多种数据源的实现, 可以在JavaEE容器外部测试jdbc代码
 > - object: 以访问对象方式访问数据库, 他允许执行查询并将返回结果作为业务对象, 可以在数据表的列表业务对象的属性之间映射查询结果
 > - support: 包含core和object包的支持类, 例如: 提供异常转换功能的SQLException类
-
-
 
 ```java
 import lombok.Data;
@@ -33,8 +17,6 @@ public class User {
 }
 ```
 
-
-
 ```java
 import java.util.List;
 public interface UserDao {
@@ -42,8 +24,6 @@ public interface UserDao {
     public List<User> query(String sql, Object[] param);
 }
 ```
-
-
 
 ```js
 @Repository("userDao")
@@ -61,8 +41,6 @@ public class UserDaoImpl implements UserDao{
     }
 }
 ```
-
-
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -90,8 +68,6 @@ public class UserDaoImpl implements UserDao{
 </beans>
 ```
 
-
-
 ```java
 @Test
 public void DEMO(){
@@ -109,4 +85,3 @@ public void DEMO(){
   }
 }
 ```
-

@@ -1,22 +1,10 @@
----
-title: vue-question
-date: 2021-3-20 10:04:44
-tags: 
-- vue
-- question
----
-
-
-
 # VUE-QUESTION
 
 ## Vue提示报错警告"TypeError: handler.call is not a function"
 
-
-
 > 组件中声明了未定义的方法，或者只声明了钩子函数，并未使用。
 
-## ` vue/cle3`项目运行报错`sockjs-node/info`解决方案
+## `vue/cle3`项目运行报错`sockjs-node/info`解决方案
 
 ### 控制台报错
 
@@ -52,7 +40,7 @@ try {
 
 #### 2. 配置`vue.config`
 
-  ` vue.config.js`中的`module.xports`中添加如下，然后重启：
+  `vue.config.js`中的`module.xports`中添加如下，然后重启：
 
 ```javascript
 devServer: {

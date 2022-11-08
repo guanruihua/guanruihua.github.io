@@ -1,10 +1,3 @@
----
-title: VO_DTO_Entity
-date: 2021-01-20 09:33:03
-tags:
-- java
----
-
 # VO_DTO_Entity
 
 > 1、entity 里的每一个字段，与数据库相对应，
@@ -12,8 +5,6 @@ tags:
 > 2、vo 里的每一个字段，是和你前台 html 页面相对应，
 >
 > 3、dto 这是用来转换从 entity 到 vo，或者从 vo 到 entity 的中间的东西 。
-
-
 
 举个例子：
 

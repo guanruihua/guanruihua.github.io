@@ -1,16 +1,8 @@
----
-title: java-expand
-date: 2020-11-01 16:29:04
-tags:
-- java
-- expand
----
-
 # java-expand
 
 ## JVM 虚拟内存分布
 
-> 借鉴https://www.cnblogs.com/syp172654682/p/8082625.html
+> 借鉴<https://www.cnblogs.com/syp172654682/p/8082625.html>
 
 <img src="https://images.gitee.com/uploads/images/2020/1101/171425_ce5ca706_7984151.png" style="zoom:50%;align:center;" />
 
@@ -24,10 +16,6 @@ tags:
 >
 > - **虚拟机堆**是jvm执行java代码所使用的堆。
 
-
-
-
-
 ### 常量池
 
 > 分为 : **静态常量池** 和 **运行时常量池**
@@ -37,14 +25,12 @@ tags:
 #### 静态常量池
 
 > - `*.class`文件中的常量池
->   - `*.class`文件中的常量池不仅仅包含字符串(数字) 字面量, 还包含类, 方法的信息, 常用class文件绝大部分空间, 改常量池主要涌入存放两大类常量: `字面量(Literal) `和` 符号引用量( Symbolic References )`
+>   - `*.class`文件中的常量池不仅仅包含字符串(数字) 字面量, 还包含类, 方法的信息, 常用class文件绝大部分空间, 改常量池主要涌入存放两大类常量: `字面量(Literal)`和`符号引用量( Symbolic References )`
 >     - 字面量: 相当于Java语言层面的概念, 入文本字符串, 声明为final的常量值等
 >     - 符号引用量: 属于编译原理方面的概念,包含了如下三种类型的常量:
 >       - 类和接口的全限定名
 >       - 字段名称和描述符
 >       - 方法名称和描述符
-
-
 
 #### 运行常量池
 
@@ -60,48 +46,48 @@ tags:
 
 ```java
 
-		String s1 = "hello";
-		String s2 = "hello";
-		String s3 = "hel" + "lo";
-		String s4 = "hel" + new String("lo");
-		String s5 = new String("hello");
-		String s6 = s5.intern();
-		String s7 = "H";
-		String s8 = "ello";
-		String s9 = s7 + s8;
-		
-		System.out.println( s1 == s2 ); // true
-		/**
-		 s1 和  s2 在赋值的时候, 均使用字符串字面量,
-		  在编译期间, 这种字面量会直接放入class文件的常量池中, 而实现复用
-		  载入运行时常量池后, s1, s2 指向同一个内存地址, 所以相等
-		 */
-		System.out.println( s1 == s3 ); // true
-		/*
-		 s3 虽然是动态拼接出来的字符串, 但是所有参与拼接的部分都是已知的字面量, 
-		 在编译期间, 这种拼接会被优化, 编译器直接帮你拼接好
-		 
-		 只有使用引号包括的文本的方式创建的String对象之间使用"+"连接产生新的对象才会被加入字符串池中
-		 */
-		System.out.println( s1 == s4 ); // false
-		/*
-		 s4有一部分不是已知字面量, 编译器不会优化, 必须等到运行时才可以确定结果, 
-		 给字符串不变定理, 不确定s4被分配到哪里, 所以地址不相同
-		 
-		 对于所有包含new方式新建对象(包括null) 的"+ " 连接表达式, 他所产生的新对象都不会被加入字符串池中
-		 */
-		System.out.println( s1 == s9 ); // false
-		/**
-		 	s7, s8 作为两个变量, 都是不可以预料的, 都是不可以预料的, 
-		 	在编译期被确认, 所以不做优化, 只能等到运行时, 在堆中创建
-		 */
-		System.out.println( s4 == s5 ); // false
-		//  两个都在堆中, 地址不相同
-		System.out.println( s1 == s6 ); // true
-		//  intern() 会尝试将Hello字符串添加到常量池中，并返回其在常量池中的地址，
-		// 因为常量池中已经有了Hello字符串，所以intern方法直接返回地址； 故地址相同
-		
-		
+  String s1 = "hello";
+  String s2 = "hello";
+  String s3 = "hel" + "lo";
+  String s4 = "hel" + new String("lo");
+  String s5 = new String("hello");
+  String s6 = s5.intern();
+  String s7 = "H";
+  String s8 = "ello";
+  String s9 = s7 + s8;
+  
+  System.out.println( s1 == s2 ); // true
+  /**
+   s1 和  s2 在赋值的时候, 均使用字符串字面量,
+    在编译期间, 这种字面量会直接放入class文件的常量池中, 而实现复用
+    载入运行时常量池后, s1, s2 指向同一个内存地址, 所以相等
+   */
+  System.out.println( s1 == s3 ); // true
+  /*
+   s3 虽然是动态拼接出来的字符串, 但是所有参与拼接的部分都是已知的字面量, 
+   在编译期间, 这种拼接会被优化, 编译器直接帮你拼接好
+   
+   只有使用引号包括的文本的方式创建的String对象之间使用"+"连接产生新的对象才会被加入字符串池中
+   */
+  System.out.println( s1 == s4 ); // false
+  /*
+   s4有一部分不是已知字面量, 编译器不会优化, 必须等到运行时才可以确定结果, 
+   给字符串不变定理, 不确定s4被分配到哪里, 所以地址不相同
+   
+   对于所有包含new方式新建对象(包括null) 的"+ " 连接表达式, 他所产生的新对象都不会被加入字符串池中
+   */
+  System.out.println( s1 == s9 ); // false
+  /**
+    s7, s8 作为两个变量, 都是不可以预料的, 都是不可以预料的, 
+    在编译期被确认, 所以不做优化, 只能等到运行时, 在堆中创建
+   */
+  System.out.println( s4 == s5 ); // false
+  //  两个都在堆中, 地址不相同
+  System.out.println( s1 == s6 ); // true
+  //  intern() 会尝试将Hello字符串添加到常量池中，并返回其在常量池中的地址，
+  // 因为常量池中已经有了Hello字符串，所以intern方法直接返回地址； 故地址相同
+  
+  
 ```
 
 特例1
@@ -151,16 +137,6 @@ Integer k = Integer.valueOf(123);
 System.out.println(z == k);   // true
 ```
 
-
-
-
-
-
-
-
-
-
-
 ## 包装类和基本类型
 
 ```java
@@ -185,20 +161,20 @@ System.out.println(i5 == i8); //false
 Integer i9 = new Integer(128);
 Integer i10 = new Integer(123);
 System.out.println(i9 == i10);  //false
-			
+   
 int i11 = 11;
 int i12 = 11;
 System.out.println(i11 == i12); // true
 ```
 
-> i4 和 i5 为true 的原因: 
+> i4 和 i5 为true 的原因:
 >
 > - -128~127之间的数, 会进行缓存,
 > - Interger i4 =127 时, 会将127进行缓存
 > - Interger i5 = 127 时, 会直接在缓存中去, 就不会再new一个对象
 > - 所以i4和i5是true, i6和i7为false
 >
-> 总结: 
+> 总结:
 >
 > - 两个都是new出来的, 都是false,地址不同
 > - int和Interger(无论new否)比, 都是true, 因为Interger自动猜想为int再去比

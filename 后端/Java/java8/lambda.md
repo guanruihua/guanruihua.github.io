@@ -1,11 +1,3 @@
----
-title: lambda
-date: 2021-02-15 00:01:25
-tags: 
-- lambda
-- java
----
-
 # Lambda
 
 > - `Lambda` 表达式，也可称为`闭包`，是一个`匿名函数`。
@@ -20,17 +12,15 @@ public class LambdaDemo {
         //x -> System.out.println(x)，就是一个匿名函数,即Lambda表达式，作为实参传给dealList方法
         dealList(list, x -> System.out.println(x));
     }
-	
+ 
     public static void dealList(List<String> list, Consumer<String> consumer) {
-    	// 遍历list中的每一个元素，传给consumer对象的accept函数，进行调用
+     // 遍历list中的每一个元素，传给consumer对象的accept函数，进行调用
         for (String x : list) {
             consumer.accept(x);
         }
     }
 }
 ```
-
-
 
 > - Lambda 表达式是对某些接口的简单实现，但不是所有接口都可以使用 Lambda 表达式来实现的，Lambda 规定能被 Lambda 表达式实现的接口中，它`只能只有一个需要被实现的方法（函数）`，但`不要求接口中只能只有一个方法。`
 > - 因为Java8中有另外一个新特性，即 `default` 关键字修饰的接口方法有默认实现，这个默认的方法是可以不需要子类实现的，可使用`@FunctionalInterface`注解来强制使接口只能有一个需要被实现的方法。
@@ -59,23 +49,15 @@ Mr.nobody is eat
 I can run...
 ```
 
-
-
 ## 案例一
-
-
 
 ```java
 // 接口
 public interface Human {
-	// 抽象方法，需要被实现
+ // 抽象方法，需要被实现
     void speak();
 }
 ```
-
-
-
-
 
 ### 通过类来实现接口
 
@@ -414,4 +396,3 @@ public class LambdaDemo {
     }
 }
 ```
-

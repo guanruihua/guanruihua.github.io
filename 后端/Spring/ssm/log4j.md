@@ -1,17 +1,8 @@
----
-title: java-log4j
-date: 2020-09-18 21:31:35
-tags:
-	- log4j
-	- java
-	- log
----
-
 # log4j
 
 > log4j包含三个组件
 >
-> -  Logger(记录器) : 日志类别
+> - Logger(记录器) : 日志类别
 > - Appender(输出目的地) : 日志要输出的地方
 > - Layout(日志布局) : 日志以何种形式输出
 
@@ -27,8 +18,6 @@ pom.xml
     <version>1.2.16</version>
 </dependency>
 ```
-
-
 
 resources/log4j.properties
 
@@ -74,8 +63,6 @@ import org.apache.log4j.Logger;public class log4jTest {
 }
 ```
 
-
-
 ## 配置Logger记录器
 
 ```java
@@ -87,8 +74,6 @@ level表示日志记录的优先级，分为OFF、FATAL、ERROR、WARN、INFO、
 Log4j建议使用四个级别，优先级从高到低分别是ERROR、WARN、INFO、DEBUG。
 
 通过在这里定义的级别，你可以控制到应用程序中相应级别的日志信息的开关。比如在这里定义了INFO级别，则应用程序中所有DEBUG级别的日志信息将不被打印出来。
-
-
 
 appenderName就是指日志输出的目的。你可以灵活地定义日志输出，也可以同时指定多个输出目的地。
 
@@ -105,8 +90,6 @@ org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），
 org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件），  
 org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
 ```
-
- 
 
 ## 配置layout日志布局
 

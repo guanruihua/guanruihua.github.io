@@ -1,11 +1,3 @@
----
-title: webpack
-date: 2020-10-29 20:26:21
-tags: 
-- webpack
-- front-end
----
-
 # Webpack
 
 > 五个核心概念
@@ -18,11 +10,9 @@ tags:
 >    1. development: 开发模式, 能够让代码在本地调试, 会将proces.env.NODE_ENV的值设为development
 >    2. production: 产品模式, 能够让代码优化上线运行的环境, 会将process.env.NDOE_ENV的值设置为production
 
+## 初体验
 
-
-##  初体验
-
-> 全局安装: `yarn global add webpack webpack-cli  `
+> 全局安装: `yarn global add webpack webpack-cli`
 >
 > 1. webpack能处理js/json资源, 不能处理css/ img等其他资源
 > 2. 生产环境和开发环境将ES6模块化编译成浏览器能识别的模块
@@ -35,8 +25,6 @@ webpack ./src/index.js -o ./build/built.js --mode=production
 --mode=development  打包模式, 还可以改成生产模式production
 ```
 
-
-
 ### 获取npm 命令参数
 
 ### 命令行直接输入
@@ -48,13 +36,9 @@ const serverPath = process.env.npm_config_aaa;
 console.log(serverPath);  // 输出结果：/webpack/src
 ```
 
-
-
 ### 添加到package.json的script里面
 
 `npm run dev`
-
-
 
 ```js
 // package.json
@@ -62,8 +46,6 @@ console.log(serverPath);  // 输出结果：/webpack/src
      "dev": "webpack-dev-server --config build/webpack.local --这里是自定义参数随便写"
  }
 ```
-
-
 
 ```js
 const arg = process.argv;
@@ -78,12 +60,6 @@ console.log(process.argv);
 **/
 ```
 
-
-
-
-
-
-
 ## loader的使用
 
 > 解决非js/json资源的解析
@@ -91,8 +67,6 @@ console.log(process.argv);
 > 创建webpack.config.js webpack的配置文件: 指示webpack 的加载
 >
 > 配置好后, 使用`webpack`指令执行打包
-
-
 
 ```js
 // resolve用来拼接绝对路径的方法
@@ -201,8 +175,6 @@ module.exports = {
 
 > 使用url-loader, file-loader, html-loader
 
-
-
 ```js
 // resolve用来拼接绝对路径的方法
 const { resolve } = require('path');
@@ -263,7 +235,7 @@ module:{
 
 ```js
 module: {
-	rules:[
+ rules:[
      // 打包其他资源(除了html/js/css资源以外的资源)
       {
         // 排除css/js/html资源
@@ -279,13 +251,13 @@ module: {
 
 > 开发服务器 devServer: 用来自动化编译
 >
->  特点: 只会在内存中打包编译, 不会有任何输出
+> 特点: 只会在内存中打包编译, 不会有任何输出
 >
->  启动devServer指令为:npx webpack-dev-server
+> 启动devServer指令为:npx webpack-dev-server
 
 ```js
 module: {
-	rules:[
+ rules:[
     devServer: {
       // 项目路径
       contentBase: resolve(__dirname, 'build'),
@@ -299,8 +271,6 @@ module: {
   ]
 }
 ```
-
-
 
 ### 分文件夹
 
@@ -415,8 +385,6 @@ module.exports = {
   } 
 }
 ```
-
-
 
 ### 提取css文件为单独css文件
 
@@ -584,8 +552,6 @@ module.exports = {
 };
 ```
 
-
-
 ### js语法检查
 
 ```js
@@ -694,8 +660,6 @@ module.exports = {
 
 ```
 
-
-
 ### js压缩
 
 ```js
@@ -718,8 +682,6 @@ module.exports = {
 };
 
 ```
-
-
 
 ### html压缩
 
@@ -749,8 +711,8 @@ module.exports = {
 };
 ```
 
-
 ### 生产环境配置
+
 ```js
 const { resolve } = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -958,8 +920,6 @@ module.exports = {
 
 ```
 
-
-
 ##### 优化代码调试
 
 ##### source-map
@@ -1079,8 +1039,6 @@ module.exports = {
 */
 
 ```
-
-
 
 ### 生产环境性能优化
 
@@ -1210,11 +1168,7 @@ module.exports = {
 
 ```
 
-
-
 ##### babel缓存
-
-
 
 ```js
 const { resolve } = require('path');
@@ -1358,9 +1312,7 @@ module.exports = {
 
 ```
 
-
-
-####   多进程打包
+#### 多进程打包
 
 ```js
 const { resolve } = require('path');
@@ -1519,9 +1471,7 @@ module.exports = {
 
 ```
 
-
-
-####  externals
+#### externals
 
 ```js
 const { resolve } = require('path');
@@ -1547,9 +1497,7 @@ module.exports = {
 
 ```
 
-
-
-####  dll
+#### dll
 
 webpack.config.js
 
@@ -1611,15 +1559,11 @@ module.exports = {
 };
 ```
 
+#### 优化代码运行的性能
 
+#### 缓存(hash-chunkhash-contenthash)
 
-
-
-####  优化代码运行的性能
-
-####   缓存(hash-chunkhash-contenthash)
-
-####  tree shaking
+#### tree shaking
 
 ```js
 const { resolve } = require('path');
@@ -1757,11 +1701,7 @@ module.exports = {
 };
 ```
 
-
-
-####  code split
-
-
+#### code split
 
 demo1
 
@@ -1871,15 +1811,7 @@ module.exports = {
 };
 ```
 
-
-
-
-
-
-
-####  懒加载/预加载
-
-
+#### 懒加载/预加载
 
 ```js
 const { resolve } = require('path');
@@ -1911,11 +1843,7 @@ module.exports = {
 
 ```
 
-
-
-####  pwa
-
- 
+#### pwa
 
 ```js
 const { resolve } = require('path');
@@ -2058,10 +1986,6 @@ module.exports = {
 };
 ```
 
-
-
-
-
 ## webpack配置详解
 
 ### entry
@@ -2109,8 +2033,6 @@ module.exports = {
 
 ```
 
-
-
 ### output
 
 ```js
@@ -2137,8 +2059,6 @@ module.exports = {
 };
 
 ```
-
-
 
 ### module
 
@@ -2186,8 +2106,6 @@ module.exports = {
 
 ```
 
-
-
 ### resolve
 
 ```js
@@ -2225,11 +2143,7 @@ module.exports = {
 
 ```
 
-
-
 ### dev server
-
-
 
 ```js
 const { resolve } = require('path');
@@ -2298,8 +2212,6 @@ module.exports = {
 };
 
 ```
-
-
 
 ### optimization
 
@@ -2382,4 +2294,3 @@ module.exports = {
 };
 
 ```
-

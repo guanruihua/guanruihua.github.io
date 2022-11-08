@@ -1,13 +1,3 @@
----
-title: batch
-date: 2021-5-24 10:11:31
-tags: 
-- batch
-- script
----
-
-
-
 # Batch
 
 > - 几乎任何windows 都可以直接运行

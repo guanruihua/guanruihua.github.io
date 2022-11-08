@@ -1,21 +1,11 @@
----
-title: mysql-node
-date: 2021-01-20 16:23:33
-tags:
-- node
-- mysql
----
-
-
-
 # Node.js 连接 MySQL
 
-> https://github.com/mysqljs/mysql
+> <https://github.com/mysqljs/mysql>
 
 ## 安装驱动
 
 ```shell
-$ cnpm install mysql
+cnpm install mysql
 ```
 
 ## 连接数据库
@@ -36,8 +26,6 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 });
 ```
 
-
-
 执行以下命令输出结果为：
 
 ```shell
@@ -45,9 +33,7 @@ $ node test.js
 The solution is: 2
 ```
 
-
-
-### 数据库连接参数说明：
+### 数据库连接参数说明
 
 | 参数               | 描述                                                         |
 | :----------------- | :----------------------------------------------------------- |
@@ -82,8 +68,6 @@ let Params = [];// 当 sql 有?, Params 中的参数和sql一一对应
 connection.query(sql, [Params], function (err, result) { }
 ```
 
-
-
 ### 查询数据
 
 ```js
@@ -102,13 +86,11 @@ connection.query(sql,function (err, result) {
     console.log('[SELECT ERROR] - ',err.message);          
     return;        
   }        
-  console.log('--------------------------SELECT----------------------------');       	   		console.log(result);       
+  console.log('--------------------------SELECT----------------------------');             console.log(result);       
   console.log('------------------------------------------------------------\n\n');   
 });  
 connection.end();
 ```
-
-
 
 执行以下命令输出就结果为：
 
@@ -173,8 +155,6 @@ connection.query(addSql, addSqlParams,function (err, result) {
 connection.end();
 ```
 
-
-
 执行以下命令输出就结果为：
 
 ```shell
@@ -220,8 +200,6 @@ connection.query(modSql, modSqlParams,function (err, result) {
 connection.end();
 ```
 
-
-
 执行以下命令输出就结果为：
 
 ```
@@ -252,12 +230,10 @@ connection.query(delSql,function (err, result) {
     console.log('[DELETE ERROR] - ',err.message);          
     return;        
   }                
-  console.log('--------------------------DELETE----------------------------');       			console.log('DELETE affectedRows',result.affectedRows);       
+  console.log('--------------------------DELETE----------------------------');          console.log('DELETE affectedRows',result.affectedRows);       
   console.log('-----------------------------------------------------------------\n\n');   });  
 connection.end();
 ```
-
-
 
 执行以下命令输出就结果为：
 
@@ -270,8 +246,6 @@ DELETE affectedRows 1
 执行成功后，查看数据表，即可以看到 id=6 的数据已被删除：
 
 ![img](https://www.runoob.com/wp-content/uploads/2017/03/27BEB36A-0DCE-4C75-961F-93D55CBECC54.jpg)
-
-
 
 ## websites.sql
 
@@ -316,4 +290,3 @@ COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
 
 ```
-

@@ -1,13 +1,3 @@
----
-title: vuex
-date: 2021-02-05 16:12:27
-tags:
-- vuex
-- vue
----
-
-
-
 # vuex
 
 > 状态管理模式来纪中管理状态或信息
@@ -22,7 +12,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Strore({
+export default new Vuex.Store({
   state: {
     count : 1,
     msg: 'msg',
@@ -89,12 +79,10 @@ export defualt {
   })
    //方法二: 使用解构符号...
     computed: {
-    	...mapState(['count','msg']);
+     ...mapState(['count','msg']);
     }
 }
 ```
-
-
 
 ## Getter
 
@@ -114,7 +102,7 @@ export default new Vuex.Store({
   getters: {
     modifyArr(state) {
       return state.list.filter((item, index, arr) =>{
-      	return item % 2 == 0;
+       return item % 2 == 0;
       })
     }
   }
@@ -126,20 +114,18 @@ app.js
 ```js
 export default {
   //方法一
- 	 computed: {
+   computed: {
      list() {
        return this.$store.getters.modifyArr;
      }
    }
   //方法二 : mapGetters
   computed: {
-  	...mapGetters(['modifyArr'])
+   ...mapGetters(['modifyArr'])
     ...mapGetters({getList:'modifyArr'})//指定别名
-	}
+ }
 }
 ```
-
-
 
 ## Mutation
 
@@ -183,7 +169,7 @@ methods: {
     
     this.$store.commit('loadAdd', 100)
     this.$store.commit('loadAdd', {
-    	extraCount: 100
+     extraCount: 100
     })//传输额外的参数
     
     this.$store.commit({
@@ -221,15 +207,11 @@ mutations: {
 
 ```
 
-
-
 ## Action
 
 > - 可以自行异步操作,
 > - 类似于Mutation
 > - 不可以直接修改state
-
-
 
 ```js
 actions: {
@@ -269,18 +251,18 @@ methods: {
 
 ```js
 state: {
-	userInfo: {
-  	name: 'guan',
+ userInfo: {
+   name: 'guan',
     age:23,
   }
 },
 mutation: {
-	changeInfo(state, payload) {
+ changeInfo(state, payload) {
     state.userInfo.name = 'ruihua'
   }
 },
 actions: {
-	changeInfo(context, payload) {
+ changeInfo(context, payload) {
     return new Promise( (resolve, reject) => {
       setTimeout(() => {
         context.commit('changeInfo');
@@ -299,7 +281,7 @@ data() {
 },
 methods: {
   modifyInfo() {
-		this.$store.dispatch('changeInfo')
+  this.$store.dispatch('changeInfo')
   }
 }
 ```
@@ -325,12 +307,6 @@ actions: {
 
 ```
 
-
-
-
-
-
-
 ## Module
 
 ### 分模块管理方法
@@ -338,8 +314,8 @@ actions: {
 ```js
 //先定义两个模块
 const moduleA = {
-	state: {
-  	name: 'guan',
+ state: {
+   name: 'guan',
     age: '23'
   },
   mutations: {},
@@ -348,8 +324,8 @@ const moduleA = {
 }
 
 const moduleB = {
-	state: {
-  	name: 'rui',
+ state: {
+   name: 'rui',
     age: '22'
   },
   mutations: {},
@@ -359,8 +335,8 @@ const moduleB = {
 
 //在Vuex里面声明模块
 export default new Vuex.Store({
-	modules: {
-  	ma: moduleA,
+ modules: {
+   ma: moduleA,
     mb: moduleB
   },
   state: {
@@ -371,13 +347,11 @@ export default new Vuex.Store({
   
 //app.vue
 compute: {
-	msg() {
-		return this.$store.mb; //{name: 'rui', age: '22'}	
-	}
+ msg() {
+  return this.$store.mb; //{name: 'rui', age: '22'} 
+ }
 }
 ```
-
-
 
 ### 命名空间模块
 
@@ -431,7 +405,7 @@ methods: {
 // 1.
 ...mapState('mc', ['name', 'age']);
 ...mapState('mc', {
-	name(state) {
+ name(state) {
     return state.name;
   },
   age(state) {
@@ -443,30 +417,24 @@ import { createNamespacedHelpers } from 'vuex';
 const { mapState, mapMutations } = createNamespacedHelpers('mc');
 ```
 
-
-
-
-
 ```vue
 <script>
 
 import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
-	computed:{
-		...mapState('loginStore',['text', 'num']),
-	},
-	methods: {
+ computed:{
+  ...mapState('loginStore',['text', 'num']),
+ },
+ methods: {
     // 这里的loginStore 是 命名空间
-		...mapGetters('loginStore', ['getData']),
-		...mapMutations('loginStore',['add']),
-		...mapActions('loginStore', ['addAction']),
+  ...mapGetters('loginStore', ['getData']),
+  ...mapMutations('loginStore',['add']),
+  ...mapActions('loginStore', ['addAction']),
 
 }
 </script>
 ```
-
-
 
 ## vuex与v-model对数据处理
 
@@ -491,4 +459,3 @@ mutations: {
 }
 
 ```
-
