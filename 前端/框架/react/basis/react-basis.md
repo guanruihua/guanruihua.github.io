@@ -819,17 +819,6 @@ setInterval(tick, 1000);///每一秒调用一次tick方法
        }
    ```
 
-### 引入本地图片
-
-```js
-import img from './img/1.png'
-<img src={img} />
-
-<img src={require('./img/1.png') alt= "" />
-//用作背景图
-style  = {{background:'url($require('./img/1.png')})'}}
-```
-
 ### css
 
 ```js
