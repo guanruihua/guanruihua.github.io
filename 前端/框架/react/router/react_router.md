@@ -113,7 +113,7 @@ function App() {
 >- `basename : string`
 >- `getUserConfirmation: func`
 >- `hashType:string`
->- `chilren:node`
+>- `children:node`
 
 ### Link
 
