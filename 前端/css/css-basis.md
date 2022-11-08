@@ -1,12 +1,3 @@
----
-title: css-Basis
-date: 2020-09-08 22:45:04
-tags: 
-	- css
-	- front-end
-	- basis
----
-
 # CSS-basis
 
 ## 内核前缀
@@ -122,7 +113,7 @@ background-posittion : center
 
 ### 文字阴影
 
-> text-shadow : none(默认值) 
+> text-shadow : none(默认值)
 >
 > 语法: `text-shadow: *h-shadow v-shadow blur color*;`
 >
