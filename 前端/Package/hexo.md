@@ -59,7 +59,7 @@ hexo server // 运行
 
 修改source/css/_partial/aricle.styl
 
-```styuls
+```stylus
 ul
   li
     text-align: left
@@ -74,9 +74,9 @@ p
 ```ejs
 <aside id="sidebar"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
   <% theme.widgets.forEach(function(widget){ %>
-    <% if(widget!='tag') {%>
+    <% if(widget!='tag') { %>
     <%- partial('_widget/' + widget) %>
-    <% }%>
+    <% } %>
   <% }) %>
 </aside>
 ```
@@ -89,7 +89,7 @@ p
 >
 > 无需刷新加载插件 [jquery-pjax]([http://bsify.admui.com/jquery-pjax/?id=%e6%94%b9%e5%8f%98%e6%b5%8f%e8%a7%88%e5%99%a8url](http://bsify.admui.com/jquery-pjax/?id=改变浏览器url))
 >
-> 代码高亮插件 [highlightjs](https://highlightjs.org/download/)
+> 代码高亮插件 [highlight](https://highlightjs.org/download/)
 >
 > [图标和字体](https://highlightjs.org/download/)
 >
@@ -123,7 +123,7 @@ p
 
 引入高亮插件问题
 
-```j
+```js
 localhost/:1拒绝从“http://localhost:4000/lib/ lighligh/styles /agate”应用样式。因为它的MIME类型('text/html')不是一个受支持的样式表MIME类型，并且启用了严格的MIME检查。
 ```
 
