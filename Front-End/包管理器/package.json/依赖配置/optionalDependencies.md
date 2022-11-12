@@ -11,5 +11,5 @@
  "optionalDependencies": {
   "colors": "^1.4.0"
  }
-{
+}
 ```

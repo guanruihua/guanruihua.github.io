@@ -9,7 +9,7 @@
   "react",
   "react-dom"
 ]
-{
+}
 ```
 
 > 在执行 npm pack 打包生成 tgz 压缩包中，将出现 `node_modules` 并包含 react 和 react-dom。

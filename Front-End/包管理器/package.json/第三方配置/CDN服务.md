@@ -9,15 +9,16 @@
 ```json
 {
  "unpkg": "dist/vue.global.js",
-{
+}
 ```
 
 ## jsdelivr
 
+> [jsDelivr - A free, fast, and reliable CDN for open source](https://www.jsdelivr.com/)
 > 访问 `cdn.jsdelivr.net/npm/vue` 实际上获取到的是 jsdelivr 字段里配置的文件地址
 
 ```json
 {
  "jsdelivr": "dist/vue.global.js",
-{
+}
 ```

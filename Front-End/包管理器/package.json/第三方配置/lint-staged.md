@@ -10,7 +10,7 @@
     "git add -A"
   ]
 }
-{
+}
 ```
 
 > `lint-staged` 通常配合 `husky` 这样的 `git-hooks` 工具一起使用

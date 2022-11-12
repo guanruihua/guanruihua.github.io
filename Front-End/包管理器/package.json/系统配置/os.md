@@ -5,5 +5,5 @@
 ```json
 {
  "os": ["darwin", "linux"]
-{
+}
 ```

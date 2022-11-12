@@ -5,5 +5,5 @@
 ```json
 {
  "private": true
-{
+}
 ```

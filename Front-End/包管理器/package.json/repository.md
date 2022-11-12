@@ -4,6 +4,8 @@
 
 ```json
 {
+  "repository": "https://github.com/facebook/react.git",
+  // or
  "repository": {
   "type": "git",
   "url": "https://github.com/facebook/react.git",

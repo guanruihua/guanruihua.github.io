@@ -9,5 +9,5 @@
  "publishConfig": {
    "registry": "https://registry.npmjs.org/"
  }
-{
+}
 ```

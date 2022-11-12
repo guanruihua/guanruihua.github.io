@@ -7,7 +7,7 @@
  "config": {
   "port": "3001"
  }
-{
+}
 ```
 
 > 在执行脚本时，我们可以通过 npm_package_config_port 这个变量访问到 3001。

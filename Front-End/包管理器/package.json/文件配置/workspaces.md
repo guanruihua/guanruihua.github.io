@@ -10,7 +10,7 @@ workspaces 字段接收一个数组，数组里可以是文件夹名称或者通
  "workspaces": [
    "workspace-a"
  ]
-{
+}
 ```
 
 表示在 workspace-a 目录下还有一个项目，它也有自己的 package.json。
@@ -26,5 +26,5 @@ workspace-a
  "workspaces": [
    "packages/*"
  ]
-{
+}
 ```

@@ -8,5 +8,5 @@
  "devDependencies": {
    "webpack": "^5.69.0"
  }
-{
+}
 ```

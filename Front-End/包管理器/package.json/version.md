@@ -13,6 +13,22 @@
 3. 修订号 `Patch`，在修复了一些问题，也未产生破坏性变更时会更新此版本号
 
 4. `Pre-release` 和 `Metadata` 来描述项目的测试版本
+   - 如果某个版本的改动较大，并且不稳定，可能如法满足预期的兼容性需求，就需要发布先行版本，先行版本通过会加在版本号的后面，通过“-”号连接以点分隔的标识符和版本编译信息：内部版本（alpha）、公测版本（beta）和候选版本（rc，即release candiate）
+
+## 查看版本
+
+可以通过以下命令来查看npm包的版本信息，以react为例：
+
+```javascript
+// 查看最新版本
+npm view react version
+// 查看所有版本
+npm view react versions
+```
+
+当执行第二条命令时，结果如下：
+
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/691978ac852647c18af70b3208ed32c3~tplv-k3u1fbpfcp-watermark.awebp)
 
 ## package 文件
 
