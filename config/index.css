@@ -245,9 +245,9 @@ body {
     padding: 1rem;
   }
 
-  .search-content {
+  /* .search-content { */
     /* display: none; */
-  }
+  /* } */
 
   .modules>div {
     height: 18rem;
