@@ -207,6 +207,7 @@
     * [js运算符号](JavaScript/运算符/js运算符号.md)
     * [拓展运算符](JavaScript/运算符/拓展运算符.md)
 * Node
+  * [git](Node/git.md)
   * 中台
     * [egg](Node/中台/egg.md)
     * [express](Node/中台/express.md)
@@ -233,6 +234,7 @@
   * [roadhog](Package/roadhog.md)
   * 全屏
     * [react-flip-toolkit](Package/全屏/react-flip-toolkit.md)
+  * [兼容性](Package/兼容性.md)
   * 可视化
     * [cesium](Package/可视化/cesium.md)
     * [D3](Package/可视化/D3.md)
@@ -305,13 +307,11 @@
   * [待整理代码](其他/待整理代码.md)
 * 包管理器
   * [cnpm](包管理器/cnpm.md)
-  * [git](包管理器/git.md)
   * npm
     * [npm-cli](包管理器/npm/npm-cli.md)
     * [npm包](包管理器/npm/npm包.md)
     * [npm指令说明](包管理器/npm/npm指令说明.md)
     * [yarn](包管理器/npm/yarn.md)
-    * [兼容性](包管理器/npm/兼容性.md)
     * 制作NPM包
       * [index](包管理器/npm/制作NPM包/index.md)
       * [ts](包管理器/npm/制作NPM包/ts.md)
@@ -322,9 +322,6 @@
       * [命令](包管理器/npm/命令/命令.md)
     * [快速删除文件](包管理器/npm/快速删除文件.md)
   * [nrm](包管理器/nrm.md)
-  * [package](包管理器/package.md)
-  * [版本管理](包管理器/版本管理.md)
-  * [脚本](包管理器/脚本.md)
 * 多端
   * Electron
     * [index](多端/Electron/index.md)
