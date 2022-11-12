@@ -1,4 +1,6 @@
-# 版本管理
+# version
+
+> 版本管理
 
 > 版本管理标准 [semver](https://semver.org/)
 

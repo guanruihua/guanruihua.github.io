@@ -1,4 +1,6 @@
-# 脚本
+# Script
+
+> 脚本
 
 ## 列出可运行脚本
 
@@ -48,7 +50,7 @@ npm start --prefix path/to/your/folder
 ```json
 {
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config build/wepack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js"
   }
 }
 ```
