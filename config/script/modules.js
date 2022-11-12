@@ -3,6 +3,7 @@ modules.forEach(name => {
 	const itemDom = document.createElement('div')
 	const imgDom = document.createElement('img')
 	imgDom.setAttribute('src', `./${name}/index.jpg`)
+	imgDom.setAttribute('title', name)
 	imgDom.onerror = function () {
 		this.src = './__assets__/001.jpg'
 	}
