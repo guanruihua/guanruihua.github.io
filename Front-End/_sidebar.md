@@ -19,7 +19,6 @@
     * [mix-blend-mode](CSS/attribute/mix-blend-mode.md)
     * [overflow](CSS/attribute/overflow.md)
     * [pointer-events](CSS/attribute/pointer-events.md)
-    * [position](CSS/attribute/position.md)
     * [scroll-behavior](CSS/attribute/scroll-behavior.md)
     * [scroll-padding-top](CSS/attribute/scroll-padding-top.md)
     * [shap-outside](CSS/attribute/shap-outside.md)
@@ -44,6 +43,10 @@
     * [display](CSS/layout/display.md)
     * [flex](CSS/layout/flex.md)
     * [grid](CSS/layout/grid.md)
+    * position
+      * [index](CSS/layout/position/index.md)
+      * 问题
+        * [fixed失效](CSS/layout/position/问题/fixed失效.md)
     * [table](CSS/layout/table.md)
   * [templates&slots](CSS/templates&slots.md)
   * type
@@ -185,6 +188,7 @@
       * [set](JavaScript/数据结构/Set/set.md)
       * [WeakSet](JavaScript/数据结构/Set/WeakSet.md)
     * 数组
+      * [flat](JavaScript/数据结构/数组/flat.md)
       * [v8引擎下的数组](JavaScript/数据结构/数组/v8引擎下的数组.md)
       * [下标](JavaScript/数据结构/数组/下标.md)
       * [数组](JavaScript/数据结构/数组/数组.md)
@@ -399,10 +403,6 @@
 * 拓展
   * [CORS](拓展/CORS.md)
   * [js垃圾回收机制](拓展/js垃圾回收机制.md)
-  * 兼容开发
-    * [IE8](拓展/兼容开发/IE8.md)
-    * [var](拓展/兼容开发/var.md)
-    * 跨平台
   * 前后端交互
     * [ajax](拓展/前后端交互/ajax.md)
     * [axios](拓展/前后端交互/axios.md)
@@ -415,26 +415,6 @@
     * [指标](拓展/性能指标/指标.md)
   * 时区
     * [index](拓展/时区/index.md)
-  * 浏览器
-    * [favicon](拓展/浏览器/favicon.md)
-    * [meta](拓展/浏览器/meta.md)
-    * [seo](拓展/浏览器/seo.md)
-    * [URL](拓展/浏览器/URL.md)
-    * [User Agent Stylesheet](拓展/浏览器/User Agent Stylesheet.md)
-    * Web Api
-      * [localStorage](拓展/浏览器/Web Api/localStorage.md)
-      * [location](拓展/浏览器/Web Api/location.md)
-      * [postMessage](拓展/浏览器/Web Api/postMessage.md)
-      * [requestAnimationFrame](拓展/浏览器/Web Api/requestAnimationFrame.md)
-    * [web点击劫持X-Frame-Options](拓展/浏览器/web点击劫持X-Frame-Options.md)
-    * [开启手机控制台](拓展/浏览器/开启手机控制台.md)
-    * [怪异模式](拓展/浏览器/怪异模式.md)
-    * [标签](拓展/浏览器/标签.md)
-    * [浏览器多进程&JS单线程](拓展/浏览器/浏览器多进程&JS单线程.md)
-    * 浏览器插件
-      * [manifest](拓展/浏览器/浏览器插件/manifest.md)
-      * [插件](拓展/浏览器/浏览器插件/插件.md)
-    * [调试](拓展/浏览器/调试.md)
   * 编码规范
     * [代码规范](拓展/编码规范/代码规范.md)
     * [方法](拓展/编码规范/方法.md)
@@ -524,6 +504,31 @@
     * [sockjs-node](框架/错误/sockjs-node.md)
   * 问题
     * [index](框架/问题/index.md)
+* 浏览器
+  * [favicon](浏览器/favicon.md)
+  * [meta](浏览器/meta.md)
+  * [seo](浏览器/seo.md)
+  * [URL](浏览器/URL.md)
+  * [User Agent Stylesheet](浏览器/User Agent Stylesheet.md)
+  * Web Api
+    * [localStorage](浏览器/Web Api/localStorage.md)
+    * [location](浏览器/Web Api/location.md)
+    * [postMessage](浏览器/Web Api/postMessage.md)
+    * [requestAnimationFrame](浏览器/Web Api/requestAnimationFrame.md)
+  * [web点击劫持X-Frame-Options](浏览器/web点击劫持X-Frame-Options.md)
+  * 兼容开发
+    * [IE8](浏览器/兼容开发/IE8.md)
+    * [var](浏览器/兼容开发/var.md)
+  * [开启手机控制台](浏览器/开启手机控制台.md)
+  * [怪异模式](浏览器/怪异模式.md)
+  * [标签](浏览器/标签.md)
+  * [浏览器多进程&JS单线程](浏览器/浏览器多进程&JS单线程.md)
+  * 浏览器插件
+    * [manifest](浏览器/浏览器插件/manifest.md)
+    * [插件](浏览器/浏览器插件/插件.md)
+  * 缓存
+    * [index](浏览器/缓存/index.md)
+  * [调试](浏览器/调试.md)
 * 问题
   * [内存](问题/内存.md)
   * [同步和异步](问题/同步和异步.md)
