@@ -11,7 +11,7 @@
 | `table`              | 使用后将作为块级表格来显示（类似`<table>`），前后带有换行符                  |
 | `inline-table`       | 使用后元素将作为内联表格显示（类似`<table>`），前后没有换行符                |
 | `table-row-group`    | 元素将作为一个或多个行的分组来显示（类似`<tbody>`）                          |
-| `table-hewder-group` | 元素将作为一个或多个行的分组来表示（类似`<thead>`）                          |
+| `table-header-group` | 元素将作为一个或多个行的分组来表示（类似`<thead>`）                          |
 | `table-footer-group` | 元素将作为一个或多个行分组显示（类似`<tfoot>`）                              |
 | `table-row`          | 元素将作为一个表格行显示（类似`<tr>`）                                       |
 | `table-column-group` | 元素将作为一个或多个列的分组显示（类似`<colgroup>`）                         |
@@ -21,7 +21,7 @@
 | `inherit`            | 规定应该从父元素集成display属性的值                                          |
 
 ```css
-/* precomposed values */
+/* pre composed values */
 display: block;
 display: inline;
 display: inline-block;
