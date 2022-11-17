@@ -1,6 +1,8 @@
 # Nginx
->
-> [windows10下nginx的安装及使用](https://blog.csdn.net/sinat_36146776/article/details/88992345)
+
+> - [源码](https://trac.nginx.org/nginx/browser)
+> - [官网](<http://www.nginx.org>
+> - [windows10下nginx的安装及使用](https://blog.csdn.net/sinat_36146776/article/details/88992345)
 
 ## 安装部署
 
@@ -60,7 +62,7 @@ nginx -t -c /nginx/conf/nginx.conf
 ## 文件目录
 
 ```js
-[wujianrong@localhost ~]# tree /usr/local/nginx
+[ruihuag@localhost ~]# tree /usr/local/nginx
 /usr/local/nginx
 ├── client_body_temp
 ├── conf                             # Nginx所有配置文件的目录
@@ -218,29 +220,6 @@ location / {
 }
 
 ```
-
-## 常用命令
-
-### 启动
-
-> `nginx` //直接nginx启动，前提是配好nginx环境变量
-> `systemctl start nginx.service` //使用systemctl命令启动
-
-### 停止
-
-> `nginx  -s stop` //立即停止服务
-> `nginx -s quit` // 从容停止服务 需要进程完成当前工作后再停止
-> `killall nginx` //直接杀死nginx进程
-> `systemctl stop nginx.service` //systemctl停止
-
-### 重启
-
-> `nginx -s reload` //重启nginx
-> `systemctl reload nginx.service` //systemctl重启nginx
-
-### 验证nginx配置文件是否正确
-
-> `nginx -t` //输出nginx.conf syntax is ok即表示nginx的配置文件正确
 
 ## 反向代理, 负载均衡
 
