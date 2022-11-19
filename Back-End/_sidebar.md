@@ -17,7 +17,7 @@
     * [ssm跨域](Spring/question/ssm跨域.md)
     * [tomcat](Spring/question/tomcat.md)
   * [Shiro](Spring/Shiro.md)
-  * [Spring Boot annotations](Spring/Spring Boot annotations.md)
+  * [Spring-Boot-annotations](Spring/Spring-Boot-annotations.md)
   * [SpringJDBC](Spring/SpringJDBC.md)
   * [Spring相关](Spring/Spring相关.md)
   * ssm

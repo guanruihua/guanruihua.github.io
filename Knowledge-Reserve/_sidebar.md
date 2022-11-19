@@ -12,7 +12,9 @@
       * [linux-question](产品/运维/Linux/linux-question.md)
       * [linux](产品/运维/Linux/linux.md)
       * [命令](产品/运维/Linux/命令.md)
-    * [nginx](产品/运维/nginx.md)
+    * nginx
+      * [index](产品/运维/nginx/index.md)
+      * [命令](产品/运维/nginx/命令.md)
     * server&运维
       * Docker
         * [index](产品/运维/server&运维/Docker/index.md)
