@@ -1,6 +1,5 @@
 * [Game](Game.md)
 * python
-  * [index](python/index.md)
 * [书](书.md)
 * [像素](像素.md)
 * [其他](其他.md)
@@ -16,10 +15,9 @@
   * [画](图画/画.md)
   * [矢量图](图画/矢量图.md)
 * 地图
-  * GEOJSON
+  * [GEOJSON](地图/GEOJSON/index.md)
     * 世界地图.json
     * 对应国家名称.json
-  * [index](地图/index.md)
 * [多种素材](多种素材.md)
 * [娱乐](娱乐.md)
 * [字体](字体.md)

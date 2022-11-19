@@ -1,30 +1,25 @@
 * autohotkey
-  * [autohotkey-config](autohotkey/autohotkey-config.md)
-  * [index](autohotkey/index.md)
+  * [autohotkey-config.md](autohotkey/autohotkey-config.md/index.md)
 * bat
   * [bat](bat/bat.md)
   * [bat_script](bat/bat_script.md)
 * eclipse
-  * [index](eclipse/index.md)
 * git
   * [gitee](git/gitee.md)
   * [github](git/github.md)
   * [git_error](git/git_error.md)
   * [type](git/type.md)
   * 命令
-    * [git](git/命令/git.md)
-    * [index](git/命令/index.md)
-    * [分支](git/命令/分支.md)
-    * [切换远程地址](git/命令/切换远程地址.md)
-    * [基于主线分支创建新娘分支](git/命令/基于主线分支创建新娘分支.md)
-    * [指定版本创建分支](git/命令/指定版本创建分支.md)
-    * [推送代码时打tag](git/命令/推送代码时打tag.md)
-    * [撤销commit](git/命令/撤销commit.md)
+    * [git.md](git/命令/git.md/index.md)
+    * [分支.md](git/命令/分支.md/index.md)
+    * [切换远程地址.md](git/命令/切换远程地址.md/index.md)
+    * [基于主线分支创建新娘分支.md](git/命令/基于主线分支创建新娘分支.md/index.md)
+    * [指定版本创建分支.md](git/命令/指定版本创建分支.md/index.md)
+    * [推送代码时打tag.md](git/命令/推送代码时打tag.md/index.md)
+    * [撤销commit.md](git/命令/撤销commit.md/index.md)
   * [拉取某个文件](git/拉取某个文件.md)
   * 配置
-    * [index](git/配置/index.md)
   * 钩子
-    * [index](git/钩子/index.md)
 * [idea](idea.md)
 * PC
   * PC相关技术
@@ -43,17 +38,16 @@
   * [vim-plug](vim/vim-plug.md)
   * [vim](vim/vim.md)
 * vscode
-  * [emmet](vscode/emmet.md)
-  * [index](vscode/index.md)
-  * [question](vscode/question.md)
-  * [vscode 配置文件](vscode/vscode 配置文件.md)
-  * [vscode](vscode/vscode.md)
-  * [代码片段](vscode/代码片段.md)
-  * 插件
+  * [emmet.md](vscode/emmet.md/index.md)
+  * [question.md](vscode/question.md/index.md)
+  * [vscode 配置文件.md](vscode/vscode 配置文件.md/index.md)
+  * [vscode.md](vscode/vscode.md/index.md)
+  * [代码片段.md](vscode/代码片段.md/index.md)
+  * [插件](vscode/插件/index.md)
     * [betterComments](vscode/插件/betterComments.md)
     * [制作插件](vscode/插件/制作插件.md)
-  * 插件开发
-  * [格式化配置文件](vscode/格式化配置文件.md)
-  * [正则替换](vscode/正则替换.md)
-  * [配置参数](vscode/配置参数.md)
+  * [插件开发](vscode/插件开发/index.md)
+  * [格式化配置文件.md](vscode/格式化配置文件.md/index.md)
+  * [正则替换.md](vscode/正则替换.md/index.md)
+  * [配置参数.md](vscode/配置参数.md/index.md)
 * [windows_Terminal](windows_Terminal.md)

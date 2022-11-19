@@ -26,15 +26,24 @@ function write(path, index = 0, lv = 0) {
 				return
 			}
 			const newPath = path + '/' + item
-
+			const _newPath = newPath.replace('./', '')
+			const newDirs = toArray(fs.readdirSync(path, 'utf-8'))
+			const nextLvHasIndexMd = newDirs.includes('index.md')
 			let content = item
-			if (content.indexOf('.md') > -1) {
-				let _newPath = newPath.replace('./', '')
-				if (_newPath) {
 
-				}
+			if (nextLvHasIndexMd) {
+				// content = `[${item}](${_newPath}/index.md)`
+			}
+			// 判断下级时候有index.md 文件
+			if (item.indexOf('index.md') > -1) {
+				// console.log(newPath, item)
+				// return
+			}
+
+			if (content.indexOf('.md') > -1 && !nextLvHasIndexMd) {
 				content = `[${content.replace('.md', '')}](${_newPath})`
 			}
+
 			const nextContent = isDir(newPath) ? write(newPath, index + 1) : ''
 			return `${indexSpaces}* ${content}\n${nextContent}`
 		})

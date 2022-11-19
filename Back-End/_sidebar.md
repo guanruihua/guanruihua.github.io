@@ -2,7 +2,6 @@
   * C++
     * [C++basic](C语言/C++/C++basic.md)
 * GoLang
-  * [index](GoLang/index.md)
 * Java
   * [java-basis](Java/java-basis.md)
   * [java-Collection](Java/java-Collection.md)
