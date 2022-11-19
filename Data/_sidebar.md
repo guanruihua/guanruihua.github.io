@@ -1,7 +1,4 @@
 * [Game](Game.md)
-* [python](python/index.md)
-  * [22](python/22.md)
-  * [home](python/index.md)
 * [书](书.md)
 * [像素](像素.md)
 * [其他](其他.md)

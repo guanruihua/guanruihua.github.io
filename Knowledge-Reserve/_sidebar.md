@@ -1,3 +1,5 @@
+* [python](python/index.md)
+  * [home](python/index.md)
 * 产品
   * 画图
     * [UML类图](产品/画图/UML类图.md)

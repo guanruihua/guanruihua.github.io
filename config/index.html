@@ -6,7 +6,7 @@
 	<title>Ruihuag</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="description" content="Description">
-	<link rel="shortcut icon" href="../__assets__/rh-logo.png">
+	<link rel="shortcut icon" href="/__assets__/rh-icon-32.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 	<link rel="stylesheet" href="/config/styles.css">
@@ -14,34 +14,7 @@
 
 <body>
 	<div id="app">Loading...</div>
-	<script>
-		window.$docsify = {
-			count: {
-				countable: true,
-				fontsize: '0.9em',
-				color: 'rgb(90,90,90)',
-				language: 'chinese'
-			},
-			search: {
-				maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-				noData: '找不到结果',//搜索不到结果时显示
-				paths: 'auto',//自动
-				placeholder: '搜索',//搜索框提示
-				depth: 9,
-			},
-			loadSidebar: true,
-			// loadNavbar: true,
-			subMaxLevel: 4,
-			repo: 'https://github.com/guanruihua',
-			copyCode: {
-				buttonText: 'Copy',
-				errorText: 'Error',
-				successText: 'Copied'
-			},
-			plugins: [
-			]
-		}
-	</script>
+	<script src="/config/script/lv2/index.js"></script>
 
 	<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
