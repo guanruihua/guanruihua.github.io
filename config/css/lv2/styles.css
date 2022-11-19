@@ -1,3 +1,53 @@
+.sidebar-nav li.folder {
+  padding-left: 20px;
+  position: relative;
+}
+
+.sidebar-nav li.folder::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: -3px;
+  top: 5px;
+  margin: auto;
+  background-image: url(/__assets__/folder.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sidebar-nav li.folder.open::before {
+  background-image: url(/__assets__/opened_folder.png);
+}
+
+.sidebar-nav li.file {
+  padding-left: 20px;
+  position: relative;
+}
+
+.sidebar-nav li.file::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: -3px;
+  top: 5px;
+  margin: auto;
+  background-image: url(/__assets__/document.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sidebar-nav li.file.open::before {
+  background-image: url(/__assets__/document.png);
+}
+
+ul.app-sub-sidebar  li.file.open::before,
+ul.app-sub-sidebar  li.file::before {
+  content: none;
+}
+
+
 *::-webkit-scrollbar {
   width: 1px;
 }
@@ -18,6 +68,9 @@
 .markdown-section pre {
   background-color: #eee;
 }
+
+
+
 
 button.sidebar-toggle {
   position: fixed;
