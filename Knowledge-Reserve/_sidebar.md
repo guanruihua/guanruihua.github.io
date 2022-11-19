@@ -12,10 +12,12 @@
       * [linux-question](产品/运维/Linux/linux-question.md)
       * [linux](产品/运维/Linux/linux.md)
       * [命令](产品/运维/Linux/命令.md)
-    * nginx
-      * [命令.md](产品/运维/nginx/命令.md/index.md)
+    * [nginx](产品/运维/nginx/index.md)
+      * [home](产品/运维/nginx/index.md)
+      * [命令](产品/运维/nginx/命令.md)
     * server&运维
-      * Docker
+      * [Docker](产品/运维/server&运维/Docker/index.md)
+        * [home](产品/运维/server&运维/Docker/index.md)
       * [tomcat](产品/运维/server&运维/tomcat.md)
     * [宝塔面板](产品/运维/宝塔面板.md)
     * [部署](产品/运维/部署.md)
@@ -58,10 +60,12 @@
       * [空间复杂度](架构&相关/算法/basis/空间复杂度.md)
     * 排序
       * [排序](架构&相关/算法/排序/排序.md)
-    * 算法
+    * [算法](架构&相关/算法/算法/index.md)
       * [diff](架构&相关/算法/算法/diff/index.md)
-        * [snabbdom.md](架构&相关/算法/算法/diff/snabbdom.md/index.md)
-        * [virtual-dom.md](架构&相关/算法/算法/diff/virtual-dom.md/index.md)
+        * [home](架构&相关/算法/算法/diff/index.md)
+        * [snabbdom](架构&相关/算法/算法/diff/snabbdom.md)
+        * [virtual-dom](架构&相关/算法/算法/diff/virtual-dom.md)
+      * [home](架构&相关/算法/算法/index.md)
   * 设计模式
     * 创建型
       * [单例模式](架构&相关/设计模式/创建型/单例模式.md)
@@ -111,9 +115,10 @@
     * [unity](相关技术/Unity/unity.md)
     * [vscode运行C#](相关技术/Unity/vscode运行C#.md)
   * 计网
-    * CDN
-      * [index](相关技术/计网/CDN/index/index.md)
+    * [CDN](相关技术/计网/CDN/index.md)
+      * index
         * 640
-      * [question.md](相关技术/计网/CDN/question.md/index.md)
+      * [home](相关技术/计网/CDN/index.md)
+      * [question](相关技术/计网/CDN/question.md)
     * [http协议](相关技术/计网/http协议.md)
     * [计网](相关技术/计网/计网.md)

@@ -1,8 +1,8 @@
 .modules-content-layout {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   text-align: center;
+  overflow: hidden;
 }
 
 .modules-content {
@@ -10,7 +10,7 @@
   position: absolute;
   border-radius: 8px;
   white-space: nowrap;
-  overflow-y: hidden;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
