@@ -1,0 +1,51 @@
+
+.header {
+  height: 3.5rem;
+  width: 100%;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+
+}
+
+.user {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25%;
+  padding: 2px 5px 2px 3px;
+  text-align: center;
+}
+
+.user>span {
+  display: inline-block;
+  background-image: url(/__assets__/moon.jpg);
+  background-size: cover;
+
+  font-size: xx-large;
+  font-weight: bolder;
+  font-style: oblique;
+  font-family: monospace;
+
+  padding: 3px;
+  background-position: center center;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+
+
+.npm-logo,
+.github-logo {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: .25rem;
+}

@@ -5,19 +5,20 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="./__assets__/pkq.png">
+	<link rel="shortcut icon" href="/__assets__/rh-icon-32.png">
 	<title>Ruihuag</title>
-	<link rel="stylesheet" href="./config/index.css">
+	<link rel="stylesheet" href="/config/index.css">
+	<link rel="stylesheet" href="/config/css/modules-content.css">
+	<link rel="stylesheet" href="/config/css/header.css">
+	<link rel="stylesheet" href="/config/css/content.css">
 </head>
 
 <body>
 	<div class="header">
-		<div>Ruihuag</div>
-		<!-- <div class="search-content is-search"> -->
-		<div class="search-content">
-			<input class="search" type="text" oninput="handleSearchChange(this)" />
-			<div class="search-options"></div>
+		<div class="user">
+			<span>Rh</span>
 		</div>
+
 		<div>
 			<a class="github-logo" href="https://github.com/guanruihua">
 				<img src="./__assets__/GitHub-Mark-32px.png" alt="" srcset="">
@@ -30,10 +31,20 @@
 			</a>
 		</div>
 	</div>
-	<!-- <div class="web-wrap"></div> -->
 
-	<div class="modules-content">
-		<div class="modules"></div>
+	<div class="content">
+		<div>
+			<!-- <div class="search-content is-search"> -->
+			<div class="search-content">
+				<input class="search" type="text" oninput="handleSearchChange(this)" />
+				<div class="search-options"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modules-content-layout">
+		<div class="modules-content"></div>
 	</div>
 
 	<script type="text/javascript" src="./config/_modules_.js"></script>

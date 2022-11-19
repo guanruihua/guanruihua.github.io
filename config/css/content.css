@@ -1,0 +1,103 @@
+.content {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.content>div {
+  margin: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  border-radius: 1rem;
+  position: relative;
+
+}
+
+.search-content {
+  margin: auto;
+	max-width: 95%;
+  width: 20rem;
+  background: transparent;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: .4rem .5rem 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  z-index: 99;
+}
+
+.search-content.is-search>.search-options {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 .5rem .4rem;
+  background: rgba(255, 255, 255, 0.2);
+
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.search-options>div {
+  line-height: 3rem;
+  border-bottom: 1px solid #fff;
+  height: 3rem;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.521);
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  display: none;
+}
+
+.search-options>div>div.name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 75%;
+  overflow: hidden;
+  text-align: start;
+}
+
+.search-options>div>div.logo {
+  margin-left: 20px;
+  width: 28px;
+  height: 28px;
+}
+
+.search-content.is-search .search-options>div {
+  display: flex;
+
+}
+
+.search-options>div:hover {
+  color: rgba(49, 49, 49, 0.692);
+}
+
+.search-options>div:first-child {
+  margin-top: .6rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.search-options>div:last-child {
+  border: none;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.search-content.is-search {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search {
+  border: none;
+  outline-style: none;
+  border-radius: 1rem;
+  width: 100%;
+  height: 2.2rem;
+  background: rgba(255, 255, 255, 0.4);
+  padding: .5rem .75rem;
+  font-size: 1rem;
+}
