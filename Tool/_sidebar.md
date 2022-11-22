@@ -43,6 +43,8 @@
   * [vim-plug](vim/vim-plug.md)
   * [vim](vim/vim.md)
 * [vscode](vscode/index.md)
+  * api
+    * [主题颜色](vscode/api/主题颜色.md)
   * [emmet](vscode/emmet.md)
   * [home](vscode/index.md)
   * [question](vscode/question.md)
@@ -52,7 +54,6 @@
   * 插件
     * [betterComments](vscode/插件/betterComments.md)
     * [制作插件](vscode/插件/制作插件.md)
-  * 插件开发
   * [格式化配置文件](vscode/格式化配置文件.md)
   * [正则替换](vscode/正则替换.md)
   * [配置参数](vscode/配置参数.md)

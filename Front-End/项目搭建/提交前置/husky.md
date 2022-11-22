@@ -51,6 +51,8 @@ npm run commitlint --edit $1
 
 <code id="commitlint.config.js">./commitlint.config.js</code>
 
+> [@commitlint/config-conventional](https://www.npmjs.com/package/@commitlint/config-conventional)
+
 ```js
 module.exports = {
   extends: ['@commitlint/config-conventional'],

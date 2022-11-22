@@ -25,7 +25,6 @@
     * [transform](CSS/attribute/transform.md)
     * [transition](CSS/attribute/transition.md)
     * [user-select](CSS/attribute/user-select.md)
-    * [伦敦CSS-2020](CSS/attribute/伦敦CSS-2020.md)
     * [毛玻璃](CSS/attribute/毛玻璃.md)
     * 颜色
       * [currentColor](CSS/attribute/颜色/currentColor.md)
@@ -310,6 +309,7 @@
 * 代码片段
   * [获取鼠标选中内容](代码片段/获取鼠标选中内容.md)
 * 其他
+  * [伦敦CSS-2020](其他/伦敦CSS-2020.md)
   * [待整理代码](其他/待整理代码.md)
 * 包管理器
   * [cnpm](包管理器/cnpm.md)
