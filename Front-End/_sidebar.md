@@ -25,7 +25,7 @@
     * [transform](CSS/attribute/transform.md)
     * [transition](CSS/attribute/transition.md)
     * [user-select](CSS/attribute/user-select.md)
-    * [伦敦CSS 2020](CSS/attribute/伦敦CSS 2020.md)
+    * [伦敦CSS-2020](CSS/attribute/伦敦CSS-2020.md)
     * [毛玻璃](CSS/attribute/毛玻璃.md)
     * 颜色
       * [currentColor](CSS/attribute/颜色/currentColor.md)
