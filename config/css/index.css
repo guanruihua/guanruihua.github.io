@@ -27,6 +27,7 @@
 }
 
 
+
 a,
 input {
   display: block;
@@ -44,6 +45,8 @@ div {
 
 body {
   width: 100vw;
+  font-family: fangsong;
+  font-weight: bold;
   min-height: 100vh;
   overflow-x: hidden;
   background-color: #eee;

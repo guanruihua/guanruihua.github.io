@@ -2,6 +2,12 @@
   --icon-size: 16px;
 }
 
+body,
+.sidebar ul li a {
+  font-family: fangsong;
+  font-weight: bold;
+}
+
 .sidebar-nav li.folder {
   padding-left: 20px;
   position: relative;
@@ -29,10 +35,11 @@
   position: relative;
 }
 
-.folder>ul{
+.folder>ul {
   margin-left: -15px;
 }
-.file.open>ul.app-sub-sidebar.open{
+
+.file.open>ul.app-sub-sidebar.open {
   margin-left: -15px;
 }
 
@@ -63,9 +70,10 @@ ul.app-sub-sidebar li.file::before {
   background-image: none;
 }
 
-.file>.app-sub-sidebar{
+.file>.app-sub-sidebar {
   margin-left: 0;
 }
+
 .file>.app-sub-sidebar>li.file {
   padding-left: 25px;
   counter-increment: num;
@@ -80,8 +88,9 @@ ul.app-sub-sidebar li.file::before {
   left: 6px;
   top: -1px;
 }
+
 .file>.app-sub-sidebar>li.file.open.active::before {
-  color: var(--theme-color,#42b983);
+  color: var(--theme-color, #42b983);
 }
 
 ul+.folder.open {
