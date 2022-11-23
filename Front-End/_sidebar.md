@@ -73,22 +73,6 @@
       * [ts](Package/测试/jest/ts.md)
   * 虚拟列表
     * [react-window](Package/虚拟列表/react-window.md)
-* TypeScript
-  * [error_code](TypeScript/error_code.md)
-  * [ts](TypeScript/ts.md)
-  * [typescript](TypeScript/typescript.md)
-  * [三斜线指令](TypeScript/三斜线指令.md)
-  * [内置API](TypeScript/内置API/index.md)
-    * [ECMAScript](TypeScript/内置API/ECMAScript.md)
-    * [home](TypeScript/内置API/index.md)
-    * [lib.dom](TypeScript/内置API/lib.dom.md)
-  * [声明文件](TypeScript/声明文件.md)
-  * [特性](TypeScript/特性.md)
-  * [类型体操](TypeScript/类型体操.md)
-  * [类型工具](TypeScript/类型工具.md)
-  * [类型过滤](TypeScript/类型过滤.md)
-  * 错误
-    * [2709](TypeScript/错误/2709.md)
 * UI
   * antd
     * [antd2](UI/antd/antd2.md)
@@ -214,57 +198,6 @@
   * 跨域
     * [jsonp](拓展/跨域/jsonp.md)
 * 框架
-  * react
-    * antd
-      * v2
-        * [select](框架/react/antd/v2/select.md)
-    * basis
-      * [createElement](框架/react/basis/createElement.md)
-      * [react-basis](框架/react/basis/react-basis.md)
-    * [begin](框架/react/begin.md)
-    * hook
-      * [context](框架/react/hook/context/index.md)
-        * [home](框架/react/hook/context/index.md)
-      * [hook](框架/react/hook/hook.md)
-      * [Umi-hooks](框架/react/hook/Umi-hooks.md)
-    * [package](框架/react/package.md)
-    * [question](框架/react/question/index.md)
-      * [home](框架/react/question/index.md)
-    * [react-demo](框架/react/react-demo.md)
-    * [react-v18](框架/react/react-v18.md)
-    * router
-      * [react_router](框架/react/router/react_router.md)
-      * [v6](框架/react/router/v6.md)
-    * SSR
-      * [next](框架/react/SSR/next.md)
-    * [type](框架/react/type/index.md)
-      * [home](框架/react/type/index.md)
-    * typescript
-      * [react使用ts](框架/react/typescript/react使用ts.md)
-    * [UmiJS](框架/react/UmiJS/index.md)
-      * [home](框架/react/UmiJS/index.md)
-    * [使用css_var](框架/react/使用css_var.md)
-    * 内置API
-      * [React.children.map()](框架/react/内置API/React.children.map().md)
-    * [内置ts类型](框架/react/内置ts类型/index.md)
-      * [home](框架/react/内置ts类型/index.md)
-    * [原理实现](框架/react/原理实现/index.md)
-      * [home](框架/react/原理实现/index.md)
-    * [懒加载](框架/react/懒加载.md)
-    * 状态管理
-      * dva
-        * [api](框架/react/状态管理/dva/api.md)
-        * [dva-basic](框架/react/状态管理/dva/dva-basic.md)
-        * dva-expand
-          * [dva-tsx](框架/react/状态管理/dva/dva-expand/dva-tsx.md)
-          * [优化](框架/react/状态管理/dva/dva-expand/优化.md)
-        * [extend](框架/react/状态管理/dva/extend.md)
-        * [快速上手](框架/react/状态管理/dva/快速上手.md)
-      * [mobx](框架/react/状态管理/mobx.md)
-      * [redux](框架/react/状态管理/redux/index.md)
-        * [home](框架/react/状态管理/redux/index.md)
-        * [React_Redux_React-redux](框架/react/状态管理/redux/React_Redux_React-redux.md)
-        * [redux-toolkit](框架/react/状态管理/redux/redux-toolkit.md)
   * vue
     * [begin](框架/vue/begin.md)
     * [element](框架/vue/element.md)
