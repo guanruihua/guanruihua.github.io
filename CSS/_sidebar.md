@@ -11,6 +11,7 @@
   * [animation](attribute/animation.md)
   * [background](attribute/background.md)
   * [contain](attribute/contain.md)
+  * [content-visibility](attribute/content-visibility.md)
   * [css-动画](attribute/css-动画.md)
   * [font-variant-numeric](attribute/font-variant-numeric.md)
   * [gap](attribute/gap.md)
