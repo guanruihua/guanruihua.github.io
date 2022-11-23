@@ -48,7 +48,6 @@
   * [emmet](vscode/emmet.md)
   * [home](vscode/index.md)
   * [question](vscode/question.md)
-  * [vscode 配置文件](vscode/vscode 配置文件.md)
   * [vscode](vscode/vscode.md)
   * [代码片段](vscode/代码片段.md)
   * 插件

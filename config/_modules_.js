@@ -1,1 +1,1 @@
-const modules =["Back-End","Data","Database","Front-End","Knowledge-Reserve","Tool"]
+const modules =["Back-End","CSS","Data","Database","Front-End","HTML","JavaScript","Knowledge-Reserve","OpenSource","Tool"]
