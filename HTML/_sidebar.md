@@ -31,6 +31,9 @@
     * [线](canvas/线/线.md)
   * [路径](canvas/路径/index.md)
     * [home](canvas/路径/index.md)
+* favicon
+  * [添加favicon](favicon/添加favicon.md)
+  * [防止favicon请求](favicon/防止favicon请求.md)
 * [html](html.md)
 * [html5](html5.md)
 * [img](img.md)
@@ -40,4 +43,3 @@
 * [temp](temp.md)
 * [textArea](textArea.md)
 * [video](video.md)
-* [防止favicon请求](防止favicon请求.md)
