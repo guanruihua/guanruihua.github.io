@@ -10,7 +10,7 @@ window.$docsify = {
 		noData: '找不到结果',//搜索不到结果时显示
 		paths: 'auto',//自动
 		placeholder: '搜索',//搜索框提示
-		depth: gg2,
+		depth: 2,
 	},
 	loadSidebar: true,
 	// loadNavbar: true,
@@ -22,5 +22,8 @@ window.$docsify = {
 		successText: 'Copied'
 	},
 	plugins: [
+		function myPlugin2(hook, vm) {
+			console.log(hook, vm)
+		}
 	]
 }

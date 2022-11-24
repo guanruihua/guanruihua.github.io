@@ -36,10 +36,10 @@
     * [throttle](rh-js-methods/function/throttle.md)
     * [toPromise](rh-js-methods/function/toPromise.md)
   * math
-    * [](rh-js-methods/math/.md)
     * [add](rh-js-methods/math/add.md)
     * [ceil](rh-js-methods/math/ceil.md)
     * [divide](rh-js-methods/math/divide.md)
+    * [floor](rh-js-methods/math/floor.md)
     * [HEX](rh-js-methods/math/HEX.md)
     * [max](rh-js-methods/math/max.md)
     * [maxBy](rh-js-methods/math/maxBy.md)

@@ -2,6 +2,19 @@
   --icon-size: 16px;
 }
 
+section>aside.toc-nav {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  margin-right: 10px;
+  width: 200px;
+  z-index: 999999;
+  align-self: flex-start;
+  flex: 0 0 auto;
+  overflow-y: auto;
+  max-height: 90%;
+}
+
 body,
 .sidebar ul li a {
   font-family: fangsong;
