@@ -17,7 +17,6 @@
 
 	<script>
 		window.$docsify = {
-			// name: "Blog",
 			// 侧边栏文档目录
 			loadSidebar: true,
 
@@ -28,7 +27,7 @@
 			// 跳转后自动到顶部
 			auto2top: true,
 
-			// coverpage: true,G
+			// coverpage: true,
 			// PLUGINS
 			// ----------------------------------------------------------------
 			// 页面右侧toc
@@ -36,7 +35,11 @@
 				tocMaxLevel: 2,
 				target: "h2, h3, h4, h5, h6",
 			},
-
+			copyCode: {
+				buttonText: 'Copy',
+				errorText: 'Error',
+				successText: 'Copied'
+			},
 			// 全文搜索
 			search: {
 				depth: 6,
@@ -52,7 +55,7 @@
 				crossChapter: true,
 				crossChapterText: true,
 			}
-			
+
 		};
 	</script>
 	<!-- docsify -->
