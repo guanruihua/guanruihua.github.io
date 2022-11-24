@@ -5,4 +5,4 @@
 > - `unsupported:` `Infinity,` `Function`
 > - `param` `value` `any`
 > - `returns` `boolean`
-> - `update:` 2`.`2`.`0
+> - `update:` `2.2.0`

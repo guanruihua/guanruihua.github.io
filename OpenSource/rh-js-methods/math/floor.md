@@ -1,4 +1,4 @@
-#  floor
+# floor
 
 > - `description` 向下取整`(`没有对`number`边界值`[Infinity`值处理`])`
 > - `param` `num` 待向下舍入的值
