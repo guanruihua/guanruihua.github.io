@@ -2,6 +2,20 @@
   --icon-size: 16px;
 }
 
+div.expand-btns {
+  position: fixed;
+  right: 8px;
+  top: 10px;
+}
+
+.expand-btns>a>img {
+  width: 20px;
+  height: 20px;
+}
+
+.expand-btns>a {
+  text-decoration: none;
+}
 
 div.pagination-item-title {
   margin-top: 5px;
