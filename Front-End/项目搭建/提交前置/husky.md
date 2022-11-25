@@ -38,6 +38,11 @@ npm install -D @commitlint/config-conventional
 }
 ```
 
+```shell
+# 生成.husky
+npm run prepare
+```
+
 ## 配置相关文件
 
 `.husky/commit-msg`
