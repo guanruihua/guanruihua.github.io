@@ -170,11 +170,14 @@ ul.open>li.file.active {
   border-radius: 8px;
 }
 
-.markdown-section figure, .markdown-section p{
+.markdown-section figure,
+.markdown-section p {
   margin: .4rem 0;
 }
+
 .markdown-section code,
 .markdown-section pre {
+  white-space: pre-wrap;
   background-color: #eee;
   /* background-color: red; */
 }

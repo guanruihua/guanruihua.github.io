@@ -19,6 +19,4 @@ function write(path, index = 0) {
 	return dirs.join('')
 }
 
-fs.writeFileSync('./_sidebar.md', write('./', 0)
-)
-// .replaceAll("](/",']('))
+fs.writeFileSync('./_sidebar.md', write('./', 0))
