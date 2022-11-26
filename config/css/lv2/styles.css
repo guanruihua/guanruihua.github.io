@@ -1,6 +1,23 @@
 :root {
   --icon-size: 16px;
+  --border-radius: 8px;
 }
+
+img {
+  border-radius: var(--border-radius);
+}
+
+button.docsify-copy-code-button {
+  height: 20px;
+  display: flex;
+  font-size: .5rem;
+  padding: 0 .6rem;
+  border-top-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  justify-content: center;
+  align-items: center;
+}
+
 
 div.expand-btns {
   position: fixed;
@@ -153,13 +170,14 @@ ul.open>li.file.active {
   border-radius: 8px;
 }
 
+.markdown-section figure, .markdown-section p{
+  margin: .4rem 0;
+}
 .markdown-section code,
 .markdown-section pre {
   background-color: #eee;
+  /* background-color: red; */
 }
-
-
-
 
 button.sidebar-toggle {
   position: fixed;
@@ -174,11 +192,18 @@ input[type='search'] {
 }
 
 .markdown-section pre {
-  padding: 0 4px;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
 }
 
 .markdown-section pre>code {
+  padding: 0;
   margin: 0;
+}
+
+.markdown-section>:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) code {
+  padding-left: 8px;
 }
 
 .markdown-section blockquote {
