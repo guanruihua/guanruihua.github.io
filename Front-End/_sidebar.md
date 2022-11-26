@@ -20,6 +20,8 @@
     * [模块化](Node/基础/模块化.md)
   * [读取git信息](Node/读取git信息.md)
 * Package
+  * [dumi](Package/dumi/index.md)
+    * [home](Package/dumi/index.md)
   * dva
     * [问题](Package/dva/问题.md)
   * [hexo](Package/hexo.md)
