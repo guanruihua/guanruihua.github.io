@@ -11,6 +11,8 @@ function write(path, index = 0, lv = 0) {
 					fs.copyFile('./config/README.md', path + item + '/README.md', (err) => {
 						err && console.log(err)
 					});
+					// const __index__html = fs.readFileSync('./config/index.html')
+					// fs.writeFileSync(_path, __index__html.toString().replace('__ruihuag__website__name__', item))
 					fs.copyFile('./config/index.html', _path, (err) => {
 						err && console.log(err)
 					})
@@ -41,7 +43,7 @@ function write(path, index = 0, lv = 0) {
 			if (nextLvHasIndexMd) {
 				content = `[${item}](${_newPath}/index.md)`
 			} else if (content.indexOf('.md') > -1) {
-				content = `[${content.replace('.md', '').replace('index','home')}](${_newPath})`
+				content = `[${content.replace('.md', '').replace('index', 'home')}](${_newPath})`
 			}
 
 			if (isDirStatus) {
