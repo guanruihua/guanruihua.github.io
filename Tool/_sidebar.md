@@ -21,6 +21,7 @@
     * [推送代码时打tag](git/命令/推送代码时打tag.md)
     * [撤销commit](git/命令/撤销commit.md)
   * [拉取某个文件](git/拉取某个文件.md)
+  * [提交pr](git/提交pr.md)
   * [配置](git/配置/index.md)
     * [home](git/配置/index.md)
   * [钩子](git/钩子/index.md)

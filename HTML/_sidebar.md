@@ -43,3 +43,6 @@
 * [temp](temp.md)
 * [textArea](textArea.md)
 * [video](video.md)
+* [邮件模板](邮件模板/index.md)
+  * [home](邮件模板/index.md)
+  * [垃圾邮件](邮件模板/垃圾邮件.md)
