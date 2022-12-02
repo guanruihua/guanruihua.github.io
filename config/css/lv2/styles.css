@@ -52,6 +52,15 @@ section>aside.toc-nav {
   max-height: 95%;
 }
 
+@media screen and (max-width: 1200px) {
+
+  section>aside.toc-nav {
+    display: none;
+  }
+}
+
+
+
 body,
 .sidebar ul li a {
   font-family: fangsong;

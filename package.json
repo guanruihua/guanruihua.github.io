@@ -8,6 +8,7 @@
     "build": "node config/build-sidebar-lv2.js",
     "build:lv1": "node config/build-sidebar-lv1.js",
     "build:os": "node config/build-sidebar-OpenSource.js",
+    "build:package": "nodemon config/build/getPackageDocs.js",
     "update":"node config/update-module.js",
     "dev": "nodemon config/build-sidebar-lv2.js"
   },

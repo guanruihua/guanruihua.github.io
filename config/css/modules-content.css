@@ -4,10 +4,13 @@
   text-align: center;
   overflow: hidden;
   height: auto;
+  background-color: #4141435d;
+  border-radius: 12px;
+  padding: .6rem 1rem .8rem;
+  margin: 0 1rem;
 }
 
 .modules-content {
-  margin: 0 5rem;
   padding-top: .3rem;
   border-radius: 8px;
   white-space: nowrap;
@@ -74,8 +77,6 @@
 
   .modules-content {
     grid-template-columns: repeat(4, 1fr);
-    margin: 0 1rem;
-    padding: 1rem;
   }
 
   .modules-content>div {
@@ -101,7 +102,6 @@
 
   .modules-content {
     grid-template-columns: repeat(2, 1fr);
-    margin: 0;
   }
 
 }
@@ -110,7 +110,6 @@
 
   .modules-content {
     grid-template-columns: repeat(1, 1fr);
-    margin: 0;
   }
 
 }
