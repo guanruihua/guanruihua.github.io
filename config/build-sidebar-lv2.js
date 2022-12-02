@@ -8,9 +8,9 @@ function write(path, index = 0, lv = 0) {
 			if (index === 0 && lv === 0) {
 				try {
 					const _path = path + item + '/index.html'
-					fs.copyFile('./config/README.md', path + item + '/README.md', (err) => {
-						err && console.log(err)
-					});
+					// fs.copyFile('./config/README.md', path + item + '/README.md', (err) => {
+					// 	err && console.log(err)
+					// });
 					// const __index__html = fs.readFileSync('./config/index.html')
 					// fs.writeFileSync(_path, __index__html.toString().replace('__ruihuag__website__name__', item))
 					fs.copyFile('./config/index.html', _path, (err) => {

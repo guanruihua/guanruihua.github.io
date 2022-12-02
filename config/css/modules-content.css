@@ -3,12 +3,12 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  height: auto;
 }
 
 .modules-content {
   margin: 0 5rem;
   padding-top: .3rem;
-  position: absolute;
   border-radius: 8px;
   white-space: nowrap;
   overflow: hidden;

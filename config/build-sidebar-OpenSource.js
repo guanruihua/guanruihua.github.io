@@ -29,7 +29,7 @@ function readDirStructure(path, index = 0) {
 		return template
 	}).join('\n')
 	// dirs.map()
-	console.log(dirs)
+	// console.log(dirs)
 	return result
 }
 
@@ -41,4 +41,4 @@ function buildSidebar(path) {
 }
 
 copyHtml(openSourceList)
-buildSidebar('./OpenSource/rh-js-methods')
+buildSidebar('./OpenSource/abandonjs')

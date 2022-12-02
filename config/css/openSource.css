@@ -1,0 +1,37 @@
+.openSource-layout {
+	color: #fff;
+  margin-top: 38px;
+	text-align: left;
+  /* background-color: green; */
+}
+.openSource-layout fieldset {
+	border: none;
+	background-color: #41414322;
+	
+	border-radius: 8px;
+	margin: auto 32px;
+}
+
+.openSource-layout a svg {
+	width: 24px;
+	height: 24px;
+}
+
+.openSource-layout a {
+	/* display: inline-block; */
+	color: #c7cac9;
+	text-decoration: none;
+	padding: 5px 8px;
+	border-radius: 8px;
+	background-color: #6b6b6b22;
+	display: inline-flex;
+	align-items: center;
+}
+
+.openSource-layout legend {
+	margin-left: 18px;
+}
+
+.openSource-layout .content{
+	padding: 20px;
+}
