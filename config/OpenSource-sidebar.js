@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { toArray, isDir } = require('./util')
 
-const openSourceList = ['rh-js-methods']
+const openSourceList = ['abandonjs']
 
 // 复制 index.html 文件
 function copyHtml(list = []) {

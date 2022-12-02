@@ -10,7 +10,7 @@ const ICONMap = {
 }
 
 const packages = [
-	{ type: 'npm', name: 'rh-js-methods', url: 'https://www.npmjs.com/package/rh-js-methods', },
+	{ type: 'npm', name: 'abandonjs', url: 'https://www.npmjs.com/package/abandonjs', },
 	{ type: 'npm', name: 'rh-mock', url: 'https://www.npmjs.com/package/rh-mock', },
 ]
 
