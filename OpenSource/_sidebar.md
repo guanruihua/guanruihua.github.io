@@ -110,3 +110,7 @@
     * [toPathValue](abandonjs/util/toPathValue.md)
     * [type](abandonjs/util/type.md)
     * [types](abandonjs/util/types.md)
+* [rh-mock](rh-mock/index.md)
+  * [home](rh-mock/index.md)
+* [unit-testing-js](unit-testing-js/index.md)
+  * [home](unit-testing-js/index.md)

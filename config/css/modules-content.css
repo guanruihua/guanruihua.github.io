@@ -6,12 +6,11 @@
   height: auto;
   background-color: #4141435d;
   border-radius: 12px;
-  padding: .6rem 1rem .8rem;
   margin: 0 1rem;
 }
 
 .modules-content {
-  padding-top: .3rem;
+  padding: .6rem 1rem .8rem;
   border-radius: 8px;
   white-space: nowrap;
   overflow: hidden;
