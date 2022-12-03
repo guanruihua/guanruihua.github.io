@@ -44,8 +44,11 @@
 
 .npm-logo,
 .github-logo {
+  background-color: #243143;
+  border-radius: 8px;
+  padding: 6px;
   display: inline-block;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-left: .25rem;
 }

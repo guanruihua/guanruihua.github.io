@@ -11,6 +11,6 @@
   - `params` `...cases` `{...CaseUnit}` 测试用例
 
 ```ts
-test(name, func, {...},{...}, ...)
+test(name, func, {...} ...)
 // 可以打印出相应的结果
 ```
