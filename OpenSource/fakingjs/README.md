@@ -5,20 +5,20 @@
 ## 使用
 
 ```shell
-npm install rh-mock
+npm install fakingjs
 ```
 
 ```js
-import { Mock } from 'rh-mock'
+import { Fake } from 'fakingjs'
 
-Mock("@name")
+Fake("@name")
 => 'Ruihuag'
 ```
 
 ## 说明
 
 ```js
-Mock({
+Fake({
   'name|rule|key1,key2,key3...|[DictionaryKey]':'@name'
 })
 ```
@@ -31,18 +31,18 @@ Mock({
 ## 规则使用
 
 ```js
-Mock("@name")
+Fake("@name")
 => 'Ruihuag'
 ```
 
 ## `name|number`
 
 ```js
- Mock({ 'name': '@name' })
- Mock({ 'name|1': 1 })
- Mock({ 'name|1': '@name' })
- Mock({ 'name|3': '@name' })
- Mock({ 'name|3': 1 })
+ Fake({ 'name': '@name' })
+ Fake({ 'name|1': 1 })
+ Fake({ 'name|1': '@name' })
+ Fake({ 'name|3': '@name' })
+ Fake({ 'name|3': 1 })
  =>
   { name: 'Ruihuag' }
   { name: 1 }
@@ -55,14 +55,14 @@ Mock("@name")
 ## 范围 `name|2-222`
 
 ```js
-Mock({"name|3-5":"@name"})
+Fake({"name|3-5":"@name"})
 => { name: [ 'Jeffrey', 'Jose', 'Gary', 'William' ] }
 ```
 
 ## 指定数量 `name|12`
 
 ```js
-Mock({"name|3":"@name"})
+Fake({"name|3":"@name"})
 =>  { name: [ 'Christopher', 'Daniel', 'Richard' ] }
 ```
 
@@ -126,7 +126,7 @@ Mock({"name|3":"@name"})
 - 优先级最高, 会覆盖包原本规则
 
 ```js
-import { Mock, initDictionary, dictionary } from '../src'
+import { Fake, initDictionary, dictionary } from '../src'
 
 // 可以查看已经设置的规则字典
 dictionary
@@ -138,8 +138,8 @@ initDictionary({
   }
 })
 
-Mock('@bbb(123,456)') // 123---456
-Mock('@aaa') // ababab
+Fake('@bbb(123,456)') // 123---456
+Fake('@aaa') // ababab
 
 ```
 

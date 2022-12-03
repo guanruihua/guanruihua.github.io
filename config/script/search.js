@@ -12,7 +12,7 @@ const ICONMap = {
 const packages = [
 	{ type: 'npm', name: 'abandonjs', url: 'https://www.npmjs.com/package/abandonjs', },
 	{ type: 'npm', name: 'unit-testing-js', url: 'https://www.npmjs.com/package/unit-testing-js', },
-	{ type: 'npm', name: 'rh-mock', url: 'https://www.npmjs.com/package/rh-mock', },
+	{ type: 'npm', name: 'fakingjs', url: 'https://www.npmjs.com/package/fakingjs', },
 ]
 
 handleSearchChange({ value: '' })

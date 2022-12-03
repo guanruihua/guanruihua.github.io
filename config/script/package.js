@@ -1,4 +1,4 @@
-const package_list = ['abandonjs','rh-mock', 'unit-testing-js']
+const package_list = ['abandonjs','fakingjs', 'unit-testing-js']
 
 function buildPackageDom() {
 	const layoutContent = document.querySelector('.openSource-layout .content')

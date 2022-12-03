@@ -1,8 +1,8 @@
 const fs = require('fs')
 
 function getPackageDocs(){
-	const packageData = fs.readFileSync('../rh-mock/README.md').toString()
-	fs.copyFileSync('../rh-mock/README.md', './OpenSource/rh-mock/index.md')
+	const packageData = fs.readFileSync('../fakingjs/README.md').toString()
+	fs.copyFileSync('../fakingjs/README.md', './OpenSource/fakingjs/index.md')
 
 	// console.log(packageData)
 }
