@@ -1,5 +1,5 @@
-# isString
+# isFunction
 
-> - `description` 是否为字符串
+> - `description` 是否为函数
 > - `param` `value` `{any}`
 > - `returns` `{boolean}`

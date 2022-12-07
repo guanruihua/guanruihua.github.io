@@ -1,5 +1,6 @@
 # toString
 
-> - `description` 转换为字符串
-> - `param` `value` `any`
-> - `returns` `string`
+> - `description` 任意类型均可转换为`string`
+> - `param` `value` `{any}`
+> - `returns` `{string}`
+> - `lastUpdate:` `2.2.1`

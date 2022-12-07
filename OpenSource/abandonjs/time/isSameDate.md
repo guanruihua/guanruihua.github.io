@@ -4,3 +4,4 @@
 > - `param` `timeA` 比较时间
 > - `param` `timeB` 被比较时间
 > - `returns` `{boolean}`
+> - `version` `2.2.3`

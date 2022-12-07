@@ -5,4 +5,4 @@
 > - `param` `replacer` `{?(number|string)[]|(this:any,key:string,value:any)=>any}`
 > - `param` `space` `{?string|number}`
 > - `returns` `{string}`
-> - `version` `2.2.0`
+> - `lastUpdate` `2.2.1`

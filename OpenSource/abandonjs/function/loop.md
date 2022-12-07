@@ -1,6 +1,7 @@
-# loop
+# loop<T>
 
 > - `description:` 指定次数遍历
-> - `param` `length` `:` `number`
-> - `param`  `callback` `:` `(index:` `number)` `=>` `true` `|` `void`
-> - `returns` `number`
+> - `param` `num`  `{number}`
+> - `param`  `callback`  `{?(indexes:` `number[])` `=>` `T}`
+> - `returns` `{T[]}`
+> - `version:` `2.3.2`
