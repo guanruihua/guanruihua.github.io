@@ -1,5 +1,12 @@
 # git error
 
+## git push origin HEAD:＜name-of-remote-branch＞
+
+```shell
+git push origin HEAD:develop
+```
+> develop: 分支名
+
 ## 解决 error: Your local changes to the following files would be overwritten by merge：XXXX
 
 ### 保留本地最新修改，并拉取仓库中忘记 pull 的代码到本地
@@ -24,3 +31,4 @@ git pull origin master
  git reset --hard origin/master 
  git pull
 ```
+
