@@ -73,10 +73,14 @@ section>aside.toc-nav {
   max-height: 95%;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
 
   section>aside.toc-nav {
     display: none;
+  }
+
+  .toc-nav+.markdown-section {
+    margin-right: 0;
   }
 }
 
