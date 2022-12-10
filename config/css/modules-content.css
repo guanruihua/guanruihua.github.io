@@ -6,19 +6,19 @@
   background-color: #4141435d;
   border-radius: 12px;
   animation: animate 5s ease-in-out infinite;
-
+  padding-left: 6rem;
 }
 
 .modules-content {
   padding: 3.5rem;
-  padding-top: 6rem;
+  padding-top: 8rem;
   white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 5.5rem 5.5rem;
+  gap: 8rem 8rem;
 
 }
 
@@ -32,49 +32,72 @@
   }
 }
 
-.modules-content>div {
+:root {
+  --s-5: 7.5rem;
+  --s-4: 6rem;
+  --s-3: 4.5rem;
+}
 
+.modules-content>div {
   display: inline-block;
   transform: skewY(-20deg);
   background-color: #fff;
   filter: drop-shadow(0 0 .5px #fff);
-  width: 5rem;
-  height: 5rem;
-  color: rgba(255, 255, 255, 0.712);
+  width: var(--s-5);
+  height: var(--s-5);
+  color: blue;
   border: none;
   cursor: pointer;
   position: relative;
   transition: background-color 1.5s;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: larger;
+  box-sizing: border-box;
+  padding-left: 5px;
 }
 
-.modules-content>div::before {
+.modules-content>div::before,
+.modules-content>div::after {
   content: '';
-  position: absolute;
-  top: -4rem;
-  left: 0;
-  width: 5rem;
-  height: 4rem;
-  background-color: #fff;
-  transform-origin: bottom;
-  transform: skewX(45deg);
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: pre-wrap; */
+  display: flex;
+  justify-content: center;
+  padding-right: 5px;
+  font-size: 3rem;
+  box-sizing: border-box;
+  align-items: center;
   filter: drop-shadow(0 0 .5px #fff);
   transition: background-color 1.5s;
+  background-color: #fff;
+  position: absolute;
+}
+
+
+.modules-content>div::before {
+  top: calc(-1 *var(--s-4));
+  left: 0;
+  color: green;
+  width: var(--s-5);
+  height: var(--s-4);
+  transform-origin: bottom;
+  transform: skewX(45deg);
 }
 
 .modules-content>div::after {
-  content: '';
-  position: absolute;
+  content: attr(data-word);
+  color: red;
   top: 0;
-  left: -4rem;
-  width: 4rem;
-  height: 5rem;
-  background-color: #fff;
-  filter: drop-shadow(0 0 .5px #fff);
+  left: calc(-1 *var(--s-4));
+  width: var(--s-4);
+  height: var(--s-5);
   transform-origin: right;
   transform: skewY(45deg);
-  transition: background-color 1.5s;
-
 }
 
 .modules-content>div:hover::before,
@@ -96,57 +119,10 @@
 }
 
 .modules-content>div:hover {
-  color: #fff;
   z-index: 999;
-  /* transform: scale(1.03, 1.03); */
-  /* transform-origin: right bottom; */
 }
 
-.modules-content>div>img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  /* border-radius: 1rem; */
-  opacity: .8;
-  z-index: 1;
-}
-
-.modules-content>div>h3 {
-  position: absolute;
-  display: inline-block;
-  box-sizing: content-box;
-  /* width: auto; */
-  bottom: 0;
-  right: 0;
-  /* border-bottom-right-radius: 1rem; */
-  /* border-top-left-radius: 1rem; */
-  padding: .25rem .5rem;
-  box-sizing: border-box;
-  background-color: rgba(90, 90, 90, 0.6);
-  font-weight: bold;
-  font-style: italic;
-  font-size: small;
-  max-width: 90%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  /* max-width: auto;
-  bottom: 6rem;
-  width: 20rem;
-  height: 4rem;
-  transform: skew(10deg, 20deg); */
-
-}
-
-.modules-content>div:hover>h3 {
-  /* max-width: auto;
-  bottom: 6rem;
-  width: 20rem;
-  transform: skew(10deg, 20deg); */
-}
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
 
   .modules-content {
     grid-template-columns: repeat(4, 1fr);
@@ -154,7 +130,7 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
 
   .modules-content {
     grid-template-columns: repeat(3, 1fr);
@@ -162,7 +138,7 @@
 
 }
 
-@media screen and (max-width: 526px) {
+@media screen and (max-width: 800px) {
 
   .modules-content {
     grid-template-columns: repeat(2, 1fr);
@@ -170,10 +146,10 @@
 
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 600px) {
 
   .modules-content {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 
 }
