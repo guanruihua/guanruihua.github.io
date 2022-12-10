@@ -18,11 +18,26 @@ button.docsify-copy-code-button {
   align-items: center;
 }
 
+section.content {
+  padding-right: 0;
+}
+
+.toc-nav.nothing {
+  display: none;
+}
+
+.toc-nav+.markdown-section {
+  margin-right: 260px;
+}
+
+.toc-nav.nothing+.markdown-section {
+  margin-right: 0;
+}
 
 div.expand-btns {
   position: fixed;
-  right: 8px;
-  top: 10px;
+  left: 34px;
+  bottom: 6px;
 }
 
 .expand-btns>a>img {
@@ -32,6 +47,12 @@ div.expand-btns {
 
 .expand-btns>a {
   text-decoration: none;
+}
+
+.expand-btns>button {
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 div.pagination-item-title {
