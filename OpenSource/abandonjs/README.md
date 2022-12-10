@@ -1,6 +1,42 @@
 # [ruihuag](https://guanruihua.github.io/#/)
 
+- 常用方法的封装
+
+## 使用
+
+```shell
+npm install abandonjs
+```
+
+```js
+import { type } from 'abandonjs'
+```
+
+## 补充
+
 > `@version`: 最新更新的版本
 
-![](../__assets__/001.jpg)
-<!-- ![Metrics](https://metrics.lecoq.io/guanruihua?template=classic&isocalendar=1&languages=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&isocalendar=false&isocalendar.duration=half-year&languages=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&config.timezone=Asia%2FShanghai) -->
+## 升级日志
+
+### 2.3.4
+
+- 修复 Circular dependency 问题
+- 修复若干bug
+- 添加 function相关的 类型判断方法
+
+### 2.3.0
+
+- 重构, 添加以及优化类型判断相关方法
+
+### 2.2.1
+
+- 优化部分`string`相关方法
+
+### 2.2.0
+
+- 添加:
+  - `isEndOfStrings`, `isFile`, `isImage`, `isH5Video`, `isPdf`, `isWord`, `isExcel` 等
+  - `stringify`
+
+- 移除
+  - `asyncCatchError`

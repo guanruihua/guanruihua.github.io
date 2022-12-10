@@ -1,5 +1,5 @@
-# isFunction
+# likeFunction
 
-> - `description` 是否为普通函数
+> - `description` 是否为函数
 > - `param` `value` `{any}`
 > - `returns` `{boolean}`
