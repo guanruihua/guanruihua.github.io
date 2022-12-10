@@ -1,5 +1,5 @@
 # isWordFile
 
-> - `param` `fileName` `string`
+> - `param` `fileName` string
 > - `returns` `boolean`
-> - `version` `2.2.0`
+> - `version` `2`.2.0

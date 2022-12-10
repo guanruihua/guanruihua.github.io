@@ -1,5 +1,5 @@
 # max
 
-> - `description` 求最大值`(`只会判断有效值`),` 只会统计`number` `|` `string`类型的数值
+> - `description` 求最大值(只会判断有效值), 只会统计number | string类型的数值
 > - `param` `list` 数组
 > - `returns` 最大值

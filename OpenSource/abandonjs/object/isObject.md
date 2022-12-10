@@ -1,5 +1,5 @@
 # isObject
 
-> - `description` 判断是否为`Object`
+> - `description` 判断是否为Object
 > - `param` `value` 
 > - `returns` `boolean`

@@ -1,6 +1,6 @@
 # clamp
 
-> - `description` 限制在`lower`和`upper`之间
+> - `description` 限制在lower和upper之间
 > - `param` `num` 待限制的值
 > - `param` `lower` 下限
 > - `param` `upper` 上限

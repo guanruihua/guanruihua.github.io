@@ -2,17 +2,19 @@
 
 - 常用方法的封装
 
-## 使用
+## 安装
 
 ```shell
-npm install abandonjs
+pnpm install -D abandonjs
 ```
+
+## 使用
 
 ```js
 import { type } from 'abandonjs'
 ```
 
-## 补充
+## 补充说明
 
 > `@version`: 最新更新的版本
 

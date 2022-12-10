@@ -1,8 +1,8 @@
 # format
 
 > - `description` 时间格式化
-> - `param` `time:number|string|Date`  时间
-> - `param` `pattern?:string` 格式 
+> - `param` `time`:number|string|Date  时间
+> - `param` `pattern`?:string 格式 
 > - `returns` `string` 格式化后的数据 
 
 
