@@ -91,6 +91,7 @@
     * [isSameDate](abandonjs/time/isSameDate.md)
     * [isTime](abandonjs/time/isTime.md)
     * [likeDate](abandonjs/time/likeDate.md)
+    * [timezone](abandonjs/time/timezone.md)
     * [toDate](abandonjs/time/toDate.md)
   * util
     * [asyncBan](abandonjs/util/asyncBan.md)

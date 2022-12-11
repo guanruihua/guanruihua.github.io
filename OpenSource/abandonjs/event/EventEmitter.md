@@ -12,7 +12,7 @@
  ev.$on('fn1', ()=>console.log(1))
  ev.$on('fn2', ()=>console.log(2))
  ev.$emit('fn1')
- //  1
+ // 1
  ev.$emit('fn2')
  // 2
  ```
