@@ -25,6 +25,7 @@ import { type } from 'abandonjs'
 - 修复 Circular dependency 问题
 - 修复若干bug
 - 添加 function相关的 类型判断方法
+- 添加 timezone 方法
 
 ### 2.3.0
 
