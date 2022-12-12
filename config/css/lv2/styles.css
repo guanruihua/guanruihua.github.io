@@ -26,9 +26,9 @@ section.content {
   display: none;
 }
 
-.toc-nav+.markdown-section {
+/* .toc-nav+.markdown-section {
   margin-right: 260px;
-}
+} */
 
 .toc-nav.nothing+.markdown-section {
   margin-right: 0;
