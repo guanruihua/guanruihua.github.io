@@ -2,7 +2,7 @@
   color: #fff;
   margin-top: 38px;
   text-align: left;
-	margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 .openSource-layout legend {
@@ -42,5 +42,14 @@
   background-color: #6b6b6b70;
   display: inline-flex;
   align-items: center;
-	margin: .5rem;
+  margin: .5rem;
+}
+
+.openSource-layout .demo-item {
+  padding: 6px 8px;
+  border-radius: 8px;
+  background-color: #6b6b6b70;
+  display: inline-flex;
+  align-items: center;
+  margin: .5rem;
 }

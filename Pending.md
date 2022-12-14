@@ -1,5 +1,9 @@
 # Pending
 
+## 待完成
+
+ [linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/linear-gradient)
+
 ## 地图相关
 
 <https://blog.csdn.net/qq_42683219/article/details/106390151>
@@ -27,8 +31,6 @@ IntersectionObserve
 > SSR(服务端渲染框架) Remix
 >navigator.geolocation.getCurrentPosition
 >
-> - github action
->
 > 地图
 >
 > - [GeoJSON Maps of the globe](https://geojson-maps.ash.ms/)
@@ -39,23 +41,3 @@ IntersectionObserve
  ```js
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQAQMAAADdiHD7AAAABlBMVEUAAABTU1OoaSf/AAAAAXRSTlMAQObYZgAAAFJJREFUeF7t0cENgDAMQ9FwYgxG6WjpaIzCCAxQxVggFuDiCvlLOeRdHR9yzjncHVoq3npu+wQUrUuJHylSTmBaespJyJQoObUeyxDQb3bEm5Au81c0pSCD8HYAAAAASUVORK5CYII
  ```
-
-### 笔记预览项目
->
-> - 将笔记文件进行直接复制`copy-webpack-plugin`, 不用进行打包
-> - 文件夹: 为文件tab, 文件头部(或全局)可添加 忽略的名称不加入tab中
-> - 先使用node脚本生成目录结构, 再执行webpack脚本
-
-### 其他代码
-
-```ts
-/**
- * @title getWordAndNumber
- * @description  将提取字母和数字
- * @param str 待处理 字符串
- * @returns RegExpMatchArray( string[] | [] ) | null
- */
-export function getWordAndNumber(str: string): RegExpMatchArray | null {
- return str.match(/[a-zA-Z]+|[0-9]+/g)
-}
-```
