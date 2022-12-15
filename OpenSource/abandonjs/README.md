@@ -20,6 +20,10 @@ import { type } from 'abandonjs'
 
 ## 升级日志
 
+### 2.3.7
+
+- 将类型判断方法归为同一类
+
 ### 2.3.6
 
 - 添加 MapEntity 方法
