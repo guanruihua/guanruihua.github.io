@@ -34,7 +34,8 @@
   * 可视化
     * [cesium](Package/可视化/cesium.md)
     * [D3](Package/可视化/D3.md)
-    * [EChart](Package/可视化/EChart.md)
+    * [echart](Package/可视化/echart/index.md)
+      * [home](Package/可视化/echart/index.md)
     * [HighEchart](Package/可视化/HighEchart.md)
     * threejs
       * API

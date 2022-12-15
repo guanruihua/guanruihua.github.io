@@ -37,6 +37,8 @@
 * [css-demo](css-demo.md)
 * [css-expand](css-expand.md)
 * [css3](css3.md)
+* gradient
+  * [linear-gradient](gradient/linear-gradient.md)
 * layout
   * [css-layout](layout/css-layout.md)
   * [display](layout/display.md)
