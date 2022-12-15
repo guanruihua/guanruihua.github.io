@@ -9,7 +9,6 @@
 * git
   * [gitee](git/gitee.md)
   * [github](git/github.md)
-  * [git_error](git/git_error.md)
   * [type](git/type.md)
   * [命令](git/命令/index.md)
     * [git](git/命令/git.md)
@@ -26,6 +25,9 @@
     * [home](git/配置/index.md)
   * [钩子](git/钩子/index.md)
     * [home](git/钩子/index.md)
+  * [错误](git/错误/index.md)
+    * [home](git/错误/index.md)
+    * [timeout](git/错误/timeout.md)
 * [idea](idea.md)
 * PC
   * PC相关技术

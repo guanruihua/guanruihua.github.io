@@ -20,6 +20,10 @@ import { type } from 'abandonjs'
 
 ## 升级日志
 
+### 2.3.6
+
+- 添加 MapEntity 方法
+
 ### 2.3.4
 
 - 修复 Circular dependency 问题
