@@ -8,7 +8,7 @@ const ignoreDir = [
 	'index.html',
 	'home.html',
 	'package.json',
-	'Pending.md',
+	'Pending.md','log.md',
 	'push.bat', 'README.md',
 	'temp-note.md', '_sidebar.md',
 	'__assets__', 'bar.md', '.keep', 'blog'
