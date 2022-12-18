@@ -65,6 +65,19 @@ function buildModulesDom(dom) {
 		}
 		dom.appendChild(itemDom)
 	})
+
+	const tempDom = document.createElement('div')
+	tempDom.setAttribute('class', 'content')
+	tempDom.setAttribute('title', 'Demo')
+
+	tempDom.innerHTML = `
+			<div class='logo'>${'D'}</div>
+			<div class='msg'>${'Demo'}</div>`
+
+	tempDom.onclick = () => {
+		window.location.href = 'https://ruihuag-demo.github.io/'
+	}
+	dom.appendChild(tempDom)
 }
 
 buildModulesDom(modulesDom)
