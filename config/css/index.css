@@ -47,12 +47,8 @@ body {
   font-weight: bold;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #eee;
-  background-color: #494a4b;
-  background-image: url(/__assets__/0011.jpg);
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  /* backdrop-filter: blur(1rem); */
-  background-attachment: fixed;
+  background-color: #0d111f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
