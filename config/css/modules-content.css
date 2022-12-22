@@ -58,6 +58,12 @@
   color: #eee;
 }
 
+.modules-content .msg .tag {
+  margin-top: 5px;
+  display: inline-block;
+  width: 4.5rem;
+}
+
 .modules-content .content:hover {
   background-color: #c9c9c91f;
 }
