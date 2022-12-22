@@ -9,6 +9,11 @@ const modules = [
 	"Database", "HTML", "Knowledge-Reserve", "OpenSource", "React", "Tool",
 	"TypeScript"
 ]
+/**
+ 
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![npm version](https://img.shields.io/npm/v/fakingjs.svg?style=flat)](https://www.npmjs.com/package/fakingjs)
+
+ */
 
 const packages = [
 	{
@@ -44,7 +49,13 @@ function buildPackage() {
 						</a>
 					</div>
 					<a class="msg" href="./OpenSource/${name}/index.html" target="_blank">
-						<span>${name}</span>
+						<div>
+							<div>${name}</div>
+							<div>
+								<img class="tag" src="https://img.shields.io/badge/license-MIT-blue.svg" alt='license'/>
+								<img class="tag" src="https://img.shields.io/npm/v/${name}.svg?style=flat" alt='version'/>
+							</div>
+						</div>
 					</a>`
 		modulesDom.appendChild(dom)
 	})
