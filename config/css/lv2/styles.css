@@ -20,8 +20,12 @@ button.docsify-copy-code-button {
   align-items: center;
 }
 
-section.content {
-  padding-right: 0;
+section.content>aside.toc-nav {
+  /* background-color: red; */
+  margin-right: 5px;
+  width: auto;
+  min-width: 150px;
+  max-width: 200px;
 }
 
 .toc-nav.nothing {
@@ -274,6 +278,7 @@ div.search {
 
 .content {
   padding-top: 5px;
+  margin-top: 1rem;
 }
 
 
@@ -281,7 +286,11 @@ div.search {
   margin-right: 85px;
 }
 
+section.content {
+  padding-right: 0 !important;
+}
+
 body {
   background: transparent;
-  background-color: rgb(225, 225, 225);
+  /* background-color: rgb(225, 225, 225); */
 }

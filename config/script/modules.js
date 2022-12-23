@@ -24,13 +24,19 @@ const packages = [
 	},
 	{ type: 'npm', name: 'unit-testing-js', url: 'https://www.npmjs.com/package/unit-testing-js', },
 	{ type: 'npm', name: 'fakingjs', url: 'https://www.npmjs.com/package/fakingjs', },
+	{
+		type: 'npm', name: 'check-it-type',
+		url: 'https://www.npmjs.com/package/fakingjs',
+		git: 'https://github.com/abandonjs/check-it-type',
+		docs: 'https://github.com/abandonjs/check-it-type'
+	},
 ]
 
 function buildPackage() {
 	packages.forEach(item => {
 		const { name } = item
 		const {
-			type, url,
+			type, url, docs,
 			npm = `https://www.npmjs.com/package/${name}`,
 			git = `https://github.com/guanruihua/${name}`
 		} = item
@@ -48,7 +54,7 @@ function buildPackage() {
 							<img src="./__assets__/GitHub-Mark-32px.png" alt="package" />
 						</a>
 					</div>
-					<a class="msg" href="./OpenSource/${name}/index.html" target="_blank">
+					<a class="msg" href="${docs || `./OpenSource/${name}/index.html`}" target="_blank">
 						<div>
 							<div>${name}</div>
 							<div>
