@@ -3,6 +3,8 @@
   --border-radius: 8px;
 }
 
+
+
 img {
   border-radius: var(--border-radius);
 }
@@ -281,4 +283,5 @@ div.search {
 
 body {
   background: transparent;
+  background-color: rgb(225, 225, 225);
 }

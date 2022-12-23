@@ -103,6 +103,7 @@
       * [version](包管理器/npm/命令/version.md)
       * [命令](包管理器/npm/命令/命令.md)
     * [快速删除文件](包管理器/npm/快速删除文件.md)
+    * [运行其他目录script](包管理器/npm/运行其他目录script.md)
   * [nrm](包管理器/nrm.md)
   * [package](包管理器/package/index.md)
     * [author](包管理器/package/author.md)
