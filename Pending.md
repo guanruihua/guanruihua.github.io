@@ -24,7 +24,6 @@ echart
 
 seo优化 学习, 结合多语言优化
 判断元素出现在可视区域中的方案
-offsetTop、scrollTop
 getBoundingClientRect
 IntersectionObserve
 > [Cookie](https://juejin.cn/post/6844904102544031757)
