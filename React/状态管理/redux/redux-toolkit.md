@@ -4,19 +4,19 @@
 
 ## Api
 
-> - `configureStore() `
+> - `configureStore()`
 >   提供简化的配置选项和良好的默认值。它可以自动组合众多的reducers，添加用户提供的任何Redux中间件，默认情况下包括Redux -thunk(处理异步Action的中间件)，并支持使用Redux DevTools扩展。
-> - `createReducer() `
+> - `createReducer()`
 >   创建reducer的action映射表而不必编写switch语句。自动使用immer库让你用正常的代码编写更简单的不可变更新，比如state.todos[3].completed = true。
-> - `createAction() `
+> - `createAction()`
 >   为给定的操作类型字符串生成action creator函数
-> - `createSlice() `
+> - `createSlice()`
 >   根据传递的参数自动生成相应的actionCreator和reducer函数
-> - `createAsyncThunk() `
+> - `createAsyncThunk()`
 >   接受action字符串和返回Promise的函数，并生成分派的thunk函数
-> - `createEntityAdapter `
+> - `createEntityAdapter`
 >   生成可重用的reducers和selectors来管理store中的数据, 执行CRUD操作
-> - `createSelector() `
+> - `createSelector()`
 >   来自reselect库，被重新导出，用于state缓存，防止不必要的计算
 
 ## 安装使用
@@ -45,8 +45,6 @@ export type AppDispatch = typeof store.dispatch
 
 export default store
 ```
-
-
 
 ### 组件树热重载
 
@@ -78,9 +76,7 @@ if (process.env.NODE_ENV === 'development' && module.hot) {
 }
 ```
 
-
-
-### 使用`useSelector() `和`useDispatch() ` Hook来替代`connect() `
+### 使用`useSelector()`和`useDispatch()` Hook来替代`connect()`
 
 > - 传统的react应用在与redux进行连接时候是通过react-redux库的connect函数来传入mapState和mapDispatch函数来将redux中的state和action存储到组件的props中。
 > - react-redux新版已经支持useSelector, useDispatch Hook， 我们可以使用它们替代connect的写法。通过它们我们可以在纯函数组件中获取到store中的值并做到监测变化
@@ -150,8 +146,6 @@ export default function Counter() {
 
 ### 使用useEffect Hook来执行异步逻辑
 
-
-
 ```js
 export const IssuesListPage = ({
   org,
@@ -202,20 +196,19 @@ fetchEverything()
 }
 ```
 
-
 ### createAsyncThunk的使用
 
 > 参数
-> 		rtk提供的生成thunk action creator的工具函数
+>   rtk提供的生成thunk action creator的工具函数
 > 参数:
 >
-> 1. type: actionType字符串(如users/requestStatus)， rtk会会基于此生成以下三个action creator	
+> 1. type: actionType字符串(如users/requestStatus)， rtk会会基于此生成以下三个action creator 
 >
->    `fulfilled: 'users/requestStatus/fulfilled' `
+>    `fulfilled: 'users/requestStatus/fulfilled'`
 >
->    `rejected: 'users/requestStatus/rejected' `		
+>    `rejected: 'users/requestStatus/rejected'`  
 >
->    `pending: 'users/requestStatus/pending`	
+>    `pending: 'users/requestStatus/pending` 
 >
 > - payloadCreator
 >   一个回调函数，它应该返回一个包含一些异步逻辑结果的promise
@@ -233,18 +226,12 @@ fetchEverything()
 >     - signal取消标志， 如果应用有其他地方标记这个请求应该取消则为true
 >     - rejectWithValue工具函数, 用于返回一个可以自定义payload被reject的Promise
 >
->     
+>
 >
 > - options对象
 >
 >   - condition: 一个回调，如果需要，可用于跳过payload creator函数逻辑执行
 >   - dispatchConditionRejection： 如果condition()返回false，则默认行为是根本不分派任何动作。如果您仍然希望在thunk被取消时发送一个“rejected”操作，将此标志设置为true。
-
-
-
-
-
-
 
 ### createAsyncThunk函数的返回值
 
@@ -285,8 +272,6 @@ const reducer4 = createSlice({
 })
 ```
 
-
-
 ### 处理thunk的返回结果
 
 调用thunks时可能返回一个值。一个常见的用例是:从thunk返回一个promise，从组件中分派thunk，然后等待promise被解析，然后再做额外的工作:
@@ -298,7 +283,6 @@ const onClick = () => {
   })
 }
 ```
-
 
 由createAsyncThunk生成的thunks将总是返回一个已解析的承诺，其中包含已实现的操作对象或被拒绝的操作对象，视情况而定。
 
@@ -315,7 +299,6 @@ const onClick = () => {
     .catch(serializedError => {})
 }
 ```
-
 
 如果您需要定制被reject操作的内容，您应该自己捕获任何错误，然后使用thunkAPI返回的rejectWithValue。执行return rejectWithValue(errorPayload)将导致被reject的操作将该值作为action.payload使用
 
@@ -335,8 +318,6 @@ const updateUser = createAsyncThunk(
   }
 )
 ```
-
-
 
 ### 请求的取消
 
@@ -386,7 +367,6 @@ function MyComponent(props) {
 }
 ```
 
-
 使用thunkAPI.signal取消网络请求
 现代浏览器的fetch api已经提供了对中止信号的支持
 
@@ -407,8 +387,6 @@ const fetchUserById = createAsyncThunk(
 #### 检查取消状态
 
 你可以用这个中止属性定期检查thunk是否已中止，并在这种情况下停止代价高昂的长时间运行的工作
-
-
 
 ```js
 import { createAsyncThunk } from '@reduxjs/toolkit'
@@ -433,7 +411,6 @@ while (!done) {
 )
 ```
 
-
 你也可以调用signal.addEventListener(‘abort’， callback)在调用promise.abort()时通知thunk内部的逻辑。例如，这可以与axios CancelToken一起使用
 
 ```js
@@ -454,8 +431,6 @@ const fetchUserById = createAsyncThunk(
   }
 )
 ```
-
-
 
 ### createEntityAdapter
 
@@ -544,4 +519,3 @@ console.log(booksSelectors.selectAll(store.getState()))
 // All book entries in sorted order
 // [{id: "c", title: "Book 2"}, {id: "b", title: "Book 3"}]
 ```
-
