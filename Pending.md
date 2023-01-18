@@ -35,3 +35,10 @@ IntersectionObserve
  ```js
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQAQMAAADdiHD7AAAABlBMVEUAAABTU1OoaSf/AAAAAXRSTlMAQObYZgAAAFJJREFUeF7t0cENgDAMQ9FwYgxG6WjpaIzCCAxQxVggFuDiCvlLOeRdHR9yzjncHVoq3npu+wQUrUuJHylSTmBaespJyJQoObUeyxDQb3bEm5Au81c0pSCD8HYAAAAASUVORK5CYII
  ```
+
+```
+"ts-node": "^10.9.1",
+"@babel/core": "^7.20.12",
+"@swc/core": "^1.3.23",
+"@swc/wasm": "^1.3.23",
+```

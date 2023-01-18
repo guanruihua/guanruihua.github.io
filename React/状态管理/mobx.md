@@ -1,17 +1,13 @@
 # Mobx
 
-
-
 ## this找不到问题
 
 ```tsx
- 添加	
+ 添加 
  constructor() {
-		makeObservable(this);
-	}
+  makeObservable(this);
+ }
 ```
-
-
 
 ## 继承使用
 
@@ -20,15 +16,13 @@
 ```tsx
 class father{
    constructor() {
-		makeObservable(this);
-	}
+  makeObservable(this);
+ }
   @action.bound
   fn(){}
 }
 
 ```
-
-
 
 ### 子类
 
@@ -36,12 +30,11 @@ class father{
 class son extends father{
    constructor() {
      super();
-		makeObservable(this);
-	}
+  makeObservable(this);
+ }
   @override
-	fn(){
-		// 这里就可以重写方法
+ fn(){
+  // 这里就可以重写方法
   }  
 }
 ```
-
