@@ -28,8 +28,16 @@ const packages = [
 		npm: 'https://www.npmjs.com/abandonjs',
 		git: 'https://github.com/abandonjs/abandonjs',
 	},
-	{ type: 'npm', name: 'unit-testing-js', url: 'https://www.npmjs.com/package/unit-testing-js', },
-	{ type: 'npm', name: 'fakingjs', url: 'https://www.npmjs.com/package/fakingjs', },
+	{
+		type: 'npm',
+		name: 'unit-testing-js',
+		url: 'https://www.npmjs.com/package/unit-testing-js',
+	},
+	{
+		type: 'npm',
+		name: 'fakingjs',
+		url: 'https://www.npmjs.com/package/fakingjs',
+	},
 	{
 		type: 'npm', name: 'check-it-type',
 		url: 'https://www.npmjs.com/package/fakingjs',
@@ -49,7 +57,7 @@ function buildPackage() {
 		const dom = document.createElement('div')
 		dom.setAttribute('class', 'content')
 
-		if(type == 'module'){
+		if (type == 'module') {
 			dom.innerHTML = `
 					<div class="logo unit">
 						<a href="${git}" target="_blank">
@@ -65,8 +73,8 @@ function buildPackage() {
 						</div>
 					</a>`
 		}
-		if(type === 'npm')
-		dom.innerHTML = `
+		if (type === 'npm')
+			dom.innerHTML = `
 					<div class="logo unit">
 						<a href="${npm}" target="_blank">
 							<svg height="32" width="32" viewBox="0 0 700 700" fill="currentColor" aria-hidden="true" style="color: rgb(203, 0, 0);">
@@ -106,7 +114,7 @@ function buildModulesDom(dom) {
 		}
 		dom.appendChild(itemDom)
 	})
-	
+
 }
 
 buildModulesDom(modulesDom)
