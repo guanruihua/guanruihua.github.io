@@ -17,6 +17,12 @@ const modules = [
 
 const packages = [
 	{
+		type: 'module',
+		name: 'Demo',
+		url: 'https://ruihuag-demo.github.io/',
+		git: 'https://github.com/ruihuag-demo/ruihuag-demo.github.io',
+	},
+	{
 		type: 'npm',
 		name: 'abandonjs',
 		npm: 'https://www.npmjs.com/abandonjs',
@@ -42,6 +48,24 @@ function buildPackage() {
 		} = item
 		const dom = document.createElement('div')
 		dom.setAttribute('class', 'content')
+
+		if(type == 'module'){
+			dom.innerHTML = `
+					<div class="logo unit">
+						<a href="${git}" target="_blank">
+							<img src="./__assets__/GitHub-Mark-32px.png" alt="package" />
+						</a>
+					</div>
+					<a class="msg" href="${url}" target="_blank">
+						<div>
+							<div>${name}</div>
+							<div>
+								<img class="tag" src="https://img.shields.io/badge/license-MIT-blue.svg" alt='license'/>
+							</div>
+						</div>
+					</a>`
+		}
+		if(type === 'npm')
 		dom.innerHTML = `
 					<div class="logo unit">
 						<a href="${npm}" target="_blank">
@@ -82,19 +106,7 @@ function buildModulesDom(dom) {
 		}
 		dom.appendChild(itemDom)
 	})
-
-	const tempDom = document.createElement('div')
-	tempDom.setAttribute('class', 'content')
-	tempDom.setAttribute('title', 'Demo')
-
-	tempDom.innerHTML = `
-			<div class='logo'>${'D'}</div>
-			<div class='msg'>${'Demo'}</div>`
-
-	tempDom.onclick = () => {
-		window.location.href = 'https://ruihuag-demo.github.io/'
-	}
-	dom.appendChild(tempDom)
+	
 }
 
 buildModulesDom(modulesDom)
