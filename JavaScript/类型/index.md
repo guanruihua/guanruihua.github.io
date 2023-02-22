@@ -117,15 +117,15 @@ Array.isArray() 本质上检测的是对象的 [[Class]] 值，[[Class]] 是对�
 
 为什么变成了 Object？
 
-- 因为 prototype 被重新赋值的是一个 { }， { } 是 new Object() 的字面量，因此 new Object() 会将 Object 原型上的 constructor 传递给 { }，也就是 Object 本身。
+- 因为 `prototype` 被重新赋值的是一个 { }， { } 是 `new Object()` 的字面量，因此 new Object() 会将 Object 原型上的 `constructor` 传递给 { }，也就是 `Object` 本身。
 
 - 因此，为了规范开发，在重写对象原型时一般都需要重新给 constructor 赋值，以保证对象实例的类型不被篡改。
 
 ### **toString**
 
-- toString() 是 Object 的原型方法，调用该方法，默认返回当前对象的 `[[Class]]` 。这是一个内部属性，其格式为 `[object Xxx]`，其中 Xxx 就是对象的类型。
+- `toString()` 是 `Object` 的原型方法，调用该方法，默认返回当前对象的 `[[Class]]` 。这是一个内部属性，其格式为 `[object Xxx]`，其中 Xxx 就是对象的类型。
 
-- 对于 Object 对象，直接调用 toString() 就能返回 [object Object] 。而对于其他对象，则需要通过 call / apply 来调用才能返回正确的类型信息。
+- 对于 `Object` 对象，直接调用 `toString()` 就能返回 `[object Object]` 。而对于其他对象，则需要通过 call / apply 来调用才能返回正确的类型信息。
 
 ```js
 Object.prototype.toString.call('') ;  // [object String]
