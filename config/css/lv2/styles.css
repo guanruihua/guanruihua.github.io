@@ -3,8 +3,6 @@
   --border-radius: 8px;
 }
 
-
-
 img {
   border-radius: var(--border-radius);
 }
