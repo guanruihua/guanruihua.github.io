@@ -1,10 +1,11 @@
 {
   "name": "guanruihua.github.io",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "博客",
   "author": "ruihuag",
   "license": "MIT",
   "scripts": {
+    "git": "node config/script/git.js",
     "docs": ".\\config\\script\\push.bat",
     "docs2": "bash ./config/script/push.bat",
     "build": "node config/build/build-sidebar-lv2.js",
@@ -33,6 +34,8 @@
     "note"
   ],
   "devDependencies": {
-    "0file-system": "^0.1.0"
+    "0file-system": "^0.1.0",
+    "command-go": "^0.1.1",
+    "enquirer": "^2.3.6"
   }
 }
