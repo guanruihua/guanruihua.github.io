@@ -154,6 +154,7 @@
     * 脚本配置
       * [config](包管理器/package/脚本配置/config.md)
       * [script](包管理器/package/脚本配置/script.md)
+  * [使用script命令触发bat命令](包管理器/使用script命令触发bat命令.md)
 * 多端
   * [Electron](多端/Electron/index.md)
     * [home](多端/Electron/index.md)
@@ -172,6 +173,7 @@
     * 微信小程序
       * api
         * [web-view](多端/小程序/微信小程序/api/web-view.md)
+      * [webview](多端/小程序/微信小程序/webview.md)
       * [云函数](多端/小程序/微信小程序/云函数.md)
       * 开放信息
         * [UnionID](多端/小程序/微信小程序/开放信息/UnionID.md)
@@ -236,6 +238,7 @@
   * [问题](框架/问题/index.md)
     * [home](框架/问题/index.md)
 * 浏览器
+  * [Date](浏览器/Date.md)
   * [favicon](浏览器/favicon.md)
   * [meta](浏览器/meta.md)
   * [seo](浏览器/seo.md)
