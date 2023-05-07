@@ -1,16 +1,18 @@
 {
   "name": "guanruihua.github.io",
-  "version": "0.2.4",
+  "version": "0.4.0",
   "description": "博客",
   "author": "ruihuag",
   "license": "MIT",
   "scripts": {
-    "push": "bash ./push.bat",
+    "docs": ".\\config\\script\\push.bat",
+    "docs2": "bash ./config/script/push.bat",
     "build": "node config/build/build-sidebar-lv2.js",
     "build:lv1": "node config/build/build-sidebar-lv1.js",
     "build:os": "node config/build/build-sidebar-OpenSource.js",
     "build:package": "nodemon config/build/getPackageDocs.js",
-    "update":"node config/update-module.js",
+    "update": "node config/update-module.js",
+    "data": "node config/buildData.js",
     "dev": "nodemon config/build/build-sidebar-lv2.js"
   },
   "repository": {
@@ -29,5 +31,8 @@
   "homepage": "https://github.com/guanruihua/guanruihua.github.io",
   "keywords": [
     "note"
-  ]
+  ],
+  "devDependencies": {
+    "0file-system": "^0.1.0"
+  }
 }

@@ -9,6 +9,8 @@
   * [特殊标记](api/特殊标记.md)
 * [Class](Class/index.md)
   * [home](Class/index.md)
+* Element
+  * [getBoundingClientRect](Element/getBoundingClientRect.md)
 * [es6](es6.md)
 * [ESMAScript](ESMAScript.md)
 * [Number](Number/index.md)
@@ -38,7 +40,6 @@
   * [流程&基础遍历](基础/流程&基础遍历.md)
 * 对象
   * [BOM](对象/BOM.md)
-  * [class](对象/class.md)
   * [cookie](对象/cookie.md)
   * [DOM](对象/DOM.md)
   * [event](对象/event.md)
@@ -46,6 +47,7 @@
   * [Iterator](对象/Iterator.md)
   * [Object](对象/Object.md)
   * promise
+    * [class](对象/promise/class.md)
     * [Generator](对象/promise/Generator.md)
     * [promise_async_await](对象/promise/promise_async_await.md)
     * [promise原理模拟](对象/promise/promise原理模拟.md)

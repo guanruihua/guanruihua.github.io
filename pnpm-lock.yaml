@@ -1,0 +1,13 @@
+lockfileVersion: 5.4
+
+specifiers:
+  0file-system: ^0.1.0
+
+devDependencies:
+  0file-system: 0.1.0
+
+packages:
+
+  /0file-system/0.1.0:
+    resolution: {integrity: sha512-CJ0lC6whto6hkCyHcm6kgEybe5IkN7KlgyO0W/IWKEUM2WSE0kNnwRD6wCB8cX235V5MNSqy64HBBOuW3vn2tg==}
+    dev: true

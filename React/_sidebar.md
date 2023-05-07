@@ -26,13 +26,15 @@
   * [react使用ts](typescript/react使用ts.md)
 * [UmiJS](UmiJS/index.md)
   * [home](UmiJS/index.md)
+* [warning](warning.md)
 * [使用css_var](使用css_var.md)
 * 内置API
   * [React.children.map()](内置API/React.children.map().md)
 * [内置ts类型](内置ts类型/index.md)
+  * [HTML标签类型](内置ts类型/HTML标签类型.md)
   * [home](内置ts类型/index.md)
-* [原理实现](原理实现/index.md)
-  * [home](原理实现/index.md)
+  * [事件处理](内置ts类型/事件处理.md)
+* [定时器](定时器.md)
 * [懒加载](懒加载.md)
 * 状态管理
   * dva

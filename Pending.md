@@ -42,3 +42,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQAQMAAADdiHD7AAAABlBMVEUAAA
 "@swc/core": "^1.3.23",
 "@swc/wasm": "^1.3.23",
 ```
+
+chrome://sync-internals/
+edge://sync-internals/
+
+<https://bugs.chromium.org/p/chromium/issues/detail?id=141129>
