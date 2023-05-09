@@ -1,13 +1,38 @@
-lockfileVersion: 5.4
-
-specifiers:
-  0file-system: ^0.1.0
+lockfileVersion: '6.0'
 
 devDependencies:
-  0file-system: 0.1.0
+  0file-system:
+    specifier: ^0.1.0
+    version: 0.1.0
+  command-go:
+    specifier: ^0.1.1
+    version: 0.1.1(enquirer@2.3.6)
+  enquirer:
+    specifier: ^2.3.6
+    version: 2.3.6
 
 packages:
 
-  /0file-system/0.1.0:
+  /0file-system@0.1.0:
     resolution: {integrity: sha512-CJ0lC6whto6hkCyHcm6kgEybe5IkN7KlgyO0W/IWKEUM2WSE0kNnwRD6wCB8cX235V5MNSqy64HBBOuW3vn2tg==}
+    dev: true
+
+  /ansi-colors@4.1.3:
+    resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
+    engines: {node: '>=6'}
+    dev: true
+
+  /command-go@0.1.1(enquirer@2.3.6):
+    resolution: {integrity: sha512-7NEziCUx/M0j1uoUmuhvA6KUz0f4+vDrXs6/NcMx6a0aKj7+i51SqNjMRwsj9uRpkpiIJz0GK45XZsXvAXnr6g==}
+    peerDependencies:
+      enquirer: ^2.3.6
+    dependencies:
+      enquirer: 2.3.6
+    dev: true
+
+  /enquirer@2.3.6:
+    resolution: {integrity: sha512-yjNnPr315/FjS4zIsUxYguYUPP2e1NK4d7E7ZOLiyYCcbFBiTMyID+2wvm2w6+pZ/odMA7cRkjhsPbltwBOrLg==}
+    engines: {node: '>=8.6'}
+    dependencies:
+      ansi-colors: 4.1.3
     dev: true
