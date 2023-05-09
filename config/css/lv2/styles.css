@@ -210,7 +210,7 @@ div.search {
   display: none;
 }
 
-pre code,
+.markdown-section pre code,
 .sidebar,
 .page_toc div[class^="lv"].active a,
 .page_toc div[class^="lv"].active a span,
