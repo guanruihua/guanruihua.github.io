@@ -14,7 +14,8 @@
   justify-content: center;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, 14rem);
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 95vw)); */
+  grid-template-columns: repeat(auto-fill, 24em);
   gap: 1rem 1rem;
 
 }
@@ -29,6 +30,7 @@
   font-family: fantasy;
   cursor: pointer;
   font-weight: lighter;
+  height: 10em;
 }
 
 :root {
@@ -51,11 +53,13 @@
 
 .modules-content .msg {
   width: 100%;
-  height: 7.5rem;
+  line-height: 4.5em;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #eee;
+  font-size: 2.3em;
+
 }
 
 .modules-content .msg .tag {
@@ -70,7 +74,7 @@
 
 .modules-content .content:hover .msg {
   color: #fff;
-  font-size: large;
+  font-size: 2.5em;
   font-family: fantasy;
 }
 

@@ -10,8 +10,6 @@
     "docs2": "bash ./config/script/push.bat",
     "build": "node config/build/build-sidebar-lv2.js",
     "build:lv1": "node config/build/build-sidebar-lv1.js",
-    "build:os": "node config/build/build-sidebar-OpenSource.js",
-    "build:package": "nodemon config/build/getPackageDocs.js",
     "update": "node config/update-module.js",
     "data": "node config/buildData.js",
     "dev": "nodemon config/build/build-sidebar-lv2.js"
