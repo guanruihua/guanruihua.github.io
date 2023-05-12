@@ -241,3 +241,7 @@ div.page_toc div[class^="lv"] a span {
 .app-sub-sidebar li:before {
   content: counter(num)'.';
 }
+
+.markdown-section p.tip, .markdown-section tr:nth-child(2n){
+  background-color: #5e5e5e;
+}
