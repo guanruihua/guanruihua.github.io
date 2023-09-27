@@ -30,12 +30,12 @@ grid-auto-flow: row | column | row dense | column dense;[dense:自动填补空�
 //控制单元格位置
 justify-items:start | end | center | stretch[拉伸];[水平方向]
 align-items:start | end | center | stretch;[垂直方向]
-place-items:[jusity-item] [align-items];//同时设置水平和垂直方向
+place-items:[justify-item] [align-items];//同时设置水平和垂直方向
 
 //这个是对于单个单元格
 justify-self:start | end | center | stretch[拉伸];[水平方向]
 align-self:start | end | center | stretch;[垂直方向]
-place-self:[jusity-item] [align-items];//同时设置水平和垂直方向
+place-self:[justify-item] [align-items];//同时设置水平和垂直方向
 
 //控制内容区域在容器的位置
 justify-content: start | end | center | stretch | 
