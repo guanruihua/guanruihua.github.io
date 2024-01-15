@@ -14,3 +14,9 @@ test：增加测试
 chore：构建过程或辅助工具的变动
 revert: feat(pencil): add 'graphiteWidth' option (撤销之前的commit)
 ```
+
+## 记录到 Change log
+
+```shell
+type: feat / fix
+```
