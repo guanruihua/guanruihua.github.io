@@ -31,6 +31,8 @@
   cursor: pointer;
   font-weight: lighter;
   height: 10em;
+  box-shadow:
+    -2px -2px 12px #c9c9c934;
 }
 
 :root {
@@ -70,11 +72,11 @@
 
 .modules-content .content:hover {
   background-color: #c9c9c91f;
+
 }
 
 .modules-content .content:hover .msg {
   color: #fff;
-  font-size: 2.5em;
   font-family: fantasy;
 }
 
