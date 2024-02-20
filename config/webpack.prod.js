@@ -151,7 +151,7 @@ module.exports = {
   },
   output: {
     filename: '[name].[hash:8].js', // 打包的文件名
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../docs')
   },
   optimization: {
     minimize: true,
@@ -163,8 +163,8 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      path: '../dist',
-      cleanOnceBeforeBuildPatterns: ['../dist'],
+      path: '../docs',
+      cleanOnceBeforeBuildPatterns: ['../docs'],
       verbose: true
     }),
     new HtmlWebpackPlugin({
