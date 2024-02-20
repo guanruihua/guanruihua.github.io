@@ -1,0 +1,44 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "esnext",
+		"jsx": "react",
+		"sourceMap": true,
+		"removeComments": true,
+		"strict": false,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"allowJs": true,
+		"declaration": true,
+		"declarationDir": "dist",
+		"declarationMap": true,
+		"outDir": "dist",
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./",
+		"paths": {
+			"@/*": [
+				"src/*"
+			]
+		},
+		"typeRoots": [
+			"typings/*.d.ts",
+			"node_modules/@types",
+			"node_modules/*.d.ts",
+			"src/assets/type/*.d.ts"
+		]
+	},
+	"exclude": [
+		"dist",
+		"temp",
+		"node_modules",
+		"config/*.ts"
+	],
+	"include": [
+		"components/**/*",
+		"src/**/*",
+		"**/*.d.ts"
+	]
+}
