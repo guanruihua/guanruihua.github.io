@@ -1,11 +1,11 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.less'
 import { Note } from '@/views'
+import './index.less'
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Note />
     </div>
   )

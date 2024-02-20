@@ -1,37 +1,119 @@
 .container {
   height: 100vh;
+  min-height: 100vh;
   max-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  // display: grid;
-  // grid-template-columns: auto 1fr;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20vh 80vh;
+  gap: 0;
 
-  .left {
-    height: 100%;
-    max-height: 100vh;
+  .query {
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+    width: 100%;
+    text-align: center;
+
+    input {
+      outline: none;
+      background: transparent;
+      border-radius: 8px;
+      width: 500px;
+      min-width: 300px;
+      max-width: 500px;
+      max-width: 95%;
+      height: 32px;
+      margin: 0px auto;
+      padding: 0 8px;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      text-align: center;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      div {
+        color: rgba(255, 255, 255, .2);
+        display: inline-block;
+        border-radius: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px 10px;
+        font-size: 12px;
+        &.isSelect {
+          color: rgba(255, 255, 255, 9);
+        }
+        &:hover{
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .note{
     overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 5vw;
+  }
+
+  .tag {
+    display: inline-block;
+    width: fit-content;
+    text-align: start;
+    padding: 0 10px;
+    border: none;
+    // border-left: 2px solid #ffffff;
+    border-left: 1px solid rgba(255, 255, 255, .5);
+
+    &.isRoot {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 5vh;
+    }
+
+  }
+
+  .name {
+    display: block;
+    overflow: hidden;
+    max-width: 160px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 5px 0;
   }
 
   .item {
-    display: inline-block;
+    width: 200px;
     font-size: 14px;
     font-weight: bold;
     margin: 0;
-    padding: 0 15px;
+    padding: 0;
     text-align: start;
-    
-    .name {
+    vertical-align: text-top;
+
+    .next {
       display: inline-block;
-      cursor: pointer;
-      padding: 5px 0;
+      max-height: 70vh;
+      overflow: hidden auto;
+    }
+
+
+    .last {
+      display: inline-block;
+      color: rgb(175, 250, 255);
+      height: fit-content;
+      padding: 6px 8px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, .1);
     }
   }
-}
-
-iframe {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  border: none;
 }

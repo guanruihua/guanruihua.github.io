@@ -1,24 +1,63 @@
 import React from 'react'
 import { get } from '@/util'
 import { isArray } from 'asura-eye'
-import { ObjectType } from 'abandonjs'
+import { useSetState } from '0hook'
+import { ObjectType, stringify } from 'abandonjs'
+
+const key = '__cache_queryParams__'
+
+const filterTree = (tree: any[], params: ObjectType): any[] => {
+  const { find = '', tags = [] } = params as any
+  const newFind: string = (find as string).toUpperCase()
+
+  const filterTreeCore = (list: any[], lv = 0) => {
+    const newList: any[] = []
+    list.forEach((item) => {
+      const { name, children } = item
+      const newName = name.toUpperCase()
+      const newItem = { ...item }
+
+      // if (lv === 0) {
+      //   console.log(tags, name)
+      // }
+      if (lv === 0 && tags.length && !tags.includes(name)) {
+        return
+      }
+
+      if (newFind && stringify(item).toUpperCase().indexOf(newFind) === -1) {
+        return
+      }
+      if (children && children.length) {
+        newItem.children = filterTreeCore(newItem.children, lv + 1)
+        newList.push(newItem)
+        return
+      }
+      if (newFind && newName.indexOf(newFind) === -1) {
+        return
+      }
+      newList.push(newItem)
+    })
+    return newList
+  }
+  return filterTreeCore(tree)
+}
 
 export const useHook = () => {
-
-  const [queryParams, setQueryParams] = React.useState<ObjectType>({})
-
-  const [url, setUrl] = React.useState(
-    'https://ruihuag-note.github.io/Back-End/index.html#/C%E8%AF%AD%E8%A8%80/C++/C++basic'
-  )
+  const [queryParams, _setQueryParams] = useSetState<{
+    find: string
+    tags: string[]
+  }>({
+    find: '',
+    tags: ['CSS', 'JavaScript', 'HTML', 'React', 'vue', 'Data', 'TypeScript']
+    // tags: []
+  })
+  const [originTree, setOriginTree] = React.useState<any[]>([])
   const [tree, setTree] = React.useState<any[]>([])
-  const init = async () => {
-    const res = await get(
-      'https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.json'
-    )
-    const { path } = res.data || {}
-    if (isArray<any>(path)) {
-      setTree(path.filter((_: any) => !_.name.match(/^(\.|_)/)))
-    }
+  const setQueryParams = (record: { find?: string; tags?: string[] }) => {
+    const newRecord = { ...queryParams, ...record }
+    _setQueryParams(newRecord)
+    localStorage.setItem(key, stringify(newRecord))
+    setTree(filterTree(originTree, newRecord))
   }
 
   const select = (root: string, path: string) => {
@@ -28,9 +67,26 @@ export const useHook = () => {
       ''
     )}`
     window.open(newUrl)
-    // setUrl(newUrl)
   }
 
+  const init = async () => {
+    const res = await get(
+      'https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.json'
+    )
+    const { path } = res.data || {}
+    const params = localStorage.getItem(key)
+    if (isArray<any>(path)) {
+      const newPath = path.filter((_: any) => !_.name.match(/^(\.|_)/))
+      setOriginTree(newPath)
+      if (params) {
+        const newParams = JSON.parse(params)
+        _setQueryParams(newParams)
+        setTree(filterTree(newPath, newParams))
+      } else {
+        setTree(filterTree(newPath, queryParams))
+      }
+    }
+  }
   React.useEffect(() => {
     init()
   }, [])
@@ -38,9 +94,8 @@ export const useHook = () => {
   return {
     queryParams,
     setQueryParams,
-    url,
-    setUrl,
     tree,
+    originTree,
     setTree,
     select
   }
