@@ -2,7 +2,7 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const formatTS = require('@formatjs/ts-transformer')
+const CopyPlugin = require('copy-webpack-plugin')
 const exclude = /node_modules|example|demo/
 
 module.exports = {
@@ -163,9 +163,19 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      path: '../docs',
-      cleanOnceBeforeBuildPatterns: ['../docs'],
+      path: path.resolve(__dirname, '../public/index.html'),
+      // path: '../docs',
+      // cleanOnceBeforeBuildPatterns: ['../docs'],
       verbose: true
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../.nojekyll'),
+          to: path.resolve(__dirname, '../docs/.nojekyll'),
+          toType: 'file'
+        }
+      ]
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html')

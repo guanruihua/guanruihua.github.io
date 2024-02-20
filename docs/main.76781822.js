@@ -22,7 +22,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `* {
   padding: 0;
   box-sizing: border-box;
   color: #fff;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  text-shadow: 0px 2px 9px rgba(0, 0, 0, 0.95);
 }
 body {
   overflow: hidden;

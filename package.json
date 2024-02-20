@@ -1,6 +1,6 @@
 {
   "name": "guanruihua.github.io",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "",
   "module": "dist/index.umd.js",
   "main": "dist/index.umd.js",
@@ -30,7 +30,6 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@dnd-kit/sortable": "^7.0.2",
     "@dnd-kit/utilities": "^3.2.1",
-    "@formatjs/ts-transformer": "^3.13.5",
     "@types/react": "^18.2.23",
     "@types/react-dom": "^18.2.8",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
@@ -43,6 +42,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "command-go": "^0.1.1",
     "commitlint": "^17.7.1",
+    "copy-webpack-plugin": "^12.0.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
     "echarts": "^5.4.3",
