@@ -56,7 +56,7 @@
     "less": "^4.2.0",
     "less-loader": "^11.1.3",
     "mock-record": "^0.4.1",
-    "postcss": "^8.4.30",
+    "postcss": "^8.4.31",
     "postcss-loader": "^7.3.3",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
