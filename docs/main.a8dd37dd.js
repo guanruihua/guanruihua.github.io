@@ -168,9 +168,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.container {
   display: inline-block;
   color: #affaff;
   height: fit-content;
-  padding: 6px 8px;
+  padding: 2px 4px;
   border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 `, ""]);
 // Exports
@@ -2251,8 +2250,9 @@ const filterTree = (tree, params) => {
   const filterTreeCore = (list, lv = 0) => {
     const newList = [];
     list.forEach((item) => {
-      const { name, children } = item;
+      const { name, children, content = "" } = item;
       const newName = name.toUpperCase();
+      const newContent = name.toUpperCase();
       const newItem = __spreadValues({}, item);
       if (lv === 0 && tags.length && !tags.includes(name)) {
         return;
@@ -2265,7 +2265,7 @@ const filterTree = (tree, params) => {
         newList.push(newItem);
         return;
       }
-      if (newFind && newName.indexOf(newFind) === -1) {
+      if (newFind && (newName.indexOf(newFind) === -1 || newContent && newContent.indexOf(newFind) === -1)) {
         return;
       }
       newList.push(newItem);
@@ -2282,11 +2282,16 @@ const useHook = () => {
   });
   const [originTree, setOriginTree] = react.useState([]);
   const [tree, setTree] = react.useState([]);
+  const [maxTree, setMaxTree] = react.useState([]);
   const setQueryParams = (record) => {
     const newRecord = __spreadValues(__spreadValues({}, queryParams), record);
     _setQueryParams(newRecord);
     localStorage.setItem(key, T(newRecord));
-    setTree(filterTree(originTree, newRecord));
+    if (maxTree.length) {
+      setTree(filterTree(maxTree, newRecord));
+    } else {
+      setTree(filterTree(originTree, newRecord));
+    }
   };
   const select = (root, path) => {
     if (!root || !path)
@@ -2298,22 +2303,30 @@ const useHook = () => {
     window.open(newUrl);
   };
   const init = () => hook_async(void 0, null, function* () {
-    const res = yield get(
-      "https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.json"
-    );
-    const { path } = res.data || {};
-    const params = localStorage.getItem(key);
-    if (isArray(path)) {
-      const newPath = path.filter((_) => !_.name.match(/^(\.|_)/));
-      setOriginTree(newPath);
-      if (params) {
-        const newParams = JSON.parse(params);
-        _setQueryParams(newParams);
-        setTree(filterTree(newPath, newParams));
-      } else {
-        setTree(filterTree(newPath, queryParams));
+    get("https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.all.json").then(
+      (res) => {
+        if (isArray(res.data.path)) {
+          setMaxTree(res.data.path);
+        }
       }
-    }
+    );
+    get("https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.json").then(
+      (res) => {
+        const { path } = res.data || {};
+        const params = localStorage.getItem(key);
+        if (isArray(path)) {
+          const newPath = path.filter((_) => !_.name.match(/^(\.|_)/));
+          setOriginTree(newPath);
+          if (params) {
+            const newParams = JSON.parse(params);
+            _setQueryParams(newParams);
+            setTree(filterTree(newPath, newParams));
+          } else {
+            setTree(filterTree(newPath, queryParams));
+          }
+        }
+      }
+    );
   });
   react.useEffect(() => {
     init();
