@@ -13,8 +13,9 @@ const filterTree = (tree: any[], params: ObjectType): any[] => {
   const filterTreeCore = (list: any[], lv = 0) => {
     const newList: any[] = []
     list.forEach((item) => {
-      const { name, children } = item
+      const { name, children, content = '' } = item
       const newName = name.toUpperCase()
+      const newContent = name.toUpperCase()
       const newItem = { ...item }
 
       // if (lv === 0) {
@@ -32,7 +33,11 @@ const filterTree = (tree: any[], params: ObjectType): any[] => {
         newList.push(newItem)
         return
       }
-      if (newFind && newName.indexOf(newFind) === -1) {
+      if (
+        newFind &&
+        (newName.indexOf(newFind) === -1 ||
+          (newContent && newContent.indexOf(newFind) === -1))
+      ) {
         return
       }
       newList.push(newItem)
@@ -53,11 +58,16 @@ export const useHook = () => {
   })
   const [originTree, setOriginTree] = React.useState<any[]>([])
   const [tree, setTree] = React.useState<any[]>([])
+  const [maxTree, setMaxTree] = React.useState<any[]>([])
   const setQueryParams = (record: { find?: string; tags?: string[] }) => {
     const newRecord = { ...queryParams, ...record }
     _setQueryParams(newRecord)
     localStorage.setItem(key, stringify(newRecord))
-    setTree(filterTree(originTree, newRecord))
+    if (maxTree.length) {
+      setTree(filterTree(maxTree, newRecord))
+    } else {
+      setTree(filterTree(originTree, newRecord))
+    }
   }
 
   const select = (root: string, path: string) => {
@@ -70,22 +80,30 @@ export const useHook = () => {
   }
 
   const init = async () => {
-    const res = await get(
-      'https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.json'
-    )
-    const { path } = res.data || {}
-    const params = localStorage.getItem(key)
-    if (isArray<any>(path)) {
-      const newPath = path.filter((_: any) => !_.name.match(/^(\.|_)/))
-      setOriginTree(newPath)
-      if (params) {
-        const newParams = JSON.parse(params)
-        _setQueryParams(newParams)
-        setTree(filterTree(newPath, newParams))
-      } else {
-        setTree(filterTree(newPath, queryParams))
+    get('https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.all.json').then(
+      (res) => {
+        if (isArray(res.data.path)) {
+          setMaxTree(res.data.path)
+        }
       }
-    }
+    )
+    get('https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.json').then(
+      (res) => {
+        const { path } = res.data || {}
+        const params = localStorage.getItem(key)
+        if (isArray<any>(path)) {
+          const newPath = path.filter((_: any) => !_.name.match(/^(\.|_)/))
+          setOriginTree(newPath)
+          if (params) {
+            const newParams = JSON.parse(params)
+            _setQueryParams(newParams)
+            setTree(filterTree(newPath, newParams))
+          } else {
+            setTree(filterTree(newPath, queryParams))
+          }
+        }
+      }
+    )
   }
   React.useEffect(() => {
     init()
