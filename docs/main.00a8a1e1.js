@@ -121,9 +121,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.container {
   color: #fff;
 }
 .container .note {
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 0 5vw;
+  overflow-y: hidden;
+  overflow-x: auto;
+  max-width: 100vw;
+  padding: 0 3vw;
 }
 .container .tag {
   display: inline-block;
@@ -135,11 +136,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.container {
 }
 .container .tag.isRoot {
   width: 100%;
+  max-width: 100vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 5vh;
+  border: none;
+  grid-auto-flow: column;
+  gap: 0;
 }
 .container .name {
   display: block;
@@ -149,9 +150,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.container {
   white-space: nowrap;
   cursor: pointer;
   padding: 5px 0;
+  position: sticky;
+  top: 5px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.95);
 }
 .container .item {
-  width: 200px;
+  height: 100%;
   font-size: 14px;
   font-weight: bold;
   margin: 0;
@@ -166,10 +170,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.container {
 }
 .container .item .last {
   display: inline-block;
-  color: #affaff;
+  color: rgba(175, 250, 255, 0.7);
   height: fit-content;
   padding: 2px 4px;
   border-radius: 4px;
+}
+.container .item .last:hover {
+  color: #66f5ff;
 }
 `, ""]);
 // Exports
@@ -2305,7 +2312,7 @@ const useHook = () => {
   const init = () => hook_async(void 0, null, function* () {
     get("https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.all.json").then(
       (res) => {
-        if (isArray(res.data.path)) {
+        if (res.data && isArray(res.data.path)) {
           setMaxTree(res.data.path);
         }
       }
@@ -2402,6 +2409,9 @@ function Tag(props) {
           className: index_esm_A("name", {
             last: !children || !children.length
           }),
+          style: {
+            zIndex: 99999 - lv
+          },
           onClick: () => {
             if (children && children.length) {
               if (Object.keys(nextStyle[name] || {}).length) {
@@ -2412,7 +2422,8 @@ function Tag(props) {
             } else {
               click && click(newRoot, newPath);
             }
-          }
+          },
+          title: name
         },
         name
       ), item.children && /* @__PURE__ */ react.createElement("div", { className: index_esm_A("next"), style: nextStyle[name] }, /* @__PURE__ */ react.createElement(

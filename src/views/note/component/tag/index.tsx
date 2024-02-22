@@ -53,6 +53,9 @@ export function Tag(props: TagProps) {
               className={classNames('name', {
                 last: !children || !children.length
               })}
+              style={{
+                zIndex: 99999-lv
+              }}
               onClick={() => {
                 if (children && children.length) {
                   if (Object.keys(nextStyle[name] || {}).length) {
@@ -64,6 +67,7 @@ export function Tag(props: TagProps) {
                   click && click(newRoot, newPath)
                 }
               }}
+              title={name}
             >
               {name}
             </div>
