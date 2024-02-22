@@ -82,7 +82,7 @@ export const useHook = () => {
   const init = async () => {
     get('https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.all.json').then(
       (res) => {
-        if (isArray(res.data.path)) {
+        if (res.data && isArray(res.data.path)) {
           setMaxTree(res.data.path)
         }
       }

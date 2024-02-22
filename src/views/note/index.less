@@ -45,20 +45,23 @@
         cursor: pointer;
         padding: 10px 10px;
         font-size: 12px;
+
         &.isSelect {
           color: rgba(255, 255, 255, 9);
         }
-        &:hover{
+
+        &:hover {
           color: #fff;
         }
       }
     }
   }
 
-  .note{
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 0 5vw;
+  .note {
+    overflow-y: hidden;
+    overflow-x: auto;
+    max-width: 100vw;
+    padding: 0 3vw;
   }
 
   .tag {
@@ -71,11 +74,11 @@
 
     &.isRoot {
       width: 100%;
+      max-width: 100vw;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 5vh;
+      border: none;
+      grid-auto-flow: column;
+      gap: 0;
     }
 
   }
@@ -88,10 +91,14 @@
     white-space: nowrap;
     cursor: pointer;
     padding: 5px 0;
+    position: sticky;
+    top: 5px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, .95);
   }
 
   .item {
-    width: 200px;
+    // width: 200px;
+    height: 100%;
     font-size: 14px;
     font-weight: bold;
     margin: 0;
@@ -99,6 +106,8 @@
     text-align: start;
     vertical-align: text-top;
 
+    // overflow: hidden;
+    // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     .next {
       display: inline-block;
       max-height: 70vh;
@@ -108,10 +117,14 @@
 
     .last {
       display: inline-block;
-      color: rgb(175, 250, 255);
+      color: rgba(175, 250, 255, .7);
       height: fit-content;
       padding: 2px 4px;
       border-radius: 4px;
+
+      &:hover {
+        color: rgb(102, 245, 255);
+      }
     }
   }
 }
