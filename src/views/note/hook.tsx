@@ -80,30 +80,34 @@ export const useHook = () => {
   }
 
   const init = async () => {
+    const initMax = (res: any) => {
+      if (res.data && isArray(res.data.path)) {
+        setMaxTree(res.data.path)
+      }
+    }
+    get('https://unpkg.com/ruihuag-note/sidebar.all.json').then(
+      initMax
+    )
     get('https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.all.json').then(
-      (res) => {
-        if (res.data && isArray(res.data.path)) {
-          setMaxTree(res.data.path)
+      initMax
+    )
+    const init = (res: any) => {
+      const { path } = res.data || {}
+      const params = localStorage.getItem(key)
+      if (isArray<any>(path)) {
+        const newPath = path.filter((_: any) => !_.name.match(/^(\.|_)/))
+        setOriginTree(newPath)
+        if (params) {
+          const newParams = JSON.parse(params)
+          _setQueryParams(newParams)
+          setTree(filterTree(newPath, newParams))
+        } else {
+          setTree(filterTree(newPath, queryParams))
         }
       }
-    )
-    get('https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.json').then(
-      (res) => {
-        const { path } = res.data || {}
-        const params = localStorage.getItem(key)
-        if (isArray<any>(path)) {
-          const newPath = path.filter((_: any) => !_.name.match(/^(\.|_)/))
-          setOriginTree(newPath)
-          if (params) {
-            const newParams = JSON.parse(params)
-            _setQueryParams(newParams)
-            setTree(filterTree(newPath, newParams))
-          } else {
-            setTree(filterTree(newPath, queryParams))
-          }
-        }
-      }
-    )
+    }
+    get('https://unpkg.com/ruihuag-note/sidebar.json').then(init)
+    get('https://cdn.jsdelivr.net/npm/ruihuag-note/sidebar.json').then(init)
   }
   React.useEffect(() => {
     init()
