@@ -1,0 +1,42 @@
+.home {
+  .layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    min-height: 100vh;
+  }
+
+  .card {
+    position: relative;
+    width: 300px;
+    height: 120px;
+    border: none;
+    box-shadow: 0 0 2px rgba(#fff, .9);
+    background-color: rgba(#fff, .3);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      font-size: 32px;
+      padding: 8px;
+      box-shadow: 0 0 2px rgba(#fff, .9);
+      background-color: rgba(#fff, .3);
+      border-radius: 12px;
+    }
+    .name{
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+    }
+  }
+}
