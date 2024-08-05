@@ -309,13 +309,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.package {
   justify-content: center;
 }
 .package .layout {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  column-count: 5;
   overflow: auto;
   padding: 24px;
+  column-gap: 10px;
+}
+.package .layout > .card {
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 10px;
 }
 .package .logo-layout {
   display: inline-block;
@@ -365,7 +367,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.package {
   letter-spacing: 1.4px;
 }
 .package .card .desc {
-  font-size: medium;
+  font-size: 12px;
   word-spacing: 1px;
   letter-spacing: 1.4px;
 }
@@ -376,10 +378,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.package {
   display: inline-block;
   margin-left: 10px;
 }
+.package .card .install .au-tab .header {
+  font-size: 12px;
+}
 .package .card .install .cmd {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 14px;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 6px 8px;
   border-radius: 8px;
@@ -52892,47 +52898,52 @@ var package_update = injectStylesIntoStyleTag_default()(views_package/* default 
 
        /* harmony default export */ const src_views_package = (views_package/* default */.A && views_package/* default */.A.locals ? views_package/* default */.A.locals : undefined);
 
-;// CONCATENATED MODULE: ./src/views/package/utils.ts
-const adapter = (_) => {
-  if (_.logo && _.logo.indexOf("http") === -1) {
-    _.logo = "http://www.google.com/s2/favicons?domain=" + _.logo;
-  }
-  if (_.name) {
-    const shields = _.shields || [];
-    if (_.type === "Non-Open-Source") {
-      shields.push({
-        type: "Non-Open-Source",
-        url: "Non-Open-Source",
-        logo: "Non-Open-Source"
-      });
-    } else {
-      shields.push({
-        url: `https://www.npmjs.com/package/${_.name}`,
-        logo: `https://img.shields.io/npm/v/${_.name}.svg?style=flat`
-      });
-      if (_.github) {
-        shields.push({
-          url: "https://github.com/" + _.github,
-          logo: `https://img.shields.io/badge/github-blue.svg`
-        });
-        shields.push({
-          url: _.licensePath || `https://github.com/${_.github}/blob/main/LICENSE`,
-          logo: `https://img.shields.io/badge/license-${_.license !== "MIT" && _.license ? _.license + "-orange" : "MIT-green"}`
-        });
-      }
-    }
-    _.shields = shields;
-  }
-  return _;
-};
-
 ;// CONCATENATED MODULE: ./src/views/package/conf.tsx
-
 const pkgConf = [
+  {
+    name: "vuetify",
+    label: "vuetify",
+    logo: "vuetifyjs.com",
+    desc: "Vue UI\u7EC4\u4EF6\u5E93",
+    github: "vuetifyjs/vuetify",
+    home: "https://vuetifyjs.com/zh-Hans/components/all/#section-5bb956687ec44ef6-containment",
+    licensePath: "https://github.com/vuetifyjs/vuetify/blob/master/LICENSE.md",
+    tags: [
+      "javascript",
+      "ui-design",
+      "semantic",
+      "vuejs",
+      "typescript",
+      "ui",
+      "vue",
+      "material",
+      "material-design",
+      "vue-components",
+      "material-components",
+      "ui-kit",
+      "material-theme",
+      "ui-components",
+      "vue-material",
+      "vuetify",
+      "ui-library",
+      "vuetifyjs",
+      "vuejs3"
+    ]
+  },
+  {
+    name: "@observablehq/plot",
+    label: "plot",
+    logo: "observablehq.com",
+    desc: "\u53EF\u89C6\u5316\u56FE\u8868\u5E93",
+    github: "observablehq/plot",
+    home: "https://observablehq.com/plot/getting-started",
+    license: "ISC License",
+    licensePath: "https://github.com/observablehq/plot/blob/main/LICENSE",
+    tags: ["visualization", "d3", "svg", "charts", "data-visualization"]
+  },
   {
     name: "@antv/g6",
     label: "g6",
-    // logo: 'g6.antv.antgroup.com',
     logo: "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*7svFR6wkPMoAAAAAAAAAAAAADmJ7AQ/original",
     desc: "\u53EF\u89C6\u5316\u56FE\u8868\u5E93",
     github: "antvis/g6",
@@ -53119,7 +53130,41 @@ const pkgConf = [
       "utilities"
     ]
   }
-].map(adapter);
+];
+
+;// CONCATENATED MODULE: ./src/views/package/utils.ts
+const adapter = (_) => {
+  if (_.logo && _.logo.indexOf("http") === -1) {
+    _.logo = "http://www.google.com/s2/favicons?domain=" + _.logo;
+  }
+  if (_.name) {
+    const shields = _.shields || [];
+    if (_.type === "Non-Open-Source") {
+      shields.push({
+        type: "Non-Open-Source",
+        url: "Non-Open-Source",
+        logo: "Non-Open-Source"
+      });
+    } else {
+      shields.push({
+        url: `https://www.npmjs.com/package/${_.name}`,
+        logo: `https://img.shields.io/npm/v/${_.name}.svg?style=flat`
+      });
+      if (_.github) {
+        shields.push({
+          url: "https://github.com/" + _.github,
+          logo: `https://img.shields.io/badge/github-blue.svg`
+        });
+        shields.push({
+          url: _.licensePath || `https://github.com/${_.github}/blob/main/LICENSE`,
+          logo: `https://img.shields.io/badge/license-${_.license !== "MIT" && _.license ? _.license + "-orange" : "MIT-green"}`
+        });
+      }
+    }
+    _.shields = shields;
+  }
+  return _;
+};
 
 ;// CONCATENATED MODULE: ./src/views/package/index.tsx
 var package_defProp = Object.defineProperty;
@@ -53144,6 +53189,7 @@ var package_spreadValues = (a, b) => {
 
 
 
+
 const handleClick = (item) => {
   if (item.home) {
     window.open(item.home, "_blank");
@@ -53157,7 +53203,8 @@ const Logo = (props) => {
   return /* @__PURE__ */ react.createElement("div", { className: "logo-layout" }, /* @__PURE__ */ react.createElement("span", { className: index_esm_A("logo-layout-label", { hidden: status }) }, label.slice(0, 1).toUpperCase()), /* @__PURE__ */ react.createElement("span", { className: index_esm_A("logo-layout-img", { hidden: !status }) }, logo && /* @__PURE__ */ react.createElement("img", { src: logo, alt: "logo", onLoad: () => setStatus(true) })));
 };
 function Pkg() {
-  return /* @__PURE__ */ react.createElement("div", { className: "package" }, /* @__PURE__ */ react.createElement("div", { className: "layout" }, pkgConf.map((_, i) => {
+  return /* @__PURE__ */ react.createElement("div", { className: "package" }, /* @__PURE__ */ react.createElement("div", { className: "layout" }, pkgConf.map((unit, i) => {
+    const _ = adapter(unit);
     return /* @__PURE__ */ react.createElement("div", { className: "card", key: i }, /* @__PURE__ */ react.createElement("div", { className: "header", onClick: () => handleClick(_) }, /* @__PURE__ */ react.createElement("div", { className: "logo" }, /* @__PURE__ */ react.createElement(Logo, package_spreadValues({}, _))), /* @__PURE__ */ react.createElement("div", { className: "label" }, _.label)), _.desc && /* @__PURE__ */ react.createElement("div", { className: "desc" }, _.desc), _.install !== false && _.name && /* @__PURE__ */ react.createElement("div", { className: "install" }, /* @__PURE__ */ react.createElement(NPMCmd, { name: _.name })), isEffectArray(_.shields) && /* @__PURE__ */ react.createElement("div", { className: "shields" }, _.shields.map((item, i2) => {
       if (item.type === "Non-Open-Source") {
         return /* @__PURE__ */ react.createElement("span", { key: i2, className: "Non-Open-Source" }, "Non-Open-Source");

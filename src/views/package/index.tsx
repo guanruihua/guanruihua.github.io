@@ -4,8 +4,9 @@ import { isEffectArray } from 'asura-eye'
 import { NPMCmd } from './components'
 import './index.less'
 import { pkgConf } from './conf'
-import { PkgConf } from './type'
+import type { PkgConf } from './type'
 import { classNames } from 'harpe'
+import { adapter } from './utils'
 
 const handleClick = (item: PkgConf) => {
   if (item.home) {
@@ -35,17 +36,13 @@ export function Pkg() {
   return (
     <div className="package">
       <div className="layout">
-        {pkgConf.map((_, i) => {
+        {pkgConf.map((unit, i) => {
+          const _ = adapter(unit)
           return (
             <div className="card" key={i}>
               <div className="header" onClick={() => handleClick(_)}>
                 <div className="logo">
                   <Logo {..._} />
-                  {/* {_.logo ? (
-                    <img src={_.logo} />
-                  ) : (
-                    _.label.slice(0, 1).toUpperCase()
-                  )} */}
                 </div>
                 <div className="label">{_.label}</div>
               </div>
