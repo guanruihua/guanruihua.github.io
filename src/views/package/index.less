@@ -8,43 +8,10 @@
     padding: 24px;
     column-gap: 10px;
 
-    &>.card{
+    &>.card {
       page-break-inside: avoid;
       -webkit-column-break-inside: avoid;
       margin-bottom: 10px;
-    }
-  }
-
-  .logo-layout {
-    display: inline-block;
-
-    &>span {
-      width: 20px;
-      height: 20px;
-      margin: auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      font-size: 22px;
-      padding: 4px;
-      box-shadow: 0 0 2px rgba(#fff, .2);
-      background-color: rgba(#fff, .1);
-      border-radius: 12px;
-    }
-
-    img {
-      width: 20px;
-      height: 20px;
-      border: none;
-    }
-
-    .hidden {
-      width: 0 !important;
-      height: 0 !important;
-      padding: 0 !important;
-      visibility: hidden;
     }
   }
 
@@ -54,9 +21,9 @@
     flex-direction: column;
     gap: 20px 10px;
 
-    width: 350px;
+    max-width: 350px;
     border: none;
-    box-shadow: 0 0 2px rgba(#fff, .9);
+    box-shadow: 0 0 2px rgba(#fff, .1);
     background-color: rgba(#fff, .2);
     border-radius: 12px;
     padding: 16px 18px;
@@ -66,6 +33,23 @@
     .header {
       cursor: pointer;
       letter-spacing: 1.4px;
+    }
+
+    .logo-layout>span {
+      width: 20px;
+      height: 20px;
+      width: 32px;
+      height: 32px;
+      font-size: 22px;
+      padding: 4px;
+      box-shadow: 0 0 2px rgba(#fff, .2);
+      background-color: rgba(#fff, .4);
+      border-radius: 6px;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
     }
 
     .desc {
@@ -84,11 +68,12 @@
     }
 
     .install {
-      .au-tab{
-        .header{
+      .au-tab {
+        .header {
           font-size: 12px;
         }
       }
+
       .cmd {
         display: flex;
         align-items: center;
