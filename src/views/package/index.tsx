@@ -4,8 +4,9 @@ import { isEffectArray } from 'asura-eye'
 import { NPMCmd } from './components'
 import './index.less'
 import { pkgConf } from './conf'
-import { PkgConf } from './type'
-import { classNames } from 'harpe'
+import type { PkgConf } from './type'
+import { adapter } from './utils'
+import { Logo } from '@/components'
 
 const handleClick = (item: PkgConf) => {
   if (item.home) {
@@ -14,38 +15,28 @@ const handleClick = (item: PkgConf) => {
   }
   window.open(`https://www.npmjs.com/package/${item.name}`, '_blank')
 }
+const renderPkgConf = pkgConf.map(adapter)
 
-const Logo = (props: PkgConf) => {
-  const [status, setStatus] = React.useState<boolean>(false)
-
-  const { logo, label } = props
-
-  return (
-    <div className="logo-layout">
-      <span className={classNames('logo-layout-label', { hidden: status })}>
-        {label.slice(0, 1).toUpperCase()}
-      </span>
-      <span className={classNames('logo-layout-img', { hidden: !status })}>
-        {logo && <img src={logo} alt="logo" onLoad={() => setStatus(true)} />}
-      </span>
-    </div>
-  )
-}
 export function Pkg() {
+  const [num, setNum] = React.useState<number>(5)
+  const resize = () => {
+    const { width } = document.body.getBoundingClientRect()
+    const num = Math.min(9, Math.floor(width / 360))
+    setNum(num)
+  }
+  React.useEffect(() => {
+    resize()
+    window.onresize = resize
+  }, [])
   return (
     <div className="package">
-      <div className="layout">
-        {pkgConf.map((_, i) => {
+      <div className="layout" style={{ columnCount: num }}>
+        {renderPkgConf.map((_, i) => {
           return (
             <div className="card" key={i}>
               <div className="header" onClick={() => handleClick(_)}>
                 <div className="logo">
                   <Logo {..._} />
-                  {/* {_.logo ? (
-                    <img src={_.logo} />
-                  ) : (
-                    _.label.slice(0, 1).toUpperCase()
-                  )} */}
                 </div>
                 <div className="label">{_.label}</div>
               </div>
@@ -74,9 +65,9 @@ export function Pkg() {
                 </div>
               )}
               {isEffectArray(_.tags) && (
-                <div className="tags">
+                <div className="tags" key={num}>
                   {_.tags.map((tag: string, i: number) => (
-                    <div className="tag" key={'tag' + i}>
+                    <div className="tag" key={tag + 'tag' + i}>
                       {tag}
                     </div>
                   ))}

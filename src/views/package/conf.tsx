@@ -1,11 +1,50 @@
 import { PkgConf } from './type'
-import { adapter } from './utils'
 
 export const pkgConf: PkgConf[] = [
   {
+    name: 'vuetify',
+    label: 'vuetify',
+    logo: 'vuetifyjs.com',
+    desc: 'Vue UI组件库',
+    github: 'vuetifyjs/vuetify',
+    home: 'https://vuetifyjs.com/zh-Hans/components/all/#section-5bb956687ec44ef6-containment',
+    licensePath: 'https://github.com/vuetifyjs/vuetify/blob/master/LICENSE.md',
+    tags: [
+      'javascript',
+      'ui-design',
+      'semantic',
+      'vuejs',
+      'typescript',
+      'ui',
+      'vue',
+      'material',
+      'material-design',
+      'vue-components',
+      'material-components',
+      'ui-kit',
+      'material-theme',
+      'ui-components',
+      'vue-material',
+      'vuetify',
+      'ui-library',
+      'vuetifyjs',
+      'vuejs3'
+    ]
+  },
+  {
+    name: '@observablehq/plot',
+    label: 'plot',
+    logo: 'observablehq.com',
+    desc: '可视化图表库',
+    github: 'observablehq/plot',
+    home: 'https://observablehq.com/plot/getting-started',
+    license: 'ISC License',
+    licensePath: 'https://github.com/observablehq/plot/blob/main/LICENSE',
+    tags: ['visualization', 'd3', 'svg', 'charts', 'data-visualization']
+  },
+  {
     name: '@antv/g6',
     label: 'g6',
-    // logo: 'g6.antv.antgroup.com',
     logo: 'https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*7svFR6wkPMoAAAAAAAAAAAAADmJ7AQ/original',
     desc: '可视化图表库',
     github: 'antvis/g6',
@@ -193,4 +232,4 @@ export const pkgConf: PkgConf[] = [
       'utilities'
     ]
   }
-].map(adapter)
+]

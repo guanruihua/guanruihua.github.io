@@ -6,6 +6,7 @@ import { Pkg } from './views/package'
 import { Layout } from './layout'
 import { Home } from './views/home'
 import 'aurad/dist/style.css'
+import { Tool } from './views/tool'
 
 const routes: RouteObject[] = [
   {
@@ -23,6 +24,10 @@ const routes: RouteObject[] = [
       {
         path: '/pkg',
         element: <Pkg />
+      },
+      {
+        path: '/tool',
+        element: <Tool />
       }
     ]
   }

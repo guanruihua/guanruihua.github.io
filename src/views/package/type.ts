@@ -19,7 +19,7 @@ export interface PkgConf {
   desc?: string
   license?: string
   licensePath?: string
-  tags?: string[]
+  tags?: string[] | string
   shields?: Shield[]
   [key: string]: any
 }

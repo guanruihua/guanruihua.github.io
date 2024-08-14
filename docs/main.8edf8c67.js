@@ -25,6 +25,48 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.au-form-item{margin-bottom:12px}.au-f
 
 /***/ }),
 
+/***/ 548:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(678);
+/* harmony import */ var _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(63);
+/* harmony import */ var _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.logo-layout {
+  display: inline-block;
+}
+.logo-layout > span {
+  margin: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.logo-layout img {
+  border: none;
+  font-size: 16px;
+}
+.logo-layout .hidden {
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  visibility: hidden;
+}
+`, ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ 444:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -309,51 +351,24 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.package {
   justify-content: center;
 }
 .package .layout {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  column-count: 5;
   overflow: auto;
   padding: 24px;
+  column-gap: 10px;
 }
-.package .logo-layout {
-  display: inline-block;
-}
-.package .logo-layout > span {
-  width: 20px;
-  height: 20px;
-  margin: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  font-size: 22px;
-  padding: 4px;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-}
-.package .logo-layout img {
-  width: 20px;
-  height: 20px;
-  border: none;
-}
-.package .logo-layout .hidden {
-  width: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  visibility: hidden;
+.package .layout > .card {
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 10px;
 }
 .package .card {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px 10px;
-  width: 350px;
+  max-width: 350px;
   border: none;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 16px 18px;
@@ -364,8 +379,23 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.package {
   cursor: pointer;
   letter-spacing: 1.4px;
 }
+.package .card .logo-layout > span {
+  width: 20px;
+  height: 20px;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  padding: 4px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+}
+.package .card .logo-layout > span img {
+  width: 16px;
+  height: 16px;
+}
 .package .card .desc {
-  font-size: medium;
+  font-size: 12px;
   word-spacing: 1px;
   letter-spacing: 1.4px;
 }
@@ -376,10 +406,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.package {
   display: inline-block;
   margin-left: 10px;
 }
+.package .card .install .au-tab .header {
+  font-size: 12px;
+}
 .package .card .install .cmd {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 14px;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 6px 8px;
   border-radius: 8px;
@@ -421,6 +455,53 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.package {
   letter-spacing: 1.5px;
   line-height: 22px;
   height: 22px;
+}
+`, ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 171:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(678);
+/* harmony import */ var _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(63);
+/* harmony import */ var _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_store_css_loader_6_11_0_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.tool {
+  display: flex;
+  justify-content: center;
+}
+.tool .layout {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+}
+.tool .card {
+  padding: 5px 10px 5px;
+  min-width: 80px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.tool .card .logo-layout-label {
+  font-size: 16px;
+}
+.tool .card .name {
+  padding-top: 5px;
+  font-size: 12px;
+  word-spacing: 3px;
+  letter-spacing: 1.5px;
 }
 `, ""]);
 // Exports
@@ -52892,47 +52973,52 @@ var package_update = injectStylesIntoStyleTag_default()(views_package/* default 
 
        /* harmony default export */ const src_views_package = (views_package/* default */.A && views_package/* default */.A.locals ? views_package/* default */.A.locals : undefined);
 
-;// CONCATENATED MODULE: ./src/views/package/utils.ts
-const adapter = (_) => {
-  if (_.logo && _.logo.indexOf("http") === -1) {
-    _.logo = "http://www.google.com/s2/favicons?domain=" + _.logo;
-  }
-  if (_.name) {
-    const shields = _.shields || [];
-    if (_.type === "Non-Open-Source") {
-      shields.push({
-        type: "Non-Open-Source",
-        url: "Non-Open-Source",
-        logo: "Non-Open-Source"
-      });
-    } else {
-      shields.push({
-        url: `https://www.npmjs.com/package/${_.name}`,
-        logo: `https://img.shields.io/npm/v/${_.name}.svg?style=flat`
-      });
-      if (_.github) {
-        shields.push({
-          url: "https://github.com/" + _.github,
-          logo: `https://img.shields.io/badge/github-blue.svg`
-        });
-        shields.push({
-          url: _.licensePath || `https://github.com/${_.github}/blob/main/LICENSE`,
-          logo: `https://img.shields.io/badge/license-${_.license !== "MIT" && _.license ? _.license + "-orange" : "MIT-green"}`
-        });
-      }
-    }
-    _.shields = shields;
-  }
-  return _;
-};
-
 ;// CONCATENATED MODULE: ./src/views/package/conf.tsx
-
 const pkgConf = [
+  {
+    name: "vuetify",
+    label: "vuetify",
+    logo: "vuetifyjs.com",
+    desc: "Vue UI\u7EC4\u4EF6\u5E93",
+    github: "vuetifyjs/vuetify",
+    home: "https://vuetifyjs.com/zh-Hans/components/all/#section-5bb956687ec44ef6-containment",
+    licensePath: "https://github.com/vuetifyjs/vuetify/blob/master/LICENSE.md",
+    tags: [
+      "javascript",
+      "ui-design",
+      "semantic",
+      "vuejs",
+      "typescript",
+      "ui",
+      "vue",
+      "material",
+      "material-design",
+      "vue-components",
+      "material-components",
+      "ui-kit",
+      "material-theme",
+      "ui-components",
+      "vue-material",
+      "vuetify",
+      "ui-library",
+      "vuetifyjs",
+      "vuejs3"
+    ]
+  },
+  {
+    name: "@observablehq/plot",
+    label: "plot",
+    logo: "observablehq.com",
+    desc: "\u53EF\u89C6\u5316\u56FE\u8868\u5E93",
+    github: "observablehq/plot",
+    home: "https://observablehq.com/plot/getting-started",
+    license: "ISC License",
+    licensePath: "https://github.com/observablehq/plot/blob/main/LICENSE",
+    tags: ["visualization", "d3", "svg", "charts", "data-visualization"]
+  },
   {
     name: "@antv/g6",
     label: "g6",
-    // logo: 'g6.antv.antgroup.com',
     logo: "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*7svFR6wkPMoAAAAAAAAAAAAADmJ7AQ/original",
     desc: "\u53EF\u89C6\u5316\u56FE\u8868\u5E93",
     github: "antvis/g6",
@@ -53119,7 +53205,92 @@ const pkgConf = [
       "utilities"
     ]
   }
-].map(adapter);
+];
+
+;// CONCATENATED MODULE: ./src/views/package/utils.ts
+
+const adapter = (_) => {
+  if (isString(_.tags)) {
+    _.tags = _.tags.split(" ");
+  }
+  if (_.name) {
+    const shields = _.shields || [];
+    if (_.type === "Non-Open-Source") {
+      shields.push({
+        type: "Non-Open-Source",
+        url: "Non-Open-Source",
+        logo: "Non-Open-Source"
+      });
+    } else {
+      shields.push({
+        url: `https://www.npmjs.com/package/${_.name}`,
+        logo: `https://img.shields.io/npm/v/${_.name}.svg?style=flat`
+      });
+      if (_.github) {
+        shields.push({
+          url: "https://github.com/" + _.github,
+          logo: `https://img.shields.io/badge/github-blue.svg`
+        });
+        shields.push({
+          url: _.licensePath || `https://github.com/${_.github}/blob/main/LICENSE`,
+          logo: `https://img.shields.io/badge/license-${_.license !== "MIT" && _.license ? _.license + "-orange" : "MIT-green"}`
+        });
+      }
+    }
+    _.shields = shields;
+  }
+  return _;
+};
+
+// EXTERNAL MODULE: ./node_modules/.store/css-loader@6.11.0/node_modules/css-loader/dist/cjs.js!./node_modules/.store/less-loader@11.1.4/node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/components/logo/index.less
+var logo = __webpack_require__(548);
+;// CONCATENATED MODULE: ./src/components/logo/index.less
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var logo_options = {};
+
+logo_options.styleTagTransform = (styleTagTransform_default());
+logo_options.setAttributes = (setAttributesWithoutAttributes_default());
+
+      logo_options.insert = insertBySelector_default().bind(null, "head");
+    
+logo_options.domAPI = (styleDomAPI_default());
+logo_options.insertStyleElement = (insertStyleElement_default());
+
+var logo_update = injectStylesIntoStyleTag_default()(logo/* default */.A, logo_options);
+
+
+
+
+       /* harmony default export */ const components_logo = (logo/* default */.A && logo/* default */.A.locals ? logo/* default */.A.locals : undefined);
+
+;// CONCATENATED MODULE: ./src/components/logo/index.tsx
+
+
+
+const Logo = (props) => {
+  const [status, setStatus] = react.useState(false);
+  const { logo, label } = props;
+  const getLogo = () => {
+    if (logo && logo.indexOf("http") === -1) {
+      return "http://www.google.com/s2/favicons?domain=" + logo;
+    }
+    return logo;
+  };
+  return /* @__PURE__ */ react.createElement("div", { className: "logo-layout" }, /* @__PURE__ */ react.createElement("span", { className: index_esm_A("logo-layout-label", { hidden: status }) }, label.slice(0, 1).toUpperCase()), /* @__PURE__ */ react.createElement("span", { className: index_esm_A("logo-layout-img", { hidden: !status }) }, logo && /* @__PURE__ */ react.createElement("img", { src: getLogo(), alt: "logo", onLoad: () => setStatus(true) })));
+};
+
+;// CONCATENATED MODULE: ./src/components/index.tsx
+
 
 ;// CONCATENATED MODULE: ./src/views/package/index.tsx
 var package_defProp = Object.defineProperty;
@@ -53144,6 +53315,7 @@ var package_spreadValues = (a, b) => {
 
 
 
+
 const handleClick = (item) => {
   if (item.home) {
     window.open(item.home, "_blank");
@@ -53151,19 +53323,25 @@ const handleClick = (item) => {
   }
   window.open(`https://www.npmjs.com/package/${item.name}`, "_blank");
 };
-const Logo = (props) => {
-  const [status, setStatus] = react.useState(false);
-  const { logo, label } = props;
-  return /* @__PURE__ */ react.createElement("div", { className: "logo-layout" }, /* @__PURE__ */ react.createElement("span", { className: index_esm_A("logo-layout-label", { hidden: status }) }, label.slice(0, 1).toUpperCase()), /* @__PURE__ */ react.createElement("span", { className: index_esm_A("logo-layout-img", { hidden: !status }) }, logo && /* @__PURE__ */ react.createElement("img", { src: logo, alt: "logo", onLoad: () => setStatus(true) })));
-};
+const renderPkgConf = pkgConf.map(adapter);
 function Pkg() {
-  return /* @__PURE__ */ react.createElement("div", { className: "package" }, /* @__PURE__ */ react.createElement("div", { className: "layout" }, pkgConf.map((_, i) => {
+  const [num, setNum] = react.useState(5);
+  const resize = () => {
+    const { width } = document.body.getBoundingClientRect();
+    const num2 = Math.min(9, Math.floor(width / 360));
+    setNum(num2);
+  };
+  react.useEffect(() => {
+    resize();
+    window.onresize = resize;
+  }, []);
+  return /* @__PURE__ */ react.createElement("div", { className: "package" }, /* @__PURE__ */ react.createElement("div", { className: "layout", style: { columnCount: num } }, renderPkgConf.map((_, i) => {
     return /* @__PURE__ */ react.createElement("div", { className: "card", key: i }, /* @__PURE__ */ react.createElement("div", { className: "header", onClick: () => handleClick(_) }, /* @__PURE__ */ react.createElement("div", { className: "logo" }, /* @__PURE__ */ react.createElement(Logo, package_spreadValues({}, _))), /* @__PURE__ */ react.createElement("div", { className: "label" }, _.label)), _.desc && /* @__PURE__ */ react.createElement("div", { className: "desc" }, _.desc), _.install !== false && _.name && /* @__PURE__ */ react.createElement("div", { className: "install" }, /* @__PURE__ */ react.createElement(NPMCmd, { name: _.name })), isEffectArray(_.shields) && /* @__PURE__ */ react.createElement("div", { className: "shields" }, _.shields.map((item, i2) => {
       if (item.type === "Non-Open-Source") {
         return /* @__PURE__ */ react.createElement("span", { key: i2, className: "Non-Open-Source" }, "Non-Open-Source");
       }
       return /* @__PURE__ */ react.createElement("a", { key: i2, href: item.url, target: "_blank" }, /* @__PURE__ */ react.createElement("img", { src: item.logo }));
-    })), isEffectArray(_.tags) && /* @__PURE__ */ react.createElement("div", { className: "tags" }, _.tags.map((tag, i2) => /* @__PURE__ */ react.createElement("div", { className: "tag", key: "tag" + i2 }, tag))));
+    })), isEffectArray(_.tags) && /* @__PURE__ */ react.createElement("div", { className: "tags", key: num }, _.tags.map((tag, i2) => /* @__PURE__ */ react.createElement("div", { className: "tag", key: tag + "tag" + i2 }, tag))));
   })));
 }
 
@@ -53251,6 +53429,10 @@ function Home() {
     {
       name: "pkg",
       label: "Package"
+    },
+    {
+      name: "tool",
+      label: "Tool"
     }
   ];
   const handleClick = (item) => {
@@ -53292,7 +53474,72 @@ var style_update = injectStylesIntoStyleTag_default()(style/* default */.A, styl
 
        /* harmony default export */ const dist_style = (style/* default */.A && style/* default */.A.locals ? style/* default */.A.locals : undefined);
 
+// EXTERNAL MODULE: ./node_modules/.store/css-loader@6.11.0/node_modules/css-loader/dist/cjs.js!./node_modules/.store/less-loader@11.1.4/node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/views/tool/index.less
+var tool = __webpack_require__(171);
+;// CONCATENATED MODULE: ./src/views/tool/index.less
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var tool_options = {};
+
+tool_options.styleTagTransform = (styleTagTransform_default());
+tool_options.setAttributes = (setAttributesWithoutAttributes_default());
+
+      tool_options.insert = insertBySelector_default().bind(null, "head");
+    
+tool_options.domAPI = (styleDomAPI_default());
+tool_options.insertStyleElement = (insertStyleElement_default());
+
+var tool_update = injectStylesIntoStyleTag_default()(tool/* default */.A, tool_options);
+
+
+
+
+       /* harmony default export */ const views_tool = (tool/* default */.A && tool/* default */.A.locals ? tool/* default */.A.locals : undefined);
+
+;// CONCATENATED MODULE: ./src/views/tool/conf.tsx
+const Conf = [
+  ["\u767E\u5EA6\u7FFB\u8BD1", "fanyi.baidu.com", "translate baidu fanyi"],
+  ["Google\u7FFB\u8BD1", "translate.google.com", "translate google fanyi"],
+  ["\u5FAE\u8F6F\u7FFB\u8BD1", "www.bing.com/translator", "translate bing microsoft fanyi"],
+  ["DeepL", "www.deepl.com/zh/translator", "translate deepl fanyi"],
+  // 工具
+  ["Regulex", "jex.im/regulex/#!flags=&re=%5E(0-9)(a%7Cb%7Cc)*%3F%24", "regulex regular"],
+  ["transform(\u7ED3\u6784\u8F6C\u6362)", "transform.tools/json-to-typescript", "transform type model"],
+  ["Autoprefixer CSS online", "autoprefixer.github.io", "css autoprefixer"],
+  ["JSON\u53EF\u89C6\u5316", "jsoncrack.com/editor", "JSON, json-preview"],
+  // 工具合集
+  ["\u538B\u7F29/\u683C\u5F0F\u5316\u5DE5\u5177", "coding.tools/cn", "inline-tool tools"],
+  ["UU\u5728\u7EBF\u5DE5\u5177", "uutool.cn/type/new/", "inline-tool tools"],
+  ["30TOOL", "www.30aitool.com/", "inline-tool tools"],
+  ["\u58C1\u7EB8", "alphacoders.com/", "wallpaper"]
+];
+
+;// CONCATENATED MODULE: ./src/views/tool/index.tsx
+
+
+
+
+const tool_handleClick = (url) => {
+  window.open(`https://${url}`, "_blank");
+};
+function Tool() {
+  return /* @__PURE__ */ react.createElement("div", { className: "tool" }, /* @__PURE__ */ react.createElement("div", { className: "layout" }, Conf.map((item, i) => {
+    const [name, logo, tags] = item;
+    return /* @__PURE__ */ react.createElement("div", { key: i, className: "card", onClick: () => tool_handleClick(logo) }, /* @__PURE__ */ react.createElement(Logo, { logo, label: name }), /* @__PURE__ */ react.createElement("div", { className: "name" }, name));
+  })));
+}
+
 ;// CONCATENATED MODULE: ./src/index.tsx
+
 
 
 
@@ -53317,6 +53564,10 @@ const routes = [
       {
         path: "/pkg",
         element: /* @__PURE__ */ react.createElement(Pkg, null)
+      },
+      {
+        path: "/tool",
+        element: /* @__PURE__ */ react.createElement(Tool, null)
       }
     ]
   }

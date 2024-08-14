@@ -1,8 +1,10 @@
+import { isString } from 'asura-eye'
 import { PkgConf, Shield } from './type'
 
 export const adapter = (_: PkgConf) => {
-  if(_.logo && _.logo.indexOf('http') === -1){
-    _.logo = 'http://www.google.com/s2/favicons?domain=' + _.logo
+
+  if(isString(_.tags)){
+    _.tags = _.tags.split(' ')
   }
   if (_.name) {
     const shields: Shield[] = _.shields || []

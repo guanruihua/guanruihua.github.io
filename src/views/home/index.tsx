@@ -12,6 +12,10 @@ export function Home() {
     {
       name: 'pkg',
       label: 'Package'
+    },
+    {
+      name: 'tool',
+      label: 'Tool',
     }
   ]
   const handleClick = (item: any) => {
