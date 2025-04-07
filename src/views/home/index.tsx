@@ -7,19 +7,28 @@ export function Home() {
   const list: any[] = [
     {
       name: 'note',
-      label: 'Note'
+      label: 'Note',
+      url: 'https://ruihuag-note.github.io/',
     },
     {
       name: 'pkg',
-      label: 'Package'
+      label: 'Package',
     },
     {
       name: 'tool',
       label: 'Tool',
-    }
+    },
+    {
+      name: 'dev',
+      label: 'Dev',
+    },
   ]
+
   const handleClick = (item: any) => {
-    nav(item.name)
+    if (item.url) {
+      return window.open(item.url, '_blank')
+      // return window.open(`/md?url=${encodeURIComponent(item.url)}`, '_blank')
+    } else nav(item.name)
   }
   return (
     <div className="home">
