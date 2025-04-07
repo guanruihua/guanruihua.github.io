@@ -1,12 +1,12 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { Note } from '@/views'
 import { RouteObject, RouterProvider, createHashRouter } from 'react-router-dom'
 import { Pkg } from './views/package'
 import { Layout } from './layout'
 import { Home } from './views/home'
-import 'aurad/dist/style.css'
 import { Tool } from './views/tool'
+import { Dev } from './views/Dev'
+import 'aurad/dist/style.css'
 
 const routes: RouteObject[] = [
   {
@@ -18,17 +18,17 @@ const routes: RouteObject[] = [
         element: <Home/>
       },
       {
-        path: '/note',
-        element: <Note />
-      },
-      {
         path: '/pkg',
         element: <Pkg />
       },
       {
         path: '/tool',
         element: <Tool />
-      }
+      },
+      {
+        path: '/dev',
+        element: <Dev />
+      },
     ]
   }
 ]
