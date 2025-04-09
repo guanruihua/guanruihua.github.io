@@ -8,6 +8,8 @@ declare module '*.module.less' {
 	export = resource;
 }
 
+declare module 'opencc-js'
+
 declare module '*.svg'
 declare module '*.json'
 declare module '*.png'

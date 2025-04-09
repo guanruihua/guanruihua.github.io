@@ -1,21 +1,45 @@
 .tool {
-  display: flex;
+  display: grid;
+  grid-template-columns: 240px 1fr;
   justify-content: center;
+  flex-direction: column;
+  padding: 12px;
+  gap: 10px;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
 
-  .layout {
+  &-layout-left {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
+    border: 2px solid rgba(255, 255, 255, .3);
+    border-radius: 16px;
+    padding: 8px 12px;
 
+    .name {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 
   .card {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    gap: 10px;
     padding: 5px 10px 5px;
     min-width: 80px;
-
+    height: 32px;
     box-shadow: 0 0 2px rgba(#fff, .9);
     background-color: rgba(#fff, .2);
+
+    div {
+      display: flex;
+      align-content: center;
+    }
 
     .logo-layout-label {
       font-size: 16px;
@@ -23,7 +47,7 @@
 
 
     .name {
-      padding-top: 5px;
+      line-height: 24px;
       font-size: 12px;
       word-spacing: 3px;
       letter-spacing: 1.5px;

@@ -1,0 +1,38 @@
+.converter-Chinese {
+  background: rgba(0, 0, 0, .3);
+  // border: 2px solid rgba(255, 255, 255, 0.3);
+  // border-radius: 16px;
+  // padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  height: 100%;
+
+  &-right,
+  textarea {
+    background-color: transparent;
+    outline: none;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 8px 12px;
+  }
+
+  &-center {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    margin-top: 10vh;
+
+    div {
+      line-height: 1.4;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      padding: 6px 12px;
+      background-color: transparent;
+    }
+  }
+}
