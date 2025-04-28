@@ -1,13 +1,13 @@
 import React from 'react'
-import { copyText } from 'harpe'
 import { useSetState } from '0hook'
 import { CopyIcon } from './icon'
 import { ObjectType } from '0type'
 import { List } from './constant'
-import { getNow, getStr } from './util'
+import { getStr } from './util'
 import { Input, InputNumber } from './components'
 import { Reload } from './icon'
 import './index.less'
+import { copy } from '@/util'
 
 const defaultValue = {
   num: 1,
@@ -26,23 +26,7 @@ export function RandomPwd() {
     defaultValue,
     'LengthString-conf',
   )
-  const [time, setTime] = React.useState<number>(0)
-  const [flag, setFlag] = React.useState(-1)
   const [num, setNum] = React.useState(1)
-
-  React.useEffect(() => {
-    const gap = time - getNow()
-    if (time < 1 || gap <= 0) return
-    setFlag(1)
-    const timer = setTimeout(() => {
-      setFlag(-1)
-    }, gap)
-
-    return () => {
-      setFlag(-1)
-      clearTimeout(timer)
-    }
-  }, [time])
 
   const RandomString = () => {
     const targetString = getStr(conf)
@@ -50,12 +34,7 @@ export function RandomPwd() {
       <div className="row">
         <span className="value">{targetString}</span>
         <span className="value len">{`<${targetString.length}>`}</span>
-        <span
-          className="icon"
-          onClick={() => {
-            copyText(targetString) && setTime(getNow() + 3000)
-          }}
-        >
+        <span className="icon" onClick={() => copy(targetString)}>
           {CopyIcon}
         </span>
       </div>
@@ -64,7 +43,6 @@ export function RandomPwd() {
 
   return (
     <div className="panel-gen">
-      {flag > 0 && <div className="alert">Copy Success</div>}
       <div
         style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 10 }}
       >

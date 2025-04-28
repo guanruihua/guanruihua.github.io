@@ -1,3 +1,6 @@
+import { message } from 'aurad'
+import { copyText } from 'harpe'
+
 export const get = async (url: string): Promise<Record<string, any>> => {
   const xhr = new XMLHttpRequest()
   return new Promise((rs) => {
@@ -18,4 +21,12 @@ export const get = async (url: string): Promise<Record<string, any>> => {
 
     xhr.send()
   })
+}
+
+export const copy = (val: any) => {
+  if (copyText(val)) {
+    message.success('Copy Success ')
+  } else {
+    message.error('Copy Fail ')
+  }
 }

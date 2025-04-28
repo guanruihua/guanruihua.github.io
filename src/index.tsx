@@ -5,6 +5,7 @@ import { Pkg } from './views/package'
 import { Layout } from './layout'
 import { Home } from './views/home'
 import { Dev } from './views/Dev'
+import './index.less'
 import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
 

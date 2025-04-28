@@ -2,8 +2,8 @@ import React from 'react'
 import { Conf } from './conf'
 import { Logo } from '@/components'
 import { Outlet, useNavigate } from 'react-router'
-import { ObjectType } from '0type'
 import './index.less'
+import { ToolRouter } from './router'
 
 const handleClick = (url: string) => {
   window.open(`https://${url}`, '_blank')
@@ -11,20 +11,11 @@ const handleClick = (url: string) => {
 
 export function Tool() {
   const nav = useNavigate()
-  const list: ObjectType[] = [
-    {
-      path: 'randomPwd',
-      name: '随机密码',
-    },
-    {
-      path: 'converter/Chinese',
-      name: '简繁体转换',
-    },
-  ]
+
   return (
     <div className="tool">
       <div className="tool-layout-left">
-        {list.map((item, i) => {
+        {ToolRouter.children.map((item, i) => {
           const { name, path } = item
           return (
             <div key={i} className="card" onClick={() => nav(path)}>

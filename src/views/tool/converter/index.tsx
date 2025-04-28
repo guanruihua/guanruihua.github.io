@@ -1,6 +1,8 @@
 import React from 'react'
 import { Converter } from 'opencc-js'
 import { useSetState } from '0hook'
+import { Button } from 'aurad'
+import { copy } from '@/util'
 import './index.less'
 
 export function ConverterChinese() {
@@ -35,12 +37,32 @@ export function ConverterChinese() {
         }}
       />
       <div className="converter-Chinese-center">
-        <div onClick={() => handleConvert({ from: 'cn', to: 'tw' })}>
+        <Button
+          type="primary"
+          onClick={() => handleConvert({ from: 'cn', to: 'tw' })}
+        >
           简转繁
-        </div>
-        <div onClick={() => handleConvert({ from: 'tw', to: 'cn' })}>
+        </Button>
+        <Button
+          type="primary"
+          onClick={() => handleConvert({ from: 'tw', to: 'cn' })}
+        >
           繁转简
-        </div>
+        </Button>
+        <Button
+          type="primary"
+          disabled={!state?.text}
+          onClick={() => setState({ text: '', convertedText: '' })}
+        >
+          清空
+        </Button>
+        <Button
+          disabled={!state?.convertedText}
+          type="primary"
+          onClick={() => copy(state.convertedText)}
+        >
+          复制结果
+        </Button>
       </div>
       <pre className="converter-Chinese-right">{state.convertedText}</pre>
     </div>
