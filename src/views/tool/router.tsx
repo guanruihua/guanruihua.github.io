@@ -4,6 +4,7 @@ import { RandomPwd } from './random-pwd'
 import { ConverterChinese } from './converter'
 import { Color } from './color'
 import { Test } from './test'
+import { SystemInfo } from './sysInfo'
 
 export const ToolRouter = {
   path: '/tool',
@@ -23,6 +24,11 @@ export const ToolRouter = {
       path: 'color',
       name: 'Color',
       element: <Color />,
+    },
+    {
+      path: 'system-info',
+      name: 'System Information',
+      element: <SystemInfo />,
     },
     {
       path: 'test',
