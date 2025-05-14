@@ -1,22 +1,23 @@
 import React from 'react'
 import { Guide } from './type'
 
+const GuideRowItem = ({ name, url }: { name: string; url: string }) => {
+  return (
+    <div
+      className="guide-item"
+      onClick={() =>
+        window.open(
+          url.indexOf('http') > -1 ? url : `https://${url}`,
+          '_blank',
+        )
+      }
+    >
+      {name}
+    </div>
+  )
+}
+
 export function GuideRender(props: { guide: Guide[] }) {
-  const GuideRowItem = ({ name, url }: { name: string; url: string }) => {
-    return (
-      <div
-        className="guide-item"
-        onClick={() =>
-          window.open(
-            url.indexOf('http') > -1 ? url : `https://${url}`,
-            '_blank',
-          )
-        }
-      >
-        {name}
-      </div>
-    )
-  }
   const { guide } = props
   return (
     <div className="guide">

@@ -51120,7 +51120,6 @@ const conf = {
       label: "Study",
       style: {
         background: "radial-gradient(ellipse at right top, #00458f8f 0%, #151419 45%, #151419 100%)"
-        // 'radial-gradient(ellipse at right top, #FF3171 0%, #151419 45%, #151419 100%)',
       }
     }
   ],
@@ -51140,7 +51139,22 @@ const conf = {
     },
     {
       name: "Web",
-      next: [["Can I use", "caniuse.com/", "css caniuse"]]
+      next: [
+        ["MDN Web Docs", "developer.mozilla.org/zh-CN/"],
+        ["Can I use", "caniuse.com/", "css caniuse"],
+        ["Dribbble", "dribbble.com"],
+        ["UI Verse", "uiverse.io/"],
+        ["Gradient Color", "webgradients.com/"],
+        ["Awwwards", "www.awwwards.com/"],
+        [
+          "Muse Dashboard",
+          "demos.creative-tim.com/muse-vue-ant-design-dashboard/?_ga=2.68675601.1846298967.1721030274-1292199187.1699498388#/dashboard"
+        ],
+        [
+          "Hyper Dashboard",
+          "coderthemes.com/hyper/saas/dashboard-analytics.html"
+        ]
+      ]
     },
     {
       name: "UI \u7EC4\u4EF6\u5E93",
@@ -51152,23 +51166,56 @@ const conf = {
         ],
         ["Element Plus", "element-plus.org/zh-CN/component/overview.html"],
         ["EChart", "echarts.apache.org/examples/zh/index.html"],
+        ["EChart Api", "echarts.apache.org/zh/api.html#echarts"],
+        ["AntV G6", "https://g6.antv.antgroup.com/examples"],
+        [
+          "APEX Charts",
+          "www.apexcharts.com/javascript-chart-demos/line-charts/basic/"
+        ],
         ["iconify", "icon-sets.iconify.design"],
-        ["Remix Icon", "remixicon.com/"]
+        ["Remix Icon", "remixicon.com"],
+        ["NavNav", "thuvien.org/navnav"]
+        // ['',''],
+      ]
+    },
+    {
+      name: "WebGL",
+      next: [
+        ["three.js", "threejs.org/manual/#zh/fundamentals"],
+        ["three.js \u4E2D\u6587\u7F51", "http://www.webgl3d.cn/pages/aac9ab/"],
+        ["fabricjs", "fabricjs.com/api"],
+        ["PixiJS", "pixijs.com/"],
+        ["Sketchfab\xB73D Models", "sketchfab.com/"],
+        ["Fab\xB7Free 3D Models", "www.fab.com/category/3d-model?q=tree&is_free=1"],
+        ["Konva\xB7H5 Canvas ", "konvajs-doc.bluehymn.com"]
+        // ['',''],
       ]
     },
     {
       name: "\u6280\u672F\u793E\u533A",
       next: [
         ["\u6398\u91D1", "juejin.cn/"],
-        ["Code Pen", "codepen.io"]
+        ["Code Pen", "codepen.io"],
+        ["\u601D\u5426", "segmentfault.com/"],
+        ["\u5F00\u6E90\u4E2D\u56FD( OSChina )", "www.oschina.net"],
+        ["Stack Overflow", "stackoverflow.com"],
+        ["github", "github.com"]
+        // ['',''],
       ]
     },
     {
       name: "\u7EFC\u5408",
       next: [
-        ["B\u7AD9", "https://t.bilibili.com/?tab=video"],
+        ["B\u7AD9", "t.bilibili.com/?tab=video"],
         ["\u77E5\u4E4E", "www.zhihu.com/hot"],
-        ["\u97F3\u4E50 ZZ123", "https://zz123.com/"]
+        ["\u4ECA\u65E5\u70ED\u699C", "hot.imsyy.top/#/"],
+        ["\u767E\u5EA6\u70ED\u641C", "top.baidu.com/board?tab=realtime"],
+        ["\u97F3\u4E50 ZZ123", "zz123.com/"],
+        ["\u6781\u5BA2\u6E7E\u79FB\u52A8\u82AF\u7247\u6392\u884C", "www.socpk.com/"],
+        ["\u6478\u9C7C\u5C9B", "fish.codebug.icu"],
+        ["\u6478\u9C7C\u6D3E", "fishpi.cn/"],
+        ["LKs \u7F51\u7AD9\u63A8\u8350\u5408\u96C6", "lkssite.vip/"],
+        ["\u51B0\u5C71\u56FE\u8868", "icebergcharts.com/"]
       ]
     },
     {
@@ -51177,21 +51224,30 @@ const conf = {
         ["deepseek", "chat.deepseek.com"],
         ["\u5143\u5B9D", "yuanbao.tencent.com"],
         ["ChatGPT", "chatgpt.com"],
-        ["Poe", "poe.com"]
+        ["Poe", "poe.com"],
+        ["\u9B54\u5854\u793E\u533A\xB7\u6A21\u578B\u5E93", "www.modelscope.cn/models"],
+        ["Hugging Face", "huggingface.co/"]
+        // ['',''],
       ]
     },
     {
       name: "\u90AE\u7BB1",
       next: [
-        [
-          "QQ\u90AE\u7BB1",
-          "https://mail.qq.com/?cancel_login=true&from=session_timeout"
-        ],
-        ["Outlook", "https://partner.outlook.cn/mail/"]
+        ["QQ\u90AE\u7BB1", "mail.qq.com/?cancel_login=true&from=session_timeout"],
+        ["Outlook", "partner.outlook.cn/mail/"]
       ]
     },
     {
-      name: "\u5DE5\u5177(\u96C6)",
+      name: "\u5DE5\u5177 / \u8D44\u6E90",
+      next: [
+        ["\u58C1\u7EB8", "alphacoders.com/", "wallpaper"],
+        ["\u81F4\u7F8E\u5316(\u4E3B\u9898,\u58C1\u7EB8)", "zhutix.com/"],
+        ["\u63D2\u753B, \u6F2B\u753B, \u5C0F\u8BF4", "www.pixiv.net/"],
+        ["\u56FE\u7247\u538B\u7F29zippic", "www.zippic.cn/"]
+      ]
+    },
+    {
+      name: "\u7F16\u7A0B\u5DE5\u5177(\u96C6)",
       next: [
         [
           "Regulex",
@@ -51213,9 +51269,7 @@ const conf = {
         ["UU\u5728\u7EBF\u5DE5\u5177", "uutool.cn/type/new/", "inline-tool tools"],
         ["30TOOL", "www.30aitool.com/", "inline-tool tools"],
         ["json.cn", "www.json.cn/"],
-        ["\u5F00\u53D1\u8005\u6B66\u5668\u5E93", "devtool.tech/"],
-        ["\u56FE\u7247\u538B\u7F29zippic", "https://www.zippic.cn/"],
-        ["\u58C1\u7EB8", "alphacoders.com/", "wallpaper"]
+        ["\u5F00\u53D1\u8005\u6B66\u5668\u5E93", "devtool.tech/"]
       ]
     },
     {
@@ -51247,20 +51301,20 @@ const conf = {
 
 ;// ./src/views/home/guide.tsx
 
+const GuideRowItem = ({ name, url }) => {
+  return /* @__PURE__ */ react.createElement(
+    "div",
+    {
+      className: "guide-item",
+      onClick: () => window.open(
+        url.indexOf("http") > -1 ? url : `https://${url}`,
+        "_blank"
+      )
+    },
+    name
+  );
+};
 function GuideRender(props) {
-  const GuideRowItem = ({ name, url }) => {
-    return /* @__PURE__ */ react.createElement(
-      "div",
-      {
-        className: "guide-item",
-        onClick: () => window.open(
-          url.indexOf("http") > -1 ? url : `https://${url}`,
-          "_blank"
-        )
-      },
-      name
-    );
-  };
   const { guide } = props;
   return /* @__PURE__ */ react.createElement("div", { className: "guide" }, guide.map((item, i) => {
     const { name, next } = item;
