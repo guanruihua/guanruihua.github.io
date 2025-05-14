@@ -640,6 +640,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.home {
 .home .guide .guide-module .title {
   font-weight: bold;
   color: #999;
+  white-space: nowrap;
 }
 .home .guide .guide-module .guide-next {
   display: flex;
@@ -51087,7 +51088,7 @@ const conf = {
     {
       name: "note",
       label: "Note",
-      url: "https://ruihuag-note.github.io/",
+      url: "ruihuag-note.github.io/",
       style: {
         background: "radial-gradient(ellipse at right top, #5756CD 0%, #151419 47%, #151419 100%)"
       }
@@ -51139,36 +51140,58 @@ const conf = {
     },
     {
       name: "Web",
-      next: [["Can I use", "https://caniuse.com/", "css caniuse"]]
+      next: [["Can I use", "caniuse.com/", "css caniuse"]]
     },
     {
       name: "UI \u7EC4\u4EF6\u5E93",
       next: [
         [
           "Antd",
-          "https://ant-design.antgroup.com/components/overview-cn",
+          "ant-design.antgroup.com/components/overview-cn",
           "React UI Component "
         ],
-        [
-          "Element Plus",
-          "https://element-plus.org/zh-CN/component/overview.html"
-        ],
-        [
-          "Remix Icon",
-          "https://remixicon.com/"
-        ]
+        ["Element Plus", "element-plus.org/zh-CN/component/overview.html"],
+        ["EChart", "echarts.apache.org/examples/zh/index.html"],
+        ["iconify", "icon-sets.iconify.design"],
+        ["Remix Icon", "remixicon.com/"]
       ]
     },
     {
       name: "\u6280\u672F\u793E\u533A",
-      next: [["\u6398\u91D1", "https://juejin.cn/"]]
+      next: [
+        ["\u6398\u91D1", "juejin.cn/"],
+        ["Code Pen", "codepen.io"]
+      ]
     },
     {
-      name: "\u7EFC\u5408\u793E\u533A",
-      next: [["\u77E5\u4E4E", "https://www.zhihu.com/hot"]]
+      name: "\u7EFC\u5408",
+      next: [
+        ["B\u7AD9", "https://t.bilibili.com/?tab=video"],
+        ["\u77E5\u4E4E", "www.zhihu.com/hot"],
+        ["\u97F3\u4E50 ZZ123", "https://zz123.com/"]
+      ]
     },
     {
-      name: "\u7F16\u7801\u5DE5\u5177",
+      name: "AI",
+      next: [
+        ["deepseek", "chat.deepseek.com"],
+        ["\u5143\u5B9D", "yuanbao.tencent.com"],
+        ["ChatGPT", "chatgpt.com"],
+        ["Poe", "poe.com"]
+      ]
+    },
+    {
+      name: "\u90AE\u7BB1",
+      next: [
+        [
+          "QQ\u90AE\u7BB1",
+          "https://mail.qq.com/?cancel_login=true&from=session_timeout"
+        ],
+        ["Outlook", "https://partner.outlook.cn/mail/"]
+      ]
+    },
+    {
+      name: "\u5DE5\u5177(\u96C6)",
       next: [
         [
           "Regulex",
@@ -51185,16 +51208,38 @@ const conf = {
           "autoprefixer.github.io",
           "css autoprefixer"
         ],
-        ["JSON\u53EF\u89C6\u5316", "jsoncrack.com/editor", "JSON, json-preview"]
-      ]
-    },
-    {
-      name: "\u5DE5\u5177\u96C6",
-      next: [
+        ["JSON\u53EF\u89C6\u5316", "jsoncrack.com/editor", "JSON, json-preview"],
         ["\u538B\u7F29/\u683C\u5F0F\u5316\u5DE5\u5177", "coding.tools/cn", "inline-tool tools"],
         ["UU\u5728\u7EBF\u5DE5\u5177", "uutool.cn/type/new/", "inline-tool tools"],
         ["30TOOL", "www.30aitool.com/", "inline-tool tools"],
+        ["json.cn", "www.json.cn/"],
+        ["\u5F00\u53D1\u8005\u6B66\u5668\u5E93", "devtool.tech/"],
+        ["\u56FE\u7247\u538B\u7F29zippic", "https://www.zippic.cn/"],
         ["\u58C1\u7EB8", "alphacoders.com/", "wallpaper"]
+      ]
+    },
+    {
+      name: "ACG",
+      next: [
+        ["\u539F\u795E", "www.miyoushe.com/ys"],
+        [
+          "\u539F\u795E\u5730\u56FE",
+          "act.mihoyo.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&lang=zh-cn&utm_source=bbs&utm_medium=mys&utm_campaign=pcicon&_markerFps=24#/map/2?shown_types=2,3,154,517,658,659,626,356,17,44,45,269,70,64,77,69,597,600,667,668,680,596,410"
+        ],
+        ["\u7389\u8861\u676F\u6570\u636E\u5E93", "homdgcat.wiki"],
+        ["Honey Impact", "gensh.honeyhunterworld.com/?lang=CHS"],
+        ["\u5D29\u574F: \u661F\u7A79\u94C1\u9053", "www.miyoushe.com/sr"],
+        ["\u7EDD\u533A\u96F6", "www.miyoushe.com/zzz/"],
+        ["\u840C\u5A18\u767E\u79D1", "mzh.moegirl.org.cn"],
+        ["\u6B21\u5143\u5C0F\u9547", "dimtown.com/"],
+        ["TouchGal", "www.touchgal.io/"]
+      ]
+    },
+    {
+      name: "Platform",
+      next: [
+        ["npmjs", "www.npmjs.com"],
+        ["deepseek", "platform.deepseek.com/usage"]
       ]
     }
   ]

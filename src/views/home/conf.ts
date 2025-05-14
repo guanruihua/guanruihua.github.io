@@ -5,7 +5,7 @@ export const conf: Conf = {
     {
       name: 'note',
       label: 'Note',
-      url: 'https://ruihuag-note.github.io/',
+      url: 'ruihuag-note.github.io/',
       style: {
         background:
           'radial-gradient(ellipse at right top, #5756CD 0%, #151419 47%, #151419 100%)',
@@ -62,36 +62,58 @@ export const conf: Conf = {
     },
     {
       name: 'Web',
-      next: [['Can I use', 'https://caniuse.com/', 'css caniuse']],
+      next: [['Can I use', 'caniuse.com/', 'css caniuse']],
     },
     {
       name: 'UI 组件库',
       next: [
         [
           'Antd',
-          'https://ant-design.antgroup.com/components/overview-cn',
+          'ant-design.antgroup.com/components/overview-cn',
           'React UI Component ',
         ],
-        [
-          'Element Plus',
-          'https://element-plus.org/zh-CN/component/overview.html',
-        ],
-        [
-          'Remix Icon',
-          'https://remixicon.com/'
-        ]
+        ['Element Plus', 'element-plus.org/zh-CN/component/overview.html'],
+        ['EChart', 'echarts.apache.org/examples/zh/index.html'],
+        ['iconify', 'icon-sets.iconify.design'],
+        ['Remix Icon', 'remixicon.com/'],
       ],
     },
     {
       name: '技术社区',
-      next: [['掘金', 'https://juejin.cn/']],
+      next: [
+        ['掘金', 'juejin.cn/'],
+        ['Code Pen', 'codepen.io'],
+      ],
     },
     {
-      name: '综合社区',
-      next: [['知乎', 'https://www.zhihu.com/hot']],
+      name: '综合',
+      next: [
+        ['B站', 'https://t.bilibili.com/?tab=video'],
+        ['知乎', 'www.zhihu.com/hot'],
+        ['音乐 ZZ123', 'https://zz123.com/'],
+      ],
     },
     {
-      name: '编码工具',
+      name: 'AI',
+      next: [
+        ['deepseek', 'chat.deepseek.com'],
+        ['元宝', 'yuanbao.tencent.com'],
+        ['ChatGPT', 'chatgpt.com'],
+        ['Poe', 'poe.com'],
+      ],
+    },
+    {
+      name: '邮箱',
+      next: [
+        [
+          'QQ邮箱',
+          'https://mail.qq.com/?cancel_login=true&from=session_timeout',
+        ],
+        ['Outlook', 'https://partner.outlook.cn/mail/'],
+      ],
+    },
+    {
+      name: '工具(集)',
       next: [
         [
           'Regulex',
@@ -109,15 +131,37 @@ export const conf: Conf = {
           'css autoprefixer',
         ],
         ['JSON可视化', 'jsoncrack.com/editor', 'JSON, json-preview'],
-      ],
-    },
-    {
-      name: '工具集',
-      next: [
         ['压缩/格式化工具', 'coding.tools/cn', 'inline-tool tools'],
         ['UU在线工具', 'uutool.cn/type/new/', 'inline-tool tools'],
         ['30TOOL', 'www.30aitool.com/', 'inline-tool tools'],
+        ['json.cn', 'www.json.cn/'],
+        ['开发者武器库', 'devtool.tech/'],
+        ['图片压缩zippic', 'https://www.zippic.cn/'],
         ['壁纸', 'alphacoders.com/', 'wallpaper'],
+      ],
+    },
+    {
+      name: 'ACG',
+      next: [
+        ['原神', 'www.miyoushe.com/ys'],
+        [
+          '原神地图',
+          'act.mihoyo.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&lang=zh-cn&utm_source=bbs&utm_medium=mys&utm_campaign=pcicon&_markerFps=24#/map/2?shown_types=2,3,154,517,658,659,626,356,17,44,45,269,70,64,77,69,597,600,667,668,680,596,410',
+        ],
+        ['玉衡杯数据库', 'homdgcat.wiki'],
+        ['Honey Impact', 'gensh.honeyhunterworld.com/?lang=CHS'],
+        ['崩坏: 星穹铁道', 'www.miyoushe.com/sr'],
+        ['绝区零', 'www.miyoushe.com/zzz/'],
+        ['萌娘百科', 'mzh.moegirl.org.cn'],
+        ['次元小镇', 'dimtown.com/'],
+        ['TouchGal', 'www.touchgal.io/'],
+      ],
+    },
+    {
+      name: 'Platform',
+      next: [
+        ['npmjs', 'www.npmjs.com'],
+        ['deepseek', 'platform.deepseek.com/usage'],
       ],
     },
   ],
