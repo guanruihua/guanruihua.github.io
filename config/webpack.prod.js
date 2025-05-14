@@ -9,12 +9,16 @@ const rules = require('./webpack.rules')
 module.exports = {
   mode: 'production',
   entry: path.resolve(__dirname, '../src/index.tsx'),
+  output: {
+    filename: '.web/js/[name].[hash:8].js', // 打包的文件名
+    path: path.resolve(__dirname, '../docs'),
+  },
   // experiments: {
   // 	outputModule: true
   // },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../src')
+      '@': path.resolve(__dirname, '../src'),
     },
     // mainFiles: ['index'],
     extensions: [
@@ -25,42 +29,35 @@ module.exports = {
       '.less',
       '.css',
       '.module.less',
-      '.d.ts'
-    ]
+      '.d.ts',
+    ],
   },
   module: {
-    rules
-  },
-  output: {
-    filename: '[name].[hash:8].js', // 打包的文件名
-    path: path.resolve(__dirname, '../docs')
+    rules,
   },
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        include: /\.min\.js$/
-      })
-    ]
+        include: /\.min\.js$/,
+      }),
+    ],
   },
   plugins: [
     new CleanWebpackPlugin({
-      path: path.resolve(__dirname, '../public/index.html'),
-      // path: '../docs',
-      // cleanOnceBeforeBuildPatterns: ['../docs'],
-      verbose: true
+      cleanOnceBeforeBuildPatterns: ['.web'],
     }),
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, '../.nojekyll'),
           to: path.resolve(__dirname, '../docs/.nojekyll'),
-          toType: 'file'
-        }
-      ]
+          toType: 'file',
+        },
+      ],
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html')
-    })
-  ]
+      template: path.resolve(__dirname, '../public/index.html'),
+    }),
+  ],
 }

@@ -71,7 +71,7 @@ module.exports = [
     test: /\.(jpe?g|png|gif|)$/i,
     type: 'asset/resource',
     generator: {
-      filename: 'img/[name][ext]',
+      filename: '.web/img/[name][ext]',
     },
   },
   {
@@ -79,5 +79,8 @@ module.exports = [
     // test: /\.(jpe?g|png|gif|svg|woff|woff2|eot|ttf|otf|ico)$/i,
     type: 'asset/resource',
     exclude: /node_modules/,
+    generator: {
+      filename: '.web/assets/[name][ext]',
+    },
   },
 ]

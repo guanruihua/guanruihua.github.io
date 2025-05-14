@@ -29,7 +29,7 @@ module.exports = {
 		// new ESBuildPlugin(),
 		//数组 放着所有的webpack插件
 		new HtmlWebpackPlugin({
-			title: '0Design',
+			title: 'Ruihuag',
 			template: path.resolve(__dirname, '../public/index.html'),
 			filename: 'index.html', //打包后的文件名
 			hash: true,
