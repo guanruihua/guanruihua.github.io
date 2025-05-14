@@ -33,6 +33,22 @@
 
   "guide": [
     {
+      "name": "综合",
+      "next": [
+        ["B站", "t.bilibili.com/?tab=video"],
+        ["知乎", "www.zhihu.com/hot"],
+        ["今日热榜", "hot.imsyy.top/#/"],
+        ["百度热搜", "top.baidu.com/board?tab=realtime"],
+        ["七麦数据", "https://www.qimai.cn/rank"],
+        ["音乐 ZZ123", "zz123.com/"],
+        ["极客湾移动芯片排行", "www.socpk.com/"],
+        ["摸鱼岛", "fish.codebug.icu"],
+        ["摸鱼派", "fishpi.cn/"],
+        ["LKs 网站推荐合集", "lkssite.vip/"],
+        ["冰山图表", "icebergcharts.com/"]
+      ]
+    },
+    {
       "name": "翻译",
       "next": [
         ["百度翻译", "fanyi.baidu.com", "translate baidu fanyi"],
@@ -111,22 +127,7 @@
         ["github", "github.com"]
       ]
     },
-    {
-      "name": "综合",
-      "next": [
-        ["B站", "t.bilibili.com/?tab=video"],
-        ["知乎", "www.zhihu.com/hot"],
-        ["今日热榜", "hot.imsyy.top/#/"],
-        ["百度热搜", "top.baidu.com/board?tab=realtime"],
-        ["七麦数据", "https://www.qimai.cn/rank"],
-        ["音乐 ZZ123", "zz123.com/"],
-        ["极客湾移动芯片排行", "www.socpk.com/"],
-        ["摸鱼岛", "fish.codebug.icu"],
-        ["摸鱼派", "fishpi.cn/"],
-        ["LKs 网站推荐合集", "lkssite.vip/"],
-        ["冰山图表", "icebergcharts.com/"]
-      ]
-    },
+
     {
       "name": "AI",
       "next": [
