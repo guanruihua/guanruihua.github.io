@@ -1,8 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import './index.less'
-import { Item } from './type'
-import { conf } from './conf'
+import { Conf, Item } from './type'
 import { GuideRender } from './guide'
 
 export function Home() {
@@ -12,11 +11,27 @@ export function Home() {
       return window.open(item.url, '_blank')
     } else nav(item.name)
   }
+  const [state, setState] = React.useState<Conf>({
+    items: [],
+    guide: [],
+  })
+  const init = async () => {
+    try {
+      const res = await fetch('/guide.json')
+      const data = await res.json()
+      setState(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  React.useEffect(() => {
+    init()
+  }, [])
 
   return (
     <div className="home">
       <div className="layout">
-        {conf.items.map((item, i) => {
+        {state?.items?.map((item, i) => {
           return (
             <div
               className="card"
@@ -30,7 +45,7 @@ export function Home() {
           )
         })}
       </div>
-      <GuideRender guide={conf.guide} />
+      <GuideRender guide={state?.guide} />
     </div>
   )
 }

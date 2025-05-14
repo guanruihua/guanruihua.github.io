@@ -51082,227 +51082,6 @@ var home_update = injectStylesIntoStyleTag_default()(home/* default */.A, home_o
 
        /* harmony default export */ const views_home = (home/* default */.A && home/* default */.A.locals ? home/* default */.A.locals : undefined);
 
-;// ./src/views/home/conf.ts
-const conf = {
-  items: [
-    {
-      name: "note",
-      label: "Note",
-      url: "ruihuag-note.github.io/",
-      style: {
-        background: "radial-gradient(ellipse at right top, #5756CD 0%, #151419 47%, #151419 100%)"
-      }
-    },
-    {
-      name: "pkg",
-      label: "Package",
-      style: {
-        background: "radial-gradient(ellipse at right top, #107667ed 0%, #151419 47%, #151419 100%)"
-      }
-    },
-    {
-      name: "tool",
-      label: "Tool",
-      style: {
-        background: "radial-gradient(ellipse at right top, #a63d2a82 0%, #151419 47%, #151419 100%)"
-      }
-    },
-    // {
-    //   name: 'dev',
-    //   label: 'Dev',
-    //   style: {
-    //     background:
-    //       'radial-gradient(ellipse at right top, #00458f8f 0%, #151419 45%, #151419 100%)',
-    //   },
-    // },
-    {
-      name: "study",
-      label: "Study",
-      style: {
-        background: "radial-gradient(ellipse at right top, #00458f8f 0%, #151419 45%, #151419 100%)"
-      }
-    }
-  ],
-  guide: [
-    {
-      name: "\u7FFB\u8BD1",
-      next: [
-        ["\u767E\u5EA6\u7FFB\u8BD1", "fanyi.baidu.com", "translate baidu fanyi"],
-        ["Google\u7FFB\u8BD1", "translate.google.com", "translate google fanyi"],
-        [
-          "\u5FAE\u8F6F\u7FFB\u8BD1",
-          "www.bing.com/translator",
-          "translate bing microsoft fanyi"
-        ],
-        ["DeepL", "www.deepl.com/zh/translator", "translate deepl fanyi"]
-      ]
-    },
-    {
-      name: "Web",
-      next: [
-        ["MDN Web Docs", "developer.mozilla.org/zh-CN/"],
-        ["Can I use", "caniuse.com/", "css caniuse"],
-        ["Dribbble", "dribbble.com"],
-        ["UI Verse", "uiverse.io/"],
-        ["Gradient Color", "webgradients.com/"],
-        ["Awwwards", "www.awwwards.com/"],
-        [
-          "Muse Dashboard",
-          "demos.creative-tim.com/muse-vue-ant-design-dashboard/?_ga=2.68675601.1846298967.1721030274-1292199187.1699498388#/dashboard"
-        ],
-        [
-          "Hyper Dashboard",
-          "coderthemes.com/hyper/saas/dashboard-analytics.html"
-        ]
-      ]
-    },
-    {
-      name: "UI \u7EC4\u4EF6\u5E93",
-      next: [
-        [
-          "Antd",
-          "ant-design.antgroup.com/components/overview-cn",
-          "React UI Component "
-        ],
-        ["Element Plus", "element-plus.org/zh-CN/component/overview.html"],
-        ["EChart", "echarts.apache.org/examples/zh/index.html"],
-        ["EChart Api", "echarts.apache.org/zh/api.html#echarts"],
-        ["AntV G6", "https://g6.antv.antgroup.com/examples"],
-        [
-          "APEX Charts",
-          "www.apexcharts.com/javascript-chart-demos/line-charts/basic/"
-        ],
-        ["iconify", "icon-sets.iconify.design"],
-        ["Remix Icon", "remixicon.com"],
-        ["NavNav", "thuvien.org/navnav"]
-        // ['',''],
-      ]
-    },
-    {
-      name: "WebGL",
-      next: [
-        ["three.js", "threejs.org/manual/#zh/fundamentals"],
-        ["three.js \u4E2D\u6587\u7F51", "http://www.webgl3d.cn/pages/aac9ab/"],
-        ["fabricjs", "fabricjs.com/api"],
-        ["PixiJS", "pixijs.com/"],
-        ["Sketchfab\xB73D Models", "sketchfab.com/"],
-        [
-          "Fab\xB7Free 3D Models",
-          "www.fab.com/category/3d-model?q=tree&is_free=1"
-        ],
-        ["Konva\xB7H5 Canvas ", "konvajs-doc.bluehymn.com"]
-        // ['',''],
-      ]
-    },
-    {
-      name: "\u6280\u672F\u793E\u533A",
-      next: [
-        ["\u6398\u91D1", "juejin.cn/"],
-        ["Code Pen", "codepen.io"],
-        ["\u601D\u5426", "segmentfault.com/"],
-        ["\u5F00\u6E90\u4E2D\u56FD( OSChina )", "www.oschina.net"],
-        ["Stack Overflow", "stackoverflow.com"],
-        ["github", "github.com"]
-        // ['',''],
-      ]
-    },
-    {
-      name: "\u7EFC\u5408",
-      next: [
-        ["B\u7AD9", "t.bilibili.com/?tab=video"],
-        ["\u77E5\u4E4E", "www.zhihu.com/hot"],
-        ["\u4ECA\u65E5\u70ED\u699C", "hot.imsyy.top/#/"],
-        ["\u767E\u5EA6\u70ED\u641C", "top.baidu.com/board?tab=realtime"],
-        ["\u4E03\u9EA6\u6570\u636E", "https://www.qimai.cn/rank"],
-        ["\u97F3\u4E50 ZZ123", "zz123.com/"],
-        ["\u6781\u5BA2\u6E7E\u79FB\u52A8\u82AF\u7247\u6392\u884C", "www.socpk.com/"],
-        ["\u6478\u9C7C\u5C9B", "fish.codebug.icu"],
-        ["\u6478\u9C7C\u6D3E", "fishpi.cn/"],
-        ["LKs \u7F51\u7AD9\u63A8\u8350\u5408\u96C6", "lkssite.vip/"],
-        ["\u51B0\u5C71\u56FE\u8868", "icebergcharts.com/"]
-      ]
-    },
-    {
-      name: "AI",
-      next: [
-        ["deepseek", "chat.deepseek.com"],
-        ["\u5143\u5B9D", "yuanbao.tencent.com"],
-        ["ChatGPT", "chatgpt.com"],
-        ["Poe", "poe.com"],
-        ["\u9B54\u5854\u793E\u533A\xB7\u6A21\u578B\u5E93", "www.modelscope.cn/models"],
-        ["Hugging Face", "huggingface.co/"]
-        // ['',''],
-      ]
-    },
-    {
-      name: "\u90AE\u7BB1",
-      next: [
-        ["QQ\u90AE\u7BB1", "mail.qq.com/?cancel_login=true&from=session_timeout"],
-        ["Outlook", "partner.outlook.cn/mail/"]
-      ]
-    },
-    {
-      name: "\u5DE5\u5177 / \u8D44\u6E90",
-      next: [
-        ["Alpha Coders \u58C1\u7EB8", "alphacoders.com/", "wallpaper"],
-        ["\u81F4\u7F8E\u5316(\u4E3B\u9898,\u58C1\u7EB8)", "zhutix.com/"],
-        ["\u63D2\u753B, \u6F2B\u753B, \u5C0F\u8BF4", "www.pixiv.net/"],
-        ["\u56FE\u7247\u538B\u7F29zippic", "www.zippic.cn/"]
-      ]
-    },
-    {
-      name: "\u7F16\u7A0B\u5DE5\u5177(\u96C6)",
-      next: [
-        [
-          "Regulex",
-          "jex.im/regulex/#!flags=&re=%5E(0-9)(a%7Cb%7Cc)*%3F%24",
-          "regulex regular"
-        ],
-        [
-          "transform(\u7ED3\u6784\u8F6C\u6362)",
-          "transform.tools/json-to-typescript",
-          "transform type model"
-        ],
-        [
-          "Autoprefixer CSS online",
-          "autoprefixer.github.io",
-          "css autoprefixer"
-        ],
-        ["JSON\u53EF\u89C6\u5316", "jsoncrack.com/editor", "JSON, json-preview"],
-        ["\u538B\u7F29/\u683C\u5F0F\u5316\u5DE5\u5177", "coding.tools/cn", "inline-tool tools"],
-        ["UU\u5728\u7EBF\u5DE5\u5177", "uutool.cn/type/new/", "inline-tool tools"],
-        ["30TOOL", "www.30aitool.com/", "inline-tool tools"],
-        ["json.cn", "www.json.cn/"],
-        ["\u5F00\u53D1\u8005\u6B66\u5668\u5E93", "devtool.tech/"]
-      ]
-    },
-    {
-      name: "ACG",
-      next: [
-        ["\u539F\u795E", "www.miyoushe.com/ys"],
-        [
-          "\u539F\u795E\u5730\u56FE",
-          "act.mihoyo.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&lang=zh-cn&utm_source=bbs&utm_medium=mys&utm_campaign=pcicon&_markerFps=24#/map/2?shown_types=2,3,154,517,658,659,626,356,17,44,45,269,70,64,77,69,597,600,667,668,680,596,410"
-        ],
-        ["\u7389\u8861\u676F\u6570\u636E\u5E93", "homdgcat.wiki"],
-        ["Honey Impact", "gensh.honeyhunterworld.com/?lang=CHS"],
-        ["\u5D29\u574F: \u661F\u7A79\u94C1\u9053", "www.miyoushe.com/sr"],
-        ["\u7EDD\u533A\u96F6", "www.miyoushe.com/zzz/"],
-        ["\u840C\u5A18\u767E\u79D1", "mzh.moegirl.org.cn"],
-        ["\u6B21\u5143\u5C0F\u9547", "dimtown.com/"],
-        ["TouchGal", "www.touchgal.io/"]
-      ]
-    },
-    {
-      name: "Platform",
-      next: [
-        ["npmjs", "www.npmjs.com"],
-        ["deepseek", "platform.deepseek.com/usage"]
-      ]
-    }
-  ]
-};
-
 ;// ./src/views/home/guide.tsx
 
 const GuideRowItem = ({ name, url }) => {
@@ -51320,7 +51099,7 @@ const GuideRowItem = ({ name, url }) => {
 };
 function GuideRender(props) {
   const { guide } = props;
-  return /* @__PURE__ */ react.createElement("div", { className: "guide" }, guide.map((item, i) => {
+  return /* @__PURE__ */ react.createElement("div", { className: "guide" }, guide == null ? void 0 : guide.map((item, i) => {
     const { name, next } = item;
     return /* @__PURE__ */ react.createElement("div", { className: "guide-module", key: i }, name && /* @__PURE__ */ react.createElement("div", { className: "title" }, name), /* @__PURE__ */ react.createElement("div", { className: "guide-next" }, next == null ? void 0 : next.map((child, j) => {
       const [name2, url] = child;
@@ -51330,19 +51109,55 @@ function GuideRender(props) {
 }
 
 ;// ./src/views/home/index.tsx
-
+var __async = (__this, __arguments, generator) => {
+  return new Promise((resolve, reject) => {
+    var fulfilled = (value) => {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var rejected = (value) => {
+      try {
+        step(generator.throw(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+    step((generator = generator.apply(__this, __arguments)).next());
+  });
+};
 
 
 
 
 function Home() {
+  var _a;
   const nav = dist_useNavigate();
   const handleClick = (item) => {
     if (item.url) {
       return window.open(item.url, "_blank");
     } else nav(item.name);
   };
-  return /* @__PURE__ */ react.createElement("div", { className: "home" }, /* @__PURE__ */ react.createElement("div", { className: "layout" }, conf.items.map((item, i) => {
+  const [state, setState] = react.useState({
+    items: [],
+    guide: []
+  });
+  const init = () => __async(null, null, function* () {
+    try {
+      const res = yield fetch("/guide.json");
+      const data = yield res.json();
+      setState(data);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+  react.useEffect(() => {
+    init();
+  }, []);
+  return /* @__PURE__ */ react.createElement("div", { className: "home" }, /* @__PURE__ */ react.createElement("div", { className: "layout" }, (_a = state == null ? void 0 : state.items) == null ? void 0 : _a.map((item, i) => {
     return /* @__PURE__ */ react.createElement(
       "div",
       {
@@ -51354,7 +51169,7 @@ function Home() {
       /* @__PURE__ */ react.createElement("div", { className: "logo" }, item.label.slice(0, 1)),
       /* @__PURE__ */ react.createElement("div", { className: "name" }, item.label)
     );
-  })), /* @__PURE__ */ react.createElement(GuideRender, { guide: conf.guide }));
+  })), /* @__PURE__ */ react.createElement(GuideRender, { guide: state == null ? void 0 : state.guide }));
 }
 
 // EXTERNAL MODULE: ./node_modules/.store/css-loader@6.11.0/node_modules/css-loader/dist/cjs.js!./node_modules/.store/less-loader@11.1.4/node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/views/Dev/index.less
@@ -52379,7 +52194,7 @@ var random_pwd_update = injectStylesIntoStyleTag_default()(random_pwd/* default 
        /* harmony default export */ const tool_random_pwd = (random_pwd/* default */.A && random_pwd/* default */.A.locals ? random_pwd/* default */.A.locals : undefined);
 
 ;// ./src/util/index.ts
-var __async = (__this, __arguments, generator) => {
+var util_async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
       try {
@@ -52401,7 +52216,7 @@ var __async = (__this, __arguments, generator) => {
 };
 
 
-const get = (url) => __async(null, null, function* () {
+const get = (url) => util_async(null, null, function* () {
   const xhr = new XMLHttpRequest();
   return new Promise((rs) => {
     xhr.open("GET", url, true);
@@ -53045,7 +52860,7 @@ var color_update = injectStylesIntoStyleTag_default()(color/* default */.A, colo
        /* harmony default export */ const tool_color = (color/* default */.A && color/* default */.A.locals ? color/* default */.A.locals : undefined);
 
 ;// ./src/views/tool/color/conf.tsx
-const conf_conf = [
+const conf = [
   ["\u795E\u79D8\u7D2B\u84DD\u6E10\u53D8", "linear-gradient(135deg,#c850c0,#4158d0)"],
   ["\u5929\u7A7A\u84DD\u6E10\u53D8", "linear-gradient(135deg,#a1c4fd,#c2e9fb)"],
   ["\u7470\u4E3D\u7D2B\u7EA2\u6E10\u53D8", "linear-gradient(135deg,#ff9a9e,#fad0c4)"],
@@ -53217,7 +53032,7 @@ const message = {
 
 
 function Color() {
-  return /* @__PURE__ */ react.createElement("div", { className: "tool-color" }, /* @__PURE__ */ react.createElement("div", { className: "tool-color-layout" }, conf_conf.map(([name, value, addClassName], i) => {
+  return /* @__PURE__ */ react.createElement("div", { className: "tool-color" }, /* @__PURE__ */ react.createElement("div", { className: "tool-color-layout" }, conf.map(([name, value, addClassName], i) => {
     return /* @__PURE__ */ react.createElement(
       "div",
       {
@@ -53439,7 +53254,7 @@ function Test() {
 }
 
 ;// ./src/views/tool/sysInfo/util.tsx
-var util_async = (__this, __arguments, generator) => {
+var sysInfo_util_async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
       try {
@@ -53460,7 +53275,7 @@ var util_async = (__this, __arguments, generator) => {
   });
 };
 function getCpuInfo() {
-  return util_async(this, null, function* () {
+  return sysInfo_util_async(this, null, function* () {
     const info = {
       cpuCores: "\u672A\u77E5"
     };

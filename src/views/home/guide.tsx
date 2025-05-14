@@ -21,7 +21,7 @@ export function GuideRender(props: { guide: Guide[] }) {
   const { guide } = props
   return (
     <div className="guide">
-      {guide.map((item: Guide, i: number) => {
+      {guide?.map((item: Guide, i: number) => {
         const { name, next } = item
         return (
           <div className="guide-module" key={i}>
