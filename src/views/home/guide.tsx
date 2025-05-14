@@ -6,7 +6,12 @@ export function GuideRender(props: { guide: Guide[] }) {
     return (
       <div
         className="guide-item"
-        onClick={() => window.open(`https://${url}`, '_blank')}
+        onClick={() =>
+          window.open(
+            url.indexOf('http') > -1 ? url : `https://${url}`,
+            '_blank',
+          )
+        }
       >
         {name}
       </div>
