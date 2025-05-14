@@ -22,6 +22,7 @@ export function SystemInfo() {
     ['堆内存上限', 'jsHeapSizeLimit', 'MB'],
     ['User Agent', 'userAgent'],
   ]
+
   return (
     <Grid
       className="sys-info system-information"

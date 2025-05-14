@@ -1,4 +1,48 @@
 .home {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  .guide {
+    border-radius: 12px;
+    padding-left: 10px;
+    // padding: 0 10px 10px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    line-height: 28px;
+
+    .guide-module {
+      display: flex;
+      gap: 10px;
+      flex-direction: row;
+      line-height: 28px;
+
+      .title {
+        font-weight: bold;
+        color: #999;
+      }
+
+      .guide-next {
+        display: flex;
+        gap: 0 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .guide-item {
+          color: #666;
+          cursor: pointer;
+        }
+      }
+    }
+
+
+
+  }
+
   .layout {
     display: flex;
     align-items: center;
@@ -6,7 +50,6 @@
     flex-wrap: wrap;
     gap: 10px;
     padding: 24px;
-    min-height: 100vh;
   }
 
   .card {
@@ -14,13 +57,13 @@
     width: 300px;
     height: 120px;
     border: none;
-    box-shadow: 0 0 2px rgba(#fff, .9);
-    background-color: rgba(#fff, .3);
+    // box-shadow: 0 0 2px rgba(#fff, .9);
     border-radius: 12px;
     padding: 16px 18px;
     font-size: large;
     font-weight: bold;
     cursor: pointer;
+    background: rgba(#fff, .3);
 
     .logo {
       display: inline-flex;
@@ -30,8 +73,8 @@
       height: 48px;
       font-size: 32px;
       padding: 8px;
-      box-shadow: 0 0 2px rgba(#fff, .9);
-      background-color: rgba(#fff, .3);
+      padding-bottom: 14px;
+      padding-left: 10px;
       border-radius: 12px;
     }
 

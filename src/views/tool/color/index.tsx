@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.less'
-import { copyText } from 'harpe'
+import { classNames, copyText } from 'harpe'
 import { conf } from './conf'
 import { message } from '../msg'
 
@@ -8,10 +8,10 @@ export function Color() {
   return (
     <div className="tool-color">
       <div className="tool-color-layout">
-        {conf.map(([name, value], i) => {
+        {conf.map(([name, value, addClassName], i) => {
           return (
             <div
-              className="item"
+              className={classNames("item", addClassName)}
               key={i}
               onClick={() => {
                 if (copyText(value)) {

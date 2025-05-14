@@ -1,0 +1,59 @@
+.select-page {
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
+
+  &-team {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-member {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 240px;
+      height: 400px;
+      border-radius: 12px;
+      border: 2px solid #888;
+      zoom: .5;
+      cursor: pointer;
+
+      svg {
+        font-size: 64px;
+      }
+    }
+  }
+
+}
+
+.select-page-select-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: 600px;
+  overflow-y: auto;
+
+  &>.info-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 7em;
+    height: 7em;
+    padding: 10px;
+    border: 2px solid #888;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background .6s;
+
+    &.select {
+      background-color: #666;
+    }
+  }
+}

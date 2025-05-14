@@ -47,5 +47,3 @@ apiServer({
   callback: apiServerCallback,
   port: 10086
 })
-
-// 控制台就有接口显示出来

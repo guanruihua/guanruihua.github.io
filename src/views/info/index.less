@@ -1,0 +1,73 @@
+.info {
+  padding: 12px;
+
+  .module {
+    margin-bottom: 20px;
+
+    h3 {
+      margin-bottom: 16px;
+    }
+  }
+
+  .core-stock {
+    &>.content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 320px);
+      gap: 10px;
+    }
+  }
+
+  .card {
+    width: 320px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    font-size: 12px;
+    position: relative;
+
+    .field {
+      color: #9DA2AF;
+    }
+
+    .symbol {
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .b {
+      color: #e3e4e8;
+    }
+
+    .change {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 5px 0 10px 0;
+      zoom: 1.5;
+
+      &.up {
+        color: red;
+      }
+
+      &.down {
+        color: green;
+      }
+    }
+
+    .close {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .timestamp {
+      position: absolute;
+      font-size: 10px;
+      right: 10px;
+      bottom: 10px;
+    }
+  }
+}

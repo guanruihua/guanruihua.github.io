@@ -5,6 +5,7 @@ import { ConverterChinese } from './converter'
 import { Color } from './color'
 import { Test } from './test'
 import { SystemInfo } from './sysInfo'
+import { SelectPage } from './select'
 
 export const ToolRouter = {
   path: '/tool',
@@ -24,6 +25,11 @@ export const ToolRouter = {
       path: 'color',
       name: 'Color',
       element: <Color />,
+    },
+    {
+      path: 'select',
+      name: 'Select',
+      element: <SelectPage />,
     },
     {
       path: 'system-info',

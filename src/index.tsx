@@ -8,6 +8,8 @@ import { Dev } from './views/Dev'
 import './index.less'
 import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
+import { Info } from './views/info'
+import { StudyRouter } from './views/study/router'
 
 const routes: RouteObject[] = [
   {
@@ -27,6 +29,11 @@ const routes: RouteObject[] = [
         path: '/dev',
         element: <Dev />,
       },
+      {
+        path: '/info',
+        element: <Info />,
+      },
+      StudyRouter,
     ],
   },
 ]
@@ -34,9 +41,11 @@ const routes: RouteObject[] = [
 function App() {
   return (
     <RouterProvider
+      future={{
+        v7_startTransition: true,
+      }}
       router={createHashRouter(routes, {
         future: {
-          // v7_startTransition: true,
           v7_relativeSplatPath: true,
         },
       })}

@@ -1,4 +1,4 @@
-export const conf: [string, string][] = [
+export const conf: ([string, string] | [string, string, string])[] = [
   ['神秘紫蓝渐变', 'linear-gradient(135deg,#c850c0,#4158d0)'],
   ['天空蓝渐变', 'linear-gradient(135deg,#a1c4fd,#c2e9fb)'],
   ['瑰丽紫红渐变', 'linear-gradient(135deg,#ff9a9e,#fad0c4)'],
@@ -21,5 +21,21 @@ export const conf: [string, string][] = [
   [
     '热带夏日渐变',
     'linear-gradient(135deg,#ffbe0c,#ffda0c,#fff70c,#c2ff0c,#7aff0c)',
+  ],
+  // --------
+  [
+    '右上蓝',
+    'radial-gradient(ellipse at right top, #00458f8f 0%, #151419 45%, #151419 100%)',
+    'double',
+  ],
+  [
+    '右上绿',
+    'radial-gradient(ellipse at right top, #107667ed 0%, #151419 47%, #151419 100%)',
+    'double',
+  ],
+  [
+    '右上红',
+    'radial-gradient(ellipse at right top, #a63d2a82 0%, #151419 47%, #151419 100%)',
+    'double',
   ],
 ]
