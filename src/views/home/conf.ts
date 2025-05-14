@@ -107,9 +107,12 @@ export const conf: Conf = {
         ['three.js 中文网', 'http://www.webgl3d.cn/pages/aac9ab/'],
         ['fabricjs', 'fabricjs.com/api'],
         ['PixiJS', 'pixijs.com/'],
-        ['Sketchfab·3D Models','sketchfab.com/'],
-        ['Fab·Free 3D Models','www.fab.com/category/3d-model?q=tree&is_free=1'],
-        ['Konva·H5 Canvas ','konvajs-doc.bluehymn.com'],
+        ['Sketchfab·3D Models', 'sketchfab.com/'],
+        [
+          'Fab·Free 3D Models',
+          'www.fab.com/category/3d-model?q=tree&is_free=1',
+        ],
+        ['Konva·H5 Canvas ', 'konvajs-doc.bluehymn.com'],
         // ['',''],
       ],
     },
@@ -132,6 +135,7 @@ export const conf: Conf = {
         ['知乎', 'www.zhihu.com/hot'],
         ['今日热榜', 'hot.imsyy.top/#/'],
         ['百度热搜', 'top.baidu.com/board?tab=realtime'],
+        ['七麦数据', 'https://www.qimai.cn/rank'],
         ['音乐 ZZ123', 'zz123.com/'],
         ['极客湾移动芯片排行', 'www.socpk.com/'],
         ['摸鱼岛', 'fish.codebug.icu'],
@@ -162,7 +166,7 @@ export const conf: Conf = {
     {
       name: '工具 / 资源',
       next: [
-        ['壁纸', 'alphacoders.com/', 'wallpaper'],
+        ['Alpha Coders 壁纸', 'alphacoders.com/', 'wallpaper'],
         ['致美化(主题,壁纸)', 'zhutix.com/'],
         ['插画, 漫画, 小说', 'www.pixiv.net/'],
         ['图片压缩zippic', 'www.zippic.cn/'],
