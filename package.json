@@ -31,6 +31,7 @@
     "0type": "^0.2.0",
     "0vdao": "^0.0.10",
     "@babel/core": "^7.23.0",
+    "@codesandbox/sandpack-react": "^2.20.0",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@dnd-kit/sortable": "^7.0.2",

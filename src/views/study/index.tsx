@@ -12,7 +12,6 @@ const conf = [
         label: 'flex',
         path: 'css-flex',
       },
-      
     ],
   },
   {
@@ -24,41 +23,55 @@ const conf = [
       },
     ],
   },
+  {
+    label: 'Other',
+    children: [
+      {
+        label: '沙盒',
+        path: 'sandbox',
+      },
+      {
+        label: 'Dev',
+        path: 'dev',
+      },
+    ],
+  },
 ]
 
 export function Study() {
   const nav = useNavigate()
   const location = useLocation()
   const { pathname } = location
-  const [state, setState] = useSetState({
-  })
+  const [state, setState] = useSetState({})
 
   return (
     <div className="study-page">
-
-      {pathname === '/study' &&
-        conf.map((item, i) => {
-          return (
-            <div className="study-page-module" key={i}>
-              <h3 className="study-page-module-title">{item.label}</h3>
-              {item.children && (
-                <div className="study-page-module-box">
-                  {item.children.map((child, j) => {
-                    return (
-                      <div
-                        key={j}
-                        className="study-page-module-item"
-                        onClick={() => nav(child.path)}
-                      >
-                        {child.label}
-                      </div>
-                    )
-                  })}
-                </div>
-              )}
-            </div>
-          )
-        })}
+      {pathname === '/study' && (
+        <div className='study-page-module-layout'>
+          {conf.map((item, i) => {
+            return (
+              <div className="study-page-module" key={i}>
+                <h3 className="study-page-module-title">{item.label}</h3>
+                {item.children && (
+                  <div className="study-page-module-box">
+                    {item.children.map((child, j) => {
+                      return (
+                        <div
+                          key={j}
+                          className="study-page-module-item"
+                          onClick={() => nav(child.path)}
+                        >
+                          {child.label}
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      )}
       <Outlet />
     </div>
   )
