@@ -3,7 +3,6 @@ import {} from 'aurad'
 import { isEffectArray } from 'asura-eye'
 import { NPMCmd } from './components'
 import './index.less'
-import { pkgConf } from './conf'
 import type { PkgConf } from './type'
 import { adapter } from './utils'
 import { Logo } from '@/components'
@@ -15,23 +14,37 @@ const handleClick = (item: PkgConf) => {
   }
   window.open(`https://www.npmjs.com/package/${item.name}`, '_blank')
 }
-const renderPkgConf = pkgConf.map(adapter)
 
 export function Pkg() {
+  const [state, setState] = React.useState<PkgConf[]>([])
+  // const renderPkgConf = pkgConf.map(adapter)
+  const init = async () => {
+    try {
+      const res = await fetch('/pkg.json')
+      const data = await res.json()
+      setState(data.map(adapter))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   const [num, setNum] = React.useState<number>(5)
   const resize = () => {
     const { width } = document.body.getBoundingClientRect()
     const num = Math.min(9, Math.floor(width / 360))
     setNum(num)
   }
+
   React.useEffect(() => {
+    init()
     resize()
     window.onresize = resize
   }, [])
+
   return (
     <div className="package">
       <div className="layout" style={{ columnCount: num }}>
-        {renderPkgConf.map((_, i) => {
+        {state.map((_, i) => {
           return (
             <div className="card" key={i}>
               <div className="header" onClick={() => handleClick(_)}>
@@ -43,7 +56,7 @@ export function Pkg() {
               {_.desc && <div className="desc">{_.desc}</div>}
               {_.install !== false && _.name && (
                 <div className="install">
-                  <NPMCmd name={_.name} />
+                  <NPMCmd name={_.installName ?? _.name} />
                 </div>
               )}
               {isEffectArray<any>(_.shields) && (

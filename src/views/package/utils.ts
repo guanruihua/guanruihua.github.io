@@ -6,7 +6,7 @@ export const adapter = (_: PkgConf) => {
   if(isString(_.tags)){
     _.tags = _.tags.split(' ')
   }
-  if (_.name) {
+  if (_.name || _.installName) {
     const shields: Shield[] = _.shields || []
     if (_.type === 'Non-Open-Source') {
       shields.push({
@@ -16,8 +16,8 @@ export const adapter = (_: PkgConf) => {
       })
     } else {
       shields.push({
-        url: `https://www.npmjs.com/package/${_.name}`,
-        logo: `https://img.shields.io/npm/v/${_.name}.svg?style=flat`
+        url: `https://www.npmjs.com/package/${_.installName || _.name}`,
+        logo: `https://img.shields.io/npm/v/${_.installName || _.name}.svg?style=flat`
       })
       if (_.github) {
         shields.push({

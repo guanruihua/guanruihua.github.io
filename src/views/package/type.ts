@@ -1,5 +1,3 @@
-import { ObjectType } from 'abandonjs'
-
 export type PkgType = 'Non-Open-Source' | 'default' | string
 
 export type Shield = {
