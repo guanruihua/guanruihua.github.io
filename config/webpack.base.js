@@ -2,7 +2,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const rules = require('./webpack.rules')
 const path = require("path")
-// const MyPlugin  = require('./plugin')
 // const { ESBuildPlugin } = require('esbuild-loader')
 
 module.exports = {
@@ -23,9 +22,6 @@ module.exports = {
 		rules, 
 	},
 	plugins: [
-		// new MyPlugin({
-		// 	name: 'myPlugin',
-		// }),
 		// new ESBuildPlugin(),
 		//数组 放着所有的webpack插件
 		new HtmlWebpackPlugin({

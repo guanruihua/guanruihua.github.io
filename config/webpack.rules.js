@@ -1,3 +1,7 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const env = process.env.NODE_ENV // 'development' 或 'production'
+console.log(`当前环境: ${env}`)
+
 module.exports = [
   {
     test: /\.tsx?$/,
@@ -13,15 +17,22 @@ module.exports = [
   },
   {
     test: /\.css$/,
-    use: ['style-loader', 'css-loader'],
+    use: [
+      process.env.NODE_ENV === 'production'
+        ? MiniCssExtractPlugin.loader
+        : 'style-loader',
+      'css-loader',
+    ],
   },
   {
     test: /\.less$/,
     exclude: /\.module.less/,
     use: [
-      {
-        loader: 'style-loader',
-      },
+      process.env.NODE_ENV === 'production'
+        ? MiniCssExtractPlugin.loader
+        : {
+            loader: 'style-loader',
+          },
       {
         loader: 'css-loader', // translates CSS into CommonJS
       },

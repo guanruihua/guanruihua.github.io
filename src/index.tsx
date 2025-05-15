@@ -9,6 +9,7 @@ import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
 import { Info } from './views/info'
 import { StudyRouter } from './views/study/router'
+import { Sandbox } from './views/sandbox'
 
 const routes: RouteObject[] = [
   {
@@ -27,6 +28,10 @@ const routes: RouteObject[] = [
       {
         path: '/info',
         element: <Info />,
+      },
+      {
+        path: '/sandbox',
+        element: <Sandbox />,
       },
       StudyRouter,
     ],
