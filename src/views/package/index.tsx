@@ -17,7 +17,7 @@ const handleClick = (item: PkgConf) => {
 
 export function Pkg() {
   const [state, setState] = React.useState<PkgConf[]>([])
-  // const renderPkgConf = pkgConf.map(adapter)
+
   const init = async () => {
     try {
       const res = await fetch('/pkg.json')
