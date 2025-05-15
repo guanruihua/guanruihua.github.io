@@ -12,6 +12,10 @@ const conf = [
         label: 'flex',
         path: 'css-flex',
       },
+      {
+        label: 'grid',
+        path: 'css-grid',
+      },
     ],
   },
   {
@@ -26,10 +30,6 @@ const conf = [
   {
     label: 'Other',
     children: [
-      {
-        label: '沙盒',
-        path: 'sandbox',
-      },
       {
         label: 'Dev',
         path: 'dev',
@@ -47,7 +47,7 @@ export function Study() {
   return (
     <div className="study-page">
       {pathname === '/study' && (
-        <div className='study-page-module-layout'>
+        <div className="study-page-module-layout">
           {conf.map((item, i) => {
             return (
               <div className="study-page-module" key={i}>
