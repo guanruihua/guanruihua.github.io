@@ -1,5 +1,5 @@
 import React from 'react'
-import { Logo } from '@/components'
+// import { Logo } from '@/components'
 import { Outlet, useNavigate } from 'react-router'
 import './index.less'
 import { ToolRouter } from './router'
@@ -14,7 +14,7 @@ export function Tool() {
           const { name, path } = item
           return (
             <div key={i} className="card" onClick={() => nav(path)}>
-              <Logo label={name} />
+              {/* <Logo label={name} /> */}
               <div className="name" title={name}>
                 {name}
               </div>

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "note",
+    "label": "Note",
+    "url": "ruihuag-note.github.io/",
+    "style": {
+      "background": "radial-gradient(ellipse at right top, #5756CD 0%, #151419 47%, #151419 100%)"
+    }
+  },
+  {
+    "name": "sandbox",
+    "label": "Sandbox",
+    "style": {
+      "background": "radial-gradient(ellipse at right top, #3B007B 0%, #151419 47%, #151419 100%)"
+    }
+  },
+  {
+    "name": "tool",
+    "label": "Tool",
+    "style": {
+      "background": "radial-gradient(ellipse at right top, #a63d2a82 0%, #151419 47%, #151419 100%)"
+    }
+  },
+  {
+    "name": "pkg",
+    "label": "Package",
+    "style": {
+      "background": "radial-gradient(ellipse at right top, #107667ed 0%, #151419 47%, #151419 100%)"
+    }
+  },
+  {
+    "name": "study",
+    "label": "Study",
+    "style": {
+      "background": "radial-gradient(ellipse at right top, #00458f8f 0%, #151419 45%, #151419 100%)"
+    }
+  }
+]

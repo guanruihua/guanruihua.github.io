@@ -1,5 +1,14 @@
 [
   {
+    "name": "dnd kit",
+    "installName": "@dnd-kit/core",
+    "label": "dnd kit",
+    "home": "https://docs.dndkit.com/introduction/getting-started",
+    "tags": [
+      "dnd kit"
+    ]
+  },
+  {
     "name": "vuetify",
     "label": "vuetify",
     "logo": "vuetifyjs.com",

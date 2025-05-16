@@ -27,14 +27,14 @@ export const ToolRouter = {
       element: <Color />,
     },
     {
-      path: 'select',
-      name: 'Select',
-      element: <SelectPage />,
-    },
-    {
       path: 'system-info',
       name: 'System Information',
       element: <SystemInfo />,
+    },
+    {
+      path: 'select',
+      name: 'Select',
+      element: <SelectPage />,
     },
     {
       path: 'test',

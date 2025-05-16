@@ -11,18 +11,21 @@ export function Home() {
       return window.open(item.url, '_blank')
     } else nav(item.name)
   }
-  const [state, setState] = React.useState<Conf>({
-    items: [],
-    guide: [],
-  })
+  const [items, setItems] = React.useState<Conf['items']>([])
+  const [guide, setGuide] = React.useState<Conf['guide']>([])
   const init = async () => {
-    try {
-      const res = await fetch('/guide.json')
-      const data = await res.json()
-      setState(data)
-    } catch (error) {
-      console.error(error)
-    }
+    fetch('/home-items.json')
+      .then(async (res) => {
+        const data = await res.json()
+        setItems(data)
+      })
+      .catch(console.error)
+    fetch('/guide.json')
+      .then(async (res) => {
+        const data = await res.json()
+        setGuide(data)
+      })
+      .catch(console.error)
   }
   React.useEffect(() => {
     init()
@@ -31,7 +34,7 @@ export function Home() {
   return (
     <div className="home">
       <div className="layout">
-        {state?.items?.map((item, i) => {
+        {items?.map((item, i) => {
           return (
             <div
               className="card"
@@ -45,7 +48,7 @@ export function Home() {
           )
         })}
       </div>
-      <GuideRender guide={state?.guide} />
+      <GuideRender guide={guide} />
     </div>
   )
 }

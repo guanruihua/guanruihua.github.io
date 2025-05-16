@@ -2,9 +2,9 @@ import React from 'react'
 import './index.less'
 import { useSetState } from '0hook'
 import { classNames } from 'harpe'
-import { Dialog, Icon } from 'aurad'
+import { Dialog } from 'aurad'
 import { ObjectType } from '0type'
-import { stringify } from 'abandonjs'
+
 interface State {
   select: (string | number)[]
   open: boolean
@@ -23,14 +23,11 @@ const defaultValue: State = {
 export function SelectPage() {
   const [state, setState] = useSetState<State>(defaultValue, 'SelectPage-State')
 
-  // React.useEffect(() => {
-  //   localStorage.setItem('SelectPage-State', stringify(defaultValue))
-  // }, [])
-
   const list = new Array(100).fill('')
 
   return (
     <div className="select-page">
+      {/* <Pages layout={Layout.Horizontal} /> */}
       <div className="select-page-team">
         {state.team?.map((item, i) => {
           const {} = item
