@@ -4,6 +4,7 @@
     "installName": "@dnd-kit/core",
     "label": "dnd kit",
     "home": "https://docs.dndkit.com/introduction/getting-started",
+    "example": "https://codesandbox.io/examples/package/@dnd-kit/core",
     "tags": [
       "dnd kit"
     ]

@@ -4,6 +4,9 @@ import { useSetState } from '0hook'
 import { classNames } from 'harpe'
 import { Dialog } from 'aurad'
 import { ObjectType } from '0type'
+import { DndBox } from './dnd-box'
+import { rectSortingStrategy } from '@dnd-kit/sortable'
+import { MultipleContainers } from './multiple-containers'
 
 interface State {
   select: (string | number)[]
@@ -27,8 +30,12 @@ export function SelectPage() {
 
   return (
     <div className="select-page">
-      {/* <Pages layout={Layout.Horizontal} /> */}
-      <div className="select-page-team">
+      <MultipleContainers
+        itemCount={6}
+        strategy={rectSortingStrategy}
+      />
+      {/* <DndBox /> */}
+      {/* <div className="select-page-team">
         {state.team?.map((item, i) => {
           const {} = item
           return (
@@ -84,7 +91,7 @@ export function SelectPage() {
             )
           })}
         </div>
-      </Dialog>
+      </Dialog> */}
     </div>
   )
 }

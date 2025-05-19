@@ -5,7 +5,6 @@ import { NPMCmd } from './components'
 import './index.less'
 import type { PkgConf } from './type'
 import { adapter } from './utils'
-import { Logo } from '@/components'
 
 const handleClick = (item: PkgConf) => {
   if (item.home) {
@@ -48,9 +47,6 @@ export function Pkg() {
           return (
             <div className="card" key={i}>
               <div className="header" onClick={() => handleClick(_)}>
-                <div className="logo">
-                  <Logo {..._} />
-                </div>
                 <div className="label">{_.label}</div>
               </div>
               {_.desc && <div className="desc">{_.desc}</div>}
@@ -58,6 +54,11 @@ export function Pkg() {
                 <div className="install">
                   <NPMCmd name={_.installName ?? _.name} />
                 </div>
+              )}
+              {_.example && (
+                <a className='example' key={i} href={_.example} target="_blank">
+                  Example
+                </a>
               )}
               {isEffectArray<any>(_.shields) && (
                 <div className="shields">
