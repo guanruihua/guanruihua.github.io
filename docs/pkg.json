@@ -3,11 +3,14 @@
     "name": "dnd kit",
     "installName": "@dnd-kit/core",
     "label": "dnd kit",
+    "desc": "轻量级 React 库，用于构建性能卓越、易于访问的拖放体验。",
+    "desc.en": "Lightweight React library for building performant and accessible drag and drop experiences.",
     "home": "https://docs.dndkit.com/introduction/getting-started",
     "example": "https://codesandbox.io/examples/package/@dnd-kit/core",
-    "tags": [
-      "dnd kit"
-    ]
+    "license": "MIT",
+    "github": "clauderic/dnd-kit",
+    "licensePath": "https://github.com/clauderic/dnd-kit/blob/master/LICENSE",
+    "tags": ["dnd kit"]
   },
   {
     "name": "vuetify",

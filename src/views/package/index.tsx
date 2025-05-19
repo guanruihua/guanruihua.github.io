@@ -5,6 +5,7 @@ import { NPMCmd } from './components'
 import './index.less'
 import type { PkgConf } from './type'
 import { adapter } from './utils'
+import { Container } from '@/components'
 
 const handleClick = (item: PkgConf) => {
   if (item.home) {
@@ -41,56 +42,52 @@ export function Pkg() {
   }, [])
 
   return (
-    <div className="package">
-      <div className="layout" style={{ columnCount: num }}>
-        {state.map((_, i) => {
-          return (
-            <div className="card" key={i}>
-              <div className="header" onClick={() => handleClick(_)}>
-                <div className="label">{_.label}</div>
-              </div>
-              {_.desc && <div className="desc">{_.desc}</div>}
-              {_.install !== false && _.name && (
-                <div className="install">
-                  <NPMCmd name={_.installName ?? _.name} />
+    <Container>
+      <div className="package">
+        <div className="layout" style={{ columnCount: num }}>
+          {state.map((_, i) => {
+            return (
+              <div className="card" key={i}>
+                <div className="header" onClick={() => handleClick(_)}>
+                  <div className="label">{_.label}</div>
                 </div>
-              )}
-              {_.example && (
-                <a className='example' key={i} href={_.example} target="_blank">
-                  Example
-                </a>
-              )}
-              {isEffectArray<any>(_.shields) && (
                 <div className="shields">
-                  {_.shields.map((item, i) => {
-                    if (item.type === 'Non-Open-Source') {
+                  {isEffectArray<any>(_.shields) &&
+                    _.shields.map((item, i) => {
+                      if (item.type === 'Non-Open-Source') {
+                        return (
+                          <span key={i} className="Non-Open-Source">
+                            Non-Open-Source
+                          </span>
+                        )
+                      }
                       return (
-                        <span key={i} className="Non-Open-Source">
-                          Non-Open-Source
-                        </span>
+                        <a key={i} href={item.url} target="_blank">
+                          <img src={item.logo} />
+                        </a>
                       )
-                    }
-                    return (
-                      <a key={i} href={item.url} target="_blank">
-                        <img src={item.logo} />
-                      </a>
-                    )
-                  })}
+                    })}
                 </div>
-              )}
-              {isEffectArray(_.tags) && (
-                <div className="tags" key={num}>
-                  {_.tags.map((tag: string, i: number) => (
-                    <div className="tag" key={tag + 'tag' + i}>
-                      {tag}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          )
-        })}
+                {_.desc && <div className="desc">{_.desc}</div>}
+                {_.install !== false && _.name && (
+                  <div className="install">
+                    <NPMCmd name={_.installName ?? _.name} />
+                  </div>
+                )}
+                {isEffectArray(_.tags) && (
+                  <div className="tags" key={num}>
+                    {_.tags.map((tag: string, i: number) => (
+                      <div className="tag" key={tag + 'tag' + i}>
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </Container>
   )
 }

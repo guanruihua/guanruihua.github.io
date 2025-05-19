@@ -1,19 +1,17 @@
 .tool {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: auto 1fr;
   justify-content: center;
-  flex-direction: column;
   padding: 12px;
   gap: 10px;
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
+  height: 100%;
   overflow: hidden;
 
-  &-layout-left {
-    display: flex;
+  &-layout-left>div {
+    display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
+    max-width: 240px;
     gap: 10px;
     border: 2px solid rgba(255, 255, 255, .3);
     border-radius: 16px;

@@ -11,7 +11,6 @@
     &>.card {
       page-break-inside: avoid;
       -webkit-column-break-inside: avoid;
-      margin-bottom: 10px;
     }
   }
 
@@ -19,37 +18,27 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px 10px;
-
+    gap: 10px;
     max-width: 350px;
     border: none;
     box-shadow: 0 0 2px rgba(#fff, .1);
-    background-color: rgba(#fff, .2);
+    background: rgba(#fff, .2);
     border-radius: 12px;
-    padding: 16px 18px;
+
+    padding: 16px;
+    margin-bottom: 30px;
+
     font-size: large;
     font-weight: bold;
 
-    .header {
+    &>.header {
       cursor: pointer;
       letter-spacing: 1.4px;
-    }
-
-    .logo-layout>span {
-      width: 20px;
-      height: 20px;
-      width: 32px;
-      height: 32px;
-      font-size: 22px;
-      padding: 4px;
-      box-shadow: 0 0 2px rgba(#fff, .2);
-      background-color: rgba(#fff, .4);
-      border-radius: 6px;
-
-      img {
-        width: 16px;
-        height: 16px;
-      }
+      background: #7a7a7a;
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      margin-top: -35px;
     }
 
     .desc {
@@ -58,19 +47,22 @@
       letter-spacing: 1.4px;
     }
 
-    .logo {
-      display: inline-block;
-    }
-
-    .example{
-      color: green;
+    .example {
+      color: #fff;
+      height: 20px;
+      line-height: 20px;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 0 5px;
+      border-radius: 3px;
+      vertical-align: middle;
+      background-color: #3181C2;
       text-decoration: none;
     }
+
     .label {
       display: inline-block;
-      // margin-left: 10px;
     }
-
     .install {
       .au-tab {
         .header {
@@ -105,7 +97,6 @@
 
         &.Non-Open-Source {
           background: #EE7F3B;
-          // background: #F7531B;
         }
       }
 
@@ -121,6 +112,7 @@
       flex-wrap: wrap;
       gap: 8px 10px;
       zoom: .8;
+      transition: all 1.2s;
 
       .tag {
         color: rgba(#fff, .65);

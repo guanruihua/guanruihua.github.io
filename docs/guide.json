@@ -26,6 +26,7 @@
   },
   {
     "name": "Web",
+    "PE": true,
     "next": [
       ["MDN Web Docs", "developer.mozilla.org/zh-CN/"],
       ["Can I use", "caniuse.com/", "css caniuse"],
@@ -36,6 +37,7 @@
   },
   {
     "name": "UI 组件库",
+    "PE": true,
     "next": [
       [
         "Antd",
@@ -54,6 +56,7 @@
   },
   {
     "name": "UI 模板库",
+    "PE": true,
     "next": [
       ["iconify", "icon-sets.iconify.design"],
       ["Remix Icon", "remixicon.com"],
@@ -67,12 +70,16 @@
         "Hyper Dashboard",
         "coderthemes.com/hyper/saas/dashboard-analytics.html"
       ],
-      ["Material Dashboard Laravel Livewire","https://material-dashboard-laravel-livewire.creative-tim.com/dashboard"],
+      [
+        "Material Dashboard Laravel Livewire",
+        "https://material-dashboard-laravel-livewire.creative-tim.com/dashboard"
+      ],
       ["Wired Elements", "wiredjs.com/"]
     ]
   },
   {
     "name": "WebGL",
+    "PE": true,
     "next": [
       ["three.js", "threejs.org/manual/#zh/fundamentals"],
       ["three.js 中文网", "http://www.webgl3d.cn/pages/aac9ab/"],
@@ -85,6 +92,7 @@
   },
   {
     "name": "技术社区",
+    "PE": true,
     "next": [
       ["掘金", "juejin.cn/"],
       ["Code Pen", "codepen.io"],
@@ -117,14 +125,17 @@
   {
     "name": "工具 / 资源",
     "next": [
-      ["Alpha Coders 壁纸", "alphacoders.com/", "wallpaper"],
-      ["致美化(主题,壁纸)", "zhutix.com/"],
-      ["插画, 漫画, 小说", "www.pixiv.net/"],
-      ["图片压缩zippic", "www.zippic.cn/"]
+      ["Alpha Coders 壁纸", "alphacoders.com", "wallpaper"],
+      ["致美化(主题,壁纸)", "zhutix.com"],
+      ["插画, 漫画, 小说", "www.pixiv.net"],
+      ["果核剥壳", "www.ghxi.com"],
+      ["极简浏览器插件", "chrome.zzzmh.cn/index"],
+      ["图片压缩zippic", "www.zippic.cn"]
     ]
   },
   {
     "name": "编程工具(集)",
+    "PE": true,
     "next": [
       [
         "Regulex",
@@ -164,6 +175,7 @@
   },
   {
     "name": "Platform",
+    "PE": true,
     "next": [
       ["npmjs", "www.npmjs.com"],
       ["deepseek", "platform.deepseek.com/usage"]

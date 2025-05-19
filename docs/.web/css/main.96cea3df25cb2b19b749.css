@@ -11,51 +11,46 @@
 .package .layout > .card {
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
-  margin-bottom: 10px;
 }
 .package .card {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px 10px;
+  gap: 10px;
   max-width: 350px;
   border: none;
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
-  padding: 16px 18px;
+  padding: 16px;
+  margin-bottom: 30px;
   font-size: large;
   font-weight: bold;
 }
-.package .card .header {
+.package .card > .header {
   cursor: pointer;
   letter-spacing: 1.4px;
-}
-.package .card .logo-layout > span {
-  width: 20px;
-  height: 20px;
-  width: 32px;
-  height: 32px;
-  font-size: 22px;
-  padding: 4px;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
-}
-.package .card .logo-layout > span img {
-  width: 16px;
-  height: 16px;
+  background: #7a7a7a;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: -35px;
 }
 .package .card .desc {
   font-size: 12px;
   word-spacing: 1px;
   letter-spacing: 1.4px;
 }
-.package .card .logo {
-  display: inline-block;
-}
 .package .card .example {
-  color: green;
+  color: #fff;
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 0 5px;
+  border-radius: 3px;
+  vertical-align: middle;
+  background-color: #3181C2;
   text-decoration: none;
 }
 .package .card .label {
@@ -98,6 +93,7 @@
   flex-wrap: wrap;
   gap: 8px 10px;
   zoom: 0.8;
+  transition: all 1.2s;
 }
 .package .card .tags .tag {
   color: rgba(255, 255, 255, 0.65);
@@ -110,6 +106,50 @@
   letter-spacing: 1.5px;
   line-height: 22px;
   height: 22px;
+}
+
+.logo-layout {
+  display: inline-block;
+}
+.logo-layout > span {
+  margin: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.logo-layout img {
+  border: none;
+  font-size: 16px;
+}
+.logo-layout .hidden {
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  visibility: hidden;
+}
+
+.layout-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 0 24px 0 12px;
+  width: auto;
+  height: 32px;
+  gap: 12px;
+  background: linear-gradient(to right, #3C3C3C, #000);
+}
+.layout-header .control {
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.layout-container .layout-box {
+  margin-top: 32px;
+  max-height: calc(100vh - 32px);
 }
 
 * {
@@ -222,6 +262,9 @@ body {
   bottom: 12px;
   right: 12px;
 }
+.control.PE.disabled {
+  text-decoration: line-through;
+}
 
 button {
   background: #000;
@@ -240,26 +283,24 @@ body {
 
 .tool {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: auto 1fr;
   justify-content: center;
-  flex-direction: column;
   padding: 12px;
   gap: 10px;
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
-.tool-layout-left {
-  display: flex;
+.tool-layout-left > div {
+  display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
+  max-width: 240px;
   gap: 10px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 8px 12px;
 }
-.tool-layout-left .name {
+.tool-layout-left > div .name {
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -396,6 +437,7 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 8px 12px;
+  color: #fff;
 }
 .converter-Chinese-center {
   display: flex;
