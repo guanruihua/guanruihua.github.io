@@ -10,6 +10,7 @@ import { ToolRouter } from './views/tool/router'
 import { Info } from './views/info'
 import { StudyRouter } from './views/study/router'
 import { Sandbox } from './views/sandbox'
+import { DevRouter } from './views/dev/router'
 
 const routes: RouteObject[] = [
   {
@@ -34,6 +35,7 @@ const routes: RouteObject[] = [
         element: <Sandbox />,
       },
       StudyRouter,
+      DevRouter,
     ],
   },
 ]

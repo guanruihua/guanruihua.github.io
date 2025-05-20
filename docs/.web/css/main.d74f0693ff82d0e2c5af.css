@@ -136,11 +136,12 @@
   z-index: 10;
   display: flex;
   align-items: center;
-  padding: 0 24px 0 12px;
+  padding: 0 12px 0 12px;
   width: auto;
   height: 32px;
   gap: 12px;
   background: linear-gradient(to right, #3C3C3C, #000);
+  border-bottom-right-radius: 16px;
 }
 .layout-header .control {
   font-size: 10px;
@@ -1293,5 +1294,46 @@ body {
 }
 .sandbox .sandbox-settings svg {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.dev-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+.dev-page .dev-page-modules {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.dev-page .dev-page-modules-card {
+  position: relative;
+  width: 300px;
+  height: 120px;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+}
+.dev-page .dev-page-modules-card .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  padding: 8px;
+  padding-bottom: 14px;
+  padding-left: 10px;
+  border-radius: 12px;
+}
+.dev-page .dev-page-modules-card .name {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
 }
 

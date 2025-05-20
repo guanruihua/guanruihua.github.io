@@ -1,0 +1,131 @@
+.package {
+  display: flex;
+  justify-content: center;
+
+  .layout {
+    column-count: 5;
+    overflow: auto;
+    padding: 24px;
+    column-gap: 10px;
+
+    &>.card {
+      page-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+    }
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    border: none;
+    box-shadow: 0 0 2px rgba(#fff, .1);
+    background: rgba(#fff, .2);
+    border-radius: 12px;
+
+    padding: 16px;
+    margin-bottom: 30px;
+
+    font-size: large;
+    font-weight: bold;
+
+    &>.header {
+      cursor: pointer;
+      letter-spacing: 1.4px;
+      background: #7a7a7a;
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      margin-top: -35px;
+    }
+
+    .desc {
+      font-size: 12px;
+      word-spacing: 1px;
+      letter-spacing: 1.4px;
+    }
+
+    .example {
+      color: #fff;
+      height: 20px;
+      line-height: 20px;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 0 5px;
+      border-radius: 3px;
+      vertical-align: middle;
+      background-color: #3181C2;
+      text-decoration: none;
+    }
+
+    .label {
+      display: inline-block;
+    }
+    .install {
+      .au-tab {
+        .header {
+          font-size: 12px;
+        }
+      }
+
+      .cmd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        background-color: rgba(#fff, .1);
+        padding: 6px 8px;
+        border-radius: 8px;
+      }
+    }
+
+    .shields {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 5px;
+      zoom: .9;
+
+      span {
+        height: 22px;
+        line-height: 22px;
+        padding: 0 8px;
+        font-size: 11px;
+        background: #5C5C5C;
+        border-radius: 4px;
+
+        &.Non-Open-Source {
+          background: #EE7F3B;
+        }
+      }
+
+      img {
+        min-height: 22px;
+      }
+
+
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      zoom: .8;
+      transition: all 1.2s;
+
+      .tag {
+        color: rgba(#fff, .65);
+        box-shadow: 0 0 2px rgba(#000, .15);
+        background-color: rgba(#000, .15);
+        border-radius: 6px;
+        padding: 0 8px;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        line-height: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
