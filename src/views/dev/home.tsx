@@ -28,6 +28,15 @@ const list: any[] = [
         'radial-gradient(ellipse at right top, #107667ed 0%, #151419 47%, #151419 100%)',
     },
   ],
+  [
+    'static',
+    'Static',
+    {
+      background:
+        'radial-gradient(ellipse at right top, #c67915 0%, #151419 47%, #151419 100%)',
+    },
+    "https://0static.github.io/"
+  ],
 ]
 
 export function DevHomePage() {
