@@ -9,7 +9,7 @@ import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
 import { Info } from './views/info'
 import { StudyRouter } from './views/study/router'
-import { Sandbox } from './views/sandbox'
+import { Sandbox } from './views/dev/sandbox'
 import { DevRouter } from './views/dev/router'
 
 const routes: RouteObject[] = [

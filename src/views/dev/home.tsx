@@ -1,47 +1,20 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import './index.less'
-
-const list: any[] = [
-  [
-    'sandbox',
-    'Sandbox',
-    {
-      background:
-        'radial-gradient(ellipse at right top, #6e9bc5 0%, #151419 47%, #151419 100%)',
-    },
-  ],
-  [
-    'demo',
-    'Own Demo',
-    {
-      background:
-        'radial-gradient(ellipse at right top, #a6559d 0%, #151419 47%, #151419 100%)',
-    },
-    'https://ruihuag-demo.github.io/'
-  ],
-  [
-    'pkg',
-    'Package',
-    {
-      background:
-        'radial-gradient(ellipse at right top, #107667ed 0%, #151419 47%, #151419 100%)',
-    },
-  ],
-  [
-    'static',
-    'Static',
-    {
-      background:
-        'radial-gradient(ellipse at right top, #c67915 0%, #151419 47%, #151419 100%)',
-    },
-    "https://0static.github.io/"
-  ],
-]
+import { SandboxSettingDialog } from './sandbox/setting-dialog'
+import { useSetState } from '0hook'
+import { conf } from './conf'
+import { ObjectType } from '0type'
 
 export function DevHomePage() {
   const nav = useNavigate()
+  const [state, setState] = useSetState<ObjectType>({ open: false, })
+
   const handleClick = (name: string, url?: string) => {
+    if (name === 'sandbox') {
+      setState({ open: true })
+      return
+    }
     if (url) {
       return window.open(url, '_blank')
     } else nav(name)
@@ -49,7 +22,7 @@ export function DevHomePage() {
   return (
     <div className="dev-page">
       <div className="dev-page-modules">
-        {list.map(([name, label, style, url]) => {
+        {conf.map(([name, label, style, url]) => {
           return (
             <div
               className="dev-page-modules-card"
@@ -63,6 +36,7 @@ export function DevHomePage() {
           )
         })}
       </div>
+      <SandboxSettingDialog state={state} setState={setState} />
     </div>
   )
 }
