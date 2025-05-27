@@ -69,11 +69,20 @@ export function Pkg() {
                     })}
                 </div>
                 {_.desc && <div className="desc">{_.desc}</div>}
-                {_.install !== false && _.name && (
-                  <div className="install">
-                    <NPMCmd name={_.installName ?? _.name} />
-                  </div>
-                )}
+                {_.install !== false &&
+                  _.name &&
+                  !isEffectArray(_.installNames) && (
+                    <div className="install">
+                      <NPMCmd name={_.installName ?? _.name} />
+                    </div>
+                  )}
+                {_.install !== false &&
+                  isEffectArray(_.installNames) &&
+                  _.installNames.map((name: string) => (
+                    <div className="install" key={name}>
+                      <NPMCmd name={name} />
+                    </div>
+                  ))}
                 {isEffectArray(_.tags) && (
                   <div className="tags" key={num}>
                     {_.tags.map((tag: string, i: number) => (

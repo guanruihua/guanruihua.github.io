@@ -40,6 +40,7 @@
   font-size: 12px;
   word-spacing: 1px;
   letter-spacing: 1.4px;
+  line-height: 24px;
 }
 .package .card .example {
   color: #fff;
@@ -63,7 +64,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 500;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 6px 8px;
   border-radius: 8px;
@@ -1356,6 +1358,36 @@ body {
   height: 50px;
   background: #555;
   border-radius: 12px;
+}
+
+.study-page-q-quotes {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.study-page-q-quotes > div {
+  padding: 20px;
+}
+.study-page-q-quotes .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.study-page-q-quotes .left {
+  line-height: 32px;
+  font-size: 16px;
+}
+.study-page-q-quotes .left .option {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 16px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.study-page-q-quotes .left .option.select {
+  border-color: rgba(255, 255, 255, 0.9);
+}
+.study-page-q-quotes .left .option:last-child {
+  margin-bottom: 0;
 }
 
 .sandbox .au-dialog .dependencies .control {
