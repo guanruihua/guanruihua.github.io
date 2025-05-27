@@ -4,9 +4,10 @@ import { useSetState } from '0hook'
 import { classNames } from 'harpe'
 import { Dialog } from 'aurad'
 import { ObjectType } from '0type'
-import { DndBox } from './dnd-box'
 import { rectSortingStrategy } from '@dnd-kit/sortable'
 import { MultipleContainers } from './multiple-containers'
+import { Items } from './multiple-containers/type'
+import { createRange } from './multiple-containers/utilities'
 
 interface State {
   select: (string | number)[]
@@ -27,11 +28,35 @@ export function SelectPage() {
   const [state, setState] = useSetState<State>(defaultValue, 'SelectPage-State')
 
   const list = new Array(100).fill('')
+  const [conf, setConf] = useSetState<ObjectType>({
+    A: {
+      label: 'Row A',
+    },
+    B: {
+      label: 'Row B',
+    },
+    C: {
+      label: 'Row C',
+    },
+  })
+
+  const [items, setItems] = useSetState<Items>({
+    A: createRange(6, (index) => `A${index + 1}`),
+    B: createRange(6, (index) => `B${index + 1}`),
+    C: createRange(6, (index) => `C${index + 1}`),
+    // D: createRange(itemCount, (index) => `D${index + 1}`),
+  })
 
   return (
     <div className="select-page">
       <MultipleContainers
-        itemCount={6}
+        // itemCount={6}
+        {...{
+          conf,
+          setConf,
+        }}
+        items={items as Items}
+        setItems={setItems}
         strategy={rectSortingStrategy}
       />
       {/* <DndBox /> */}

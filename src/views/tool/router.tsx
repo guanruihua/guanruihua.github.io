@@ -6,6 +6,7 @@ import { Color } from './color'
 import { Test } from './test'
 import { SystemInfo } from './sysInfo'
 import { SelectPage } from './select'
+import { UploadPreview } from './upload-preview'
 
 export const ToolRouter = {
   path: '/tool',
@@ -36,6 +37,12 @@ export const ToolRouter = {
       name: 'Select',
       element: <SelectPage />,
     },
+    {
+      path: 'upload-file-preview',
+      name: 'Upload File Preview',
+      element: <UploadPreview />,
+    },
+    
     {
       path: 'test',
       name: 'Test',
