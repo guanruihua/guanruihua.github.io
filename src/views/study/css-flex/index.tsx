@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.less'
 
-export function CSS_Flex() {
+export default function () {
   return (
     <div className="study-page-css-flex md">
       <div className="card render">

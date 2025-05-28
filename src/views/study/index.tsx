@@ -3,44 +3,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router'
 import './index.less'
 import './md.less'
 import { Container } from '@/components'
-
-const conf = [
-  {
-    label: 'CSS',
-    children: [
-      {
-        label: 'flex',
-        path: 'css-flex',
-      },
-      {
-        label: 'grid',
-        path: 'css-grid',
-      },
-      {
-        label: '双引号样式',
-        path: 'css-q-quotes',
-      },
-    ],
-  },
-  {
-    label: '示例',
-    children: [
-      {
-        label: '字体描边',
-        path: 'font-stroke',
-      },
-    ],
-  },
-  {
-    label: 'Other',
-    children: [
-      {
-        label: 'Dev',
-        path: 'dev',
-      },
-    ],
-  },
-]
+import { TREE }from './router'
 
 export function Study() {
   const nav = useNavigate()
@@ -52,13 +15,13 @@ export function Study() {
       <div className="study-page">
         {pathname === '/study' && (
           <div className="study-page-module-layout">
-            {conf.map((item, i) => {
+            {Object.values(TREE).map((item, i) => {
               return (
                 <div className="study-page-module" key={i}>
                   <h3 className="study-page-module-title">{item.label}</h3>
-                  {item.children && (
+                  {item.child && (
                     <div className="study-page-module-box">
-                      {item.children.map((child, j) => {
+                      {item.child.map((child, j) => {
                         return (
                           <div
                             key={j}

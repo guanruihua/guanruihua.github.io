@@ -2,7 +2,7 @@ import React from 'react'
 import { Docs, Split } from 'aurad'
 import './index.less'
 
-export function CSS_Grid() {
+export default function () {
   const doms = new Array(10)
     .fill('')
     .map((_, i: number) => <div key={i}>{i}</div>)

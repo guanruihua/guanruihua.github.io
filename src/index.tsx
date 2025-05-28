@@ -8,9 +8,10 @@ import './index.less'
 import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
 import { Info } from './views/info'
-import { StudyRouter } from './views/study/router'
+import { StudyChildRouter } from './views/study/router'
 import { Sandbox } from './views/dev/sandbox'
 import { DevRouter } from './views/dev/router'
+import { Study } from './views/study'
 
 const routes: RouteObject[] = [
   {
@@ -34,7 +35,11 @@ const routes: RouteObject[] = [
         path: '/sandbox',
         element: <Sandbox />,
       },
-      StudyRouter,
+      {
+        path: '/study',
+        element: <Study />,
+        children: StudyChildRouter,
+      },
       DevRouter,
     ],
   },

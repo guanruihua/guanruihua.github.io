@@ -1,6 +1,6 @@
 import React from 'react'
 import {} from 'aurad'
-import { isEffectArray } from 'asura-eye'
+import { isEffectArray, isString } from 'asura-eye'
 import { NPMCmd } from './components'
 import './index.less'
 import type { PkgConf } from './type'
@@ -12,17 +12,17 @@ const handleClick = (item: PkgConf) => {
     window.open(item.home, '_blank')
     return
   }
-  window.open(`https://www.npmjs.com/package/${item.name}`, '_blank')
+  // window.open(`https://www.npmjs.com/package/${item.name}`, '_blank')
 }
 
 export function Pkg() {
   const [state, setState] = React.useState<PkgConf[]>([])
-
   const init = async () => {
     try {
       const res = await fetch('/pkg.json')
       const data = await res.json()
-      setState(data.map(adapter))
+      const newState = data.map(adapter)
+      setState(newState)
     } catch (error) {
       console.error(error)
     }
@@ -51,42 +51,39 @@ export function Pkg() {
                 <div className="header" onClick={() => handleClick(_)}>
                   <div className="label">{_.label}</div>
                 </div>
+
                 <div className="shields">
                   {isEffectArray<any>(_.shields) &&
-                    _.shields.map((item, i) => {
-                      if (item.type === 'Non-Open-Source') {
-                        return (
-                          <span key={i} className="Non-Open-Source">
-                            Non-Open-Source
-                          </span>
-                        )
-                      }
-                      return (
-                        <a key={i} href={item.url} target="_blank">
+                    _.shields.map((item, i) =>
+                      item.url ? (
+                        <a key={i} href={item.url} target="_black">
                           <img src={item.logo} />
                         </a>
-                      )
-                    })}
+                      ) : (
+                        <img key={i} src={item.logo} />
+                      ),
+                    )}
                 </div>
+
                 {_.desc && <div className="desc">{_.desc}</div>}
-                {_.install !== false &&
-                  _.name &&
-                  !isEffectArray(_.installNames) && (
-                    <div className="install">
-                      <NPMCmd name={_.installName ?? _.name} />
-                    </div>
-                  )}
-                {_.install !== false &&
-                  isEffectArray(_.installNames) &&
-                  _.installNames.map((name: string) => (
+
+                {isString(_.install) && (
+                  <div className="install">
+                    <NPMCmd name={_.install} />
+                  </div>
+                )}
+
+                {isEffectArray(_.install) &&
+                  _.install.map((name: string) => (
                     <div className="install" key={name}>
                       <NPMCmd name={name} />
                     </div>
                   ))}
+
                 {isEffectArray(_.tags) && (
                   <div className="tags" key={num}>
                     {_.tags.map((tag: string, i: number) => (
-                      <div className="tag" key={tag + 'tag' + i}>
+                      <div className="tag" key={i}>
                         {tag}
                       </div>
                     ))}

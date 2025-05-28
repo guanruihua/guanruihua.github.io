@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.less'
 
-export function FontStroke() {
+export default function () {
   React.useEffect(() => {
     const canvas: any = document.getElementById('canvas')
     if (!canvas) return

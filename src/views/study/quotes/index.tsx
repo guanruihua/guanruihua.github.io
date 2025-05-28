@@ -2,7 +2,7 @@ import React from 'react'
 import './index.less'
 import { classNames } from 'harpe'
 
-export function Quotes() {
+export default function () {
   const options = ['none', 'initial', `"'" "'"`, `"《" "》" "<" ">"`]
   const [select, setSelect] = React.useState(options.at(-1))
 
