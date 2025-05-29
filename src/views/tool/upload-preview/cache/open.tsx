@@ -10,7 +10,7 @@ export function openDB(
   tableName: string,
   version = 1,
 ): Promise<IDBOpenDBRequest> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     //  兼容浏览器
     const indexedDB: IDBFactory =
       window.indexedDB ||
@@ -42,8 +42,9 @@ export function openDB(
         // autoIncrement: true // 实现自增
       })
       // 创建索引，在后面查询数据的时候可以根据索引查
-      objectStore.createIndex('key', 'key', { unique: false,  })
+      objectStore.createIndex('key', 'key', { unique: true })
       objectStore.createIndex('value', 'value', { unique: false })
+      objectStore.createIndex('info', 'info', { unique: false })
     }
   })
 }

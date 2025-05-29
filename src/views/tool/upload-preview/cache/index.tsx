@@ -1,5 +1,6 @@
 import React from 'react'
 import { openDB } from './open'
+import { UseIndexedDBProps, IndexedDBItem, IndexedDBAddItem } from './type'
 
 const genId = () => {
   let d = new Date().getTime()
@@ -12,14 +13,6 @@ const genId = () => {
     },
   )
   return uuid
-}
-
-export interface UseIndexedDBProps {
-  /**
-   * @description
-   */
-  dbName?: string
-  tableName?: string
 }
 
 export const useIndexedDB = (props?: UseIndexedDBProps) => {
@@ -36,7 +29,7 @@ export const useIndexedDB = (props?: UseIndexedDBProps) => {
 
   return {
     db,
-    getKey() {
+    getKey(): string {
       const uuid = genId()
       // if (this.getStore()?.get(uuid)?.result) {
       //   // 重新生成
@@ -56,7 +49,13 @@ export const useIndexedDB = (props?: UseIndexedDBProps) => {
                 list.push(cursor.value)
                 cursor.continue()
               } else {
-                resolve(list)
+                resolve(
+                  list.sort((a: any, b: any) => {
+                    const aa = a?.info?.sort || 1
+                    const bb = b?.info?.sort || 1
+                    return aa - bb
+                  }),
+                )
               }
             }
           }
@@ -70,19 +69,38 @@ export const useIndexedDB = (props?: UseIndexedDBProps) => {
         ?.transaction?.([tableName], 'readwrite')
         .objectStore(tableName)
     },
-    get(key: string) {
-      return this.getStore().get(key) || null
+    async get(key: string): Promise<IndexedDBItem | null> {
+      return new Promise((resolve) => {
+        const req = this.getStore().get(key) || null
+        if (req) {
+          req.onsuccess = function (event: any) {
+            resolve(event.target.result)
+          }
+          req.onerror = function (event: any) {
+            resolve(null)
+          }
+        } else {
+          resolve(null)
+        }
+      })
     },
-    del(id: string) {
-      this.getStore()?.delete(id)
+    del(key: string) {
+      this.getStore()?.delete(key)
     },
-    add(value: any, key: string = this.getKey()) {
-      this.getStore()?.add({ key, value })
-      return { key, value }
+    add(item: IndexedDBAddItem): IndexedDBItem {
+      if (!item.key) item.key = this.getKey()
+      if (!item.info) {
+        item.info = {}
+      }
+      if (!item.info.sort) {
+        item.info.sort = new Date().getTime()
+      }
+      this.getStore()?.add(item)
+      return item as IndexedDBItem
     },
-    update(value: any, key: string) {
-      this.getStore()?.put({ value, key })
-      return { key, value }
+    update(item: IndexedDBItem): IndexedDBItem {
+      this.getStore()?.put(item)
+      return item
     },
   }
 }
