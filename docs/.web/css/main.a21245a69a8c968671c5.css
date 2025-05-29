@@ -1345,3 +1345,48 @@ body {
   margin: 10px 0;
 }
 
+.home {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+.home .layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 24px;
+}
+.home .card {
+  position: relative;
+  width: 300px;
+  height: 120px;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+}
+.home .card .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  padding: 8px;
+  padding-bottom: 14px;
+  padding-left: 10px;
+  border-radius: 12px;
+}
+.home .card .name {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+

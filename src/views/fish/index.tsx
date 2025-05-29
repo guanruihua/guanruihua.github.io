@@ -19,7 +19,7 @@ export function Fish() {
   return (
     <Container>
       <div className="home">
-        <div className="layout"></div>
+        {/* <div className="layout"></div> */}
         <Guide guide={guide} />
       </div>
     </Container>

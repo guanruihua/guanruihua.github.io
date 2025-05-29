@@ -12,6 +12,7 @@ import { StudyChildRouter } from './views/study/router'
 import { Sandbox } from './views/dev/sandbox'
 import { DevRouter } from './views/dev/router'
 import { Study } from './views/study'
+import { Fish } from './views/fish'
 
 const routes: RouteObject[] = [
   {
@@ -34,6 +35,10 @@ const routes: RouteObject[] = [
       {
         path: '/sandbox',
         element: <Sandbox />,
+      },
+      {
+        path: '/fish',
+        element: <Fish />,
       },
       {
         path: '/study',
