@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Color",
+    "next": [
+      ["Gradient Color", "webgradients.com/"],
+      ["ui Gradients", "uigradients.com/#Combi"]
+    ]
+  },
+  {
+    "name": "Icon",
+    "next": [
+      ["iconify", "icon-sets.iconify.design"],
+      ["Remix Icon", "remixicon.com"]
+    ]
+  },
+  {
+    "name": "图表",
+    "next": [
+      ["EChart", "echarts.apache.org/examples/zh/index.html"],
+      ["EChart Api", "echarts.apache.org/zh/api.html#echarts"],
+      ["AntV G6", "g6.antv.antgroup.com/examples"],
+      [
+        "APEX Charts",
+        "www.apexcharts.com/javascript-chart-demos/line-charts/basic/"
+      ]
+    ]
+  },
+  {
+    "name": "UI 模板库",
+    "PE": true,
+    "next": [
+      ["NavNav (组件)", "thuvien.org/navnav"],
+      ["HTMLLrev", "htmlrev.com/"],
+      ["Varlet UI - Vue3 Material Design", "varletjs.org/#/zh-CN/button"],
+      [
+        "Muse Dashboard",
+        "demos.creative-tim.com/muse-vue-ant-design-dashboard/?_ga=2.68675601.1846298967.1721030274-1292199187.1699498388#/dashboard"
+      ],
+      [
+        "Hyper Dashboard",
+        "coderthemes.com/hyper/saas/dashboard-analytics.html"
+      ],
+      [
+        "Material Dashboard Laravel Livewire",
+        "material-dashboard-laravel-livewire.creative-tim.com/dashboard"
+      ],
+      ["Wired Elements", "wiredjs.com/"]
+    ]
+  },
+  {
+    "name": "编程工具(集)",
+    "PE": true,
+    "next": [
+      [
+        "Regulex",
+        "jex.im/regulex/#!flags=&re=%5E(0-9)(a%7Cb%7Cc)*%3F%24",
+        "regulex regular"
+      ],
+      [
+        "transform(结构转换)",
+        "transform.tools/json-to-typescript",
+        "transform type model"
+      ],
+      ["Autoprefixer CSS online", "autoprefixer.github.io", "css autoprefixer"],
+      ["JSON可视化", "jsoncrack.com/editor", "JSON, json-preview"],
+      ["压缩/格式化工具", "coding.tools/cn", "inline-tool tools"],
+      ["UU在线工具", "uutool.cn/type/new/", "inline-tool tools"],
+      ["30TOOL", "www.30aitool.com/", "inline-tool tools"],
+      ["json.cn", "www.json.cn/"],
+      ["开发者武器库", "devtool.tech/"]
+    ]
+  },
+  {
+    "name": "WebGL",
+    "PE": true,
+    "next": [
+      ["three.js", "threejs.org/manual/#zh/fundamentals"],
+      ["three.js 中文网", "http://www.webgl3d.cn/pages/aac9ab/"],
+      ["fabricjs", "fabricjs.com/api"],
+      ["PixiJS", "pixijs.com/"],
+      ["Sketchfab·3D Models", "sketchfab.com/"],
+      ["Fab·Free 3D Models", "www.fab.com/category/3d-model?q=tree&is_free=1"],
+      ["Konva·H5 Canvas ", "konvajs-doc.bluehymn.com"]
+    ]
+  },
+  {
+    "name": "Platform",
+    "PE": true,
+    "next": [
+      ["npmjs", "www.npmjs.com"],
+      ["deepseek", "platform.deepseek.com/usage"]
+    ]
+  }
+]

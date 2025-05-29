@@ -2,10 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router'
 import './index.less'
 import { Conf, Item } from './type'
-import { GuideRender } from './guide'
-import { Container } from '@/components'
+import { Container, Guide } from '@/components'
 import { useSetState } from '0hook'
 import { classNames } from 'harpe'
+import { useFetchArrayState } from '@/hook'
 
 export function Home() {
   const nav = useNavigate()
@@ -14,25 +14,8 @@ export function Home() {
       return window.open(item.url, '_blank')
     } else nav(item.name)
   }
-  const [items, setItems] = React.useState<Conf['items']>([])
-  const [guide, setGuide] = React.useState<Conf['guide']>([])
-  const init = async () => {
-    fetch('/home-items.json')
-      .then(async (res) => {
-        const data = await res.json()
-        setItems(data)
-      })
-      .catch(console.error)
-    fetch('/guide.json')
-      .then(async (res) => {
-        const data = await res.json()
-        setGuide(data)
-      })
-      .catch(console.error)
-  }
-  React.useEffect(() => {
-    init()
-  }, [])
+  const [items] = useFetchArrayState<Conf['items']>('/home-items.json')
+  const [guide] = useFetchArrayState<Conf['guide']>('/guide.json')
 
   const [state, setState] = useSetState(
     {
@@ -76,9 +59,7 @@ export function Home() {
               )
             })}
         </div>
-        <GuideRender
-          guide={guide.filter((_) => (_.PE === true ? state.PE : true))}
-        />
+        <Guide guide={guide.filter((_) => (_.PE === true ? state.PE : true))} />
       </div>
     </Container>
   )

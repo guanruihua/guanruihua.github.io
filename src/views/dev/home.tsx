@@ -5,10 +5,13 @@ import { SandboxSettingDialog } from './sandbox/setting-dialog'
 import { useSetState } from '0hook'
 import { conf } from './conf'
 import { ObjectType } from '0type'
+import { Guide, GuideProps } from '@/components'
+import { useFetchArrayState } from '@/hook'
 
 export function DevHomePage() {
   const nav = useNavigate()
-  const [state, setState] = useSetState<ObjectType>({ open: false, })
+  const [state, setState] = useSetState<ObjectType>({ open: false })
+  const [guide] = useFetchArrayState<GuideProps[]>('/dev-guide.json')
 
   const handleClick = (name: string, url?: string) => {
     if (name === 'sandbox') {
@@ -21,7 +24,7 @@ export function DevHomePage() {
   }
   return (
     <div className="dev-page">
-      <div className="dev-page-modules">
+      <div className="layout">
         {conf.map(([name, label, style, url]) => {
           return (
             <div
@@ -36,6 +39,7 @@ export function DevHomePage() {
           )
         })}
       </div>
+      <Guide guide={guide || []} />
       <SandboxSettingDialog state={state} setState={setState} />
     </div>
   )

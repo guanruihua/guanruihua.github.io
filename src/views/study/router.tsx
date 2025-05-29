@@ -1,40 +1,7 @@
 import React from 'react'
 import { ObjectType } from '0type'
 import { isArray } from 'asura-eye'
-import { Lazy } from 'aurad'
-
-const conf: {
-  group?: string
-  label?: string
-  path: string
-  name: string
-  element: React.ReactNode | any
-}[] = [
-  {
-    group: 'css',
-    path: 'css-q-quotes',
-    name: '双引号样式',
-    element: Lazy(import('./quotes')),
-  },
-  {
-    group: 'css',
-    path: 'css-flex',
-    name: 'CSS flex',
-    element: Lazy(import('./css-flex')),
-  },
-  {
-    group: 'css',
-    path: 'css-grid',
-    name: 'grid',
-    element: Lazy(import('./css-grid')),
-  },
-  {
-    group: 'demo',
-    path: 'font-stroke',
-    name: '字体描边',
-    element: Lazy(import('./font-stroke')),
-  },
-]
+import { conf } from './conf'
 
 export const StudyChildRouter: {
   path: string

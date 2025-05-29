@@ -1,15 +1,19 @@
 import React from 'react'
-import { Guide } from './type'
+import './index.less'
+
+export interface GuideProps {
+  name?: string
+  next: string[][]
+  PE?: boolean
+  [key: string]: any
+}
 
 const GuideRowItem = ({ name, url }: { name: string; url: string }) => {
   return (
     <div
       className="guide-item"
       onClick={() =>
-        window.open(
-          url.indexOf('http') > -1 ? url : `https://${url}`,
-          '_blank',
-        )
+        window.open(url.indexOf('http') > -1 ? url : `https://${url}`, '_blank')
       }
     >
       {name}
@@ -17,11 +21,11 @@ const GuideRowItem = ({ name, url }: { name: string; url: string }) => {
   )
 }
 
-export function GuideRender(props: { guide: Guide[] }) {
+export function Guide(props: { guide: GuideProps[] }) {
   const { guide } = props
   return (
     <div className="guide">
-      {guide?.map((item: Guide, i: number) => {
+      {guide?.map((item: GuideProps, i: number) => {
         const { name, next } = item
         return (
           <div className="guide-module" key={i}>

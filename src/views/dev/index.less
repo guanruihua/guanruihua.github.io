@@ -1,13 +1,19 @@
  .dev-page {
-   display: flex;
+   display: grid;
    justify-content: center;
    align-items: center;
-   min-height: 60vh;
+   gap: 10px;
+   min-height: 100vh;
+   padding-bottom: 30px;
 
-   .dev-page-modules {
+
+   .layout {
      display: flex;
+     align-items: center;
      justify-content: center;
+     flex-wrap: wrap;
      gap: 10px;
+     padding: 24px;
    }
 
    .dev-page-modules-card {
