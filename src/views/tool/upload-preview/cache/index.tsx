@@ -51,8 +51,8 @@ export const useIndexedDB = (props?: UseIndexedDBProps) => {
               } else {
                 resolve(
                   list.sort((a: any, b: any) => {
-                    const aa = a?.info?.sort || 1
-                    const bb = b?.info?.sort || 1
+                    const aa = a?.sort || 1
+                    const bb = b?.sort || 1
                     return aa - bb
                   }),
                 )
@@ -92,8 +92,8 @@ export const useIndexedDB = (props?: UseIndexedDBProps) => {
       if (!item.info) {
         item.info = {}
       }
-      if (!item.info.sort) {
-        item.info.sort = new Date().getTime()
+      if (!item.sort) {
+        item.sort = new Date().getTime()
       }
       this.getStore()?.add(item)
       return item as IndexedDBItem

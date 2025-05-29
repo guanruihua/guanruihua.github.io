@@ -17,8 +17,8 @@ export function UploadPreview() {
 
   const handleDownload = async (key: string) => {
     const file: IndexedDBItem = (await cache.get(key)) || ({} as IndexedDBItem)
-    const { value, info } = file
-    value && downloadImage(value, info.name)
+    const { value, name } = file
+    value && downloadImage(value, name)
     // console.log(file)
   }
   const getFile = async (file: File): Promise<IndexedDBItem | null> => {
@@ -29,9 +29,7 @@ export function UploadPreview() {
         if (reader.result) {
           // console.log(reader.result, file.name)
           const item: IndexedDBItem = cache.add({
-            info: {
-              name: file.name,
-            },
+            name: file.name,
             value: reader.result as string,
           })
           resolve(item)
@@ -102,6 +100,7 @@ export function UploadPreview() {
           const mineType = getMineType(value)
           return (
             <div key={key} className="image-preview-item">
+              {/* <span>{item.sort % 1000}</span> */}
               <div
                 className={classNames('image-preview-item-img', {
                   view: key === view,

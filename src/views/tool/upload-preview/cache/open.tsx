@@ -44,6 +44,8 @@ export function openDB(
       // 创建索引，在后面查询数据的时候可以根据索引查
       objectStore.createIndex('key', 'key', { unique: true })
       objectStore.createIndex('value', 'value', { unique: false })
+      objectStore.createIndex('name', 'name', { unique: false })
+      objectStore.createIndex('sort', 'sort', { unique: false })
       objectStore.createIndex('info', 'info', { unique: false })
     }
   })
