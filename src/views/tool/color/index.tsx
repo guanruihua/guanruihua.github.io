@@ -4,7 +4,7 @@ import { classNames, copyText } from 'harpe'
 import { conf } from './conf'
 import { message } from '../msg'
 
-export function Color() {
+export default function Color() {
   return (
     <div className="tool-color">
       <div className="tool-color-layout">

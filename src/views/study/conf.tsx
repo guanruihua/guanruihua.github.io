@@ -9,6 +9,16 @@ export const conf: {
   element: React.ReactNode | any
 }[] = [
   {
+    path: 'canvas',
+    name: 'Canvas Base Draw',
+    element: Lazy(import('./canvas')),
+  },
+  {
+    path: 'canvas-base-style',
+    name: 'Canvas Base Style',
+    element: Lazy(import('./canvas/base-style')),
+  },
+  {
     path: 'select',
     name: 'Select',
     element: Lazy(import('./select')),

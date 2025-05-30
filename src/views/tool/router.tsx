@@ -1,9 +1,6 @@
 import React from 'react'
 import { Tool } from '.'
-import { Color } from './color'
-import { SystemInfo } from './sysInfo'
 import { Lazy } from 'aurad'
-
 
 export const ToolRouter = {
   path: '/tool',
@@ -23,12 +20,12 @@ export const ToolRouter = {
     {
       path: 'color',
       name: 'Color',
-      element: <Color />,
+      element: Lazy(import('./color')),
     },
     {
       path: 'system-info',
       name: 'System Information',
-      element: <SystemInfo />,
+      element: Lazy(import('./sysInfo')),
     },
   ],
 }

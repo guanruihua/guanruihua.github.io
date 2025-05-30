@@ -4,7 +4,7 @@ import React from 'react'
 import { getCpuInfo } from './util'
 import './index.less'
 
-export function SystemInfo() {
+export default function SystemInfo() {
   const [state, setState] = React.useState<ObjectType>({})
   const init = async () => {
     setState(await getCpuInfo())
