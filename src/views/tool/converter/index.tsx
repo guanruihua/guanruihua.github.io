@@ -5,7 +5,7 @@ import { Button } from 'aurad'
 import { copy } from '@/util'
 import './index.less'
 
-export function ConverterChinese() {
+export default function ConverterChinese() {
   const [state, setState] = useSetState<any>(
     {
       text: '',

@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router'
 import './index.less'
 import { Conf, Item } from './type'
-import { Container, Guide } from '@/components'
+import { Card, Container, Guide } from '@/components'
 import { useSetState } from '0hook'
 import { classNames } from 'harpe'
 import { useFetchArrayState } from '@/hook'
@@ -19,7 +19,7 @@ export function Home() {
 
   const [state, setState] = useSetState(
     {
-      PE: true,
+      PE: false,
     },
     'cache-guide-state',
   )
@@ -43,21 +43,17 @@ export function Home() {
     >
       <div className="home">
         <div className="layout">
-          {items
-            .filter((_) => (_.PE === true ? state.PE : true))
-            ?.map((item, i) => {
-              return (
-                <div
-                  className="card"
-                  key={item.name}
-                  style={item.style}
-                  onClick={() => handleClick(item)}
-                >
-                  <div className="logo">{item.label.slice(0, 1)}</div>
-                  <div className="name">{item.label}</div>
-                </div>
-              )
-            })}
+          {items?.map((item, i) => {
+            const { PE = false, ...rest } = item
+            return (
+              <Card
+                none={PE && !state.PE}
+                key={i}
+                {...rest}
+                onClick={() => handleClick(item)}
+              />
+            )
+          })}
         </div>
         <Guide guide={guide.filter((_) => (_.PE === true ? state.PE : true))} />
       </div>

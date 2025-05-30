@@ -5,6 +5,8 @@ const path = require('path')
 
 const devServer = {
   port: '5300', //默认是8080
+  host: '0.0.0.0',
+  // port: '7300', //默认是8080
   // client: { logging: "error" },//浏览器中设置日志级别
   compress: true, //是否启用 gzip 压缩
   open: false,

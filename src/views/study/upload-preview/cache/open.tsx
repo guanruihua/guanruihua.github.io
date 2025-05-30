@@ -9,8 +9,9 @@ export function openDB(
   dbName: string,
   tableName: string,
   version = 1,
-): Promise<IDBOpenDBRequest> {
+): Promise<IDBOpenDBRequest | null> {
   return new Promise((resolve) => {
+    // resolve(null)
     //  兼容浏览器
     const indexedDB: IDBFactory =
       window.indexedDB ||
@@ -33,7 +34,7 @@ export function openDB(
     // 数据库有更新时候的回调
     request.onupgradeneeded = function (event: any) {
       // 数据库创建或升级的时候会触发
-      console.log('onupgradeneeded')
+      // console.log('onupgradeneeded')
       db = event.target.result // 数据库对象
       var objectStore
       // 创建存储库

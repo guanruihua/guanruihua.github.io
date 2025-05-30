@@ -7,11 +7,11 @@ import {
 } from '@codesandbox/sandpack-react'
 import { files } from './files'
 import { MonacoEditor } from './monacoEditor'
-import './index.less'
 import { SettingIcon } from './icon'
-import { useSetState } from '0hook'
 import { SettingDialog } from './setting-dialog'
+import { useSetState } from '0hook'
 import { ObjectType } from '0type'
+import './index.less'
 import { isArray } from 'asura-eye'
 import { useSearchParams } from 'react-router-dom'
 
@@ -94,14 +94,6 @@ export function Sandbox() {
             {SettingIcon}
           </div>
           <MonacoEditor />
-          {/* <SandpackCodeEditor
-          closableTabs
-          showTabs
-          wrapContent
-          style={{
-            height: '100vh',
-          }}
-        /> */}
           <SandpackPreview
             style={{
               height: '100vh',

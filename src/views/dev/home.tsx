@@ -5,7 +5,7 @@ import { SandboxSettingDialog } from './sandbox/setting-dialog'
 import { useSetState } from '0hook'
 import { conf } from './conf'
 import { ObjectType } from '0type'
-import { Guide, GuideProps } from '@/components'
+import { Card, Guide, GuideProps } from '@/components'
 import { useFetchArrayState } from '@/hook'
 
 export function DevHomePage() {
@@ -25,17 +25,14 @@ export function DevHomePage() {
   return (
     <div className="dev-page">
       <div className="layout">
-        {conf.map(([name, label, style, url]) => {
+        {conf.map(([name, label, style, url], i) => {
           return (
-            <div
-              className="dev-page-modules-card"
-              key={name}
+            <Card
+              key={i}
+              label={label}
               style={style as any}
               onClick={() => handleClick(name, url)}
-            >
-              <div className="logo">{label.slice(0, 1)}</div>
-              <div className="name">{label}</div>
-            </div>
+            />
           )
         })}
       </div>

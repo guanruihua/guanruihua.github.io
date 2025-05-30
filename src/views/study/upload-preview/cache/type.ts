@@ -4,6 +4,10 @@ export interface UseIndexedDBProps {
    */
   dbName?: string
   tableName?: string
+  callback?: {
+    afterInitSuccess?(req: IDBOpenDBRequest): void
+  }
+  [key: string]: any
 }
 
 export interface IndexedDBItem {

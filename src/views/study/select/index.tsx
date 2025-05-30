@@ -24,7 +24,7 @@ const defaultValue: State = {
   teams: [],
 }
 
-export function SelectPage() {
+export default function () {
   const [state, setState] = useSetState<State>(defaultValue, 'SelectPage-State')
 
   const list = new Array(100).fill('')

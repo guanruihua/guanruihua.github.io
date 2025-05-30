@@ -21,7 +21,7 @@ const defaultValue = {
   exclude: '',
 }
 
-export function RandomPwd() {
+export default function RandomPwd() {
   const [conf, setConf] = useSetState<ObjectType>(
     defaultValue,
     'LengthString-conf',

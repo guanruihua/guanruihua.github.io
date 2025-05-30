@@ -8,12 +8,18 @@ import { copyImage, downloadImage, getMineType } from './copy-image'
 import { ICON } from './icon'
 import { IndexedDBItem } from './cache/type'
 
-export function UploadPreview() {
-  const cache = useIndexedDB()
+export default function UploadPreview() {
   const uploadRef = React.useRef<HTMLInputElement>(null)
   const ref = React.useRef<HTMLInputElement>(null)
   const [view, setView] = React.useState<string>('')
   const [imgList, setImgList] = React.useState<IndexedDBItem[]>([])
+  const cache = useIndexedDB({
+    callback: {
+      afterInitSuccess() {
+        cache.getAll().then(setImgList)
+      },
+    },
+  })
 
   const handleDownload = async (key: string) => {
     const file: IndexedDBItem = (await cache.get(key)) || ({} as IndexedDBItem)
@@ -57,10 +63,6 @@ export function UploadPreview() {
     setImgList((imgList) => [...imgList, ...newImgList])
     return true
   }
-
-  React.useEffect(() => {
-    imgList.length === 0 && cache.getAll().then(setImgList)
-  }, [ref.current])
 
   function handlePaste(e: any) {
     try {

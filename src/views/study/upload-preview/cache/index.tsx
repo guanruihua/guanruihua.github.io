@@ -1,26 +1,21 @@
 import React from 'react'
 import { openDB } from './open'
 import { UseIndexedDBProps, IndexedDBItem, IndexedDBAddItem } from './type'
-
-const genId = () => {
-  let d = new Date().getTime()
-  const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
-    /[xy]/g,
-    function (c) {
-      const r = (d + Math.random() * 16) % 16 | 0
-      d = Math.floor(d / 16)
-      return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16)
-    },
-  )
-  return uuid
-}
+import { genKey } from './gen-key'
 
 export const useIndexedDB = (props?: UseIndexedDBProps) => {
-  const { dbName = 'CacheDB', tableName = 'store' } = props || {}
-  const [db, setDB] = React.useState<IDBOpenDBRequest | null>(null)
+  const { dbName = 'CacheDB', tableName = 'store', callback = {} } = props || {}
+  const ref = React.useRef<IDBOpenDBRequest | null>(null)
   const init = async () => {
-    const value: any = await openDB(dbName, tableName)
-    setDB(value)
+    try {
+      const value: any = await openDB(dbName, tableName)
+      if (value) {
+        ref.current = value
+        callback?.afterInitSuccess?.(value)
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   React.useEffect(() => {
@@ -28,14 +23,16 @@ export const useIndexedDB = (props?: UseIndexedDBProps) => {
   }, [])
 
   return {
-    db,
+    ref,
+    getStore() {
+      if (ref.current)
+        return (ref.current as any)
+          ?.transaction?.([tableName], 'readwrite')
+          .objectStore(tableName)
+      return null
+    },
     getKey(): string {
-      const uuid = genId()
-      // if (this.getStore()?.get(uuid)?.result) {
-      //   // 重新生成
-      //   return this.getKey()
-      // }
-      return uuid
+      return genKey()
     },
     async getAll() {
       return new Promise((resolve) => {
@@ -63,11 +60,6 @@ export const useIndexedDB = (props?: UseIndexedDBProps) => {
           resolve([])
         }
       })
-    },
-    getStore() {
-      return (db as any)
-        ?.transaction?.([tableName], 'readwrite')
-        .objectStore(tableName)
     },
     async get(key: string): Promise<IndexedDBItem | null> {
       return new Promise((resolve) => {

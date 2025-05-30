@@ -1,12 +1,9 @@
 import React from 'react'
 import { Tool } from '.'
-import { RandomPwd } from './random-pwd'
-import { ConverterChinese } from './converter'
 import { Color } from './color'
-import { Test } from './test'
 import { SystemInfo } from './sysInfo'
-import { SelectPage } from './select'
-import { UploadPreview } from './upload-preview'
+import { Lazy } from 'aurad'
+
 
 export const ToolRouter = {
   path: '/tool',
@@ -15,12 +12,13 @@ export const ToolRouter = {
     {
       path: 'randomPwd',
       name: '随机密码',
-      element: <RandomPwd />,
+      element: Lazy(import('./random-pwd')),
+      index: true,
     },
     {
       path: 'converter/Chinese',
       name: '简繁体转换',
-      element: <ConverterChinese />,
+      element: Lazy(import('./converter')),
     },
     {
       path: 'color',
@@ -32,21 +30,6 @@ export const ToolRouter = {
       name: 'System Information',
       element: <SystemInfo />,
     },
-    {
-      path: 'select',
-      name: 'Select',
-      element: <SelectPage />,
-    },
-    {
-      path: 'upload-file-preview',
-      name: 'Upload File Preview',
-      element: <UploadPreview />,
-    },
-    
-    {
-      path: 'test',
-      name: 'Test',
-      element: <Test />,
-    },
+
   ],
 }

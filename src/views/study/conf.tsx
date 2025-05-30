@@ -9,6 +9,21 @@ export const conf: {
   element: React.ReactNode | any
 }[] = [
   {
+    path: 'select',
+    name: 'Select',
+    element: Lazy(import('./select')),
+  },
+  {
+    path: 'upload-file-preview',
+    name: 'Upload File Preview',
+    element: Lazy(import('./upload-preview')),
+  },
+  {
+    path: 'test',
+    name: 'Test',
+    element: Lazy(import('./test')),
+  },
+  {
     group: 'demo',
     path: 'demo-svg',
     name: 'Svg',

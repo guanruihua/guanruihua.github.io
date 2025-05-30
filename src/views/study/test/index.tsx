@@ -1,12 +1,11 @@
 import { useSetState } from '0hook'
 import React from 'react'
 import './index.less'
-import { message } from '../msg'
+// import { message } from '../msg'
 import { Cmp } from './cmp'
 import { SvgDemo } from './svg'
 
-
-export function Test() {
+export default function () {
   const [state, setState] = useSetState(
     {
       status: true,
@@ -18,7 +17,6 @@ export function Test() {
   //   message.success('content 2')
   //   message.success('content 3')
   // }, [])
-
 
   return (
     <div className="tool-test">
