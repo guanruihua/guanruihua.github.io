@@ -30,6 +30,5 @@ export const ToolRouter = {
       name: 'System Information',
       element: <SystemInfo />,
     },
-
   ],
 }

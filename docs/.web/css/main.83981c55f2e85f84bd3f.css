@@ -473,23 +473,6 @@ body {
   bottom: 10px;
 }
 
-.sandbox .au-dialog .dependencies .control {
-  padding: 6px 0;
-}
-.sandbox .sandbox-settings {
-  position: fixed;
-  left: 10px;
-  bottom: 0;
-  height: 32px;
-  line-height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.sandbox .sandbox-settings svg {
-  color: rgba(255, 255, 255, 0.5);
-}
-
 .dev-page {
   display: grid;
   justify-content: center;

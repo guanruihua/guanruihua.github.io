@@ -6,6 +6,7 @@ export const conf: any[] = [
       background:
         'radial-gradient(ellipse at right top, #6e9bc5 0%, #151419 47%, #151419 100%)',
     },
+    'https://ruihuag-sandbox.github.io/',
   ],
   [
     'demo',

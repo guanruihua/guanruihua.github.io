@@ -9,7 +9,6 @@ import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
 import { Info } from './views/info'
 import { StudyChildRouter } from './views/study/router'
-import { Sandbox } from './views/dev/sandbox'
 import { DevRouter } from './views/dev/router'
 import { Study } from './views/study'
 import { Fish } from './views/fish'
@@ -31,10 +30,6 @@ const routes: RouteObject[] = [
       {
         path: '/info',
         element: <Info />,
-      },
-      {
-        path: '/sandbox',
-        element: <Sandbox />,
       },
       {
         path: '/fish',
