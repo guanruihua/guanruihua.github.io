@@ -11,10 +11,10 @@ export function Tool() {
   const [state, setState] = useSetState({ left: true }, '__state__tool')
 
   React.useEffect(() => {
-    if (location.hash.indexOf('#/tool') > -1) {
+    if (['#/tool', '#/tool/'].includes(location.hash)) {
       nav(ToolRouter.children[0].path)
     }
-  }, [])
+  }, [location.hash])
 
   return (
     <Container

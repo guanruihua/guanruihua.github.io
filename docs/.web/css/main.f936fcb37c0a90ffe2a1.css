@@ -133,7 +133,7 @@
 
 .layout-header {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 10;
   display: flex;
@@ -142,8 +142,6 @@
   width: auto;
   height: 32px;
   gap: 12px;
-  background: linear-gradient(to right, #3C3C3C, #000);
-  border-bottom-right-radius: 16px;
 }
 .layout-header .control {
   font-size: 10px;
@@ -158,8 +156,7 @@
 }
 
 .layout-container .layout-box {
-  margin-top: 32px;
-  max-height: calc(100vh - 32px);
+  max-height: 100vh;
 }
 
 .guide {

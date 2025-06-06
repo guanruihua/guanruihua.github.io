@@ -1,5 +1,18 @@
 [
   {
+    "name": "API",
+    "next": [
+      [
+        "Chrome Extensions",
+        "developer.chrome.com/docs/extensions/reference/api?hl=zh-cn"
+      ]
+    ]
+  },
+  {
+    "name": "配图",
+    "next": [["pexels", "www.pexels.com/zh-cn/"]]
+  },
+  {
     "name": "Color",
     "next": [
       ["Gradient Color", "webgradients.com/"],
@@ -81,6 +94,21 @@
       ["Sketchfab·3D Models", "sketchfab.com/"],
       ["Fab·Free 3D Models", "www.fab.com/category/3d-model?q=tree&is_free=1"],
       ["Konva·H5 Canvas ", "konvajs-doc.bluehymn.com"]
+    ]
+  },
+  {
+    "name": "后台管理系统模板",
+    "PE": true,
+    "next": [
+      ["soybean-admin", "github.com/soybeanjs/soybean-admin"],
+      ["vue-pure-admin", "github.com/pure-admin/vue-pure-admin"],
+      ["Geeker-Admin", "github.com/HalseySpicy/Geeker-Admin"],
+      ["v3-admin-vite", "github.com/un-pany/v3-admin-vite"],
+      ["naive-ui-admin", "github.com/jekip/naive-ui-admin"],
+      ["vue-vben-admin", "github.com/vbenjs/vue-vben-admin"],
+      ["vue3-element-admin", "github.com/youlaitech/vue3-element-admin"],
+      ["vue-bag-admin", "github.com/hangjob/vue-bag-admin"],
+      ["Fantastic-admin ", "github.com/fantastic-admin/basic"]
     ]
   },
   {

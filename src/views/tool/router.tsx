@@ -13,6 +13,12 @@ export const ToolRouter = {
       index: true,
     },
     {
+      path: 'text-compare',
+      name: '文本比对',
+      'name.en': 'Text Compare',
+      element: Lazy(import('./text-compare'))
+    },
+    {
       path: 'converter/Chinese',
       name: '简繁体转换',
       element: Lazy(import('./converter')),

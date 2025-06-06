@@ -9,6 +9,24 @@ export const conf: {
   element: React.ReactNode | any
 }[] = [
   {
+    group: 'demo',
+    path: 'minority-html',
+    name: '小众HTML标签',
+    element: Lazy(import('./minority-html'))
+  },
+  {
+    group: 'demo',
+    path: 'scroll-bloom',
+    name: '滚动绽放',
+    element: Lazy(import('./scroll-bloom')),
+  },
+  {
+    group: 'demo',
+    path: 'scroll-snap',
+    name: '整屏滚动',
+    element: Lazy(import('./scroll-snap')),
+  },
+  {
     path: 'canvas',
     name: 'Canvas Base Draw',
     element: Lazy(import('./canvas')),
