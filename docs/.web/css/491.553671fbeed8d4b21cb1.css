@@ -1,0 +1,17 @@
+.tool-box-shadow {
+  --v: 120px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--v));
+  gap: 80px;
+  padding: 40px 20px;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 24px;
+}
+.tool-box-shadow .item {
+  cursor: pointer;
+  width: var(--v);
+  height: var(--v);
+  border-radius: 35px;
+}
+

@@ -5,6 +5,8 @@ import { Container } from '@/components'
 import { useSetState } from '0hook'
 import { classNames } from 'harpe'
 import './index.less'
+import { Div } from 'aurad'
+import { select } from 'abandonjs'
 
 export function Tool() {
   const nav = useNavigate()
@@ -16,6 +18,8 @@ export function Tool() {
     }
   }, [location.hash])
 
+  const nowHash = location.hash.replace('#/tool/', '')
+  
   return (
     <Container
       header={
@@ -42,11 +46,15 @@ export function Tool() {
             {ToolRouter.children.map((item, i) => {
               const { name, path } = item
               return (
-                <div key={i} className="menu" onClick={() => nav(path)}>
+                <Div
+                  key={i}
+                  className={['menu', { select: path === nowHash }]}
+                  onClick={() => nav(path)}
+                >
                   <div className="name" title={name}>
                     {name}
                   </div>
-                </div>
+                </Div>
               )
             })}
           </div>

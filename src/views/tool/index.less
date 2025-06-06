@@ -14,9 +14,9 @@
     flex-wrap: wrap;
     max-width: 240px;
     gap: 10px;
-    border: 2px solid rgba(255, 255, 255, .3);
+    // border: 2px solid rgba(255, 255, 255, .3);
     border-radius: 16px;
-    padding: 8px 12px;
+    // padding: 8px 12px;
 
     .name {
       text-overflow: ellipsis;
@@ -34,7 +34,11 @@
     min-width: 80px;
     height: 32px;
     box-shadow: 0 0 2px rgba(#fff, .9);
-    background-color: rgba(#fff, .2);
+    background-color: rgba(#fff, .1);
+
+    &.select {
+      background-color: rgba(#fff, .3);
+    }
 
     div {
       display: flex;

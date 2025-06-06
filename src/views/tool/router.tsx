@@ -7,10 +7,15 @@ export const ToolRouter = {
   element: <Tool />,
   children: [
     {
+      path: 'todo-list',
+      name: 'Todo List',
+      element: Lazy(import('./todo-list')),
+      index: true,
+    },
+    {
       path: 'randomPwd',
       name: '随机密码',
       element: Lazy(import('./random-pwd')),
-      index: true,
     },
     {
       path: 'text-compare',
@@ -27,6 +32,11 @@ export const ToolRouter = {
       path: 'color',
       name: 'Color',
       element: Lazy(import('./color')),
+    },
+    {
+      path: 'box-shadow',
+      name: 'Box Shadow',
+      element: Lazy(import('./box-shadow')),
     },
     {
       path: 'system-info',
