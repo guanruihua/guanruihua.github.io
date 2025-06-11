@@ -9,6 +9,7 @@
     "server": "nodemon dao/index.mjs",
     "commitlint": "commitlint -e",
     "prepare": "husky install",
+    "publish": "node config/publish.cjs",
     "start": "cross-env NODE_ENV=development node config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js"
   },
