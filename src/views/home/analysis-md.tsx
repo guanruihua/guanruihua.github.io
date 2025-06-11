@@ -15,6 +15,7 @@ export const analysisMD = (md: string): any[] => {
       next: [],
     },
   ]
+  console.log(md)
   const list = md.split('\r\n').filter(Boolean)
   const reg = /- \[.*?\]\(.*?\)/
   let type = 'Own'
