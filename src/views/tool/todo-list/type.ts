@@ -1,8 +1,5 @@
-import { ObjectType } from '0type'
-
 export interface Conf {
   id?: string
-  title?: string
   desc?: string
   frequency?: string
   type?: string
@@ -11,4 +8,6 @@ export interface Conf {
 
 export interface State {
   todo: Conf[]
+  
+  lastUpdate: number
 }

@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-bottom: 30px;
+  width: 100vw;
+  overflow-x: hidden;
 
   .layout {
     display: flex;
@@ -12,5 +13,90 @@
     flex-wrap: wrap;
     gap: 10px;
     padding: 24px;
+    width: 100vw;
+  }
+
+
+  .card {
+    position: relative;
+    width: 300px;
+    height: 120px;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(#fff, .3);
+    color: #fff;
+    transition: .6s;
+
+    &.select {
+      box-shadow: -2px 3px 8px rgba(255, 255, 255, .6);
+    }
+
+    &:hover {
+      box-shadow: -2px 3px 8px rgba(255, 255, 255, .9);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      font-size: 32px;
+      padding: 8px;
+      padding-bottom: 14px;
+      padding-left: 10px;
+      border-radius: 12px;
+    }
+
+    .name {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+    }
+  }
+
+  .guide {
+    margin: 40px auto 10px;
+    padding-bottom: 60px;
+
+    width: 95vw;
+    border-radius: 12px;
+    padding-left: 10px;
+    font-size: 14px;
+    gap: 10px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+
+    .guide-module {
+      padding: 10px 20px;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, .05);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 0 20px;
+      line-height: 28px;
+
+      .title {
+        font-weight: bold;
+        color: #999;
+        white-space: nowrap;
+      }
+
+      .guide-item {
+        color: #666;
+        cursor: pointer;
+        transition: .6s;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
   }
 }

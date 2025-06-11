@@ -15,7 +15,7 @@ const handleClick = (item: PkgConf) => {
   // window.open(`https://www.npmjs.com/package/${item.name}`, '_blank')
 }
 
-export function Pkg() {
+export default function Pkg() {
   const [state, setState] = React.useState<PkgConf[]>([])
   const init = async () => {
     try {

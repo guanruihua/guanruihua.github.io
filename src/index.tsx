@@ -1,46 +1,53 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { RouteObject, RouterProvider, createHashRouter } from 'react-router-dom'
-import { Pkg } from './views/package'
-import { Layout } from './layout'
-import { Home } from './views/home'
+import {
+  Outlet,
+  RouteObject,
+  RouterProvider,
+  createHashRouter,
+} from 'react-router-dom'
 import './index.less'
 import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
-import { Info } from './views/info'
 import { StudyChildRouter } from './views/study/router'
-import { DevRouter } from './views/dev/router'
-import { Study } from './views/study'
-import { Fish } from './views/fish'
+import { Lazy } from 'aurad'
+import { Container } from './components'
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Layout />,
+    element: Lazy(import('./layout')),
     children: [
       {
         index: true,
-        element: <Home />,
+        element: Lazy(import('./views/home')),
       },
       {
-        path: '/pkg',
-        element: <Pkg />,
+        path: '/tool',
+        element: (
+          <Container>
+            <Outlet />
+          </Container>
+        ),
+        children: ToolRouter,
       },
-      ToolRouter,
       {
         path: '/info',
-        element: <Info />,
-      },
-      {
-        path: '/fish',
-        element: <Fish />,
+        element: Lazy(import('./views/info')),
       },
       {
         path: '/study',
-        element: <Study />,
+        element: (
+          <Container>
+            <Outlet />
+          </Container>
+        ),
         children: StudyChildRouter,
       },
-      DevRouter,
+      {
+        path: '/packages',
+        element: Lazy(import('./views/package')),
+      },
     ],
   },
 ]

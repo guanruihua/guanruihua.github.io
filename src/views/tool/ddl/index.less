@@ -1,0 +1,66 @@
+.tool_ddl .container {
+  div {
+    border-radius: 6px;
+  }
+
+  div.blank {
+    border: none;
+  }
+
+  .ddl-task {
+    &-item {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 0 1fr 31fr;
+      
+      &.high .ddl-task-item-render{
+        border-color: red;
+      }
+      
+      img {
+        max-height: 32px;
+        max-width: 32px;
+        border-radius: 12px;
+      }
+      
+      &-render {
+        font-size: 14px;
+        padding: 8px 8px;
+        text-align: center;
+        position: relative;
+        border: 2px solid rgba(42, 100, 181, .8);
+
+      }
+    }
+  }
+
+  .ddl-timeline {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    &-item {
+      background: rgba(255, 255, 255, .1);
+      border-bottom: 2px solid rgba(255, 255, 255, .1);
+      border-top: 2px solid rgba(255, 255, 255, .1);
+      border-radius: 0;
+      padding: 6px 0;
+      min-height: 32px;
+
+      &.weekend {
+        border-color: rgba(35, 217, 110, 1);
+      }
+
+      &.now {
+        color: rgba(35, 217, 110, 1);
+      }
+
+      &.nextWeek:not(.weekend) {
+        filter: opacity(.5);
+      }
+
+      .title {
+        text-align: center;
+      }
+    }
+  }
+}

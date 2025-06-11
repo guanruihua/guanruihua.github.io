@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.less'
 import { useNavigate } from 'react-router'
+import { Div } from 'aurad'
 
 export interface HeaderProps {
   header?: React.ReactNode
@@ -10,12 +11,13 @@ export interface HeaderProps {
 export function Header(props: HeaderProps) {
   const { children } = props
   const nav = useNavigate()
-
+  const isHome = ['', '#/', '/'].includes(location.hash)
+  
   return (
     <div className="layout-header">
-      <div className="control" onClick={() => nav('/')}>
+      <Div none={isHome} className="control" onClick={() => nav('/')}>
         Home
-      </div>
+      </Div>
       {children}
       <div
         className="control"
@@ -23,9 +25,9 @@ export function Header(props: HeaderProps) {
       >
         Github
       </div>
-      <div className="control" onClick={() => history.back()}>
+      <Div className="control" none={isHome} onClick={() => history.back()}>
         Back
-      </div>
+      </Div>
     </div>
   )
 }

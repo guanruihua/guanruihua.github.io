@@ -9,7 +9,7 @@ import { Conf } from './conf'
 const getConf = (symbol: string): any =>
   Conf.coreStock.list.find((_) => _.symbol === symbol) || {}
 
-export function Info() {
+export default function Info() {
   const [coreStock, setCoreStock] = React.useState<ObjectType[]>([])
   // const [FX_ExchangeRates, setFX_ExchangeRates] = React.useState<ObjectType>({})
 
