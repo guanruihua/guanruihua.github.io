@@ -1,74 +1,22 @@
-## Own
+## Fish
 
-### Own
+### 新闻
 
-- [Note](https://ruihuag-note.github.io/)
-- [Demo](https://ruihuag-demo.github.io/)
-- [0static](https://0static.github.io/)
-- [Sandbox](https://ruihuag-sandbox.github.io/)
-
-### Own Tool
-
-- [随机密码](tool/randomPwd)
-- [文本比对](tool/text-compare)
-- [简繁体转换](tool/converter/Chinese)
-- [Color](tool/color)
-- [Box Shadow](tool/box-shadow)
-- [System Info](tool/system-info)
+- [今日热榜](hot.imsyy.top/#/)
+- [R 今日热榜](tophub.today/)
+- [百度热搜](top.baidu.com/board?tab=realtime)
 
 ### 综合
 
-- [B 站](t.bilibili.com/?tab=video)
-- [知乎](www.zhihu.com/hot)
-- [音乐 ZZ123](zz123.com/)
+- [摸鱼岛](fish.codebug.icu)
+- [摸鱼派](fishpi.cn/)
+- [LKs 网站推荐合集](lkssite.vip/)
+- [冰山图表](icebergcharts.com/)
 
-### 翻译
+### 数据
 
-- [百度翻译](fanyi.baidu.com)
-- [Google 翻译](translate.google.com)
-- [微软翻译](www.bing.com/translator)
-- [DeepL](www.deepl.com/zh/translator)
-
-### AI
-
-- [deepseek](chat.deepseek.com)
-- [元宝](yuanbao.tencent.com)
-- [文心一言](zhida.zhihu.com)
-- [豆包](www.doubao.com/chat/)
-- [Kimi](www.kimi.com/)
-- [ChatGPT](chatgpt.com)
-- [秘塔](metaso.cn)
-- [Poe](poe.com)
-- [魔塔社区·模型库](www.modelscope.cn/models)
-- [Hugging Face](huggingface.co/)
-
-### 邮箱
-
-- [QQ 邮箱](mail.qq.com/?cancel_login=true&from=session_timeout)
-- [Outlook](partner.outlook.cn/mail/)
-- [163](mail.163.com)
-
-### 工具 / 资源
-
-- [Alpha Coders 壁纸](alphacoders.com)
-- [致美化(主题,壁纸)](zhutix.com)
-- [wallhaven](wallhaven.cc/)
-- [插画, 漫画, 小说](www.pixiv.net)
-- [果核剥壳](www.ghxi.com)
-- [极简浏览器插件](chrome.zzzmh.cn/index)
-- [图片压缩 zippic](www.zippic.cn)
-
-### ACG
-
-- [原神](www.miyoushe.com/ys)
-- [原神地图](act.mihoyo.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&lang=zh-cn&utm_source=bbs&utm_medium=mys&utm_campaign=pcicon&_markerFps=24#/map/2?shown_types=2,3,154,517,658,659,626,356,17,44,45,269,70,64,77,69,597,600,667,668,680,596,410)
-- [玉衡杯数据库](homdgcat.wiki)
-- [Honey Impact](gensh.honeyhunterworld.com/?lang=CHS)
-- [崩坏: 星穹铁道](www.miyoushe.com/sr)
-- [绝区零](www.miyoushe.com/zzz/)
-- [萌娘百科](mzh.moegirl.org.cn)
-- [次元小镇](dimtown.com/)
-- [TouchGal](www.touchgal.io/)
+- [七麦数据](www.qimai.cn/rank)
+- [极客湾移动芯片排行](www.socpk.com/)
 
 ## Dev
 
@@ -176,24 +124,77 @@
 - [vue-bag-admin](github.com/hangjob/vue-bag-admin)
 - [Fantastic-admin](github.com/fantastic-admin/basic)
 
-## Fish
+## Own
 
-### 新闻
+### Own
 
-- [今日热榜](hot.imsyy.top/#/)
-- [百度热搜](top.baidu.com/board?tab=realtime)
+- [Note](https://ruihuag-note.github.io/)
+- [Demo](https://ruihuag-demo.github.io/)
+- [0static](https://0static.github.io/)
+- [Sandbox](https://ruihuag-sandbox.github.io/)
+
+### Own Tool
+
+- [随机密码](tool/randomPwd)
+- [文本比对](tool/text-compare)
+- [简繁体转换](tool/converter/Chinese)
+- [Color](tool/color)
+- [Box Shadow](tool/box-shadow)
+- [System Info](tool/system-info)
 
 ### 综合
 
-- [摸鱼岛](fish.codebug.icu)
-- [摸鱼派](fishpi.cn/)
-- [LKs 网站推荐合集](lkssite.vip/)
-- [冰山图表](icebergcharts.com/)
+- [B 站](t.bilibili.com/?tab=video)
+- [知乎](www.zhihu.com/hot)
+- [音乐 ZZ123](zz123.com/)
 
-### 数据
+### 翻译
 
-- [七麦数据](www.qimai.cn/rank)
-- [极客湾移动芯片排行](www.socpk.com/)
+- [百度翻译](fanyi.baidu.com)
+- [Google 翻译](translate.google.com)
+- [微软翻译](www.bing.com/translator)
+- [DeepL](www.deepl.com/zh/translator)
+
+### AI
+
+- [deepseek](chat.deepseek.com)
+- [元宝](yuanbao.tencent.com)
+- [文心一言](zhida.zhihu.com)
+- [豆包](www.doubao.com/chat/)
+- [Kimi](www.kimi.com/)
+- [ChatGPT](chatgpt.com)
+- [秘塔](metaso.cn)
+- [Poe](poe.com)
+- [魔塔社区·模型库](www.modelscope.cn/models)
+- [Hugging Face](huggingface.co/)
+
+### 邮箱
+
+- [QQ 邮箱](mail.qq.com/?cancel_login=true&from=session_timeout)
+- [Outlook](partner.outlook.cn/mail/)
+- [163](mail.163.com)
+
+### 工具 / 资源
+
+- [Alpha Coders 壁纸](alphacoders.com)
+- [致美化(主题,壁纸)](zhutix.com)
+- [wallhaven](wallhaven.cc/)
+- [插画, 漫画, 小说](www.pixiv.net)
+- [果核剥壳](www.ghxi.com)
+- [极简浏览器插件](chrome.zzzmh.cn/index)
+- [图片压缩 zippic](www.zippic.cn)
+
+### ACG
+
+- [原神](www.miyoushe.com/ys)
+- [原神地图](act.mihoyo.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&lang=zh-cn&utm_source=bbs&utm_medium=mys&utm_campaign=pcicon&_markerFps=24#/map/2?shown_types=2,3,154,517,658,659,626,356,17,44,45,269,70,64,77,69,597,600,667,668,680,596,410)
+- [玉衡杯数据库](homdgcat.wiki)
+- [Honey Impact](gensh.honeyhunterworld.com/?lang=CHS)
+- [崩坏: 星穹铁道](www.miyoushe.com/sr)
+- [绝区零](www.miyoushe.com/zzz/)
+- [萌娘百科](mzh.moegirl.org.cn)
+- [次元小镇](dimtown.com/)
+- [TouchGal](www.touchgal.io/)
 
 ## Study
 

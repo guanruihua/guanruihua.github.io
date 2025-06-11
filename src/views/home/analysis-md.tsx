@@ -15,11 +15,11 @@ export const analysisMD = (md: string): any[] => {
       next: [],
     },
   ]
-  console.log(md)
   // const list = md.split('\r\n').filter(Boolean)
   const list = md.split(/\r\n|\n|\r/).filter(Boolean)
   const reg = /- \[.*?\]\(.*?\)/
   let type = 'Own'
+  // console.log(md, list)
 
   list.forEach((row: string) => {
     const tmp: Item = data.at(-1) as Item
