@@ -19,10 +19,9 @@ export const getConf = () => {
     return -999
   }
   console.log(now.format('M月D日'), '周', day, '日', date, diff(now, weekStart))
-  // const len = 9
   const list = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'].map(
     (title, i) => {
-      const selfTime = now.startOf('week').add(i, 'd')
+      const selfTime = now.startOf('week').add(i + 1, 'd')
       return {
         title,
         time: selfTime.format('M月D日'),

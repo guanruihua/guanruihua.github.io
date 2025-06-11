@@ -2,17 +2,13 @@ import React from 'react'
 import { Lazy } from 'aurad'
 
 export const ToolRouter = [
-  // {
-  //   path: 'ddl',
-  //   name: 'DDL',
-  //   element: Lazy(import('./ddl')),
-  //   index: true,
-  // },
+  {
+    path: 'ddl',
+    element: Lazy(import('./ddl')),
+  },
   // {
   //   path: 'todo-list',
-  //   name: 'Todo List',
   //   element: Lazy(import('./todo-list')),
-  //   index: true,
   // },
   {
     path: 'randomPwd',

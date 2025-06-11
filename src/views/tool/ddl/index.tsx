@@ -2,12 +2,13 @@ import React from 'react'
 import { Div } from 'aurad'
 import { getConf } from './conf'
 import './index.less'
+import { Task } from './task'
 
 export default () => {
   const { tasks, list } = getConf()
 
   return (
-    <div className="container">
+    <div className="tool-ddl-container">
       <div className="ddl-timeline">
         {list.map((item, i) => {
           return (
@@ -43,6 +44,7 @@ export default () => {
         })}
       </div>
       <div className="ddl"></div>
+      <Task />
     </div>
   )
 }

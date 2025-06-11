@@ -1,6 +1,3 @@
-import { ObjectType } from '0type'
-import { isEffectObject } from 'asura-eye'
-
 interface Item {
   name: string
   type: string
@@ -17,7 +14,7 @@ export const analysisMD = (md: string): any[] => {
   ]
   // const list = md.split('\r\n').filter(Boolean)
   const list = md.split(/\r\n|\n|\r/).filter(Boolean)
-  const reg = /- \[.*?\]\(.*?\)/
+  const reg = /^- \[.*?\]\(.*?\)/
   let type = 'Own'
   // console.log(md, list)
 
