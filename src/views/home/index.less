@@ -32,11 +32,11 @@
     transition: .6s;
 
     &.select {
-      box-shadow: -2px 3px 8px rgba(255, 255, 255, .6);
-    }
-
-    &:hover {
       box-shadow: -2px 3px 8px rgba(255, 255, 255, .9);
+    }
+    
+    &:hover:not(.select) {
+      box-shadow: -2px 3px 8px rgba(255, 255, 255, .3);
     }
 
     .logo {
@@ -59,41 +59,4 @@
     }
   }
 
-  .guide {
-    width: 95vw;
-    border-radius: 12px;
-    padding-left: 10px;
-    font-size: 14px;
-    gap: 10px;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-
-    .guide-module {
-      padding: 10px 20px;
-      border-radius: 12px;
-      background-color: rgba(255, 255, 255, .05);
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      gap: 0 20px;
-      line-height: 28px;
-
-      .title {
-        font-weight: bold;
-        color: #999;
-        white-space: nowrap;
-      }
-
-      .guide-item {
-        color: #666;
-        cursor: pointer;
-        transition: .6s;
-
-        &:hover {
-          color: #fff;
-        }
-      }
-    }
-  }
 }

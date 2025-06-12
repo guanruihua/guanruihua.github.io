@@ -1,0 +1,44 @@
+.home-guide {
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  // display: grid;
+  justify-content: center;
+  gap: 10px;
+  
+  .home-guide-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 450px;
+  }
+
+  .guide-module {
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, .05);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0 20px;
+    line-height: 28px;
+
+    .title {
+      font-weight: bold;
+      color: #999;
+      white-space: nowrap;
+    }
+
+    .guide-item {
+      color: #666;
+      cursor: pointer;
+      transition: .6s;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
