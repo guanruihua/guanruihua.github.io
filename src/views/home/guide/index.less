@@ -1,13 +1,14 @@
 .home-guide {
+  position: relative;
   width: 100%;
   font-size: 14px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  // display: grid;
   justify-content: center;
   gap: 10px;
-  
+  height: 100%;
+
   .home-guide-col {
     display: flex;
     flex-direction: column;
@@ -16,9 +17,10 @@
   }
 
   .guide-module {
+    position: relative;
     padding: 10px 20px;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, .05);
+    background: transparent;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -27,14 +29,15 @@
 
     .title {
       font-weight: bold;
-      color: #999;
+      color: #aaa;
       white-space: nowrap;
     }
 
     .guide-item {
-      color: #666;
+      color: #777;
       cursor: pointer;
       transition: .6s;
+      font-weight: bolder;
 
       &:hover {
         color: #fff;

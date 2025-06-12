@@ -53,11 +53,29 @@ export default function Home() {
                 select: isString(name) && state.selects?.includes(name),
               },
             ]}
-            style={{
-              background: BGColor[i % BGColor.length],
-            }}
+            style={
+              {
+                background: BGColor[i % BGColor.length],
+              }
+            }
             onClick={() => handleClick(name)}
           >
+            <div
+              className="bg"
+              style={{
+                background: 'url(/image/bg.png)',
+                backgroundAttachment: 'fixed',
+                backgroundSize: 'cover',
+                backgroundPosition: 'top',
+                filter: 'opacity(25%) blur(1px)',
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                zIndex: 1,
+              }}
+            />
             <div className="logo">{name.slice(0, 1)}</div>
             <div className="name">{name}</div>
           </Div>

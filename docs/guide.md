@@ -18,39 +18,6 @@
 - [七麦数据](www.qimai.cn/rank)
 - [极客湾移动芯片排行](www.socpk.com/)
 
-## Dev
-
-### Web
-
-- [MDN Web Docs](developer.mozilla.org/zh-CN/)
-- [Can I use](caniuse.com/)
-- [Dribbble](dribbble.com)
-- [UI Verse](uiverse.io/)
-- [Packages](packages)
-
-### 技术社区
-
-- [掘金](juejin.cn/)
-- [Code Pen](codepen.io)
-- [思否](segmentfault.com/)
-- [开源中国( OSChina )](www.oschina.net)
-- [Stack Overflow](stackoverflow.com)
-- [github](github.com)
-
-### API
-
-- [Chrome Extensions](developer.chrome.com/docs/extensions/reference/api?hl=zh-cn)
-
-### Icon
-
-- [iconify](icon-sets.iconify.design)
-- [Remix Icon](remixicon.com)
-
-### Platform
-
-- [npmjs](www.npmjs.com)
-- [deepseek](platform.deepseek.com/usage)
-
 ## Own
 
 ### Own
@@ -85,7 +52,7 @@
 
 ### Study 示例
 
-- [小众 HTML标签](study/minority-html)
+- [小众 HTML 标签](study/minority-html)
 - [滚动绽放](study/scroll-bloom)
 - [整屏滚动](study/scroll-snap)
 - [Svg](study/demo-svg)
@@ -110,6 +77,45 @@
 - [萌娘百科](mzh.moegirl.org.cn)
 - [次元小镇](dimtown.com/)
 - [TouchGal](www.touchgal.io/)
+
+## Dev
+
+### Web
+
+- [Can I use](caniuse.com/)
+- [Dribbble](dribbble.com)
+- [UI Verse](uiverse.io/)
+- [CSS-Tricks](https://css-tricks.com/)
+- [Packages](packages)
+- [Dev](https://dev.to/)
+
+### 技术社区
+
+- [掘金](juejin.cn/)
+- [Code Pen](codepen.io)
+- [思否](segmentfault.com/)
+- [开源中国( OSChina )](www.oschina.net)
+- [Stack Overflow](stackoverflow.com)
+- [github](github.com)
+
+### API
+
+- [Chrome Extensions](developer.chrome.com/docs/extensions/reference/api?hl=zh-cn)
+- [MDN Web Docs](developer.mozilla.org/zh-CN/)
+
+### Docs
+
+- [CSS 灵感](https://csscoco.com/inspiration/#/)
+
+### Icon
+
+- [iconify](icon-sets.iconify.design)
+- [Remix Icon](remixicon.com)
+
+### Platform
+
+- [npmjs](www.npmjs.com)
+- [deepseek](platform.deepseek.com/usage)
 
 ## Tool & Resource
 
@@ -176,6 +182,7 @@
 ### 图表
 
 - [EChart](echarts.apache.org/examples/zh/index.html)
+- [EChart Example·PPChart](ppchart.com/#/)
 - [EChart Api](echarts.apache.org/zh/api.html#echarts)
 - [AntV G6](g6.antv.antgroup.com/examples)
 - [APEX Charts](www.apexcharts.com/javascript-chart-demos/line-charts/basic/)
@@ -205,8 +212,9 @@
 - [Material Dashboard Laravel Livewire](material-dashboard-laravel-livewire.creative-tim.com/dashboard)
 - [Wired Elements](wiredjs.com/)
 
-### 后台管理系统模板
+### 管理系统模板
 
+- [Vue-Admin](https://vue-admin.cn/admin)
 - [soybean-admin](github.com/soybeanjs/soybean-admin)
 - [vue-pure-admin](github.com/pure-admin/vue-pure-admin)
 - [Geeker-Admin](github.com/HalseySpicy/Geeker-Admin)

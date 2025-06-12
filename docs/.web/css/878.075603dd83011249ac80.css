@@ -1,0 +1,98 @@
+.home-guide {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+}
+.home-guide .home-guide-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 450px;
+}
+.home-guide .guide-module {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0 20px;
+  line-height: 28px;
+}
+.home-guide .guide-module .title {
+  font-weight: bold;
+  color: #aaa;
+  white-space: nowrap;
+}
+.home-guide .guide-module .guide-item {
+  color: #777;
+  cursor: pointer;
+  transition: 0.6s;
+  font-weight: bolder;
+}
+.home-guide .guide-module .guide-item:hover {
+  color: #fff;
+}
+
+.home {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.home .layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 24px;
+  width: 100vw;
+  position: relative;
+}
+.home .card {
+  position: relative;
+  width: 300px;
+  height: 120px;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.6s;
+}
+.home .card.select {
+  box-shadow: -2px 3px 8px rgba(255, 255, 255, 0.9);
+}
+.home .card:hover:not(.select) {
+  box-shadow: -2px 3px 8px rgba(255, 255, 255, 0.3);
+}
+.home .card .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  padding: 8px;
+  padding-bottom: 14px;
+  padding-left: 10px;
+  border-radius: 12px;
+}
+.home .card .name {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+

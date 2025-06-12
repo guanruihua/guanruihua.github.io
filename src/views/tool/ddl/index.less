@@ -76,6 +76,8 @@
       gap: 20px;
       flex-wrap: wrap;
       padding-left: 20px;
+      align-items: center;
+      // min-height: 32px;
 
       &-item {
         cursor: pointer;
@@ -83,10 +85,16 @@
         color: rgba(255, 255, 255, .6);
         transition: .1s;
 
+        .title-val {
+          height: 32px;
+          line-height: 32px;
+        }
+
         &.select {
           font-weight: bolder;
           color: rgba(255, 255, 255, .8);
         }
+
         &:hover {
           color: rgba(255, 255, 255, .9);
         }
