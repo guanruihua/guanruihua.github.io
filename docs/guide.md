@@ -156,6 +156,7 @@
 - [QQ 邮箱](mail.qq.com/?cancel_login=true&from=session_timeout)
 - [Outlook](partner.outlook.cn/mail/)
 - [163](mail.163.com)
+- [临时邮箱](https://temp-mail.org/zh/)
 
 ### 配图
 
@@ -163,6 +164,7 @@
 
 ### 工具 / 资源
 
+- [抠图 removebg](https://www.remove.bg)
 - [Alpha Coders 壁纸](alphacoders.com)
 - [致美化(主题,壁纸)](zhutix.com)
 - [wallhaven](wallhaven.cc/)

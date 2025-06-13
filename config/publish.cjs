@@ -19,7 +19,7 @@ async function runCommands() {
     await runCommand('npm run build')
     await runCommand('git add .')
     await runCommand(`git commit -m "feat: dev"`)
-    await runCommand(`git push `)
+    await runCommand(`git push`)
     await runCommand('npm version patch')
     console.log('所有命令执行完成')
   } catch (error) {
