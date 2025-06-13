@@ -1,6 +1,5 @@
 import dayjs from 'dayjs'
 import { useSetState } from '0hook'
-import { getUID } from './util'
 import { useFetchMDState } from '@/hook'
 import { analysisMD } from './analysis-md'
 
@@ -36,11 +35,9 @@ export const useState = () => {
     'ddl-game-task',
   )
   const [md] = useFetchMDState('/ddl-game.md')
-  console.log(analysisMD(md))
-
-  // console.log(weekStartTime.format('YYYY-MM-DD HH:mm:ss'), timestamp)
 
   return {
+    TASK: analysisMD(md),
     timestamp,
     account,
     setAccount,

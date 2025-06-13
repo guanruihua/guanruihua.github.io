@@ -2,11 +2,11 @@ import { isArray } from 'asura-eye'
 import { Div } from 'aurad'
 import React from 'react'
 import { Title } from './title'
-import { TASK } from './conf'
 import { useState } from './hook'
+import { Item } from './analysis-md'
 
 export function Task() {
-  const { timestamp, account, setAccount, state, setState } = useState()
+  const { timestamp, TASK, account, setAccount, state, setState } = useState()
 
   return (
     <div className="ddl-game-task">
@@ -26,7 +26,6 @@ export function Task() {
                 setAccount({ selectId: id })
               }}
             >
-              {/* <div className="title">{title}</div> */}
               <Title
                 value={title}
                 cb={(newVal) => {
@@ -40,44 +39,39 @@ export function Task() {
           )
         })}
       </div>
-      {TASK.map((item) => {
-        const { id, title, week_task } = item
+      {TASK.map((item: Item) => {
+        const { id, name, next = {} } = item
         return (
           <div key={id} className="ddl-game-task-item">
-            <div className="title">{title}</div>
+            <div className="title">{name}</div>
             <div className="week_task">
-              {week_task.map((weekTaskItem, j) => {
-                const [_id, name] = weekTaskItem.split('-')
-                const uid = account.selectId + '-' + id + '-' + _id
-
-                return (
-                  <Div
-                    key={j}
-                    className={[
-                      'week_task-item',
-                      {
-                        check: state?.[timestamp]?.includes(uid),
-                      },
-                    ]}
-                    onClick={() => {
-                      if (isArray(state?.[timestamp])) {
-                        if (state[timestamp].includes(uid)) {
-                          state[timestamp] = state[timestamp].filter(
-                            (_) => _ !== uid,
-                          )
-                        } else {
-                          state[timestamp].push(uid)
-                        }
+              {next['5hE5UU']?.map(({ id = '', name = '' }, j: number) => (
+                <Div
+                  key={j}
+                  className={[
+                    'week_task-item',
+                    {
+                      check: state?.[timestamp]?.includes(id),
+                    },
+                  ]}
+                  onClick={() => {
+                    if (isArray(state?.[timestamp])) {
+                      if (state[timestamp].includes(id)) {
+                        state[timestamp] = state[timestamp].filter(
+                          (_) => _ !== id,
+                        )
                       } else {
-                        state[timestamp] = [uid]
+                        state[timestamp].push(id)
                       }
-                      setState(state)
-                    }}
-                  >
-                    {name}
-                  </Div>
-                )
-              })}
+                    } else {
+                      state[timestamp] = [id]
+                    }
+                    setState(state)
+                  }}
+                >
+                  {name}
+                </Div>
+              ))}
             </div>
           </div>
         )

@@ -1,49 +1,58 @@
-interface Item {
+import { isArray, isEffectObject, isObject } from 'asura-eye'
+import { getUID } from './util'
+
+export interface Item {
+  id: string
   name: string
-  type: string
-  next: string[]
+  next?: {
+    [key: string]: Item[]
+  }
 }
 export const analysisMD = (md: string): any[] => {
-  const data: Item[] = [
-    {
-      name: '',
-      type: 'Own',
-      next: [],
-    },
-  ]
-  // const list = md.split('\r\n').filter(Boolean)
   const list = md.split(/\r\n|\n|\r/).filter(Boolean)
-  const reg = /^- \[.*?\]\(.*?\)/
-  let type = 'Own'
-  // console.log(md, list)
 
-  list.forEach((row: string) => {
-    const tmp: Item = data.at(-1) as Item
-    if (row.indexOf('## ') === 0) {
-      type = row.replace('## ', '')
-      return
+  const db: Item[] = []
+  let nextId: string = ''
+
+  for (let i = 0; i < list.length; i++) {
+    const row: string = list[i]
+    if (row.indexOf('# ') === 0) {
+      const name = row.replace('# ', '').trim()
+      const id = getUID(name)
+      nextId = ''
+      db.push({
+        id,
+        name,
+        next: {},
+      })
+      continue
     }
 
-    if (row.indexOf('### ') === 0) {
-      const name = row.replace('### ', '')
-      if (tmp.name) {
-        data.push({
-          name,
-          type,
-          next: [],
-        })
-      } else {
-        tmp.name = name
-        tmp.type = type
+    const lastItem: Item | undefined = db.at(-1)
+    if (!isEffectObject<Item>(lastItem)) {
+      continue
+    }
+    if (row.indexOf('## ') === 0) {
+      const name = row.replace('## ', '').trim()
+      const id = getUID(name)
+      nextId = id
+
+      if (isObject(lastItem?.next)) {
+        lastItem.next[nextId] = []
       }
-      return
+      continue
     }
 
     if (row.indexOf('- ') == 0) {
-      // tmp?.next.push(row.replace(/^- \[|\)$/gi, '').split(']('))
-      tmp?.next.push(row.replace(/^- /g, ''))
-    }
-  })
+      const name = row.replace(/^- /g, '')
+      const id = lastItem.id + '.' + nextId + '.' + getUID(name)
 
-  return data
+      if (isArray(lastItem?.next?.[nextId])) {
+        lastItem.next[nextId].push({ name, id })
+      }
+      continue
+    }
+  }
+
+  return db
 }
