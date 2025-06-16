@@ -6,6 +6,10 @@ export const StudyChildRouter: {
   element: React.ReactNode | any
 }[] = [
   {
+    path: 'demo-text',
+    element: Lazy(import('./text/demo')),
+  },
+  {
     path: 'flow-demo-grid',
     element: Lazy(import('./flow-demo/demo/grid')),
   },

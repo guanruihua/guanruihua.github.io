@@ -59,6 +59,7 @@
 - [Svg Demo](study/svg-demo)
 - [Flow Demo](study/flow-demo-grid)
 - [字体描边](study/font-stroke)
+- [中间省略号 & svg 文本加粗](study/demo-text)
 
 ### Other
 
@@ -194,7 +195,8 @@
 ### Color
 
 - [Gradient Color](webgradients.com/)
-- [ui Gradients](uigradients.com/#Combi)
+- [UI Gradients](uigradients.com/#Combi)
+- [My Color](https://mycolor.space/gradient)
 
 ### WebGL
 
