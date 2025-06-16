@@ -55,7 +55,9 @@
 - [小众 HTML 标签](study/minority-html)
 - [滚动绽放](study/scroll-bloom)
 - [整屏滚动](study/scroll-snap)
-- [Svg](study/demo-svg)
+- [Svg](study/svg)
+- [Svg Demo](study/svg-demo)
+- [Flow Demo](study/flow-demo-grid)
 - [字体描边](study/font-stroke)
 
 ### Other

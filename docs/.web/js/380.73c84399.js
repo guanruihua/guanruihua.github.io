@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkguanruihua_github_io=self.webpackChunkguanruihua_github_io||[]).push([[380],{380:(u,e,a)=>{a.r(e),a.d(e,{default:()=>i});var t=a(296),n=a(558);function i(u){return t.createElement("div",{className:"layout"},t.createElement(n.sv,null))}}}]);

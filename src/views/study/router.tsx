@@ -6,6 +6,10 @@ export const StudyChildRouter: {
   element: React.ReactNode | any
 }[] = [
   {
+    path: 'flow-demo-grid',
+    element: Lazy(import('./flow-demo/demo/grid')),
+  },
+  {
     path: 'minority-html',
     element: Lazy(import('./minority-html')),
   },
@@ -38,8 +42,12 @@ export const StudyChildRouter: {
     element: Lazy(import('./test')),
   },
   {
-    path: 'demo-svg',
+    path: 'svg',
     element: Lazy(import('./svg')),
+  },
+  {
+    path: 'svg-demo',
+    element: Lazy(import('./svg-demo')),
   },
   {
     path: 'css-q-quotes',
