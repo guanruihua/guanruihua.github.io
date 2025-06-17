@@ -110,11 +110,6 @@
 
 - [CSS 灵感](https://csscoco.com/inspiration/#/)
 
-### Icon
-
-- [iconify](icon-sets.iconify.design)
-- [Remix Icon](remixicon.com)
-
 ### Platform
 
 - [npmjs](www.npmjs.com)
@@ -183,6 +178,11 @@
 - [Antd](ant-design.antgroup.com/components/overview-cn)
 - [Element Plus](element-plus.org/zh-CN/component/overview.html)
 - [UI Shadcn](ui.shadcn.com/docs/components/button)
+
+### Icon
+
+- [iconify](icon-sets.iconify.design)
+- [Remix Icon](remixicon.com)
 
 ### 图表
 
