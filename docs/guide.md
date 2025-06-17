@@ -157,9 +157,11 @@
 - [gmail](mail.google.com)
 - [临时邮箱](https://temp-mail.org/zh/)
 
-### 配图
+### 配图相关
 
 - [pexels](www.pexels.com/zh-cn/)
+- [在线 PS](https://www.gaoding.com/editor/ps#/)
+- [全年龄的动漫图片和壁纸](anime-pictures.net)
 
 ### 工具 / 资源
 
@@ -171,6 +173,14 @@
 - [果核剥壳](www.ghxi.com)
 - [极简浏览器插件](chrome.zzzmh.cn/index)
 - [图片压缩 zippic](www.zippic.cn)
+- [月幕 galgame](https://www.ymgal.games/)
+
+### 背景音
+
+- [室内](https://pluvior.com/index.html)
+- [海滩](https://virtocean.com/#)
+- [世界之声](https://aporee.org/maps/)
+- [森林之音](www.tree.fm)
 
 ## UI 组件 & 模板
 
