@@ -27,19 +27,26 @@ export default function Home() {
     'cache-guide-state',
   )
 
-  const handleClick = (name: string) => {
+  const handleClick = (name: string, only: boolean = false) => {
+    console.log(name, only)
     if (!isArray(state.selects)) {
       state.selects = []
     }
-    if (state.selects.includes(name)) {
-      state.selects = state.selects.filter((_) => _ !== name)
+    if (only) {
+      if (state.selects.includes(name) && state.selects.length === 1) {
+        state.selects = []
+      } else {
+        state.selects = [name]
+      }
     } else {
-      state.selects.push(name)
+      if (state.selects.includes(name)) {
+        state.selects = state.selects.filter((_) => _ !== name)
+      } else {
+        state.selects.push(name)
+      }
     }
     setState(state)
   }
-
-  // console.log(guide)
 
   return (
     <Container containerClassName="home">
@@ -53,12 +60,9 @@ export default function Home() {
                 select: isString(name) && state.selects?.includes(name),
               },
             ]}
-            style={
-              {
-                background: BGColor[i % BGColor.length],
-              }
-            }
-            onClick={() => handleClick(name)}
+            style={{
+              background: BGColor[i % BGColor.length],
+            }}
           >
             <div
               className="bg"
@@ -75,9 +79,19 @@ export default function Home() {
                 bottom: 0,
                 zIndex: 1,
               }}
+              onClick={() => handleClick(name)}
             />
             <div className="logo">{name.slice(0, 1)}</div>
-            <div className="name">{name}</div>
+            <div
+              className="name"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                handleClick(name, true)
+              }}
+            >
+              {name}
+            </div>
           </Div>
         ))}
       </div>
