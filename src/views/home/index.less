@@ -27,14 +27,13 @@
     font-size: large;
     font-weight: bold;
     cursor: pointer;
-    // background: rgba(#fff, .3);
     color: #fff;
-    transition: .6s;
- 
+    transition: all .6s ease-in-out;
+
     &.select {
       box-shadow: -2px 3px 8px rgba(255, 255, 255, .9);
     }
-    
+
     &:hover:not(.select) {
       box-shadow: -2px 3px 8px rgba(255, 255, 255, .3);
     }
@@ -54,10 +53,20 @@
 
     .name {
       position: absolute;
-      bottom: 12px;
-      right: 12px;
+      bottom: 0;
+      right: 0;
       z-index: 10;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 100px;
+      min-height: 50px;
+      padding-right: 10px;
+
+      &:hover {
+        color: #88CA97;
+      }
     }
   }
 
