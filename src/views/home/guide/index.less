@@ -8,12 +8,20 @@
   justify-content: center;
   gap: 10px;
   height: 100%;
+  max-width: 100vw;
 
   .home-guide-col {
     display: flex;
     flex-direction: column;
     gap: 10px;
     min-width: 450px;
+    max-width: 100vw;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .home-guide-col {
+      min-width: 100vw;
+    }
   }
 
   .guide-module {
