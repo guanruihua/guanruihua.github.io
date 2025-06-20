@@ -35,9 +35,12 @@ export const useState = () => {
     'ddl-game-task',
   )
   const [md] = useFetchMDState('/ddl-game.md')
+  const TASK = analysisMD(md)
+
+  console.log(TASK)
 
   return {
-    TASK: analysisMD(md),
+    TASK,
     timestamp,
     account,
     setAccount,
