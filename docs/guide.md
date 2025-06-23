@@ -43,6 +43,7 @@
 - [B 站](t.bilibili.com/?tab=video)
 - [知乎](www.zhihu.com/hot)
 - [音乐 ZZ123](zz123.com/)
+- [GD 音乐台](https://music.gdstudio.xyz/)
 
 ### Study CSS
 
