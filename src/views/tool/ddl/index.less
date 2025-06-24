@@ -1,5 +1,73 @@
 .tool-ddl-container {
 
+  .days-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+
+    .M-cell {
+      h3 {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .timeline {
+        text-align: center;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+
+    .day-cell {
+      text-align: center;
+      font-size: 14px;
+      width: 2.5em;
+      height: 2.5em;
+      line-height: 2.35;
+      border-radius: 0;
+      opacity: .5;
+
+
+      &.today {
+        opacity: .9;
+        font-weight: bold;
+        color: rgb(212, 164, 6);
+      }
+
+      &.weekend {
+        background: rgba(35, 217, 110, .2);
+      }
+
+      &.holiday {
+        background: rgba(35, 217, 110, .2);
+      }
+
+      &.adjustmentDay {
+        background: red;
+      }
+
+
+      // &.now {
+      //   color: rgba(35, 217, 110, 1);
+      //   background: rgba(35, 217, 110, .34);
+      // }
+
+      // &.nextWeek:not(.weekend) {
+      //   filter: opacity(.5);
+      // }
+    }
+  }
+
+
   div {
     border-radius: 6px;
   }

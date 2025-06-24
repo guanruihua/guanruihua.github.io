@@ -1,3 +1,48 @@
+.tool-ddl-container .days-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+.tool-ddl-container .days-grid .M-cell h3 {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.tool-ddl-container .days-grid .M-cell .timeline {
+  text-align: center;
+}
+.tool-ddl-container .days-grid .M-cell .layout {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: flex-start;
+  justify-content: center;
+}
+.tool-ddl-container .days-grid .day-cell {
+  text-align: center;
+  font-size: 14px;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.35;
+  border-radius: 0;
+  opacity: 0.5;
+}
+.tool-ddl-container .days-grid .day-cell.today {
+  opacity: 0.9;
+  font-weight: bold;
+  color: #d4a406;
+}
+.tool-ddl-container .days-grid .day-cell.weekend {
+  background: rgba(35, 217, 110, 0.2);
+}
+.tool-ddl-container .days-grid .day-cell.holiday {
+  background: rgba(35, 217, 110, 0.2);
+}
+.tool-ddl-container .days-grid .day-cell.adjustmentDay {
+  background: red;
+}
 .tool-ddl-container div {
   border-radius: 6px;
 }
