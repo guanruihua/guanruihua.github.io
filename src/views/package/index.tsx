@@ -6,6 +6,7 @@ import './index.less'
 import type { PkgConf } from './type'
 import { adapter } from './utils'
 import { Container } from '@/components'
+import { SOURCEURL } from '@/assets'
 
 const handleClick = (item: PkgConf) => {
   if (item.home) {
@@ -19,7 +20,8 @@ export default function Pkg() {
   const [state, setState] = React.useState<PkgConf[]>([])
   const init = async () => {
     try {
-      const res = await fetch('/pkg.json')
+      // const res = await fetch('/pkg.json')
+      const res = await fetch(SOURCEURL + 'pkg.json')
       const data = await res.json()
       const newState = data.map(adapter)
       setState(newState)

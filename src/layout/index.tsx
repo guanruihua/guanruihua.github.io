@@ -9,7 +9,7 @@ export interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   return (
-    <div className="layout">
+    <div className="layout" style={{ overflowX: 'hidden' }}>
       <Outlet />
     </div>
   )

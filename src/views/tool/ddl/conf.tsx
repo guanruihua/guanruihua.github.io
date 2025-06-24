@@ -9,6 +9,8 @@ export const getConf = () => {
   const date = now.date()
   const weekStart = now.startOf('week').add(1, 'day')
 
+
+  
   const diff = (a: Dayjs, b: Dayjs) => b.diff(a, 'day')
   const getGap = (time: string) => {
     if (time === 'last') {
@@ -19,6 +21,7 @@ export const getConf = () => {
     return -999
   }
   console.log(now.format('M月D日'), '周', day, '日', date, diff(now, weekStart))
+  
   const list = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'].map(
     (title, i) => {
       const selfTime = now.startOf('week').add(i + 1, 'd')

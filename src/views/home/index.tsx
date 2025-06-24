@@ -7,6 +7,7 @@ import './index.less'
 import { isArray, isString } from 'asura-eye'
 import { Div } from 'aurad'
 import { analysisMD } from './analysis-md'
+import { SOURCEURL } from '@/assets'
 
 const BGColor = [
   'radial-gradient(ellipse at right top, #5756CD 0%, #151419 47%, #151419 100%)',
@@ -18,7 +19,8 @@ const BGColor = [
 ]
 
 export default function Home() {
-  const [md] = useFetchMDState('/guide.md')
+  // const [md] = useFetchMDState('/guide.md')
+  const [md] = useFetchMDState(SOURCEURL + 'guide.md')
   const [types, guide] = analysisMD(md)
   const [state, setState] = useSetState<{ selects: string[] }>(
     {
@@ -28,7 +30,6 @@ export default function Home() {
   )
 
   const handleClick = (name: string, only: boolean = false) => {
-    console.log(name, only)
     if (!isArray(state.selects)) {
       state.selects = []
     }

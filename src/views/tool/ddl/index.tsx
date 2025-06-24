@@ -3,9 +3,22 @@ import { Div } from 'aurad'
 import { getConf } from './conf'
 import './index.less'
 import { Task } from './task'
+import { SOURCEURL } from '@/assets'
 
 export default () => {
   const { tasks, list } = getConf()
+  const init = async () => {
+    fetch(SOURCEURL + `ddl/ddl-game.md?t=${Date.now()}`)
+      .then(async (res) => {
+        const data = await res.text()
+        console.log(data)
+      })
+      .catch(console.error)
+  }
+
+  React.useEffect(() => {
+    init()
+  }, [])
 
   return (
     <div className="tool-ddl-container">
@@ -44,7 +57,7 @@ export default () => {
         })}
       </div>
       <div className="ddl"></div>
-      <Task />
+      {/* <Task /> */}
     </div>
   )
 }

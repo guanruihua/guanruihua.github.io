@@ -7,7 +7,6 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "cross-env NODE_ENV=development node config/webpack.dev.js",
-    "publish": "node config/publish.cjs",
     "server": "nodemon dao/index.mjs",
     "commitlint": "commitlint -e",
     "prepare": "husky install",
