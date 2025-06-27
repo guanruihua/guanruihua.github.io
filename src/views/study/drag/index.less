@@ -1,0 +1,25 @@
+.study-drag {
+  height: calc(100vh - 62px);
+
+  .ele {
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    background: rgba(255, 255, 255, .2);
+    cursor: grab;
+    left: 10px;
+    top: 10px;
+  }
+
+  .mesh {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 100%;
+
+    &>div {
+      min-height: 20px;
+      border: 1px solid rgba(255, 255, 255, .1);
+    }
+  }
+}
