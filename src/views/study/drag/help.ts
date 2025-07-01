@@ -1,3 +1,5 @@
+export const leftSideWidth = 250
+
 export function throttle(fn: any, delay: any) {
   let timer: any = null
   return function () {
@@ -8,3 +10,4 @@ export function throttle(fn: any, delay: any) {
     }, delay)
   }
 }
+export const zeroLastDigit = (num: number) => Math.floor(num / 10) * 10

@@ -5,12 +5,15 @@ export interface EleProps {
   [key: string]: any
 }
 
-export function Ele(props: EleProps) {
+export function Dnd(props: EleProps) {
+  const { onDragEnd, children } = props
   const ref = React.useRef<HTMLDivElement>(null)
   const rect = React.useRef({
     drag: false,
     offsetX: 0,
     offsetY: 0,
+    lastX: -1,
+    lastY: -1,
   })
 
   const handleMouseMove = throttle((e: any) => {
@@ -46,6 +49,10 @@ export function Ele(props: EleProps) {
     rect.current.offsetX = 0
     rect.current.offsetY = 0
     rect.current.drag = false
+
+    ref.current.style.opacity = 'none'
+
+    onDragEnd?.(ref, rect.current)
   }
 
   function onMouseDown(e: any) {
@@ -56,12 +63,20 @@ export function Ele(props: EleProps) {
     if (!ref.current) return
     const eleRect = ref.current.getBoundingClientRect()
 
+    rect.current.lastX = Number(ref.current.style.left.replace('px', '')) || 0
+    rect.current.lastY = Number(ref.current.style.top.replace('px', '')) || 0
     rect.current.offsetX = e.clientX - eleRect.left
     rect.current.offsetY = e.clientY - eleRect.top
     rect.current.drag = true
+    ref.current.style.opacity = '.8'
+    
 
     document.addEventListener('mousemove', handleMouseMove)
     document.addEventListener('mouseup', handleMouseUp)
   }
-  return <div ref={ref} className="ele" onMouseDown={onMouseDown}></div>
+  return (
+    <div ref={ref} className="ele" onMouseDown={onMouseDown}>
+      {children}
+    </div>
+  )
 }
