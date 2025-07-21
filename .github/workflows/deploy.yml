@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["master"]  
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest 
+    permissions:
+      pages: write 
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" 
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+
+      - name: Verify docs folder
+        run: |
+          if [ ! -d "docs" ]; then
+            echo "❌ Error: 'docs' folder not found after build!"
+            exit 1
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

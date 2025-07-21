@@ -27,7 +27,6 @@ export default function () {
       if (i >= items.length) return
       const item = items[i]
       const num = parseFloat(item)
-      // const operator = item
       if (isNumber(num)) {
         total += num
         calc(i + 1)
