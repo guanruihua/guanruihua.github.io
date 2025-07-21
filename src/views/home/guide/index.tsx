@@ -52,7 +52,11 @@ export function Guide(props: GuideProps) {
     <div className="home-guide">
       {cols.map((col, ci) => {
         return (
-          <div key={ci} className="home-guide-col">
+          <div
+            key={ci}
+            className="home-guide-col"
+            style={{ width: 100 / colCount + '%' }}
+          >
             {col?.map((item: GuideProps['guide']['0'], i: number) => {
               const { name, next } = item
               return (
