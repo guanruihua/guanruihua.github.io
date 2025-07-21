@@ -15,6 +15,10 @@ export const ToolRouter = [
     element: Lazy(import('./random-pwd')),
   },
   {
+    path: 'calculator',
+    element: Lazy(import('./calculator')),
+  },
+  {
     path: 'text-compare',
     element: Lazy(import('./text-compare')),
   },
