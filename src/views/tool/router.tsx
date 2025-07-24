@@ -15,6 +15,10 @@ export const ToolRouter = [
     element: Lazy(import('./random-pwd')),
   },
   {
+    path: 'platform-api',
+    element: Lazy(import('./platform-api')),
+  },
+  {
     path: 'calculator',
     element: Lazy(import('./calculator')),
   },

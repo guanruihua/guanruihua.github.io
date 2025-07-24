@@ -1,0 +1,141 @@
+.tool-platform-api {
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    min-height: 800px;
+
+    .list {
+      display: grid;
+      gap: 10px;
+      min-width: 10vw;
+      grid-auto-rows: max-content;
+    }
+
+    .content {
+      display: grid;
+      gap: 10px;
+      grid-auto-rows: max-content;
+    }
+  }
+
+  .content {
+
+    .title {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      background-color: #222;
+      padding: 8px 12px;
+      border-radius: 4px;
+
+      .input-edit {
+        width: 100%;
+      }
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      background-color: #222;
+      padding: 12px;
+      border-radius: 4px;
+
+      .method {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+
+      .url {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        width: 100%;
+
+        .input-edit {
+          width: 100%;
+        }
+      }
+    }
+
+
+    .headers {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px;
+
+      .key,
+      .value {
+        line-height: 34px;
+        font-size: 14px;
+        border-radius: 4px;
+        padding: 0 16px;
+      }
+    }
+  }
+
+  .list .item {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 60px auto;
+    flex-direction: row;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all .3s;
+
+    &:hover {
+      background-color: #222;
+    }
+
+    &.select {
+      background-color: #333;
+    }
+
+    div {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 6px;
+
+      &.method {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .method {
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: end;
+
+    &.get {
+      color: #6CC38B;
+    }
+
+    &.post {
+      color: #EDD779;
+    }
+
+    &.put {
+      color: #7BAEF6;
+    }
+
+    &.patch {
+      color: #BBA4DB;
+    }
+
+    &.delete {
+      color: #E99588;
+    }
+
+    &.head {
+      color: #78DE9C;
+    }
+
+    &.options {
+      color: #D856A1;
+    }
+  }
+}

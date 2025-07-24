@@ -1,0 +1,112 @@
+.tool-platform-api .container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  min-height: 800px;
+}
+.tool-platform-api .container .list {
+  display: grid;
+  gap: 10px;
+  min-width: 10vw;
+  grid-auto-rows: max-content;
+}
+.tool-platform-api .container .content {
+  display: grid;
+  gap: 10px;
+  grid-auto-rows: max-content;
+}
+.tool-platform-api .content .title {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  background-color: #222;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.tool-platform-api .content .title .input-edit {
+  width: 100%;
+}
+.tool-platform-api .content .header {
+  display: flex;
+  flex-direction: row;
+  background-color: #222;
+  padding: 12px;
+  border-radius: 4px;
+}
+.tool-platform-api .content .header .method {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.tool-platform-api .content .header .url {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+.tool-platform-api .content .header .url .input-edit {
+  width: 100%;
+}
+.tool-platform-api .content .headers {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+.tool-platform-api .content .headers .key,
+.tool-platform-api .content .headers .value {
+  line-height: 34px;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 0 16px;
+}
+.tool-platform-api .list .item {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 60px auto;
+  flex-direction: row;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.tool-platform-api .list .item:hover {
+  background-color: #222;
+}
+.tool-platform-api .list .item.select {
+  background-color: #333;
+}
+.tool-platform-api .list .item div {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 6px;
+}
+.tool-platform-api .list .item div.method {
+  justify-content: flex-end;
+}
+.tool-platform-api .method {
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: end;
+}
+.tool-platform-api .method.get {
+  color: #6CC38B;
+}
+.tool-platform-api .method.post {
+  color: #EDD779;
+}
+.tool-platform-api .method.put {
+  color: #7BAEF6;
+}
+.tool-platform-api .method.patch {
+  color: #BBA4DB;
+}
+.tool-platform-api .method.delete {
+  color: #E99588;
+}
+.tool-platform-api .method.head {
+  color: #78DE9C;
+}
+.tool-platform-api .method.options {
+  color: #D856A1;
+}
+
