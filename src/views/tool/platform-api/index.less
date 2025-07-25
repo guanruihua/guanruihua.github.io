@@ -1,15 +1,24 @@
 .tool-platform-api {
+
   .container {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 16px;
-    min-height: 800px;
 
     .list {
       display: grid;
       gap: 10px;
       min-width: 10vw;
       grid-auto-rows: max-content;
+
+      &-box {
+        display: grid;
+        gap: 10px;
+        min-width: 10vw;
+        grid-auto-rows: max-content;
+        overflow-y: auto;
+        max-height: calc(100vh - 120px);
+      }
     }
 
     .content {
@@ -26,8 +35,10 @@
       align-items: center;
       font-size: 12px;
       background-color: #222;
-      padding: 8px 12px;
+      padding: 4px 12px;
       border-radius: 4px;
+      height: 42px;
+      font-weight: bold;
 
       .input-edit {
         width: 100%;
@@ -53,6 +64,7 @@
         justify-content: flex-start;
         width: 100%;
         width: 100%;
+        margin-right: 10px;
 
         .input-edit {
           width: 100%;
@@ -85,6 +97,7 @@
     cursor: pointer;
     border-radius: 4px;
     transition: all .3s;
+    height: 32px;
 
     &:hover {
       background-color: #222;
@@ -101,6 +114,30 @@
 
       &.method {
         justify-content: flex-end;
+      }
+    }
+  }
+
+  .result-list {
+    background: #1e1e1e;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 5px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &-item {
+      font-size: 12px;
+      text-align: center;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover,
+      &.select {
+        background: #333333;
       }
     }
   }

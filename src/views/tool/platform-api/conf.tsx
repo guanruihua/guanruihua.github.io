@@ -1,5 +1,3 @@
-
-
 export const HEADERS = `{
    "Access-Control-Allow-Origin": "*",
    "Accept": "*/*",
@@ -29,6 +27,31 @@ export const LIST = [
     bodyTxt: '{}',
     paramsTxt: '{}',
     resultTxt: '{}',
+  },
+  {
+    id: '1753345572425',
+    title: 'TMP POST',
+    method: 'post',
+    url: 'http://172.16.30.53:2400/api/v1/t/post',
+    headerTxt:
+      '{\n   "Access-Control-Allow-Origin": "*",\n   "Accept": "*/*",\n   // "Accept-Encoding": "gzip,deflate,br",\n   // "Connection": "keep-alive",\n  //  "Content-type": "text/plain",\n   "Content-type": "application/json",\n}',
+    bodyTxt: '{}',
+    paramsTxt: '{}',
+  },
+  {
+    id: '1753346315972',
+    title: 'TMP GET',
+    method: 'get',
+    url: 'http://172.16.30.53:2400/',
+    headerTxt:
+      '{\n   "Access-Control-Allow-Origin": "*",\n   "Accept": "*/*",\n//  "Accept-Encoding": "gzip,deflate,br",\n//  "Connection": "keep-alive",\n//  "Content-type": "text/plain",\n   "Content-type": "application/json",\n}',
+    bodyTxt: '{}',
+    paramsTxt: '{}',
+    resultTxt: '{\n  "data": "hello get api",\n  "params": {}\n}',
+    results: [
+      [Date.now() + 90, '{\n  "data": "hello get api b",\n  "params": {}\n}'],
+      [Date.now(), '{\n  "data": "hello get api a",\n  "params": {}\n}'],
+    ],
   },
 ]
 

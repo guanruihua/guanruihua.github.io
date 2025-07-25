@@ -10,7 +10,6 @@ export function jsonc2Json(jsoncString: string = '{}') {
 }
 
 export const handleSend = async (record: any) => {
-  console.log('send', record)
   const { bodyTxt, headerTxt, method = 'post', paramsTxt, url } = record
   const headers = jsonc2Json(headerTxt)
   const params = jsonc2Json(paramsTxt)
@@ -24,8 +23,8 @@ export const handleSend = async (record: any) => {
       data: body,
       headers,
     })
-    console.log(res)
-    return res
+    console.log(res.data)
+    return res?.data || {}
   } catch (error) {
     console.error(error)
   }

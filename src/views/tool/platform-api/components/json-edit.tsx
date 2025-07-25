@@ -5,11 +5,12 @@ import { Editor } from '@monaco-editor/react'
 export interface JsonEditProps {
   value?: string
   onChange(val: string): void
+  children?: React.ReactNode
   [key: string]: any
 }
 
 export function JsonEdit(props: JsonEditProps) {
-  const { value = '{}', onChange } = props
+  const { value = '{}', onChange, children } = props
   const editorRef = React.useRef<any>(null)
 
   function handleEditorDidMount(editor: any, monaco: any) {
@@ -30,13 +31,18 @@ export function JsonEdit(props: JsonEditProps) {
   }
 
   return (
-    <Grid
+    <div
       style={{
+        display: 'grid',
         gridTemplateColumns: '1fr auto',
+        gap: 10,
+        // minHeight: 600,
+        minHeight: 'calc(100vh - 240px)',
+        overflowY: 'auto'
       }}
     >
       <Editor
-        height="600px"
+        height="100%"
         width="100%"
         theme="vs-dark"
         defaultLanguage="json"
@@ -50,11 +56,10 @@ export function JsonEdit(props: JsonEditProps) {
         onMount={handleEditorDidMount}
         onChange={onChange}
       />
-      <Grid>
-        <Button onClick={handleFormat} style={{ marginBottom: '10px' }}>
-          Format
-        </Button>
-      </Grid>
-    </Grid>
+      <div style={{ display: 'grid', gap: 5, gridTemplateRows: 'auto 1fr' }}>
+        <Button onClick={handleFormat}>Format</Button>
+        {children}
+      </div>
+    </div>
   )
 }

@@ -1,8 +1,9 @@
 import React from 'react'
-import { InputEdit } from './input-edit'
+import { InputEdit } from '../components/input-edit'
 import { Button, Div, Tab } from 'aurad'
-import { JsonEdit } from './json-edit'
-import { handleSend } from './utils'
+import { JsonEdit } from '../components/json-edit'
+import { handleSend } from '../utils'
+import { Result } from './result'
 
 export interface ContentProps {
   state: any
@@ -18,10 +19,14 @@ export function Content(props: ContentProps) {
     state.list?.[0] ||
     {}
 
-  console.log(selectRecord)
+  // console.log(selectRecord)
 
   const { method = 'post', title = 'Template', url = '' } = selectRecord
-  const [active, setActive] = React.useState('params')
+  const [loading, setLoading] = React.useState(false)
+  const [active, setActive] = React.useState(
+    // 'params'
+    'body',
+  )
   return (
     <div className="content">
       <Div className="title">
@@ -30,6 +35,18 @@ export function Content(props: ContentProps) {
           value={title}
           cb={(newVal) => handleEdit('title', newVal)}
         />
+        {/* <Button
+          type="primary"
+          style={
+            {
+              marginLeft: 10,
+              '--color': 'rgba(255, 0,0, .9)',
+              '--hover-color': 'rgba(255, 0,0, .3)',
+            } as React.CSSProperties
+          }
+        >
+          DEL
+        </Button> */}
       </Div>
       <div className="header">
         <Div className="method" classNames={[method]}>
@@ -47,11 +64,16 @@ export function Content(props: ContentProps) {
           />
         </div>
         <Button
+          disabled={loading}
           type="primary"
           onClick={async () => {
+            setLoading(true)
             const res = await handleSend(selectRecord)
             setActive('result')
-            handleEdit('resultTxt', JSON.stringify(res?.data, null, 2))
+            handleEdit('results', JSON.stringify(res, null, 2))
+            setTimeout(() => {
+              setLoading(false)
+            }, 1000)
           }}
         >
           Send
@@ -66,7 +88,6 @@ export function Content(props: ContentProps) {
             title: 'Headers',
             children: (
               <JsonEdit
-                key={state.lastUpdate}
                 value={selectRecord.headerTxt}
                 onChange={(newVal) => handleEdit('headerTxt', newVal)}
               />
@@ -77,7 +98,6 @@ export function Content(props: ContentProps) {
             title: 'Params',
             children: (
               <JsonEdit
-                key={state.lastUpdate}
                 value={selectRecord.paramsTxt}
                 onChange={(newVal) => handleEdit('paramsTxt', newVal)}
               />
@@ -88,7 +108,6 @@ export function Content(props: ContentProps) {
             title: 'Body',
             children: (
               <JsonEdit
-                key={state.lastUpdate}
                 value={selectRecord.bodyTxt}
                 onChange={(newVal) => handleEdit('bodyTxt', newVal)}
               />
@@ -98,11 +117,7 @@ export function Content(props: ContentProps) {
             key: 'result',
             title: 'Result',
             children: (
-              <JsonEdit
-                key={state.lastUpdate}
-                value={selectRecord.resultTxt}
-                onChange={(newVal) => handleEdit('resultTxt', newVal)}
-              />
+              <Result selectRecord={selectRecord} handleEdit={handleEdit} />
             ),
           },
         ]}

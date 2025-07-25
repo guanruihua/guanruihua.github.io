@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSetState } from '0hook'
 import { getList } from './conf'
-import { Content } from './content'
+import { Content } from './modules/content'
 import './index.less'
-import { List } from './list'
+import { List } from './modules/list'
 
 export default function () {
   const [state, setState] = useSetState(
@@ -14,13 +14,27 @@ export default function () {
     },
     'tool/platform-api/cache',
   )
+
   const handleEdit = (type: string, newVal: any, id?: string) => {
     if (!state.selectId) return
 
     const newList =
       state.list?.map((item: any) => {
         if (item.id !== state.selectId) return item
-        if (type) {
+        if (type === 'results') {
+          if (!item.results) item.results = []
+          if (id) {
+            item.results = item.results.map((row: any) => {
+              if (row[0] === id) row[1] = newVal
+              return row
+            })
+          } else {
+            item.results.unshift([Date.now(), newVal])
+          }
+          if (item.results.length > 30) {
+            item.results = item.results.slice(0, 30)
+          }
+        } else if (type) {
           item[type] = newVal
 
           return item
