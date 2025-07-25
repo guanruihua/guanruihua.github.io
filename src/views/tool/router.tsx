@@ -15,6 +15,10 @@ export const ToolRouter = [
     element: Lazy(import('./random-pwd')),
   },
   {
+    path: 'ai-chat',
+    element: Lazy(import('./ai-chat')),
+  },
+  {
     path: 'platform-api',
     element: Lazy(import('./platform-api')),
   },

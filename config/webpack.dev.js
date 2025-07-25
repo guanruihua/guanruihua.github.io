@@ -4,7 +4,7 @@ const webpackConfig = require('./webpack.base.js')
 const path = require('path')
 
 const devServer = {
-  port: '5300', //默认是8080
+  port: '5330', //默认是8080
   host: '0.0.0.0',
   // port: '7300', //默认是8080
   // client: { logging: "error" },//浏览器中设置日志级别
