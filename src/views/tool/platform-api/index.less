@@ -89,10 +89,8 @@
   }
 
   .list .item {
-    display: grid;
+    display: flex;
     gap: 5px;
-    grid-template-columns: 60px auto;
-    flex-direction: row;
     font-size: 12px;
     cursor: pointer;
     border-radius: 4px;
@@ -110,12 +108,16 @@
     div {
       display: inline-flex;
       align-items: center;
-      padding: 4px 6px;
 
       &.method {
         justify-content: flex-end;
       }
     }
+
+    .method {
+      min-width: 60px;
+    }
+
   }
 
   .result-list {
@@ -128,12 +130,28 @@
     gap: 5px;
 
     &-item {
+      min-width: 200px;
+      min-height: 32px;
+      line-height: 32px;
       font-size: 12px;
       text-align: center;
-      height: 24px;
-      line-height: 24px;
+      // height: 24px;
+      // line-height: 24px;
       border-radius: 4px;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+
+      .fast{
+        color: #6CC38B;
+      }
+      .slower{
+        color: #EDD779;
+      }
+      .slowest{
+        color: #EC8A80;
+      }
 
       &:hover,
       &.select {

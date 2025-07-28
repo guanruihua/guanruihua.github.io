@@ -70,10 +70,8 @@
   padding: 0 16px;
 }
 .tool-platform-api .list .item {
-  display: grid;
+  display: flex;
   gap: 5px;
-  grid-template-columns: 60px auto;
-  flex-direction: row;
   font-size: 12px;
   cursor: pointer;
   border-radius: 4px;
@@ -89,10 +87,12 @@
 .tool-platform-api .list .item div {
   display: inline-flex;
   align-items: center;
-  padding: 4px 6px;
 }
 .tool-platform-api .list .item div.method {
   justify-content: flex-end;
+}
+.tool-platform-api .list .item .method {
+  min-width: 60px;
 }
 .tool-platform-api .result-list {
   background: #1e1e1e;
@@ -104,12 +104,25 @@
   gap: 5px;
 }
 .tool-platform-api .result-list-item {
+  min-width: 200px;
+  min-height: 32px;
+  line-height: 32px;
   font-size: 12px;
   text-align: center;
-  height: 24px;
-  line-height: 24px;
   border-radius: 4px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.tool-platform-api .result-list-item .fast {
+  color: #6CC38B;
+}
+.tool-platform-api .result-list-item .slower {
+  color: #EDD779;
+}
+.tool-platform-api .result-list-item .slowest {
+  color: #EC8A80;
 }
 .tool-platform-api .result-list-item:hover,
 .tool-platform-api .result-list-item.select {

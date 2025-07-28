@@ -4,6 +4,8 @@ import { getList } from './conf'
 import { Content } from './modules/content'
 import './index.less'
 import { List } from './modules/list'
+import { ObjectType } from '0type'
+import { isObject } from 'asura-eye'
 
 export default function () {
   const [state, setState] = useSetState(
@@ -15,8 +17,13 @@ export default function () {
     'tool/platform-api/cache',
   )
 
-  const handleEdit = (type: string, newVal: any, id?: string) => {
+  const handleEdit = (
+    type: string,
+    newVal: any,
+    conf?: string | ObjectType,
+  ) => {
     if (!state.selectId) return
+    const id = isObject(conf) ? conf?.id : undefined
 
     const newList =
       state.list?.map((item: any) => {
@@ -29,7 +36,7 @@ export default function () {
               return row
             })
           } else {
-            item.results.unshift([Date.now(), newVal])
+            item.results.unshift([Date.now(), newVal, conf])
           }
           if (item.results.length > 30) {
             item.results = item.results.slice(0, 30)

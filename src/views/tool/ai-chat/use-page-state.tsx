@@ -5,7 +5,12 @@ import { AI } from './chat'
 import { isArray } from 'asura-eye'
 
 export interface PageState {
-  apiKey: ''
+  model: string
+  customModel: boolean
+  apiKey: string
+  selectModelType: string
+  url: string
+  customURL: boolean
   userPrompt: string
   messages: any[]
   history: any[]
@@ -16,7 +21,12 @@ export const usePageState = () => {
 
   const [state, setState] = useSetState<PageState>(
     {
+      model: 'deepseek-chat',
+      customModel: false,
       apiKey: '',
+      url: 'https://api.deepseek.com/v1/chat/completions',
+      customURL: false,
+      selectModelType: '',
       userPrompt: '你好',
       messages: [],
       history: [],
@@ -34,8 +44,9 @@ export const usePageState = () => {
     if (!state.userPrompt || !state.apiKey) return
 
     const ai = AI({
-      model: 'deepSeek-chat-inline',
+      model: state.model,
       apiKey: state.apiKey,
+      url: state.url,
       // tools,
       // SystemPrompt,
       // ChartToolTypes,

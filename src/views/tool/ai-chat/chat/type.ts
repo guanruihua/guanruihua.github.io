@@ -39,16 +39,17 @@ export interface MessageType {
 
 export type ObjectType = Record<string, any>
 
-type ModelType = 'deepSeek-chat-inline' | 'llama'
+type ModelType = 'deepSeek-chat-inline' | 'llama' | string
 type CustomModelType = {
-  model: string
-  url: string
+  model?: string
+  url?: string
   required?: string[]
 }
 
 export interface AIProps {
   model?: ModelType
-  custom?: CustomModelType
+  url?: string
+  // custom?: CustomModelType
   apiKey?: string
   lang?: 'zh_CN' | 'en_US'
   tools?: ToolType[]

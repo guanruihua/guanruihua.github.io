@@ -9,10 +9,39 @@
     flex-direction: column;
     gap: 10px;
 
+    .ai-model {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
     .label {
       font-size: 13px;
       font-weight: bolder;
       margin-bottom: 5px;
+    }
+  }
+
+  .url-box,
+  .model-box {
+    flex-direction: row;
+
+    &>.item {
+      border: 2px solid rgba(255 255 255 / 30%);
+      border-radius: 16px;
+      padding: 4px 12px 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all .3s;
+      letter-spacing: .2px;
+      font-weight: bold;
+
+      &:hover,
+      &.select {
+        border-color: #6CC38B;
+        background: #6CC38B;
+        color: #fff;
+      }
     }
   }
 

@@ -113,4 +113,6 @@ export const OwnChartToolTypes: string[] = ChartTools.map(
   item => item.function.name,
 )
 
+// console.log(ChartTools)
+
 export * from './utils'

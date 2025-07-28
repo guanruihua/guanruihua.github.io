@@ -41,7 +41,7 @@
     "@typescript-eslint/typescript-estree": "^5.62.0",
     "abandonjs": "^3.7.1",
     "asura-eye": "^0.8.0",
-    "aurad": "^1.6.4",
+    "aurad": "^1.7.2",
     "axios": "^1.11.0",
     "babel-loader": "^8.3.0",
     "clean-webpack-plugin": "^4.0.0",

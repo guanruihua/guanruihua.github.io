@@ -9,10 +9,38 @@
   flex-direction: column;
   gap: 10px;
 }
+.tool-ai-chat .left-aside .ai-model {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .tool-ai-chat .left-aside .label {
   font-size: 13px;
   font-weight: bolder;
   margin-bottom: 5px;
+}
+.tool-ai-chat .url-box,
+.tool-ai-chat .model-box {
+  flex-direction: row;
+}
+.tool-ai-chat .url-box > .item,
+.tool-ai-chat .model-box > .item {
+  border: 2px solid rgba(255 255 255 / 30%);
+  border-radius: 16px;
+  padding: 4px 12px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s;
+  letter-spacing: 0.2px;
+  font-weight: bold;
+}
+.tool-ai-chat .url-box > .item:hover,
+.tool-ai-chat .model-box > .item:hover,
+.tool-ai-chat .url-box > .item.select,
+.tool-ai-chat .model-box > .item.select {
+  border-color: #6CC38B;
+  background: #6CC38B;
+  color: #fff;
 }
 .tool-ai-chat .chat-container {
   width: 60vw;

@@ -1,4 +1,4 @@
-import { Div, Chart, Input, Button } from 'aurad'
+import { Div, Chart, Input, Button, Radio, Flex } from 'aurad'
 import React from 'react'
 import './index.less'
 import { usePageState } from './use-page-state'
@@ -7,7 +7,7 @@ export default function AIChat() {
   const { historyRef, state, setState, handleChat, handleClearHistory } =
     usePageState()
   const [loading, setLoading] = React.useState(false)
-  console.log(state)
+  // console.log(state)
 
   const handleUserChat = async () => {
     if (loading) return
@@ -16,21 +16,110 @@ export default function AIChat() {
     setLoading(false)
   }
 
+  const handleSelectModel = (val: string) => {
+    if (val === 'Custom') {
+      setState({
+        model: '',
+        customModel: true,
+      })
+      return
+    }
+    setState({
+      model: val,
+      customModel: false,
+    })
+  }
+  const handleSelectURL = (val: string) => {
+    if (val === 'Custom') {
+      setState({
+        url: '',
+        customURL: true,
+      })
+      return
+    }
+    setState({
+      url: val,
+      customURL: false,
+    })
+  }
+
   return (
     <div className="tool-ai-chat">
       <div className="left-aside">
-        <div>
-          <div className='label'>Api Key</div>
-          <Input
-            value={state.apiKey}
-            onChange={(e: any) => {
-              const val = e.target.value
-              setState({
-                apiKey: val,
-              })
-            }}
-          />
-        </div>
+        <Div className="ai-model">
+          <div className="item">
+            <div className="label"> Api Key</div>
+            <Input
+              value={state.apiKey}
+              onChange={(e: any) =>
+                setState({
+                  apiKey: e.target.value,
+                })
+              }
+            />
+          </div>
+          <div className="item">
+            <div className="label">Model</div>
+            <Flex className="model-box">
+              {['deepseek-chat', 'deepseek-reasoner', 'Custom'].map((val) => (
+                <Div
+                  key={val}
+                  className="item"
+                  classNames={{
+                    select: state.customModel
+                      ? val === 'Custom'
+                      : val === state.model,
+                  }}
+                  onClick={() => handleSelectModel(val)}
+                >
+                  {val}
+                </Div>
+              ))}
+              {state.customModel && (
+                <Input
+                  value={state.model}
+                  onChange={(e: any) =>
+                    setState({
+                      model: e.target.value,
+                    })
+                  }
+                />
+              )}
+            </Flex>
+          </div>
+          <div className="item">
+            <div className="label">URL</div>
+            <Flex className="url-box">
+              {['https://api.deepseek.com/v1/chat/completions', 'Custom'].map(
+                (val) => (
+                  <Div
+                    key={val}
+                    className="item"
+                    classNames={{
+                      select: state.customURL
+                        ? val === 'Custom'
+                        : val === state.url,
+                    }}
+                    onClick={() => handleSelectURL(val)}
+                  >
+                    {val}
+                  </Div>
+                ),
+              )}
+              {state.customURL && (
+                <Input
+                  value={state.url}
+                  onChange={(e: any) =>
+                    setState({
+                      url: e.target.value,
+                    })
+                  }
+                />
+              )}
+            </Flex>
+          </div>
+        </Div>
+
         <Button onClick={handleClearHistory}>Clear History</Button>
       </div>
       <div className="chat-container">

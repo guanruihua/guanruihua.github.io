@@ -4,6 +4,7 @@ import { Button, Div, Tab } from 'aurad'
 import { JsonEdit } from '../components/json-edit'
 import { handleSend } from '../utils'
 import { Result } from './result'
+import { useSetState } from '0hook'
 
 export interface ContentProps {
   state: any
@@ -23,10 +24,13 @@ export function Content(props: ContentProps) {
 
   const { method = 'post', title = 'Template', url = '' } = selectRecord
   const [loading, setLoading] = React.useState(false)
-  const [active, setActive] = React.useState(
-    // 'params'
-    'body',
+  const [own, setOwn] = useSetState(
+    {
+      active: 'body',
+    },
+    'tool/platform-api>content>active',
   )
+
   return (
     <div className="content">
       <Div className="title">
@@ -67,10 +71,13 @@ export function Content(props: ContentProps) {
           disabled={loading}
           type="primary"
           onClick={async () => {
+            const startTime = performance.now()
             setLoading(true)
             const res = await handleSend(selectRecord)
-            setActive('result')
-            handleEdit('results', JSON.stringify(res, null, 2))
+            setOwn({ active: 'result' })
+            handleEdit('results', JSON.stringify(res, null, 2), {
+              responseTime: performance.now() - startTime,
+            })
             setTimeout(() => {
               setLoading(false)
             }, 1000)
@@ -80,8 +87,8 @@ export function Content(props: ContentProps) {
         </Button>
       </div>
       <Tab
-        value={active}
-        onChange={setActive}
+        value={own.active}
+        onChange={(val) => setOwn({ active: val })}
         items={[
           {
             key: 'headers',

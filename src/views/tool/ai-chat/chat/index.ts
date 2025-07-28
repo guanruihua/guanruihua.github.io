@@ -9,7 +9,7 @@ export * from './type'
 export const AI = (props: AIProps) => {
   const {
     model,
-    custom,
+    url,
     apiKey,
     SystemPrompt,
     lang = 'en_US',
@@ -30,7 +30,7 @@ export const AI = (props: AIProps) => {
     })
   }
 
-  const llm = LLM({ model, custom, apiKey })
+  const llm = LLM({ model, url, apiKey })
 
   if (!llm) {
     console.error('LLM init error')

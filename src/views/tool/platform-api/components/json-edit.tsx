@@ -49,6 +49,7 @@ export function JsonEdit(props: JsonEditProps) {
         options={{
           formatOnPaste: true, // 粘贴时自动格式化
           formatOnType: true, // 输入时自动格式化
+          wordWrap: 'on',
           automaticLayout: true,
           scrollBeyondLastLine: false, // 禁止滚动超过最后一行
         }}
