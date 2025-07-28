@@ -23,6 +23,11 @@ const routes: RouteObject[] = [
         element: Lazy(import('./views/home')),
       },
       {
+        path: '/own',
+        element: Lazy(import('./views/own')),
+        children: ToolRouter,
+      },
+      {
         path: '/tool',
         element: (
           <Container>

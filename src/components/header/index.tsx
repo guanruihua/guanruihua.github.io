@@ -25,6 +25,12 @@ export function Header(props: HeaderProps) {
       >
         Github
       </div>
+      <div
+        className="control"
+        onClick={() => nav('own')}
+      >
+        Own
+      </div>
       <Div className="control" none={isHome} onClick={() => history.back()}>
         Back
       </Div>

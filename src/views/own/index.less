@@ -1,0 +1,40 @@
+.own {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+
+  .module {
+    padding: 16px;
+    width: 300px;
+    background-color: rgb(255 255 255 / 20%);
+    border-radius: 12px;
+
+    .title {
+      font-weight: bolder;
+      margin-bottom: 12px;
+    }
+
+    .children {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .name {
+        color: rgb(255 255 255 / 70%);
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all .3s;
+
+        &:hover {
+          color: rgb(255 255 255 / 100%);
+        }
+      }
+    }
+
+  }
+}
