@@ -2,6 +2,7 @@ import { Div, Chart, Input, Button, Radio, Flex } from 'aurad'
 import React from 'react'
 import './index.less'
 import { usePageState } from './use-page-state'
+import { ModelOptions, URLOptions } from './conf'
 
 export default function AIChat() {
   const { historyRef, state, setState, handleChat, handleClearHistory } =
@@ -61,18 +62,18 @@ export default function AIChat() {
           <div className="item">
             <div className="label">Model</div>
             <Flex className="model-box">
-              {['deepseek-chat', 'deepseek-reasoner', 'Custom'].map((val) => (
+              {ModelOptions.map(({ label, value }) => (
                 <Div
-                  key={val}
+                  key={value}
                   className="item"
                   classNames={{
                     select: state.customModel
-                      ? val === 'Custom'
-                      : val === state.model,
+                      ? value === 'Custom'
+                      : value === state.model,
                   }}
-                  onClick={() => handleSelectModel(val)}
+                  onClick={() => handleSelectModel(value)}
                 >
-                  {val}
+                  {label}
                 </Div>
               ))}
               {state.customModel && (
@@ -90,22 +91,20 @@ export default function AIChat() {
           <div className="item">
             <div className="label">URL</div>
             <Flex className="url-box">
-              {['https://api.deepseek.com/v1/chat/completions', 'Custom'].map(
-                (val) => (
-                  <Div
-                    key={val}
-                    className="item"
-                    classNames={{
-                      select: state.customURL
-                        ? val === 'Custom'
-                        : val === state.url,
-                    }}
-                    onClick={() => handleSelectURL(val)}
-                  >
-                    {val}
-                  </Div>
-                ),
-              )}
+              {URLOptions.map(({ label, value }) => (
+                <Div
+                  key={value}
+                  className="item"
+                  classNames={{
+                    select: state.customURL
+                      ? value === 'Custom'
+                      : value === state.url,
+                  }}
+                  onClick={() => handleSelectURL(value)}
+                >
+                  {label}
+                </Div>
+              ))}
               {state.customURL && (
                 <Input
                   value={state.url}

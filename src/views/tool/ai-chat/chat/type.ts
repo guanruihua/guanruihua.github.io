@@ -47,10 +47,10 @@ type CustomModelType = {
 }
 
 export interface AIProps {
-  model?: ModelType
-  url?: string
+  model?: ModelType | undefined
+  url?: string | undefined
   // custom?: CustomModelType
-  apiKey?: string
+  apiKey?: string | undefined
   lang?: 'zh_CN' | 'en_US'
   tools?: ToolType[]
   SystemPrompt?: string

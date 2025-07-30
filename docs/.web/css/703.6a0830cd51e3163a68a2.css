@@ -25,14 +25,14 @@
 }
 .tool-ai-chat .url-box > .item,
 .tool-ai-chat .model-box > .item {
-  border: 2px solid rgba(255 255 255 / 30%);
   border-radius: 16px;
-  padding: 4px 12px 6px;
+  padding: 4px 14px 6px;
   cursor: pointer;
   font-size: 12px;
   transition: all 0.3s;
   letter-spacing: 0.2px;
   font-weight: bold;
+  background: rgba(255, 255, 255, 0.3);
 }
 .tool-ai-chat .url-box > .item:hover,
 .tool-ai-chat .model-box > .item:hover,

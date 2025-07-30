@@ -53,6 +53,10 @@ const routes: RouteObject[] = [
         path: '/packages',
         element: Lazy(import('./views/package')),
       },
+      {
+        path: '*',
+        element: Lazy(import('./views/home')),
+      },
     ],
   },
 ]

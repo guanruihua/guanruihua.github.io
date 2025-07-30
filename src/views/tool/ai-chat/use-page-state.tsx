@@ -3,18 +3,7 @@ import React from 'react'
 import { useScrollBottom } from './helper'
 import { AI } from './chat'
 import { isArray } from 'asura-eye'
-
-export interface PageState {
-  model: string
-  customModel: boolean
-  apiKey: string
-  selectModelType: string
-  url: string
-  customURL: boolean
-  userPrompt: string
-  messages: any[]
-  history: any[]
-}
+import { PageState } from './type'
 
 export const usePageState = () => {
   const [historyRef, scrollBottom] = useScrollBottom()
@@ -44,8 +33,8 @@ export const usePageState = () => {
     if (!state.userPrompt || !state.apiKey) return
 
     const ai = AI({
-      model: state.model,
       apiKey: state.apiKey,
+      model: state.model,
       url: state.url,
       // tools,
       // SystemPrompt,

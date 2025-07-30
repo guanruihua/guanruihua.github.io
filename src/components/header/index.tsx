@@ -12,7 +12,7 @@ export function Header(props: HeaderProps) {
   const { children } = props
   const nav = useNavigate()
   const isHome = ['', '#/', '/'].includes(location.hash)
-  
+
   return (
     <div className="layout-header">
       <Div none={isHome} className="control" onClick={() => nav('/')}>
@@ -25,12 +25,13 @@ export function Header(props: HeaderProps) {
       >
         Github
       </div>
-      <div
+      <Div
+        none={['#/own', '/own'].includes(location.hash)}
         className="control"
-        onClick={() => nav('own')}
+        onClick={() => nav('/own')}
       >
         Own
-      </div>
+      </Div>
       <Div className="control" none={isHome} onClick={() => history.back()}>
         Back
       </Div>

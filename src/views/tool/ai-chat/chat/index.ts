@@ -30,14 +30,14 @@ export const AI = (props: AIProps) => {
     })
   }
 
-  const llm = LLM({ model, url, apiKey })
-
-  if (!llm) {
-    console.error('LLM init error')
-    return
-  }
-
+  
   const handleChat = async (params: AIChatParams) => {
+    const llm = LLM({ model, url, apiKey })
+  
+    if (!llm) {
+      console.error('LLM init error')
+      return
+    }
     const { message, messages = [], callback, callbackMessage } = params
 
     if (message) {
