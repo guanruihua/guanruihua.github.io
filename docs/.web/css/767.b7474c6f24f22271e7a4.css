@@ -1,8 +1,41 @@
 .tool-calculator {
   --ceil: 60px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.tool-calculator .input-formula {
+  width: 100%;
+}
+.tool-calculator .input-formula .row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+}
+.tool-calculator .input-formula-result {
+  line-height: 40px;
+  min-width: 100px;
+  text-align: start;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.tool-calculator .input-formula-input {
+  font-size: 15px;
+  font-weight: bolder;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  color: #fff;
+  min-width: 300px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 .tool-calculator .tool-calculator-layout {
   display: grid;
@@ -10,7 +43,7 @@
   gap: 10px;
 }
 .tool-calculator .history-box {
-  padding: 10px 12px;
+  padding: 10px 0;
   width: 100%;
   height: 340px;
   background-color: #242424;
@@ -22,9 +55,14 @@
   max-height: 250px;
   overflow-y: auto;
 }
+.tool-calculator .history-box .now {
+  padding: 0 12px;
+}
 .tool-calculator .history-box .item {
   white-space: wrap;
   line-height: 32px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0 12px;
 }
 .tool-calculator .simple {
   display: grid;

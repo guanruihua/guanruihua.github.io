@@ -2,12 +2,19 @@ import React from 'react'
 import './index.less'
 import { Keypads } from './conf'
 import { useSetState } from '0hook'
-import { isArray, isNumber } from 'asura-eye'
+import { isArray } from 'asura-eye'
+import { toResult } from './help'
+import { Button, Div, Flex } from 'aurad'
 
 interface State {
   formula?: string
   result?: string
   history?: string[]
+  type?: 'default' | 'input-formula'
+
+  inputFormulaInput?: string
+  inputFormulaResult?: string
+  inputFormulas?: string[][]
 }
 
 export default function () {
@@ -16,46 +23,14 @@ export default function () {
       formula: '',
       result: '',
       history: [],
+      type: 'default',
+
+      inputFormulaInput: '',
+      inputFormulaResult: '',
+      inputFormulas: [],
     },
     '/tool/calculator/cache',
   )
-  const toResult = (formula: string) => {
-    const items = formula.split(/(\+|\-|\*|\|\/|x|\{|\}|\(|\))/g)
-    let total = 0
-
-    const calc = (i = 0) => {
-      if (i >= items.length) return
-      const item = items[i]
-      const num = parseFloat(item)
-      if (isNumber(num)) {
-        total += num
-        calc(i + 1)
-        return
-      }
-
-      if (i + 1 >= items.length) return
-      const num2 = parseFloat(items[i + 1])
-      if (!isNumber(num2)) return
-      switch (item) {
-        case '+':
-          total += num2
-          break
-        case '-':
-          total -= num2
-          break
-        case '*':
-        case 'x':
-          total *= num2
-          break
-        case '/':
-          total /= num2
-          break
-      }
-      calc(i + 2)
-    }
-    calc()
-    return String(total)
-  }
   const handleClick = (val: string) => {
     let newFormula = ''
 
@@ -91,10 +66,89 @@ export default function () {
 
     setState(newState)
   }
-
   return (
     <div className="tool-calculator">
-      <div className="tool-calculator-layout">
+      <Flex
+        style={{
+          zoom: '.8',
+          marginBottom: 10,
+        }}
+      >
+        <Button
+          onClick={() => {
+            setState({
+              type: state.type === 'default' ? 'input-formula' : 'default',
+            })
+          }}
+        >
+          Switch
+        </Button>
+        {state.type === 'input-formula' && (
+          <Button
+            onClick={() => {
+              if (!state.inputFormulas) {
+                state.inputFormulas = []
+              }
+              state.inputFormulas.unshift([Date.now().toString(), ''])
+              setState(state)
+            }}
+          >
+            Add
+          </Button>
+        )}
+        {state.type === 'input-formula' && (
+          <Button
+            onClick={() => {
+              setState({
+                inputFormulas: [[Date.now().toString(), '']],
+              })
+            }}
+          >
+            Clear
+          </Button>
+        )}
+      </Flex>
+      <Div className="input-formula" none={state.type !== 'input-formula'}>
+        {state?.inputFormulas?.map((item, i) => {
+          const [id, value, result = 0] = item
+          return (
+            <div key={id}>
+              <div className="row">
+                <input
+                  className="input-formula-input"
+                  value={value || ''}
+                  onChange={(e) => {
+                    if (!state.inputFormulas) {
+                      state.inputFormulas = []
+                    }
+                    state.inputFormulas[i][1] = e.target.value
+                    state.inputFormulas[i][2] = toResult(e.target.value)
+                    setState(state)
+                  }}
+                />
+                <div className="input-formula-result">{result}</div>
+                <Button
+                  onClick={() => {
+                    if (!state.inputFormulas) {
+                      state.inputFormulas = []
+                    }
+                    state.inputFormulas = state.inputFormulas.filter(
+                      (_) => _[0] !== id,
+                    )
+                    setState(state)
+                  }}
+                >
+                  Del
+                </Button>
+              </div>
+            </div>
+          )
+        })}
+      </Div>
+      <Div
+        className="tool-calculator-layout"
+        none={state.type && state.type !== 'default'}
+      >
         <div className="simple">
           {Keypads.map((val) => {
             const onClick = () => handleClick(val)
@@ -164,10 +218,10 @@ export default function () {
               <div className="item" key={i}>
                 {row}
               </div>
-            ))} 
+            ))}
           </div>
         </div>
-      </div>
+      </Div>
     </div>
   )
 }
