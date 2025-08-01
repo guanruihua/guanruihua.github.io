@@ -63,6 +63,10 @@ export interface AIProps {
   functionCall?: {
     [key: string]: (args: ObjectType) => string | any
   }
+  config?: {
+    enabledRAG?: boolean
+    [key: string]: any
+  }
 }
 
 export interface AIChatParams {

@@ -4,6 +4,7 @@ import { toChartOptions, ChartTools, OwnChartToolTypes } from './chart/index'
 import { MessageType, History, AIProps, AIChatParams } from './type'
 import { t } from './i18n'
 import { LLM } from './llm'
+import axios from 'axios'
 export * from './type'
 
 export const AI = (props: AIProps) => {
@@ -15,6 +16,7 @@ export const AI = (props: AIProps) => {
     lang = 'en_US',
     addChartTool = true,
     functionCall = {},
+    config = {},
   } = props
   let { tools = [], ChartToolTypes = [] } = props
 
@@ -30,15 +32,31 @@ export const AI = (props: AIProps) => {
     })
   }
 
-  
   const handleChat = async (params: AIChatParams) => {
     const llm = LLM({ model, url, apiKey })
-  
+
     if (!llm) {
       console.error('LLM init error')
       return
     }
     const { message, messages = [], callback, callbackMessage } = params
+
+    if (config.enabledRAG) {
+      try {
+        const rag_res = await axios.post(' http://localhost:2400/rag', {
+          // message: 'Introducing AppPulse+',
+          message,
+        })
+        console.log(rag_res)
+        const data = rag_res?.data?.data
+        const content = `你是一个客服助手，请严格根据以下信息回答：${JSON.stringify(
+          data,
+        )}`
+        messages.unshift({ role: 'system', content })
+      } catch (error) {
+        console.error(error)
+      }
+    }
 
     if (message) {
       messages.push({ role: 'user', content: message })

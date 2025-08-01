@@ -12,6 +12,7 @@ export const usePageState = () => {
     {
       model: 'deepseek-chat',
       customModel: false,
+      enabledRAG: false,
       apiKey: '',
       url: 'https://api.deepseek.com/v1/chat/completions',
       customURL: false,
@@ -41,6 +42,9 @@ export const usePageState = () => {
       // ChartToolTypes,
       // functionCall,
       lang: localStorage.language === 'en' ? 'en_US' : 'zh_CN',
+      config: {
+        enabledRAG: state.enabledRAG,
+      },
     })
     await ai?.handleChat({
       message: state.userPrompt,

@@ -1,8 +1,9 @@
-import { Div, Chart, Input, Button, Radio, Flex } from 'aurad'
+import { Div, Chart, Input, Button, Flex } from 'aurad'
 import React from 'react'
 import './index.less'
 import { usePageState } from './use-page-state'
 import { ModelOptions, URLOptions } from './conf'
+import { MD } from './md'
 
 export default function AIChat() {
   const { historyRef, state, setState, handleChat, handleClearHistory } =
@@ -120,6 +121,16 @@ export default function AIChat() {
         </Div>
 
         <Button onClick={handleClearHistory}>Clear History</Button>
+        <Button
+          type={state.enabledRAG ? 'primary' : 'default'}
+          onClick={() => {
+            setState({
+              enabledRAG: !state.enabledRAG,
+            })
+          }}
+        >
+          Enabled RAG
+        </Button>
       </div>
       <div className="chat-container">
         <div className="chat-history" ref={historyRef}>
@@ -133,7 +144,9 @@ export default function AIChat() {
               )
             return (
               <Div key={i} className={role}>
-                <div className="content">{content}</div>
+                <div className="content markdown">
+                  <MD value={content} />
+                </div>
               </Div>
             )
           })}

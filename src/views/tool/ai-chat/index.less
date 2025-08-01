@@ -138,3 +138,138 @@
     }
   }
 }
+
+.markdown {
+  --gap: 8px;
+  --radius: 8px;
+  --sm-radius: 4px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: var(--gap);
+  }
+
+  a {
+    color: #8ef16e;
+    text-decoration: none;
+  }
+
+  p,
+  ul,
+  ol,
+  pre {
+    margin-bottom: var(--gap);
+  }
+
+  hr {
+    margin: var(--gap) 0;
+  }
+
+  ol,
+  ul {
+    list-style: auto;
+    margin-left: 16px;
+  }
+
+  ul {
+    list-style: circle;
+  }
+
+  li {
+    line-height: 32px;
+  }
+
+  code {
+    border-radius: var(--radius);
+    background: #282C34;
+    padding: 0 4px;
+
+  }
+
+  .code-no-lang {
+    border-radius: var(--radius);
+    background: #822431;
+    padding: 3px 8px;
+    color: #fff;
+    font-size: smaller;
+  }
+
+  .code-lang {
+    margin: 0 !important;
+    padding: 0.5em 1em !important;
+    border-radius: var(--radius) !important;
+  }
+
+  blockquote {
+    line-height: var(--height);
+    background: #313337;
+    border-left: 4px solid #44484C;
+    padding-left: 1em;
+    margin-bottom: var(--gap);
+    border-radius: var(--sm-radius);
+  }
+
+  table {
+    border: var(--border);
+    // border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: var(--gap);
+
+    th,
+    td {
+      min-height: 32px;
+      border-right: var(--border);
+      border-bottom: var(--border);
+      padding: 8px 12px;
+    }
+
+
+    thead tr:first-child {
+      th {
+        border-top: none;
+      }
+
+      th:first-child {
+        border-left: none;
+        border-top-left-radius: var(--radius);
+      }
+
+      th:last-child {
+        border-right: none;
+        border-top-right-radius: var(--radius);
+      }
+    }
+
+    tbody {
+      tr {
+        td:last-child {
+          border-right: none;
+        }
+      }
+
+      tr:last-child {
+        td {
+          border-bottom: none;
+        }
+
+        td:first-child {
+          border-left: none;
+          border-bottom-left-radius: var(--radius);
+        }
+
+        td:last-child {
+          border-right: none;
+          border-bottom-right-radius: var(--radius);
+        }
+      }
+    }
+
+  }
+}

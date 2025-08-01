@@ -1,4 +1,5 @@
 export interface PageState {
+  enabledRAG: boolean
   model: string
   customModel: boolean
   apiKey: string

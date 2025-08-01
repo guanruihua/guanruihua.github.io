@@ -121,4 +121,106 @@
   resize: none;
   letter-spacing: 0.5px;
 }
+.markdown {
+  --gap: 8px;
+  --radius: 8px;
+  --sm-radius: 4px;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-bottom: var(--gap);
+}
+.markdown a {
+  color: #8ef16e;
+  text-decoration: none;
+}
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown pre {
+  margin-bottom: var(--gap);
+}
+.markdown hr {
+  margin: var(--gap) 0;
+}
+.markdown ol,
+.markdown ul {
+  list-style: auto;
+  margin-left: 16px;
+}
+.markdown ul {
+  list-style: circle;
+}
+.markdown li {
+  line-height: 32px;
+}
+.markdown code {
+  border-radius: var(--radius);
+  background: #282C34;
+  padding: 0 4px;
+}
+.markdown .code-no-lang {
+  border-radius: var(--radius);
+  background: #822431;
+  padding: 3px 8px;
+  color: #fff;
+  font-size: smaller;
+}
+.markdown .code-lang {
+  margin: 0 !important;
+  padding: 0.5em 1em !important;
+  border-radius: var(--radius) !important;
+}
+.markdown blockquote {
+  line-height: var(--height);
+  background: #313337;
+  border-left: 4px solid #44484C;
+  padding-left: 1em;
+  margin-bottom: var(--gap);
+  border-radius: var(--sm-radius);
+}
+.markdown table {
+  border: var(--border);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: var(--gap);
+}
+.markdown table th,
+.markdown table td {
+  min-height: 32px;
+  border-right: var(--border);
+  border-bottom: var(--border);
+  padding: 8px 12px;
+}
+.markdown table thead tr:first-child th {
+  border-top: none;
+}
+.markdown table thead tr:first-child th:first-child {
+  border-left: none;
+  border-top-left-radius: var(--radius);
+}
+.markdown table thead tr:first-child th:last-child {
+  border-right: none;
+  border-top-right-radius: var(--radius);
+}
+.markdown table tbody tr td:last-child {
+  border-right: none;
+}
+.markdown table tbody tr:last-child td {
+  border-bottom: none;
+}
+.markdown table tbody tr:last-child td:first-child {
+  border-left: none;
+  border-bottom-left-radius: var(--radius);
+}
+.markdown table tbody tr:last-child td:last-child {
+  border-right: none;
+  border-bottom-right-radius: var(--radius);
+}
 
