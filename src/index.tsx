@@ -9,6 +9,7 @@ import {
 import './index.less'
 import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
+import { DevRouter } from './views/dev/router'
 import { StudyChildRouter } from './views/study/router'
 import { Lazy } from 'aurad'
 import { Container } from './components'
@@ -35,6 +36,15 @@ const routes: RouteObject[] = [
           </Container>
         ),
         children: ToolRouter,
+      },
+      {
+        path: '/dev',
+        element: (
+          <Container>
+            <Outlet />
+          </Container>
+        ),
+        children: DevRouter,
       },
       {
         path: '/info',

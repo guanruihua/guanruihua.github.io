@@ -15,13 +15,21 @@ export const Conf = [
       ['文本比对', 'tool/text-compare'],
       ['简繁体转换', 'tool/converter/Chinese'],
       ['计算器', 'tool/calculator'],
-      ['Color', 'tool/color'],
-      ['Box Shadow', 'tool/box-shadow'],
-      ['System Info', 'tool/system-info'],
       ['DDL', 'tool/ddl'],
-      ['Platform Api', 'tool/platform-api'],
-      ['AI Chat', 'tool/ai-chat'],
+      ['System Info', 'tool/system-info'],
       // ['Todo List','tool/todo-list'] -->
+    ],
+  },
+  {
+    title: 'Dev',
+    children: [
+      ['Color', 'dev/color'],
+      ['Box Shadow', 'dev/box-shadow'],
+      ['Platform Api', 'dev/platform-api'],
+      ['AI Chat', 'dev/ai-chat'],
+      ['Vector Data Viewer', 'dev/vector-data-viewer'],
+      ['WebSocket', 'dev/webSocket'],
+      ['SSE', 'dev/sse'],
     ],
   },
   {

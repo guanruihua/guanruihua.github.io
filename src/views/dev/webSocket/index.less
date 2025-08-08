@@ -1,0 +1,32 @@
+.tool-webSocket {
+
+  &-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .webSocket-user {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    &-message-box {
+      height: 300px;
+      min-height: 300px;
+      background-color: rgb(255 255 255 / 10%);
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    &-content {
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 10px;
+    }
+  }
+}

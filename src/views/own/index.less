@@ -8,7 +8,7 @@
 
   .module {
     padding: 16px;
-    width: 300px;
+    width: 320px;
     background-color: rgb(255 255 255 / 20%);
     border-radius: 12px;
 
@@ -19,11 +19,15 @@
 
     .children {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: wrap;
+      // display: grid;
+      // grid-template-columns: 1fr 1fr;
       gap: 4px 10px;
 
       .name {
+        display: flex;
+        align-items: center;
         color: rgb(255 255 255 / 70%);
         font-size: 14px;
         cursor: pointer;
@@ -31,6 +35,7 @@
         transition: all .3s;
         padding-bottom: 4px;
         border-bottom: 1px solid rgb(255 255 255 / 20%);
+
 
         &:hover {
           color: rgb(255 255 255 / 100%);
