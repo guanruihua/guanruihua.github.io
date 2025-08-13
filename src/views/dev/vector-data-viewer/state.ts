@@ -1,9 +1,10 @@
 import React from 'react'
 import { useSetState } from '0hook'
-import axios from 'axios'
 import { ObjectType } from '0type'
+import { req } from '@/util'
 
 export interface PageState {
+  active: string
   databaseName: string
   selectTableName: string
   tableNames: string[]
@@ -14,6 +15,7 @@ export const usePageState = () => {
   const cacheKey = 'tool/vector-data-viewer|cache'
   const [state, setState] = useSetState<PageState>(
     {
+      active: 'vector-data',
       databaseName: 'lanceDB',
       selectTableName: '',
       tableNames: [],
@@ -28,22 +30,11 @@ export const usePageState = () => {
     } catch (error) {}
     return {}
   }
-  const init = async () => {
-    const newState: PageState = getCacheValue()
-    const res = await axios({
-      url: 'http://localhost:2400/vector/tableNames',
-      method: 'get',
-    })
-    newState.tableNames = res?.data?.data || []
-
-    console.log('init ...', res.data)
-    setState(newState)
-  }
 
   const handleSelectTableName = async (name: string) => {
     setState({ selectTableName: name })
 
-    const res = await axios({
+    const res = await req({
       method: 'get',
       url: 'http://localhost:2400/vector/table/get',
       headers: {
@@ -63,9 +54,21 @@ export const usePageState = () => {
     }
   }
 
+  const init = async () => {
+    const newState: PageState = getCacheValue()
+    const res = await req({
+      url: 'http://localhost:2400/vector/tableNames',
+      method: 'get',
+    })
+    newState.tableNames = res?.data?.data || []
+
+    // console.log('init ...', res.data?.data)
+    setState(newState)
+  }
+
   React.useEffect(() => {
-    init()
-  }, [])
+    state.active === 'vector-data' && init()
+  }, [state.active])
 
   return {
     state,

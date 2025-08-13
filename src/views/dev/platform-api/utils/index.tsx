@@ -1,4 +1,4 @@
-import axios from 'axios'
+import { req } from '@/util'
 import { parse } from 'jsonc-parser'
 
 export function jsonc2Json(jsoncString: string = '{}') {
@@ -16,7 +16,7 @@ export const handleSend = async (record: any) => {
   const body = jsonc2Json(bodyTxt)
 
   try {
-    const res = await axios({
+    const res = await req({
       method,
       url,
       params,

@@ -1,0 +1,103 @@
+.tool-vector-data-viewer .title {
+  margin-bottom: 10px;
+}
+
+.tool-vector-data-viewer__vector-data {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+.tool-vector-data-viewer__vector-data .item {
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.tool-vector-data-viewer__vector-data button {
+  font-size: 12px;
+}
+.tool-vector-data-viewer__vector-data > .content > .data-viewer {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 8px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.tool-vector-data-viewer__vector-data > .content > .data-viewer > div {
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.tool-vector-data-viewer__vector-data > .content > .data-viewer > div.header {
+  font-size: 16px;
+  font-weight: bold;
+}
+.tool-vector-data-viewer__vector-data > .content > .data-viewer > div.no {
+  justify-content: center;
+}
+.tool-vector-data-viewer__vector-data > .left-aside .table-name-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tool-vector-data-viewer__vector-data > .left-aside .table-name-box .table-name {
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.tool-vector-data-viewer__vector-data > .left-aside .table-name-box .table-name.select {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tool-vector-data-viewer__processing-data {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  font-size: 14px;
+}
+.tool-vector-data-viewer__processing-data > .left-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.tool-vector-data-viewer__processing-data > .left-aside > button {
+  width: 100%;
+  font-size: 14px;
+}
+.tool-vector-data-viewer__processing-data > .right-aside .chunks-data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tool-vector-data-viewer__processing-data > .right-aside .chunks-data > .row {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.tool-vector-data-viewer__processing-data > .right-aside .vectors-data {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+.tool-vector-data-viewer__processing-data > .right-aside .vectors-data > .item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.tool-vector-data-viewer__processing-data > .right-aside pre {
+  padding: 8px 10px;
+  text-wrap-mode: wrap;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+

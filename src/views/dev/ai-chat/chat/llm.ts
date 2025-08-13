@@ -1,6 +1,6 @@
 import axios from 'axios'
 import type { LLMProps, LLMResult, SendMessageProps } from './type'
-import { isArray, isEffectArray } from 'asura-eye'
+import { isEffectArray } from 'asura-eye'
 
 export const LLM = (llmProps: LLMProps): LLMResult => {
   const { url, model, apiKey } = llmProps

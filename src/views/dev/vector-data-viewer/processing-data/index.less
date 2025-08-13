@@ -1,0 +1,57 @@
+.tool-vector-data-viewer__processing-data {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  font-size: 14px;
+
+  &>.left-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    &>button {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+
+  &>.right-aside {
+    .chunks-data {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &>.row {
+        padding: 8px 10px;
+        border-radius: 10px;
+        background-color: rgb(255 255 255 / 15%);
+      }
+    }
+
+    .vectors-data {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+
+      &>.item {
+        display: flex;
+        align-items: center;
+        padding: 8px 10px;
+        border-radius: 10px;
+        background-color: rgb(255 255 255 / 15%);
+      }
+
+    }
+
+    pre {
+      padding: 8px 10px;
+      text-wrap-mode: wrap;
+      background-color: rgb(255 255 255 / 15%);
+      border-radius: 4px;
+      max-height: 50vh;
+      overflow-y: auto;
+    }
+  }
+}
