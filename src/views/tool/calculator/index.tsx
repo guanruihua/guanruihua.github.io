@@ -74,7 +74,7 @@ export default function () {
           marginBottom: 10,
         }}
       >
-        <Button
+        {/* <Button
           onClick={() => {
             setState({
               type: state.type === 'default' ? 'input-formula' : 'default',
@@ -82,8 +82,8 @@ export default function () {
           }}
         >
           Switch
-        </Button>
-        {state.type === 'input-formula' && (
+        </Button> */}
+        {/* {state.type === 'input-formula' && (
           <Button
             onClick={() => {
               if (!state.inputFormulas) {
@@ -95,8 +95,8 @@ export default function () {
           >
             Add
           </Button>
-        )}
-        {state.type === 'input-formula' && (
+        )} */}
+        {/* {state.type === 'input-formula' && (
           <Button
             onClick={() => {
               setState({
@@ -106,9 +106,9 @@ export default function () {
           >
             Clear
           </Button>
-        )}
+        )} */}
       </Flex>
-      <Div className="input-formula" none={state.type !== 'input-formula'}>
+      {/* <Div className="input-formula" none={state.type !== 'input-formula'}>
         {state?.inputFormulas?.map((item, i) => {
           const [id, value, result = 0] = item
           return (
@@ -144,10 +144,10 @@ export default function () {
             </div>
           )
         })}
-      </Div>
+      </Div> */}
       <Div
         className="tool-calculator-layout"
-        none={state.type && state.type !== 'default'}
+        // none={state.type && state.type !== 'default'}
       >
         <div className="simple">
           {Keypads.map((val) => {

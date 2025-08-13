@@ -1,10 +1,13 @@
-import { Div, Chart, Input, Button, Flex } from 'aurad'
-import React from 'react'
+import { Div, Chart } from 'aurad'
+import React, { MouseEventHandler } from 'react'
 import { usePageState } from './use-page-state'
-import { ModelOptions, URLOptions, Suggest } from './conf'
+import { Suggest } from './conf'
 import { MD } from './md'
 import './index.less'
 import './markdown.less'
+import { Left } from './left'
+import { Right } from './right'
+import { isString } from 'asura-eye'
 
 export default function AIChat() {
   const { historyRef, state, setState, handleChat, handleClearHistory } =
@@ -19,133 +22,72 @@ export default function AIChat() {
     setLoading(false)
   }
 
-  const handleSelectModel = (val: string) => {
-    if (val === 'Custom') {
-      setState({
-        model: '',
-        customModel: true,
-      })
-      return
-    }
-    setState({
-      model: val,
-      customModel: false,
-    })
-  }
-  const handleSelectURL = (val: string) => {
-    // console.log('url',val)
-    if (val === 'Custom') {
-      setState({
-        url: '',
-        customURL: true,
-      })
-      return
-    }
-    setState({
-      url: val,
-      customURL: false,
-    })
-  }
-
   return (
     <div className="tool-ai-chat">
-      <div className="left-aside">
-        <Div className="ai-model">
-          <div className="item">
-            <div className="label"> Api Key</div>
-            <Input
-              value={state.apiKey}
-              onChange={(e: any) =>
-                setState({
-                  apiKey: e.target.value,
-                })
-              }
-            />
-          </div>
-          <div className="item">
-            <div className="label">Model</div>
-            <Flex className="model-box">
-              {ModelOptions.map(({ label, value }) => (
-                <Div
-                  key={value}
-                  className="item"
-                  classNames={{
-                    select: state.customModel
-                      ? value === 'Custom'
-                      : value === state.model,
-                  }}
-                  onClick={() => handleSelectModel(value)}
-                >
-                  {label}
-                </Div>
-              ))}
-              {state.customModel && (
-                <Input
-                  value={state.model}
-                  onChange={(e: any) =>
-                    setState({
-                      model: e.target.value,
-                    })
-                  }
-                />
-              )}
-            </Flex>
-          </div>
-          <div className="item">
-            <div className="label">URL</div>
-            <Flex className="url-box">
-              {URLOptions.map(({ label, value }) => (
-                <Div
-                  key={value}
-                  className="item"
-                  classNames={{
-                    select: state.customURL
-                      ? value === 'Custom'
-                      : value === state.url,
-                  }}
-                  onClick={() => handleSelectURL(value)}
-                >
-                  {label}
-                </Div>
-              ))}
-              {state.customURL && (
-                <Input
-                  value={state.url}
-                  onChange={(e: any) =>
-                    setState({
-                      url: e.target.value,
-                    })
-                  }
-                />
-              )}
-            </Flex>
-          </div>
-        </Div>
-
-        <Button onClick={handleClearHistory}>Clear History</Button>
-        <Button
-          type={state.enabledRAG ? 'primary' : 'default'}
-          onClick={() => {
-            setState({
-              enabledRAG: !state.enabledRAG,
-            })
-          }}
-        >
-          Enabled RAG
-        </Button>
-      </div>
+      <Left
+        state={state}
+        setState={setState}
+        handleClearHistory={handleClearHistory}
+      />
       <div className="chat-container">
         <div className="chat-history" ref={historyRef}>
           {state?.history?.map((item, i) => {
-            const { role, content, chartOptions, toolType } = item
+            const { id, role, content, chartOptions, toolType } = item
             if (chartOptions)
               return (
-                <Div key={i} classNames={[role, 'chart', toolType]}>
+                <Div key={id} classNames={[role, 'chart', toolType]}>
                   <Chart style={{ minHeight: 300 }} options={chartOptions} />
                 </Div>
               )
+            if (
+              isString(content) &&
+              ((content.includes('<think>') && content.includes('</think>')) ||
+                content.indexOf('<think>') === 0)
+            ) {
+              const [think, mdContent] = content
+                .replace(/^<think>/, '')
+                .split('</think>')
+              return (
+                <Div key={id} className={role}>
+                  <Div none={!think} className="think-box">
+                    <div
+                      className="think-control"
+                      onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                        const val = e.currentTarget?.dataset?.value
+                        if (val === 'bottom') {
+                          e.currentTarget.dataset.value = ''
+                        } else {
+                          e.currentTarget.dataset.value = 'bottom'
+                        }
+                      }}
+                    >
+                      <span className="think-control-label">Deep Thinking</span>
+                      <svg
+                        className="think-control-arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="0.5em"
+                        height="1em"
+                        viewBox="0 0 12 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          fillRule="evenodd"
+                          d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414"
+                        ></path>
+                      </svg>
+                    </div>
+                    <Div none={!think} className="think">
+                      <MD value={think} />
+                    </Div>
+                  </Div>
+                  <div className="content markdown">
+                    <MD value={mdContent} />
+                  </div>
+                </Div>
+              )
+            }
             return (
-              <Div key={i} className={role}>
+              <Div key={id} className={role}>
                 <div className="content markdown">
                   <MD value={content} />
                 </div>
@@ -189,22 +131,7 @@ export default function AIChat() {
           </div>
         </div>
       </div>
-      <div className="right-aside">
-        <div className="suggest-box">
-          {Suggest.map((s, i) => {
-            const { value, label } = s
-            return (
-              <div
-                key={i}
-                className="suggest-item"
-                onClick={() => handleUserChat(label)}
-              >
-                {label}
-              </div>
-            )
-          })}
-        </div>
-      </div>
+      <Right Suggest={Suggest} handleUserChat={handleUserChat} />
     </div>
   )
 }

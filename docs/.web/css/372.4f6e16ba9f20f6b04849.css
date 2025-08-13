@@ -1,0 +1,278 @@
+.tool-ai-chat {
+  height: calc(100vh - 62px);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+  font-size: 14px;
+}
+.tool-ai-chat .left-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tool-ai-chat .left-aside .ai-model {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tool-ai-chat .left-aside .label {
+  font-size: 13px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+.tool-ai-chat .right-aside .suggest-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tool-ai-chat .right-aside .suggest-box .suggest-item {
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 8px 12px;
+  background-color: #484848;
+}
+.tool-ai-chat .url-box,
+.tool-ai-chat .model-box {
+  flex-direction: row;
+}
+.tool-ai-chat .url-box > .item,
+.tool-ai-chat .model-box > .item {
+  border-radius: 16px;
+  padding: 4px 14px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s;
+  letter-spacing: 0.2px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.3);
+}
+.tool-ai-chat .url-box > .item:hover,
+.tool-ai-chat .model-box > .item:hover,
+.tool-ai-chat .url-box > .item.select,
+.tool-ai-chat .model-box > .item.select {
+  border-color: #6CC38B;
+  background: #6CC38B;
+  color: #fff;
+}
+.tool-ai-chat .chat-container {
+  width: 60vw;
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.tool-ai-chat .chat-container .chat-history {
+  background-color: #1D1D1D;
+  height: calc(100vh - 192px);
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tool-ai-chat .chat-container .chat-history * {
+  text-shadow: none;
+}
+.tool-ai-chat .chat-container .chat-history .chart {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+}
+.tool-ai-chat .chat-container .chat-history .user {
+  display: flex;
+  justify-content: flex-end;
+}
+.tool-ai-chat .chat-container .chat-history .user .content {
+  border-radius: 8px;
+  border-top-right-radius: 0;
+  padding: 6px 12px;
+  background-color: #303030;
+}
+.tool-ai-chat .chat-container .chat-history .assistant.rag {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  zoom: 0.8;
+  max-height: 100px;
+  overflow-y: auto;
+}
+.tool-ai-chat .chat-container .chat-history .assistant .think-control {
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #494949;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.tool-ai-chat .chat-container .chat-history .assistant .think-control-label {
+  pointer-events: none;
+  margin-right: 10px;
+}
+.tool-ai-chat .chat-container .chat-history .assistant .think-control[data-value='bottom'] > svg.think-control-arrow {
+  transform: rotate(90deg);
+}
+.tool-ai-chat .chat-container .chat-history .assistant .think-control-arrow {
+  pointer-events: none;
+  font-size: 16px;
+  transform: rotate(-90deg);
+  transition: all 0.6s;
+}
+.tool-ai-chat .chat-container .chat-history .assistant .think {
+  padding: 0 10px;
+  border-left: 3px solid #4e4e56;
+  color: #a6a6a6;
+  zoom: 0.9;
+  overflow-y: auto;
+  transition: all 0.3s;
+}
+.tool-ai-chat .chat-container .chat-history .assistant .think-control[data-value='bottom'] + .think {
+  height: 0;
+  max-height: 0;
+  padding: 0;
+  margin-bottom: -10px;
+}
+.tool-ai-chat .chat-container .chat-history .assistant .content {
+  padding: 6px 12px;
+}
+.tool-ai-chat .chat-container .user-prompt {
+  border-radius: 12px;
+  border: 0;
+  background: #303030;
+}
+.tool-ai-chat .chat-container .user-prompt-controls {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+.tool-ai-chat .chat-container .user-prompt-controls .btn-send {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+.tool-ai-chat .chat-container .user-prompt-controls .btn-send.disabled {
+  color: #686868;
+  cursor: not-allowed;
+}
+.tool-ai-chat .chat-container .user-prompt textarea {
+  width: 100%;
+  padding: 4px 12px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #fff;
+  height: 90px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  letter-spacing: 0.5px;
+}
+
+.markdown {
+  --gap: 8px;
+  --radius: 8px;
+  --sm-radius: 4px;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-bottom: var(--gap);
+}
+.markdown a {
+  color: #8ef16e;
+  text-decoration: none;
+}
+.markdown hr {
+  margin: var(--gap) 0;
+}
+.markdown ol,
+.markdown ul {
+  list-style: auto;
+  margin-left: 16px;
+}
+.markdown ul {
+  list-style: circle;
+}
+.markdown li {
+  line-height: 32px;
+}
+.markdown code {
+  border-radius: var(--radius);
+  background: #282C34;
+  padding: 0 4px;
+}
+.markdown .code-no-lang {
+  border-radius: var(--radius);
+  background: #822431;
+  padding: 3px 8px;
+  color: #fff;
+  font-size: smaller;
+}
+.markdown .code-lang {
+  margin: 0 !important;
+  padding: 0.5em 1em !important;
+  border-radius: var(--radius) !important;
+}
+.markdown blockquote {
+  line-height: var(--height);
+  background: #313337;
+  border-left: 4px solid #44484C;
+  padding-left: 1em;
+  margin-bottom: var(--gap);
+  border-radius: var(--sm-radius);
+}
+.markdown table {
+  border: var(--border);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: var(--gap);
+}
+.markdown table th,
+.markdown table td {
+  min-height: 32px;
+  border-right: var(--border);
+  border-bottom: var(--border);
+  padding: 8px 12px;
+}
+.markdown table thead tr:first-child th {
+  border-top: none;
+}
+.markdown table thead tr:first-child th:first-child {
+  border-left: none;
+  border-top-left-radius: var(--radius);
+}
+.markdown table thead tr:first-child th:last-child {
+  border-right: none;
+  border-top-right-radius: var(--radius);
+}
+.markdown table tbody tr td:last-child {
+  border-right: none;
+}
+.markdown table tbody tr:last-child td {
+  border-bottom: none;
+}
+.markdown table tbody tr:last-child td:first-child {
+  border-left: none;
+  border-bottom-left-radius: var(--radius);
+}
+.markdown table tbody tr:last-child td:last-child {
+  border-right: none;
+  border-bottom-right-radius: var(--radius);
+}
+

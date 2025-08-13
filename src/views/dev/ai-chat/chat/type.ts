@@ -23,6 +23,7 @@ export interface ToolType {
 }
 
 export interface History {
+  type?: string
   role: 'assistant' | 'role' | 'tool' | string
   content: string
   toolType?: string
@@ -54,7 +55,6 @@ export interface AIProps {
   lang?: 'zh_CN' | 'en_US'
   tools?: ToolType[]
   SystemPrompt?: string
-  ChartToolTypes?: string[]
   /**
    * @default true
    * @description 添加图表的Tool 已经 数据整理后的Options
@@ -95,6 +95,7 @@ export interface LLMProps {
 }
 
 export interface SendMessageProps {
+  url?: string
   model?: ModelType
   headers?: ObjectType
   messages: MessageType[]

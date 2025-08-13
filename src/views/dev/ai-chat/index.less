@@ -22,13 +22,14 @@
       margin-bottom: 5px;
     }
   }
-  .right-aside{
-    .suggest-box{
+
+  .right-aside {
+    .suggest-box {
       display: flex;
       flex-direction: column;
       gap: 10px;
 
-      .suggest-item{
+      .suggest-item {
         cursor: pointer;
         font-size: 12px;
         border-radius: 12px;
@@ -37,6 +38,7 @@
       }
     }
   }
+
   .url-box,
   .model-box {
     flex-direction: row;
@@ -100,9 +102,62 @@
       }
 
       .assistant {
+        &.rag {
+          background-color: rgb(255 255 255 / 10%);
+          border-radius: 12px;
+          zoom: .8;
+          max-height: 100px;
+          overflow-y: auto;
+        }
+
+        .think-control {
+          font-size: 12px;
+          display: inline-flex;
+          align-items: center;
+          padding: 5px 10px;
+          border-radius: 8px;
+          background-color: #494949;
+          margin-bottom: 5px;
+          cursor: pointer;
+
+          &-label {
+            pointer-events: none;
+            margin-right: 10px;
+          }
+
+          &[data-value='bottom']>svg.think-control-arrow {
+            transform: rotate(90deg);
+          }
+
+          &-arrow {
+            pointer-events: none;
+            font-size: 16px;
+            transform: rotate(-90deg);
+            transition: all .6s;
+
+          }
+        }
+
+        .think {
+          padding: 0 10px;
+          border-left: 3px solid #4e4e56;
+          color: #a6a6a6;
+          zoom: .9;
+          overflow-y: auto;
+          transition: all .3s;
+        }
+
+        .think-control[data-value='bottom']+.think {
+          height: 0;
+          max-height: 0;
+          padding: 0;
+          margin-bottom: -10px;
+        }
+
         .content {
           padding: 6px 12px;
         }
+
       }
     }
 

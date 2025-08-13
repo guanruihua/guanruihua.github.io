@@ -1,6 +1,6 @@
 import axios from 'axios'
 import type { LLMProps, LLMResult, SendMessageProps } from './type'
-import { isEffectArray } from 'asura-eye'
+import { isArray, isEffectArray } from 'asura-eye'
 
 export const LLM = (llmProps: LLMProps): LLMResult => {
   const { url, model, apiKey } = llmProps
@@ -8,7 +8,7 @@ export const LLM = (llmProps: LLMProps): LLMResult => {
   return {
     async sendMessage(props: SendMessageProps) {
       const { messages, tools, headers = {}, params = {} } = props
-
+      // console.log(props)
       if (!url) {
         console.error('LLM / sendMessage / Parameter url are required')
         return {}
@@ -18,39 +18,41 @@ export const LLM = (llmProps: LLMProps): LLMResult => {
         return {}
       }
 
-      if (tools && !isEffectArray(tools)) {
-        console.error('LLM / sendMessage / Parameter tools are incorrect')
-        return {}
-      }
-
-      if (isEffectArray(tools) && !params.tools) {
-        params.tools = tools
+      if (tools && isEffectArray(tools)) {
+        !params.tools && (params.tools = tools)
       }
 
       if (apiKey && !headers.Authorization) {
         headers.Authorization = `Bearer ${apiKey}`
       }
-
-      const res = await axios.post(
-        url,
-        {
-          model: props.model ?? model,
-          messages,
-          stream: false,
-          ...params,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            ...headers,
+      if (params.tools && tools?.length === 0) {
+        delete params.tools
+      }
+      const res = await axios
+        .post(
+          props?.url ?? url,
+          {
+            model: props.model ?? model,
+            messages,
+            stream: false,
+            ...params,
           },
-        },
-      ).catch(error => {
-        console.error(error)
-        return {} as any
-      })
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              ...headers,
+            },
+          },
+        )
+        .catch((error) => {
+          console.error(error)
+          return {} as any
+        })
 
-      return res?.data?.choices?.[0]?.message ||  res?.data?.data?.choices?.[0]?.message
+      return (
+        res?.data?.choices?.[0]?.message ||
+        res?.data?.data?.choices?.[0]?.message
+      )
     },
   }
 }

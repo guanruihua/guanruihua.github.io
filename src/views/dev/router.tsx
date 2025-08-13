@@ -3,6 +3,10 @@ import { Lazy } from 'aurad'
 
 export const DevRouter = [
   {
+    path: 'file-review',
+    element: Lazy(import('./file-review')),
+  },
+  {
     path: 'webSocket',
     element: Lazy(import('./webSocket')),
   },

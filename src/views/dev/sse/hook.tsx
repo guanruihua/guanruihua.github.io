@@ -9,11 +9,14 @@ interface PageState {
 }
 
 export const usePageState = () => {
-  const [state, setState] = useSetState<PageState>({
-    method: 'post',
-    url: 'http://localhost:2400/sse',
-    values: [],
-  }, '/tool/sse|cache')
+  const [state, setState] = useSetState<PageState>(
+    {
+      method: 'post',
+      url: 'http://localhost:2400/sse',
+      values: [],
+    },
+    '/tool/sse|cache',
+  )
   const stateRef = React.useRef(state)
 
   React.useEffect(() => {
@@ -57,6 +60,17 @@ export const usePageState = () => {
         const { done, value } = await reader.read()
         if (done) break
         let buffer = decoder.decode(value, { stream: true })
+        if (buffer.startsWith('data: ')) {
+          const reg = /"delta":{"role":"assistant","content":"(.*?)"},"finish_reason":null}]}/
+
+          const data = buffer.substring(5).trim()
+          const mat = data.match(reg)?.[1]
+
+          console.log(mat)
+          state.values.push(mat)
+          setState(state)
+          continue
+        }
 
         const val = buffer.split('\n')?.pop?.()
         if (val) {

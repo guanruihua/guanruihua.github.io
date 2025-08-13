@@ -18,3 +18,7 @@ export const i18n: I18n = {
 export const t = (lang: string, key: string) => {
   return i18n?.[lang]?.[key] || i18n.en_US?.[key] || key
 }
+
+export const useI18n = (lang: string) => {
+  return { t: (key: string) => t(lang, key) }
+}

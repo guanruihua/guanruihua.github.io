@@ -1,0 +1,53 @@
+.tool-vector-data-viewer .title {
+  margin-bottom: 10px;
+}
+.tool-vector-data-viewer > .viewer-box {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 10px;
+  min-height: 85vh;
+}
+.tool-vector-data-viewer > .viewer-box > .content > .data-viewer {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 8px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.tool-vector-data-viewer > .viewer-box > .content > .data-viewer > div {
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.tool-vector-data-viewer > .viewer-box > .content > .data-viewer > div.header {
+  font-size: 16px;
+  font-weight: bold;
+}
+.tool-vector-data-viewer > .viewer-box > .content > .data-viewer > div.no {
+  justify-content: center;
+}
+.tool-vector-data-viewer > .viewer-box > div {
+  border-radius: 12px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.tool-vector-data-viewer > .viewer-box > .left-aside .table-name-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tool-vector-data-viewer > .viewer-box > .left-aside .table-name-box .table-name {
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.tool-vector-data-viewer > .viewer-box > .left-aside .table-name-box .table-name.select {
+  background: rgba(255, 255, 255, 0.15);
+}
+

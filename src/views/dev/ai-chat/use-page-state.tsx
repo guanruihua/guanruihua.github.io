@@ -40,7 +40,6 @@ export const usePageState = () => {
       url: state.url,
       // tools,
       SystemPrompt,
-      // ChartToolTypes,
       // functionCall,
       lang: localStorage.language === 'en' ? 'en_US' : 'zh_CN',
       config: {
@@ -53,8 +52,17 @@ export const usePageState = () => {
       // callbackMessages: (oldMessages:any) => setState({ messages: oldMessages }),
       callback: (hty: any) => {
         if (hty) {
+          hty.id = Date.now()
           if (!isArray(state.history)) state.history = []
-          state.history.push(hty)
+          if (hty?.type === 'chunk') {
+            if (hty.content && state.history.at(-1)?.type === 'chunk') {
+              state.history.at(-1).content += hty.content
+            } else {
+              state.history.push(hty)
+            }
+          } else {
+            state.history.push(hty)
+          }
           setState(state)
           scrollBottom()
         }

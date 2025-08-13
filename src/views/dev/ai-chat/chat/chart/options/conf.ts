@@ -1,6 +1,7 @@
 export const legend = {
   bottom: '2%',
   left: '2%',
+  top: '2%',
   type: 'scroll',
 
   textStyle: {

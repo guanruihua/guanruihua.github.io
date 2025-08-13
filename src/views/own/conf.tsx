@@ -30,6 +30,7 @@ export const Conf = [
       ['Vector Data Viewer', 'dev/vector-data-viewer'],
       ['WebSocket', 'dev/webSocket'],
       ['SSE', 'dev/sse'],
+      ['File Review', 'dev/file-review'],
     ],
   },
   {

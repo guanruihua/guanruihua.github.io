@@ -1,0 +1,53 @@
+.tool-file-review {
+  height: 90vh;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  &>.content {
+    height: 100%;
+    background: rgb(255 255 255 / 5%);
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    &>.controls {
+      padding: 10px;
+      height: auto;
+    }
+
+    pre {
+      padding: 10px;
+      text-wrap-mode: wrap;
+    }
+  }
+
+  // &>.left-aside {
+  //   height: 100%;
+
+  //   &>.file-type-box {
+  //     display: flex;
+  //     flex-direction: column;
+  //     gap: 10px;
+  //     border-radius: 4px;
+  //     height: 100%;
+  //     background: rgb(255 255 255 / 5%);
+  //     padding: 10px;
+
+  //     &>.file-type {
+  //       border-radius: 4px;
+  //       padding: 10px;
+  //       background: rgb(255 255 255 / 10%);
+  //       font-size: 12px;
+  //       cursor: pointer;
+  //       transition: all .3s;
+
+  //       &.select {
+  //         background: rgb(255 255 255 / 25%);
+  //       }
+  //     }
+  //   }
+  // }
+}

@@ -4,6 +4,13 @@ console.log(`当前环境: ${env}`)
 
 module.exports = [
   {
+    test: /pdf\.worker\.mjs$/,
+    type: 'javascript/auto',
+    use: {
+      loader: 'file-loader',
+    },
+  },
+  {
     test: /\.tsx?$/,
     use: [
       {
