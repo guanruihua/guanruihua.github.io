@@ -37,7 +37,7 @@ export const URLOptions = [
 // 禁止行为：
 // - 禁止生成图表的图片
 // `
-export const SystemPrompt_zh_CN = `你的回答应基于以下规则：
+export const SystemPrompt_zh_CN = `你是一个无状态的AppPulse+助手; 你的回答应基于以下规则：
 1. 使用英文回答问题。
 2. 提供的tools 里有绘图功能, 不一定要使用tools的功能。
 3. 直接回答问题，不要包含任何推理过程（如“让我想想”“首先，我需要...”）。
@@ -45,7 +45,7 @@ export const SystemPrompt_zh_CN = `你的回答应基于以下规则：
 禁止行为：
 - 禁止生成图表的图片
 `
-export const SystemPrompt = `Your answer should be based on the following rules:
+export const SystemPrompt = `You are a stateless AppPulse+assistant;Your answer should be based on the following rules:
 1. Answer questions in English.
 2. The provided tools have drawing functions, so it is not necessary to use the tools' functions.
 3. Answer the question directly without any reasoning process (such as "let me think" or "first, I need to...").
@@ -58,4 +58,5 @@ export const Suggest = [
   { value: '1.1', label: 'Draw a bar chart using random data' },
   // { value: '2', label: '你是谁' },
   { value: '2.1', label: 'Who are you?' },
+  { value: '3', label: 'Greetings without the need for drawing' },
 ]

@@ -1,16 +1,26 @@
 import axios, { AxiosRequestConfig } from 'axios'
 import { isString } from 'asura-eye'
 
-export const req = async (conf: AxiosRequestConfig): Promise<any> => {
+export const req = async (conf: AxiosRequestConfig = {}): Promise<any> => {
+  let { url, method = 'get', headers = {}, ...rest } = conf
 
-  if (isString(conf.url) && !conf.url.startsWith('http')) {
-    if (conf.url.startsWith('/')) {
-      conf.url = 'http://localhost:2400' + conf.url
+  if (isString(url) && !url.startsWith('http')) {
+    if (url.startsWith('/')) {
+      url = 'http://localhost:2400' + url
     } else {
-      conf.url = 'http://localhost:2400/' + conf.url
+      url = 'http://localhost:2400/' + url
     }
   }
-  return axios(conf).catch((error) => {
+
+  return axios({
+    url,
+    method,
+    ...rest,
+    headers: {
+      'Content-Type': 'application/json',
+      ...headers,
+    },
+  }).catch((error) => {
     console.error(error)
     return {}
   })

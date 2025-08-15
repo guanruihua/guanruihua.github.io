@@ -90,13 +90,6 @@
   padding: 6px 12px;
   background-color: #303030;
 }
-.tool-ai-chat .chat-container .chat-history .assistant.rag {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  zoom: 0.8;
-  max-height: 100px;
-  overflow-y: auto;
-}
 .tool-ai-chat .chat-container .chat-history .assistant .think-control {
   font-size: 12px;
   display: inline-flex;

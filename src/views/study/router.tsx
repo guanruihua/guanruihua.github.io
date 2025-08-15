@@ -6,6 +6,10 @@ export const StudyChildRouter: {
   element: React.ReactNode | any
 }[] = [
   {
+    path: 'study-transform-3d',
+    element: Lazy(import('./transform-3d')),
+  },
+  {
     path: 'study-drag',
     element: Lazy(import('./drag')),
   },

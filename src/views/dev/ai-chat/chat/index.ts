@@ -1,11 +1,12 @@
-import { isString } from 'asura-eye'
+import { isEffectArray, isString } from 'asura-eye'
 import { getArgs, isDrawChartTool } from './utils'
-import { toChartOptions, ChartTools } from './chart/index'
-import { MessageType, History, AIProps, AIChatParams } from './type'
+import { toChartOptions } from './chart/index'
+import { MessageType, History, AIProps, AIChatParams, ToolType } from './type'
 import { useI18n } from './i18n'
 import { LLM } from './llm'
 import { getRagContent } from './rag'
 import { sse } from './sse'
+import { getTools, getToolsByRAG } from './get-tools'
 export * from './type'
 
 export const AI = (props: AIProps) => {
@@ -20,7 +21,6 @@ export const AI = (props: AIProps) => {
     config = {},
   } = props
   const { t } = useI18n(lang)
-  let { tools = ChartTools } = props
 
   const handleChat = async (params: AIChatParams) => {
     const llm = LLM({ model, url, apiKey })
@@ -29,23 +29,34 @@ export const AI = (props: AIProps) => {
       console.error('LLM init error')
       return
     }
-    const { message, messages = [], callback, callbackMessage } = params
+    const { message, /* messages = [], */ callback, callbackMessage } = params
+    const messages: any[] = []
 
     if (message) {
       messages.push({ role: 'user', content: message })
     }
+
+    let toolFlag = ''
+
     callback?.({
       role: 'user',
       content: message,
     })
     let RAGContent = undefined
     if (config.enabledRAG) {
+      const startTime = Date.now()
       const content = await getRagContent(message)
       callback?.({
         role: 'assistant rag',
         content,
+        time: startTime - Date.now(),
       })
       RAGContent = content
+      console.log('TAGContent: ', RAGContent)
+
+      toolFlag = await getToolsByRAG(message)
+
+      console.log('toolFlag: ', toolFlag)
     }
 
     if (RAGContent) {
@@ -58,15 +69,18 @@ export const AI = (props: AIProps) => {
 
     if (messages.length === 0) return undefined
 
-    const getTools = () => {
-      if (params.tools) return params.tools || []
-      if (params.expandTools)
-        return [...tools, ...params.expandTools].filter(Boolean)
-      return tools || []
+    const llm_tools = getTools(toolFlag, { params, props })
+
+    // start Chat
+    if (!isEffectArray<ToolType>(llm_tools)) {
+      await sse({
+        callback,
+        messages,
+      })
+      return
     }
-    const llm_tools = getTools()
     const msg = await llm.sendMessage({
-      messages,
+      messages: [{ role: 'user', content: message }],
       tools: llm_tools,
     })
     console.log('llm: ', msg)
@@ -86,7 +100,7 @@ export const AI = (props: AIProps) => {
 
         let fnContent = ''
         if (isDrawChartTool(fn.name)) {
-          console.log(fn.name)
+          // console.log(fn.name)
           try {
             const hty: History = {
               role: 'assistant',
@@ -101,11 +115,6 @@ export const AI = (props: AIProps) => {
 
             callback?.(hty)
             fnContent = 'Please analyze the data of ' + args.data
-            // fnContent =
-            //   t('drawChart') +
-            //   `;You don't need to say you don't have drawing skills;` +
-            //   'data:' +
-            //   (args?.data || '')
           } catch (error) {
             console.error(error)
           }
@@ -131,7 +140,6 @@ export const AI = (props: AIProps) => {
 
         if (isString(model) && model?.indexOf('llama3') === 0) {
           await sse({
-            url: 'http://localhost:2400/ollama/steam/chat',
             callback,
             messages: [
               {

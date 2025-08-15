@@ -40,6 +40,7 @@ export const Conf = [
       ['flex', 'study/css-flex'],
       ['grid', 'study/css-grid'],
       ['drag', 'study/study-drag'],
+      ['transform 3d', 'study/study-transform-3d'],
     ],
   },
   {

@@ -19,7 +19,7 @@
 }
 .tool-vector-data-viewer__vector-data > .content > .data-viewer {
   display: grid;
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-columns: auto auto auto 1fr auto;
   gap: 8px;
   max-height: 80vh;
   overflow-y: auto;
@@ -48,6 +48,7 @@
   font-size: 14px;
   padding: 5px 10px;
   border-radius: 4px;
+  cursor: pointer;
 }
 .tool-vector-data-viewer__vector-data > .left-aside .table-name-box .table-name.select {
   background: rgba(255, 255, 255, 0.15);
@@ -82,7 +83,7 @@
 }
 .tool-vector-data-viewer__processing-data > .right-aside .vectors-data {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto 1fr;
   gap: 10px;
 }
 .tool-vector-data-viewer__processing-data > .right-aside .vectors-data > .item {

@@ -12,7 +12,7 @@ export const getFileContent = async (file: any) => {
       r('')
     }
 
-    if (['md', 'txt'].includes(fileType)) {
+    if (['md', 'txt', 'json'].includes(fileType)) {
       reader.onload = function (e) {
         const content = e.target?.result || ''
         if (isString(content)) r(content)

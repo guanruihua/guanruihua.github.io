@@ -42,7 +42,7 @@ export const sse = async (props: any) => {
         role: 'assistant',
         content: mat,
       })
-      console.log(mat)
+      // console.log(mat)
       if (buffer.includes('data: [DONE]')) {
         break
       }

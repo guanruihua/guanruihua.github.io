@@ -33,24 +33,27 @@ export function VectorData(props: VectorDataProps) {
       </div>
       <div className="content">
         <Flex style={{ paddingBottom: 10 }}>
-          <Button>Refresh</Button>
-          <Button>Remove Duplicates</Button>
-          <Button>Clear Table</Button>
-          <Button>Del Table</Button>
+          <Button onClick={() => h.handleRefresh('table')}>Refresh</Button>
+          {/* <Button onClick={() => h.handleRefresh('tableNames')}>Refresh</Button> */}
+          {/* <Button onClick={()=>h.handleDelDuplicates()}>Del Duplicates</Button> */}
+          <Button onClick={() => h.handleClearTableData()}>Clear Table</Button>
+          <Button onClick={() => h.handleDelTable()}>Del Table</Button>
         </Flex>
         <div className="data-viewer">
           <div className="header item no">No.</div>
           <div className="header item id">ID</div>
+          <div className="header item key">Key</div>
           <div className="header item text">Text</div>
           <div className="header"></div>
           {state?.dataSource?.map((item: any, i: number) => {
-            const { id, text } = item
+            const { id, key, text } = item
             return (
               <React.Fragment key={id}>
                 <div className="item no">{i + 1}</div>
                 <div className="item id">{id}</div>
+                <div className="item key">{key}</div>
                 <div className="item text">{text}</div>
-                <Button>Del</Button>
+                <Button onClick={() => h.handleDelTableData(item)}>Del</Button>
               </React.Fragment>
             )
           })}

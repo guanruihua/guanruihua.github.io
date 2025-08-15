@@ -30,6 +30,8 @@ export interface History {
   chartTitle?: string
   chartData?: string
   chartOptions?: ObjectType
+  time?: number
+  [key: string]: any
 }
 
 export interface MessageType {
