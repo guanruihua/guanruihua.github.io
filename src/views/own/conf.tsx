@@ -21,6 +21,12 @@ export const Conf = [
     ],
   },
   {
+    title: 'Other',
+    children: [
+      ['HTTP 状态码', 'other/http-status'],
+    ],
+  },
+  {
     title: 'Dev',
     children: [
       ['Color', 'dev/color'],
@@ -57,7 +63,7 @@ export const Conf = [
     ],
   },
   {
-    title: 'Other',
+    title: 'Study Other',
     children: [
       ['Canvas Base Draw', 'study/canvas'],
       ['Canvas Base Style', 'study/canvas-base-style'],

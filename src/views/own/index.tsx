@@ -7,12 +7,14 @@ import './index.less'
 
 export default function () {
   const nav = useNavigate()
-  
+
   const onClick = (url: string) => {
-    if (url.indexOf('http') > -1)
+    if (url.startsWith('http'))
       window.open(url.indexOf('http') > -1 ? url : `https://${url}`, '_blank')
     if (url.indexOf('/') == 0) nav(url)
     else nav('/' + url)
+    // else window.location.hash = '#/' + url // 强制修改 hash
+    // else nav(url)
   }
   return (
     <Container>

@@ -13,6 +13,7 @@ import { DevRouter } from './views/dev/router'
 import { StudyChildRouter } from './views/study/router'
 import { Lazy } from 'aurad'
 import { Container } from './components'
+import otherRouter from './views/other/router'
 
 const routes: RouteObject[] = [
   {
@@ -27,6 +28,15 @@ const routes: RouteObject[] = [
         path: '/own',
         element: Lazy(import('./views/own')),
         children: ToolRouter,
+      },
+      {
+        path: '/other',
+        element: (
+          <Container>
+            <Outlet />
+          </Container>
+        ),
+        children: otherRouter,
       },
       {
         path: '/tool',
