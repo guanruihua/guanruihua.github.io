@@ -2,6 +2,7 @@ export const Conf = [
   {
     title: 'Own',
     children: [
+      ['Github', 'https://github.com/guanruihua/'],
       ['Note', 'https://ruihuag-note.github.io/'],
       ['Demo', 'https://ruihuag-demo.github.io/'],
       ['0static', 'https://0static.github.io/'],

@@ -19,12 +19,6 @@ export function Header(props: HeaderProps) {
         Home
       </Div>
       {children}
-      <div
-        className="control"
-        onClick={() => window.open('https://github.com/guanruihua', '__black')}
-      >
-        Github
-      </div>
       <Div
         none={['#/own', '/own'].includes(location.hash)}
         className="control"
