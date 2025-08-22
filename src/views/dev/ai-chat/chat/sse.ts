@@ -1,9 +1,15 @@
+import { getConf } from '@/util'
+
 export const sse = async (props: any) => {
+  const { serverUrl } = getConf()
+
   const {
-    url = 'http://localhost:2400/ollama/steam/chat',
+    chatId,
+    url = serverUrl + '/ollama/steam/chat',
     callback,
     messages = [],
   } = props
+
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -14,6 +20,7 @@ export const sse = async (props: any) => {
       model: 'deepseek-r1:14b',
       stream: true,
       messages: messages.filter(Boolean),
+      chatId,
     }),
   })
 

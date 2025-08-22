@@ -5,17 +5,20 @@ import { AI } from './chat'
 import { isArray } from 'asura-eye'
 import { PageState } from './type'
 import { SystemPrompt } from './conf'
+import { req } from '@/util'
 
 export const usePageState = () => {
   const [historyRef, scrollBottom] = useScrollBottom()
 
   const [state, setState] = useSetState<PageState>(
     {
-      model: 'deepseek-chat',
+      // model: 'deepseek-chat',
+      model: 'llama3.1',
       customModel: false,
-      enabledRAG: false,
+      enabledRAG: true,
       apiKey: '',
-      url: 'https://api.deepseek.com/v1/chat/completions',
+      // url: 'https://api.deepseek.com/v1/chat/completions',
+      url: 'ollama/chat',
       customURL: false,
       selectModelType: '',
       userPrompt: '你好',
@@ -30,11 +33,14 @@ export const usePageState = () => {
       history: [],
     })
   }
+  const chatIdRef = React.useRef(Date.now())
 
   const handleChat = async (userPrompt?: string) => {
-    if (!state.userPrompt || !state.apiKey) return
+    const message = userPrompt || state.userPrompt
+    if(!message) return
 
     const ai = AI({
+      chatId: chatIdRef.current,
       apiKey: state.apiKey,
       model: state.model,
       url: state.url,
@@ -47,9 +53,8 @@ export const usePageState = () => {
       },
     })
     await ai?.handleChat({
-      message: userPrompt || state.userPrompt,
+      message,
       messages: state.messages,
-      // callbackMessages: (oldMessages:any) => setState({ messages: oldMessages }),
       callback: (hty: any) => {
         if (hty) {
           hty.id = Date.now()
@@ -70,12 +75,25 @@ export const usePageState = () => {
     })
   }
 
-  const init = async () => {
-    scrollBottom()
+  const handleSteamStop = async () => {
+    req({
+      url: '/ollama/steam/chat/stop',
+      method: 'post',
+      params: {
+        chatId: chatIdRef.current,
+      },
+    })
   }
 
   React.useEffect(() => {
-    init()
+    scrollBottom()
+    let timer = setTimeout(() => {
+      scrollBottom()
+      clearTimeout(timer)
+    }, 500)
+    return () => {
+      clearTimeout(timer)
+    }
   }, [])
 
   return {
@@ -84,5 +102,6 @@ export const usePageState = () => {
     historyRef,
     handleChat,
     handleClearHistory,
+    handleSteamStop,
   }
 }

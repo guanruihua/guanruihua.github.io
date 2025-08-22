@@ -1,3 +1,4 @@
+import { Loading } from '@/components'
 import React from 'react'
 
 export interface RightProps {
@@ -6,23 +7,25 @@ export interface RightProps {
 }
 
 export function Right(props: RightProps) {
-  const { handleUserChat, Suggest } = props
+  const { loading, handleUserChat, Suggest } = props
   return (
     <div className="right-aside">
-      <div className="suggest-box">
-        {Suggest.map((s, i) => {
-          const { value, label } = s
-          return (
-            <div
-              key={i}
-              className="suggest-item"
-              onClick={() => handleUserChat(label)}
-            >
-              {label}
-            </div>
-          )
-        })}
-      </div>
+      <Loading loading={loading}>
+        <div className="suggest-box">
+          {Suggest.map((s, i) => {
+            const { value, label } = s
+            return (
+              <div
+                key={i}
+                className="suggest-item"
+                onClick={() => handleUserChat(label)}
+              >
+                {label}
+              </div>
+            )
+          })}
+        </div>
+      </Loading>
     </div>
   )
 }

@@ -11,6 +11,7 @@ export * from './type'
 
 export const AI = (props: AIProps) => {
   const {
+    chatId,
     model,
     url,
     apiKey,
@@ -74,6 +75,7 @@ export const AI = (props: AIProps) => {
     // start Chat
     if (!isEffectArray<ToolType>(llm_tools)) {
       await sse({
+        chatId,
         callback,
         messages,
       })
@@ -140,6 +142,7 @@ export const AI = (props: AIProps) => {
 
         if (isString(model) && model?.indexOf('llama3') === 0) {
           await sse({
+            chatId,
             callback,
             messages: [
               {

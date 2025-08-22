@@ -1,13 +1,14 @@
 import React from 'react'
 import { Div, Input, Button, Flex } from 'aurad'
-import { ModelOptions, URLOptions, Suggest } from './conf'
+import { ModelOptions, URLOptions } from './conf'
+import { useConf } from '@/util'
 
 export interface LeftProps {
   [key: string]: any
 }
 
 export function Left(props: LeftProps) {
-  const { state, setState, handleClearHistory } = props
+  const { state, setState, handleClearHistory, handleStop } = props
   const handleSelectModel = (val: string) => {
     if (val === 'Custom') {
       setState({
@@ -35,9 +36,22 @@ export function Left(props: LeftProps) {
       customURL: false,
     })
   }
+  const { conf, setConf } = useConf()
+
   return (
     <div className="left-aside">
       <Div className="ai-model">
+        <div className="item">
+          <div className="label">Server URL</div>
+          <Input
+            value={conf.serverUrl}
+            onChange={(e: any) =>
+              setConf({
+                serverUrl: e.target.value,
+              })
+            }
+          />
+        </div>
         <div className="item">
           <div className="label"> Api Key</div>
           <Input
@@ -109,7 +123,6 @@ export function Left(props: LeftProps) {
         </div>
       </Div>
 
-      <Button onClick={() => handleClearHistory()}>Clear History</Button>
       <Button
         type={state.enabledRAG ? 'primary' : 'default'}
         onClick={() => {
@@ -120,6 +133,8 @@ export function Left(props: LeftProps) {
       >
         Enabled RAG
       </Button>
+      <Button onClick={() => handleStop()}>Stop</Button>
+      <Button onClick={() => handleClearHistory()}>Clear History</Button>
     </div>
   )
 }

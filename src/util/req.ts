@@ -1,14 +1,16 @@
 import axios, { AxiosRequestConfig } from 'axios'
 import { isString } from 'asura-eye'
+import { getConf } from './conf'
 
 export const req = async (conf: AxiosRequestConfig = {}): Promise<any> => {
   let { url, method = 'get', headers = {}, ...rest } = conf
 
   if (isString(url) && !url.startsWith('http')) {
+    const { serverUrl } = getConf()
     if (url.startsWith('/')) {
-      url = 'http://localhost:2400' + url
+      url = serverUrl + url
     } else {
-      url = 'http://localhost:2400/' + url
+      url = serverUrl + '/' + url
     }
   }
 

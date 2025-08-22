@@ -50,6 +50,7 @@ type CustomModelType = {
 }
 
 export interface AIProps {
+  chatId?: string | number
   model?: ModelType | undefined
   url?: string | undefined
   // custom?: CustomModelType

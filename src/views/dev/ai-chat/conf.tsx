@@ -23,8 +23,8 @@ export const URLOptions = [
     value: 'https://api.deepseek.com/v1/chat/completions',
   },
   {
-    label: 'http://localhost:2400/ollama/chat',
-    value: 'http://localhost:2400/ollama/chat',
+    label: 'ollama/chat',
+    value: 'ollama/chat',
   },
   { label: 'Custom', value: 'Custom' },
 ]
@@ -59,4 +59,5 @@ export const Suggest = [
   // { value: '2', label: '你是谁' },
   { value: '2.1', label: 'Who are you?' },
   { value: '3', label: 'Greetings without the need for drawing' },
+  { value: '4', label: 'Introducing AppPulse+' },
 ]

@@ -1,4 +1,5 @@
 export * from './req'
+export * from './conf'
 
 import { message } from 'aurad'
 import { copyText } from 'harpe'
