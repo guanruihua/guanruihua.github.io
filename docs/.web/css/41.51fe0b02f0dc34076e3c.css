@@ -49,12 +49,35 @@
 }
 
 .home {
+  position: relative;
   display: grid;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  max-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+}
+.home-search {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  padding: 10px 0;
+}
+.home-search > input {
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-size: 16px;
+  width: 50%;
+  min-width: 300px;
+  background: #202324;
+  line-height: 32px;
+  border: none;
+  outline: none;
 }
 .home .layout {
   display: flex;
@@ -62,7 +85,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 24px;
+  padding: 10px 24px 20px;
   width: 100vw;
   max-width: 100vw;
   position: relative;
@@ -86,6 +109,18 @@
 }
 .home .card:hover:not(.select) {
   box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.3);
+}
+.home .card > .bg {
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: top !important;
+  filter: opacity(25%) blur(1px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 .home .card .logo {
   display: inline-flex;

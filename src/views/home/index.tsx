@@ -19,11 +19,14 @@ const BGColor = [
 ]
 
 export default function Home() {
-  // const [md] = useFetchMDState('/guide.md')
   const [md] = useFetchMDState(SOURCEURL + 'guide.md')
   const [types, guide] = analysisMD(md)
-  const [state, setState] = useSetState<{ selects: string[] }>(
+  const [state, setState] = useSetState<{
+    search: string
+    selects: string[]
+  }>(
     {
+      search: '',
       selects: [],
     },
     'cache-guide-state',
@@ -51,6 +54,18 @@ export default function Home() {
 
   return (
     <Container containerClassName="home">
+      <div className="home-search">
+        <input
+          value={state.search}
+          onChange={(e) => {
+            const value = e.target.value
+
+            setState({
+              search: value,
+            })
+          }}
+        />
+      </div>
       <div className="layout">
         {types?.map((name: any, i: number) => (
           <Div
@@ -69,16 +84,6 @@ export default function Home() {
               className="bg"
               style={{
                 background: 'url(/image/bg.png)',
-                backgroundAttachment: 'fixed',
-                backgroundSize: 'cover',
-                backgroundPosition: 'top',
-                filter: 'opacity(25%) blur(1px)',
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                right: 0,
-                bottom: 0,
-                zIndex: 1,
               }}
               onClick={() => handleClick(name)}
             />

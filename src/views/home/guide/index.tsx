@@ -2,13 +2,16 @@ import { Div } from 'aurad'
 import React from 'react'
 import { useNavigate } from 'react-router'
 import { useEventListener } from './eventlistener'
+import PinyinMatch from 'pinyin-match'
 import './index.less'
+import { isEffectArray, isString } from 'asura-eye'
 
 export interface GuideProps {
   guide: {
     name?: string
     type?: string
     next: string[][]
+    show?: boolean
   }[]
   state?: {
     selects?: string[]
@@ -21,7 +24,7 @@ export function Guide(props: GuideProps) {
   const nav = useNavigate()
 
   const { guide, state } = props
-  const { selects = [] } = state || {}
+  const { selects = [], search } = state || {}
   const colWidth = 450
 
   const getNewColCount = () => {
@@ -40,7 +43,21 @@ export function Guide(props: GuideProps) {
   )
 
   const cols = new Array(colCount).fill('').map((_, i) => {
-    return canRenderGuide.filter((_, j) => j % colCount === i)
+    return canRenderGuide.filter((_: any, j) => {
+      if (isString(search) && search.length && isEffectArray(_.next)) {
+        try {
+          _.next.forEach((item: any[]) => {
+            item[2] = PinyinMatch.match(item[0], search.trim()) !== false
+          })
+          _.show = Boolean(
+            _.next.map((item: any[]) => item[2]).filter(Boolean).length,
+          )
+        } catch (error) {
+          console.error(error)
+        }
+      }
+      return j % colCount === i
+    })
   })
 
   const onClick = (url: string) => {
@@ -52,15 +69,15 @@ export function Guide(props: GuideProps) {
     <div className="home-guide">
       {cols.map((col, ci) => {
         return (
-          <div
+          <Div
             key={ci}
             className="home-guide-col"
             style={{ width: 95 / colCount + '%' }}
           >
             {col?.map((item: GuideProps['guide']['0'], i: number) => {
-              const { name, next } = item
+              const { name, next, show = true } = item
               return (
-                <Div className="guide-module" key={i}>
+                <Div className="guide-module" key={i} none={show == false}>
                   <div
                     className="bg"
                     style={{
@@ -78,22 +95,23 @@ export function Guide(props: GuideProps) {
                     }}
                   />
                   {name && <div className="title">{name}</div>}
-                  {next?.map((child, j) => {
-                    const [name, url] = child
+                  {next?.map((child: any[], j) => {
+                    const [name, url, show = true] = child
                     return (
-                      <div
+                      <Div
                         key={j}
+                        none={show === false}
                         className="guide-item"
                         onClick={() => onClick(url)}
                       >
                         {name}
-                      </div>
+                      </Div>
                     )
                   })}
                 </Div>
               )
             })}
-          </div>
+          </Div>
         )
       })}
     </div>
