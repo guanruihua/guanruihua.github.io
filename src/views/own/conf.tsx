@@ -18,6 +18,7 @@ export const Conf = [
       ['计算器', 'tool/calculator'],
       ['DDL', 'tool/ddl'],
       ['System Info', 'tool/system-info'],
+      ['轻量级图片裁剪 (Beta)', 'tool/img-clipper'],
       // ['Todo List','tool/todo-list'] -->
     ],
   },
@@ -38,6 +39,7 @@ export const Conf = [
       ['WebSocket', 'dev/webSocket'],
       ['SSE', 'dev/sse'],
       ['File Review', 'dev/file-review'],
+      ['Setting', 'dev/setting'],
     ],
   },
   {

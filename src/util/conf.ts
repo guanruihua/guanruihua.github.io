@@ -5,6 +5,7 @@ export const ConfKey = 'conf|cache'
 
 export interface Conf {
   serverUrl?: string
+  deepSeekApiKey?: string
   [key: string]: any
 }
 

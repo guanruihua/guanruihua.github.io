@@ -2,6 +2,10 @@ import React from 'react'
 import { Lazy } from 'aurad'
 
 export const ToolRouter = [
+    {
+    path: 'img-clipper',
+    element: Lazy(import('./img-clipper')),
+  },
   {
     path: 'ddl',
     element: Lazy(import('./ddl')),

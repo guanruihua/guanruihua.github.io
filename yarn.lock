@@ -12,10 +12,10 @@
   resolved "https://registry.npmjs.org/0file-system/-/0file-system-0.3.0.tgz#e9c59a7ac765ce43f0fc9be8857a14b9e7131834"
   integrity sha512-3AJ/LL59SPIdiww2vhgtzC1dhnYkub71qUn7ehjpvn6mBBR5+Zw1jFklFkE4rsQSrbUMEDgNqHVDi/sTWlKm0Q==
 
-"0hook@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.npmjs.org/0hook/-/0hook-1.7.0.tgz#73bc9811fc69247d41f06da68eaba48cb70ed3e0"
-  integrity sha512-+gXLct9fTq/5sHnwotJdE3ULcwkcPrWi0YhFFZYlOwwUrlgHmdZ1ZU2AJSH3LFw1ACR2N1ehdJIrQHSojcNzwg==
+"0hook@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.npmjs.org/0hook/-/0hook-1.8.0.tgz#2f70771f638f9aabf1ce1b6d94748e4798d7795c"
+  integrity sha512-KLWVBdheTe8hTLvJb5XP2XEb4Reom6MXX84J0St6DV9TVcjSrKm7B4+R4qdi5F9LJSA78OMwhiF++D9brh1k0A==
 
 "0math@^0.1.3":
   version "0.1.6"
@@ -374,9 +374,9 @@
   dependencies:
     tslib "^2.0.0"
 
-"@dnd-kit/core@^6.0.8":
+"@dnd-kit/core@^6.0.8", "@dnd-kit/core@^6.3.1":
   version "6.3.1"
-  resolved "https://registry.npmjs.org/@dnd-kit/core/-/core-6.3.1.tgz#4c36406a62c7baac499726f899935f93f0e6d003"
+  resolved "https://registry.npmmirror.com/@dnd-kit/core/-/core-6.3.1.tgz#4c36406a62c7baac499726f899935f93f0e6d003"
   integrity sha512-xkGBRQQab4RLwgXxoqETICr6S5JlogafbhNsidmrkVv2YRs5MLwpjoF2qpiGjQt8S9AoxtIV603s0GIUpY5eYQ==
   dependencies:
     "@dnd-kit/accessibility" "^3.1.1"
@@ -1939,6 +1939,11 @@ create-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
+
+cropperjs@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.npmmirror.com/cropperjs/-/cropperjs-1.6.2.tgz#d1a5d627d880581cca41b7901f06923500e4201b"
+  integrity sha512-nhymn9GdnV3CqiEHJVai54TULFAE3VshJTXSqSJKa8yXAKyBKDWdhHarnlIPrshJ0WMFTGuFvG02YjLXfPiuOA==
 
 cross-env@^7.0.3:
   version "7.0.3"
@@ -5002,6 +5007,11 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
 
+react-image-crop@^11.0.10:
+  version "11.0.10"
+  resolved "https://registry.npmmirror.com/react-image-crop/-/react-image-crop-11.0.10.tgz#20fe6e3ff6fe29745a37eac1b4c0e73e6b17f2e0"
+  integrity sha512-+5FfDXUgYLLqBh1Y/uQhIycpHCbXkI50a+nbfkB1C0xXXUTwkisHDo2QCB1SQJyHCqIuia4FeyReqXuMDKWQTQ==
+
 react-markdown@^10.1.0:
   version "10.1.0"
   resolved "https://registry.npmjs.org/react-markdown/-/react-markdown-10.1.0.tgz#e22bc20faddbc07605c15284255653c0f3bad5ca"
@@ -5019,9 +5029,9 @@ react-markdown@^10.1.0:
     unist-util-visit "^5.0.0"
     vfile "^6.0.0"
 
-react-router-dom@^6.16.0, react-router-dom@^6.23.1, react-router-dom@^6.4.2:
+react-router-dom@^6.23.1, react-router-dom@^6.25.1, react-router-dom@^6.4.2:
   version "6.30.1"
-  resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.30.1.tgz#da2580c272ddb61325e435478566be9563a4a237"
+  resolved "https://registry.npmmirror.com/react-router-dom/-/react-router-dom-6.30.1.tgz#da2580c272ddb61325e435478566be9563a4a237"
   integrity sha512-llKsgOkZdbPU1Eg3zK8lCn+sjD9wMRZZPuzmdWWX5SUs8OFkN5HnFVC0u5KMeMaC9aoancFI/KoLuKPqN+hxHw==
   dependencies:
     "@remix-run/router" "1.23.0"

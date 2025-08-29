@@ -14,6 +14,7 @@ declare module '*.svg'
 declare module '*.json'
 declare module '*.png'
 declare module '*.jpeg'
+declare module '*.jpg'
 declare module '*.md' {
   const md: string
   export = md

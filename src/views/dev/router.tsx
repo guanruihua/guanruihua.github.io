@@ -35,4 +35,8 @@ export const DevRouter = [
     path: 'box-shadow',
     element: Lazy(import('./box-shadow')),
   },
+  {
+    path: 'setting',
+    element: Lazy(import('./setting')),
+  },
 ]
