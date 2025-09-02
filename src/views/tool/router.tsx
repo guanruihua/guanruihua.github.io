@@ -2,7 +2,11 @@ import React from 'react'
 import { Lazy } from 'aurad'
 
 export const ToolRouter = [
-    {
+  {
+    path: 'pdf-gen',
+    element: Lazy(import('./pdf-gen')),
+  },
+  {
     path: 'img-clipper',
     element: Lazy(import('./img-clipper')),
   },

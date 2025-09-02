@@ -20,7 +20,6 @@ declare module '*.md' {
   export = md
 }
 
-
 declare module '*.txt' {
   const txt: string
   export = txt
