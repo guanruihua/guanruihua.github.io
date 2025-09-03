@@ -63,7 +63,7 @@ export default function () {
                   return (
                     <Flex key={j} className={'item'} column>
                       <div className="code">
-                        <span>{code}</span>
+                        <span className='code'>{code}</span>
                         <span className="label">{label}</span>
                       </div>
                       <div className="subtitle">{subtitle}</div>
