@@ -19,7 +19,11 @@ export default function () {
       <Grid columns={2} className="container">
         <div className="left">
           <h1>DOM转图片示例</h1>
-          <div className="target-element" ref={u.domRef}>
+          <div
+            className="target-element"
+            ref={u.domRef}
+            style={{ padding: 10 }}
+          >
             <Chart
               style={{
                 width: 600,
