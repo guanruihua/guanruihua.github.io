@@ -14,6 +14,7 @@ import { StudyChildRouter } from './views/study/router'
 import { Lazy } from 'aurad'
 import { Container } from './components'
 import otherRouter from './views/other/router'
+import { GameRouter } from './views/game/router'
 
 const routes: RouteObject[] = [
   {
@@ -68,6 +69,15 @@ const routes: RouteObject[] = [
           </Container>
         ),
         children: StudyChildRouter,
+      },
+      {
+        path: '/game',
+        element: (
+          <Container>
+            <Outlet />
+          </Container>
+        ),
+        children: GameRouter,
       },
       {
         path: '/packages',

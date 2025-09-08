@@ -45,7 +45,7 @@ export const Conf = [
     ],
   },
   {
-    title: 'Study CSS',
+    title: 'CSS',
     children: [
       ['双引号样式', 'study/css-q-quotes'],
       ['flex', 'study/css-flex'],
@@ -55,7 +55,7 @@ export const Conf = [
     ],
   },
   {
-    title: 'Study 示例',
+    title: 'Demo',
     children: [
       ['小众 HTML 标签', 'study/minority-html'],
       ['滚动绽放', 'study/scroll-bloom'],
@@ -65,16 +65,17 @@ export const Conf = [
       ['Flow Demo', 'study/flow-demo-grid'],
       ['字体描边', 'study/font-stroke'],
       ['中间省略号 & svg 文本加粗', 'study/demo-text'],
-    ],
-  },
-  {
-    title: 'Study Other',
-    children: [
       ['Canvas Base Draw', 'study/canvas'],
       ['Canvas Base Style', 'study/canvas-base-style'],
       ['Select', 'study/select'],
       ['Upload File Preview', 'study/upload-file-preview'],
       ['Test', 'study/test'],
+    ],
+  },
+  {
+    title: 'Game',
+    children: [
+      ['2048', 'game/g-2048']
     ],
   },
 ]
