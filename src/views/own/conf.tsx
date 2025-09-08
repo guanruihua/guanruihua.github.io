@@ -1,7 +1,8 @@
 export const Conf = [
   {
     title: 'Own',
-    children: [
+    name: 'own',
+    group: [
       ['Github', 'https://github.com/guanruihua/'],
       ['Note', 'https://ruihuag-note.github.io/'],
       ['Demo', 'https://ruihuag-demo.github.io/'],
@@ -11,7 +12,8 @@ export const Conf = [
   },
   {
     title: 'Tool',
-    children: [
+    name: 'tool',
+    group: [
       ['随机密码', 'tool/randomPwd'],
       ['文本比对', 'tool/text-compare'],
       ['简繁体转换', 'tool/converter/Chinese'],
@@ -19,19 +21,19 @@ export const Conf = [
       ['DDL', 'tool/ddl'],
       ['System Info', 'tool/system-info'],
       ['轻量级图片裁剪', 'tool/img-clipper'],
-      ['PDF 生成', 'tool/pdf-gen']
+      ['PDF 生成', 'tool/pdf-gen'],
       // ['Todo List','tool/todo-list'] -->
     ],
   },
   {
     title: 'Other',
-    children: [
-      ['HTTP 状态码', 'other/http-status'],
-    ],
+    name: 'other',
+    group: [['HTTP 状态码', 'other/http-status']],
   },
   {
     title: 'Dev',
-    children: [
+    name: 'dev',
+    group: [
       ['Color', 'dev/color'],
       ['Box Shadow', 'dev/box-shadow'],
       ['Platform Api', 'dev/platform-api'],
@@ -46,7 +48,8 @@ export const Conf = [
   },
   {
     title: 'CSS',
-    children: [
+    name: 'css',
+    group: [
       ['双引号样式', 'study/css-q-quotes'],
       ['flex', 'study/css-flex'],
       ['grid', 'study/css-grid'],
@@ -56,7 +59,8 @@ export const Conf = [
   },
   {
     title: 'Demo',
-    children: [
+    name: 'demo',
+    group: [
       ['小众 HTML 标签', 'study/minority-html'],
       ['滚动绽放', 'study/scroll-bloom'],
       ['整屏滚动', 'study/scroll-snap'],
@@ -74,8 +78,10 @@ export const Conf = [
   },
   {
     title: 'Game',
-    children: [
-      ['2048', 'game/g-2048']
+    name: 'game',
+    group: [
+      //
+      ['2048', 'game/g-2048'],
     ],
   },
 ]

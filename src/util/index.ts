@@ -33,3 +33,11 @@ export const copy = (val: any) => {
     message.error('Copy Fail ')
   }
 }
+
+export const scrollIntoView = (querySelectorName: string) => {
+  const dom = document.querySelector(querySelectorName)
+  dom?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  })
+}

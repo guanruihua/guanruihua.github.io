@@ -5,5 +5,5 @@ import './index.less'
 export default function () {
   const { state, setState } = usePageState()
 
-  return <div className="game-2048">2048</div>
+  return <div className="game-2048">{/* 2048 */}</div>
 }

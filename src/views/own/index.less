@@ -1,28 +1,21 @@
-.own {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  width: 100%;
+.own-page-content {
 
-  .module {
+  & .module {
     padding: 16px;
-    width: 250px;
+    width: 100%;
     background-color: rgb(255 255 255 / 20%);
     border-radius: 12px;
 
-    .title {
+    &>.title {
       font-weight: bolder;
       margin-bottom: 12px;
     }
 
-    .children {
+    &>.children {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       flex-wrap: wrap;
-      gap: 4px 10px;
+      gap: 4px 20px;
 
       .name {
         display: flex;
@@ -34,7 +27,6 @@
         transition: all .3s;
         padding-bottom: 4px;
         border-bottom: 1px solid rgb(255 255 255 / 20%);
-
 
         &:hover {
           color: rgb(255 255 255 / 100%);

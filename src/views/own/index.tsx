@@ -1,9 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
-import { Container } from '@/components'
-import { Div } from 'aurad'
+import { Management } from '@/components'
+import { Div, Flex } from 'aurad'
 import { Conf } from './conf'
 import './index.less'
+import { scrollIntoView } from '@/util'
 
 export default function () {
   const nav = useNavigate()
@@ -17,28 +18,39 @@ export default function () {
     // else nav(url)
   }
   return (
-    <Container>
-      <div className="own">
+    <Management
+      className="own-page-content"
+      menu={[
+        {
+          title: 'Module',
+          name: 'module',
+          children: Conf
+        }
+        
+      ]}
+      onChange={(name) => scrollIntoView('.module.' + name)}
+    >
+      <Flex column>
         {Conf.map((item, i) => {
-          const { title, children = [] } = item
+          const { title, name, group = [] } = item
           return (
-            <div key={i} className="module">
+            <div key={i} className={'module ' + name}>
               <div className="title">{title}</div>
-              <Div className="children" none={children.length < 1}>
-                {children.map((child, j) => {
-                  const [name, url] = child
+              <Div className="children" none={group.length < 1}>
+                {group.map((child, j) => {
+                  const [title, url] = child
 
                   return (
-                    <div key={j} className="name" onClick={() => onClick(url)}>
-                      {name}
-                    </div>
+                    <Div key={j} className="name" onClick={() => onClick(url)}>
+                      {title}
+                    </Div>
                   )
                 })}
               </Div>
             </div>
           )
         })}
-      </div>
-    </Container>
+      </Flex>
+    </Management>
   )
 }
