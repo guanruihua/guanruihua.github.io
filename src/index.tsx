@@ -1,18 +1,12 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import {
-  Outlet,
-  RouteObject,
-  RouterProvider,
-  createHashRouter,
-} from 'react-router-dom'
+import { RouteObject, RouterProvider, createHashRouter } from 'react-router-dom'
 import './index.less'
 import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
 import { DevRouter } from './views/dev/router'
 import { StudyChildRouter } from './views/study/router'
 import { Lazy } from 'aurad'
-import { Container } from './components'
 import otherRouter from './views/other/router'
 import { GameRouter } from './views/game/router'
 
@@ -34,10 +28,10 @@ const routes: RouteObject[] = [
             element: Lazy(import('./views/own/index')),
           },
 
-          ...ToolRouter.map((_) => {
-            _.path = 'tool/' + _.path
-            return _
-          }),
+          ...ToolRouter.map((_) => ({
+            ..._,
+            path: 'tool/' + _.path,
+          })),
           ...otherRouter.map((_) => {
             _.path = 'other/' + _.path
             return _

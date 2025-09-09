@@ -1,3 +1,5 @@
+import { ToolRouter } from '../tool/router'
+
 export const Conf = [
   {
     title: 'Own',
@@ -13,17 +15,7 @@ export const Conf = [
   {
     title: 'Tool',
     name: 'tool',
-    group: [
-      ['随机密码', 'tool/randomPwd'],
-      ['文本比对', 'tool/text-compare'],
-      ['简繁体转换', 'tool/converter/Chinese'],
-      ['计算器', 'tool/calculator'],
-      ['DDL', 'tool/ddl'],
-      ['System Info', 'tool/system-info'],
-      ['轻量级图片裁剪', 'tool/img-clipper'],
-      ['PDF 生成', 'tool/pdf-gen'],
-      // ['Todo List','tool/todo-list'] -->
-    ],
+    group: ToolRouter.map((item) => [item.title, 'tool/' + item.path]),
   },
   {
     title: 'Other',
