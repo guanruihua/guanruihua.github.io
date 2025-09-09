@@ -13,7 +13,7 @@ export const List = [
   },
   {
     value: 'symbol',
-    label: '!@#',
+    label: '!@#$%^&*()_+-=[]{}|;:,.<>?',
   },
 ]
 

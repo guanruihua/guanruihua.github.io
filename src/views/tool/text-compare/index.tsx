@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './index.less'
 import { isString } from 'asura-eye'
+import { SiArrowRightFill } from './icon'
 
 export default () => {
   const [aStr, _setAStr] = useState<string>('')
@@ -43,27 +44,37 @@ export default () => {
   React.useEffect(() => {
     init()
   }, [])
-  
+
   const reg = /([,;|\s@/.:;'`])/
   const aList = aStr.split(reg)
   const bList = bStr.split(reg)
 
   return (
-    <div className='tool-text-compare'>
-      <div className='compare-string'>
+    <div className="tool-text-compare">
+      <div className="compare-string">
         {aList.map((a, i) => {
           const b = bList[i] || ''
           if (a === b) return <span key={i}>{a}</span>
           return (
             <span className={'error'} key={i}>
-              {`${a} => ${b} `}
+              <pre>{a}</pre>
+              <SiArrowRightFill />
+              <pre>{b}</pre>
             </span>
           )
         })}
       </div>
       <div className={'input-area ' + handleCompare(aStr, bStr)}>
-        <textarea placeholder='' value={aStr || ''} onChange={e => setAStr(e.target.value)} />
-        <textarea placeholder='' value={bStr || ''} onChange={e => setBStr(e.target.value)} />
+        <textarea
+          placeholder=""
+          value={aStr || ''}
+          onChange={(e) => setAStr(e.target.value)}
+        />
+        <textarea
+          placeholder=""
+          value={bStr || ''}
+          onChange={(e) => setBStr(e.target.value)}
+        />
       </div>
     </div>
   )

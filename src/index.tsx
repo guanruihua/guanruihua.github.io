@@ -27,57 +27,38 @@ const routes: RouteObject[] = [
       },
       {
         path: '/own',
-        element: Lazy(import('./views/own')),
-        children: ToolRouter,
-      },
-      {
-        path: '/other',
-        element: (
-          <Container>
-            <Outlet />
-          </Container>
-        ),
-        children: otherRouter,
-      },
-      {
-        path: '/tool',
-        element: (
-          <Container>
-            <Outlet />
-          </Container>
-        ),
-        children: ToolRouter,
-      },
-      {
-        path: '/dev',
-        element: (
-          <Container>
-            <Outlet />
-          </Container>
-        ),
-        children: DevRouter,
+        element: Lazy(import('./views/own/layout')),
+        children: [
+          {
+            index: true,
+            element: Lazy(import('./views/own/index')),
+          },
+
+          ...ToolRouter.map((_) => {
+            _.path = 'tool/' + _.path
+            return _
+          }),
+          ...otherRouter.map((_) => {
+            _.path = 'other/' + _.path
+            return _
+          }),
+          ...DevRouter.map((_) => {
+            _.path = 'dev/' + _.path
+            return _
+          }),
+          ...StudyChildRouter.map((_) => {
+            _.path = 'study/' + _.path
+            return _
+          }),
+          ...GameRouter.map((_) => {
+            _.path = 'game/' + _.path
+            return _
+          }),
+        ],
       },
       {
         path: '/info',
         element: Lazy(import('./views/info')),
-      },
-      {
-        path: '/study',
-        element: (
-          <Container>
-            <Outlet />
-          </Container>
-        ),
-        children: StudyChildRouter,
-      },
-      {
-        path: '/game',
-        element: (
-          <Container>
-            <Outlet />
-          </Container>
-        ),
-        children: GameRouter,
       },
       {
         path: '/packages',

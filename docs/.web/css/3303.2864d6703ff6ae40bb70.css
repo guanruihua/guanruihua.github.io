@@ -1,0 +1,242 @@
+.logo-layout {
+  display: inline-block;
+}
+.logo-layout > span {
+  margin: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.logo-layout img {
+  border: none;
+  font-size: 16px;
+}
+.logo-layout .hidden {
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  visibility: hidden;
+}
+
+.layout-header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 0 12px 0 12px;
+  width: auto;
+  height: 32px;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.9);
+  border-top-right-radius: 4px;
+}
+.layout-header .control {
+  font-size: 10px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}
+.layout-header .control:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+.layout-header .control.disabled {
+  text-decoration: line-through;
+}
+
+.layout-container .layout-box {
+  min-height: 100vh;
+  padding: 20px 20px 42px;
+}
+
+.au-loading {
+  position: relative;
+}
+.au-loading.loading > .au-loading-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: not-allowed;
+}
+.au-loading.loading > .au-loading-bg > .au-loading-spin {
+  width: 90%;
+  height: 90%;
+  max-width: 40px;
+  max-height: 40px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.home-guide {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  max-width: 100vw;
+}
+.home-guide .home-guide-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 450px;
+  max-width: 100vw;
+}
+@media only screen and (max-width: 450px) {
+  .home-guide .home-guide-col {
+    min-width: 100vw;
+  }
+}
+.home-guide .guide-module {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0 20px;
+  line-height: 28px;
+}
+.home-guide .guide-module .title {
+  font-weight: bold;
+  color: #aaa;
+  white-space: nowrap;
+}
+.home-guide .guide-module .guide-item {
+  color: #777;
+  cursor: pointer;
+  transition: 0.6s;
+  font-weight: bolder;
+}
+.home-guide .guide-module .guide-item:hover {
+  color: #fff;
+}
+
+.home {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.home-search {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  padding: 10px 0;
+}
+.home-search > input {
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-size: 16px;
+  width: 50%;
+  min-width: 300px;
+  background: #202324;
+  line-height: 32px;
+  border: none;
+  outline: none;
+}
+.home .layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 24px 20px;
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+}
+.home .card {
+  position: relative;
+  width: 300px;
+  max-width: 100vw;
+  height: 120px;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.6s ease-in-out;
+}
+.home .card.select {
+  box-shadow: 1px 1px 12px rgba(255, 255, 255, 0.9);
+}
+.home .card:hover:not(.select) {
+  box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.3);
+}
+.home .card > .bg {
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: top !important;
+  filter: opacity(25%) blur(1px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.home .card .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  padding: 8px;
+  padding-bottom: 14px;
+  padding-left: 10px;
+  border-radius: 12px;
+}
+.home .card .name {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 100px;
+  min-height: 50px;
+  padding-right: 10px;
+}
+.home .card .name:hover {
+  color: #88CA97;
+}
+

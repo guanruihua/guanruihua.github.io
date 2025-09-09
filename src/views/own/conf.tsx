@@ -59,7 +59,7 @@ export const Conf = [
   },
   {
     title: 'Demo',
-    name: 'demo',
+    name: 'study',
     group: [
       ['小众 HTML 标签', 'study/minority-html'],
       ['滚动绽放', 'study/scroll-bloom'],

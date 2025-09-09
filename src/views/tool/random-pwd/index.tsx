@@ -5,9 +5,9 @@ import { ObjectType } from '0type'
 import { List } from './constant'
 import { getStr } from './util'
 import { Input, InputNumber } from './components'
-import { Reload } from './icon'
 import './index.less'
 import { copy } from '@/util'
+import { Button } from 'aurad'
 
 const defaultValue = {
   num: 1,
@@ -43,9 +43,7 @@ export default function RandomPwd() {
 
   return (
     <div className="panel-gen">
-      <div
-        style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 10 }}
-      >
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 10 }}>
         <div
           className="col-flex border left"
           style={{
@@ -72,26 +70,7 @@ export default function RandomPwd() {
               })}
             </div>
           </div>
-          <div className="row-flex">
-            <div className="label">生成数量</div>
-            <InputNumber
-              className={'value'}
-              value={conf.num}
-              onChange={(num: any) => setConf({ num })}
-            />
-            <div className="label">密码长度</div>
-            <div className="value row-flex">
-              <InputNumber
-                value={conf.min}
-                onChange={(min: any) => setConf({ min })}
-              />
-              <span>-</span>
-              <InputNumber
-                value={conf.max}
-                onChange={(max: any) => setConf({ max })}
-              />
-            </div>
-          </div>
+
           <div className="row-flex">
             <div className="label">包含字符</div>
             <Input
@@ -108,15 +87,34 @@ export default function RandomPwd() {
               onChange={(exclude: any) => setConf({ exclude })}
             />
           </div>
+          <div className="value row-flex">
+            <div className="label">密码长度</div>
+            <InputNumber
+              value={conf.min}
+              onChange={(min: any) => setConf({ min })}
+            />
+            <span>-</span>
+            <InputNumber
+              value={conf.max}
+              onChange={(max: any) => setConf({ max })}
+            />
+          </div>
+          <div className="row-flex">
+            <div className="label">生成数量</div>
+            <InputNumber
+              className={'value'}
+              value={conf.num}
+              onChange={(num: any) => setConf({ num })}
+            />
+          </div>
           <div>
-            <div
-              className="reload-btn"
+            <Button
               onClick={() => {
                 setNum((n) => n + 1)
               }}
             >
-              {Reload}
-            </div>
+              生成
+            </Button>
           </div>
         </div>
         <div className="result border">
