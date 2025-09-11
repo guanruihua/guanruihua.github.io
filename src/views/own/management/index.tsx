@@ -5,8 +5,8 @@ import { ObjectType } from '0type'
 import { useNavigate } from 'react-router'
 import { useSetState } from '0hook'
 import { classNames, ClassNameType } from 'harpe'
-import { isArray, isString } from 'asura-eye'
-import { parse } from 'abandonjs'
+import { isArray } from 'asura-eye'
+import { Conf } from '../conf'
 import './index.less'
 
 export interface ManagementProps {
@@ -73,6 +73,18 @@ export function Management(props: ManagementProps) {
     }
   }, [ref.current])
 
+  const getTile = () => {
+    const paths = location.hash?.replace('#/own/', '').split('/')
+    const name = paths?.[0]
+    const path = paths.join('/')
+
+    return Conf.find((_) => _.name === name)?.group.find(
+      (_) => _[1] === path,
+    )?.[0]
+  }
+
+  const title = getTile()
+
   return (
     <div
       ref={ref}
@@ -85,7 +97,7 @@ export function Management(props: ManagementProps) {
       ])}
     >
       <Flex className="header" between>
-        <Flex className="header-left">
+        <Flex className="header-left" alginCenter>
           <Fold
             className={'fold-icon'}
             onClick={() => {
@@ -94,6 +106,7 @@ export function Management(props: ManagementProps) {
               })
             }}
           />
+          <h4>{title}</h4>
         </Flex>
         <Flex className="header-right">
           <Div none={isHome} className="header-item" onClick={() => nav('/')}>

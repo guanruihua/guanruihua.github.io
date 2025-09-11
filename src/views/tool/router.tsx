@@ -3,6 +3,21 @@ import { Lazy } from 'aurad'
 
 export const ToolRouter = [
   {
+    title: 'Unicode转中文',
+    path: 'Unicode2Chinese',
+    element: Lazy(import('./Unicode2Chinese')),
+  },
+  {
+    title: 'HTML转义',
+    path: 'HTML-escape',
+    element: Lazy(import('./HTMLescape')),
+  },
+  {
+    title: 'MD5加密',
+    path: 'md5',
+    element: Lazy(import('./md5')),
+  },
+  {
     title: 'UUID 生成',
     path: 'uuid-gen',
     element: Lazy(import('./uuid-gen')),
