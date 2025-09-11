@@ -3,9 +3,9 @@ import { Lazy } from 'aurad'
 
 export const ToolRouter = [
   {
-    title: 'Unicode转中文',
-    path: 'Unicode2Chinese',
-    element: Lazy(import('./Unicode2Chinese')),
+    title: 'Unicode转文本',
+    path: 'Unicode2Text',
+    element: Lazy(import('./Unicode2Text')),
   },
   {
     title: 'HTML转义',
