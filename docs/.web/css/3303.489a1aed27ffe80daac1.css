@@ -147,23 +147,80 @@
   width: 100vw;
   overflow-x: hidden;
 }
+.home .home-keyboard-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.home .home-keyboard-box .home-keyboard-box-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.home .home-keyboard-box .home-keyboard-box-cell {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+.home .home-keyboard-box .home-keyboard-box-cell:hover {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
+}
 .home-search {
   position: sticky;
   top: 0px;
-  display: flex;
-  justify-content: center;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
   z-index: 10;
-  padding: 10px 0;
+  margin-bottom: 20px;
 }
-.home-search > input {
+.home-search > .home-search-box {
+  padding: 10px 15px 10px 30px;
+  background: #202324;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  width: 50%;
+}
+.home-search .home-search-keyboard,
+.home-search .home-search-reset {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.home-search .home-search-keyboard path,
+.home-search .home-search-reset path {
+  color: rgba(255, 255, 255, 0.3);
+}
+.home-search .home-search-keyboard.showKeyBoard path,
+.home-search .home-search-reset.showKeyBoard path,
+.home-search .home-search-keyboard:hover path,
+.home-search .home-search-reset:hover path {
+  color: rgba(255, 255, 255, 0.6);
+}
+.home-search .home-search-reset {
+  font-size: 24px;
+}
+.home-search .home-search-keyboard {
+  font-size: 36px;
+}
+.home-search input {
   border-radius: 12px;
   padding: 5px 10px;
   font-size: 16px;
-  width: 50%;
+  width: 100%;
   min-width: 300px;
-  background: #202324;
+  background: transparent;
   line-height: 32px;
   border: none;
   outline: none;

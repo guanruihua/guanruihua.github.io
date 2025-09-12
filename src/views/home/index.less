@@ -8,23 +8,91 @@
   width: 100vw;
   overflow-x: hidden;
 
+  .home-keyboard-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    .home-keyboard-box-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 10px;
+      gap: 10px;
+    }
+
+    .home-keyboard-box-cell {
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      color: rgba(255, 255, 255, .4);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: rgba(255, 255, 255, .8);
+        border-color: rgba(255, 255, 255, .4);
+      }
+    }
+  }
+
   &-search {
     position: sticky;
     top: 0px;
-    display: flex;
-    justify-content: center;
     width: 100%;
-    background-color: rgb(0 0 0 / 80%);
+    // background-color: rgb(0 0 0 / 80%);
+    text-align: center;
     z-index: 10;
-    padding: 10px 0;
+    margin-bottom: 20px;
 
-    &>input {
+    &>.home-search-box {
+      padding: 10px 15px 10px 30px;
+      background: #202324;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 12px;
+      width: 50%;
+
+    }
+
+    .home-search-keyboard,
+    .home-search-reset {
+      cursor: pointer;
+      transition: all .3s;
+
+      path {
+        color: rgba(255, 255, 255, .3);
+      }
+
+      &.showKeyBoard path,
+      &:hover path {
+        color: rgba(255, 255, 255, .6);
+      }
+    }
+
+    .home-search-reset {
+      font-size: 24px;
+    }
+
+    .home-search-keyboard {
+      font-size: 36px;
+    }
+
+    input {
       border-radius: 12px;
       padding: 5px 10px;
       font-size: 16px;
-      width: 50%;
+      width: 100%;
       min-width: 300px;
-      background: #202324;
+      background: transparent;
+      // background: #202324;
       line-height: 32px;
 
       border: none;

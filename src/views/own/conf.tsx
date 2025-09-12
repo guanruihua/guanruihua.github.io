@@ -1,3 +1,4 @@
+import { GameRouter } from '../game/router'
 import { ToolRouter } from '../tool/router'
 
 export const Conf = [
@@ -71,9 +72,6 @@ export const Conf = [
   {
     title: 'Game',
     name: 'game',
-    group: [
-      //
-      ['2048', 'game/g-2048'],
-    ],
+    group: GameRouter.map((item) => [item.title, 'game/' + item.path]),
   },
 ]

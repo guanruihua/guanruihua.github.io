@@ -40,14 +40,14 @@ const routes: RouteObject[] = [
             _.path = 'dev/' + _.path
             return _
           }),
-          ...StudyChildRouter.map((_) => {
-            _.path = 'study/' + _.path
-            return _
-          }),
-          ...GameRouter.map((_) => {
-            _.path = 'game/' + _.path
-            return _
-          }),
+          ...StudyChildRouter.map((_) => ({
+            ..._,
+            path: 'study/' + _.path,
+          })),
+          ...GameRouter.map((_) => ({
+            ..._,
+            path: 'game/' + _.path,
+          })),
         ],
       },
       {
