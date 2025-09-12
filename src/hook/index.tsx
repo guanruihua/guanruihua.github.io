@@ -28,9 +28,14 @@ export function useFetchMDState(
   const [state, setState] = React.useState<string>('')
 
   const init = async () => {
+    const cache = localStorage.getItem(url)
+    if (cache) {
+      setState(cache || '')
+    }
     fetch(url)
       .then(async (res) => {
         const data = await res.text()
+        localStorage.setItem(url, data || '')
         setState(data)
       })
       .catch(console.error)
