@@ -8,8 +8,14 @@ export const GameRouter = [
     element: Lazy(import('./2048')),
   },
   {
-    title:'PVZ',
+    title:'PVZ( beta / dev)',
     path: 'pvz',
     element: Lazy(import('./pvz')),
+  },
+  {
+    // title:'打砖块',
+    title:'Break bricks',
+    path: 'brick',
+    element: Lazy(import('./brick')),
   },
 ]

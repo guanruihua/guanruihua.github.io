@@ -27,7 +27,7 @@
 			"*.d.ts",
 			"node_modules/@types",
 			"node_modules/**/*.d.ts",
-			"src/assets/type/*.d.ts"
+			"src/assets/types/*.d.ts"
 		]
 	},
 	"exclude": [
@@ -39,6 +39,7 @@
 	"include": [
 		"components/**/*",
 		"src/**/*",
+		"src/**/*.d.ts",
 		"**/*.d.ts"
 	]
 }
