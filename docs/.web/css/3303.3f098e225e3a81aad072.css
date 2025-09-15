@@ -162,7 +162,7 @@
   gap: 10px;
 }
 .home .home-keyboard-box .home-keyboard-box-cell {
-  width: 32px;
+  min-width: 32px;
   height: 32px;
   line-height: 32px;
   text-align: center;
@@ -172,6 +172,11 @@
   cursor: pointer;
   user-select: none;
   background-color: rgba(0, 0, 0, 0.8);
+}
+.home .home-keyboard-box .home-keyboard-box-cell[data-key='Del'],
+.home .home-keyboard-box .home-keyboard-box-cell[data-key='Clear'] {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .home .home-keyboard-box .home-keyboard-box-cell:hover {
   color: rgba(255, 255, 255, 0.8);

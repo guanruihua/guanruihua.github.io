@@ -58,7 +58,7 @@ export default function Home() {
   const keyboardRows = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
     ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-    ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
+    ['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Del', 'Clear'],
   ]
 
   return (
@@ -166,6 +166,18 @@ export default function Home() {
                       data-key={key}
                       key={key}
                       onClick={() => {
+                        if (key === 'Del')
+                          return setState({
+                            search: state.search?.length
+                              ? state.search.slice(0, state.search.length - 1)
+                              : '',
+                          })
+
+                        if (key === 'Clear')
+                          return setState({
+                            search: '',
+                          })
+
                         setState({
                           search: (state.search || '') + key.toLowerCase(),
                         })
