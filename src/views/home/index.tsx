@@ -3,12 +3,12 @@ import { Container } from '@/components'
 import { useSetState } from '0hook'
 import { useFetchMDState } from '@/hook'
 import { Guide } from './guide'
-import './index.less'
 import { isArray, isString } from 'asura-eye'
 import { Div } from 'aurad'
 import { analysisMD } from './analysis-md'
 import { SOURCEURL } from '@/assets'
 import { classNames } from 'harpe'
+import './index.less'
 
 const BGColor = [
   'radial-gradient(ellipse at right top, #5756CD 0%, #151419 47%, #151419 100%)',
