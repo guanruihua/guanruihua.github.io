@@ -155,31 +155,31 @@ export default function Home() {
             ></path>
           </svg>
         </div>
+        <Div className="home-keyboard-box" none={!state.showKeyBoard}>
+          {keyboardRows.map((row, i) => {
+            return (
+              <div className="home-keyboard-box-row" key={i}>
+                {row.map((key) => {
+                  return (
+                    <div
+                      className="home-keyboard-box-cell"
+                      data-key={key}
+                      key={key}
+                      onClick={() => {
+                        setState({
+                          search: (state.search || '') + key.toLowerCase(),
+                        })
+                      }}
+                    >
+                      {key}
+                    </div>
+                  )
+                })}
+              </div>
+            )
+          })}
+        </Div>
       </div>
-      <Div className="home-keyboard-box" none={!state.showKeyBoard}>
-        {keyboardRows.map((row, i) => {
-          return (
-            <div className="home-keyboard-box-row" key={i}>
-              {row.map((key) => {
-                return (
-                  <div
-                    className="home-keyboard-box-cell"
-                    data-key={key}
-                    key={key}
-                    onClick={() => {
-                      setState({
-                        search: (state.search || '') + key.toLowerCase(),
-                      })
-                    }}
-                  >
-                    {key}
-                  </div>
-                )
-              })}
-            </div>
-          )
-        })}
-      </Div>
       <Guide guide={guide} state={state} />
     </Container>
   )
