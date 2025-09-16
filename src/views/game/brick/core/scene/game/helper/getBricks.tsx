@@ -30,15 +30,15 @@ export const getBricks = (scene: Phaser.Scene) => {
         stepX: 70,
       },
     }),
-    scene.physics.add.group({
-      key: 'brick1',
-      repeat: 9,
-      immovable: true,
-      setXY: {
-        x: 80,
-        y: 190,
-        stepX: 70,
-      },
-    }),
+    // scene.physics.add.group({
+    //   key: 'brick1',
+    //   repeat: 9,
+    //   immovable: true,
+    //   setXY: {
+    //     x: 80,
+    //     y: 190,
+    //     stepX: 70,
+    //   },
+    // }),
   ]
 }
