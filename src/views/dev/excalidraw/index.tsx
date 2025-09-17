@@ -2,6 +2,7 @@ import React from 'react'
 import { Excalidraw } from '@excalidraw/excalidraw'
 import './index.less'
 
+// https://docs.excalidraw.com/
 export default function () {
   return (
     <div className="dev__excalidraw">

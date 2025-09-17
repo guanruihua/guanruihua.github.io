@@ -164,16 +164,19 @@
   gap: 10px;
 }
 .home .home-keyboard-box .home-keyboard-box-cell {
-  min-width: 32px;
-  height: 32px;
-  line-height: 32px;
+  min-width: 48px;
+  height: 48px;
+  line-height: 48px;
   text-align: center;
+  font-weight: bold;
   color: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 24px;
   cursor: pointer;
   user-select: none;
   background-color: rgba(0, 0, 0, 0.8);
+  zoom: 0.6;
 }
 .home .home-keyboard-box .home-keyboard-box-cell[data-key='Del'],
 .home .home-keyboard-box .home-keyboard-box-cell[data-key='Clear'] {
