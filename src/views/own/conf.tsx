@@ -1,3 +1,4 @@
+import { DevRouter } from '../dev/router'
 import { GameRouter } from '../game/router'
 import { ToolRouter } from '../tool/router'
 
@@ -26,18 +27,7 @@ export const Conf = [
   {
     title: 'Dev',
     name: 'dev',
-    group: [
-      ['Color', 'dev/color'],
-      ['Box Shadow', 'dev/box-shadow'],
-      ['Platform Api', 'dev/platform-api'],
-      ['AI Chat', 'dev/ai-chat'],
-      ['Vector Data Viewer', 'dev/vector-data-viewer'],
-      ['WebSocket', 'dev/webSocket'],
-      ['SSE', 'dev/sse'],
-      ['File Review', 'dev/file-review'],
-      ['Dom to Image', 'dev/dom-to-image'],
-      ['Setting', 'dev/setting'],
-    ],
+    group: DevRouter.map((item) => [item.title || item.path, 'dev/' + item.path]),
   },
   {
     title: 'CSS',

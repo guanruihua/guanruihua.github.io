@@ -32,14 +32,14 @@ const routes: RouteObject[] = [
             ..._,
             path: 'tool/' + _.path,
           })),
-          ...otherRouter.map((_) => {
-            _.path = 'other/' + _.path
-            return _
-          }),
-          ...DevRouter.map((_) => {
-            _.path = 'dev/' + _.path
-            return _
-          }),
+          ...otherRouter.map((_) => ({
+            ..._,
+            path: 'other/' + _.path,
+          })),
+          ...DevRouter.map((_) => ({
+            ..._,
+            path: 'dev/' + _.path,
+          })),
           ...StudyChildRouter.map((_) => ({
             ..._,
             path: 'study/' + _.path,
@@ -72,11 +72,7 @@ function App() {
       future={{
         v7_startTransition: true,
       }}
-      router={createHashRouter(routes, {
-        future: {
-          v7_relativeSplatPath: true,
-        },
-      })}
+      router={createHashRouter(routes)}
     />
   )
 }
