@@ -5,7 +5,6 @@ import { ObjectType } from '0type'
 import { useNavigate } from 'react-router'
 import { useSetState } from '0hook'
 import { classNames, ClassNameType } from 'harpe'
-import { isArray } from 'asura-eye'
 import { Conf } from '../conf'
 import './index.less'
 
@@ -38,22 +37,6 @@ export function Management(props: ManagementProps) {
     },
     cacheKey,
   )
-
-  // React.useEffect(() => {
-  //   const cache = localStorage.getItem(cacheKey)
-  //   try {
-  //     const json = parse(cache)
-  //     if (json.selectName && isString(json.selectName)) {
-  //       onChange(
-  //         json.selectName,
-  //         menu.find((_) => _.name === json.selectName),
-  //       )
-  //     }
-  //     return
-  //   } catch (error) {
-  //     return
-  //   }
-  // }, [])
 
   const ref = React.useRef<HTMLDivElement>(null)
   React.useEffect(() => {
@@ -139,7 +122,7 @@ export function Management(props: ManagementProps) {
                 fold: name && state?.leftFold?.includes(name),
               }}
             >
-              <div
+              {/* <div
                 className="left-group-title"
                 onClick={() => {
                   if (name) {
@@ -158,7 +141,7 @@ export function Management(props: ManagementProps) {
                 }}
               >
                 {label ?? title}
-              </div>
+              </div> */}
               <Flex className="left-group-children">
                 {children.map((item: any, i: number) => {
                   const { title, label, name } = item

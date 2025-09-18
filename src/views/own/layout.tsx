@@ -13,7 +13,7 @@ export default function () {
       className="own-page-content"
       menu={[
         {
-          title: 'Module',
+          // title: 'Module',
           name: 'module',
           children: Conf,
         },

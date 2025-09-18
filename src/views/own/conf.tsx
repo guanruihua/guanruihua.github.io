@@ -1,5 +1,8 @@
+import { DemoRouter } from '../demo/router'
 import { DevRouter } from '../dev/router'
+import { FileRouter } from '../file/router'
 import { GameRouter } from '../game/router'
+import { OtherRouter } from '../other/router'
 import { ToolRouter } from '../tool/router'
 
 export const Conf = [
@@ -22,7 +25,11 @@ export const Conf = [
   {
     title: 'Other',
     name: 'other',
-    group: [['HTTP 状态码', 'other/http-status']],
+    // group: [['HTTP 状态码', 'other/http-status']],
+    group: OtherRouter.map((item) => [
+      item.title || item.path,
+      'other/' + item.path,
+    ]),
   },
   {
     title: 'Dev',
@@ -33,35 +40,20 @@ export const Conf = [
     ]),
   },
   {
-    title: 'CSS',
-    name: 'demo',
-    group: [
-      ['双引号样式', 'demo/css-q-quotes'],
-      ['flex', 'demo/css-flex'],
-      ['grid', 'demo/css-grid'],
-      ['drag', 'demo/study-drag'],
-      ['transform 3d', 'demo/study-transform-3d'],
-    ],
+    title: 'File',
+    name: 'file',
+    group: FileRouter.map((item) => [
+      item.title || item.path,
+      'file/' + item.path,
+    ]),
   },
   {
     title: 'Demo',
     name: 'demo',
-    group: [
-      ['小众 HTML 标签', 'demo/minority-html'],
-      ['滚动绽放', 'demo/scroll-bloom'],
-      ['整屏滚动', 'demo/scroll-snap'],
-      ['Svg', 'demo/svg'],
-      ['Svg Demo', 'demo/svg-demo'],
-      ['Flow Demo', 'demo/flow-demo-grid'],
-      ['字体描边', 'demo/font-stroke'],
-      ['中间省略号 & svg 文本加粗', 'demo/demo-text'],
-      ['Canvas Base Draw', 'demo/canvas'],
-      ['Canvas Base Style', 'demo/canvas-base-style'],
-      ['Select', 'demo/select'],
-      ['Upload File Preview', 'demo/upload-file-preview'],
-      ['Card Beam Animation', 'demo/card-beam-animation'],
-      ['Test', 'demo/test'],
-    ],
+    group: DemoRouter.map((item) => [
+      item.title || item.path,
+      'demo/' + item.path,
+    ]),   
   },
   {
     title: 'Game',

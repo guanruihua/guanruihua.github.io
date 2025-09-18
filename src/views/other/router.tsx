@@ -1,9 +1,15 @@
 import React from 'react'
 import { Lazy } from 'aurad'
 
-export default [
+export const OtherRouter = [
   {
+    title: 'HTTP 状态码',
     path: 'http-status',
     element: Lazy(import('./http-status')),
+  },
+  {
+    title: 'System Info',
+    path: 'system-info',
+    element: Lazy(import('./sysInfo')),
   },
 ]

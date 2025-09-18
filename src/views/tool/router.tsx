@@ -27,16 +27,7 @@ export const ToolRouter = [
     path: 'time-format',
     element: Lazy(import('./time-format')),
   },
-  {
-    title: 'PDF 生成',
-    path: 'pdf-gen',
-    element: Lazy(import('./pdf-gen')),
-  },
-  {
-    title: '轻量级图片裁剪',
-    path: 'img-clipper',
-    element: Lazy(import('./img-clipper')),
-  },
+
   {
     title: 'DDL',
     path: 'ddl',
@@ -68,11 +59,5 @@ export const ToolRouter = [
     title: '简繁体转换',
     path: 'converter/Chinese',
     element: Lazy(import('./converter')),
-  },
-
-  {
-    title: 'System Info',
-    path: 'system-info',
-    element: Lazy(import('./sysInfo')),
   },
 ]

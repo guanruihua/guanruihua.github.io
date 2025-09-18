@@ -1,5 +1,5 @@
 import React from 'react'
-import { getFileContent } from '../../file-review/helper'
+import { getFileContent } from '@/views/file/file-review/helper'
 import { useSetState } from '0hook'
 import { message } from 'aurad'
 import { req } from '@/util'

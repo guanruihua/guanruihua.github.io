@@ -12,8 +12,9 @@ import { ToolRouter } from './views/tool/router'
 import { DevRouter } from './views/dev/router'
 import { DemoRouter } from './views/demo/router'
 import { Lazy } from 'aurad'
-import otherRouter from './views/other/router'
+import { OtherRouter } from './views/other/router'
 import { GameRouter } from './views/game/router'
+import { FileRouter } from './views/file/router'
 
 const routes: RouteObject[] = [
   {
@@ -37,13 +38,17 @@ const routes: RouteObject[] = [
             ..._,
             path: 'tool/' + _.path,
           })),
-          ...otherRouter.map((_) => ({
+          ...OtherRouter.map((_) => ({
             ..._,
             path: 'other/' + _.path,
           })),
           ...DevRouter.map((_) => ({
             ..._,
             path: 'dev/' + _.path,
+          })),
+          ...FileRouter.map((_) => ({
+            ..._,
+            path: 'file/' + _.path,
           })),
           ...DemoRouter.map((_) => ({
             ..._,
