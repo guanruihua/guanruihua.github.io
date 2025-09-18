@@ -2,23 +2,25 @@ import { GameScene } from './scene/game'
 import { MenuScene } from './scene/menu'
 
 export const init = (Phaser: any, parent: HTMLDivElement) => {
+  console.log(Phaser)
   // This object contains all the Phaser configurations to load our game
   const config: Phaser.Types.Core.GameConfig = {
     /**
      * The type can be Phaser.CANVAS, Phaser.WEBGL or Phaser.AUTO. AUTO means that
      * Phaser will try to render with WebGL, and fall back to Canvas if it fails
      */
-    type: Phaser.AUTO,
+    // type: Phaser.AUTO,
+    type: Phaser.WEBGL,
+    backgroundColor: '#000000',
     // Parent element to inject the Canvas/WebGL element with the game
-    parent,
-    // parent: 'game',
-    // parent: containerRef.current,
-    width: 800,
-    // width: 1200,
-    height: 640,
+    width: window.innerWidth,
+    height: window.innerHeight,
+    parent, 
     scale: {
+      // mode: Phaser
       // Ensure the canvas is resized to fit the parent div's dimensions
       // mode: Phaser.Scale.RESIZE,
+      // mode: window.Phaser.Scale.FIT,
       // Center the game canvas both horizontally and vertically within the parent
       // autoCenter: Phaser.Scale.CENTER_BOTH,
     },
@@ -28,7 +30,7 @@ export const init = (Phaser: any, parent: HTMLDivElement) => {
      * first level is another scene. Phaser has a Scene object, but we can provide
      * a regular JS object with these function names:
      */
-    scene: [MenuScene(), GameScene()],
+    scene: [],
     /**
      * The physics engine determines how objects interact with the world. Phaser
      * supports three physics engines out of the box: arcade, impact and matter.
@@ -38,7 +40,11 @@ export const init = (Phaser: any, parent: HTMLDivElement) => {
       default: 'arcade',
     },
   }
-  const game: Phaser.Game = new Phaser.Game(config)
 
-  console.log(game)
+  config.scene = [MenuScene(config), GameScene(config)]
+  
+  // const game: Phaser.Game = 
+  new Phaser.Game(config)
+
+  // console.log(game)
 }

@@ -1,5 +1,6 @@
-import { ObjectType } from '0type'
 import React from 'react'
+import { ObjectType } from '0type'
+export * from './useLoad'
 
 export function useFetchArrayState<T extends ObjectType[] = ObjectType[]>(
   url: string,

@@ -1,11 +1,16 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { RouteObject, RouterProvider, createHashRouter } from 'react-router-dom'
+import {
+  Outlet,
+  RouteObject,
+  RouterProvider,
+  createHashRouter,
+} from 'react-router-dom'
 import './index.less'
 import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
 import { DevRouter } from './views/dev/router'
-import { StudyChildRouter } from './views/study/router'
+import { DemoRouter } from './views/demo/router'
 import { Lazy } from 'aurad'
 import otherRouter from './views/other/router'
 import { GameRouter } from './views/game/router'
@@ -40,13 +45,19 @@ const routes: RouteObject[] = [
             ..._,
             path: 'dev/' + _.path,
           })),
-          ...StudyChildRouter.map((_) => ({
+          ...DemoRouter.map((_) => ({
             ..._,
-            path: 'study/' + _.path,
+            path: 'demo/' + _.path,
           })),
+        ],
+      },
+      {
+        path: '/game',
+        element: <Outlet />,
+        children: [
           ...GameRouter.map((_) => ({
             ..._,
-            path: 'game/' + _.path,
+            // path: 'game/' + _.path,
           })),
         ],
       },

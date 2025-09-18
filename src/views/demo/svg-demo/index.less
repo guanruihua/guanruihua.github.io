@@ -1,0 +1,54 @@
+.study-svg-demo {
+
+  .demo2 {
+    .beat {
+      transform-origin: bottom; //将变换参考点设置成`<svg>元素`的底部
+      animation: beat-scale 1.4s linear infinite;
+    }
+
+    .beat:nth-child(1) {
+      animation-delay: 0.4s;
+    }
+
+    .beat:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes beat-scale {
+      25% {
+        transform: scaleY(0.3);
+      }
+
+      50% {
+        transform: scaleY(1);
+      }
+
+      75% {
+        transform: scaleY(0.3);
+      }
+    }
+  }
+
+  .demo3 {
+    .fast-hand {
+      animation: clock-rotate 2s linear infinite;
+      /*动画时间设置不同*/
+    }
+
+    .slow-hand {
+      animation: clock-rotate 15s linear infinite;
+      /*动画时间设置不同*/
+    }
+
+    @keyframes clock-rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+  }
+}

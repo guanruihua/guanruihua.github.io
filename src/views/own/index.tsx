@@ -10,7 +10,8 @@ export default function () {
   const onClick = (url: string) => {
     if (url.startsWith('http'))
       window.open(url.indexOf('http') > -1 ? url : `https://${url}`, '_blank')
-    if (url.indexOf('/') == 0) nav('/own' + url)
+    // if (url.indexOf('/') == 0) nav('/own' + url)
+    if (url.indexOf('/') == 0) nav(url)
     else nav('/own/' + url)
     // else window.location.hash = '#/' + url // 强制修改 hash
     // else nav(url)

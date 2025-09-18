@@ -8,12 +8,12 @@ export const getText = (scene: Phaser.Scene): Texts => {
     'Press SPACE to Start',
     {
       fontFamily: 'Monaco, Courier, monospace',
-      fontSize: '50px',
+      fontSize: '12px',
       // color: '#F60000',
       // fill: '#fff',
     },
   )
-
+  // opening.setVisible(false)
   /**
    * The origin of the text object is at the top left, change the origin to the
    * center so it can be properly aligned

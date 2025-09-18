@@ -8,8 +8,23 @@ import {
   isWon,
   getText,
 } from './helper'
+import { isNumber } from 'asura-eye'
 
-export const GameScene = (): Phaser.Types.Scenes.SceneType => {
+export const GameScene = (
+  config: Phaser.Types.Core.GameConfig,
+): Phaser.Types.Scenes.SceneType => {
+  const getConf = () => {
+    const { width, height } = config
+
+    return {
+      ...config,
+      width: isNumber(width) ? width : Number(width),
+      height: isNumber(height) ? height : Number(height),
+    }
+  }
+  const conf = getConf()
+  const { width, height } = conf
+
   // Game objects are global variables so that many functions can access them
   let player: Sprite = null
   let ball: Sprite = null
@@ -36,34 +51,26 @@ export const GameScene = (): Phaser.Types.Scenes.SceneType => {
      * As we move rightward, the x value increases
      * As we move downward, the y value increases.
      */
-    player = scene.physics.add.sprite(
-      400, // x position
-      600, // y position
-      'paddle', // key of image for the sprite
-    )
+    player = scene.physics.add.sprite(width / 2, height - 20, 'paddle')
 
     // Let's add the ball
-    ball = scene.physics.add.sprite(
-      400, // x position
-      565, // y position
-      'ball', // key of image for the sprite
-    )
+    ball = scene.physics.add.sprite(width / 2, height - 40, 'ball')
 
     // Add violet bricks
-    bricks = getBricks(scene)
+    bricks = getBricks(scene, conf)
 
     // Manage key presses
     cursors = scene.input.keyboard?.createCursorKeys()
 
     // Ensure that the player and ball can't leave the screen
     // 确保球员和球不能离开屏幕
-    player?.setCollideWorldBounds(true)
-    ball?.setCollideWorldBounds(true)
+    player.setCollideWorldBounds(true)
+    ball.setCollideWorldBounds(true)
     /**
      * The bounce ensures that the ball retains its velocity after colliding with
      * an object.
      */
-    ball?.setBounce(1, 1)
+    ball.setBounce(1, 1)
 
     /**
      * Disable collision with the bottom of the game world. This needs to be added
@@ -131,8 +138,9 @@ export const GameScene = (): Phaser.Types.Scenes.SceneType => {
 
   return {
     key: 'game',
+    // active: true,
     preload,
     create,
-    update,  
+    update,
   }
 }

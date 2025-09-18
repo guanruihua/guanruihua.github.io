@@ -3,7 +3,11 @@ import { usePageState } from './state'
 import './index.less'
 
 export default function () {
-  const { state, setState } = usePageState()
+  const { ref, state, setState } = usePageState()
 
-  return <div className="game-2048">{/* 2048 */}</div>
+  return (
+    <div className="game__2048">
+      <div ref={ref}></div>
+    </div>
+  )
 }

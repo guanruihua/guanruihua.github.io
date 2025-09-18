@@ -1,6 +1,6 @@
 import tile from '../tile.png'
 
-export const Game = (Phaser: any) => {
+export const Game = (Phaser: any, dom: any) => {
   if (!Phaser) return
   let gameOptions: any = {
     tileSize: 200,
@@ -305,6 +305,7 @@ export const Game = (Phaser: any) => {
     width: gameOptions.tileSize * 4,
     height: gameOptions.tileSize * 4,
     backgroundColor: 0x444444,
+    parent: dom,
     scene: [playGame],
   }
   let game = new Phaser.Game(gameConfig)

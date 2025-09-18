@@ -1,0 +1,140 @@
+.upload {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px rgba(255, 255, 255, .3) dashed;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .1);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.paste-upload-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+
+  .paste-upload {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px rgba(255, 255, 255, .3) dashed;
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    z-index: 2;
+  }
+
+  .text {
+    position: absolute;
+    left: calc(50% - 22.5px);
+    top: calc(50% - 12.4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+}
+
+
+.image-preview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  &-item {
+    position: relative;
+    width: 200px;
+    height: 200px;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .1);
+      overflow: hidden;
+
+      &.view {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        margin: auto;
+        background-color: rgba(0, 0, 0, .3);
+        cursor: pointer;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      object-fit: contain;
+    }
+
+    .control {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: auto;
+      visibility: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+
+      &>div {
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      // visibility: visible;
+      // z-index: 1;
+      // background-color: rgba(0, 0, 0, .3);
+    }
+
+    &:hover>.control {
+      visibility: visible;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, .3);
+    }
+
+    .del {
+      color: red;
+    }
+  }
+
+
+}

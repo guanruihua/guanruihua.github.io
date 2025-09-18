@@ -4,7 +4,6 @@ import './index.less'
 
 export default function (){
   const h = usePageState()
-  const { state, setState} = h
 
   return (<div className='game__brick'>
     <div ref={h.containerRef}></div>

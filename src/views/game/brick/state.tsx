@@ -10,7 +10,7 @@ export const usePageState = () => {
 
   React.useEffect(() => {
     if (!Phaser || !containerRef.current) return
-
+    
     init(Phaser, containerRef.current)
   }, [Phaser, containerRef.current])
 

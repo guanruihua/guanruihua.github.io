@@ -1,32 +1,59 @@
+import { isNumber } from 'asura-eye'
 import { Text } from './type'
+import { preload } from './helper/preload'
 
-export const MenuScene = (): Phaser.Types.Scenes.SceneType => {
+export const MenuScene = (
+  config: Phaser.Types.Core.GameConfig,
+): Phaser.Types.Scenes.SceneType => {
   let text: Text = null
   let button: Text = null
 
+  const getConf = () => {
+    const { width, height } = config
+
+    return {
+      ...config,
+      width: isNumber(width) ? width : Number(width),
+      height: isNumber(height) ? height : Number(height),
+    }
+  }
+  const { width, height } = getConf()
+
   function create() {
-    const scene = this as Phaser.Scene
-    // text = scene.add.text(400, 300, '菜单', { fontSize: '32px' }).setOrigin(0.5)
-    button = scene.add
-      .text(400, 350, 'Start', { fontSize: '32px', color: '#FFFFFF' })
+    const _this = this as Phaser.Scene
+    _this.cameras.main.setBackgroundColor('#111111')
+    const bg = _this.add.image(width, height, 'bg').setOrigin(0.5).setDepth(-1)
+
+    const scale = Math.max(width / bg.width, height / bg.height)
+    bg.setScale(scale).setPosition(width / 2, height / 2)
+    bg.setAlpha(0.3)
+
+    const style = {
+      fontSize: '32px',
+    }
+    button = _this.add
+      .text(width / 2, height / 2, 'Start', { ...style, color: '#FFFFFF' })
       .on('pointerover', () => {
-        button?.setStyle({ fill: '#8FB4F8', fontSize: '32px' })
-        scene.sys.canvas.classList.add('pointer')
+        button?.setStyle({ ...style, fill: '#8FB4F8' })
+        _this.sys.canvas.classList.add('pointer')
       })
       .on('pointerout', () => {
-        button?.setStyle({ fill: '#FFFFFF', fontSize: '32px' })
-        scene.sys.canvas.classList.remove('pointer')
+        button?.setStyle({ ...style, fill: '#FFFFFF' })
+        _this.sys.canvas.classList.remove('pointer')
       })
       .setOrigin(0.5)
       .setInteractive()
       .on('pointerdown', () => {
-        this.scene.start('game')
+        _this.scene.stop('menu')
+        _this.scene.start('game')
       })
+    _this.scene.stop('menu')
+    _this.scene.start('game')
   }
-
   return {
     key: 'menu',
     active: true,
     create,
+    preload,
   }
 }
