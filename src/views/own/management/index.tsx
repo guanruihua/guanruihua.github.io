@@ -89,9 +89,6 @@ export function Management(props: ManagementProps) {
               })
             }}
           />
-          <h4>{title}</h4>
-        </Flex>
-        <Flex className="header-right">
           <Div none={isHome} className="header-item" onClick={() => nav('/')}>
             HOME
           </Div>
@@ -109,6 +106,9 @@ export function Management(props: ManagementProps) {
           >
             BACK
           </Div>
+        </Flex>
+        <Flex className="header-right" alginCenter>
+          <h4>{title}</h4>
         </Flex>
       </Flex>
       <Flex column className="left">

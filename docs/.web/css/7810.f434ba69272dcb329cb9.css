@@ -39,25 +39,26 @@
 .management-layout > .header > .header-left {
   padding-left: 10px;
   transform: all 0.6s;
-}
-.management-layout > .header > .header-left > .fold-icon {
-  cursor: pointer;
-  line-height: var(--header-height);
-  font-size: 24px;
-}
-.management-layout > .header > .header-right {
-  padding-right: 24px;
   gap: 16px;
 }
-.management-layout > .header > .header-right > .header-item {
+.management-layout > .header > .header-left > .header-item {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.7);
   font-size: 13px;
   font-weight: bolder;
   transition: color 0.3s;
 }
-.management-layout > .header > .header-right > .header-item:hover {
+.management-layout > .header > .header-left > .header-item:hover {
   color: rgba(255, 255, 255, 0.9);
+}
+.management-layout > .header > .header-left > .fold-icon {
+  cursor: pointer;
+  line-height: var(--header-height);
+  font-size: 24px;
+  margin-bottom: 1px;
+}
+.management-layout > .header > .header-right {
+  padding-right: 24px;
 }
 .management-layout > .left {
   width: var(--left-width);

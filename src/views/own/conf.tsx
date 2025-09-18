@@ -1,3 +1,4 @@
+import { AnimationRouter } from '../animation/router'
 import { DemoRouter } from '../demo/router'
 import { DevRouter } from '../dev/router'
 import { FileRouter } from '../file/router'
@@ -46,6 +47,14 @@ export const Conf = [
       item.title || item.path,
       'file/' + item.path,
     ]),
+  },
+  {
+    title: 'Animation',
+    name: 'animation',
+    group: AnimationRouter.map((item) => [
+      item.title || item.path,
+      'animation/' + item.path,
+    ]),   
   },
   {
     title: 'Demo',

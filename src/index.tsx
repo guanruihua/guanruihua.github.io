@@ -15,6 +15,7 @@ import { Lazy } from 'aurad'
 import { OtherRouter } from './views/other/router'
 import { GameRouter } from './views/game/router'
 import { FileRouter } from './views/file/router'
+import { AnimationRouter } from './views/animation/router'
 
 const routes: RouteObject[] = [
   {
@@ -49,6 +50,10 @@ const routes: RouteObject[] = [
           ...FileRouter.map((_) => ({
             ..._,
             path: 'file/' + _.path,
+          })),
+          ...AnimationRouter.map((_) => ({
+            ..._,
+            path: 'animation/' + _.path,
           })),
           ...DemoRouter.map((_) => ({
             ..._,
