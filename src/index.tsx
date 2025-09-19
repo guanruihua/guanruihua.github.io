@@ -32,7 +32,7 @@ const routes: RouteObject[] = [
         children: [
           {
             index: true,
-            element: Lazy(import('./views/own/index')),
+            element: Lazy(import('./views/own')),
           },
 
           ...ToolRouter.map((_) => ({
@@ -59,6 +59,10 @@ const routes: RouteObject[] = [
             ..._,
             path: 'demo/' + _.path,
           })),
+          {
+            path: '*',
+            element: Lazy(import('./views/own')),
+          },
         ],
       },
       {

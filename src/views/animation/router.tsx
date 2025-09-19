@@ -11,5 +11,6 @@ export const AnimationRouter = [
     title: 'Fitness Tracking App',
     path: 'fitness-tracking-app',
     element: Lazy(import('./Fitness-Tracking-App')),
-  }
+  },
+
 ]

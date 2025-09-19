@@ -3,6 +3,11 @@ import { Lazy } from 'aurad'
 
 export const DevRouter = [
   {
+    title: 'HTML to React',
+    path: 'html-to-react',
+    element: Lazy(import('./html-to-react')),
+  },
+  {
     title: 'WebSocket',
     path: 'webSocket',
     element: Lazy(import('./webSocket')),
