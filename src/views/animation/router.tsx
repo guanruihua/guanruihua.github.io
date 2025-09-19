@@ -12,5 +12,24 @@ export const AnimationRouter = [
     path: 'fitness-tracking-app',
     element: Lazy(import('./Fitness-Tracking-App')),
   },
-
+  {
+    title: 'Yearly Activity Grid',
+    path: 'yearly-activity-grid',
+    element: Lazy(import('./yearly-activity-grid')),
+  },
+  {
+    title: 'Animated image slider',
+    path: 'animated-image-slider',
+    element: Lazy(import('./animated-image-slider')),
+  },
+  {
+    title: 'Projects Carousel',
+    path: 'projects-carousel',
+    element: Lazy(import('./projects-carousel')),
+  },
+  {
+    title: 'TEST',
+    path: 'animation-test-page',
+    element: Lazy(import('./test.3')),
+  },
 ]

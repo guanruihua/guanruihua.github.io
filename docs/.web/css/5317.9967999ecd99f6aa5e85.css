@@ -1,18 +1,18 @@
-.info {
+.info-page {
   padding: 12px;
 }
-.info .module {
+.info-page .module {
   margin-bottom: 20px;
 }
-.info .module h3 {
+.info-page .module h3 {
   margin-bottom: 16px;
 }
-.info .core-stock > .content {
+.info-page .core-stock > .content {
   display: grid;
   grid-template-columns: repeat(auto-fill, 320px);
   gap: 10px;
 }
-.info .card {
+.info-page .card {
   width: 320px;
   padding: 10px;
   border: 2px solid #fff;
@@ -20,18 +20,18 @@
   font-size: 12px;
   position: relative;
 }
-.info .card .field {
+.info-page .card .field {
   color: #9DA2AF;
 }
-.info .card .symbol {
+.info-page .card .symbol {
   font-size: 16px;
   font-weight: bold;
   color: #fff;
 }
-.info .card .b {
+.info-page .card .b {
   color: #e3e4e8;
 }
-.info .card .change {
+.info-page .card .change {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,18 +40,18 @@
   padding: 5px 0 10px 0;
   zoom: 1.5;
 }
-.info .card .change.up {
+.info-page .card .change.up {
   color: red;
 }
-.info .card .change.down {
+.info-page .card .change.down {
   color: green;
 }
-.info .card .close {
+.info-page .card .close {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
 }
-.info .card .timestamp {
+.info-page .card .timestamp {
   position: absolute;
   font-size: 10px;
   right: 10px;

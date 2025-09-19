@@ -1,9 +1,9 @@
 import React from 'react'
 import { request } from './service'
-import './index.less'
 import { ObjectType } from '0type'
 import { Icon, IconSprites } from './icon'
 import { Conf } from './conf'
+import './index.less'
 // import { stringify } from 'abandonjs'
 
 const getConf = (symbol: string): any =>
@@ -43,7 +43,7 @@ export default function Info() {
   }, [])
 
   return (
-    <div className="info">
+    <div className="info-page">
       <IconSprites />
       <div className="core-stock module">
         <h3>核心股票</h3>

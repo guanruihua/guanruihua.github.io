@@ -49,8 +49,8 @@ export default function () {
         </Grid>
       </Flex>
       <br />
-      <a href="https://transform.tools/" target="__blank">
-        transform
+      <a href="https://transform.tools/html-to-jsx" target="__blank">
+        transform (html-to-jsx)
       </a>
     </div>
   )
