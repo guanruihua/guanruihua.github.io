@@ -1,5 +1,6 @@
 import React from 'react'
 import { Lazy } from 'aurad'
+console.log()
 
 export const AnimationRouter = [
   {
@@ -10,7 +11,7 @@ export const AnimationRouter = [
   {
     title: 'Fitness Tracking App',
     path: 'fitness-tracking-app',
-    element: Lazy(import('./Fitness-Tracking-App')),
+    element: Lazy(import('./fitness-tracking-app')),
   },
   {
     title: 'Yearly Activity Grid',
@@ -57,9 +58,14 @@ export const AnimationRouter = [
     path: 'toast-catcher-game',
     element: Lazy(import('./toast-catcher-game')),
   },
-  {
+  // {
+  //   title: 'TEST',
+  //   path: 'animation-test-page',
+  //   element: Lazy(import('./test')),
+  // },
+  process.env.NODE_ENV === 'development' && {
     title: 'TEST',
     path: 'animation-test-page',
-    element: Lazy(import('./test.8')),
+    element: Lazy(import('./test')),
   },
-]
+].filter(Boolean)

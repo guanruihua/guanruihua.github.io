@@ -138,10 +138,16 @@
 
   &>.content {
     grid-area: content;
-    padding: 10px;
     min-height: calc(100vh - var(--header-height));
     height: 100%;
     max-height: calc(100vh - var(--header-height));
     overflow: hidden auto;
+    padding: 10px;
+    
+    &>div {
+      min-height: 100%;
+      overflow: hidden auto;
+      border-radius: 4px;
+    }
   }
 }

@@ -113,11 +113,16 @@
 }
 .management-layout > .content {
   grid-area: content;
-  padding: 10px;
   min-height: calc(100vh - var(--header-height));
   height: 100%;
   max-height: calc(100vh - var(--header-height));
   overflow: hidden auto;
+  padding: 10px;
+}
+.management-layout > .content > div {
+  min-height: 100%;
+  overflow: hidden auto;
+  border-radius: 4px;
 }
 
 .own-page-content > .module {
@@ -134,7 +139,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 4px 20px;
+  gap: 10px 20px;
 }
 .own-page-content > .module > .children > .name {
   display: flex;

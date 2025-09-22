@@ -24,3 +24,9 @@ declare module '*.txt' {
   const txt: string
   export = txt
 }
+
+declare const process: {
+  env: {
+    NODE_ENV: 'development' | 'production' | 'test'
+  }
+}

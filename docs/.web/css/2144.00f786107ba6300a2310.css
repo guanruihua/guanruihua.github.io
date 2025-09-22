@@ -1,10 +1,8 @@
 .animation__Fitness-Tracking-App {
   background: #2a2a2a;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 .animation__Fitness-Tracking-App * {
   margin: 0;
@@ -14,8 +12,8 @@
   letter-spacing: 0;
 }
 .animation__Fitness-Tracking-App .phone-frame {
-  width: 375px;
-  height: 800px;
+  width: 420px;
+  height: 750px;
   background: #111;
   border-radius: 40px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);

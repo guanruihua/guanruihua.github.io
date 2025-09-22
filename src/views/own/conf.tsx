@@ -26,7 +26,6 @@ export const Conf = [
   {
     title: 'Other',
     name: 'other',
-    // group: [['HTTP 状态码', 'other/http-status']],
     group: OtherRouter.map((item) => [
       item.title || item.path,
       'other/' + item.path,
