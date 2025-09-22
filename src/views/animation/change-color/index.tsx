@@ -7,7 +7,6 @@ export default function () {
   return (
     <div className="animation__change-color">
       <div className="menu">
-        
         <div className="menu-item selected">
           <a href="#">Home</a>
         </div>
