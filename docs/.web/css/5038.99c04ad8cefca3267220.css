@@ -1,4 +1,4 @@
-.animation__ {
+.animation__carousel-lightbox-glow {
   margin: 0;
   height: 80vh;
   display: flex;
@@ -9,19 +9,19 @@
   /* ✨ GLOW EFFECT */
   /* LIGHTBOX */
 }
-.animation__ .carousel-wrapper {
+.animation__carousel-lightbox-glow .carousel-wrapper {
   perspective: 1000px;
   width: 300px;
   height: 400px;
 }
-.animation__ .carousel {
+.animation__carousel-lightbox-glow .carousel {
   width: 100%;
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
-.animation__ .card {
+.animation__carousel-lightbox-glow .card {
   position: absolute;
   width: 300px;
   height: 200px;
@@ -34,7 +34,7 @@
   left: 0;
   z-index: 1;
 }
-.animation__ .card::before {
+.animation__carousel-lightbox-glow .card::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -59,7 +59,7 @@
     opacity: 1;
   }
 }
-.animation__ .lightbox-overlay {
+.animation__carousel-lightbox-glow .lightbox-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -74,18 +74,18 @@
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-.animation__ .lightbox-overlay.active {
+.animation__carousel-lightbox-glow .lightbox-overlay.active {
   opacity: 1;
   pointer-events: auto;
 }
-.animation__ .lightbox-img {
+.animation__carousel-lightbox-glow .lightbox-img {
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
   position: relative;
 }
-.animation__ .close-btn {
+.animation__carousel-lightbox-glow .close-btn {
   position: absolute;
   top: 20px;
   right: 30px;

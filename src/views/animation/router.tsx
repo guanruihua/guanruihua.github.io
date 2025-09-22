@@ -38,13 +38,28 @@ export const AnimationRouter = [
     element: Lazy(import('./electric-border')),
   },
   {
-    title: 'TEST',
-    path: 'animation-test-page',
-    element: Lazy(import('./test.4')),
+    title: 'Carousel + Lightbox + Glow',
+    path: 'carousel-lightbox-glow',
+    element: Lazy(import('./carousel-lightbox-glow')),
+  },
+  {
+    title: 'Circular Animations Set ',
+    path: 'circular-animations-set',
+    element: Lazy(import('./circular-animations-set')),
+  },
+  {
+    title: 'Change the color on the 1995 website',
+    path: 'change-color',
+    element: Lazy(import('./change-color')),
+  },
+  {
+    title: 'Toast Catcher Game',
+    path: 'toast-catcher-game',
+    element: Lazy(import('./toast-catcher-game')),
   },
   {
     title: 'TEST',
     path: 'animation-test-page',
-    element: Lazy(import('./test.5')),
+    element: Lazy(import('./test.8')),
   },
 ]

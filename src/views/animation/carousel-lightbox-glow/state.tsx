@@ -9,17 +9,17 @@ export const usePageState = () => {
 
     const items = [
       // { src: 'https://iili.io/3MFDjiG.jpg', caption: '' }, 
-      { src: '/image/natural-scenery-1.png', caption: '' }, 
+      { src: '/image/natural-scenery/1.png', caption: '' }, 
       // { src: 'https://iili.io/3MFDNff.jpg', caption: '' },
-      { src: '/image/natural-scenery-2.png', caption: '' }, 
+      { src: '/image/natural-scenery/2.png', caption: '' }, 
       // { src: 'https://iili.io/3MFDOl4.jpg', caption: '' },
-      { src: '/image/natural-scenery-3.png', caption: '' }, 
+      { src: '/image/natural-scenery/3.png', caption: '' }, 
       // { src: 'https://iili.io/3MFDhVs.jpg', caption: '' },
-      { src: '/image/natural-scenery-4.png', caption: '' }, 
+      { src: '/image/natural-scenery/4.png', caption: '' }, 
       // { src: 'https://iili.io/3MFD4Wu.jpg', caption: '' },
-      { src: '/image/natural-scenery-5.png', caption: '' }, 
+      { src: '/image/natural-scenery/5.png', caption: '' }, 
       // { src: 'https://iili.io/3MFDrxe.jpg', caption: '' },
-      { src: '/image/natural-scenery-6.png', caption: '' }, 
+      { src: '/image/natural-scenery/6.png', caption: '' }, 
     ]
 
     items.forEach((item, i) => {

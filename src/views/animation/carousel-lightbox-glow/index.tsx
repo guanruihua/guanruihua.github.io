@@ -5,7 +5,7 @@ import { usePageState } from './state'
 export default function () {
   usePageState()
   return (
-    <div className="animation__">
+    <div className="animation__carousel-lightbox-glow">
       <div className="carousel-wrapper">
         <div className="carousel" id="carousel"></div>
       </div>

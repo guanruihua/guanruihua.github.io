@@ -1,0 +1,65 @@
+.animation__toast-catcher-game {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: lightblue;
+}
+.animation__toast-catcher-game :root {
+  background-color: #7DC8CF;
+  font-family: system-ui;
+  font-variant-numeric: tabular-nums;
+}
+.animation__toast-catcher-game *,
+.animation__toast-catcher-game :after,
+.animation__toast-catcher-game :before {
+  box-sizing: border-box;
+}
+.animation__toast-catcher-game svg {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 900;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+.animation__toast-catcher-game .frame {
+  border: 6px solid #67442b;
+  border-radius: 16px;
+  background: #67442b;
+}
+.animation__toast-catcher-game #game {
+  border-radius: 10px;
+  user-select: none;
+}
+.animation__toast-catcher-game .toast {
+  cursor: pointer;
+}
+.animation__toast-catcher-game .toast__wings {
+  animation: wings-flapping linear infinite 0.4s;
+  transform-origin: center 85%;
+  pointer-events: none;
+}
+.animation__toast-catcher-game .toast__eyes {
+  animation: blink linear infinite 2s;
+  transform-origin: 15px;
+}
+@keyframes wings-flapping {
+  0%,
+  100% {
+    scale: 1 1;
+  }
+  50% {
+    scale: 1 0.8;
+  }
+}
+@keyframes blink {
+  0%,
+  90% {
+    scale: 1 1;
+  }
+  100% {
+    scale: 1 0;
+  }
+}
+
