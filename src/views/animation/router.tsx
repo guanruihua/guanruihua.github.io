@@ -28,8 +28,23 @@ export const AnimationRouter = [
     element: Lazy(import('./projects-carousel')),
   },
   {
+    title: 'Repetition Image Animation',
+    path: 'repetition-image-animation',
+    element: Lazy(import('./repetition-image-animation')),
+  },
+  {
+    title: 'Electric Border',
+    path: 'electric-border',
+    element: Lazy(import('./electric-border')),
+  },
+  {
     title: 'TEST',
     path: 'animation-test-page',
-    element: Lazy(import('./test.3')),
+    element: Lazy(import('./test.4')),
+  },
+  {
+    title: 'TEST',
+    path: 'animation-test-page',
+    element: Lazy(import('./test.5')),
   },
 ]

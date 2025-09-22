@@ -4,7 +4,7 @@ import { usePageState } from './state'
 
 export default function (){
   usePageState()
-  return (<div className=''>
+  return (<div className='animation__'>
     
   </div>)
 }
