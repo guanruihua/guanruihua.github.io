@@ -1,6 +1,4 @@
-.animation__Glassmorphic-Card-with-Glow-Cursor {
-  margin: 0;
-  height: 90vh;
+.animation__glassmorphic-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,8 +8,8 @@
   overflow: hidden;
   /* Agregamos una textura de noise con pseudo-elemento */
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor::before,
-.animation__Glassmorphic-Card-with-Glow-Cursor::after {
+.animation__glassmorphic-card::before,
+.animation__glassmorphic-card::after {
   content: '';
   position: absolute;
   width: 400px;
@@ -21,21 +19,21 @@
   opacity: 0.2;
   z-index: 0;
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor::before {
+.animation__glassmorphic-card::before {
   background: #00ffc3;
   top: 10%;
   left: 10%;
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor::after {
+.animation__glassmorphic-card::after {
   background: #ff00f7;
   bottom: 10%;
   right: 10%;
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor .card-container {
+.animation__glassmorphic-card .card-container {
   perspective: 1000px;
   z-index: 1;
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor .card::after {
+.animation__glassmorphic-card .card::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -44,7 +42,7 @@
   pointer-events: none;
   z-index: 1;
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor .card {
+.animation__glassmorphic-card .card {
   position: relative;
   width: 320px;
   padding: 2em;
@@ -60,7 +58,7 @@
   z-index: 1;
   will-change: transform;
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor .card::before {
+.animation__glassmorphic-card .card::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -74,7 +72,7 @@
   z-index: 2;
   transition: background 0.2s ease;
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor .glow {
+.animation__glassmorphic-card .glow {
   position: absolute;
   top: var(--y, 50%);
   left: var(--x, 50%);
@@ -88,7 +86,7 @@
   z-index: 0;
   will-change: transform;
 }
-.animation__Glassmorphic-Card-with-Glow-Cursor .card:hover .glow {
+.animation__glassmorphic-card .card:hover .glow {
   opacity: 1;
 }
 

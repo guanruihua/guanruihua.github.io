@@ -1,5 +1,5 @@
-import { useLoadJS } from '@/hook'
 import React from 'react'
+import { useLoadJS } from '@/hook'
 
 export const usePageState = () => {
   const init = () => {

@@ -45,7 +45,7 @@ export default function () {
   }, [ref.current])
 
   return (
-    <div className="animation__Glassmorphic-Card-with-Glow-Cursor">
+    <div className="animation__glassmorphic-card">
       <div className="card-container">
         <div ref={ref} className="card">
           <h2 style={{ fontSize: 15 }}>Web Design</h2>

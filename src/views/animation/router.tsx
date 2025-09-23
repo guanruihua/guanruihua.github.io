@@ -5,8 +5,8 @@ console.log()
 export const AnimationRouter = [
   {
     title: 'Glassmorphic Card with Glow Cursor & Reactive Border',
-    path: 'card-beam-animation',
-    element: Lazy(import('./Glassmorphic-Card-with-Glow-Cursor')),
+    path: 'glassmorphic-card',
+    element: Lazy(import('./glassmorphic-card')),
   },
   {
     title: 'Fitness Tracking App',
@@ -29,9 +29,9 @@ export const AnimationRouter = [
     element: Lazy(import('./projects-carousel')),
   },
   {
-    title: 'Repetition Image Animation',
-    path: 'repetition-image-animation',
-    element: Lazy(import('./repetition-image-animation')),
+    title: 'Repetition Image',
+    path: 'repetition-image',
+    element: Lazy(import('./repetition-image')),
   },
   {
     title: 'Electric Border',

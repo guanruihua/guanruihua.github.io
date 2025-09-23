@@ -5,7 +5,7 @@ import { usePageState } from './state'
 export default function () {
   usePageState()
   return (
-    <div className="animation__repetition-image-animation">
+    <div className="animation__repetition-image">
       <div className="main-container">
         <div
           className="image"
