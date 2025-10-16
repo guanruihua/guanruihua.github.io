@@ -1,8 +1,12 @@
 import React from 'react'
 import { Lazy } from 'aurad'
-console.log()
 
 export const AnimationRouter = [
+  {
+    title: 'Monochrome',
+    path: 'monochrome',
+    element: Lazy(import('./monochrome')),
+  },
   {
     title: 'Glassmorphic Card with Glow Cursor & Reactive Border',
     path: 'glassmorphic-card',

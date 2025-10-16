@@ -58,4 +58,9 @@ export const DevRouter = [
     path: 'excalidraw',
     element: Lazy(import('./excalidraw')),
   },
+  {
+    title: 'music-howler',
+    path: 'music-howler',
+    element: Lazy(import('./music-howler')),
+  },
 ]
