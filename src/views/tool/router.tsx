@@ -60,4 +60,9 @@ export const ToolRouter = [
     path: 'converter/Chinese',
     element: Lazy(import('./converter')),
   },
+  {
+    title: '冷暖色分析工具',
+    path: 'color-analysis-warm-cold',
+    element: Lazy(import('./color-analysis-warm-cold'))
+  },
 ]
