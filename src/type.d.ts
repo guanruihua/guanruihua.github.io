@@ -9,6 +9,7 @@ declare module '*.module.less' {
 }
 
 declare module 'opencc-js'
+declare module 'bpmn-js-properties-panel'
 
 declare module '*.svg'
 declare module '*.json'

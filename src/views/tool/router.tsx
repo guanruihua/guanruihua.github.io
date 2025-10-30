@@ -65,4 +65,9 @@ export const ToolRouter = [
     path: 'color-analysis-warm-cold',
     element: Lazy(import('./color-analysis-warm-cold'))
   },
+  {
+    title: 'bpmn',
+    path: 'bpmn',
+    element: Lazy(import('./bpmn'))
+  },
 ]

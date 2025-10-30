@@ -1,4 +1,5 @@
 import { AnimationRouter } from '../animation/router'
+import { ChartRouter } from '../chart/router'
 import { DemoRouter } from '../demo/router'
 import { DevRouter } from '../dev/router'
 import { FileRouter } from '../file/router'
@@ -48,9 +49,17 @@ export const Conf = [
     ]),
   },
   {
+    title: 'Chart',
+    name: 'chart',
+    group: ChartRouter.map((item:any) => [
+      item.title || item.path,
+      'chart/' + item.path,
+    ]),   
+  },
+  {
     title: 'Animation',
     name: 'animation',
-    group: AnimationRouter.map((item) => [
+    group: AnimationRouter.map((item:any) => [
       item.title || item.path,
       'animation/' + item.path,
     ]),   

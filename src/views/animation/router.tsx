@@ -3,6 +3,11 @@ import { Lazy } from 'aurad'
 
 export const AnimationRouter = [
   {
+    title: 'swipe effect',
+    path: 'swipe-effect',
+    element: Lazy(import('./swipe-effect')),
+  },
+  {
     title: 'Monochrome',
     path: 'monochrome',
     element: Lazy(import('./monochrome')),

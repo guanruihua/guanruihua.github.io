@@ -16,6 +16,7 @@ import { OtherRouter } from './views/other/router'
 import { GameRouter } from './views/game/router'
 import { FileRouter } from './views/file/router'
 import { AnimationRouter } from './views/animation/router'
+import { ChartRouter } from './views/chart/router'
 
 const routes: RouteObject[] = [
   {
@@ -51,13 +52,17 @@ const routes: RouteObject[] = [
             ..._,
             path: 'file/' + _.path,
           })),
-          ...AnimationRouter.map((_) => ({
+          ...AnimationRouter.map((_:any) => ({
             ..._,
             path: 'animation/' + _.path,
           })),
           ...DemoRouter.map((_) => ({
             ..._,
             path: 'demo/' + _.path,
+          })),
+          ...ChartRouter.map((_) => ({
+            ..._,
+            path: 'chart/' + _.path,
           })),
           {
             path: '*',
