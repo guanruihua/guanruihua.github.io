@@ -25,7 +25,7 @@ export const usePageState = () => {
     }
   }
 
-  useLoadJS('/js/three.r128.min.js', () => {
+  useLoadJS('/js/three/r128/three.min.js', () => {
     console.log('load')
 
     const codeChars =

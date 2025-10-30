@@ -1,4 +1,4 @@
-import { useLoadMultipleCSS, useLoadMultipleJS } from '@/hook'
+import { useLoadCSS, useLoadJS } from '@/hook'
 import { Grid } from 'aurad'
 import React from 'react'
 import {
@@ -51,7 +51,7 @@ export const BpmnViewer = ({ xml }: any) => {
     // })
   }
 
-  useLoadMultipleJS(
+  useLoadJS(
     [
       // '/js/bpmn/18.8.0/bpmn-viewer.development.js'
       // '/js/bpmn/18.8.0/bpmn-modeler.development.js'
@@ -66,7 +66,7 @@ export const BpmnViewer = ({ xml }: any) => {
     },
   )
 
-  useLoadMultipleCSS([
+  useLoadCSS([
     '/js/bpmn/18.8.0/css/bpmn.css',
     '/js/bpmn/18.8.0/css/bpmn-js.css',
     '/js/bpmn/18.8.0/css/diagram-js.css',

@@ -643,7 +643,5 @@ export const usePageState = () => {
     const imageHoverInstance = new ImageHover(theImage)
   }
 
-  useLoadJS('/js/gsap.3.12.5.min.js', init)
-
-  // React.useEffect(init, [])
+  useLoadJS('/js/gsap/3.12.5/gsap.min.js', init)
 }

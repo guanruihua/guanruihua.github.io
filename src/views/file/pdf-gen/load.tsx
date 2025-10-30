@@ -6,11 +6,11 @@ export const load = () => {
     const script = document.createElement('script')
     script.src =
       // 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js'
-      '/js/pdf.2.12.313.min.js'
+      '/js/pdf/2.12.313/pdf.min.js'
     script.onload = () => {
       // 设置 worker 路径
       ;(window as any).pdfjsLib.GlobalWorkerOptions.workerSrc =
-        '/js/pdf.2.12.313.worker.min.js'
+        '/js/pdf/2.12.313/pdf.worker.min.js'
       // 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js'
 
       // 在这里可以初始化 PDF 相关功能
