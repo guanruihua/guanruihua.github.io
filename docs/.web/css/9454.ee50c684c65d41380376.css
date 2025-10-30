@@ -1,32 +1,32 @@
-.panel-gen .border {
+.tool__panel-gen .border {
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 12px;
 }
-.panel-gen .label {
+.tool__panel-gen .label {
   display: flex;
   font-weight: bold;
   font-size: 14px;
   line-height: 32px;
 }
-.panel-gen .left {
+.tool__panel-gen .left {
   position: relative;
 }
-.panel-gen .row-flex {
+.tool__panel-gen .row-flex {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
 }
-.panel-gen .col-flex {
+.tool__panel-gen .col-flex {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
 }
-.panel-gen .alert {
+.tool__panel-gen .alert {
   position: fixed;
   top: 30px;
   left: 48vw;
@@ -41,23 +41,23 @@
   font-weight: bolder;
   transition: all 0.3s;
 }
-.panel-gen .row {
+.tool__panel-gen .row {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
   height: 32px;
 }
-.panel-gen .row .value {
+.tool__panel-gen .row .value {
   font-size: 15px;
   max-width: 80vw;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.panel-gen .row .icon {
+.tool__panel-gen .row .icon {
   cursor: pointer;
 }
-.panel-gen input {
+.tool__panel-gen input {
   outline: none;
   display: block;
   box-sizing: border-box;
@@ -72,11 +72,11 @@
   border: none;
   color: #fff;
 }
-.panel-gen input::-webkit-outer-spin-button,
-.panel-gen input::-webkit-inner-spin-button {
+.tool__panel-gen input::-webkit-outer-spin-button,
+.tool__panel-gen input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;
 }
-.panel-gen input[type='number'] {
+.tool__panel-gen input[type='number'] {
   -moz-appearance: textfield;
 }
 

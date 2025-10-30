@@ -2,6 +2,16 @@ import React from 'react'
 import { Lazy } from 'aurad'
 
 export const ToolRouter = [
+  // {
+  //   title: '时间 / 时间戳转换',
+  //   path: 'timestamp',
+  //   element: Lazy(import('./timestamp')),
+  // },
+  {
+    title: 'URL 解析',
+    path: 'url-analysis',
+    element: Lazy(import('./url-analysis')),
+  },
   {
     title: 'Unicode转文本',
     path: 'Unicode2Text',
@@ -45,7 +55,7 @@ export const ToolRouter = [
   },
 
   {
-    title: '随机密码',
+    title: '随机密码/字符串',
     path: 'randomPwd',
     element: Lazy(import('./random-pwd')),
   },

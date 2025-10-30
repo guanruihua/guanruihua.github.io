@@ -1,20 +1,21 @@
 import React from 'react'
 import { TextMiddleEllipsis, TextStroke } from '..'
 import { Docs, Grid } from 'aurad'
+import './index.less'
 
 export default function () {
- 
   return (
-    <Docs>
+    <Docs className="demo__text">
       <Grid columns={1}>
         <div
-          className='resize'
+          className="resize"
           style={{
             width: 300,
             resize: 'horizontal',
             overflow: 'auto',
             border: '1px solid #333',
-          }}>
+          }}
+        >
           <TextMiddleEllipsis>
             CSS 实现优惠券的技巧 - 2021-03-26
           </TextMiddleEllipsis>
@@ -26,7 +27,7 @@ export default function () {
           <TextMiddleEllipsis> CSS 拖拽?</TextMiddleEllipsis>
           <TextMiddleEllipsis>CSS 文本超出自动显示title</TextMiddleEllipsis>
         </div>
-       
+
         <TextStroke>Text Stroke</TextStroke>
         <TextStroke>Text Stroke</TextStroke>
         <TextStroke>Text Stroke</TextStroke>
@@ -35,6 +36,17 @@ export default function () {
           StrokeText StrokeText StrokeText StrokeText StrokeText StrokeText
           StrokeText Stroke
         </TextStroke>
+        <div className="a-row">
+          <div className="wrap">
+            <div className="infos">
+              <div>Soccer</div>
+              <div className="self">
+                Campeonato De Reserva De Primera Division C
+              </div>
+            </div>
+            <div className="live">Live</div>
+          </div>
+        </div>
       </Grid>
     </Docs>
   )

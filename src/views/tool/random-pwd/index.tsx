@@ -42,7 +42,7 @@ export default function RandomPwd() {
   }
 
   return (
-    <div className="panel-gen">
+    <div className="tool__panel-gen">
       <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 10 }}>
         <div
           className="col-flex border left"

@@ -39,3 +39,43 @@
   direction: rtl;
 }
 
+.demo__text * {
+  text-shadow: none;
+  color: #000;
+}
+.demo__text .a-row {
+  background-color: #fff;
+}
+.demo__text .a-row .wrap {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  border: 1px dashed #ccc;
+  padding: 4px 16px;
+  gap: 16px;
+}
+.demo__text .a-row .infos {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+  /* ✅ 关键：允许内部文字被压缩 */
+}
+.demo__text .a-row .self {
+  flex: 1;
+  padding: 4px;
+  background-color: silver;
+  border-radius: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.demo__text .a-row .live {
+  padding: 4px 16px;
+  background: cornflowerblue;
+  border-radius: 6px;
+  color: white;
+  flex-shrink: 0;
+}
+

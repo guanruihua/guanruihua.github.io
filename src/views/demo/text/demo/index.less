@@ -1,0 +1,47 @@
+.demo__text {
+  * {
+    text-shadow: none;
+    color: #000;
+  }
+
+  .a-row {
+    background-color: #fff;
+    .wrap {
+      display: flex;
+      align-items: center;
+      // width: 350px;
+      width: 450px;
+      border: 1px dashed #ccc;
+      padding: 4px 16px;
+      gap: 16px;
+    }
+
+    .infos {
+      flex: 1;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      min-width: 0;
+      /* ✅ 关键：允许内部文字被压缩 */
+      // 默认 min-width: auto 会阻止内部压缩
+    }
+
+    .self {
+      flex: 1;
+      padding: 4px;
+      background-color: silver;
+      border-radius: 6px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .live {
+      padding: 4px 16px;
+      background: cornflowerblue;
+      border-radius: 6px;
+      color: white;
+      flex-shrink: 0;
+    }
+  }
+}
