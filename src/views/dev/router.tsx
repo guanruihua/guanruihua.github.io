@@ -43,18 +43,15 @@ export const DevRouter = [
     path: 'box-shadow',
     element: Lazy(import('./box-shadow')),
   },
+
   {
-    title: 'Setting',
-    path: 'setting',
-    element: Lazy(import('./setting')),
-  },
-  {
-    title: 'tldraw',
+    title: '画布(tldraw)',
     path: 'tldraw',
     element: Lazy(import('./tldraw')),
+    blank: true,
   },
   {
-    title: 'excalidraw',
+    title: '手绘白板(excalidraw)',
     path: 'excalidraw',
     element: Lazy(import('./excalidraw')),
   },

@@ -12,4 +12,9 @@ export const OtherRouter = [
     path: 'system-info',
     element: Lazy(import('./sysInfo')),
   },
+  {
+    title: 'Setting',
+    path: 'setting',
+    element: Lazy(import('./setting')),
+  },
 ]

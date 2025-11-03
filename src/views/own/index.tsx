@@ -1,13 +1,19 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import { Div, Flex } from 'aurad'
-import { Conf } from './conf'
+import { __blank, Conf } from './conf'
 import './index.less'
 
 export default function () {
   const nav = useNavigate()
 
   const onClick = (url: string) => {
+    // console.log('🚀 ~ onClick ~ url:', url)
+    if (__blank.includes(url)) {
+      window.open(location.href + '/' + url, '__blank')
+      return
+    }
+
     if (url.startsWith('http'))
       window.open(url.indexOf('http') > -1 ? url : `https://${url}`, '_blank')
     // if (url.indexOf('/') == 0) nav('/own' + url)

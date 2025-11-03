@@ -4,8 +4,11 @@ import { DemoRouter } from '../demo/router'
 import { DevRouter } from '../dev/router'
 import { FileRouter } from '../file/router'
 import { GameRouter } from '../game/router'
+import { MutualConversionRouter } from '../mutual-conversion/router'
 import { OtherRouter } from '../other/router'
 import { ToolRouter } from '../tool/router'
+
+export const __blank = ['dev/tldraw', 'dev/excalidraw']
 
 export const Conf = [
   {
@@ -23,6 +26,14 @@ export const Conf = [
     title: 'Tool',
     name: 'tool',
     group: ToolRouter.map((item) => [item.title, 'tool/' + item.path]),
+  },
+  {
+    title: 'Conversion',
+    name: 'mutual-conversion',
+    group: MutualConversionRouter.map((item: any) => [
+      item.title || item.path,
+      'mutual-conversion/' + item.path,
+    ]),
   },
   {
     title: 'Other',
@@ -51,26 +62,27 @@ export const Conf = [
   {
     title: 'Chart',
     name: 'chart',
-    group: ChartRouter.map((item:any) => [
+    group: ChartRouter.map((item: any) => [
       item.title || item.path,
       'chart/' + item.path,
-    ]),   
+    ]),
   },
   {
     title: 'Animation',
     name: 'animation',
-    group: AnimationRouter.map((item:any) => [
+    group: AnimationRouter.map((item: any) => [
       item.title || item.path,
       'animation/' + item.path,
-    ]),   
+    ]),
   },
+
   {
     title: 'Demo',
     name: 'demo',
     group: DemoRouter.map((item) => [
       item.title || item.path,
       'demo/' + item.path,
-    ]),   
+    ]),
   },
   {
     title: 'Game',

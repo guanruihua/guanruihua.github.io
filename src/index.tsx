@@ -6,7 +6,6 @@ import {
   RouterProvider,
   createHashRouter,
 } from 'react-router-dom'
-import './index.less'
 import 'aurad/dist/style.css'
 import { ToolRouter } from './views/tool/router'
 import { DevRouter } from './views/dev/router'
@@ -17,6 +16,7 @@ import { GameRouter } from './views/game/router'
 import { FileRouter } from './views/file/router'
 import { AnimationRouter } from './views/animation/router'
 import { ChartRouter } from './views/chart/router'
+import { MutualConversionRouter } from './views/mutual-conversion/router'
 
 const routes: RouteObject[] = [
   {
@@ -35,7 +35,6 @@ const routes: RouteObject[] = [
             index: true,
             element: Lazy(import('./views/own')),
           },
-
           ...ToolRouter.map((_) => ({
             ..._,
             path: 'tool/' + _.path,
@@ -55,6 +54,10 @@ const routes: RouteObject[] = [
           ...AnimationRouter.map((_:any) => ({
             ..._,
             path: 'animation/' + _.path,
+          })),
+          ...MutualConversionRouter.map((_:any) => ({
+            ..._,
+            path: 'mutual-conversion/' + _.path,
           })),
           ...DemoRouter.map((_) => ({
             ..._,

@@ -13,11 +13,6 @@ export const ToolRouter = [
     element: Lazy(import('./url-analysis')),
   },
   {
-    title: 'Unicode转文本',
-    path: 'Unicode2Text',
-    element: Lazy(import('./Unicode2Text')),
-  },
-  {
     title: 'HTML转义',
     path: 'HTML-escape',
     element: Lazy(import('./HTMLescape')),
@@ -31,11 +26,6 @@ export const ToolRouter = [
     title: 'UUID 生成',
     path: 'uuid-gen',
     element: Lazy(import('./uuid-gen')),
-  },
-  {
-    title: '时间格式转换',
-    path: 'time-format',
-    element: Lazy(import('./time-format')),
   },
 
   {
@@ -65,18 +55,14 @@ export const ToolRouter = [
     path: 'text-compare',
     element: Lazy(import('./text-compare')),
   },
-  {
-    title: '简繁体转换',
-    path: 'converter/Chinese',
-    element: Lazy(import('./converter')),
-  },
+
   {
     title: '冷暖色分析工具',
     path: 'color-analysis-warm-cold',
     element: Lazy(import('./color-analysis-warm-cold'))
   },
   {
-    title: 'bpmn',
+    title: '业务流程图(bpmn)',
     path: 'bpmn',
     element: Lazy(import('./bpmn'))
   },
