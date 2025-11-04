@@ -12,6 +12,9 @@ module.exports = {
   experiments: {
     outputModule: true,
   },
+  cache: {
+    type: 'filesystem'
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../src'),
