@@ -12,6 +12,56 @@ import { ChartRouter } from './views/chart/router'
 import { MutualConversionRouter } from './views/mutual-conversion/router'
 import { GenRouter } from './views/gen/router'
 
+const OwnChildren = [
+  {
+    index: true,
+    element: import('./views/own'),
+  },
+  ...ToolRouter.map((_) => ({
+    ..._,
+    path: 'tool/' + _.path,
+  })),
+  ...OtherRouter.map((_) => ({
+    ..._,
+    path: 'other/' + _.path,
+  })),
+  ...DevRouter.map((_) => ({
+    ..._,
+    path: 'dev/' + _.path,
+  })),
+  ...FileRouter.map((_) => ({
+    ..._,
+    path: 'file/' + _.path,
+  })),
+  ...AnimationRouter.map((_: any) => ({
+    ..._,
+    path: 'animation/' + _.path,
+  })),
+  ...MutualConversionRouter.map((_: any) => ({
+    ..._,
+    path: 'mutual-conversion/' + _.path,
+  })),
+  ...DemoRouter.map((_) => ({
+    ..._,
+    path: 'demo/' + _.path,
+  })),
+  ...ChartRouter.map((_) => ({
+    ..._,
+    path: 'chart/' + _.path,
+  })),
+  ...GenRouter.map((_) => ({
+    ..._,
+    path: 'gen/' + _.path,
+  })),
+  {
+    path: '*',
+    element: import('./views/own'),
+  },
+].map((_) => ({
+  ..._,
+  element: Lazy(_.element),
+}))
+
 export const routes: RouteObject[] = [
   {
     path: '/',
@@ -24,52 +74,7 @@ export const routes: RouteObject[] = [
       {
         path: '/own',
         element: Lazy(import('./views/own/layout')),
-        children: [
-          {
-            index: true,
-            element: Lazy(import('./views/own')),
-          },
-          ...ToolRouter.map((_) => ({
-            ..._,
-            path: 'tool/' + _.path,
-          })),
-          ...OtherRouter.map((_) => ({
-            ..._,
-            path: 'other/' + _.path,
-          })),
-          ...DevRouter.map((_) => ({
-            ..._,
-            path: 'dev/' + _.path,
-          })),
-          ...FileRouter.map((_) => ({
-            ..._,
-            path: 'file/' + _.path,
-          })),
-          ...AnimationRouter.map((_: any) => ({
-            ..._,
-            path: 'animation/' + _.path,
-          })),
-          ...MutualConversionRouter.map((_: any) => ({
-            ..._,
-            path: 'mutual-conversion/' + _.path,
-          })),
-          ...DemoRouter.map((_) => ({
-            ..._,
-            path: 'demo/' + _.path,
-          })),
-          ...ChartRouter.map((_) => ({
-            ..._,
-            path: 'chart/' + _.path,
-          })),
-          ...GenRouter.map((_) => ({
-            ..._,
-            path: 'gen/' + _.path,
-          })),
-          {
-            path: '*',
-            element: Lazy(import('./views/own')),
-          },
-        ],
+        children: OwnChildren,
       },
       {
         path: '/game',

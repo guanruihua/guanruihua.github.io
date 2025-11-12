@@ -1,95 +1,94 @@
 import React from 'react'
-import { Lazy } from 'aurad'
 
 export const DemoRouter = [
   {
     title: 'Card Beam Animation',
     path: 'card-beam-animation',
-    element: Lazy(import('./Card-Beam-Animation')),
+    element: import('./Card-Beam-Animation'),
   },
   {
     title: 'transform 3d',
     path: 'study-transform-3d',
-    element: Lazy(import('./transform-3d')),
+    element: import('./transform-3d'),
   },
   {
     title: 'Drag',
     path: 'study-drag',
-    element: Lazy(import('./drag')),
+    element: import('./drag'),
   },
   {
     title: '中间省略号 & svg 文本加粗',
     path: 'demo-text',
-    element: Lazy(import('./text/demo')),
+    element: import('./text/demo'),
   },
   {
     title: 'Flow Demo',
     path: 'flow-demo-grid',
-    element: Lazy(import('./flow-demo/demo/grid')),
+    element: import('./flow-demo/demo/grid'),
   },
   {
     title: '小众 HTML 标签',
     path: 'minority-html',
-    element: Lazy(import('./minority-html')),
+    element: import('./minority-html'),
   },
   {
     title: '滚动绽放',
     path: 'scroll-bloom',
-    element: Lazy(import('./scroll-bloom')),
+    element: import('./scroll-bloom'),
   },
   {
     title: '整屏滚动',
     path: 'scroll-snap',
-    element: Lazy(import('./scroll-snap')),
+    element: import('./scroll-snap'),
   },
   {
     title: 'Canvas',
     path: 'canvas',
-    element: Lazy(import('./canvas')),
+    element: import('./canvas'),
   },
   {
     title: 'Canvas Base Style',
     path: 'canvas-base-style',
-    element: Lazy(import('./canvas/base-style')),
+    element: import('./canvas/base-style'),
   },
   {
     title: 'Select & Drag',
     path: 'select',
-    element: Lazy(import('./select')),
+    element: import('./select'),
   },
   {
     title: 'SVG',
     path: 'svg',
-    element: Lazy(import('./svg')),
+    element: import('./svg'),
   },
   {
     title: 'SVG Demo',
     path: 'svg-demo',
-    element: Lazy(import('./svg-demo')),
+    element: import('./svg-demo'),
   },
   {
     title: '双引号样式',
     path: 'css-q-quotes',
-    element: Lazy(import('./quotes')),
+    element: import('./quotes'),
   },
   {
     title: 'Flex',
     path: 'css-flex',
-    element: Lazy(import('./css-flex')),
+    element: import('./css-flex'),
   },
   {
     title: 'Grid',
     path: 'css-grid',
-    element: Lazy(import('./css-grid')),
+    element: import('./css-grid'),
   },
   {
     title: '字体描边',
     path: 'font-stroke',
-    element: Lazy(import('./font-stroke')),
+    element: import('./font-stroke'),
   },
   {
     title: 'Test',
     path: 'test',
-    element: Lazy(import('./test')),
+    element: import('./test'),
   },
 ]
