@@ -2,6 +2,11 @@ import React from 'react'
 import { Lazy } from 'aurad'
 
 export const DevRouter = [
+  // {
+  //   title: 'codesandbox',
+  //   path: 'codesandbox',
+  //   element: Lazy(import('./codesandbox'))
+  // },
   {
     title: 'HTML to React',
     path: 'html-to-react',

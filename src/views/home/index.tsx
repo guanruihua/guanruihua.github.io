@@ -9,6 +9,7 @@ import { analysisMD } from './analysis-md'
 import { SOURCEURL } from '@/assets'
 import { classNames } from 'harpe'
 import './index.less'
+import { useNavigate } from 'react-router'
 
 const BGColor = [
   'radial-gradient(ellipse at right top, #5756CD 0%, #151419 47%, #151419 100%)',
@@ -20,6 +21,8 @@ const BGColor = [
 ]
 
 export default function Home() {
+  const nav = useNavigate()
+
   const [md] = useFetchMDState(SOURCEURL + 'guide.md')
   const [types, guide] = analysisMD(md)
   const [state, setState] = useSetState<{
@@ -36,6 +39,10 @@ export default function Home() {
   )
 
   const handleClick = (name: string, only: boolean = false) => {
+    if (name === 'own') {
+      nav('/own')
+      return
+    }
     if (!isArray(state.selects)) {
       state.selects = []
     }
@@ -97,6 +104,31 @@ export default function Home() {
             </div>
           </Div>
         ))}
+        <Div
+          className={['card']}
+          style={{
+            background: BGColor[99 % BGColor.length],
+          }}
+        >
+          <div
+            className="bg"
+            style={{
+              background: 'url(/image/bg.png)',
+            }}
+            onClick={() => handleClick('own')}
+          />
+          <div className="logo">O</div>
+          <div
+            className="name"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              handleClick('own', true)
+            }}
+          >
+            Own
+          </div>
+        </Div>
       </div>
       <div className="home-search">
         <div className="home-search-box">

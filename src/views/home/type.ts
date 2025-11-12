@@ -1,5 +1,3 @@
-import { Guide } from '@/components'
-
 export interface Item {
   name: string
   label: string
@@ -10,5 +8,5 @@ export interface Item {
 
 export interface Conf {
   items: Item[]
-  guide: Guide[]
+  guide: any[]
 }

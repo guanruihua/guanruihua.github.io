@@ -128,32 +128,6 @@
   visibility: hidden;
 }
 
-.layout-header {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  padding: 0 12px 0 12px;
-  width: auto;
-  height: 32px;
-  gap: 12px;
-  background: rgba(0, 0, 0, 0.9);
-  border-top-right-radius: 4px;
-}
-.layout-header .control {
-  font-size: 10px;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.5);
-}
-.layout-header .control:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-.layout-header .control.disabled {
-  text-decoration: line-through;
-}
-
 .layout-container .layout-box {
   min-height: 100vh;
   padding: 20px 20px 42px;

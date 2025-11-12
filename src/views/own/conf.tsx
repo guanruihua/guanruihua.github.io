@@ -4,6 +4,7 @@ import { DemoRouter } from '../demo/router'
 import { DevRouter } from '../dev/router'
 import { FileRouter } from '../file/router'
 import { GameRouter } from '../game/router'
+import { GenRouter } from '../gen/router'
 import { MutualConversionRouter } from '../mutual-conversion/router'
 import { OtherRouter } from '../other/router'
 import { ToolRouter } from '../tool/router'
@@ -41,6 +42,14 @@ export const Conf = [
     group: OtherRouter.map((item) => [
       item.title || item.path,
       'other/' + item.path,
+    ]),
+  },
+  {
+    title: 'Gen',
+    name: 'gen',
+    group: GenRouter.map((item) => [
+      item.title || item.path,
+      'gen/' + item.path,
     ]),
   },
   {

@@ -24,7 +24,7 @@ export function Container(props: ContainerProps) {
         containerClassName,
       ]}
     >
-      <Header>{header}</Header>
+      {/* <Header>{header}</Header> */}
       <Div className={['layout-box', className]} style={style} {...rest}>
         {children}
       </Div>
