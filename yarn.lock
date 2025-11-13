@@ -2764,10 +2764,10 @@ asynckit@^0.4.0:
   resolved "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
-aurad@^1.11.13:
-  version "1.11.13"
-  resolved "https://registry.npmjs.org/aurad/-/aurad-1.11.13.tgz#3385d1dc8726026a5cb28027113225bdd93873aa"
-  integrity sha512-WrflQpfgV9AQWZQH5g7xPW8fITik90Yd3EVhfwb+0AZq2WlpcWz4nyqsu77dVuBEJfzg++xkhhRgaS+hPiRkRA==
+aurad@^1.11.14:
+  version "1.11.14"
+  resolved "https://registry.npmjs.org/aurad/-/aurad-1.11.14.tgz#4938af923aad82602a14eccd3551c0e5b723b0f7"
+  integrity sha512-pZfcwgg6cFVAtxpiBrnXYgTcbcijzp0NE8lAoDctRBSSCf2nGitXuwSvOKhtHnjk4BgYW8185nSOM31zc90/Dg==
   dependencies:
     "@dnd-kit/core" "^6.0.8"
     enquirer "^2.4.1"

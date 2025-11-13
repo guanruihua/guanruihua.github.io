@@ -2,6 +2,16 @@ import React from 'react'
 
 export const DemoRouter = [
   {
+    title: 'ResizeObserver：监听元素尺寸变化',
+    path: 'resizeObserver',
+    element: import('./ResizeObserver'),
+  },
+  {
+    title: 'IntersectionObserver 懒加载运用',
+    path: 'intersectionObserver',
+    element: import('./IntersectionObserver'),
+  },
+  {
     title: 'Card Beam Animation',
     path: 'card-beam-animation',
     element: import('./Card-Beam-Animation'),
