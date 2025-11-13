@@ -87,10 +87,7 @@ export function Guide(props: GuideProps) {
                       backgroundPosition: 'top',
                       filter: 'opacity(17%) blur(1px)',
                       position: 'absolute',
-                      left: 0,
-                      top: 0,
-                      right: 0,
-                      bottom: 0,
+                      inset: 0,
                       zIndex: 1,
                     }}
                   />

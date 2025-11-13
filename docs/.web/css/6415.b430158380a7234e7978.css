@@ -165,7 +165,7 @@
 }
 .home-search {
   position: sticky;
-  top: 0px;
+  top: 10px;
   width: 100%;
   text-align: center;
   z-index: 10;
@@ -177,7 +177,7 @@
 }
 .home-search > .home-search-box {
   padding: 5px 15px 5px 20px;
-  background: #202324;
+  background: rgba(51, 51, 51, 0.8);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -255,10 +255,7 @@
   background-position: top !important;
   filter: opacity(25%) blur(1px);
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 1;
 }
 .home .card .logo {
