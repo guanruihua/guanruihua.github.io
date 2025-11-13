@@ -100,12 +100,14 @@
   font-weight: bold;
   color: #aaa;
   white-space: nowrap;
+  z-index: 2;
 }
 .home-guide .guide-module .guide-item {
   color: #777;
   cursor: pointer;
   transition: 0.6s;
   font-weight: bolder;
+  z-index: 2;
 }
 .home-guide .guide-module .guide-item:hover {
   color: #fff;
@@ -239,6 +241,7 @@
   cursor: pointer;
   color: #fff;
   transition: all 0.6s ease-in-out;
+  zoom: 0.8;
 }
 .home .card.select {
   box-shadow: 1px 1px 12px rgba(255, 255, 255, 0.9);

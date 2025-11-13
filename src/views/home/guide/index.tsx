@@ -91,7 +91,7 @@ export function Guide(props: GuideProps) {
                       top: 0,
                       right: 0,
                       bottom: 0,
-                      zIndex: -1,
+                      zIndex: 1,
                     }}
                   />
                   {name && <div className="title">{name}</div>}

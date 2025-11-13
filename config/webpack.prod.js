@@ -11,7 +11,7 @@ module.exports = {
   mode: 'production',
   entry: path.resolve(__dirname, '../src/index.tsx'),
   output: {
-    filename: '.web/js/[name].[hash:8].js', // 打包的文件名
+    filename: '.web/js/[name].[contenthash].js', // 打包的文件名
     path: path.resolve(__dirname, '../docs'),
   },
   // experiments: {
