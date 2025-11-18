@@ -1,58 +1,41 @@
 import React from 'react'
-import { Outlet, RouteObject } from 'react-router-dom'
-import { ToolRouter } from './views/tool/router'
-import { DevRouter } from './views/dev/router'
-import { DemoRouter } from './views/demo/router'
 import { Lazy } from 'aurad'
-import { OtherRouter } from './views/other/router'
+import { Outlet, RouteObject } from 'react-router-dom'
 import { GameRouter } from './views/game/router'
-import { FileRouter } from './views/file/router'
-import { AnimationRouter } from './views/animation/router'
-import { ChartRouter } from './views/chart/router'
-import { MutualConversionRouter } from './views/mutual-conversion/router'
-import { GenRouter } from './views/gen/router'
+
+import Dev from './views/dev/router'
+import Tool from './views/tool/router'
+import Demo from './views/demo/router'
+import Other from './views/other/router'
+import File from './views/file/router'
+import Animation from './views/animation/router'
+import Chart from './views/chart/router'
+import MutualConversion from './views/mutual-conversion/router'
+import Gen from './views/gen/router'
+import Server from './views/server/router'
+
+const handle = (conf: any): any[] => {
+  return conf.route.map((_: any) => ({
+    ..._,
+    path: conf.path + _.path,
+  }))
+}
 
 const OwnChildren = [
   {
     index: true,
     element: import('./views/own'),
   },
-  ...ToolRouter.map((_) => ({
-    ..._,
-    path: 'tool/' + _.path,
-  })),
-  ...OtherRouter.map((_) => ({
-    ..._,
-    path: 'other/' + _.path,
-  })),
-  ...DevRouter.map((_) => ({
-    ..._,
-    path: 'dev/' + _.path,
-  })),
-  ...FileRouter.map((_) => ({
-    ..._,
-    path: 'file/' + _.path,
-  })),
-  ...AnimationRouter.map((_: any) => ({
-    ..._,
-    path: 'animation/' + _.path,
-  })),
-  ...MutualConversionRouter.map((_: any) => ({
-    ..._,
-    path: 'mutual-conversion/' + _.path,
-  })),
-  ...DemoRouter.map((_) => ({
-    ..._,
-    path: 'demo/' + _.path,
-  })),
-  ...ChartRouter.map((_) => ({
-    ..._,
-    path: 'chart/' + _.path,
-  })),
-  ...GenRouter.map((_) => ({
-    ..._,
-    path: 'gen/' + _.path,
-  })),
+  ...handle(Demo),
+  ...handle(Other),
+  ...handle(File),
+  ...handle(Animation),
+  ...handle(Chart),
+  ...handle(MutualConversion),
+  ...handle(Gen),
+  ...handle(Server),
+  ...handle(Tool),
+  ...handle(Dev),
   {
     path: '*',
     element: import('./views/own'),
@@ -79,12 +62,10 @@ export const routes: RouteObject[] = [
       {
         path: '/game',
         element: <Outlet />,
-        children: [
-          ...GameRouter.map((_) => ({
-            ..._,
-            // path: 'game/' + _.path,
-          })),
-        ],
+        children: GameRouter.map((_) => ({
+          ..._,
+          element: Lazy(_.element),
+        })),
       },
       {
         path: '/info',

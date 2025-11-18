@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const OtherRouter = [
+export const Route = [
   {
     title: 'HTTP 状态码',
     path: 'http-status',
@@ -17,3 +15,6 @@ export const OtherRouter = [
     element: import('./setting'),
   },
 ]
+
+export default { title: 'Other', name: 'other', path: 'other/', route: Route }
+

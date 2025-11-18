@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const DemoRouter = [
+export const Route = [
   {
     title: 'ResizeObserver：监听元素尺寸变化',
     path: 'resizeObserver',
@@ -102,3 +100,4 @@ export const DemoRouter = [
     element: import('./test'),
   },
 ]
+export default { title: 'Deme', name: 'demo', path: 'demo/', route: Route }

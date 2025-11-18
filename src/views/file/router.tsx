@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const FileRouter = [
+const Route = [
   {
     title: '轻量级图片裁剪',
     path: 'img-clipper',
@@ -27,3 +25,5 @@ export const FileRouter = [
     element: import('./pdf-gen'),
   },
 ]
+
+export default { title: 'File', name: 'file', path: 'file/', route: Route }

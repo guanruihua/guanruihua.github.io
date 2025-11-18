@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const DevRouter = [
+const Route = [
   // {
   //   title: 'codesandbox',
   //   path: 'codesandbox',
@@ -12,35 +10,9 @@ export const DevRouter = [
     element: import('./html-to-react'),
   },
   {
-    title: 'WebSocket',
-    path: 'webSocket',
-    element: import('./webSocket'),
-  },
-  {
     title: 'Color',
     path: 'color',
     element: import('./color'),
-  },
-  {
-    title: 'SSE',
-    path: 'sse',
-    element: import('./sse'),
-  },
-
-  {
-    title: 'Vector Data Viewer',
-    path: 'vector-data-viewer',
-    element: import('./vector-data-viewer'),
-  },
-  {
-    title: 'AI Chat',
-    path: 'ai-chat',
-    element: import('./ai-chat'),
-  },
-  {
-    title: 'Platform Api',
-    path: 'platform-api',
-    element: import('./platform-api'),
   },
   {
     title: 'Box Shadow',
@@ -65,3 +37,5 @@ export const DevRouter = [
     element: import('./music-howler'),
   },
 ]
+
+export default { title: 'Dev', name: 'dev', path: 'dev/', route: Route }

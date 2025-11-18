@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const MutualConversionRouter = [
+export const Route = [
   {
     title: 'Unicode, 中文, 多种格式的相互转换',
     path: 'unicode-and-chinese',
@@ -22,3 +20,10 @@ export const MutualConversionRouter = [
     element: import('./unit-conversion'),
   },
 ]
+
+export default {
+  title: 'Mutual Conversion',
+  name: 'mutual-conversion',
+  path: 'mutual-conversion/',
+  route: Route,
+}

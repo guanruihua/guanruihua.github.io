@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const AnimationRouter = [
+const Route = [
   {
     title: 'swipe effect',
     path: 'swipe-effect',
@@ -77,3 +75,5 @@ export const AnimationRouter = [
     element: import('./test'),
   },
 ].filter(Boolean)
+
+export default { title: 'Animation', name: 'animation', path: 'animation/', route: Route as any[] }

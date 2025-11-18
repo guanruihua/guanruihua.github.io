@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { Div, Flex } from 'aurad'
 import { __blank, Conf } from './conf'
 import './index.less'
+import { ObjectType } from '0type'
 
 export default function () {
   const nav = useNavigate()
@@ -24,13 +25,13 @@ export default function () {
   }
   return (
     <Flex column className="own-page-content">
-      {Conf.map((item, i) => {
-        const { title, name, group = [] } = item
+      {Conf.map((item: ObjectType, i) => {
+        const { title, name, group, route, path = '/' } = item
         return (
           <div key={i} className={'module ' + name}>
             <div className="title">{title}</div>
-            <Div className="children" none={group.length < 1}>
-              {group.map((child, j) => {
+            <Div className="children" none={!group?.length && !route?.length}>
+              {group?.map((child: string[], j: number) => {
                 const [title, url] = child
 
                 return (
@@ -39,6 +40,15 @@ export default function () {
                   </Div>
                 )
               })}
+              {route?.map((child: ObjectType, j: number) => (
+                <Div
+                  key={'route__' + j}
+                  className="name"
+                  onClick={() => onClick(path + child.path)}
+                >
+                  {child.title}
+                </Div>
+              ))}
             </Div>
           </div>
         )

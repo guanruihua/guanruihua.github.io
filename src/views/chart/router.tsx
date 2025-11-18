@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const ChartRouter = [
+const Route = [
   {
     title: 'Bar Stack Border Radius',
     path: 'bar-stack-borderRadius',
@@ -17,3 +15,5 @@ export const ChartRouter = [
     element: import('./bar3d-dataset'),
   },
 ]
+
+export default { title: 'Chart', name: 'chart', path: 'chart/', route: Route }

@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const ToolRouter = [
+export const Route = [
   // {
   //   title: '时间 / 时间戳转换',
   //   path: 'timestamp',
@@ -66,3 +64,5 @@ export const ToolRouter = [
     element: import('./bpmn'),
   },
 ]
+
+export default { title: 'Tool', name: 'tool', path: 'tool/', route: Route }

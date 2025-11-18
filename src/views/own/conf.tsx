@@ -1,17 +1,25 @@
-import { AnimationRouter } from '../animation/router'
-import { ChartRouter } from '../chart/router'
-import { DemoRouter } from '../demo/router'
-import { DevRouter } from '../dev/router'
-import { FileRouter } from '../file/router'
+import { ObjectType } from '0type'
+import Dev from '../dev/router'
 import { GameRouter } from '../game/router'
-import { GenRouter } from '../gen/router'
-import { MutualConversionRouter } from '../mutual-conversion/router'
-import { OtherRouter } from '../other/router'
-import { ToolRouter } from '../tool/router'
+import Animation from '../animation/router'
+import Chart from '../chart/router'
+import Demo from '../demo/router'
+import File from '../file/router'
+import Gen from '../gen/router'
+import MutualConversion from '../mutual-conversion/router'
+import Other from '../other/router'
+import Server from '../server/router'
+import Tool from '../tool/router'
 
 export const __blank = ['dev/tldraw', 'dev/excalidraw']
 
-export const Conf = [
+export const Conf: {
+  title: string
+  name: string
+  path?: string
+  group?: string[][]
+  route?: ObjectType[]
+}[] = [
   {
     title: 'Own',
     name: 'own',
@@ -23,76 +31,16 @@ export const Conf = [
       ['Sandbox', 'https://ruihuag-sandbox.github.io/'],
     ],
   },
-  {
-    title: 'Tool',
-    name: 'tool',
-    group: ToolRouter.map((item) => [item.title, 'tool/' + item.path]),
-  },
-  {
-    title: 'Conversion',
-    name: 'mutual-conversion',
-    group: MutualConversionRouter.map((item: any) => [
-      item.title || item.path,
-      'mutual-conversion/' + item.path,
-    ]),
-  },
-  {
-    title: 'Other',
-    name: 'other',
-    group: OtherRouter.map((item) => [
-      item.title || item.path,
-      'other/' + item.path,
-    ]),
-  },
-  {
-    title: 'Gen',
-    name: 'gen',
-    group: GenRouter.map((item) => [
-      item.title || item.path,
-      'gen/' + item.path,
-    ]),
-  },
-  {
-    title: 'Dev',
-    name: 'dev',
-    group: DevRouter.map((item) => [
-      item.title || item.path,
-      'dev/' + item.path,
-    ]),
-  },
-  {
-    title: 'File',
-    name: 'file',
-    group: FileRouter.map((item) => [
-      item.title || item.path,
-      'file/' + item.path,
-    ]),
-  },
-  {
-    title: 'Chart',
-    name: 'chart',
-    group: ChartRouter.map((item: any) => [
-      item.title || item.path,
-      'chart/' + item.path,
-    ]),
-  },
-  {
-    title: 'Animation',
-    name: 'animation',
-    group: AnimationRouter.map((item: any) => [
-      item.title || item.path,
-      'animation/' + item.path,
-    ]),
-  },
-
-  {
-    title: 'Demo',
-    name: 'demo',
-    group: DemoRouter.map((item) => [
-      item.title || item.path,
-      'demo/' + item.path,
-    ]),
-  },
+  Dev,
+  Tool,
+  Animation,
+  Chart,
+  Demo,
+  File,
+  Gen,
+  MutualConversion,
+  Other,
+  Server,
   {
     title: 'Game',
     name: 'game',

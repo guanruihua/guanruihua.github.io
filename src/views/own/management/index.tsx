@@ -56,17 +56,23 @@ export function Management(props: ManagementProps) {
     }
   }, [ref.current])
 
-  const getTile = () => {
+  const getTitle = () => {
     const paths = location.hash?.replace('#/own/', '').split('/')
     const name = paths?.[0]
     const path = paths.join('/')
 
-    return Conf.find((_) => _.name === name)?.group.find(
-      (_) => _[1] === path,
-    )?.[0]
+    const module = Conf.find((_) => _.name === name)
+    if (module?.route) {
+      return module.route?.find?.((_) => module.path + _.path === path)?.title || ''
+    }
+    if (module?.group) {
+      return module.group?.find?.((_) => _[1] === path)?.[0]
+    }
+
+    return ''
   }
 
-  const title = getTile()
+  const title = getTitle()
 
   return (
     <div
