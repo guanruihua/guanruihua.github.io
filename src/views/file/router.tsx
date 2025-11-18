@@ -24,6 +24,11 @@ const Route = [
     path: 'pdf-gen',
     element: import('./pdf-gen'),
   },
+  {
+    title: 'JSON 解析 & 压缩',
+    path: 'parser-json',
+    element: import('./parser-json'),
+  },
 ]
 
 export default { title: 'File', name: 'file', path: 'file/', route: Route }

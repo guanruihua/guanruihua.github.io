@@ -19,10 +19,15 @@ export const Route = [
     path: 'unit-conversion',
     element: import('./unit-conversion'),
   },
+  {
+    title: '摩斯电码转换',
+    path: 'morse-code',
+    element: import('./morse-code'),
+  }
 ]
 
 export default {
-  title: 'Mutual Conversion',
+  title: 'Conversion',
   name: 'mutual-conversion',
   path: 'mutual-conversion/',
   route: Route,
