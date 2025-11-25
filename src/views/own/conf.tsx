@@ -29,6 +29,7 @@ export const Conf: {
       ['Demo', 'https://ruihuag-demo.github.io/'],
       ['0static', 'https://0static.github.io/'],
       ['Sandbox', 'https://ruihuag-sandbox.github.io/'],
+      ['Vue Page', 'https://guanruihua-vue.github.io/'],
     ],
   },
   Dev,
