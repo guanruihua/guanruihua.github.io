@@ -22,3 +22,5 @@ npminstall-debug.log
 *.njsproj
 *.sln
 *.sw?
+
+*.env
