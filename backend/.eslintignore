@@ -1,0 +1,7 @@
+node_modules
+dist
+public
+config/**/*
+temp/
+src/**/*/demo
+*.json
