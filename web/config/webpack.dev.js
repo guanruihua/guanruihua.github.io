@@ -18,6 +18,17 @@ const devServer = {
   static: {
     directory: path.join(__dirname, '../docs'),
   },
+  client: {
+    overlay: {
+      runtimeErrors: (error) => {
+        // 忽略 ResizeObserver 相关错误
+        if (error.message.includes('ResizeObserver')) {
+          return false
+        }
+        return true
+      },
+    },
+  },
   proxy: {
     '/vr/': 'http://localhost:13000/',
   },

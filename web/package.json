@@ -64,6 +64,7 @@
     "mathjs": "^15.0.0",
     "mini-css-extract-plugin": "^2.9.2",
     "mock-record": "^0.4.1",
+    "monaco-editor-webpack-plugin": "^7.1.1",
     "nodemon": "^3.1.0",
     "opencc-js": "^1.0.5",
     "pinyin-match": "^1.2.8",

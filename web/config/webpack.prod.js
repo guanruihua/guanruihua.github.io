@@ -1,9 +1,10 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+// const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 // const exclude = /node_modules|example|demo/
 const rules = require('./webpack.rules')
 
@@ -58,6 +59,9 @@ module.exports = {
         },
       ],
     }),
+    // new MonacoWebpackPlugin({
+    //   languages: ['javascript', 'typescript', 'css', 'html', 'json'],
+    // }),
     new MiniCssExtractPlugin({
       filename: '.web/css/[name].[contenthash].css', // 输出 CSS 文件名
     }),

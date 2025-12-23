@@ -15,7 +15,7 @@ export const usePageState = () => {
       url: 'http://localhost:2400/sse',
       values: [],
     },
-    '/tool/sse|cache',
+    '/own/tool/sse|cache',
   )
   const stateRef = React.useRef(state)
 
