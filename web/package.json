@@ -6,9 +6,9 @@
   "main": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node config/webpack.dev.js",
+    "start": "cross-env NODE_ENV=development node .conf/webpack.dev.js",
     "server": "nodemon dao/index.mjs",
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js"
+    "build": "cross-env NODE_ENV=production webpack --config .conf/webpack.prod.js"
   },
   "keywords": [],
   "author": "ruihuag",
