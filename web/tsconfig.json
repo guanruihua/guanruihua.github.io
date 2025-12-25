@@ -25,6 +25,7 @@
 		},
 		"typeRoots": [
 			"*.d.ts",
+			"src/*.d.ts",
 			"node_modules/@types",
 			"node_modules/**/*.d.ts",
 			"src/assets/types/*.d.ts"

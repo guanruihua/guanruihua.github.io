@@ -74,6 +74,7 @@
     "react-image-crop": "^11.0.10",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "sass": "^1.93.2",
     "sass-loader": "^16.0.6",
     "style-loader": "^3.3.3",

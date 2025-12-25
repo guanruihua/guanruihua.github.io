@@ -14,6 +14,8 @@ import MutualConversion from './views/mutual-conversion/router'
 import Gen from './views/gen/router'
 import Server from './views/server/router'
 import Analysis from './views/analysis/router'
+import GameRelatedRouter from './views/game-related/router'
+
 
 const handle = (conf: any): any[] => {
   return conf.route.map((_: any) => ({
@@ -38,6 +40,7 @@ const OwnChildren = [
   ...handle(Tool),
   ...handle(Dev),
   ...handle(Analysis),
+  ...handle(GameRelatedRouter),
   {
     path: '*',
     element: import('./views/own'),

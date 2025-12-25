@@ -16,7 +16,7 @@ const devServer = {
   historyApiFallback: true,
   watchFiles: ['src/**/*', 'public/**/*'],
   static: {
-    directory: path.join(__dirname, '../docs'),
+    directory: path.join(__dirname, '../../docs'),
   },
   client: {
     overlay: {
