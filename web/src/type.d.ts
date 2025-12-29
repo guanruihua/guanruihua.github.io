@@ -8,6 +8,7 @@ declare module '*.module.less' {
   export = resource
 }
 
+declare module 'howler'
 declare module 'opencc-js'
 declare module 'bpmn-js-properties-panel'
 declare module 'echarts-gl/*'

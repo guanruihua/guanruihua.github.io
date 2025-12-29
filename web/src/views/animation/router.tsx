@@ -1,5 +1,15 @@
 const Route = [
   {
+    title: '水波纹进度条',
+    path: 'progress',
+    element: import('./progress'),
+  },
+  {
+    title: 'Fitness Card',
+    path: 'fitness-card',
+    element: import('./fitness-card'),
+  },
+  {
     title: 'swipe effect',
     path: 'swipe-effect',
     element: import('./swipe-effect'),
@@ -64,6 +74,11 @@ const Route = [
     path: 'toast-catcher-game',
     element: import('./toast-catcher-game'),
   },
+  {
+    title: 'December Countdown Calendar',
+    path: 'december-countdown-calendar',
+    element: import('./december-countdown-calendar'),
+  },
   // {
   //   title: 'TEST',
   //   path: 'animation-test-page',
@@ -76,4 +91,9 @@ const Route = [
   },
 ].filter(Boolean)
 
-export default { title: 'Animation', name: 'animation', path: 'animation/', route: Route as any[] }
+export default {
+  title: 'Animation',
+  name: 'animation',
+  path: 'animation/',
+  route: Route as any[],
+}
