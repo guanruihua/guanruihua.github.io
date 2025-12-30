@@ -1,5 +1,15 @@
 const Route = [
   {
+    title: 'Wheel of Fortune',
+    path: 'wheel-fortune',
+    element: import('./wheel-fortune'),
+  },
+  {
+    title: '3D CSS: Final',
+    path: 'css-3d-final',
+    element: import('./css-3d-final'),
+  },
+  {
     title: '水波纹进度条',
     path: 'progress',
     element: import('./progress'),

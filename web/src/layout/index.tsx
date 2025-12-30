@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.less'
+import './index.css'
 import './theme.less'
 import { Outlet } from 'react-router-dom'
 
