@@ -47,6 +47,9 @@
   align-items: center;
   margin-right: 10px;
 }
+.tool-platform-api .content .header .method .input-edit div {
+  white-space: nowrap;
+}
 .tool-platform-api .content .header .url {
   display: inline-flex;
   align-items: center;
@@ -56,6 +59,9 @@
 }
 .tool-platform-api .content .header .url .input-edit {
   width: 100%;
+}
+.tool-platform-api .content .header button .content {
+  white-space: nowrap;
 }
 .tool-platform-api .content .headers {
   display: grid;

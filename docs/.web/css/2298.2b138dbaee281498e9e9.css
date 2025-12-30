@@ -1,0 +1,410 @@
+.animation__december-countdown-calendar {
+  --bg: #081226;
+  --card: #0f2740;
+  --ice: #bfe6ff;
+  --accent: #d3817b;
+  --glass: rgba(255, 255, 255, 0.06);
+  --muted: rgba(255, 255, 255, 0.801);
+  --gold: #ffd166;
+  height: 100%;
+  font-family: 'Montserrat', system-ui, Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(59, 105, 160, 0.16), transparent 5%), radial-gradient(900px 400px at 90% 90%, rgba(123, 211, 137, 0.06), transparent 10%), var(--bg);
+  color: #eaf6ff;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: direct-start;
+  justify-content: center;
+  padding: 32px;
+  overflow-x: hidden;
+  /* voorkomt scrollbar */
+  margin: 0;
+  /* Eerste afbeelding zichtbaar */
+  /* Tweede afbeelding onzichtbaar */
+  /* santa sleigh */
+  /* Positie buiten beeld */
+  /* Animatie */
+  /* countdown cards */
+  /* end countdown cards */
+  /* scene */
+  /* calendar */
+  /* empty day placeholder */
+  /*.empty{background:transparent;border:0;box-shadow:none;}*/
+  /* special: Christmas */
+  /* new years eve */
+  /* new years day */
+  /* small decorations */
+  /* footer */
+  /* modal */
+  /* responsive */
+}
+.animation__december-countdown-calendar .bg1,
+.animation__december-countdown-calendar .bg2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 2s ease;
+}
+.animation__december-countdown-calendar .bg1 {
+  background-image: url('https://iili.io/fukJEYu.png');
+  opacity: 1;
+}
+.animation__december-countdown-calendar .bg2 {
+  background-image: url('https://iili.io/fukJMpj.png');
+  opacity: 0;
+}
+.animation__december-countdown-calendar .sleigh {
+  width: 870px;
+  height: 250px;
+  position: absolute;
+  top: 40%;
+  right: -400px;
+  /* start buiten beeld */
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+@keyframes flyIn {
+  0% {
+    right: -400px;
+    transform: translateY(-50%) scale(0.7) rotate(5deg);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(-60%) scale(1.05);
+  }
+  100% {
+    right: 60%;
+    transform: translateY(-50%) scale(1) rotate(-2deg);
+    opacity: 1;
+  }
+}
+.animation__december-countdown-calendar .sleigh.animate {
+  animation: flyIn 5s ease-out forwards;
+}
+.animation__december-countdown-calendar .wrap {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  flex-wrap: wrap;
+}
+.animation__december-countdown-calendar .title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.animation__december-countdown-calendar .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.12), rgba(124, 58, 237, 0.08));
+  font-size: 22px;
+  color: var(--accent);
+  box-shadow: inset 0 -6px 18px rgba(0, 0, 0, 0.25);
+}
+.animation__december-countdown-calendar h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.animation__december-countdown-calendar p.small {
+  color: var(--muted);
+  margin: 6px 0 14px;
+  font-size: 13px;
+}
+.animation__december-countdown-calendar .count {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.animation__december-countdown-calendar .unit {
+  background: var(--glass);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  flex: 1;
+  min-width: 56px;
+}
+.animation__december-countdown-calendar .num {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+.animation__december-countdown-calendar .label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.animation__december-countdown-calendar .meta {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.animation__december-countdown-calendar .progress {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  margin-top: 10px;
+}
+.animation__december-countdown-calendar .bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #8b5cf6);
+  transition: width 600ms linear;
+}
+.animation__december-countdown-calendar .scene {
+  width: 100%;
+  max-width: 980px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  position: relative;
+}
+.animation__december-countdown-calendar header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.animation__december-countdown-calendar .title {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.animation__december-countdown-calendar .title h1 {
+  margin: 0;
+  font-family: 'Montserrat', system-ui, Arial;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  font-size: 28px;
+  color: var(--ice);
+}
+.animation__december-countdown-calendar .title span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.animation__december-countdown-calendar .controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.animation__december-countdown-calendar .btn {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ice);
+  backdrop-filter: blur(6px);
+}
+.animation__december-countdown-calendar .btn:active {
+  transform: translateY(1px);
+}
+.animation__december-countdown-calendar .btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 4px 8px 40px rgba(228, 1, 1, 0.904);
+}
+.animation__december-countdown-calendar .calendar {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+.animation__december-countdown-calendar .weekday {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 8px 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.animation__december-countdown-calendar .day {
+  min-height: 96px;
+  background: linear-gradient(180deg, rgba(139, 193, 255, 0.637), rgba(63, 54, 54, 0.637));
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  overflow: visible;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.animation__december-countdown-calendar .day:hover {
+  transform: translateY(-6px);
+  box-shadow: 4px 8px 40px rgba(228, 1, 1, 0.904);
+}
+.animation__december-countdown-calendar .day .num {
+  font-weight: 700;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  color: var(--ice);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.animation__december-countdown-calendar .day .note {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  opacity: 0.95;
+}
+.animation__december-countdown-calendar .christmas {
+  background-image: url('https://iili.io/fukJ12e.png');
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 6px 20px rgba(255, 209, 102, 0.04);
+  position: relative;
+  overflow: visible;
+}
+.animation__december-countdown-calendar .christmas .tag {
+  display: inline-block;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ice);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.animation__december-countdown-calendar .newyears {
+  background-image: url('https://iili.io/fukJGkb.png');
+  background-position: center;
+  background-size: cover;
+  color: gold;
+  border: 1px solid #f1f1ee;
+}
+.animation__december-countdown-calendar .newyears .tag {
+  font-weight: bold;
+  margin-top: 6px;
+  color: var(--ice);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.animation__december-countdown-calendar .january.newyear {
+  background-image: url('https://iili.io/fukJaBS.png');
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 6px 20px rgba(255, 209, 102, 0.04);
+  position: relative;
+  overflow: visible;
+}
+.animation__december-countdown-calendar .newyear .tag {
+  font-weight: bold;
+  margin-top: 6px;
+  color: var(--ice);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.animation__december-countdown-calendar .snowflake {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+.animation__december-countdown-calendar .legend {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 16px;
+}
+.animation__december-countdown-calendar .legend .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.animation__december-countdown-calendar .legend .item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.animation__december-countdown-calendar .modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 40;
+  background: linear-gradient(180deg, rgba(2, 10, 26, 0.6), rgba(2, 10, 26, 0.75));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+.animation__december-countdown-calendar .modal.show {
+  opacity: 1;
+  pointer-events: auto;
+  backdrop-filter: blur(6px);
+}
+.animation__december-countdown-calendar .card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 14px;
+  padding: 22px;
+  min-width: 260px;
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.animation__december-countdown-calendar .close {
+  transform: translateY(-6px);
+  margin-top: 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--glass);
+  cursor: pointer;
+  color: var(--ice);
+}
+.animation__december-countdown-calendar .close:hover {
+  transform: translateY(-6px);
+  box-shadow: 4px 8px 40px rgba(228, 1, 1, 0.904);
+}
+.animation__december-countdown-calendar .christmas-card {
+  /*countdown*/
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 14px;
+  padding: 22px;
+  min-width: 260px;
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .animation__december-countdown-calendar .scene {
+    padding: 18px;
+  }
+  .animation__december-countdown-calendar .day {
+    min-height: 78px;
+  }
+  .animation__december-countdown-calendar .calendar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .animation__december-countdown-calendar .wrap {
+    padding-top: 40px;
+  }
+  .animation__december-countdown-calendar .sleigh {
+    top: 55%;
+    transform: translateY(-50%) scale(0.8);
+  }
+}
+
