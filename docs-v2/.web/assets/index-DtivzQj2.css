@@ -1,0 +1,1 @@
+.tool-file-review{height:90vh;min-height:90vh;display:grid;grid-template-columns:1fr;gap:10px}.tool-file-review>.content{height:100%;background:#ffffff0d;border-radius:4px;display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr}.tool-file-review>.content>.controls{padding:10px;height:auto}.tool-file-review>.content pre{padding:10px;text-wrap-mode:wrap}

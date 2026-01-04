@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>植物大僵尸 - Phaser Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #game-container {
+        border: 4px solid #5a7d5a;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+      .game-info {
+        color: white;
+        text-align: center;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="game-container"></div>
+      <div class="game-info">
+        <p>点击阳光收集资源，选择植物并点击草地格子放置植物</p>
+        <p>目标：防止僵尸到达最左侧</p>
+      </div>
+    </div>
+
+    <script>
+      const config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        parent: 'game-container',
+        backgroundColor: '#87CEEB',
+        scene: {
+          preload: preload,
+          create: create,
+          update: update,
+        },
+      }
+
+      const game = new Phaser.Game(config)
+      let plants
+      let zombies
+      let suns
+      let sunCount = 50
+      let sunText
+      let selectedPlant = null
+      let grassGrid
+      let plantIcons
+      let lastZombieSpawn = 0
+
+      // 植物类型
+      const plantTypes = {
+        SUNFLOWER: { cost: 50, texture: 'sunflower', cooldown: 10000 },
+        PEASHOOTER: { cost: 100, texture: 'peashooter', cooldown: 5000 },
+        WALLNUT: { cost: 50, texture: 'wallnut', cooldown: 15000 },
+      }
+
+      function preload() {
+        this.load.image(
+          'grass',
+          'https://opengameart.org/sites/default/files/preview_grass_0.png',
+        )
+        this.load.image(
+          'sun',
+          'https://opengameart.org/sites/default/files/sun2.png',
+        )
+        this.load.image(
+          'zombie',
+          'https://opengameart.org/sites/default/files/zombie_0.png',
+        )
+        this.load.image(
+          'sunflower',
+          'https://opengameart.org/sites/default/files/sunflower.png',
+        )
+        this.load.image(
+          'peashooter',
+          'https://opengameart.org/sites/default/files/peashooter.png',
+        )
+        this.load.image(
+          'wallnut',
+          'https://opengameart.org/sites/default/files/wallnut.png',
+        )
+        this.load.image(
+          'bullet',
+          'https://opengameart.org/sites/default/files/bullet.png',
+        )
+      }
+
+      function create() {
+        // 创建草地网格
+        grassGrid = []
+        for (let row = 0; row < 5; row++) {
+          grassGrid[row] = []
+          for (let col = 0; col < 9; col++) {
+            const x = 100 + col * 70
+            const y = 100 + row * 80
+            const grass = this.add.image(x, y, 'grass').setInteractive()
+            grass.setDisplaySize(60, 60)
+            grass.row = row
+            grass.col = col
+
+            grass.on('pointerdown', () => {
+              if (selectedPlant && sunCount >= selectedPlant.cost) {
+                // 检查该位置是否已有植物
+                if (!grassGrid[row][col]) {
+                  const plant = plants.create(x, y, selectedPlant.texture)
+                  plant.setDisplaySize(50, 50)
+                  plant.row = row
+                  plant.col = col
+                  plant.type = selectedPlant.texture
+                  plant.lastAttack = 0
+
+                  sunCount -= selectedPlant.cost
+                  sunText.setText(`阳光: ${sunCount}`)
+
+                  grassGrid[row][col] = plant
+                }
+              }
+            })
+          }
+        }
+
+        // 创建植物组
+        plants = this.add.group()
+
+        // 创建僵尸组
+        zombies = this.add.group()
+
+        // 创建阳光组
+        suns = this.add.group()
+
+        // 创建UI
+        sunText = this.add.text(10, 10, `阳光: ${sunCount}`, {
+          fontSize: '20px',
+          fill: '#000',
+        })
+
+        // 创建植物选择图标
+        plantIcons = []
+        let x = 650
+        let y = 30
+
+        for (const [key, plant] of Object.entries(plantTypes)) {
+          const icon = this.add.image(x, y, plant.texture).setInteractive()
+          icon.setDisplaySize(40, 40)
+          icon.plantType = plant
+          icon.costText = this.add.text(x, y + 30, plant.cost, {
+            fontSize: '16px',
+            fill: '#000',
+          })
+
+          icon.on('pointerdown', () => {
+            selectedPlant = plant
+            plantIcons.forEach((i) => i.setTint(0xffffff))
+            icon.setTint(0x00ff00)
+          })
+
+          plantIcons.push(icon)
+          y += 60
+        }
+
+        // 定期生成阳光
+        this.time.addEvent({
+          delay: 5000,
+          callback: spawnSun,
+          callbackScope: this,
+          loop: true,
+        })
+
+        // 初始生成一些阳光
+        for (let i = 0; i < 3; i++) {
+          setTimeout(() => spawnSun.call(this), 1000 * i)
+        }
+      }
+
+      function update(time) {
+        // 生成僵尸
+        if (time > lastZombieSpawn + 10000) {
+          spawnZombie.call(this)
+          lastZombieSpawn = time
+        }
+
+        // 植物行为
+        plants.getChildren().forEach((plant) => {
+          if (plant.type === 'peashooter' && time > plant.lastAttack + 2000) {
+            // 检查该行是否有僵尸
+            const zombiesInRow = zombies
+              .getChildren()
+              .filter((z) => z.row === plant.row)
+            if (zombiesInRow.length > 0) {
+              const bullet = this.add.image(plant.x, plant.y, 'bullet')
+              bullet.setDisplaySize(10, 10)
+              bullet.speed = 200
+              bullet.damage = 25
+
+              this.physics.moveTo(bullet, 800, plant.y, bullet.speed)
+              plant.lastAttack = time
+            }
+          }
+        })
+
+        // 僵尸行为
+        zombies.getChildren().forEach((zombie) => {
+          zombie.x -= zombie.speed * 0.01
+
+          // 检查是否到达最左侧
+          if (zombie.x < 50) {
+            // 游戏结束逻辑
+            this.add
+              .text(400, 300, '游戏结束!', { fontSize: '40px', fill: '#f00' })
+              .setOrigin(0.5)
+            this.physics.pause()
+          }
+
+          // 检查是否与植物碰撞
+          plants.getChildren().forEach((plant) => {
+            if (
+              plant.row === zombie.row &&
+              Phaser.Math.Distance.Between(
+                zombie.x,
+                zombie.y,
+                plant.x,
+                plant.y,
+              ) < 40
+            ) {
+              zombie.speed = 0
+              if (time > zombie.lastAttack + 1000) {
+                plant.health -= 10
+                zombie.lastAttack = time
+
+                if (plant.health <= 0) {
+                  grassGrid[plant.row][plant.col] = null
+                  plant.destroy()
+                  zombie.speed = 10
+                }
+              }
+            }
+          })
+        })
+
+        // 子弹行为
+        this.children.list.forEach((child) => {
+          if (child.texture && child.texture.key === 'bullet') {
+            if (child.x > 800) {
+              child.destroy()
+            }
+
+            // 检查子弹与僵尸的碰撞
+            zombies.getChildren().forEach((zombie) => {
+              if (
+                Phaser.Math.Distance.Between(
+                  child.x,
+                  child.y,
+                  zombie.x,
+                  zombie.y,
+                ) < 30
+              ) {
+                zombie.health -= child.damage
+                child.destroy()
+
+                if (zombie.health <= 0) {
+                  zombie.destroy()
+                }
+              }
+            })
+          }
+        })
+      }
+
+      function spawnSun() {
+        const x = Phaser.Math.Between(100, 700)
+        const y = 0
+        const sun = suns.create(x, y, 'sun')
+        sun.setDisplaySize(40, 40)
+        sun.setInteractive()
+
+        // 让阳光下落
+        this.tweens.add({
+          targets: sun,
+          y: 600,
+          duration: 5000,
+          ease: 'Linear',
+        })
+
+        // 点击收集阳光
+        sun.on('pointerdown', () => {
+          sunCount += 25
+          sunText.setText(`阳光: ${sunCount}`)
+          sun.destroy()
+        })
+      }
+
+      function spawnZombie() {
+        const row = Phaser.Math.Between(0, 4)
+        const y = 100 + row * 80
+        const zombie = zombies.create(800, y, 'zombie')
+        zombie.setDisplaySize(50, 80)
+        zombie.row = row
+        zombie.speed = 10
+        zombie.health = 100
+        zombie.lastAttack = 0
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+.animation__css-3d-final {
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #004569 0%, #461238 50%, #00183e 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  .scene {
+    perspective: 1000px;
+  }
+
+  .scene div {
+    transform-style: preserve-3d;
+  }
+
+  .image-container {
+    position: relative;
+    width: 18.75rem;
+    height: 18.75rem;
+    transform: rotateX(20deg) rotateY(-10deg);
+    --layers-count: 35;
+    --layer-offset: 2px;
+
+    .layers,
+    .layer {
+      position: absolute;
+      inset: 0;
+    }
+  
+    .layer {
+      transform: translateZ(calc(var(--i) * var(--layer-offset)));
+  
+      --n: calc(var(--i) / var(--layers-count));
+  
+      filter: brightness(calc(0.4 + var(--n) * 0.8)) saturate(calc(0.8 + var(--n) * 0.4));
+    }
+  }
+
+
+  .layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+  }
+
+  .original {
+    position: relative;
+    z-index: 1;
+    width: 18.75rem;
+    height: 18.75rem;
+  }
+
+  .original img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 0.6);
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    background: rgba(255 255 255 / 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.15rem;
+    max-height: 30rem;
+    border-radius: 10px;
+    overflow-y: scroll;
+    color: white;
+    max-width: 250px;
+  }
+
+  .controls h3 {
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+  }
+
+  .controls label {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 15px 0 5px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+
+  .controls input {
+    width: 100%;
+  }
+
+  .controls span {
+    font-weight: bold;
+  }
+
+  .image-selector {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(255 255 255 / 0.2);
+  }
+
+  .image-selector button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    background: rgb(255 255 255 / 0.2);
+    border: 1px solid rgb(255 255 255 / 0.3);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+  }
+
+  .image-selector button:hover {
+    background: rgb(255 255 255 / 0.3);
+  }
+
+  .image-selector button.active {
+    background: rgb(255 255 255 / 0.4);
+    border-color: white;
+  }
+
+}

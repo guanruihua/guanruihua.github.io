@@ -1,0 +1,58 @@
+import React from 'react'
+import { useNavigate } from 'react-router'
+import { Div, Flex } from 'aurad'
+import { __blank, Conf } from './conf'
+import './index.less'
+import { ObjectType } from '0type'
+
+export default function () {
+  const nav = useNavigate()
+
+  const onClick = (url: string) => {
+    // console.log('🚀 ~ onClick ~ url:', url)
+    if (__blank.includes(url)) {
+      window.open(location.href + '/' + url, '__blank')
+      return
+    }
+
+    if (url.startsWith('http'))
+      window.open(url.indexOf('http') > -1 ? url : `https://${url}`, '_blank')
+    // if (url.indexOf('/') == 0) nav('/own' + url)
+    if (url.indexOf('/') == 0) nav(url)
+    else nav('/own/' + url)
+    // else window.location.hash = '#/' + url // 强制修改 hash
+    // else nav(url)
+  }
+  return (
+    <Flex column className="own-page-content">
+      {Conf.map((item: ObjectType, i) => {
+        const { title, name, group, route, path = '/' } = item
+        return (
+          <div key={i} className={'module ' + name}>
+            <div className="title">{title}</div>
+            <Div className="children" none={!group?.length && !route?.length}>
+              {group?.map((child: string[], j: number) => {
+                const [title, url] = child
+
+                return (
+                  <Div key={j} className="name" onClick={() => onClick(url)}>
+                    {title}
+                  </Div>
+                )
+              })}
+              {route?.map((child: ObjectType, j: number) => (
+                <Div
+                  key={'route__' + j}
+                  className="name"
+                  onClick={() => onClick(path + child.path)}
+                >
+                  {child.title}
+                </Div>
+              ))}
+            </Div>
+          </div>
+        )
+      })}
+    </Flex>
+  )
+}

@@ -1,0 +1,39 @@
+.animation__wheel-fortune {
+  background-color: #161920;
+  background: url('https://assets.codepen.io/3685267/wheel-of-fortune-smwdyono.png') repeat;
+  background-size: 500px 500px;
+}
+.animation__wheel-fortune .circ-title {
+  stroke: none;
+  fill: #fff;
+  font-weight: 400;
+  font-size: 32px;
+}
+.animation__wheel-fortune .circl-desc {
+  stroke: none;
+  fill: #8f939c;
+  font-weight: 100;
+  font-size: 26px;
+}
+.animation__wheel-fortune .scale-on-hover {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.animation__wheel-fortune .scale-on-hover:hover {
+  transform: scale(2);
+}
+.animation__wheel-fortune .plus-icon-bg {
+  background: linear-gradient(180deg, #7A90FF 0%, #455AFF 100%);
+}
+.animation__wheel-fortune .menu-items-selected {
+  background: linear-gradient(180deg, #667AFF 0%, #3951E5 100%);
+}
+.animation__wheel-fortune .subscription-card {
+  background: linear-gradient(135deg, #6F78EA 0%, #435AF8 100%);
+}
+.animation__wheel-fortune .buy-button {
+  background: linear-gradient(180deg, #6579FE 0%, #3C57FF 100%);
+  border-radius: 8px;
+}
+

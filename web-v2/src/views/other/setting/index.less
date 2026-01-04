@@ -1,0 +1,31 @@
+.dev-setting {
+  &>.layout {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    &>.item {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 10px;
+
+      &>div {
+        display: flex;
+        align-items: center;
+      }
+
+      &>.label {
+        justify-content: flex-end;
+      }
+
+      input {
+        padding: 5px 10px;
+        font-size: 15px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        background-color: #282828;
+      }
+    }
+  }
+}

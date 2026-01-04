@@ -1,0 +1,1 @@
+export const dottedProps = { strokeDasharray: "5 5", strokeDashoffset: "5" }

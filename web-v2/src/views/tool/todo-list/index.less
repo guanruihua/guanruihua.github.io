@@ -1,0 +1,68 @@
+.tool-todo-list-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 20px;
+  overflow: hidden;
+
+  .conf {
+    padding: 20px;
+    .input {
+      display: grid;
+      grid-template-columns: auto 100px;
+      gap: 10px;
+    }
+
+    .au-input {
+      line-height: 28px;
+      height: 32px;
+    }
+  }
+
+  .todo-container {
+    max-height: 100%;
+    overflow-y: auto;
+    display: grid;
+    gap: 10px;
+
+    .todo {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      flex-direction: column;
+      gap: 10px;
+
+      .todo-item {
+        padding: 20px;
+        border: 2px solid rgba(255, 255, 255, .3);
+        border-radius: 12px;
+        transition: all .5s;
+        cursor: pointer;
+
+        &:hover {
+          border-color: rgba(255, 255, 255, .8);
+        }
+
+        .desc {
+          max-width: 100%;
+          white-space: wrap;
+          word-break: break-all;
+          max-height: 64px;
+          overflow-y: auto;
+
+        }
+
+        .tag {
+          display: flex;
+          gap: 10px;
+          margin-top: 10px;
+
+          &>div {
+            background-color: rgba(255, 255, 255, .2);
+            padding: 3px 8px;
+            font-size: 10px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}

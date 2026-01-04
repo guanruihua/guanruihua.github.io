@@ -1,0 +1,37 @@
+.message-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30px;
+  margin: auto;
+  text-align: center;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.message {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 16px;
+  background-color: #6B7172;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  font-size: 12px;
+  border: none;
+  margin-bottom: 10px;
+  z-index: 10000;
+
+  .icon {
+    height: 32px;
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .content {
+    height: 32px;
+    line-height: 30px;
+  }
+}

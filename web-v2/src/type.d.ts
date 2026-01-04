@@ -1,0 +1,34 @@
+declare module '*.less' {
+  const resource: { [key: string]: string }
+  export = resource
+}
+
+declare module '*.module.less' {
+  const resource: { [key: string]: string }
+  export = resource
+}
+
+declare module 'howler'
+declare module 'opencc-js'
+declare module 'bpmn-js-properties-panel'
+declare module 'echarts-gl/*'
+declare module '*.svg'
+declare module '*.json'
+declare module '*.png'
+declare module '*.jpeg'
+declare module '*.jpg'
+declare module '*.md' {
+  const md: string
+  export = md
+}
+
+declare module '*.txt' {
+  const txt: string
+  export = txt
+}
+
+declare const process: {
+  env: {
+    NODE_ENV: 'development' | 'production' | 'test'
+  }
+}

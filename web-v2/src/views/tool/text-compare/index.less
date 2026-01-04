@@ -1,0 +1,57 @@
+.tool-text-compare {
+  padding-top: 10px;
+
+  .equal>textarea {
+    border-color: #39853d;
+  }
+
+  .noEqual>textarea {
+    border-color: #9b2d2d;
+  }
+
+  .compare-string {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 24px;
+
+    .error {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: 5px;
+
+      &>pre,
+      &>svg {
+        display: inline-block;
+        line-height: 24px;
+      }
+
+      padding: 0 3px;
+      font-size: 16px;
+      color: #fff;
+      background-color: rgb(200, 17, 17);
+      border-radius: 4px;
+    }
+  }
+
+  .input-area {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+
+    textarea {
+      outline: none;
+      display: block;
+      box-sizing: border-box;
+      font-size: 16px;
+      resize: none;
+      overflow: hidden;
+      height: 300px;
+      padding: 5px;
+      border-radius: 5px;
+      background: #123;
+      color: #fff;
+    }
+  }
+}

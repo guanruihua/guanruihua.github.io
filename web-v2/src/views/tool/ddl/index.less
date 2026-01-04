@@ -1,0 +1,213 @@
+.tool-ddl-container {
+
+  .days-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+
+    .M-cell {
+      h3 {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .timeline {
+        text-align: center;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+
+    .day-cell {
+      text-align: center;
+      font-size: 14px;
+      width: 2.5em;
+      height: 2.5em;
+      line-height: 2.35;
+      border-radius: 0;
+      opacity: .5;
+
+
+      &.today {
+        opacity: .9;
+        font-weight: bold;
+        color: rgb(212, 164, 6);
+      }
+
+      &.weekend {
+        background: rgba(35, 217, 110, .2);
+      }
+
+      &.holiday {
+        background: rgba(35, 217, 110, .2);
+      }
+
+      &.adjustmentDay {
+        background: red;
+      }
+
+
+      // &.now {
+      //   color: rgba(35, 217, 110, 1);
+      //   background: rgba(35, 217, 110, .34);
+      // }
+
+      // &.nextWeek:not(.weekend) {
+      //   filter: opacity(.5);
+      // }
+    }
+  }
+
+
+  div {
+    border-radius: 6px;
+  }
+
+  div.blank {
+    border: none;
+  }
+
+  .ddl-task {
+    &-item {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 0 1fr 31fr;
+
+      &.high .ddl-task-item-render {
+        border-color: red;
+      }
+
+      img {
+        max-height: 32px;
+        max-width: 32px;
+        border-radius: 12px;
+      }
+
+      &-render {
+        font-size: 14px;
+        padding: 8px 8px;
+        text-align: center;
+        position: relative;
+        border: 2px solid rgba(42, 100, 181, .8);
+
+      }
+    }
+  }
+
+  .ddl-timeline {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    &-item {
+      background: rgba(255, 255, 255, .1);
+      border-bottom: 2px solid;
+      border-top: 2px solid;
+      border-color: rgba(250, 214, 100, .6);
+      border-radius: 0;
+      padding: 6px 0;
+      min-height: 32px;
+
+      &.weekend {
+        border-color: rgba(35, 217, 110, 1);
+      }
+
+      &.now {
+        color: rgba(35, 217, 110, 1);
+        background: rgba(35, 217, 110, .34);
+      }
+
+      &.nextWeek:not(.weekend) {
+        filter: opacity(.5);
+      }
+
+      .title {
+        text-align: center;
+      }
+    }
+  }
+
+  .ddl-game-task {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    &-account {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-left: 20px;
+      align-items: center;
+      // min-height: 32px;
+
+      &-item {
+        cursor: pointer;
+        font-size: 14px;
+        color: rgba(255, 255, 255, .6);
+        transition: .1s;
+
+        .title-val {
+          height: 32px;
+          line-height: 32px;
+        }
+
+        &.select {
+          font-weight: bolder;
+          color: rgba(255, 255, 255, .8);
+        }
+
+        &:hover {
+          color: rgba(255, 255, 255, .9);
+        }
+      }
+    }
+
+    &-item {
+      display: flex;
+      background: rgba(255, 255, 255, .1);
+      gap: 20px;
+      font-size: 12px;
+
+      &>.title {
+        display: block;
+        color: rgba(255, 255, 255, .9);
+        white-space: nowrap;
+        overflow: visible;
+        min-width: 160px;
+        padding: 20px 0;
+        text-align: center;
+        border-radius: 0;
+        border-right: 2px solid rgba(255, 255, 255, .3);
+      }
+
+      &>.week_task {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 20px;
+
+        .week_task-item {
+          color: rgba(255, 255, 255, .8);
+          transform: .6s;
+          cursor: pointer;
+
+          &.check {
+            text-decoration: line-through;
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+}

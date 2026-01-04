@@ -23,7 +23,7 @@ async def start():
   for text in texts:
     vector = await v.genVectorByText(text=text)
     data.append({
-      "vector":    vector, 
+      "vector": vector, 
       "text": text,  
       "id":  u.id(),
     })
