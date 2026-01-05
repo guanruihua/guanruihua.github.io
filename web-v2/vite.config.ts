@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 export default defineConfig({
-  publicDir: path.resolve(__dirname, '../docs-v2'),
+  publicDir: path.resolve(__dirname, '../docs'),
   plugins: [
     react({
       babel: {
@@ -23,7 +23,7 @@ export default defineConfig({
   server: {},
   // 生产环境专属配置
   build: {
-    outDir: '../docs-v2',
+    outDir: '../docs',
     emptyOutDir: false,
     assetsDir: '.web', // 静态资源存放目录
     chunkSizeWarningLimit: 2000, // 分块大小警告阈值(KB)

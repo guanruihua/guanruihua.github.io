@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "rimraf ../docs-v2/.web && vite build",
-    "build2": "rimraf ../docs-v2/.web && tsc -b && vite build",
+    "build": "rimraf ../docs/.web && vite build",
+    "build2": "rimraf ../docs/.web && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
