@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkguanruihua_github_io=self.webpackChunkguanruihua_github_io||[]).push([[6931],{36931(e,a,u){u.r(a),u.d(a,{default:()=>t});var i=u(65296);function t(){return i.createElement("div",{className:"animation__swipe-effect"},i.createElement("div",{className:"layer"}))}}}]);

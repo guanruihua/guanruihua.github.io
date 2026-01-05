@@ -1,0 +1,6 @@
+.study-svg text {
+  font-size: 32px;
+  letter-spacing: 5px;
+  fill: url(#text-color);
+}
+

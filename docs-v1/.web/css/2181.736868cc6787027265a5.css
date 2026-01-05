@@ -1,0 +1,26 @@
+.dev-setting > .layout {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.dev-setting > .layout > .item {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 10px;
+}
+.dev-setting > .layout > .item > div {
+  display: flex;
+  align-items: center;
+}
+.dev-setting > .layout > .item > .label {
+  justify-content: flex-end;
+}
+.dev-setting > .layout > .item input {
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: #282828;
+}
+

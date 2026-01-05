@@ -1,0 +1,15 @@
+.dev__dom-to-image > .container {
+  width: 100%;
+  position: relative;
+}
+.dev__dom-to-image > .container > .left {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+.dev__dom-to-image > .container > .right {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+

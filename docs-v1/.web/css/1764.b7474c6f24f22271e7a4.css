@@ -1,0 +1,102 @@
+.tool-calculator {
+  --ceil: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tool-calculator .input-formula {
+  width: 100%;
+}
+.tool-calculator .input-formula .row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+}
+.tool-calculator .input-formula-result {
+  line-height: 40px;
+  min-width: 100px;
+  text-align: start;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.tool-calculator .input-formula-input {
+  font-size: 15px;
+  font-weight: bolder;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  color: #fff;
+  min-width: 300px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.tool-calculator .tool-calculator-layout {
+  display: grid;
+  grid-template-columns: 270px 340px;
+  gap: 10px;
+}
+.tool-calculator .history-box {
+  padding: 10px 0;
+  width: 100%;
+  height: 340px;
+  background-color: #242424;
+  border-radius: 12px;
+  display: grid;
+  grid-template-rows: 1fr 250px;
+}
+.tool-calculator .history-box .history {
+  max-height: 250px;
+  overflow-y: auto;
+}
+.tool-calculator .history-box .now {
+  padding: 0 12px;
+}
+.tool-calculator .history-box .item {
+  white-space: wrap;
+  line-height: 32px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0 12px;
+}
+.tool-calculator .simple {
+  display: grid;
+  grid-template-columns: repeat(4, var(--ceil));
+  gap: 10px;
+}
+.tool-calculator .simple .keypad {
+  height: var(--ceil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #242424;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tool-calculator .simple .keypad[data-val='C'],
+.tool-calculator .simple .keypad[data-val='Del'],
+.tool-calculator .simple .keypad[data-val='%'],
+.tool-calculator .simple .keypad[data-val='÷'],
+.tool-calculator .simple .keypad[data-val='x'],
+.tool-calculator .simple .keypad[data-val='-'],
+.tool-calculator .simple .keypad[data-val='+'],
+.tool-calculator .simple .keypad[data-val='Switch'],
+.tool-calculator .simple .keypad[data-val='='] {
+  color: #ED8114;
+}
+.tool-calculator .simple .keypad:hover {
+  background-color: rgba(36, 36, 36, 0.7);
+}
+.tool-calculator .simple .keypad[data-val='Switch'] {
+  visibility: hidden;
+  cursor: none;
+  pointer-events: none;
+}
+

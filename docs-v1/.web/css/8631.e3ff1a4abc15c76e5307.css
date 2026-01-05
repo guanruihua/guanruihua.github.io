@@ -1,0 +1,38 @@
+.tool__bpmn {
+  background: #fff;
+}
+@font-face {
+  font-family: 'bpmn';
+  src: url('https://unpkg.com/bpmn-js/dist/assets/bpmn-font/font/bpmn.eot');
+  src: url('https://unpkg.com/bpmn-js/dist/assets/bpmn-font/font/bpmn.eot?#iefix') format('embedded-opentype'), url('https://unpkg.com/bpmn-js/dist/assets/bpmn-font/font/bpmn.woff') format('woff'), url('https://unpkg.com/bpmn-js/dist/assets/bpmn-font/font/bpmn.ttf') format('truetype'), url('https://unpkg.com/bpmn-js/dist/assets/bpmn-font/font/bpmn.svg#bpmn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.tool__bpmn * {
+  color: #000;
+  text-shadow: none;
+}
+.tool__bpmn .djs-container > svg {
+  outline: none;
+}
+.tool__bpmn #container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.tool__bpmn #toolbar {
+  padding: 10px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+.tool__bpmn #bpmn-container {
+  flex: 1;
+}
+.tool__bpmn .djs-palette .entry,
+.tool__bpmn .djs-palette .djs-palette-toggle {
+  width: 45px;
+}
+.tool__bpmn a.bjs-powered-by {
+  display: none;
+}
+

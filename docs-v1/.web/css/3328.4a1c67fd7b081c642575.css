@@ -1,0 +1,266 @@
+.animation__repetition-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  gap: 40px;
+  padding: 20px;
+  overflow: hidden;
+}
+.animation__repetition-image .main-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+.animation__repetition-image .image {
+  width: 400px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.animation__repetition-image .image.dragging {
+  cursor: grabbing;
+}
+.animation__repetition-image .image.rotation-active {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+.animation__repetition-image .image__element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: clip-path 0.3s ease;
+}
+.animation__repetition-image .image__element.base-layer {
+  z-index: 1;
+}
+.animation__repetition-image .image__element:not(.base-layer) {
+  z-index: 2;
+}
+.animation__repetition-image .layer-outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.animation__repetition-image .layer-outline.active {
+  opacity: 0.5;
+}
+.animation__repetition-image .layer-outline svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.animation__repetition-image .layer-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 14;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.animation__repetition-image .layer-shadow.active {
+  opacity: 1;
+}
+.animation__repetition-image .layer-shadow svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: blur(4px);
+}
+.animation__repetition-image .image__element.rectangle {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.animation__repetition-image .image__element.triangle {
+  clip-path: polygon(50% 5%, 10% 95%, 90% 95%);
+}
+.animation__repetition-image .image__element.chevron {
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+.animation__repetition-image .image__element.oval {
+  clip-path: ellipse(45% 35% at 50% 50%);
+}
+.animation__repetition-image .controls {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.animation__repetition-image .shape-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.animation__repetition-image .shape-btn {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animation__repetition-image .shape-btn:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+.animation__repetition-image .shape-btn.active {
+  background: #ff9a9c;
+  color: #ffffff;
+  border-radius: 2px;
+}
+.animation__repetition-image .effect-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.animation__repetition-image .effect-controls span {
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+}
+.animation__repetition-image .effect-btn {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.animation__repetition-image .effect-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.animation__repetition-image .effect-btn.active {
+  background: #ff9a9c;
+  border-color: #ff9a9c;
+  box-shadow: 0 0 15px rgba(255, 154, 156, 0.3);
+}
+.animation__repetition-image .cursor-drag {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  padding: 8px 12px;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transform: translate(-50%, -100%) translateY(-10px);
+  overflow: hidden;
+  height: 20px;
+}
+.animation__repetition-image .drag-text {
+  display: block;
+  transition: transform 0.6s ease;
+  transform: translateY(0);
+}
+.animation__repetition-image .cursor-drag.hide-up .drag-text {
+  transform: translateY(-30px);
+}
+.animation__repetition-image .debug-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+.animation__repetition-image .debug-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+@media (max-width: 768px) {
+  .animation__repetition-image .main-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .animation__repetition-image .image {
+    width: 300px;
+    height: 400px;
+  }
+  .animation__repetition-image .controls {
+    bottom: 20px;
+  }
+  .animation__repetition-image .shape-controls {
+    gap: 8px;
+  }
+  .animation__repetition-image .shape-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  .animation__repetition-image .debug-panel {
+    bottom: 80px;
+    right: 10px;
+    font-size: 10px;
+  }
+}
+

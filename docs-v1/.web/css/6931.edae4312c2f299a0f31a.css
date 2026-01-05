@@ -1,0 +1,32 @@
+.animation__swipe-effect {
+  position: relative;
+}
+.animation__swipe-effect .layer:before,
+.animation__swipe-effect .layer:after {
+  content: "";
+  position: absolute;
+  inset: 0% -50%;
+  background: orange;
+  clip-path: ellipse(70% 100% at 50% 100%);
+  animation: s0 1s 0.5s ease-out both, s1 0.4s 0.5s both, s3 0.5s 1.3s linear both;
+}
+.animation__swipe-effect .layer:after {
+  background: aqua;
+  animation-delay: 2s, 2s, 2.8s;
+}
+@keyframes s0 {
+  0% {
+    translate: 0 100%;
+  }
+}
+@keyframes s1 {
+  to {
+    inset: 0%;
+  }
+}
+@keyframes s3 {
+  to {
+    clip-path: ellipse(200% 100% at 50% 80%);
+  }
+}
+

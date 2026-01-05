@@ -1,0 +1,97 @@
+.animation__carousel-lightbox-glow {
+  margin: 0;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: sans-serif;
+  /* ✨ GLOW EFFECT */
+  /* LIGHTBOX */
+}
+.animation__carousel-lightbox-glow .carousel-wrapper {
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+}
+.animation__carousel-lightbox-glow .carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+.animation__carousel-lightbox-glow .card {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  top: 100px;
+  left: 0;
+  z-index: 1;
+}
+.animation__carousel-lightbox-glow .card::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 10%, transparent 110%);
+  border-radius: 20px;
+  z-index: -1;
+  animation: pulseGlow 3s infinite ease-in-out;
+  filter: blur(20px);
+  opacity: 0.6;
+}
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+.animation__carousel-lightbox-glow .lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.animation__carousel-lightbox-glow .lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.animation__carousel-lightbox-glow .lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+.animation__carousel-lightbox-glow .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+

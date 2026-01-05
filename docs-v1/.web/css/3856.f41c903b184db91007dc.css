@@ -1,0 +1,196 @@
+.animation__change-color {
+  font-family: "Archivo Black", sans-serif;
+  width: 100%;
+  transition: background 0.5s, color 0.5s;
+  position: relative;
+  /* --- cup area --- */
+  /* --- 3 large boxes row --- */
+  /* --- Responsive for phones --- */
+  /* --- Color info box --- */
+}
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivoblack/v23/HTxqL289NzCGg4MzN6KJ7eW6OYs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZDxleZE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZLxkeZE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZGJkeZE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZDxkeZE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZA5keZE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZOJjeZE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZNtjeZE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZLxjeZE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitcountgriddouble/v3/WBK7rFjbakJVFOargiWSKQysDITG_S0VtG0x3HD2FYHVdlZI-rLlahmEAPp8wjYMvkPq48MVQo5RQf2svjnxa5Anx8-Y-pHdkVb0ByRHaxzbXaLbA9wfZJVjeZE.ttf) format('truetype');
+}
+.animation__change-color * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-shadow: none;
+}
+.animation__change-color .menu {
+  display: flex;
+  flex-wrap: wrap;
+  /* responsive wrapping */
+  justify-content: center;
+  /* center menu items */
+  width: 100%;
+  text-align: center;
+}
+.animation__change-color .menu-item {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  flex: 0 0 auto;
+  text-align: center;
+  transition: color 0.5s, background 0.5s;
+}
+.animation__change-color .menu-item a {
+  color: blue;
+  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+}
+.animation__change-color .menu-item.selected {
+  font-weight: bold;
+}
+.animation__change-color .hero {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s;
+}
+.animation__change-color .hero img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.animation__change-color .row.large-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  transition: background 0.5s;
+  object-fit: contain;
+}
+.animation__change-color .row.large-boxes .box {
+  flex: 1 1 150px;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.91);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.animation__change-color .row.large-boxes .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 600px) {
+  .animation__change-color .menu {
+    justify-content: center;
+  }
+  .animation__change-color .menu-item {
+    padding: 0.6rem 1rem;
+    margin: 0.2rem;
+  }
+  .animation__change-color .row.large-boxes {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .animation__change-color .row.large-boxes .box {
+    width: 100%;
+  }
+  .animation__change-color .hero {
+    height: 200px;
+  }
+  .animation__change-color .row.large-boxes .box img {
+    height: 100%;
+  }
+  .animation__change-color .logobox {
+    top: 0;
+    /* remove negative top */
+    left: 15%;
+    /* center */
+    transform: translateX(-50%);
+    font-size: 3em;
+    opacity: 1;
+  }
+  .animation__change-color #coffee {
+    display: none;
+    /* hide coffeee cup on small screens */
+  }
+}
+.animation__change-color .color-info {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  min-width: 220px;
+  max-width: 220px;
+  word-wrap: break-word;
+  text-align: left;
+}
+

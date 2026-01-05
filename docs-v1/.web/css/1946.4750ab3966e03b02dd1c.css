@@ -1,0 +1,101 @@
+.other-http-status {
+  position: relative;
+  max-height: calc(100vh - 62px);
+  overflow-y: auto;
+  text-align: center;
+}
+.other-http-status > h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.other-http-status > .tags {
+  text-align: center;
+  position: sticky;
+  top: 10px;
+  zoom: 0.7;
+}
+.other-http-status > .tags > .tag {
+  padding: 5px 8px;
+  background-color: #2D2D30;
+  align-items: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.other-http-status > .tags > .tag.select {
+  filter: brightness(0.6);
+}
+.other-http-status > .tags > .tag > .point {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color);
+  border-radius: 50%;
+}
+.other-http-status .module {
+  margin-top: 10px;
+  --color: #fff;
+}
+.other-http-status .module > h3 {
+  width: 100%;
+  text-align: center;
+}
+.other-http-status .module .children {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 375px);
+  justify-content: center;
+}
+.other-http-status .module .item {
+  width: 100%;
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid;
+  border-left: 4px solid;
+  border-color: #424245;
+  background-color: #2D2D30;
+}
+.other-http-status .module .item > .code {
+  line-height: 28px;
+  color: var(--color);
+  font-weight: bold;
+}
+.other-http-status .module .item > .code .code {
+  color: var(--color);
+}
+.other-http-status .module .item > .code .label {
+  display: inline-block;
+  font-size: 12px;
+  padding: 0 8px;
+  margin-left: 10px;
+  border-radius: 4px;
+  color: var(--color);
+  background-color: #3A3A3D;
+}
+.other-http-status .module .item > .subtitle {
+  color: #A8A8A9;
+  font-size: 12px;
+}
+.other-http-status .module .item > .desc {
+  zoom: 0.9;
+  color: #A8A8A9;
+  text-wrap-mode: wrap;
+  font-weight: bolder;
+  line-height: 20px;
+  font-size: 12px;
+}
+.other-http-status .code-status-1xx {
+  --color: #909399;
+}
+.other-http-status .code-status-2xx {
+  --color: #70C341;
+}
+.other-http-status .code-status-3xx {
+  --color: #E1A23B;
+}
+.other-http-status .code-status-4xx {
+  --color: #EE6A69;
+}
+.other-http-status .code-status-5xx {
+  --color: #F74A49;
+}
+

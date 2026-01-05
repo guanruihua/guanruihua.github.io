@@ -1,0 +1,10 @@
+.tool__html-to-react textarea {
+  font-size: 15px;
+  padding: 6px 8px;
+  line-height: 1.5;
+  background-color: transparent;
+  border-radius: 4px;
+  outline: none;
+  min-height: 80vh;
+}
+

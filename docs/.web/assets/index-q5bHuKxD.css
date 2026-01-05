@@ -1,0 +1,1 @@
+.game__brick{position:fixed;inset:0;height:100vh;width:100vw}.game__brick canvas{background-color:#000;border-radius:0;border:4px solid #fff;cursor:default;margin:auto}.game__brick canvas.pointer{cursor:pointer}
