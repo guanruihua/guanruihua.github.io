@@ -36,6 +36,11 @@ const Route = [
     path: 'music-howler',
     element: import('./music-howler'),
   },
+  {
+    title: 'Demo',
+    path: 'demo',
+    element: import('./demo'),
+  },
 ]
 
 export default { title: 'Dev', name: 'dev', path: 'dev/', route: Route }

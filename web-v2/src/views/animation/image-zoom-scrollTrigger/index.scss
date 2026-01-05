@@ -1,0 +1,89 @@
+.animation__image_zoom_scrollTrigger {
+  --black: #1f1f1f;
+  --white: #fff;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  line-height: 1.5;
+  height: 100%;
+  position: relative;
+
+  section {
+    height: var(--unit-content-height);
+
+    &.last {
+      background-image: url('./image/2.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .double-hero {
+    position: relative;
+  }
+
+  .hero {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    overflow: hidden;
+    transition: all .3s;
+
+    div {
+      transition: all .3s;
+
+    }
+
+    &__content {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    &__bg {
+      background-image: url("./image/hobbiton.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(3px);
+      height: 100%;
+      width: 100%;
+      will-change: filter;
+    }
+
+    &__cover {
+      --overlay-opacity: 1;
+      background-image: url("./image/hobbit-hole.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      perspective: 500px;
+      overflow: hidden;
+      z-index: 2;
+      transform-origin: 50% 50%;
+      translate: none;
+      rotate: none;
+      scale: none;
+      transform: scale(1);
+      --overlay-opacity: 1;
+
+      &::after {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.9) 90%);
+        content: "";
+        inset: 0;
+        opacity: var(--overlay-opacity);
+        position: absolute;
+        pointer-events: none;
+      }
+    }
+
+
+  }
+}

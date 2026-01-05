@@ -1,0 +1,41 @@
+.animation__text-frame-border {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 50% 50%, #F4C6A5 0%, #F9D9C2 10%, #FFF3E9 30%);
+
+  svg {
+    max-width: 70vw;
+    max-height: 80vh;
+    aspect-ratio: 1/1;
+
+    #blobClip {
+      transform-origin: center;
+      transition: ease transform .3s;
+    }
+
+    &:hover {
+      #blobClip {
+        transform: scale(1.15) translate(0%, 0%);
+      }
+
+      .text-content {
+        fill: white;
+      }
+    }
+  }
+
+  .text-content {
+    font: 700 10px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    fill: black;
+    transition: ease fill .3s;
+  }
+
+  /*Dev*/
+  @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700");
+
+
+}

@@ -1,8 +1,13 @@
 const Route = [
   {
-    title: 'Wheel of Fortune',
-    path: 'wheel-fortune',
-    element: import('./wheel-fortune'),
+    title: 'Text Frame Border animation rotation',
+    path: 'text-frame-border',
+    element: import('./text-frame-border'),
+  },
+  {
+    title: 'Image Zoom in width ScrollTrigger(Beta)',
+    path: 'image-zoom-scrollTrigger',
+    element: import('./image-zoom-scrollTrigger'),
   },
   {
     title: '3D CSS: Final',

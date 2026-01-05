@@ -1,5 +1,5 @@
-import { isEffectArray, isString } from 'asura-eye'
 import React from 'react'
+import { isEffectArray, isString } from 'asura-eye'
 
 /**
  * 
@@ -15,8 +15,11 @@ export const useLoadJS = (
 ) => {
   React.useEffect(() => {
     if (isString(urls)) {
+      const oldDom = document.querySelector(`script[data-url='${urls}']`)
+      if (oldDom) return
       const script = document.createElement('script')
       script.src = urls
+      script.dataset.url = urls
       script.onload = () => {
         // console.log(url, '已加载')
         cb?.()
@@ -36,9 +39,12 @@ export const useLoadJS = (
     if (isEffectArray<string>(urls)) {
       const res = Promise.all(
         urls.map((url) => {
+          const oldDom = document.querySelector(`script[data-url='${url}']`)
+          if (oldDom) return 0
           return new Promise((rs, rj) => {
             const script = document.createElement('script')
             script.src = url
+            script.dataset.url = url
             script.onload = () => {
               // console.log(url, '已加载')
               rs(script)
@@ -50,7 +56,7 @@ export const useLoadJS = (
             document.body.appendChild(script)
           })
         }),
-      ).then((res) => {
+      ).then(() => {
         cb?.()
         // res.forEach((script: any) => {
         //   console.log('🚀 ~ useLoadMultipleJS ~ script:', script)
@@ -65,7 +71,7 @@ export const useLoadJS = (
         })
       }
     }
-  }, [])
+  }, [urls, cb, cb2])
 }
 
 export const useLoadCSS = (
@@ -109,7 +115,7 @@ export const useLoadCSS = (
             document.head.appendChild(link)
           })
         }),
-      ).then((res) => {
+      ).then((/* _res */) => {
         cb?.()
         // res.forEach((script: any) => {
         //   console.log('🚀 ~ useLoadMultipleJS ~ script:', script)
@@ -124,5 +130,5 @@ export const useLoadCSS = (
         })
       }
     }
-  }, [])
+  }, [urls, cb, cb2])
 }
