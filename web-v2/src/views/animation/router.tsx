@@ -1,5 +1,25 @@
 const Route = [
   {
+    title: 'Flight Ticket',
+    path: 'flight-ticket',
+    element: import('./flight-ticket'),
+  },
+  {
+    title: 'The Good Place',
+    path: 'good-place',
+    element: import('./good-place'),
+  },
+  {
+    title: '3d Card',
+    path: '3d-card',
+    element: import('./3d-card'),
+  },
+  {
+    title: 'Responsive Grid Layout',
+    path: 'responsive-grid-layout',
+    element: import('./responsive-grid-layout'),
+  },
+  {
     title: 'Text Frame Border animation rotation',
     path: 'text-frame-border',
     element: import('./text-frame-border'),

@@ -138,13 +138,14 @@
 
   &>.content {
     --unit-content-height: calc(100vh - var(--header-height));
+    --height: calc(var(--unit-content-height) - 20px);
     grid-area: content;
     min-height: var(--unit-content-height);
     height: 100%;
     max-height: var(--unit-content-height);
     overflow: hidden auto;
     padding: 10px;
-    
+
     &>div {
       min-height: 100%;
       overflow: hidden auto;
