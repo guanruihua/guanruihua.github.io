@@ -1,0 +1,126 @@
+.animation__fireworks {
+  @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap");
+
+  body {
+    margin: 0;
+    background: radial-gradient(circle, #0d0f1d, #000);
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+    color: #fff;
+  }
+
+  .sky {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #fw {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  /* 2026 TEXT */
+  .year {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 1.8s ease, transform 2s ease;
+    z-index: 2;
+  }
+
+  .year.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* GRADIENT TEXT */
+  .gradient-text {
+    background: linear-gradient(90deg,
+        #fff8e1,
+        #ffe082,
+        #ffca28,
+        #ffc107,
+        #ff9800,
+        #ff6f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  /* WISH MESSAGE */
+  .wish {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    opacity: 0;
+    transition: opacity 2s ease, transform 3s ease;
+    z-index: 2;
+  }
+
+  .wish.show {
+    opacity: 1;
+    transform: translateY(-250px);
+  }
+
+  /* FULLSCREEN PUDGY */
+  .pudgy {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .pudgy img {
+    width: 100vmin;
+    height: 100vmin;
+    object-fit: contain;
+  }
+
+  /* FLASH */
+  .flash {
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: 6;
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+  }
+
+  .flash.show {
+    opacity: 1;
+  }
+
+  .flash.hide {
+    opacity: 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Move year upward when Pudgy appears */
+  .year.shift-up {
+    transform: translateY(-150px) scale(1);
+  }
+
+  /* Move wish even further upward */
+  .wish.shift-up {
+    transform: translateY(-380px);
+  }
+
+}

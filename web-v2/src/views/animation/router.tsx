@@ -1,5 +1,25 @@
 const Route = [
   {
+    title: 'Fireworks',
+    path: 'fireworks',
+    element: import('./fireworks'),
+  },
+  {
+    title: 'Interactive Swiping Card',
+    path: 'interactive-swiping-card',
+    element: import('./interactive-swiping-card'),
+  },
+  {
+    title: 'Interactive Swiping Card',
+    path: 'interactive-swiping-card',
+    element: import('./interactive-swiping-card'),
+  },
+  {
+    title: 'Payment Status Screen',
+    path: 'payment-status-screen',
+    element: import('./payment-status-screen'),
+  },
+  {
     title: 'Flight Ticket',
     path: 'flight-ticket',
     element: import('./flight-ticket'),

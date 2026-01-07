@@ -24,7 +24,7 @@ export default function () {
     // else nav(url)
   }
   return (
-    <Flex column className="own-page-content">
+    <Flex className="own-page-content">
       {Conf.map((item: ObjectType, i) => {
         const { title, name, group, route, path = '/' } = item
         return (
