@@ -1,8 +1,5 @@
 .home {
   position: relative;
-  display: grid;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
   max-height: 100vh;
   width: 100vw;
@@ -73,7 +70,7 @@
       align-items: center;
       gap: 10px;
       border-radius: 12px;
-      width: 50%;
+      width: calc(100% - 4rem);
 
     }
 
@@ -105,7 +102,7 @@
       padding: 5px 10px;
       font-size: 16px;
       width: 100%;
-      min-width: 300px;
+      // min-width: 300px;
       background: transparent;
       line-height: 32px;
 
@@ -120,17 +117,17 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 10px 24px 20px;
+    padding: 20px 24px 20px;
     width: 100vw;
-    max-width: 100vw;
     position: relative;
+
   }
 
   .card {
     position: relative;
-    width: 250px;
+    width: 10rem;
     max-width: 100vw;
-    height: 110px;
+    min-height: 80px;
     border: none;
     border-radius: 12px;
     padding: 16px 18px;
@@ -140,6 +137,10 @@
     color: #fff;
     transition: all .6s ease-in-out;
     zoom: .8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &.select {
       box-shadow: 1px 1px 12px rgba(255, 255, 255, .9);
@@ -159,30 +160,8 @@
       z-index: 1;
     }
 
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      font-size: 32px;
-      padding: 8px;
-      padding-bottom: 14px;
-      padding-left: 10px;
-      border-radius: 12px;
-    }
-
     .name {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      z-index: 10;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      min-width: 100px;
-      min-height: 50px;
       padding-right: 10px;
 
       &:hover {

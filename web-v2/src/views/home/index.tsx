@@ -92,7 +92,6 @@ export default function Home() {
               }}
               onClick={() => handleClick(name)}
             />
-            <div className="logo">{name.slice(0, 1)}</div>
             <div
               className="name"
               onClick={(e) => {
@@ -118,7 +117,6 @@ export default function Home() {
             }}
             onClick={() => handleClick('own')}
           />
-          <div className="logo">O</div>
           <div
             className="name"
             onClick={(e) => {
@@ -226,6 +224,7 @@ export default function Home() {
         </Div>
       </div>
       <Guide guide={guide} state={state} />
+      <br />
     </Container>
   )
 }

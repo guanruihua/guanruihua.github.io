@@ -1,11 +1,9 @@
 import React from 'react'
-import { Header } from '../header'
-import './index.less'
 import { Div } from 'aurad'
 import { ClassNameType } from 'harpe'
+import './index.less'
 
 export interface ContainerProps {
-  header?: React.ReactNode
   className?: ClassNameType
   containerClassName?: ClassNameType
   style?: React.CSSProperties
@@ -13,7 +11,7 @@ export interface ContainerProps {
 }
 
 export function Container(props: ContainerProps) {
-  const { children, header, containerClassName, className, style, ...rest } =
+  const { children, containerClassName, className, style, ...rest } =
     props
 
   return (
@@ -24,7 +22,6 @@ export function Container(props: ContainerProps) {
         containerClassName,
       ]}
     >
-      {/* <Header>{header}</Header> */}
       <Div className={['layout-box', className]} style={style} {...rest}>
         {children}
       </Div>

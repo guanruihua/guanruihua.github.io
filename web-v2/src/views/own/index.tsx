@@ -1,4 +1,3 @@
-import React from 'react'
 import { useNavigate } from 'react-router'
 import { Div, Flex } from 'aurad'
 import { __blank, Conf } from './conf'
