@@ -103,7 +103,12 @@ export function Guide(props: GuideProps) {
 
   return (
     <div className="home-container">
-      <div className="home-guide">
+      <div
+        className="home-guide"
+        style={{
+          gridTemplateColumns: `repeat(${colCount}, 1fr)`,
+        }}
+      >
         <Div
           className="home-guide-history"
           style={{ display: 'block !important' }}
@@ -111,8 +116,8 @@ export function Guide(props: GuideProps) {
         >
           <Module
             name="常用"
-            next={historyList.filter(item=>{
-              if(search){
+            next={historyList.filter((item) => {
+              if (search) {
                 return PinyinMatch.match(item[0], search.trim()) !== false
               }
               return true
