@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router'
 import { useEventListener } from './eventlistener'
 import PinyinMatch from 'pinyin-match'
 import './index.less'
-import { isEffectArray, isString } from 'asura-eye'
+import { isArray, isEffectArray, isString } from 'asura-eye'
+import { Module } from './module'
 
 export interface GuideProps {
   guide: {
@@ -17,47 +18,6 @@ export interface GuideProps {
     [key: string]: any
   }
   [key: string]: any
-}
-
-const Module = (item: {
-  name: string
-  show?: boolean
-  next: any[]
-  onClick: any
-}) => {
-  const { name, next, show = true, onClick } = item
-
-  return (
-    <Div className="guide-module" none={show == false}>
-      <div
-        className="bg"
-        style={{
-          background: 'url(/image/bg.png)',
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top',
-          filter: 'opacity(17%) blur(1px)',
-          position: 'absolute',
-          inset: 0,
-          zIndex: 1,
-        }}
-      />
-      {name && <div className="title">{name}</div>}
-      {next?.map((child: any[], j) => {
-        const [name, url, show = true] = child
-        return (
-          <Div
-            key={j}
-            none={show === false}
-            className="guide-item"
-            onClick={() => onClick(url)}
-          >
-            {name}
-          </Div>
-        )
-      })}
-    </Div>
-  )
 }
 
 export function Guide(props: GuideProps) {
@@ -78,9 +38,12 @@ export function Guide(props: GuideProps) {
     getNewColCount(),
   )
 
-  const canRenderGuide = guide.filter((_) =>
-    _.type && selects.length > 0 ? selects.includes(_.type) : true,
-  )
+  const canRenderGuide = guide.filter((_) => {
+    if (_.type && selects.length > 0) {
+      return selects.includes(_.type)
+    }
+    return true
+  })
 
   const cols = new Array(colCount).fill('').map((_, i) => {
     return canRenderGuide.filter((_: any, j) => {
@@ -101,7 +64,7 @@ export function Guide(props: GuideProps) {
   })
 
   const getName = (url: string) => {
-    console.log('🚀 ~ getName ~ url:', url)
+    // console.log('🚀 ~ getName ~ url:', url)
 
     try {
       for (let i = 0; i < canRenderGuide.length; i++)
@@ -135,17 +98,27 @@ export function Guide(props: GuideProps) {
     })
   }
 
-  // const list = console.log(list, canRenderGuide)
+  const historyShow = isArray(historyList) && historyList.length > 0
+  console.log('🚀 ~ Guide ~ historyShow:', historyShow, historyList)
 
   return (
     <div className="home-container">
       <div className="home-guide">
-        <Div className="home-guide-history" none={!isEffectArray(historyList)}>
+        <Div
+          className="home-guide-history"
+          style={{ display: 'block !important' }}
+          none={!historyShow}
+        >
           <Module
             name="常用"
-            next={historyList}
+            next={historyList.filter(item=>{
+              if(search){
+                return PinyinMatch.match(item[0], search.trim()) !== false
+              }
+              return true
+            })}
             onClick={onClick}
-            show={false}
+            show={historyShow}
           />
         </Div>
         {cols.map((col, ci) => {
