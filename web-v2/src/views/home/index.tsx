@@ -1,4 +1,3 @@
-import React from 'react'
 import { Container } from '@/components'
 import { useSetState } from '0hook'
 import { useFetchMDState } from '@/hook'
@@ -10,15 +9,10 @@ import { SOURCEURL } from '@/assets'
 import { classNames } from 'harpe'
 import './index.less'
 import { useNavigate } from 'react-router'
+import Conf from './conf'
+import { ObjectType } from '0type'
 
-const BGColor = [
-  'radial-gradient(ellipse at right top, #5756CD 0%, #151419 47%, #151419 100%)',
-  'radial-gradient(ellipse at right top, #a63d2a82 0%, #151419 47%, #151419 100%)',
-  'radial-gradient(ellipse at right top, #8FA918 0%, #151419 47%, #151419 100%)',
-  'radial-gradient(ellipse at right top, #107667ed 0%, #151419 47%, #151419 100%)',
-  'radial-gradient(ellipse at right top, #00458f8f 0%, #151419 45%, #151419 100%)',
-  'radial-gradient(ellipse at right top, #F8D0D9 0%, #151419 45%, #151419 100%)',
-]
+const { BGColor, keyboardRows } = Conf
 
 export default function Home() {
   const nav = useNavigate()
@@ -29,12 +23,16 @@ export default function Home() {
   const [state, setState] = useSetState<{
     search: string
     selects: string[]
+    history: ObjectType<number>
+    historyList: [string, string][]
     showKeyBoard: boolean
   }>(
     {
       search: '',
       selects: [],
+      history: {},
       showKeyBoard: false,
+      historyList: []
     },
     'cache-guide-state',
   )
@@ -44,30 +42,27 @@ export default function Home() {
       nav('/own')
       return
     }
-    if (!isArray(state.selects)) {
-      state.selects = []
+    const newState = {
+      selects: [...state.selects].filter(Boolean),
+    }
+    if (!isArray(newState.selects)) {
+      newState.selects = []
     }
     if (only) {
-      if (state.selects.includes(name) && state.selects.length === 1) {
-        state.selects = []
+      if (newState.selects.includes(name) && newState.selects.length === 1) {
+        newState.selects = []
       } else {
-        state.selects = [name]
+        newState.selects = [name]
       }
     } else {
-      if (state.selects.includes(name)) {
-        state.selects = state.selects.filter((_) => _ !== name)
+      if (newState.selects.includes(name)) {
+        newState.selects = newState.selects.filter((_) => _ !== name)
       } else {
-        state.selects.push(name)
+        newState.selects.push(name)
       }
     }
-    setState(state)
+    setState(newState)
   }
-
-  const keyboardRows = [
-    ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
-    ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-    ['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Del', 'Clear'],
-  ]
 
   return (
     <Container containerClassName="home">
@@ -223,7 +218,7 @@ export default function Home() {
           })}
         </Div>
       </div>
-      <Guide guide={guide} state={state} />
+      <Guide guide={guide} state={state} setState={setState} />
       <br />
     </Container>
   )
