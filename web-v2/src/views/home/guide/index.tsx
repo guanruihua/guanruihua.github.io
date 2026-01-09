@@ -99,7 +99,7 @@ export function Guide(props: GuideProps) {
   }
 
   const historyShow = isArray(historyList) && historyList.length > 0
-  console.log('🚀 ~ Guide ~ historyShow:', historyShow, historyList)
+  // console.log('🚀 ~ Guide ~ historyShow:', historyShow, historyList)
 
   return (
     <div className="home-container">
