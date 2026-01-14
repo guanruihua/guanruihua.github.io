@@ -1,0 +1,1 @@
+import{c,R as f}from"./index-BcZkKaSZ.js";import{e as u,f as m}from"./index.esm-DEqtexvw.js";const R=(t,i)=>{const e=c.c(4);let n;e[0]!==i?(n=i===void 0?[]:i,e[0]=i,e[1]=n):n=e[1];const o=n;let r;e[2]!==t?(r=()=>{const s=t?.();return()=>{s&&(u(s)?s.then(a):m(s)&&s?.())}},e[2]=t,e[3]=r):r=e[3],f.useEffect(r,o)};function a(t){return t?.()}export{R as u};
