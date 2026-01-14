@@ -1,0 +1,57 @@
+.dev__diagram .d-edge {
+  position: absolute;
+  --edge-color: #c2c8d5;
+
+  stroke: var(--edge-color);
+  color: var(--edge-color);
+  marker-end: url(#arrowhead);
+  stroke-width: 3px;
+  cursor: pointer;
+  pointer-events: visibleFill;
+  transition: all 1s;
+
+  &.dash-flow {
+    stroke-dasharray: 8 5 5;
+    stroke-dashoffset: 0;
+    animation: d_edge_dash_flow 5s linear infinite;
+  }
+
+  &.reverse-flow {
+    animation-name: d_edge_dash_reverse_flow;
+  }
+
+  &.hidden-arrow {
+    marker-end: none !important;
+  }
+
+  &[data-status="success"] {
+    --edge-color: #3da463;
+    marker-end: url(#arrowhead-success);
+  }
+
+  &[data-status="error"] {
+    --edge-color: #ea6872;
+    marker-end: url(#arrowhead-error);
+  }
+}
+
+
+@keyframes d_edge_dash_flow {
+  0% {
+    stroke-dashoffset: 180;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes d_edge_dash_reverse_flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 180;
+  }
+}

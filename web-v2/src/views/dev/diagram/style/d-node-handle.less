@@ -1,0 +1,84 @@
+.dev__diagram .d-node-handle {
+  --color: #c2c8d5;
+
+  --unit: 10px;
+  --related: calc(-1 * var(--unit)/2 - 1px);
+  background-color: var(--color);
+  border: none;
+  width: var(--unit);
+  height: var(--unit);
+  border-radius: 50%;
+  position: absolute;
+
+  &[data-location="top"] {
+    top: var(--related);
+  }
+
+  &[data-location="right"] {
+    right: var(--related);
+  }
+
+  &[data-location="bottom"] {
+    bottom: var(--related);
+  }
+
+  &[data-location="left"] {
+    left: var(--related);
+  }
+
+  &[data-shape="square"] {
+    width: var(--unit);
+    height: var(--unit);
+    border-radius: 1px;
+  }
+
+  &[data-shape="rotate-square"] {
+    width: var(--unit);
+    height: var(--unit);
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+
+  &[data-type="chat-model"] {
+    left: 20%;
+  }
+
+  &[data-type="memory"] {
+    left: 60%;
+  }
+
+  &[data-type="tool"] {
+    left: 80%;
+  }
+
+  &[data-flag="label"] {
+    position: absolute;
+
+    display: block;
+    width: auto;
+    height: auto;
+    color: rgba(255, 255, 255, .8);
+    background: #1b1b1b;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 10px;
+    bottom: -25px;
+
+    .label-required {
+      color: red;
+      margin-left: 2px;
+    }
+  }
+
+  &[data-type="chat-model-label"] {
+    left: 20%;
+  }
+
+  &[data-type="memory-label"] {
+    left: 60%;
+  }
+
+  &[data-type="tool-label"] {
+    left: 83%;
+  }
+}

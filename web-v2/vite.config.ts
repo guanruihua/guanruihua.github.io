@@ -20,7 +20,10 @@ export default defineConfig({
     extensions: ['.js', '.ts', '.jsx', '.tsx'],
     dedupe: ['react', 'react-dom'],
   },
-  server: {},
+  server: {
+    port: 4000,
+    host: true,
+  },
   // 生产环境专属配置
   build: {
     outDir: '../docs',
