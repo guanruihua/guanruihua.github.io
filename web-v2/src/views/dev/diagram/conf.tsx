@@ -1,7 +1,7 @@
 import { Node } from './type'
 
 const unit = 32
-const rowGap = unit * 4 * 2
+const rowGap = unit * 8
 
 export { unit, rowGap }
 
@@ -92,7 +92,7 @@ const row1: Node[] = [
   },
 ].map((item: any, i: number) => {
   item.row = 1
-  item.x = -12 + i * 5
+  item.x = 3 + i * 5
   return item as Node
 })
 
@@ -102,7 +102,7 @@ export const workflow: Node[] = [
     id: '1',
     type: 'workflow-start',
     row: 0,
-    x: -5,
+    x: 10,
     edge: '2',
   },
   {
@@ -112,7 +112,7 @@ export const workflow: Node[] = [
     label: 'AI Agent',
     nextLabel: 'Tools Agent',
     row: 0,
-    x: 5,
+    x: 21,
     edge: {
       'chat-model': '3',
       memory: '4',

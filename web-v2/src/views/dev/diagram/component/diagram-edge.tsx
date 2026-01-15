@@ -52,9 +52,9 @@ export const DiaGramEdge = (props: DiaGramEdgeProps) => {
             data-status={getStatus(edge)}
             d={d}
             fill="none"
-            onMouseOver={() => {
-              console.log('hover', id)
-            }}
+            // onMouseOver={() => {
+            //   console.log('hover', id)
+            // }}
           />
         )
       })}

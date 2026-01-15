@@ -35,7 +35,11 @@ export default function Dev_Diagram() {
           />
         ))}
       </div>
-      <DiagramDialog key={JSON.stringify(state.dialog)} state={state} setState={setState} />
+      <DiagramDialog
+        key={JSON.stringify(state.dialog)}
+        state={state}
+        setState={setState}
+      />
     </div>
   )
 }

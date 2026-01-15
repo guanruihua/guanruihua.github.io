@@ -12,19 +12,22 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const DiagramNode = (props: Props) => {
+
   const { state, item, style, ...rest } = props
   const { id, type, label = '', nextLabel = '', x = 0, y = 0, row } = item
   const top = isNumber(row) ? row * rowGap : y * unit
+  const X = x * unit + 10
+  const Y = top + 30
 
   return (
-    <Div
+    <div
       className={'d-node'}
       data-id={id}
       data-type={type}
       data-status={state?.status?.[id] ?? 'default'}
       style={{
-        left: x * unit + state.offset.x,
-        top: top + unit + state.offset.y,
+        // transform,
+        transform: `translate(${X}px, ${Y}px)`,
         ...style,
       }}
       {...rest}
@@ -39,6 +42,6 @@ export const DiagramNode = (props: Props) => {
         </Div>
       )}
       <DiagramHandle id={id} type={type} />
-    </Div>
+    </div>
   )
 }

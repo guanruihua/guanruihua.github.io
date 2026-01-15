@@ -1,5 +1,6 @@
 import { Dialog } from 'aurad'
 import { PageState } from '../../type'
+import ReactDOM from 'react-dom'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   state: PageState
@@ -10,7 +11,7 @@ export function DiagramDialog(props: Props) {
   const { state, setState } = props
   const { open, node = {} } = state.dialog || {}
 
-  return (
+  return ReactDOM.createPortal(
     <Dialog
       className="diagram-dialog"
       open={open}
@@ -24,6 +25,7 @@ export function DiagramDialog(props: Props) {
       }}
     >
       {JSON.stringify(node)}
-    </Dialog>
+    </Dialog>,
+    document.body,
   )
 }

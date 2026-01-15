@@ -16,7 +16,7 @@ export const usePageState = (props: UsePageStateProps) => {
     edges: [],
     offset: {
       x: 900,
-      y: 100,
+      y: 58,
     },
     rootRect: {},
     nodeRect: {},
