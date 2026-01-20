@@ -1,5 +1,10 @@
 export const Route = [
   {
+    title: 'Tailwind CSS v4',
+    path: 'tailwind-css',
+    element: import('./tailwind-css'),
+  },
+  {
     title: 'ResizeObserver：监听元素尺寸变化',
     path: 'resizeObserver',
     element: import('./ResizeObserver'),

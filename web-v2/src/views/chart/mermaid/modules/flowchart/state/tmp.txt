@@ -1,0 +1,53 @@
+    // await sleep(1000)
+    // await reload(state, rootRef.current)
+
+    // console.log(state)
+    // await sleep(1000)
+    // console.log(state)
+    // const newState: PageState = {
+    //   ...state,
+    //   rootRect: rootRef.current.getBoundingClientRect(),
+    // }
+    // const { height = 100 } = rootRef.current.getBoundingClientRect()
+    // const gap = 40
+
+    // const { Next, StartId } = state
+    // let maxDepth = 1
+
+    // const check = (id: string, offset = 40, depth = 1) => {
+    //   if (!id) return
+    //   // const layout = [0,0]
+    //   const { width } = newState.nodes.find((_) => _.id == id)
+    //   const newOffset = offset + width + gap
+    //   const next = Next?.[id]?.map((nid) => {
+    //     return {
+    //       id: nid,
+    //       next: check(nid, newOffset, depth + 1),
+    //     }
+    //   })
+
+    //   newState.layout[id] = [newOffset, height / 2]
+
+    //   if (!next) return
+    //   if (depth + 1 > maxDepth) {
+    //     maxDepth = depth + 1
+    //   }
+
+    //   // const len = next.length
+    //   // if(len%2 ===1){
+
+    //   // }else{
+
+    //   // }
+
+    //   return next
+    // }
+
+    // const Layout = {
+    //   id: StartId,
+    //   next: check(StartId, 40, 1),
+    // }
+
+    // console.log(Layout, maxDepth)
+    // newState.Layout = Layout
+    // setState(newState)

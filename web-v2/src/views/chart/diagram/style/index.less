@@ -1,0 +1,41 @@
+@import url(./d-edge.less);
+@import url(./d-node-handle.less);
+@import url(./d-node.less);
+
+.chart__diagram {
+  background: #1b1b1b;
+  pointer-events: none;
+  height: var(--height);
+  overflow: hidden;
+
+  &-node-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    background-color: transparent;
+    // pointer-events: none;
+    display: grid;
+    grid-template-areas: "tmp";
+
+    &>.d-node {
+      grid-area: tmp;
+    }
+    transform: translateY(-100%);
+
+  }
+
+  &-edge-container {
+    width: 100%;
+    height: 100%;
+    // display: none;
+    background-color: transparent;
+    // pointer-events: none;
+    overflow: hidden;
+
+  }
+}
+
+.diagram-dialog {
+  z-index: 10000;
+}

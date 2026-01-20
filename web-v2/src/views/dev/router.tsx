@@ -5,11 +5,6 @@ const Route = [
   //   element: (import('./codesandbox'))
   // },
   {
-    title: 'Diagrams',
-    path: 'diagram',
-    element: import('./diagram'),
-  },
-  {
     title: 'HTML to React',
     path: 'html-to-react',
     element: import('./html-to-react'),

@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+
+* {
+  @defaults;
+}
+
+.demo__tailwind-css-case1 {
+  @apply rounded-b-lg shadow-md text-white bg-green-500 p-1 text-2xl;
+}
