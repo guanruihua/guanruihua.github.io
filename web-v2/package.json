@@ -48,6 +48,7 @@
     "@typescript-eslint/typescript-estree": "^5.62.0",
     "@vitejs/plugin-react": "^5.1.0",
     "abandonjs": "^3.7.1",
+    "antd": "^6.2.1",
     "asura-eye": "^0.8.0",
     "aurad": "^1.11.14",
     "axios": "^1.13.2",

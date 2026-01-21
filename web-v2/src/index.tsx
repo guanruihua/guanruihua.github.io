@@ -1,17 +1,23 @@
-import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider, createHashRouter } from 'react-router-dom'
 import 'aurad/dist/style.css'
 import { routes } from './router'
+import { ConfigProvider, theme } from 'antd'
 
 function App() {
   return (
-    <RouterProvider
-      future={{
-        v7_startTransition: true,
+    <ConfigProvider
+      theme={{
+        algorithm: theme.darkAlgorithm,
       }}
-      router={createHashRouter(routes)}
-    />
+    >
+      <RouterProvider
+        // future={{
+        //   v7_startTransition: true,
+        // }}
+        router={createHashRouter(routes)}
+      />
+    </ConfigProvider>
   )
 }
 

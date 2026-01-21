@@ -1,5 +1,10 @@
 const Route = [
   {
+    title: '贝塞尔曲线',
+    path: 'css-cubic-bezier',
+    element: import('./css/cubic-bezier'),
+  },
+  {
     title: 'Fireworks',
     path: 'fireworks',
     element: import('./fireworks'),
