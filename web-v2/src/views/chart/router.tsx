@@ -1,5 +1,15 @@
 const Route = [
   {
+    title: '饼图 ( pie )',
+    path: 'mermaid-pie',
+    element: import('./mermaid/modules/pie'),
+  },
+  {
+    title: '树状图 ( treemap )',
+    path: 'mermaid-treemap',
+    element: import('./mermaid/modules/treemap'),
+  },
+  {
     title: '用户旅程图',
     path: 'mermaid-user-journey',
     element: import('./mermaid/modules/user-journey'),
