@@ -1,5 +1,10 @@
 const Route = [
   {
+    title: '象限图',
+    path: 'quadrantChart',
+    element: import('./mermaid/modules/quadrantChart'),
+  },
+  {
     title: '镭射图 ( radar )',
     path: 'mermaid-radar',
     element: import('./mermaid/modules/radar'),
