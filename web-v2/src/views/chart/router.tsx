@@ -1,5 +1,10 @@
 const Route = [
   {
+    title: '镭射图 ( radar )',
+    path: 'mermaid-radar',
+    element: import('./mermaid/modules/radar'),
+  },
+  {
     title: '饼图 ( pie )',
     path: 'mermaid-pie',
     element: import('./mermaid/modules/pie'),
