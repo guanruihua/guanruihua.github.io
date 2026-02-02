@@ -1,5 +1,10 @@
 const Route = [
   {
+    title: '黑客帝国数字雨',
+    path: 'Digital-Rain',
+    element: import('./Digital-Rain')
+  },
+  {
     title: '贝塞尔曲线',
     path: 'css-cubic-bezier',
     element: import('./css/cubic-bezier'),

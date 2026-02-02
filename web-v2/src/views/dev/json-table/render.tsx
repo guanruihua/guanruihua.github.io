@@ -4,7 +4,7 @@ import { isArray, isObject, isString } from 'asura-eye'
 export function Render(props) {
   const { json } = props
   if (isString(json))
-    return <div className="flex items-center flex-col h-full">{json}</div>
+    return <div className="flex items-center flex-col justify-center h-full">{json}</div>
   if (isArray(json)) {
     return (
       <div className="border-white/50 border p-2! text-center">
