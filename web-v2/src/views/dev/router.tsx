@@ -4,6 +4,11 @@ const Route = [
     path: 'dev-date',
     element: import('./date'),
   },
+  {
+    title: 'JSON Table',
+    path: 'json-table',
+    element: import('./json-table'),
+  },
   // {
   //   title: 'codesandbox',
   //   path: 'codesandbox',
