@@ -1,0 +1,1 @@
+.animation__loading .bg-box{width:100vw;height:var(--height);overflow:hidden}.animation__loading .bg-box .bg{width:300vw;height:var(--height);background:repeating-conic-gradient(#0000001a 0deg 90deg,#ffffff1a 90deg 180deg) 0 0 / 40px 40px}@keyframes moveStripe{0%{background-position:0 0}to{background-position:0 0}}

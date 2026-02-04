@@ -1,0 +1,1 @@
+import{c as a,j as i}from"./index-k01m_i1Q.js";function o(){const s=a.c(1);let e;return s[0]===Symbol.for("react.memo_cache_sentinel")?(e=i.jsx("div",{className:"animation__loading",children:i.jsx("div",{className:"bg-box",children:i.jsx("div",{className:"bg"})})}),s[0]=e):e=s[0],e}export{o as default};
