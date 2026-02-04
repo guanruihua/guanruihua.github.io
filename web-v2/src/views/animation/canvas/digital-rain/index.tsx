@@ -1,11 +1,14 @@
 import React from 'react'
 
 export default function DigitalRain() {
+  console.log('start render ....')
   React.useEffect(() => {
     const canvas: any = document.getElementById('matrix')
     const ctx = canvas.getContext('2d')
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    // canvas.width = window.innerWidth
+    // canvas.height = window.innerHeight
+    canvas.width = 800
+    canvas.height = 400
     const chars = '01'
     const drops = Array(Math.floor(canvas.width / 20)).fill(0)
 

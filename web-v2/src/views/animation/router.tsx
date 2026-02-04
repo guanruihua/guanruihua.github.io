@@ -1,8 +1,18 @@
 const Route = [
   {
+    title: '过渡动画',
+    path: 'loading',
+    element: import('./loading'),
+  },
+  {
+    title: '终端',
+    path: 'terminal',
+    element: import('./terminal'),
+  },
+  {
     title: '黑客帝国数字雨',
     path: 'Digital-Rain',
-    element: import('./Digital-Rain')
+    element: import('./canvas/digital-rain'),
   },
   {
     title: '贝塞尔曲线',
@@ -10,20 +20,15 @@ const Route = [
     element: import('./css/cubic-bezier'),
   },
   {
-    title: 'Fireworks',
+    title: 'Fireworks | 2026 烟花特效',
     path: 'fireworks',
     element: import('./fireworks'),
   },
-  {
-    title: 'Interactive Swiping Card',
-    path: 'interactive-swiping-card',
-    element: import('./interactive-swiping-card'),
-  },
-  {
-    title: 'Interactive Swiping Card',
-    path: 'interactive-swiping-card',
-    element: import('./interactive-swiping-card'),
-  },
+  // {
+  //   title: 'Interactive Swiping Card',
+  //   path: 'interactive-swiping-card',
+  //   element: import('./interactive-swiping-card'),
+  // },
   {
     title: 'Payment Status Screen',
     path: 'payment-status-screen',

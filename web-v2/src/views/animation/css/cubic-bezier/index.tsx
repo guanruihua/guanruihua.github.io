@@ -26,7 +26,7 @@ export default function CSS_cubic_bezier() {
           {items.map(([url, label]) => (
             <a
               key={url}
-              className="delay-600 transition-colors ease-[cubic-bezier(0.68, -0.55, 0.27, 1.55)] bg-white/30 p-2! rounded-xl hover:text-green-400! hover:bg-white/10"
+              className="item delay-600 transition-colors ease-[cubic-bezier(0.68, -0.55, 0.27, 1.55)] bg-white/30 p-2! rounded-xl hover:text-green-400! hover:bg-white/10"
               target="__blank"
               href={url}
             >

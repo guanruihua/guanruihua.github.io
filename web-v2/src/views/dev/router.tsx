@@ -1,5 +1,10 @@
 const Route = [
   {
+    title: '终端',
+    path: 'terminal',
+    element: import('./terminal'),
+  },
+  {
     title: 'Date',
     path: 'dev-date',
     element: import('./date'),

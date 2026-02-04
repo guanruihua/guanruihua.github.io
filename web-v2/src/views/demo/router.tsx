@@ -105,4 +105,4 @@ export const Route = [
     element: import('./test'),
   },
 ]
-export default { title: 'Deme', name: 'demo', path: 'demo/', route: Route }
+export default { title: 'Demo', name: 'demo', path: 'demo/', route: Route }

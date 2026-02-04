@@ -1,0 +1,45 @@
+.animation__loading {
+
+  .bg-box {
+
+    width: 100vw;
+    height: var(--height);
+    // width: 200px;
+    // height: 120px;
+    overflow: hidden;
+
+    .bg {
+      width: 300vw;
+      height: var(--height);
+      // width: 600px;
+      // height: 120px;
+
+      // background:
+      //   repeating-linear-gradient(135deg,
+      //     black 0 20px,
+      //     rgba(255, 255, 255, .1) 20px 40px);
+      // animation: moveStripe 40s linear infinite;
+      // animation: moveStripe 4s linear infinite;
+      background:
+        repeating-conic-gradient(rgba(0, 0, 0, .1) 0deg 90deg,
+          rgba(255, 255, 255, .1) 90deg 180deg) 0 0 / 40px 40px;
+    }
+
+    // zoom: 2;
+  }
+}
+
+@keyframes moveStripe {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    // background-position: -200vw 0;
+    // background-position: -400px 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}

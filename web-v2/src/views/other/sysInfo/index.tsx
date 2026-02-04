@@ -1,8 +1,9 @@
+import React from 'react'
 import { ObjectType } from '0type'
 import { Grid } from 'aurad'
-import React from 'react'
 import { getCpuInfo } from './util'
 import './index.less'
+import { Flex } from 'aurad'
 
 export default function SystemInfo() {
   const [state, setState] = React.useState<ObjectType>({})
@@ -24,23 +25,25 @@ export default function SystemInfo() {
   ]
 
   return (
-    <Grid
-      className="sys-info system-information"
-      style={{
-        gridTemplateColumns: 'auto 1fr',
-      }}
-    >
-      {list.map((item, i) => {
-        const [label, prop, unit = ''] = item
-        return (
-          <React.Fragment key={i}>
-            <div className="label">{label}</div>
-            <div className="value">
-              {state[prop] ? state[prop] + unit : '未知'}
-            </div>
-          </React.Fragment>
-        )
-      })}
-    </Grid>
+    <Flex>
+      <Grid
+        className="sys-info system-information"
+        style={{
+          gridTemplateColumns: 'auto 1fr',
+        }}
+      >
+        {list.map((item, i) => {
+          const [label, prop, unit = ''] = item
+          return (
+            <React.Fragment key={i}>
+              <div className="label">{label}</div>
+              <div className="value">
+                {state[prop] ? state[prop] + unit : '未知'}
+              </div>
+            </React.Fragment>
+          )
+        })}
+      </Grid>
+    </Flex>
   )
 }
