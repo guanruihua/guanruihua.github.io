@@ -10,7 +10,7 @@ import { classNames } from 'harpe'
 import './index.less'
 import { useNavigate } from 'react-router'
 import Conf from './conf'
-import { ObjectType } from '0type'
+import { State } from './type'
 
 const { BGColor, keyboardRows } = Conf
 
@@ -20,19 +20,13 @@ export default function Home() {
   const [md] = useFetchMDState(SOURCEURL + 'guide.md')
   // const [md] = useFetchMDState(SOURCEURL + 'guide/index.md')
   const [types, guide] = analysisMD(md)
-  const [state, setState] = useSetState<{
-    search: string
-    selects: string[]
-    history: ObjectType<number>
-    historyList: [string, string][]
-    showKeyBoard: boolean
-  }>(
+  const [state, setState] = useSetState<State>(
     {
       search: '',
       selects: [],
-      history: {},
+      lastVisitHistory: {},
       showKeyBoard: false,
-      historyList: []
+      historyList: [],
     },
     'cache-guide-state',
   )

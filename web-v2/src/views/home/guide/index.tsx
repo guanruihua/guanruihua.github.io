@@ -5,6 +5,8 @@ import PinyinMatch from 'pinyin-match'
 import './index.less'
 import { isArray, isEffectArray, isString } from 'asura-eye'
 import { Module } from './module'
+import { State } from '../type'
+import { calculateScore } from '../helper'
 
 export interface GuideProps {
   guide: {
@@ -13,10 +15,7 @@ export interface GuideProps {
     next: string[][]
     show?: boolean
   }[]
-  state?: {
-    selects?: string[]
-    [key: string]: any
-  }
+  state?: State
   [key: string]: any
 }
 
@@ -24,7 +23,12 @@ export function Guide(props: GuideProps) {
   const nav = useNavigate()
 
   const { guide, state, setState } = props
-  const { selects = [], search, history = {}, historyList = [] } = state || {}
+  const {
+    selects = [],
+    search,
+    lastVisitHistory,
+    historyList = [],
+  } = state || {}
   const colWidth = 450
 
   const getNewColCount = () => {
@@ -81,20 +85,28 @@ export function Guide(props: GuideProps) {
     if (url.indexOf('.') > -1)
       window.open(url.indexOf('http') > -1 ? url : `https://${url}`, '_blank')
     else nav(url)
-    const new_history = {
-      ...history,
+
+    const new_lastVisitHistory: State['lastVisitHistory'] = {
+      ...lastVisitHistory,
     }
-    if (new_history[url]) {
-      new_history[url]++
+
+    const now = new Date().getTime()
+    if (isArray<number>(new_lastVisitHistory[url])) {
+      new_lastVisitHistory[url].unshift(now)
     } else {
-      new_history[url] = 1
+      new_lastVisitHistory[url] = [now]
     }
+
     setState({
-      history: new_history,
-      historyList: Object.entries(new_history)
-        .sort((a: any, b: any) => b[1] - a[1])
+      lastVisitHistory: new_lastVisitHistory,
+      historyList: Object.keys(new_lastVisitHistory)
+        .sort(
+          (ka: any, kb: any) =>
+            calculateScore(new_lastVisitHistory[kb]) -
+            calculateScore(new_lastVisitHistory[ka]),
+        )
         .slice(0, 15)
-        .map(([url]) => [getName(url), url]),
+        .map((url) => [getName(url), url]),
     })
   }
 
