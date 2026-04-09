@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router'
 import { useEventListener } from './eventlistener'
 import PinyinMatch from 'pinyin-match'
 import './index.less'
-import { isArray, isEffectArray, isString } from 'asura-eye'
+import { isArray } from 'asura-eye'
 import { Module } from './module'
 import { State } from '../type'
 import { calculateScore } from '../helper'
+import { getCols } from './helper'
 
 export interface GuideProps {
   guide: {
@@ -41,31 +42,7 @@ export function Guide(props: GuideProps) {
     getNewColCount,
     getNewColCount(),
   )
-
-  const canRenderGuide = guide.filter((_) => {
-    if (_.type && selects.length > 0) {
-      return selects.includes(_.type)
-    }
-    return true
-  })
-
-  const cols = new Array(colCount).fill('').map((_, i) => {
-    return canRenderGuide.filter((_: any, j) => {
-      if (isString(search) && search.length && isEffectArray(_.next)) {
-        try {
-          _.next.forEach((item: any[]) => {
-            item[2] = PinyinMatch.match(item[0], search.trim()) !== false
-          })
-          _.show = Boolean(
-            _.next.map((item: any[]) => item[2]).filter(Boolean).length,
-          )
-        } catch (error) {
-          console.error(error)
-        }
-      }
-      return j % colCount === i
-    })
-  })
+  const { cols, canRenderGuide } = getCols(guide, search, selects, colCount)
 
   const getName = (url: string) => {
     // console.log('🚀 ~ getName ~ url:', url)

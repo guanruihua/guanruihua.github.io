@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router'
 import Conf from './conf'
 import { State } from './type'
 
-const { BGColor, keyboardRows } = Conf
+const { keyboardRows } = Conf
 
 export default function Home() {
   const nav = useNavigate()
@@ -70,52 +70,24 @@ export default function Home() {
                 select: isString(name) && state.selects?.includes(name),
               },
             ]}
-            style={{
-              background: BGColor[i % BGColor.length],
-            }}
-          >
-            <div
-              className="bg"
-              style={{
-                background: 'url(/image/bg.png)',
-              }}
-              onClick={() => handleClick(name)}
-            />
-            <div
-              className="name"
-              onClick={(e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                handleClick(name, true)
-              }}
-            >
-              {name}
-            </div>
-          </Div>
-        ))}
-        <Div
-          className={['card']}
-          style={{
-            background: BGColor[99 % BGColor.length],
-          }}
-        >
-          <div
-            className="bg"
-            style={{
-              background: 'url(/image/bg.png)',
-            }}
-            onClick={() => handleClick('own')}
-          />
-          <div
-            className="name"
             onClick={(e) => {
               e.preventDefault()
               e.stopPropagation()
-              handleClick('own', true)
+              handleClick(name, true)
             }}
           >
-            Own
-          </div>
+            <div className="name">{name}</div>
+          </Div>
+        ))}
+        <Div
+          className="card"
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            handleClick('own', true)
+          }}
+        >
+          <div className="name">Own</div>
         </Div>
       </div>
       <div className="home-search">

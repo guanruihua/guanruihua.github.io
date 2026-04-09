@@ -13,11 +13,13 @@ export const Module = (item: {
       <div
         className="bg"
         style={{
-          background: 'url(/image/bg.png)',
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top',
-          filter: 'opacity(17%) blur(1px)',
+          background: 'rgba(255,255,255, .05)',
+          borderRadius: 8,
+          // background: 'url(/image/bg.png)',
+          // backgroundAttachment: 'fixed',
+          // backgroundSize: 'cover',
+          // backgroundPosition: 'top',
+          // filter: 'opacity(17%) blur(1px)',
           position: 'absolute',
           inset: 0,
           zIndex: 1,
