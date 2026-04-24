@@ -1,3 +1,4 @@
+import { FuzzyText } from '@/components'
 import { Div } from 'aurad'
 
 export const Module = (item: {
@@ -25,7 +26,14 @@ export const Module = (item: {
           zIndex: 1,
         }}
       />
-      {name && <div className="title">{name}</div>}
+      {/* {name && <div className="title">{name}</div>} */}
+      {name && (
+        <div className="title">
+          <FuzzyText baseIntensity={0.2} hoverIntensity={0.5} enableHover>
+            {name}
+          </FuzzyText>
+        </div>
+      )}
       {next?.map((child: any[], j) => {
         const [name, url, show = true] = child
         return (

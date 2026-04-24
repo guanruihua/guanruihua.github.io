@@ -34,19 +34,29 @@
   .guide-module {
     position: relative;
     padding: 10px 20px;
-    border-radius: 12px;
     background: transparent;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 0 20px;
     line-height: 28px;
+    border-left: 2px solid #81c995;
+    border-radius: 12px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
 
     .title {
       font-weight: bold;
       color: #aaa;
       white-space: nowrap;
       z-index: 2;
+      zoom: .09;
+      display: flex;
+      align-items: center;
+
+      canvas {
+        margin-left: -42px;
+      }
     }
 
     .guide-item {

@@ -1,0 +1,40 @@
+.demo__color {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .container-rgb {
+    display: grid;
+    grid-template-columns: repeat(51, 1fr);
+    gap: 0;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(60, 1fr);
+      gap: 0;
+    }
+
+  }
+
+  // .hexagon {
+  //   // width: 200px;
+  //   width: 50px;
+  //   aspect-ratio: 1 / 0.866;
+  //   /* 自动计算高度 */
+  //   background: #3b82f6;
+  //   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  // }
+
+  .cell {
+    // width: 5px;
+    aspect-ratio: 1;
+    // background-color: azure;
+  }
+}

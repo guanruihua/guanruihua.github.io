@@ -5,6 +5,11 @@ const Route = [
     element: import('./loading'),
   },
   {
+    title: '斜向过渡动画',
+    path: 'diagonal-loading',
+    element: import('./diagonal-loading'),
+  },
+  {
     title: '终端',
     path: 'terminal',
     element: import('./terminal'),

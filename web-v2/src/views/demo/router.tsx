@@ -1,5 +1,10 @@
 export const Route = [
   {
+    title: '颜色(oklch)',
+    path: 'color',
+    element: import('./color'),
+  },
+  {
     title: 'Tailwind CSS v4',
     path: 'tailwind-css',
     element: import('./tailwind-css'),

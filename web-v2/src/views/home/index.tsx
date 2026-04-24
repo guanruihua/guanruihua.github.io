@@ -1,4 +1,4 @@
-import { Container } from '@/components'
+import { Container, GlitchText } from '@/components'
 import { useSetState } from '0hook'
 import { useFetchMDState } from '@/hook'
 import { Guide } from './guide'
@@ -76,7 +76,11 @@ export default function Home() {
               handleClick(name, true)
             }}
           >
-            <div className="name">{name}</div>
+            <div className="name">
+              <GlitchText speed={1} enableShadows enableOnHover={false}>
+                {name}
+              </GlitchText>
+            </div>
           </Div>
         ))}
         <Div
@@ -87,7 +91,11 @@ export default function Home() {
             handleClick('own', true)
           }}
         >
-          <div className="name">Own</div>
+          <div className="name">
+            <GlitchText speed={1} enableShadows enableOnHover={false}>
+              Own
+            </GlitchText>
+          </div>
         </Div>
       </div>
       <div className="home-search">

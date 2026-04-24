@@ -1,7 +1,6 @@
 import React from 'react'
 import { Div } from 'aurad'
 import { ClassNameType } from 'harpe'
-import './index.less'
 
 export interface ContainerProps {
   className?: ClassNameType
