@@ -1,0 +1,1 @@
+import{c as a,j as i}from"./index-DzOFoL9o.js";function t(){const s=a.c(1);let e;return s[0]===Symbol.for("react.memo_cache_sentinel")?(e=i.jsx("div",{className:"animation__diagonal-loading",children:i.jsx("div",{className:"stripes",children:i.jsx("div",{className:"stripes_inner"})})}),s[0]=e):e=s[0],e}export{t as default};

@@ -1,0 +1,1 @@
+.demo__color{width:100%;display:grid;grid-template-columns:1fr 1fr}.demo__color .container-rgb{display:grid;grid-template-columns:repeat(51,1fr);gap:0}.demo__color .container{width:100%;padding:10px;display:flex;flex-direction:column}.demo__color .container .row{display:grid;grid-template-columns:repeat(60,1fr);gap:0}.demo__color .cell{aspect-ratio:1}
