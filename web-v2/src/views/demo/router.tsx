@@ -1,5 +1,10 @@
 export const Route = [
   {
+    title: '浏览器原生',
+    path: 'browser-native',
+    element: import('./browser-native')
+  },
+  {
     title: '颜色(oklch)',
     path: 'color',
     element: import('./color'),
