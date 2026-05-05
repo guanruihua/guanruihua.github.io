@@ -11,21 +11,20 @@ export const Module = (item: {
 
   return (
     <Div className="guide-module" none={show == false}>
-      <div
+      {/* <div
         className="bg"
         style={{
-          background: 'rgba(255,255,255, .05)',
-          borderRadius: 8,
           // background: 'url(/image/bg.png)',
           // backgroundAttachment: 'fixed',
           // backgroundSize: 'cover',
           // backgroundPosition: 'top',
           // filter: 'opacity(17%) blur(1px)',
+          borderRadius: 8,
           position: 'absolute',
           inset: 0,
           zIndex: 1,
         }}
-      />
+      /> */}
       {/* {name && <div className="title">{name}</div>} */}
       {name && (
         <div className="title">
