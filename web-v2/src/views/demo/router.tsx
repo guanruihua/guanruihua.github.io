@@ -1,5 +1,10 @@
 export const Route = [
   {
+    title: 'HCaptcha',
+    path: 'hCaptcha',
+    element: import('./hCaptcha')
+  },
+  {
     title: '浏览器原生',
     path: 'browser-native',
     element: import('./browser-native')

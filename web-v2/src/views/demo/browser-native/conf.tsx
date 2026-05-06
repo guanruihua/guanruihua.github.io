@@ -83,8 +83,7 @@ rootMargin：视口扩展边距，类似 CSS 的margin。
   {
     title: `Page Visibility API — 判断页面是否可见`,
     md: `
-检测用户当前是否切换到其他标签页或最小化窗口。
-完整示例
+- 检测用户当前是否切换到其他标签页或最小化窗口。
 \`\`\`javascript
 运行
 document.addEventListener('visibilitychange', () => {
@@ -99,12 +98,16 @@ document.addEventListener('visibilitychange', () => {
     // 恢复定时器、视频播放
   }
 });
-属性
-document.hidden：true表示页面隐藏。
-document.visibilityState：hidden/visible/prerender/unloaded。
-兼容性
-✅ 所有现代浏览器
 \`\`\`
+
+属性
+
+- document.hidden：true表示页面隐藏。
+- document.visibilityState：hidden/visible/prerender/unloaded。
+
+兼容性
+
+- ✅ 所有现代浏览器
 `,
   },
   {
@@ -351,6 +354,7 @@ fetch('/api/data', { signal })
       console.error('请求失败:', err);
     }
   });
+\`\`\`
 扩展
 所有接受signal的 API 都可取消，例如addEventListener(signal)。
 兼容性
@@ -413,8 +417,7 @@ reader.cancel()可中断读取。
     md: `
 将数据分块写入目标（文件、网络、内存），适用于上传、生成文件、实时保存草稿。
 完整示例：创建可下载的流式文本文件
-html
-预览
+\`\`\`html
 <button id="saveBtn">保存文件</button>
 
 <script>

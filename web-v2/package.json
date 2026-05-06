@@ -37,6 +37,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@eslint/js": "^9.39.1",
     "@excalidraw/excalidraw": "^0.17.0",
+    "@hcaptcha/react-hcaptcha": "^2.0.2",
     "@microlink/react-json-view": "^1.27.0",
     "@monaco-editor/react": "^4.7.0",
     "@tailwindcss/vite": "^4.1.18",
