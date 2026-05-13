@@ -16,6 +16,7 @@ export default function HCaptchaPage() {
 
   return (
     <div>
+      <a href='https://dashboard.hcaptcha.com/sites?page=1&archived=active'>hcaptcha</a>
       <HCaptcha
         sitekey="7ef06df4-2424-48d6-a3d0-7b067636320c"
         onVerify={(token) => setToken(token)}
