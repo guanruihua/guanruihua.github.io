@@ -1,0 +1,37 @@
+.au-textarea {
+  padding: 10px 8px;
+}
+
+.ant-message .ant-message-notice {
+  &>.ant-message-notice-content {
+    border: 2px solid #fff;
+    background: #000;
+  }
+
+  &.ant-message-notice-success {
+    &>.ant-message-notice-content {
+      background: #ffffff10;
+      border-color: var(--success-half);
+    }
+
+
+    svg {
+      path {
+        color: var(--success);
+      }
+    }
+  }
+  &.ant-message-notice-error {
+    &>.ant-message-notice-content {
+      background: #ffffff10;
+      border-color: var(--error-half);
+    }
+
+
+    svg {
+      path {
+        color: var(--error);
+      }
+    }
+  }
+}

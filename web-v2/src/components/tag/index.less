@@ -1,0 +1,45 @@
+.tags {
+  display: flex;
+  gap: 10px;
+
+  .tag {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 12px;
+    border: 2px solid var(--warning);
+    background-color: var(--warning-half);
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s;
+
+    --color: var(--success);
+    border-color: var(--color);
+    background: var(--success-half);
+    box-shadow: 0 0 3px var(--color);
+
+    &[data-type='warning'] {
+      color: var(--warning);
+      background: var(--warning-half);
+    }
+
+    &[data-type='error'] {
+      color: var(--error);
+      background: var(--error-half);
+    }
+
+    &[data-select='false'] {
+      opacity: .6;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+
+    &:hover {
+      text-shadow: 0 0 2px #fff;
+      box-shadow: 0 0 8px var(--color);
+    }
+  }
+}

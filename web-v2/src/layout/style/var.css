@@ -1,0 +1,28 @@
+:root {
+  --resize-handle-width: 8px;
+  --resize-handle-color: transparent;
+  --resize-handle-hover-color: rgba(66, 153, 225, 0.5);
+  --header-height: 48px;
+  /* // --h: calc(100vh - var(--header-height) - 51px); */
+  --h: calc(100vh - var(--header-height) - 5px);
+  --h-header: 48px;
+  --bg: #252526;
+  --bg-content: #1e1e1f;
+  --bg-module: #3b3b3d;
+  --h-module: 52px;
+
+  --idle: #929293;
+  --warning: #fcac3b;
+  --error: #ff5b58;
+  --success: #19cb6c;
+  --idle-half: #92929380;
+  --warning-half: #fcac3b80;
+  --error-half: #ff5b5880;
+  --success-half: #19cb6c80;
+  --disabled: #8a8a87;
+
+  --bg-warning: #fcac3b;
+  --bg-error: #ff5b58;
+  --bg-success: #334a39;
+  --bg-disabled: #8a8a87;
+}

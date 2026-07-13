@@ -1,4 +1,9 @@
 export const Route = [
+  {
+    title: '摩尔斯密码, morsecode',
+    path: 'morsecode',
+    element: import('./morsecode'),
+  },
   // {
   //   title: '时间 / 时间戳转换',
   //   path: 'timestamp',

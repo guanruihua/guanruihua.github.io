@@ -1,7 +1,7 @@
 export * from './req'
 export * from './conf'
 
-import { message } from 'aurad'
+import { message } from 'antd'
 import { copyText } from 'harpe'
 
 export const get = async (url: string): Promise<Record<string, any>> => {

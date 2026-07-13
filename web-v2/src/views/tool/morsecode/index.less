@@ -1,0 +1,61 @@
+.tool__Morsecode {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: calc(100% - 5px);
+    gap: 10px;
+  }
+
+  .text-to-morse {
+    .render {
+      margin: 10px 0;
+      font-size: 16px;
+      text-wrap: wrap;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+
+  .map {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 200px));
+    gap: 5px 0;
+  }
+
+  .item[data-index="3"] .map {
+    grid-template-columns: repeat(auto-fill, minmax(auto, 500px));
+  }
+
+  .map-item {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 10px;
+
+    div {
+      font-size: 14px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .key {
+      border-radius: 8px;
+      background: #eeeeee40;
+      padding: 5px 8px;
+      min-width: 30px;
+      height: 30px;
+      text-wrap: nowrap;
+      text-align: center;
+    }
+
+    .value {
+      font-size: 18px;
+      letter-spacing: 1px;
+      min-width: 120px;
+    }
+  }
+}

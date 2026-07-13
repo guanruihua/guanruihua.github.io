@@ -1,5 +1,15 @@
 const Route = [
   {
+    title: 'Loading Progress',
+    path: 'loading-progress',
+    element: import('./loading-progress')
+  },
+  {
+    title: 'Warm Minimal Product Card',
+    path: 'warm-minimal-product-card',
+    element: import('./Warm-Minimal-Product-Card'),
+  },
+  {
     title: '过渡动画',
     path: 'loading',
     element: import('./loading'),
