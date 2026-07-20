@@ -1,13 +1,38 @@
 export const Route = [
   {
+    title: 'Svg 内嵌 HTML',
+    path: 'svg-html',
+    element: import('./svg-html'),
+  },
+  {
+    title: 'CSS 3D 立方体',
+    path: 'css-3d-cube',
+    element: import('./css-3d-cube'),
+  },
+  {
+    title: 'LeaferJS / Editor',
+    path: 'canvas-leaferjs-editor',
+    element: import('./canvas-leaferjs/editor'),
+  },
+  {
+    title: 'LeaferJS',
+    path: 'canvas-leaferjs',
+    element: import('./canvas-leaferjs'),
+  },
+  {
+    title: 'BabylonJS',
+    path: 'canvas-babylon',
+    element: import('./canvas-babylon'),
+  },
+  {
     title: 'HCaptcha',
     path: 'hCaptcha',
-    element: import('./hCaptcha')
+    element: import('./hCaptcha'),
   },
   {
     title: '浏览器原生',
     path: 'browser-native',
-    element: import('./browser-native')
+    element: import('./browser-native'),
   },
   {
     title: '颜色(oklch)',

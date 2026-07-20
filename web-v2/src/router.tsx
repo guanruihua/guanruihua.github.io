@@ -1,4 +1,3 @@
-import React from 'react'
 import { Lazy } from 'aurad'
 import { Outlet, RouteObject } from 'react-router-dom'
 import { GameRouter } from './views/game/router'
@@ -13,7 +12,6 @@ import Chart from './views/chart/router'
 import MutualConversion from './views/mutual-conversion/router'
 import Gen from './views/gen/router'
 import Server from './views/server/router'
-import Analysis from './views/analysis/router'
 import GameRelatedRouter from './views/game-related/router'
 
 
@@ -39,7 +37,6 @@ const OwnChildren = [
   ...handle(Server),
   ...handle(Tool),
   ...handle(Dev),
-  ...handle(Analysis),
   ...handle(GameRelatedRouter),
   {
     path: '*',

@@ -11,7 +11,6 @@ import MutualConversion from '../mutual-conversion/router'
 import Other from '../other/router'
 import Server from '../server/router'
 import Tool from '../tool/router'
-import Analysis from '../analysis/router'
 
 export const __blank = ['dev/tldraw', 'dev/excalidraw']
 
@@ -36,7 +35,6 @@ export const Conf: {
   },
   Dev,
   Tool,
-  Analysis,
   Animation,
   Chart,
   Demo,
@@ -52,3 +50,4 @@ export const Conf: {
     group: GameRouter.map((item) => [item.title, '/game/' + item.path]),
   },
 ]
+

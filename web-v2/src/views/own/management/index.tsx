@@ -7,6 +7,46 @@ import { useSetState } from '0hook'
 import { classNames, ClassNameType } from 'harpe'
 import { Conf } from '../conf'
 import './index.less'
+// import { Icon } from 'aurad'
+// import { Button } from 'antd'
+// import html2canvas from 'html2canvas'
+
+// export async function dom2Img2Clipboard(element: HTMLElement) {
+//   if (!element) return false
+
+//   try {
+//     // 将DOM元素转换为Canvas
+//     const canvas = await html2canvas(element, {
+//       useCORS: true, // 允许跨域图片
+//       scale: 2, // 提高清晰度
+//       // backgroundColor: null, // 透明背景
+//       // backgroundColor: '#1e1e1f1', // 透明背景
+//     })
+//     // 1. 将 canvas 转换为 Blob 对象（二进制图像数据）[reference:4]
+//     await canvas.toBlob((blob) => {
+//       // 2. 使用 Clipboard API 写入剪贴板[reference:5]
+//       navigator.clipboard
+//         .write([
+//           new ClipboardItem({
+//             [blob.type]: blob, // 例如 'image/png'
+//           }),
+//         ])
+//         .then(() => {
+//           console.log('✅ 图片已复制到剪贴板！')
+//         })
+//         .catch((err) => {
+//           console.error('❌ 复制失败：', err)
+//         })
+//     }) // 指定图片格式
+//     // }, 'image/png') // 指定图片格式
+
+//     return true
+//   } catch (error) {
+//     console.error('生成失败:', error)
+//     return false
+//   }
+// }
+
 
 export interface ManagementProps {
   children: React.ReactNode
@@ -54,7 +94,7 @@ export function Management(props: ManagementProps) {
     return () => {
       timer && clearTimeout(timer)
     }
-  }, [ref.current])
+  }, [])
 
   const getTitle = () => {
     const paths = location.hash?.replace('#/own/', '').split('/')
@@ -63,7 +103,9 @@ export function Management(props: ManagementProps) {
 
     const module = Conf.find((_) => _.name === name)
     if (module?.route) {
-      return module.route?.find?.((_) => module.path + _.path === path)?.title || ''
+      return (
+        module.route?.find?.((_) => module.path + _.path === path)?.title || ''
+      )
     }
     if (module?.group) {
       return module.group?.find?.((_) => _[1] === path)?.[0]
@@ -73,6 +115,15 @@ export function Management(props: ManagementProps) {
   }
 
   const title = getTitle()
+
+  // const copyPageImage = async () => {
+
+  //   const dom = document.querySelector('.own-page-content>*')
+  //   console.log(dom)
+  //   window.focus()
+  //   const res = await dom2Img2Clipboard(dom as any)
+  //   console.log(res)
+  // }
 
   return (
     <div
@@ -115,6 +166,11 @@ export function Management(props: ManagementProps) {
         </Flex>
         <Flex className="header-right" alginCenter>
           <h4>{title}</h4>
+          {/* <Button
+            type="link"
+            icon={<Icon type="copy" />}
+            onClick={copyPageImage}
+          /> */}
         </Flex>
       </Flex>
       <Flex column className="left">

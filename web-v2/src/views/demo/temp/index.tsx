@@ -1,9 +1,9 @@
 import React from 'react'
 import './index.less'
 
-export default function () {
+export default function Demo_ () {
   return (
-    <div className="">
+    <div className="demo__">
     
     </div>
   )

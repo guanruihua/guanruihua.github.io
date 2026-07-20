@@ -5,6 +5,9 @@ import './style/index.css'
 import './style/theme.less'
 import './style/ui.less'
 import './style/index.less'
+
+import './style/title.less'
+
 import { ConfigProvider } from 'antd'
 import { theme } from 'antd'
 
