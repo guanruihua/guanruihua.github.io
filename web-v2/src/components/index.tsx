@@ -7,3 +7,6 @@ export * from './effects/fuzzy-text'
 
 export * from './diagonal-loading'
 export * from './md'
+
+export * from './tech-stack'
+

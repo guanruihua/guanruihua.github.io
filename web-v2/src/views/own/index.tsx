@@ -1,3 +1,4 @@
+import React from 'react'
 import { useNavigate } from 'react-router'
 import { Div } from 'aurad'
 import { __blank, Conf } from './conf'
@@ -36,6 +37,18 @@ const getConfLayout = () => {
 
 const ConfLayout = getConfLayout()
 const renderList = new Array(len).fill('')
+
+const ReviewImg = ({ src }) => {
+  const [imgSrc, setImgSrc] = React.useState(null)
+
+  React.useEffect(() => {
+    src?.then((v) => {
+      setImgSrc(v.default)
+    })
+  }, [src])
+
+  return <img className="review-img" src={imgSrc} />
+}
 
 export default function Own() {
   const nav = useNavigate()
@@ -89,15 +102,18 @@ export default function Own() {
                         </Div>
                       )
                     })}
-                    {route?.map((child: ObjectType, j: number) => (
-                      <Div
-                        key={'route__' + j}
-                        className="name"
-                        onClick={() => onClick(path + child.path)}
-                      >
-                        {child.title}
-                      </Div>
-                    ))}
+                    {route?.map((child: ObjectType, j: number) => {
+                      return (
+                        <Div
+                          key={'route__' + j}
+                          className="name"
+                          onClick={() => onClick(path + child.path)}
+                        >
+                          {child.review && <ReviewImg src={child.review} />}
+                          {child.title}
+                        </Div>
+                      )
+                    })}
                   </Div>
                 </div>
               )

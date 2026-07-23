@@ -20,6 +20,11 @@ const Route = [
     path: 'ai-chat',
     element: import('./ai-chat'),
   },
+  // {
+  //   title: 'AI Chat v2',
+  //   path: 'ai-chat-v2',
+  //   element: import('./ai-chat-v2'),
+  // },
   {
     title: 'Platform Api',
     path: 'platform-api',

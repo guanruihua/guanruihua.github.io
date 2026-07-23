@@ -1,0 +1,73 @@
+.demo__task-queue {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &-container {
+    // position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 10px;
+    width: 100%;
+    min-height: 160px;
+
+    .task-item {
+      // position: absolute;
+      // bottom: 0;
+
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      border-radius: 12px;
+      --size: 80px;
+      --color: var(--idle);
+      width: var(--size);
+      height: var(--size);
+      line-height: var(--size);
+      font-size: 18px;
+      font-weight: bold;
+      background: var(--color);
+      opacity: .5;
+      transition: all .3s;
+      text-shadow: 0 0 3px #000;
+      color: #fff;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &[data-status='running'] {
+        opacity: 1;
+        --size: 120px;
+        --color: var(--running);
+        transition: all .6s;
+        margin: 0 10px;
+      }
+
+      &[data-status='success'] {
+        --color: var(--success);
+      }
+
+      &[data-status='error'] {
+        --color: var(--error);
+      }
+
+      //   opacity: .7;
+      //   --size: 100px;
+      //   --color: #5fc87680;
+      //   transition: all .6s;
+      // }
+
+      // &[data-active='1'] {
+      //   opacity: .7;
+      //   --size: 100px;
+      //   --color: var(--warning);
+      //   transition: all .6s;
+      // }
+    }
+  }
+}

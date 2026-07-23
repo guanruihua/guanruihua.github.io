@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import './style/var.css'
-import './style/data.css'
+import './style/data.less'
 import './style/index.css'
 import './style/theme.less'
 import './style/ui.less'

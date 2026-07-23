@@ -3,24 +3,26 @@ import { isString } from 'asura-eye'
 import { getConf } from './conf'
 
 export const req = async (conf: AxiosRequestConfig = {}): Promise<any> => {
-  let {
+  const {
     url = 'http://localhost:2400',
     method = 'get',
     headers = {},
     ...rest
   } = conf
 
+  let req_url: string = url
+
   if (isString(url) && !url.startsWith('http')) {
     const { serverUrl } = getConf()
     if (url.startsWith('/')) {
-      url = serverUrl + url
+      req_url = serverUrl + url
     } else {
-      url = serverUrl + '/' + url
+      req_url = serverUrl + '/' + url
     }
   }
 
   return axios({
-    url,
+    url: req_url,
     method,
     ...rest,
     headers: {

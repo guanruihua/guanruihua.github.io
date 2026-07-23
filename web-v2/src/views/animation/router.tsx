@@ -2,7 +2,8 @@ const Route = [
   {
     title: 'Loading Progress',
     path: 'loading-progress',
-    element: import('./loading-progress')
+    review: import('./loading-progress/index.png'),
+    element: import('./loading-progress'),
   },
   {
     title: 'Warm Minimal Product Card',
@@ -169,11 +170,11 @@ const Route = [
   //   path: 'animation-test-page',
   //   element: (import('./test')),
   // },
-  process.env.NODE_ENV === 'development' && {
-    title: 'TEST',
-    path: 'animation-test-page',
-    element: import('./test'),
-  },
+  // process.env.NODE_ENV === 'development' && {
+  //   title: 'TEST',
+  //   path: 'animation-test-page',
+  //   element: import('./test'),
+  // },
 ].filter(Boolean)
 
 export default {

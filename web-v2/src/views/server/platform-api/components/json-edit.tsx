@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Grid } from 'aurad'
+import { Button } from 'antd'
 import { Editor } from '@monaco-editor/react'
 
 export interface JsonEditProps {
@@ -34,11 +34,11 @@ export function JsonEdit(props: JsonEditProps) {
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: '1fr auto',
+        gridTemplateColumns: '1fr 220px',
         gap: 10,
         // minHeight: 600,
         minHeight: 'calc(100vh - 240px)',
-        overflowY: 'auto'
+        overflowY: 'auto',
       }}
     >
       <Editor

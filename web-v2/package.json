@@ -65,6 +65,7 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "bpmn-js": "^18.8.0",
     "bpmn-js-properties-panel": "^5.42.2",
+    "canvas-record": "^5.5.1",
     "clsx": "^2.1.1",
     "command-go": "^0.1.1",
     "cropperjs": "1.6.2",

@@ -1,5 +1,15 @@
 export const Route = [
   {
+    title: '任务队列',
+    path: 'task-queue',
+    element: import('./task-queue'),
+  },
+  {
+    title: 'video 去渲染 3D渲染',
+    path: 'video-2-3d',
+    element: import('./video-2-3d'),
+  },
+  {
     title: 'Svg 内嵌 HTML',
     path: 'svg-html',
     element: import('./svg-html'),
@@ -139,10 +149,10 @@ export const Route = [
     path: 'font-stroke',
     element: import('./font-stroke'),
   },
-  {
-    title: 'Test',
-    path: 'test',
-    element: import('./test'),
-  },
+  // {
+  //   title: 'Test',
+  //   path: 'test',
+  //   element: import('./test'),
+  // },
 ]
 export default { title: 'Demo', name: 'demo', path: 'demo/', route: Route }

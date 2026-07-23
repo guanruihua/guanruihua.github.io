@@ -20,7 +20,7 @@ export class UnicodeConverter {
     return Array.from(text)
       .map((char) => {
         const codePoint = char.codePointAt(0)
-        if(!codePoint) return undefined
+        if (!codePoint) return undefined
         if (codePoint > 0xffff) {
           return `\\u{${codePoint.toString(16).toUpperCase()}}`
         }
@@ -219,3 +219,18 @@ export class UnicodeConverter {
 // ['你', '好', '世', '界', '𠮷'].forEach(char => {
 //     console.log(`${char}:`, UnicodeConverter.getCharInfo(char));
 // });
+
+export const getReview = (state) => {
+  try {
+    if (state.type === 'text')
+      return UnicodeConverter.toUnicode(state.value || '', state.targetType)
+    if (state.targetType === 'text')
+      return UnicodeConverter.toChinese(state.value || '', state.type)
+    return UnicodeConverter.toUnicode(
+      UnicodeConverter.toChinese(state.value || '', state.type),
+      state.targetType,
+    )
+  } catch {
+    return ''
+  }
+}

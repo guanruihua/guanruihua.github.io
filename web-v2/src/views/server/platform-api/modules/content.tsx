@@ -1,6 +1,7 @@
 import React from 'react'
 import { InputEdit } from '../components/input-edit'
-import { Button, Div, Tab } from 'aurad'
+import { Button } from 'antd'
+import { Div, Tab } from 'aurad'
 import { JsonEdit } from '../components/json-edit'
 import { handleSend } from '../utils'
 import { Result } from './result'

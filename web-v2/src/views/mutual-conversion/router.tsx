@@ -2,6 +2,7 @@ export const Route = [
   {
     title: 'Unicode, 中文, 多种格式的相互转换',
     path: 'unicode-and-chinese',
+    review: import('./unicode-and-chinese/index.png'),
     element: import('./unicode-and-chinese'),
   },
   {

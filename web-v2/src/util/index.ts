@@ -54,3 +54,12 @@ export const downloadJSON = (jsonString: string, filename: string) => {
   document.body.removeChild(link)
   URL.revokeObjectURL(url)
 }
+
+
+export const sleep = (time: number = 3000) =>
+  new Promise((rs) => {
+    const timer = setTimeout(() => {
+      rs(1)
+      clearTimeout(timer)
+    }, time)
+  })

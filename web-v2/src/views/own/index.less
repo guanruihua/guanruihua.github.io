@@ -9,10 +9,11 @@
     gap: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    
-    &>.au-flex{
+
+    &>.au-flex {
       align-content: flex-start;
     }
+
     &>div>.module {
       padding: 16px;
       width: 100%;
@@ -32,6 +33,9 @@
 
         &>.name {
           display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          gap: 5px;
           align-items: center;
           color: rgb(255 255 255 / 80%);
           cursor: pointer;
@@ -50,4 +54,11 @@
     }
   }
 
+  .review-img {
+    height: 130px;
+    width: 280px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #000;;
+  }
 }

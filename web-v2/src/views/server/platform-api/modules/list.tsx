@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Div } from 'aurad'
+import { Button } from 'antd'
+import { Div } from 'aurad'
 import { HEADERS } from '../conf'
 
 export interface ListProps {
