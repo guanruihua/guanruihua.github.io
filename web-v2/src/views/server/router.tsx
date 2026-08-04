@@ -25,11 +25,11 @@ const Route = [
   //   path: 'ai-chat-v2',
   //   element: import('./ai-chat-v2'),
   // },
-  {
-    title: 'Platform Api',
-    path: 'platform-api',
-    element: import('./platform-api'),
-  },
+  // {
+  //   title: 'Platform Api',
+  //   path: 'platform-api',
+  //   element: import('./platform-api'),
+  // },
 ]
 
 export default { title: 'Server', name: 'server', path: 'server/', route: Route }

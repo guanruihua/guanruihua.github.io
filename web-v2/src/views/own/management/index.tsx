@@ -47,7 +47,6 @@ import './index.less'
 //   }
 // }
 
-
 export interface ManagementProps {
   children: React.ReactNode
   containerClassName?: ClassNameType
@@ -99,16 +98,10 @@ export function Management(props: ManagementProps) {
   const getTitle = () => {
     const paths = location.hash?.replace('#/own/', '').split('/')
     const name = paths?.[0]
-    const path = paths.join('/')
 
     const module = Conf.find((_) => _.name === name)
     if (module?.route) {
-      return (
-        module.route?.find?.((_) => module.path + _.path === path)?.title || ''
-      )
-    }
-    if (module?.group) {
-      return module.group?.find?.((_) => _[1] === path)?.[0]
+      return module.route?.find?.((_) => _.path === paths?.at(1))?.title || ''
     }
 
     return ''
@@ -175,7 +168,7 @@ export function Management(props: ManagementProps) {
       </Flex>
       <Flex column className="left">
         {menu.map((item: any, i) => {
-          const { title, name, label, children = [] } = item
+          const { name, children = [] } = item
           return (
             <Div
               key={i}

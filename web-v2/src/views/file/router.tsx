@@ -1,4 +1,9 @@
 const Route = [
+  // {
+  //   title: '图片处理 Pica',
+  //   path: 'img-pica',
+  //   element: import('./img-pica'),
+  // },
   {
     title: '轻量级图片裁剪',
     path: 'img-clipper',

@@ -1,7 +1,6 @@
 import { ObjectType } from '0type'
 import Dev from '../dev/router'
-import { GameRouter } from '../game/router'
-import GameRelatedRouter from '../game-related/router'
+import Data from '../data/router'
 import Animation from '../animation/router'
 import Chart from '../chart/router'
 import Demo from '../demo/router'
@@ -43,11 +42,6 @@ export const Conf: {
   MutualConversion,
   Other,
   Server,
-  GameRelatedRouter,
-  {
-    title: 'Game',
-    name: 'game',
-    group: GameRouter.map((item) => [item.title, '/game/' + item.path]),
-  },
+  Data,
 ]
 

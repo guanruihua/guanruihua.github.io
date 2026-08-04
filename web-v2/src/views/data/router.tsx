@@ -7,4 +7,4 @@ const Route = [
 ]
 
 
-export default { title: 'Game Related', name: 'game-related', path: 'game-related/', route: Route }
+export default { title: 'Data', name: 'data', path: 'data/', route: Route }
