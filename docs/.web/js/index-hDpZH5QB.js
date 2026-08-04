@@ -1,0 +1,1 @@
+import{c as l,j as a}from"./index-EHKLYN7P.js";/* empty css              */const m=i=>{const e=l.c(6);let t,c;e[0]!==i?({children:t,...c}=i,e[0]=i,e[1]=t,e[2]=c):(t=e[1],c=e[2]);let s;return e[3]!==t||e[4]!==c?(s=a.jsxs("div",{className:"technical-stack",...c,children:["Technical stack： ",t]}),e[3]=t,e[4]=c,e[5]=s):s=e[5],s};export{m as T};
