@@ -1,5 +1,11 @@
 export const Route = [
   {
+    title: 'OCR (tesseract.js)',
+    path: 'ocr-tesseract-js',
+    element: import('./ocr-tesseract-js'),
+    review: import('./ocr-tesseract-js/index.png'),
+  },
+  {
     title: '摩尔斯密码, morsecode',
     path: 'morsecode',
     element: import('./morsecode'),

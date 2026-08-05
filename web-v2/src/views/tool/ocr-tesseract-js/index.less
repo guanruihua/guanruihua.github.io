@@ -1,0 +1,32 @@
+.module__ocr_tesseract_js {
+  .container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 45vw), 1fr));
+
+    .review-img {
+      min-width: 100%;
+      height: 300px;
+      object-fit: contain;
+      border: 2px solid #ffffff80;
+    }
+
+    .right {
+      border: 2px solid #ffffff80;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .btns {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+    }
+  }
+}
