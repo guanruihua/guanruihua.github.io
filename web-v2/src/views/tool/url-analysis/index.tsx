@@ -1,6 +1,5 @@
 import { useSetState } from '0hook'
 import { Button, Flex, Grid, TextArea } from 'aurad'
-import React from 'react'
 import { parseUrlParams } from './helper'
 import { copy } from '@/util'
 

@@ -14,7 +14,7 @@ export function parseUrlParams(url: string = '') {
           params[key] = value
         }
         return JSON.stringify(params, null, 2)
-      } catch (error) {
+      } catch {
         return ''
       }
     }
@@ -31,7 +31,7 @@ export function parseUrlParams(url: string = '') {
 
     try {
       return JSON.stringify(params, null, 2)
-    } catch (error) {
+    } catch {
       return ''
     }
   }

@@ -1,5 +1,11 @@
 export const Route = [
   {
+    title: '格式化',
+    path: 'transform-formatting',
+    element: import('./transform-formatting'),
+    // review: import('./transform-formatting/index.png'),
+  },
+  {
     title: 'OCR (tesseract.js)',
     path: 'ocr-tesseract-js',
     element: import('./ocr-tesseract-js'),
