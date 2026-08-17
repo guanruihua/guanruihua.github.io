@@ -1,4 +1,4 @@
-import { Lazy } from 'aurad'
+import { Lazy } from '@/components'
 import { RouteObject } from 'react-router-dom'
 
 import Dev from './views/dev/router'

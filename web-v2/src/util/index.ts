@@ -1,7 +1,9 @@
 export * from './req'
 export * from './conf'
+export * from './logger'
 
 import { message } from 'antd'
+import { isNumber, isString } from 'asura-eye'
 import { copyText } from 'harpe'
 
 export const get = async (url: string): Promise<Record<string, any>> => {
@@ -27,7 +29,10 @@ export const get = async (url: string): Promise<Record<string, any>> => {
 }
 
 export const copy = (val: any) => {
-  if (copyText(val)) {
+  const value = isString(val) ? val : isNumber(val) ? String(val) : ''
+
+  if (!value) return message.error('Copy Fail ')
+  if (copyText(value)) {
     message.success('Copy Success ')
   } else {
     message.error('Copy Fail ')
@@ -54,7 +59,6 @@ export const downloadJSON = (jsonString: string, filename: string) => {
   document.body.removeChild(link)
   URL.revokeObjectURL(url)
 }
-
 
 export const sleep = (time: number = 3000) =>
   new Promise((rs) => {

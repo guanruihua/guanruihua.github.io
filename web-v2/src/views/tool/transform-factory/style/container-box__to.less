@@ -1,0 +1,51 @@
+.container-box__to {
+  .title {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 32px;
+  }
+
+  .review-box {
+    padding: 10px;
+    background: #1e1e1e;
+    border-radius: 8px;
+  }
+
+  &[data-header="true"] {
+    gap: 5px !important;
+    grid-template-rows: auto 1fr !important;
+  }
+
+  &-controls {
+    padding: 5px 8px;
+    border-radius: 8px;
+    background: #1e1e1e;
+  }
+
+  .text-length-statistics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+
+    &>div {
+      padding: 10px;
+      font-size: 14px;
+      background: #1e1e1e;
+      border-radius: 12px;
+      position: relative;
+
+      .value {
+        position: absolute;
+        font-size: 17px;
+        font-weight: bold;
+        inset: 10px 10px auto auto;
+        color: var(--success);
+      }
+
+      .desc {
+        color: #ffffff80;
+      }
+    }
+  }
+
+}

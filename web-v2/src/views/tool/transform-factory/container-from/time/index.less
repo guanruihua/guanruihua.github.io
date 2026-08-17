@@ -1,0 +1,48 @@
+.container-from__time {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .ant-picker-input [role='button']{
+    background: none;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      min-height: 32px;
+
+      .label {
+        font-size: 14px;
+        min-width: 200px;
+        text-align: end;
+      }
+
+      .value-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        background: #141414;
+        border-radius: 8px;
+        min-width: 200px;
+        padding: 5px 5px 5px 12px;
+        // border: 2px solid var(--success-half);
+      }
+
+      .value {
+        line-height: 32px;
+        min-height: 32px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}

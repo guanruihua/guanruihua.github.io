@@ -34,7 +34,7 @@ export const message = {
     let timer: any = null
     timer = setTimeout(() => {
       dom.remove()
-      // clearTimeout(timer)
+      clearTimeout(timer)
     }, timeout)
   },
   warning(content: React.ReactNode, timeout: number = 3000) {

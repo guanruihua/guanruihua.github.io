@@ -1,5 +1,4 @@
 import { Button, Chart, Flex } from 'aurad'
-import React from 'react'
 import { getOptions } from './helper'
 import { useSetState } from '0hook'
 

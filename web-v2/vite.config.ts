@@ -18,7 +18,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
     extensions: ['.js', '.ts', '.jsx', '.tsx'],
-    dedupe: ['react', 'react-dom'],
+    dedupe: ['react', 'react-dom','antd'],
   },
   server: {
     port: 4000,

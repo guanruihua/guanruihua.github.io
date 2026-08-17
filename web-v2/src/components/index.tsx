@@ -10,3 +10,6 @@ export * from './md'
 
 export * from './tech-stack'
 
+export * from './lazy'
+
+export * from './icon'
